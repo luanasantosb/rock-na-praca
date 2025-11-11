@@ -45,11 +45,11 @@ body {
 /* -------------------------
                                                                                 CABEÇALHO
    ------------------------- */
-  .cabecalho {
+.cabecalho {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; 
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,42 +67,55 @@ body {
 .cabecalho-menu {
   display: flex;
   gap: 2rem;
+  transition: all 0.4s ease;
 }
 
 .cabecalho-menu a {
   text-decoration: none;
   font-size: 2rem;
   color: var(--verde);
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
   text-transform: uppercase;
   font-family: var(--fonte-principal);
 }
- .menu-hamburguer {
+
+.cabecalho-menu a:hover {
+  color: var(--branco);
+}
+
+/* Menu hambúrguer visível no mobile */
+.menu-hamburguer {
   display: none;
   font-size: 3rem;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  position: relative;  
   z-index: 2000;
-  color:var(--verde);
+  color: var(--verde);
 }
+
+
 @media (max-width: 768px) {
   .cabecalho-menu {
-    display: none;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    height: calc(100vh - 80px);
+    width: 70%;
+    background: rgba(0, 0, 0, 0.6);
     flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: var(--preto);
-    padding: 15px 20px;
-    width: 180px;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
   }
-  .cabecalho-menu.show {
-    display: flex;
+
+  .cabecalho-menu.ativo {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
   }
+
   .menu-hamburguer {
     display: block;
   }
@@ -187,6 +200,7 @@ PRÓXIMA EDIÇÃO
  /*---------------------------------
                                     LOCAL
 -----------------------------------*/
+
 .localizacao {
   padding: 50px 20px;
   text-align: center;
@@ -211,42 +225,50 @@ PRÓXIMA EDIÇÃO
 }
 
 .mapa-container {
-  margin: 40px auto;
+  position: relative;
+  width: 100%;
   max-width: 600px;
+  margin: 40px auto;
   border: 5px solid var(--verde);
-  overflow: hidden;
   box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.mapa-container::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; 
 }
 
 .mapa-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 400px;
+  height: 100%;
   border: none;
 }
 
+/* 🔹 RESPONSIVIDADE */
 @media (max-width: 1024px) {
   .localizacao h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .localizacao p {
     font-size: 1.3rem;
     padding: 0 2rem;
   }
-
-  .mapa-container iframe {
-    height: 350px;
-  }
 }
 
 @media (max-width: 768px) {
   .localizacao {
-    padding: 40px 10px;
+    padding: 40px 15px;
   }
 
   .localizacao h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .localizacao p {
@@ -255,11 +277,8 @@ PRÓXIMA EDIÇÃO
   }
 
   .mapa-container {
-    max-width: 90%;
-  }
-
-  .mapa-container iframe {
-    height: 300px;
+    max-width: 100%;
+    margin: 30px auto;
   }
 }
 
@@ -269,14 +288,12 @@ PRÓXIMA EDIÇÃO
   }
 
   .localizacao p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 0 1rem;
   }
-
-  .mapa-container iframe {
-    height: 250px;
-  }
 }
+
+
 
 /* -------------------------
                                   CONTADOR      
@@ -303,7 +320,7 @@ PRÓXIMA EDIÇÃO
         }
 
         .secao-contador h2 {
-            font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
             color: var(--verde);
             font-weight: 700;
             font-family: var(--fonte-principal);
@@ -311,23 +328,14 @@ PRÓXIMA EDIÇÃO
         }
 
         .secao-contador p {
-            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            font-size: clamp(1.2rem, 1.5vw, 2rem);
             color: var(--branco);
             font-family: var(--fonte-textos);
             margin-top: 0.5rem;
             line-height: 1.4;
         }
 
-        @media (max-width: 480px) {
-            .secao-contador {
-                flex-direction: column;
-            }
-
-            .secao-contador .item {
-                max-width: 100%;
-            }
-        }
-
+  
 /*----------------------------
         Videos
 ---------------------------*/
@@ -347,13 +355,11 @@ PRÓXIMA EDIÇÃO
     margin: 20px;
   }
     
-
   .cartao-video:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(110, 121, 122, 0.3);
   }
 
-  
   .miniatura-video {
     position: relative;
     width: 100%;
@@ -368,6 +374,156 @@ PRÓXIMA EDIÇÃO
     height: 100%;
     border: 1px solid var(--verde);
   }
+
+/* -------------------------
+                REALIZAÇÃO E APOIO                           
+   ------------------------- */
+
+.secao-realizacao-apoio {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.realizacao,
+.apoio {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.realizacao h3,
+.apoio h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--verde);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.logos a:hover {
+  transform: scale(1.1);
+}
+
+.logos img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+}
+
+
+/*-------------------------------
+                        SOBRE
+------------------*/
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.sobre-texto p {
+  max-width: 1000px;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  margin: 0 auto 1.5rem auto;
+}
+
+
+.sobre-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.sobre-videos iframe {
+  max-width: 500px;
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+/*-------------------------------------
+                                PARTICIPE
+-----------------------------------*/
+.inscricoes-feira,
+.inscricoes-bandas {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  padding: 2rem 1rem;
+}
+
+.inscricoes-feira p,
+.inscricoes-bandas p {
+  max-width: 1000px;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  margin: 0 auto 1.5rem auto;
+}
+.inscricoes-bandas h3,
+.inscricoes-feira h3 {
+  font-family: var(--fonte-principal);
+  color: var(--verde);
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2rem auto 1rem auto;
+}
+
+.botao-inscricao {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--verde);
+  text-decoration: none;
+  border: 2px solid var(--verde);
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.botao-inscricao:hover {
+  background-color: var(--verde);
+  color: var(--branco);
+}
 
 /* -------------------------
    LOJA
@@ -428,290 +584,7 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   transition: color 0.2s ease;
 }
 
-@media (max-width: 1024px) {
-  .cards {
-    gap: 20px;
-  }
-  .card {
-    width: 220px;
-  }
-  .card img {
-    height: 220px;
-  }
-}
 
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    width: 90%; 
-  }
-  .card img {
-    height: 200px;
-  }
-  .card h3 {
-    font-size: 1.3rem;
-  }
-  .card p {
-    font-size: 1rem;
-  }
-}
-/* -------------------------
-                REALIZAÇÃO E APOIO                           
-   ------------------------- */
-
-.secao-realizacao-apoio {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.realizacao,
-.apoio {
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.realizacao h3,
-.apoio h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--verde);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.logos a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1px;
-  overflow: hidden;
-  padding: 0.5rem;
-}
-
-.logos a:hover {
-  transform: scale(1.1);
-}
-
-.logos img {
-  height: 70px;
-  width: 70px;
-  object-fit: contain;
-}
-
-@media (max-width: 1024px) {
-  .realizacao-apoio {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .logos img {
-    height: 60px;
-    width: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .realizacao-apoio {
-    padding: 1rem 0.5rem;
-    gap: 1.5rem;
-  }
-
-  .realizacao,
-  .apoio {
-    flex: 1 1 100%;
-  }
-
-  .logos {
-    gap: 0.8rem;
-  }
-
-  .logos img {
-    height: 50px;
-    width: 50px;
-  }
-
-  .realizacao h3,
-  .apoio h3 {
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
-  }
-}
-
-/*-------------------------------
-                        SOBRE
-------------------*/
-
-.sobre-texto {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  text-align: center; 
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-}
-
-.sobre-texto p {
-  max-width: 1000px;
-  line-height: 1.6;
-  text-align: justify;
-  font-size: 1.5rem;
-  padding: 0 3rem;
-  margin: 0 auto 1.5rem auto;
-}
-
-
-.sobre-videos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 30px;
-  box-sizing: border-box;
-}
-
-.sobre-videos iframe {
-  max-width: 500px;
-  width: 100%;
-  height: 300px;
-  border: none;
-  border-radius: 10px;
-}
-
-@media (max-width: 1024px) {
-  .sobre-texto p {
-    font-size: 1.3rem;
-    padding: 0 2rem;
-  }
-
-  .sobre-videos iframe {
-    max-width: 400px;
-    height: 250px;
-  }
-}
-
-@media (max-width: 768px) {
-  .sobre-texto p {
-    font-size: 1.2rem;
-    padding: 0 1.5rem;
-    text-align: left; 
-  }
-
-  .sobre-videos {
-    flex-direction: column; 
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .sobre-videos iframe {
-    width: 90%;
-    height: 220px;
-  }
-}
-
-@media (max-width: 480px) {
-  .sobre-texto p {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-
-  .sobre-videos iframe {
-    width: 100%;
-    height: 200px;
-  }
-}
-
-/*-------------------------------------
-                                PARTICIPE
------------------------------------*/
-.inscricoes-feira,
-.inscricoes-bandas {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  text-align: center; 
-  padding: 2rem 1rem;
-}
-
-.inscricoes-feira p,
-.inscricoes-bandas p {
-  max-width: 1000px;
-  line-height: 1.6;
-  text-align: justify;
-  font-size: 1.5rem;
-  padding: 0 3rem;
-  margin: 0 auto 1.5rem auto;
-}
-.inscricoes-bandas h3,
-.inscricoes-feira h3 {
-  font-family: var(--fonte-principal);
-  color: var(--verde);
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 2rem auto 1rem auto;
-}
-
-.botao-inscricao {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: var(--verde);
-  text-decoration: none;
-  border: 2px solid var(--verde);
-  cursor: pointer;
-  text-transform: uppercase;
-  text-align: center;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.botao-inscricao:hover {
-  background-color: var(--verde);
-  color: var(--branco);
-}
-
-@media (max-width: 768px) {
-  .inscricoes-feira p,
-  .inscricoes-bandas p {
-    font-size: 1.2rem;
-    padding: 0 1.5rem;
-  }
-
-  .inscricoes-bandas h3,
-  .inscricoes-feira h3 {
-    font-size: 1.6rem;
-  }
-}
 /* -------------------------
                                                                                     RODAPÉ
    ------------------------- */
@@ -769,40 +642,4 @@ footer {
 .desenvolvedora-credito a {
   text-decoration: none;
   color: var(--preto);
-}
-
-@media (max-width: 768px) {
-  footer {
-    padding: 1rem;
-  }
-
-  .rodape-conteudo {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .copyright,
-  .desenvolvedora-credito {
-    font-size: 1rem;
-  }
-
-  .social-links a img {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  footer {
-    padding: 0.75rem;
-  }
-
-  .social-links {
-    gap: 0.5rem;
-  }
-
-  .copyright,
-  .desenvolvedora-credito {
-    font-size: 0.9rem;
-  }
 }
