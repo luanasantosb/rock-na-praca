@@ -42,7 +42,6 @@ body {
   color: var(--branco);
 }
 
-
 /* -------------------------
                                                                                 CABEÇALHO
    ------------------------- */
@@ -283,55 +282,56 @@ PRÓXIMA EDIÇÃO
                                   CONTADOR      
    ------------------------- */
 
-.dados {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: clamp(1rem, 5vw, 3rem) clamp(0.5rem, 5vw, 2rem);
-  border-top: 0.25rem solid var(--verde);
-  border-bottom: 0.25rem solid var(--verde);
-  flex-wrap: wrap;
-  gap: clamp(1rem, 4vw, 2rem);
-  box-sizing: border-box;
-}
+  .secao-contador {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: clamp(1rem, 5vw, 3rem) clamp(0.5rem, 5vw, 2rem);
+            border-top: 0.25rem solid var(--verde);
+            border-bottom: 0.25rem solid var(--verde);
+            flex-wrap: wrap;
+            gap: clamp(1rem, 4vw, 2rem);
+            box-sizing: border-box;
+            background-color: var(--preto);
+        }
 
-.dados .item {
-  flex: 1 1 clamp(12rem, 20%, 18rem);
-  max-width: clamp(12rem, 20%, 18rem);
-  margin: 0 auto;
-}
+        .secao-contador .info {
+            flex: 1 1 clamp(12rem, 20%, 18rem);
+            max-width: clamp(12rem, 20%, 18rem);
+            margin: 0 auto;
+        }
 
-.dados h2 {
-  font-size: clamp(1.2rem, 2.5vw, 2.5rem); 
-  color: var(--verde);
-  font-weight: 700;
-  font-family: var(--fonte-principal);
-  margin-bottom: 0.5rem;
-}
+        .secao-contador h2 {
+            font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+            color: var(--verde);
+            font-weight: 700;
+            font-family: var(--fonte-principal);
+            margin-bottom: 0.5rem;
+        }
 
-.dados p {
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  color: var(--branco);
-  font-family: var(--fonte-textos);
-  margin-top: 0.5rem;
-  line-height: 1.4;
-}
+        .secao-contador p {
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            color: var(--branco);
+            font-family: var(--fonte-textos);
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
 
-@media (max-width: 480px) {
-  .dados {
-    flex-direction: column;
-  }
+        @media (max-width: 480px) {
+            .secao-contador {
+                flex-direction: column;
+            }
 
-  .dados .item {
-    max-width: 100%;
-  }
-}
+            .secao-contador .item {
+                max-width: 100%;
+            }
+        }
 
 /*----------------------------
         Videos
 ---------------------------*/
-.videos{
+.secao-videos{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -366,60 +366,60 @@ PRÓXIMA EDIÇÃO
     left: 0;
     width: 100%;
     height: 100%;
-    border: 1px solid #6ed47a;
+    border: 1px solid var(--verde);
   }
 
 /* -------------------------
    LOJA
 ------------------------- */
-.cards {
-  margin-top: 50px;
+.secao-cards-loja{
+  margin: 50px 0;
   display: flex;
   flex-wrap: wrap; 
   justify-content:space-evenly;
-  gap: 25px;
+  gap: 1rem;
   padding: 10px;
   box-sizing: border-box;
 }
 
-.card {
+.card-loja {
   border: 2px solid var(--verde);
   transition: all 0.3s ease;
   overflow: hidden;
   background-color: transparent;
-  width: 400px;
-  height: 500px; 
+  width: 300px;
+  height: 400px; 
   flex-shrink: 0;
 }
 
-.card img {
+.card-loja img {
   width: 100%;
-  height: 80%;
-  object-fit: cover;
+  height: 60%;
+  object-fit: scale-down;
   border-bottom: 2px solid var(--verde);
 }
 
-.card:hover {
+.card-loja:hover {
 transform: scale(1.05);
 box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
 }
 
-.card h3 {
+.card-loja h3 {
   font-family: var(--fonte-principal);
   color: var(--verde);
-  font-size: 1.5rem;
+  font-size: 1.8em;
   margin: 15px 0 0.5rem;
   text-align: center;
 }
 
-.card p {
+.card-loja p {
   font-size: 1.2rem;
   color: var(--branco);
   margin: 0 10px 1rem;
   text-align: center;
 }
 
-.card a {
+.card-loja a {
   display: block;
   text-align: center;
   margin-bottom: 1rem;
@@ -472,7 +472,7 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
                 REALIZAÇÃO E APOIO                           
    ------------------------- */
 
-.realizacao-apoio {
+.secao-realizacao-apoio {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
