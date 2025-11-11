@@ -1,22 +1,17 @@
 /* -------------------------
                                                                                 CABEÇALHO
    ------------------------- */
-  // Seleciona os elementos pelo ID
-  const btnMenu = document.getElementById('menu-hamburguer');
-  const menuNav = document.getElementById('menu');
+const menuBtn = document.getElementById('menu-hamburguer');
+const menu = document.getElementById('menu');
+let aberto = false;
 
-  // Alterna a classe "show" ao clicar no hambúrguer
-  btnMenu.addEventListener('click', () => {
-    menuNav.classList.toggle('show');
-  });
+menuBtn.addEventListener('click', () => {
+  menu.classList.toggle('ativo');
+  aberto = !aberto;
+  // Animação simples do ícone (☰ → ✕)
+  menuBtn.innerHTML = aberto ? '&times;' : '&#9776;';
+});
 
-  // Fecha o menu quando um link é clicado
-  const links = menuNav.querySelectorAll('a');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      menuNav.classList.remove('show');
-    });
-  });
 
 /* -------------------------
                                                                               CONTADOR
