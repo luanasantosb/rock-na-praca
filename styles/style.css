@@ -155,15 +155,18 @@ PRÓXIMA EDIÇÃO
   z-index: -1;
 }
 
+.secao-flyer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
 .flyer-proxima-edicao {
   position: relative;
-  display: inline-block;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
   max-width: 720px;
-  width: 80%;
+  overflow: hidden;
 }
 
 .flyer-proxima-edicao img {
@@ -173,28 +176,34 @@ PRÓXIMA EDIÇÃO
   border-radius: 10px;
 }
 
+
 .adiado-banner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: blur(10%);
-    color: var(--branco);
-    font-family: var(--fonte-textos);
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    padding: 15px 0;
-    background: rgba(000, 000, 000, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(13.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 720px;
-    height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  width: 95%;
+  height: 50%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
+@media (max-width: 600px) {
+  .adiado-banner {
+    font-size: 1rem;
+    padding: 15px;
+    width: 90%;
+  }
+}
 
 
  /*---------------------------------
