@@ -23,7 +23,7 @@
    ------------------------- */
 
 function animarContadores() {
-  const contadores = document.querySelectorAll('.contador');
+  const contadores = document.querySelectorAll('.numero');
   const velocidade = 100; // menor = mais rápido
 
   contadores.forEach(contador => {
