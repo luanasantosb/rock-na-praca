@@ -1,0 +1,808 @@
+/* -------------------------
+          ESTILO
+   ------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --amarelo: #eac06c;
+  --azul: #006bb5;
+  --verde: #6ed47a;
+  --rosa: #cb5d9f;
+  --branco: #fffef6;
+  --preto: #212121;
+  --fonte-principal: 'bebas Neue';
+  --fonte-textos: 'Open sans';
+}
+
+/* -------------------------
+            RESET
+   ------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--preto);
+  min-height: 100%;
+  width: 100%; 
+  overflow-x: hidden; 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--fonte-textos);
+  color: var(--branco);
+}
+
+
+/* -------------------------
+                                                                                CABEÇALHO
+   ------------------------- */
+  .cabecalho {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: transparent;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.cabecalho-simbolo-logotipo img {
+  width: 150px;
+  height: auto;
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.cabecalho-menu a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--verde);
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  font-family: var(--fonte-principal);
+}
+ .menu-hamburguer {
+  display: none;
+  font-size: 3rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  position: relative;  
+  z-index: 2000;
+  color:var(--verde);
+}
+@media (max-width: 768px) {
+  .cabecalho-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: var(--preto);
+    padding: 15px 20px;
+    width: 180px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  }
+  .cabecalho-menu.show {
+    display: flex;
+  }
+  .menu-hamburguer {
+    display: block;
+  }
+}
+
+/*-----------------------------------
+PRÓXIMA EDIÇÃO
+-------------------------------------*/
+.secao-flyer {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow: hidden;
+
+}
+
+.secao-flyer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./../assets/240x320.webp");
+  background-repeat: repeat; 
+  background-position: center;
+  background-size: auto; 
+  filter: grayscale(100%);
+  z-index: -2;
+}
+
+.secao-flyer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: -1;
+}
+
+.flyer-proxima-edicao {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 720px;
+  width: 80%;
+}
+
+.flyer-proxima-edicao img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.adiado-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(10%);
+    color: var(--branco);
+    font-family: var(--fonte-textos);
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(000, 000, 000, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 720px;
+    height: 300px;
+}
+
+
+
+ /*---------------------------------
+                                    LOCAL
+-----------------------------------*/
+.localizacao {
+  padding: 50px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.localizacao h3 {
+  font-family: var(--fonte-principal);
+  color: var(--verde);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 0 auto 20px auto;
+}
+
+.localizacao p {
+  margin: 10px auto;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  max-width: 900px;
+}
+
+.mapa-container {
+  margin: 40px auto;
+  max-width: 600px;
+  border: 5px solid var(--verde);
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
+  border-radius: 10px;
+}
+
+.mapa-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .localizacao h3 {
+    font-size: 2rem;
+  }
+
+  .localizacao p {
+    font-size: 1.3rem;
+    padding: 0 2rem;
+  }
+
+  .mapa-container iframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .localizacao {
+    padding: 40px 10px;
+  }
+
+  .localizacao h3 {
+    font-size: 1.8rem;
+  }
+
+  .localizacao p {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+  }
+
+  .mapa-container {
+    max-width: 90%;
+  }
+
+  .mapa-container iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .localizacao h3 {
+    font-size: 1.6rem;
+  }
+
+  .localizacao p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .mapa-container iframe {
+    height: 250px;
+  }
+}
+
+/* -------------------------
+                                  CONTADOR      
+   ------------------------- */
+
+.dados {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(1rem, 5vw, 3rem) clamp(0.5rem, 5vw, 2rem);
+  border-top: 0.25rem solid var(--verde);
+  border-bottom: 0.25rem solid var(--verde);
+  flex-wrap: wrap;
+  gap: clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
+}
+
+.dados .item {
+  flex: 1 1 clamp(12rem, 20%, 18rem);
+  max-width: clamp(12rem, 20%, 18rem);
+  margin: 0 auto;
+}
+
+.dados h2 {
+  font-size: clamp(1.2rem, 2.5vw, 2.5rem); 
+  color: var(--verde);
+  font-weight: 700;
+  font-family: var(--fonte-principal);
+  margin-bottom: 0.5rem;
+}
+
+.dados p {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .dados {
+    flex-direction: column;
+  }
+
+  .dados .item {
+    max-width: 100%;
+  }
+}
+
+/*----------------------------
+        Videos
+---------------------------*/
+.videos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 70px;
+
+  }
+  .cartao-video {
+    width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(110,212,122, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
+  }
+    
+
+  .cartao-video:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(110, 121, 122, 0.3);
+  }
+
+  
+  .miniatura-video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; 
+  }
+
+  .miniatura-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #6ed47a;
+  }
+
+/* -------------------------
+   LOJA
+------------------------- */
+.cards {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content:space-evenly;
+  gap: 25px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card {
+  border: 2px solid var(--verde);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-color: transparent;
+  width: 400px;
+  height: 500px; 
+  flex-shrink: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-bottom: 2px solid var(--verde);
+}
+
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+}
+
+.card h3 {
+  font-family: var(--fonte-principal);
+  color: var(--verde);
+  font-size: 1.5rem;
+  margin: 15px 0 0.5rem;
+  text-align: center;
+}
+
+.card p {
+  font-size: 1.2rem;
+  color: var(--branco);
+  margin: 0 10px 1rem;
+  text-align: center;
+}
+
+.card a {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--verde);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    gap: 20px;
+  }
+  .card {
+    width: 220px;
+  }
+  .card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%; 
+  }
+  .card img {
+    height: 200px;
+  }
+  .card h3 {
+    font-size: 1.3rem;
+  }
+  .card p {
+    font-size: 1rem;
+  }
+}
+/* -------------------------
+                REALIZAÇÃO E APOIO                           
+   ------------------------- */
+
+.realizacao-apoio {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.realizacao,
+.apoio {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.realizacao h3,
+.apoio h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--verde);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.logos a:hover {
+  transform: scale(1.1);
+}
+
+.logos img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .realizacao-apoio {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .logos img {
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .realizacao-apoio {
+    padding: 1rem 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .realizacao,
+  .apoio {
+    flex: 1 1 100%;
+  }
+
+  .logos {
+    gap: 0.8rem;
+  }
+
+  .logos img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .realizacao h3,
+  .apoio h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+/*-------------------------------
+                        SOBRE
+------------------*/
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.sobre-texto p {
+  max-width: 1000px;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  margin: 0 auto 1.5rem auto;
+}
+
+
+.sobre-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.sobre-videos iframe {
+  max-width: 500px;
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .sobre-texto p {
+    font-size: 1.3rem;
+    padding: 0 2rem;
+  }
+
+  .sobre-videos iframe {
+    max-width: 400px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-texto p {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+    text-align: left; 
+  }
+
+  .sobre-videos {
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .sobre-videos iframe {
+    width: 90%;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-texto p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .sobre-videos iframe {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/*-------------------------------------
+                                PARTICIPE
+-----------------------------------*/
+.inscricoes-feira,
+.inscricoes-bandas {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  padding: 2rem 1rem;
+}
+
+.inscricoes-feira p,
+.inscricoes-bandas p {
+  max-width: 1000px;
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  margin: 0 auto 1.5rem auto;
+}
+.inscricoes-bandas h3,
+.inscricoes-feira h3 {
+  font-family: var(--fonte-principal);
+  color: var(--verde);
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2rem auto 1rem auto;
+}
+
+.botao-inscricao {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--verde);
+  text-decoration: none;
+  border: 2px solid var(--verde);
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.botao-inscricao:hover {
+  background-color: var(--verde);
+  color: var(--branco);
+}
+
+@media (max-width: 768px) {
+  .inscricoes-feira p,
+  .inscricoes-bandas p {
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+  }
+
+  .inscricoes-bandas h3,
+  .inscricoes-feira h3 {
+    font-size: 1.6rem;
+  }
+}
+/* -------------------------
+                                                                                    RODAPÉ
+   ------------------------- */
+footer {
+  margin-top: auto; 
+  background-color: var(--verde);
+  color: var(--preto);
+  font-family: var(--fonte-textos);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.rodape-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.social-links a img {
+  width: 1.875rem;
+  height: 1.875rem;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+}
+
+.copyright,
+.desenvolvedora-credito {
+  font-size: 1.25rem;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.desenvolvedora-credito a {
+  text-decoration: none;
+  color: var(--preto);
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 1rem;
+  }
+
+  .rodape-conteudo {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .copyright,
+  .desenvolvedora-credito {
+    font-size: 1rem;
+  }
+
+  .social-links a img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 0.75rem;
+  }
+
+  .social-links {
+    gap: 0.5rem;
+  }
+
+  .copyright,
+  .desenvolvedora-credito {
+    font-size: 0.9rem;
+  }
+}
