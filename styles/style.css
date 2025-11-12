@@ -81,7 +81,6 @@ body {
   color: var(--branco);
 }
 
-/* Menu hambúrguer visível no mobile */
 .menu-hamburguer {
   display: none;
   font-size: 3rem;
@@ -122,15 +121,15 @@ body {
 /*-----------------------------------
 PRÓXIMA EDIÇÃO
 -------------------------------------*/
+
 .secao-flyer {
   position: relative;
   z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 40px 20px;
   overflow: hidden;
-
 }
 
 .secao-flyer::before {
@@ -138,9 +137,9 @@ PRÓXIMA EDIÇÃO
   position: absolute;
   inset: 0;
   background-image: url("./../assets/240x320.webp");
-  background-repeat: repeat; 
+  background-repeat: repeat;
   background-position: center;
-  background-size: auto; 
+  background-size: auto;
   filter: grayscale(100%);
   z-index: -2;
 }
@@ -149,31 +148,26 @@ PRÓXIMA EDIÇÃO
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); 
+  background: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
 
-.secao-flyer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
-
+/* mantém a proporção do flyer */
 .flyer-proxima-edicao {
   position: relative;
   width: 100%;
   max-width: 720px;
+  aspect-ratio: 521 / 694;
   overflow: hidden;
 }
 
 .flyer-proxima-edicao img {
-  width: 80%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
-
 
 .adiado-banner {
   position: absolute;
@@ -193,7 +187,16 @@ PRÓXIMA EDIÇÃO
   height: 50%;
   max-width: 600px;
   box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
+
+.adiado-banner.ativo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 @media (max-width: 600px) {
   .adiado-banner {
