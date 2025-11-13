@@ -175,7 +175,7 @@ function enviarWhatsApp() {
 
   const total = carrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
   mensagem += `\n *Total:* R$${total.toFixed(2)}\n\n`;
-  mensagem += " Enviado via loja Rock na Praça";
+  //mensagem += " Enviado via loja Rock na Praça";
 
   const numeroWhatsApp = "555196506622";
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
