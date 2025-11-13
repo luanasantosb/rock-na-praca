@@ -93,79 +93,70 @@
       <div class="card-loja">
         <img src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
         <span></span>
-        <div class="infos">
+        <div class="card-infos">
           <h3>Camiseta modelo #1</h3>
           <p>R$70,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20uma%20camiseta%20modelo%201" target="_blank" class="botao-padrao">Comprar</a>
+          <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 1', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <!-- COPO -->
       <div class="card-loja">
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Copo do Rock na Praça">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Copo</h3>
           <p>R$5,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20um%20copo" target="_blank"
-            class=botao-padrao>COMPRAR</a>
+          <button class="botao-adicionar"onclick="adicionar('Copo', 5.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <!-- ECOBAG -->
       <div class="card-loja">
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Ecobag do Rock na Praça">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Ecobag</h3>
           <p>R$10,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20uma%20ecobag" target="_blank"
-            class=botao-padrao>COMPRAR
-          </a>
+          <button class="botao-adicionar"onclick="adicionar('Ecobag', 10.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <!-- CARTEIRA -->
       <div class="card-loja">
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Carteira do Rock na Praça">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Carteira</h3>
           <p>R$20,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20uma%20carteira" target="_blank"
-            class=botao-padrao>COMPRAR</a>
+          <button class="botao-adicionar"onclick="adicionar('Carteira', 20.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <!-- BOTTON -->
       <div class="card-loja">
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Botton do Rock na Praça">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Botton</h3>
           <p>R$5,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20um%20botton" target="_blank"
-            class=botao-padrao>COMPRAR</a>
+          <button class="botao-adicionar" onclick="adicionar('Botton', 5.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <!-- TÊNIS -->
       <div class="card-loja">
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Tênis do Rock na Praça">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Tênis</h3>
           <p>R$70,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20um%20tênis" target="_blank"
-            class=botao-padrao>COMPRAR
-          </a>
+          <button class="botao-adicionar"onclick="adicionar('Tênis', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
       <!-- MOCHILA -->
       <div class="card-loja">
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Mochila do Rock na Praça">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Mochila</h3>
           <p>R$100,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20uma%20mochila" target="_blank"
-            class=botao-padrao>COMPRAR
-          </a>
+          <button class="botao-adicionar" onclick="adicionar('Mochila', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
 
@@ -173,13 +164,35 @@
       <div class="card-loja">
         <span></span>
         <img src="./assets/camiseta-Rock-Na-Praca-modelo-2.webp" alt="Camiseta modelo 2">
-        <div class="infos">
+        <div class="card-infos">
           <h3>Camiseta modelo #2</h3>
           <p>R$70,00</p>
-          <a href="https://wa.me/5551996506622?text=Eu%20quero%20comprar%20uma%20camiseta%20modelo%202" target="_blank" class=botao-padrao>COMPRAR
-          </a>
+          <button class="botao-adicionar"onclick="adicionar('Camiseta modelo 2', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
+
+    <section class="carrinho">
+      <h3 class="titulo-carrinho">Meu Carrinho</h3>
+    <div id="carrinho">
+    <ul id="itens"></ul>
+    <p><strong>Itens:</strong> <span id="quantidadeTotal">0</span></p>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    
+      <button class="botao-loja"onclick="enviarWhatsApp()"> <h3>Finalizar Pedido</h3></button>
+
+    <button class="botao-loja"onclick="limparCarrinho()">Esvaziar carrinho</button>
+    <div id="finalizar">
+
+  
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>mostrarCarrinho();</script>
+
+  </section>
+
+
 </main>
  <!--RODAPÉ-->
 <footer>
@@ -195,6 +208,7 @@
         </div>
         <div class="desenvolvedora-credito">Desenvolvido por <a href="https://www.linkedin.com/in/luanasantosb/" target="_blank">Luana Santos</a></div>
     </div>
+    <script>mostrarCarrinho();</script>
     <script src="script.js"></script>
 </footer>
 </body>
