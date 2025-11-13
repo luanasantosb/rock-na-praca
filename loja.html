@@ -88,7 +88,22 @@
       <a href="loja.html" class="active">Loja</a>
     </nav>
   </header>
-  <main class="secao-cards-loja">
+  <main>
+     <section class="carrinho">
+      <h3 class="titulo-carrinho">Meu Carrinho</h3>
+    <div id="carrinho">
+    <ul id="itens"></ul>
+    <p><strong>Itens:</strong> <span id="quantidadeTotal">0</span></p>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    
+      <button class="botao-finalizar"onclick="enviarWhatsApp()"> <h3>Finalizar Pedido</h3></button>
+
+    <button class="botao-esvaziar"onclick="limparCarrinho()">Esvaziar carrinho</button>
+    <div id="finalizar">
+    </div>
+  </div>
+  </section>
+    <section class="secao-cards-loja">
       <!-- CAMISETA 1 -->
       <div class="card-loja">
         <img src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
@@ -155,7 +170,7 @@
         <img src="./assets/Rock-na-praca-simbolo.webp" alt="Mochila do Rock na Praça">
         <div class="card-infos">
           <h3>Mochila</h3>
-          <p>R$100,00</p>
+          <p>R$70,00</p>
           <button class="botao-adicionar" onclick="adicionar('Mochila', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
@@ -170,29 +185,7 @@
           <button class="botao-adicionar"onclick="adicionar('Camiseta modelo 2', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
-
-    <section class="carrinho">
-      <h3 class="titulo-carrinho">Meu Carrinho</h3>
-    <div id="carrinho">
-    <ul id="itens"></ul>
-    <p><strong>Itens:</strong> <span id="quantidadeTotal">0</span></p>
-    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
-    
-      <button class="botao-finalizar"onclick="enviarWhatsApp()"> <h3>Finalizar Pedido</h3></button>
-
-    <button class="botao-esvaziar"onclick="limparCarrinho()">Esvaziar carrinho</button>
-    <div id="finalizar">
-
-  
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script>mostrarCarrinho();</script>
-
-  </section>
-
-
+      </section>
 </main>
  <!--RODAPÉ-->
 <footer>
