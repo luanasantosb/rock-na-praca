@@ -549,6 +549,8 @@ PRÓXIMA EDIÇÃO
 }
 
 .card-loja {
+  display:flex;
+  flex-direction: column;
   width: 300px;
   height: 350px;
   position: relative;
@@ -599,7 +601,6 @@ PRÓXIMA EDIÇÃO
   z-index: -1;
 }
 
-
 .card-loja img {
   width: 100%;
   height: 60%;
@@ -610,6 +611,10 @@ PRÓXIMA EDIÇÃO
 .card-loja:hover {
 transform: scale(1.05);
 box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+}
+.card-infos{
+  display:flex;
+  flex-direction: column;
 }
 
 .card-loja h3 {
@@ -636,7 +641,48 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   transition: color 0.2s ease;
 }
 
+.botao-adicionar{
+  border:1px solid var(--verde);
+  font-size: 1rem;
 
+}
+
+.carrinho {
+  background: transparent;
+  width: 80%;
+  margin: 20px auto;
+  border :2px solid var(--verde);
+  padding: 20px;
+}
+.botoes{
+  display:flex;
+  gap:30px;
+  margin: 10px;
+}
+button{
+  background-color: transparent;
+  color: var(--branco);
+  padding: 10px;
+}
+.botao-loja{
+  background-color: transparent;
+  color:var(--branco);
+  border:1px solid var(--verde);
+}
+.titulo-carrinho{
+  color:var(--verde);
+  font-family: var(--fonte-principal);
+  font-size: 1.5rem;
+}
+.carrinho{
+  text-align: center;
+}
+#itens{
+  list-style: none;
+}
+.botao-loja{
+  margin-top: 20px;
+}
 /* -------------------------
                                                                                     RODAPÉ
    ------------------------- */
