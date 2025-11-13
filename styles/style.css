@@ -260,7 +260,7 @@ PRÓXIMA EDIÇÃO
   border: none;
 }
 
-/* 🔹 RESPONSIVIDADE */
+
 @media (max-width: 1024px) {
   .localizacao h3 {
     font-size: 2.2rem;
@@ -584,7 +584,7 @@ PRÓXIMA EDIÇÃO
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--branco);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -642,8 +642,10 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
 }
 
 .botao-adicionar{
-  border:1px solid var(--verde);
   font-size: 1rem;
+  background-color: var(--rosa);
+  text-transform: uppercase;
+  border-top: 1px solid var(--rosa);
 
 }
 
@@ -651,7 +653,6 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   background: transparent;
   width: 80%;
   margin: 20px auto;
-  border :2px solid var(--verde);
   padding: 20px;
 }
 .botoes{
@@ -670,19 +671,33 @@ button{
   border:1px solid var(--verde);
 }
 .titulo-carrinho{
-  color:var(--verde);
+  color:var(--rosa);
   font-family: var(--fonte-principal);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .carrinho{
   text-align: center;
+  font-size: 1.5rem;
 }
 #itens{
   list-style: none;
 }
-.botao-loja{
+.botao-finalizar{
   margin-top: 20px;
+  text-transform: uppercase;
+  background-color: var(--rosa);
+  border:1px solid var(rosa);
 }
+
+.botao-esvaziar{
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: transparent;
+font-weight: bold;
+transition: 0.3s;
+}
+
+
 /* -------------------------
                                                                                     RODAPÉ
    ------------------------- */
