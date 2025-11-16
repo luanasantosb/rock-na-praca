@@ -1,5 +1,4 @@
-/* -------------------------
-                                                                                CABEÇALHO
+/* ------------------------                                                                     CABEÇALHO
    ------------------------- */
 const menuBtn = document.getElementById('menu-hamburguer');
 const menu = document.getElementById('menu');
@@ -12,6 +11,18 @@ menuBtn.addEventListener('click', () => {
   menuBtn.innerHTML = aberto ? '&times;' : '&#9776;';
 });
 
+/*===============================
+                    BANNER
+===========================*/
+
+const exibirBanner = false; 
+const banner = document.getElementById("banner");
+
+    if (exibirBanner) {
+        banner.style.display = "block";
+    } else {
+        banner.style.display = "none";
+    }
 
 /* -------------------------
                                                                               CONTADOR
@@ -19,7 +30,7 @@ menuBtn.addEventListener('click', () => {
 
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
-  const velocidade = 100; // menor = mais rápido
+  const velocidade = 100; 
 
   contadores.forEach(contador => {
     const valorFinal = +contador.getAttribute('data-numero');

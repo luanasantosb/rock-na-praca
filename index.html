@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-
 <head>
- 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#212121" />
-  <meta name="msapplication-navbutton-color" content="#212121" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- ===== META BÁSICO ===== -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Rock na Praça | Evento de rua em Esteio/RS</title>
-  <meta name="description" content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
-  <meta name="keywords" content="rock na praça, evento rock na praça esteio, festival de rock independente, rock autoral, cultura underground, bandas independentes, evento gratuito esteio, rock, festival alternativo, economia solidária, praça coração de maria, cena underground gaúcha, evento cultural gratuito, arte independente" />
-  <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+<title>Rock na Praça | Evento de rua em Esteio/RS</title>
+<meta name="description" content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!"/>
+<link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/"/>
 
+<!-- ===== METAS VISUAIS ===== -->
+<meta name="theme-color" content="#212121"/>
+<meta name="msapplication-navbutton-color" content="#212121"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-  <meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
-  <meta property="og:description" content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
-  <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
-  <meta property="og:locale" content="pt_BR" />
+<!-- ===== OPEN GRAPH (SEO SOCIAL) ===== -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS"/>
+<meta property="og:description" content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!"/>
+<meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/"/>
+<meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp"/>
 
-  
-  <link rel="icon" href="./assets/Rock-na-praca-simbolo.webp" type="image/webp" />
-  <link rel="apple-touch-icon" href="./assets/Rock-na-praca-simbolo.webp" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-title" content="Rock na Praça" />
+<!-- ===== ICONES / PWA ===== -->
+<link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp"/>
+<link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="Rock na Praça"/>
 
-  <link rel="dns-prefetch" href="https://www.googleapis.com" />
-  <link rel="preconnect" href="https://www.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://www.google.com" />
-  <link rel="preconnect" href="https://www.youtube.com" />
-  <link rel="preconnect" href="https://static.doubleclick.net" />
+<!-- ===== PRECONNECT ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 
-  <link rel="preload" as="image" href="./assets/Flyer-Rock-na-praca-Novembro-2025_720x960.webp" fetchpriority="high" />
+<!-- ===== DNS PREFETCH ===== -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
 
+<!-- ===== PRELOADS CRÍTICOS ===== -->
+<link rel="preload" as="style" href="/styles/style.css" fetchpriority="high"/>
+<link rel="preload" as="image" href="/assets/Flyer-Rock-na-praca-Novembro-2025_720x960.webp" fetchpriority="high"/>
+<link rel="preload" as="image" href="/assets/240x320.webp" fetchpriority="low"/>
 
-  <link rel="preload" as="image" href="./assets/240x320.webp" fetchpriority="low" />
+<!-- ===== CSS ASSÍNCRONO ===== -->
+<link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="/styles/style.css"/></noscript>
 
+<!-- ===== JS ===== -->
+<script src="/script.js" defer></script>
 
-  <link rel="preload" href="/styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="/styles/style.css" /></noscript>
-
-  <script src="/script.js" defer></script>
-
-  <script type="application/ld+json" id="json-ld-event">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Rock na Praça",
-    "startDate": "2025-11-23T15:00-03:00",
-    "endDate": "2025-11-23T22:00-03:00",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "location": {
-      "@type": "Place",
-      "name": "Praça Coração de Maria",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Padre Felipe",
-        "addressLocality": "Esteio",
-        "postalCode": "93280-020",
-        "addressRegion": "RS",
-        "addressCountry": "BR"
-      }
-    },
-    "image": [
-      "https://www.jornalnopalco.com.br/wp-content/uploads/2017/02/rock-na-pr%C3%A7a.jpg"
-    ],
-    "description": "Viva a cena underground no Rock na Praça Esteio! Evento gratuito com bandas independentes, muito rock, cultura e atitude em um espaço aberto para todos os públicos.",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.instagram.com/rocknapraca_/",
-      "price": 0,
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock",
-      "validFrom": "2025-10-23T00:00-03:00"
-    },
-    "performer": {
-      "@type": "MusicGroup",
-      "name": "Vários artistas"
-    },
-    "organizer": {
-      "@type": "Organization",
-      "name": "Balaiada Combo Cultural",
-      "url": "https://www.instagram.com/balaiada/"
+<!-- ===== JSON-LD ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Rock na Praça",
+  "startDate": "2025-11-23T15:00-03:00",
+  "endDate": "2025-11-23T22:00-03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Praça Coração de Maria",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Padre Felipe",
+      "addressLocality": "Esteio",
+      "postalCode": "93280-020",
+      "addressRegion": "RS",
+      "addressCountry": "BR"
     }
+  },
+  "image": ["https://www.jornalnopalco.com.br/wp-content/uploads/2017/02/rock-na-pr%C3%A7a.jpg"],
+  "description": "Viva a cena underground no Rock na Praça Esteio! Evento gratuito com bandas independentes, muito rock, cultura e atitude em um espaço aberto para todos os públicos.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.instagram.com/rocknapraca_/",
+    "price": 0,
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2025-10-23T00:00-03:00"
+  },
+  "performer": {
+    "@type": "MusicGroup",
+    "name": "Vários artistas"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Balaiada Combo Cultural",
+    "url": "https://www.instagram.com/balaiada/"
   }
-  </script>
+}
+</script>
+
 </head>
+
 
 <body>
   <!--CABEÇALHO-->
@@ -124,21 +126,16 @@
       importance="high"
     />
 
-    <!-- 🔽 Mantenha este bloco SEMPRE no HTML -->
-    <!-- Adicione ou remova a classe "ativo" conforme o evento
-    <div class="banner-popup">
+    <div class="banner-popup" id="banner">
       <strong><h2>Atenção, galera do rock!</h2></strong><br />
         <p>🌧️ São Pedro desafinou dessa vez!<br />
         🎸 Por causa da chuva, o <strong>Rock na Praça</strong> vai ter que esperar um pouquinho…<br />
         ⚡ Mas relaxa: o show vai rolar — e vai ser ainda mais épico! 🤘🔥<br />
         📅 Fique ligado nas nossas redes pra nova data! 🎶
       </p>
-    </div>-->
+    </div>
 
 </section>
-
-
-
 
     <!--Local-->
     <section class="localizacao">
