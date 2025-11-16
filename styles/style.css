@@ -169,6 +169,7 @@ PRÓXIMA EDIÇÃO
 }
 
 .banner-popup {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -191,10 +192,6 @@ PRÓXIMA EDIÇÃO
   font-size: 1.2rem;
   margin: 6px 0;
 }
-.banner-popup ativo{
-  opacity: 1;
-  pointer-events: auto;
-}
 
 @media (max-width: 600px) {
   .banner-popup {
@@ -204,13 +201,7 @@ PRÓXIMA EDIÇÃO
   }
 }
  
-
-
-
-
- /*---------------------------------
-                                    LOCAL
------------------------------------*/
+ /*-----------------  LOCAL -------------------------------------------------------*/
 
 .localizacao {
   padding: 50px 20px;
