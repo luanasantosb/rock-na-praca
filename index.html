@@ -9,11 +9,6 @@
 <meta name="description" content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!"/>
 <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/"/>
 
-<!-- ===== METAS VISUAIS ===== -->
-<meta name="theme-color" content="#212121"/>
-<meta name="msapplication-navbutton-color" content="#212121"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-
 <!-- ===== OPEN GRAPH (SEO SOCIAL) ===== -->
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="pt_BR"/>
@@ -24,31 +19,9 @@
 
 <!-- ===== ICONES / PWA ===== -->
 <link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp"/>
-<link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-title" content="Rock na Praça"/>
 
-<!-- ===== PRECONNECT ===== -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-
-<!-- ===== DNS PREFETCH ===== -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
-<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
-
-<!-- ===== PRELOADS CRÍTICOS ===== -->
-<link rel="preload" as="style" href="/styles/style.css" fetchpriority="high"/>
-<link rel="preload" as="image" href="/assets/Flyer-Rock-na-praca-Novembro-2025_720x960.webp" fetchpriority="high"/>
-<link rel="preload" as="image" href="/assets/240x320.webp" fetchpriority="low"/>
-
-<!-- ===== CSS ASSÍNCRONO ===== -->
-<link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'"/>
-<noscript><link rel="stylesheet" href="/styles/style.css"/></noscript>
-
-<!-- ===== JS ===== -->
-<script src="/script.js" defer></script>
-
+<!--=========== CSS ==========-->
+<link rel="stylesheet" href="styles/style.css">
 <!-- ===== JSON-LD ===== -->
 <script type="application/ld+json">
 {
@@ -113,35 +86,43 @@
   </header>
 
   <main>
+<!--Carossel-->
+<section class="secao-flyer">
+  <div class="carrossel-container">
+    <div class="carrossel-wrapper" id="carrossel">
 
-    <section class="secao-flyer">
-  <div class="flyer-proxima-edicao">
-    <img
-      src="./assets/Flyer-Rock-na-praca-Novembro-2025_720x960.webp"
-      alt="Flyer do Rock na Praça em Esteio"
-      width="521"
-      height="694"
-      fetchpriority="high"
-      decoding="async"
-      importance="high"
-    />
+      <div class="slide">
+        <img src="./assets/640x853.webp" alt="Flyer 1" />
+        <div class="banner-popup" id="banner">
+          <h2>Atenção, galera do rock!</h2>
+          <p>🌧️ São Pedro desafinou dessa vez!<br />
+            🎸 Chuva adiou o <strong>Rock na Praça</strong>…<br />
+            ⚡ Mas o show vai rolar! 🤘🔥<br />
+            📅 Nova data em breve!
+          </p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="Flyer 2" />
+        </div>
 
-    <div class="banner-popup" id="banner">
-      <strong><h2>Atenção, galera do rock!</h2></strong><br />
-        <p>🌧️ São Pedro desafinou dessa vez!<br />
-        🎸 Por causa da chuva, o <strong>Rock na Praça</strong> vai ter que esperar um pouquinho…<br />
-        ⚡ Mas relaxa: o show vai rolar — e vai ser ainda mais épico! 🤘🔥<br />
-        📅 Fique ligado nas nossas redes pra nova data! 🎶
-      </p>
+        <div class="slide">
+        <img src="./assets/camiseta-Rock-Na-Praca-modelo-2.webp" alt="Flyer 3" />
+        </div>
+
     </div>
 
+    <button class="btn btn-prev" onclick="moverSlide(-1)">&#10094;</button>
+    <button class="btn btn-next" onclick="moverSlide(1)">&#10095;</button>
+  </div>
 </section>
 
     <!--Local-->
     <section class="localizacao">
       <h3 class="subtitulo-pagina">ONDE O ROCK ACONTECE</h3>
-      <p>A praça é o palco — e o endereço do rock é aqui:</p>
-      <p>📍 Local:Praça Coração de Maria - Rua Padre Felipe - Esteio/RS</p>
+      <p>A praça é o palco e o endereço do rock é aqui:</p>
+      <p>📍 Local:Praça Coração de Maria<br/>
+        Rua Padre Felipe - Esteio/RS</p>
 
       <div class="mapa-container">
         <iframe
@@ -161,16 +142,16 @@
       </div>
 
       <div class="info">
-        <h2><span class="simbolo">+</span>
-          <span class="texto-de">de</span>
+        <h2>
+          <span class="prefixo">+ de</span>
           <span class="numero" data-numero="700">0</span>
         </h2>
         <p>bandas</p>
       </div>
 
       <div class="info">
-        <h2><span class="simbolo">+</span>
-          <span class="texto-de">de</span>
+        <h2>
+          <span class="prefixo">+de</span>
           <span class="numero" data-numero="150">0</span>
         </h2>
         <p>edições</p>
@@ -181,26 +162,34 @@
     <!-- VIDEOS -->
 
     <section class="secao-videos">
-      <div class="cartao-video">
-        <div class="miniatura-video">
-          <iframe src="https://www.youtube.com/embed/4-RIbbc6e4E" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
+  
+  <div class="cartao-video">
+    <div class="miniatura-video">
+      <iframe src="https://www.youtube.com/embed/4-RIbbc6e4E" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
 
+  <div class="cartao-video">
+    <div class="miniatura-video">
+      <iframe src="https://www.youtube.com/embed/r6fuHRSI484?si=1HmOAXp1M880URmJ" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
 
-      <div class="cartao-video">
-        <div class="miniatura-video">
-          <iframe src="https://www.youtube.com/embed/r6fuHRSI484?si=1HmOAXp1M880URmJ" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
+  <div class="cartao-video">
+    <div class="miniatura-video">
+      <iframe src="https://www.youtube.com/embed/oF_WgtW3jC4?si=gv_b5q9jiXhAh02J" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
 
-      <div class="cartao-video">
-        <div class="miniatura-video">
-          <iframe src="https://www.youtube.com/embed/oF_WgtW3jC4?si=gv_b5q9jiXhAh02J" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
+  <!-- BOTÃO FINAL -->
+  <a href="https://www.youtube.com/@Rocknapraca_RS" 
+     target="_blank" 
+     class="botao-youtube-geral">
+    Assista mais no YouTube →
+  </a>
 
-    </section>
+</section>
+
 
     <!--<section class="videos">
 
@@ -275,5 +264,6 @@
     </div>
   </footer>
 </body>
+<script src="script.js"></script>
 
 </html>
