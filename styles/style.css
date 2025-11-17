@@ -1,6 +1,6 @@
-/* -------------------------
-          ESTILO
-   ------------------------- */
+/* ======
+  ESTILO
+========*/
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
@@ -14,10 +14,9 @@
   --fonte-principal: 'bebas Neue';
   --fonte-textos: 'Open sans';
 }
-
-/* -------------------------
-            RESET
-   ------------------------- */
+/* =====
+RESET
+====== */
 * {
   margin: 0;
   padding: 0;
@@ -39,10 +38,9 @@ body {
   font-family: var(--fonte-textos);
   color: var(--branco);
 }
-
-/* -------------------------
-                                                                                CABEÇALHO
-   ------------------------- */
+/* =========
+CABEÇALHO
+=========== */
 .cabecalho {
   top: 0;
   left: 0;
@@ -89,7 +87,6 @@ body {
   color: var(--verde);
 }
 
-
 @media (max-width: 768px) {
   .cabecalho-menu {
     position: fixed;
@@ -118,14 +115,13 @@ body {
   }
 }
 
-/*-----------------------------------
-PRÓXIMA EDIÇÃO
--------------------------------------*/
-
- /* ===========================
-   SEÇÃO DO FLYER
-=========================== */
-.secao-flyer {
+h1{
+  display:none;
+}
+ /* ===============
+  SECAO FUNDO CARROSSEL
+================= */
+.secao-fundo-carrossel {
   position: relative;
   z-index: 0;
   display: flex;
@@ -135,7 +131,7 @@ PRÓXIMA EDIÇÃO
   overflow: hidden;
 }
 
-.secao-flyer::before {
+.secao-fundo-carrossel::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -147,7 +143,7 @@ PRÓXIMA EDIÇÃO
   z-index: -2;
 }
 
-.secao-flyer::after {
+.secao-fundo-carrossel::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -155,17 +151,17 @@ PRÓXIMA EDIÇÃO
   z-index: -1;
 }
 
-/* ===========================
+/* ===========
    CARROSSEL
-=========================== */
-.carrossel-container {
+=============*/
+.secao-carrossel {
   width: 100%;
   max-width: 640px;
   position: relative;
   overflow: hidden;
 }
 
-.carrossel-wrapper {
+.container-carrossel{
   display: flex;
   transition: transform 0.4s ease-in-out;
 }
@@ -184,9 +180,9 @@ PRÓXIMA EDIÇÃO
   display: block;
 }
 
-/* ===========================
+/* ===============
    BANNER POPUP
-=========================== */
+================*/
 .banner-popup {
   display: block;
   position: absolute;
@@ -214,10 +210,10 @@ PRÓXIMA EDIÇÃO
   margin: 6px 0;
 }
 
-/* ===========================
+/* ========
    BOTÕES
-=========================== */
-.btn {
+=========*/
+.botao-seta {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -231,18 +227,16 @@ PRÓXIMA EDIÇÃO
   transition: 0.2s;
 }
 
-.btn:hover {
+.botao-seta:hover {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.btn-prev { left: 10px; }
-.btn-next { right: 10px; }
+.botao-seta-prev { left: 10px; }
+.botao-seta-next { right: 10px; }
 
-/* ===========================
-   BREAKPOINTS
-=========================== */
+
 @media (max-width: 768px) {
-  .btn {
+  .botao-seta {
     font-size: 1.2rem;
     padding: 8px 10px;
   }
@@ -253,7 +247,7 @@ PRÓXIMA EDIÇÃO
 }
 
 @media (max-width: 480px) {
-  .btn {
+  .botao-seta {
     font-size: 1rem;
     padding: 6px 8px;
   }
@@ -267,17 +261,17 @@ PRÓXIMA EDIÇÃO
   }
 }
 
+/* =======
+   LOCAL
+======== */
 
- 
- /*-----------------  LOCAL -------------------------------------------------------*/
-
-.localizacao {
+.secao-localizacao {
   padding: 50px 20px;
   text-align: center;
   box-sizing: border-box;
 }
 
-.localizacao h3 {
+.secao-localizacao h3 {
   font-family: var(--fonte-principal);
   color: var(--verde);
   font-size: 2.5rem;
@@ -285,7 +279,7 @@ PRÓXIMA EDIÇÃO
   margin: 0 auto 20px auto;
 }
 
-.localizacao p {
+.secao-localizacao p {
   margin: 10px auto;
   line-height: 1.6;
   text-align: center;
@@ -294,7 +288,7 @@ PRÓXIMA EDIÇÃO
   max-width: 900px;
 }
 
-.mapa-container {
+.container-mapa{
   position: relative;
   width: 100%;
   max-width: 600px;
@@ -305,13 +299,13 @@ PRÓXIMA EDIÇÃO
   overflow: hidden;
 }
 
-.mapa-container::before {
+.container-mapa::before {
   content: "";
   display: block;
   padding-top: 56.25%; 
 }
 
-.mapa-container iframe {
+.container-mapa iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -322,52 +316,50 @@ PRÓXIMA EDIÇÃO
 
 
 @media (max-width: 1024px) {
-  .localizacao h3 {
+  .secao-localizacao h3 {
     font-size: 2.2rem;
   }
 
-  .localizacao p {
+  .secao-localizacao p {
     font-size: 1.3rem;
     padding: 0 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .localizacao {
+  .secao-localizacao {
     padding: 40px 15px;
   }
 
-  .localizacao h3 {
+  .secao-localizacao h3 {
     font-size: 2rem;
   }
 
-  .localizacao p {
+  .secao-localizacao p {
     font-size: 1.2rem;
     padding: 0 1.5rem;
   }
 
-  .mapa-container {
+  .container-mapa {
     max-width: 100%;
     margin: 30px auto;
   }
 }
 
 @media (max-width: 480px) {
-  .localizacao h3 {
+  .secao-localizacao h3 {
     font-size: 1.6rem;
   }
 
-  .localizacao p {
+  .secao-localizacao p {
     font-size: 1rem;
     padding: 0 1rem;
   }
 }
 
-
-
-/* -------------------------
-                                  CONTADOR      
-   ------------------------- */
+/* =========
+  CONTADOR      
+===========*/
 
   .secao-contador {
             display: flex;
@@ -406,9 +398,9 @@ PRÓXIMA EDIÇÃO
         }
 
   
-/*----------------------------
-        Videos
----------------------------*/
+/*======
+VIDEOS
+=======*/
 
 .secao-videos {
   display: flex;
@@ -456,36 +448,36 @@ PRÓXIMA EDIÇÃO
   left: 0;
   width: 100%;
   height: 100%;
-  border: 1px solid var(--verde);
+  border: 5px solid var(--verde);
+  box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
 }
 
-/* BOTÃO GERAL (APÓS TODOS OS VÍDEOS) */
-.botao-youtube-geral {
+.botao-youtube {
   display: inline-block;
   margin-top: 20px;
   padding: 14px 22px;
-  background: var(--verde);
+  background: transparent;
   color: var(--branco);
   font-size: 1.2rem;
   border-radius: 10px;
+  border: 2px solid var(--verde);
   text-decoration: none;
   font-weight: 600;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.botao-youtube-geral:hover {
-  background: #0dbd4a;
+.botao-youtube:hover {
+  background: var(--verde);
   transform: translateY(-3px);
 }
 
-/* CENTRALIZAR O BOTÃO */
-.secao-videos .botao-youtube-geral {
+.secao-videos .botao-youtube {
   width: fit-content;
 }
 
-/* RESPONSIVIDADE */
+
 @media (max-width: 480px) {
-  .botao-youtube-geral {
+  .botao-youtube {
     width: 100%;
     text-align: center;
     font-size: 1.1rem;
@@ -493,9 +485,9 @@ PRÓXIMA EDIÇÃO
 }
 
 
-/* -------------------------
-                REALIZAÇÃO E APOIO                           
-   ------------------------- */
+/*===================
+  REALIZAÇÃO E APOIO                           
+====================*/
 
 .secao-realizacao-apoio {
   display: flex;
@@ -551,9 +543,9 @@ PRÓXIMA EDIÇÃO
 }
 
 
-/*-------------------------------
-                        SOBRE
-------------------*/
+/*======
+SOBRE
+=======*/
 
 .sobre-texto {
   display: flex;
@@ -588,13 +580,15 @@ PRÓXIMA EDIÇÃO
   max-width: 500px;
   width: 100%;
   height: 300px;
-  border: none;
   border-radius: 10px;
+  border: 5px solid var(--verde);
+  box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
+  
 }
 
-/*-------------------------------------
-                                PARTICIPE
------------------------------------*/
+/*==========
+PARTICIPE
+==========*/
 .inscricoes-feira,
 .inscricoes-bandas {
   display: flex;
@@ -643,9 +637,51 @@ PRÓXIMA EDIÇÃO
   color: var(--branco);
 }
 
-/* -------------------------
-   LOJA
-------------------------- */
+/*====
+LOJA
+=====*/
+.secao-carrinho {
+  background: transparent;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.titulo-carrinho{
+  color:var(--rosa);
+  font-family: var(--fonte-principal);
+  font-size: 2rem;
+}
+.botoes{
+  display:flex;
+  gap:30px;
+  margin: 10px;
+}
+
+#itens{
+  list-style: none;
+}
+.botao-finalizar-pedido{
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: var(--rosa);
+  border:1px solid var(rosa);
+  color: var(--branco);
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.botao-esvaziar{
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: 0.3s;
+  color: var(--branco);
+}
+
 .secao-cards-loja{
   margin: 50px 0;
   display: flex;
@@ -696,7 +732,6 @@ PRÓXIMA EDIÇÃO
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  
 }
 
 .card-loja span::after {
@@ -754,62 +789,15 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   background-color: var(--rosa);
   text-transform: uppercase;
   border-top: 1px solid var(--rosa);
-
-}
-
-.carrinho {
-  background: transparent;
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-}
-.botoes{
-  display:flex;
-  gap:30px;
-  margin: 10px;
-}
-button{
-  background-color: transparent;
   color: var(--branco);
   padding: 10px;
-}
-.botao-loja{
-  background-color: transparent;
-  color:var(--branco);
-  border:1px solid var(--verde);
-}
-.titulo-carrinho{
-  color:var(--rosa);
-  font-family: var(--fonte-principal);
-  font-size: 2rem;
-}
-.carrinho{
-  text-align: center;
-  font-size: 1.5rem;
-}
-#itens{
-  list-style: none;
-}
-.botao-finalizar{
-  margin-top: 20px;
-  text-transform: uppercase;
-  background-color: var(--rosa);
-  border:1px solid var(rosa);
+
 }
 
-.botao-esvaziar{
-  margin-top: 20px;
-  text-transform: uppercase;
-  background-color: transparent;
-font-weight: bold;
-transition: 0.3s;
-}
-
-
-/* -------------------------
-                                                                                    RODAPÉ
-   ------------------------- */
-footer {
+/*=======
+ RODAPÉ
+========*/
+.rodape {
   margin-top: auto; 
   background-color: var(--verde);
   color: var(--preto);
@@ -834,7 +822,7 @@ footer {
   max-width: 1200px;
 }
 
-.social-links {
+.redes-sociais {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -842,17 +830,17 @@ footer {
   gap: 0.625rem;
 }
 
-.social-links a img {
+.redes-sociais a img {
   width: 1.875rem;
   height: 1.875rem;
   transition: transform 0.3s ease;
 }
 
-.social-links a:hover img {
+.redes-sociais a:hover img {
   transform: scale(1.2);
 }
 
-.copyright,
+.direitos-autorais,
 .desenvolvedora-credito {
   font-size: 1.25rem;
   text-align: center;
