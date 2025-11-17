@@ -2,29 +2,60 @@
 <html lang="PT-BR">
 
 <head>
-  <!-- ===== META BÁSICO ===== -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ================= META BÁSICO ================= -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<meta name="robots" content="index, follow" />
 
-  <title>Rock na Praça | Evento de rua em Esteio/RS</title>
-  <meta name="description"
-    content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
-  <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+<!-- ================= FONTS (Performance) ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- ===== OPEN GRAPH (SEO SOCIAL) ===== -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
-  <meta property="og:description"
-    content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
-  <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
-  <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      media="print" onload="this.media='all'">
 
-  <!-- ===== ICONES / PWA ===== -->
-  <link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
+<!-- fallback caso JS esteja desabilitado -->
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</noscript>
 
-  <!--=========== CSS ==========-->
-  <link rel="stylesheet" href="styles/style.css" />
+<!-- ================= CSS ================= -->
+<link rel="preload" href="/styles/style.css" as="style">
+<link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'">
+
+<noscript>
+  <link rel="stylesheet" href="/styles/style.css">
+</noscript>
+
+<!-- ================= SEO ================= -->
+<title>Rock na Praça | Evento de rua em Esteio/RS</title>
+<meta name="description"
+  content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
+<link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+
+<!-- ================= OPEN GRAPH ================= -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
+<meta property="og:description"
+  content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
+<meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
+<meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+
+<!-- ================= TWITTER CARDS (opcional mas recomendado) ================= -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
+<meta name="twitter:description"
+  content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
+<meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+
+<!-- ================= ICONES / PWA ================= -->
+<link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
+<link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
+<link rel="manifest" href="/site.webmanifest" />
+
 
   <!-- ===== JSON-LD ===== -->
   <script type="application/ld+json">
@@ -116,11 +147,11 @@
     <div class="rodape-conteudo">
         <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
         <div class="redes-sociais">
-            <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/instagram.png" alt="Instagram"></a>
+            <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/instagram.webp" alt="Instagram"></a>
             
-            <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/facebook.png" alt="Facebook"></a>
+            <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/facebook.webp" alt="Facebook"></a>
 
-            <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/youtube.png" alt="Youtube"></a>
+            <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/youtube.webp" alt="Youtube"></a>
 
         </div>
         <div class="desenvolvedora-credito">Desenvolvido por <a href="https://www.linkedin.com/in/luanasantosb/" target="_blank">Luana Santos</a></div>
