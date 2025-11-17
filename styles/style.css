@@ -122,6 +122,9 @@ body {
 PRÓXIMA EDIÇÃO
 -------------------------------------*/
 
+ /* ===========================
+   SEÇÃO DO FLYER
+=========================== */
 .secao-flyer {
   position: relative;
   z-index: 0;
@@ -152,54 +155,119 @@ PRÓXIMA EDIÇÃO
   z-index: -1;
 }
 
-.flyer-proxima-edicao {
-  position: relative;
+/* ===========================
+   CARROSSEL
+=========================== */
+.carrossel-container {
   width: 100%;
-  max-width: 720px;
-  aspect-ratio: 521 / 694;
+  max-width: 640px;
+  position: relative;
   overflow: hidden;
 }
 
-.flyer-proxima-edicao img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
+.carrossel-wrapper {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
 }
 
+.slide {
+  min-width: 100%;
+  position: relative;
+  aspect-ratio: 521 / 694;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ===========================
+   BANNER POPUP
+=========================== */
 .banner-popup {
-  display: none;
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   max-width: 560px;
-   transform: translate(-50%, -50%);
   padding: 12px 20px;
   background: rgba(0, 0, 0, 0.82);
   backdrop-filter: blur(6px);
   border-radius: 12px;
   color: var(--branco);
-  margin: 0 auto;
   text-align: center;
-  box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
 }
+
 .banner-popup h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
   font-weight: 700;
 }
+
 .banner-popup p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   margin: 6px 0;
 }
 
-@media (max-width: 600px) {
+/* ===========================
+   BOTÕES
+=========================== */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--branco);
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.btn-prev { left: 10px; }
+.btn-next { right: 10px; }
+
+/* ===========================
+   BREAKPOINTS
+=========================== */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 1.2rem;
+    padding: 8px 10px;
+  }
+
   .banner-popup {
-    font-size: 1rem;
-    padding: 15px;
-    width: 90%;
+    padding: 10px 16px;
   }
 }
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 1rem;
+    padding: 6px 8px;
+  }
+
+  .banner-popup h2 {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  .banner-popup p {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+  }
+}
+
+
  
  /*-----------------  LOCAL -------------------------------------------------------*/
 
@@ -341,41 +409,89 @@ PRÓXIMA EDIÇÃO
 /*----------------------------
         Videos
 ---------------------------*/
-.secao-videos{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 70px;
 
-  }
-  .cartao-video {
-    width: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(110,212,122, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 20px;
-  }
-    
-  .cartao-video:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(110, 121, 122, 0.3);
-  }
+.secao-videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  padding: 0 20px;
+  gap: 30px;
+}
 
-  .miniatura-video {
-    position: relative;
+.titulo-videos {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--branco);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cartao-video {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 15px rgba(110, 212, 122, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartao-video:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(110, 212, 122, 0.35);
+}
+
+.miniatura-video {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.miniatura-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--verde);
+}
+
+/* BOTÃO GERAL (APÓS TODOS OS VÍDEOS) */
+.botao-youtube-geral {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 22px;
+  background: var(--verde);
+  color: var(--branco);
+  font-size: 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botao-youtube-geral:hover {
+  background: #0dbd4a;
+  transform: translateY(-3px);
+}
+
+/* CENTRALIZAR O BOTÃO */
+.secao-videos .botao-youtube-geral {
+  width: fit-content;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+  .botao-youtube-geral {
     width: 100%;
-    padding-top: 56.25%; 
+    text-align: center;
+    font-size: 1.1rem;
   }
+}
 
-  .miniatura-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--verde);
-  }
 
 /* -------------------------
                 REALIZAÇÃO E APOIO                           
@@ -595,8 +711,8 @@ PRÓXIMA EDIÇÃO
 
 .card-loja img {
   width: 100%;
-  height: 60%;
-  object-fit: scale-down;
+  height: 100%;
+  object-fit:cover;
   border-bottom: 2px solid var(--verde);
 }
 
