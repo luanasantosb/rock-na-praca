@@ -80,7 +80,7 @@ if (section) {
 
 /* ---------------------------------
    YOUTUBE (Desativado se não tiver API Key)
----------------------------------- */
+---------------------------------- 
 const API_KEY = 'YOUR_API_KEY';
 const CHANNEL_ID = 'YOUR_CHANNEL_ID';
 const MAX_RESULTS = 3;
@@ -119,7 +119,7 @@ async function loadVideos() {
   });
 }
 
-loadVideos();
+loadVideos();*/
 
 /* ---------------------------------
    CARRINHO DA LOJA
