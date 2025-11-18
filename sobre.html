@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-
 <head>
-<!-- ================= META BÁSICO ================= -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#000000" />
-<meta name="robots" content="index, follow" />
+  <!-- ================= META BÁSICO ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index, follow" />
 
-<!-- ================= FONTS (Performance) ================= -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ================= ORIGENS IMPORTANTES (Preconnect) ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      media="print" onload="this.media='all'">
+  <!-- ================= FONTS (Preload + Async Load) ================= -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  </noscript>
 
-<!-- fallback caso JS esteja desabilitado -->
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-</noscript>
+  <!-- ================= CSS CRÍTICO ================= -->
+  <link rel="preload" href="/styles/style.css" as="style">
+  <link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/styles/style.css">
+  </noscript>
 
-<!-- ================= CSS ================= -->
-<link rel="preload" href="/styles/style.css" as="style">
-<link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'">
+  <!-- ================= SEO ================= -->
+  <title>Rock na Praça | Evento de rua em Esteio/RS</title>
+  <meta name="description"
+        content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
+  <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
 
-<noscript>
-  <link rel="stylesheet" href="/styles/style.css">
-</noscript>
+  <!-- ================= OPEN GRAPH ================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
+  <meta property="og:description"
+        content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
+  <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
+  <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
-<!-- ================= SEO ================= -->
-<title>Rock na Praça | Evento de rua em Esteio/RS</title>
-<meta name="description"
-  content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
-<link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+  <!-- ================= TWITTER CARDS ================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
+  <meta name="twitter:description"
+        content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
+  <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
-<!-- ================= OPEN GRAPH ================= -->
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
-<meta property="og:description"
-  content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
-<meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
-<meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+  <!-- ================= ICONES / PWA ================= -->
+  <link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-<!-- ================= TWITTER CARDS (opcional mas recomendado) ================= -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
-<meta name="twitter:description"
-  content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
-<meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
-
-<!-- ================= ICONES / PWA ================= -->
-<link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
-<link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
-<link rel="manifest" href="/site.webmanifest" />
-
+  <script src="/script.js" defer></script>
 
   <!-- ===== JSON-LD ===== -->
   <script type="application/ld+json">
@@ -141,7 +139,7 @@
 
   </main>
 
-  <!--RODAPÉ-->
+ 
    <!--RODAPÉ-->
   <footer class="rodape">
     <div class="rodape-conteudo">

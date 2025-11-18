@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-<!-- ================= META BÁSICO ================= -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#000000" />
-<meta name="robots" content="index, follow" />
+<head>
+  <!-- ================= META BÁSICO ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="index, follow" />
 
-<!-- ================= FONTS (Performance) ================= -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ================= ORIGENS IMPORTANTES (Preconnect) ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      media="print" onload="this.media='all'">
+  <!-- ================= FONTS (Preload + Async Load) ================= -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  </noscript>
 
-<!-- fallback caso JS esteja desabilitado -->
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-</noscript>
+  <!-- ================= CSS CRÍTICO ================= -->
+  <link rel="preload" href="/styles/style.css" as="style">
+  <link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="/styles/style.css">
+  </noscript>
 
-<!-- ================= CSS ================= -->
-<link rel="preload" href="/styles/style.css" as="style">
-<link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'">
+  <!-- ================= SEO ================= -->
+  <title>Rock na Praça | Evento de rua em Esteio/RS</title>
+  <meta name="description"
+        content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
+  <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
 
-<noscript>
-  <link rel="stylesheet" href="/styles/style.css">
-</noscript>
+  <!-- ================= OPEN GRAPH ================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
+  <meta property="og:description"
+        content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
+  <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
+  <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
-<!-- ================= SEO ================= -->
-<title>Rock na Praça | Evento de rua em Esteio/RS</title>
-<meta name="description"
-  content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
-<link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+  <!-- ================= TWITTER CARDS ================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
+  <meta name="twitter:description"
+        content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
+  <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
-<!-- ================= OPEN GRAPH ================= -->
-<meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
-<meta property="og:description"
-  content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
-<meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
-<meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+  <!-- ================= ICONES / PWA ================= -->
+  <link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-<!-- ================= TWITTER CARDS (opcional mas recomendado) ================= -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
-<meta name="twitter:description"
-  content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
-<meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
-
-<!-- ================= ICONES / PWA ================= -->
-<link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
-<link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
-<link rel="manifest" href="/site.webmanifest" />
-
+  <script src="/script.js" defer></script>
 
 <!-- ===== JSON-LD ===== -->
 <script type="application/ld+json">
@@ -117,25 +117,45 @@
       <a href="loja.html">Loja</a>
     </nav>
   </header>
-<main class="cards">
-    <section class="inscricoes-bandas">
-        <h3>Inscreva sua banda e toque no Rock na Praça!</h3>
-        <p>O Rock na Praça acontece em Esteio/RS e já está há 23 anos movimentando a cena do rock independente. É uma oportunidade única para bandas mostrarem seu trabalho, ganhar visibilidade e se conectar com o público em um evento gratuito, aberto e cheio de energia.</p>
-        <p>As inscrições para bandas independentes estão abertas! Preencha o formulário abaixo e garanta sua participação no próximo evento. Mostre seu som, faça parte da história do Rock na Praça e venha tocar no nosso palco!</p>
-        <a href="https://docs.google.com/forms/d/1NM1hGFCKbTqHCxCPmepf5YmKHqcSjfYpYwjlKUQ-pI8/viewform?pli=1&chromeless=1&fbclid=PAZXh0bgNhZW0CMTEAAac13yXdACyOZt_volRWpDK-MFZWZ0tFfU3fRfafxGdRTSXY1SKfMMK-j1lHWw_aem_F0SIA97PnLXL8D3AjW40Eg&pli=1&edit_requested=true" target="_blank"
-          class=botao-inscricao>Inscreva-se aqui</a>
-    </section>
 
-    <section class="inscricoes-feira">
-        <h3>Feira de Economia Solidária e Criativa</h3>
-        <p>Na Praça Coração de Maria, além do Rock na Praça, acontece a nossa Feira de Economia Solidária e Criativa, com venda de roupas, artesanatos, CDs, livros, acessórios, antiguidades e muito mais.</p>
-        <p>Quer participar como expositor? As inscrições estão abertas! Venha compor com a gente esse grande evento e mostrar seu trabalho para o público da feira e do festival.</p>
-        <a href="https://docs.google.com/forms/d/1NM1hGFCKbTqHCxCPmepf5YmKHqcSjfYpYwjlKUQ-pI8/viewform?pli=1&chromeless=1&fbclid=PAZXh0bgNhZW0CMTEAAac13yXdACyOZt_volRWpDK-MFZWZ0tFfU3fRfafxGdRTSXY1SKfMMK-j1lHWw_aem_F0SIA97PnLXL8D3AjW40Eg&pli=1&edit_requested=true" target="_blank"
-          class=botao-inscricao>Inscreva-se aqui</a>
-    </section>
+  <main class="cards">
+
+  <section class="inscricoes-bandas">
+    <h3>Inscreva sua banda e toque no Rock na Praça!</h3>
+    <p>
+      O <strong>Rock na Praça</strong> quer você no palco! Há 23 anos revelando talentos em Esteio/RS,
+      o festival é a chance perfeita para mostrar seu som e conquistar novos fãs. Inscreva-se agora!
+    </p>
+
+    <a 
+      href="https://docs.google.com/forms/d/1NM1hGFCKbTqHCxCPmepf5YmKHqcSjfYpYwjlKUQ-pI8/viewform?chromeless=1&edit_requested=true"
+      target="_blank"
+      class="botao-inscricao"
+    >
+      Inscreva-se aqui
+    </a>
+  </section>
+
+  <section class="inscricoes-feira">
+    <h3>Feira de Economia Solidária e Criativa</h3>
+    <p>
+      A feira do festival reúne um público diverso e apaixonado por criatividade. Se você cria,
+      produz ou vende, esta é sua oportunidade de alcançar novas pessoas. Garanta seu espaço!
+    </p>
+
+    <a 
+      href="https://docs.google.com/forms/d/1NM1hGFCKbTqHCxCPmepf5YmKHqcSjfYpYwjlKUQ-pI8/viewform?chromeless=1&edit_requested=true"
+      target="_blank"
+      class="botao-inscricao"
+    >
+      Inscreva-se aqui
+    </a>
+  </section>
+
 </main>
- <!--RODAPÉ-->
 
+
+ <!--RODAPÉ-->
   <footer class="rodape">
     <div class="rodape-conteudo">
         <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
