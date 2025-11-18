@@ -2,7 +2,8 @@
   ESTILO
 ========*/
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=optional');
+
 
 :root {
   --amarelo: #eac06c;
@@ -28,15 +29,18 @@ html, body {
   background-color: var(--preto);
   min-height: 100%;
   width: 100%; 
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: var(--fonte-textos);
+  font-family: var(--fonte-textos), Arial, Helvetica, sans-serif;
   color: var(--branco);
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--fonte-principal),Arial, Helvetica, sans-serif;
 }
 /* =========
 CABEÇALHO
@@ -135,9 +139,9 @@ h1{
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("./../assets/Flyer-ROCK-NA-PRAÇA-NOVEMBRO_240x320.webp");
+  background-image: url("./../assets/Background-ROCK-NA-PRAÇA_Novembro.webp");
   background-repeat: repeat;
-  background-position: center;
+  background-position: left;
   background-size: auto;
   filter: grayscale(100%);
   z-index: -2;
