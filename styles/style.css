@@ -1,9 +1,8 @@
 /* ======
-  ESTILO
+  IMPORTAÇÕES E VARIÁVEIS (SETUP)
 ========*/
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=optional');
-
 
 :root {
   --amarelo: #eac06c;
@@ -15,8 +14,9 @@
   --fonte-principal: 'bebas Neue';
   --fonte-textos: 'Open sans';
 }
+
 /* =====
-RESET
+RESET E ESTILOS BASE
 ====== */
 * {
   margin: 0;
@@ -36,12 +36,24 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: var(--branco);
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--fonte-principal), Arial, Helvetica, sans-serif;
+  color: var(--verde);
+}
+
+p,span{
   font-family: var(--fonte-textos), Arial, Helvetica, sans-serif;
   color: var(--branco);
 }
-h1,h2,h3,h4,h5,h6{
-  font-family: var(--fonte-principal),Arial, Helvetica, sans-serif;
+
+h1{ 
+  display:none; 
 }
+
+
 /* =========
 CABEÇALHO
 =========== */
@@ -54,7 +66,7 @@ CABEÇALHO
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  background-color: transparent;
+  background-color: var(--preto);
   z-index: 10;
   box-sizing: border-box;
 }
@@ -79,8 +91,12 @@ CABEÇALHO
   font-family: var(--fonte-principal);
 }
 
-.cabecalho-menu a:hover {
+.cabecalho-menu a:hover{
   color: var(--branco);
+   transform: translateY(-6px);
+}
+.cabecalho-menu a.active{
+  color: var(--rosa);
 }
 
 .menu-hamburguer {
@@ -91,6 +107,7 @@ CABEÇALHO
   color: var(--verde);
 }
 
+/* Media Query do Cabeçalho (Agrupada com o componente) */
 @media (max-width: 768px) {
   .cabecalho-menu {
     position: fixed;
@@ -119,11 +136,8 @@ CABEÇALHO
   }
 }
 
-h1{
-  display:none;
-}
  /* ===============
-  SECAO FUNDO CARROSSEL
+  SEÇÃO CARROSSEL (Fundo e Estrutura)
 ================= */
 .secao-fundo-carrossel {
   position: relative;
@@ -155,9 +169,6 @@ h1{
   z-index: -1;
 }
 
-/* ===========
-   CARROSSEL
-=============*/
 .secao-carrossel {
   width: 100%;
   max-width: 640px;
@@ -180,12 +191,11 @@ h1{
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 10px;
   display: block;
 }
 
 /* ===============
-   BANNER POPUP
+   BANNER POPUP (Elemento dentro do Carrossel)
 ================*/
 .banner-popup {
   display: block;
@@ -198,7 +208,7 @@ h1{
   padding: 12px 20px;
   background: rgba(0, 0, 0, 0.82);
   backdrop-filter: blur(6px);
-  border-radius: 12px;
+  border-radius: 10px;
   color: var(--branco);
   text-align: center;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
@@ -214,8 +224,9 @@ h1{
   margin: 6px 0;
 }
 
+
 /* ========
-   BOTÕES
+   BOTÕES SETA (Elemento dentro do Carrossel)
 =========*/
 .botao-seta {
   position: absolute;
@@ -227,7 +238,6 @@ h1{
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  border-radius: 8px;
   transition: 0.2s;
 }
 
@@ -239,6 +249,7 @@ h1{
 .botao-seta-next { right: 10px; }
 
 
+/* Media Queries de Carrossel/Popup/Setas (Agrupada) */
 @media (max-width: 768px) {
   .botao-seta {
     font-size: 1.2rem;
@@ -265,8 +276,9 @@ h1{
   }
 }
 
+
 /* =======
-   LOCAL
+   SEÇÃO LOCALIZAÇÃO
 ======== */
 
 .secao-localizacao {
@@ -276,8 +288,6 @@ h1{
 }
 
 .secao-localizacao h3 {
-  font-family: var(--fonte-principal);
-  color: var(--verde);
   font-size: 2.5rem;
   text-transform: uppercase;
   margin: 0 auto 20px auto;
@@ -299,14 +309,13 @@ h1{
   margin: 40px auto;
   border: 5px solid var(--verde);
   box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
-  border-radius: 10px;
   overflow: hidden;
 }
 
 .container-mapa::before {
   content: "";
   display: block;
-  padding-top: 56.25%; 
+  padding-top: 50%; 
 }
 
 .container-mapa iframe {
@@ -362,49 +371,46 @@ h1{
   }
 }
 
+
 /* =========
-  CONTADOR      
+  SEÇÃO CONTADOR      
 ===========*/
 
-  .secao-contador {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: clamp(1rem, 5vw, 3rem) clamp(0.5rem, 5vw, 2rem);
-            border-top: 0.25rem solid var(--verde);
-            border-bottom: 0.25rem solid var(--verde);
-            flex-wrap: wrap;
-            gap: clamp(1rem, 4vw, 2rem);
-            box-sizing: border-box;
-            background-color: var(--preto);
-        }
+.secao-contador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(1rem, 5vw, 3rem) clamp(0.5rem, 5vw, 2rem);
+  border-top: 0.25rem solid var(--verde);
+  border-bottom: 0.25rem solid var(--verde);
+  flex-wrap: wrap;
+  gap: clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
+  background-color: var(--preto);
+}
 
-        .secao-contador .info {
-            flex: 1 1 clamp(12rem, 20%, 18rem);
-            max-width: clamp(12rem, 20%, 18rem);
-            margin: 0 auto;
-        }
+.secao-contador .info {
+  flex: 1 1 clamp(12rem, 20%, 18rem);
+  max-width: clamp(12rem, 20%, 18rem);
+  margin: 0 auto;
+}
 
-        .secao-contador h2 {
-            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-            color: var(--verde);
-            font-weight: 700;
-            font-family: var(--fonte-principal);
-            margin-bottom: 0.5rem;
-        }
+.secao-contador h2 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
 
-        .secao-contador p {
-            font-size: clamp(1.2rem, 1.5vw, 2rem);
-            color: var(--branco);
-            font-family: var(--fonte-textos);
-            margin-top: 0.5rem;
-            line-height: 1.4;
-        }
+.secao-contador p {
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
 
-  
+
 /*======
-VIDEOS
+SEÇÃO VÍDEOS
 =======*/
 
 .secao-videos {
@@ -428,7 +434,6 @@ VIDEOS
 .cartao-video {
   width: 100%;
   max-width: 420px;
-  border-radius: 12px;
   overflow: hidden;
   background: rgba(20, 20, 20, 0.6);
   backdrop-filter: blur(6px);
@@ -457,99 +462,8 @@ VIDEOS
   box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
 }
 
-.botao-youtube {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 22px;
-  background: transparent;
-  color: var(--branco);
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 2px solid var(--verde);
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.botao-youtube:hover {
-  background: var(--verde);
-  transform: translateY(-3px);
-}
-
-.secao-videos .botao-youtube {
-  width: fit-content;
-}
-
-
-@media (max-width: 480px) {
-  .botao-youtube {
-    width: 100%;
-    text-align: center;
-    font-size: 1.1rem;
-  }
-}
-
-
-/*===================
-  REALIZAÇÃO E APOIO                           
-====================*/
-
-.secao-realizacao-apoio {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.realizacao,
-.apoio {
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.realizacao h3,
-.apoio h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--verde);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.logos a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1px;
-  overflow: hidden;
-  padding: 0.5rem;
-}
-
-.logos a:hover {
-  transform: scale(1.1);
-}
-
-.logos img {
-  height: 70px;
-  width: 70px;
-  object-fit: contain;
-}
-
-
 /*======
-SOBRE
+SEÇÃO SOBRE
 =======*/
 
 .sobre-texto {
@@ -571,7 +485,6 @@ SOBRE
   margin: 0 auto 1.5rem auto;
 }
 
-
 .sobre-videos {
   display: flex;
   flex-wrap: wrap;
@@ -585,14 +498,13 @@ SOBRE
   max-width: 500px;
   width: 100%;
   height: 300px;
-  border-radius: 10px;
   border: 5px solid var(--verde);
   box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
-  
 }
 
+
 /*==========
-PARTICIPE
+SEÇÃO PARTICIPE (Inscrições)
 ==========*/
 .inscricoes-feira,
 .inscricoes-bandas {
@@ -615,35 +527,14 @@ PARTICIPE
 }
 .inscricoes-bandas h3,
 .inscricoes-feira h3 {
-  font-family: var(--fonte-principal);
-  color: var(--verde);
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
   margin: 2rem auto 1rem auto;
 }
 
-.botao-inscricao {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: var(--verde);
-  text-decoration: none;
-  border: 2px solid var(--verde);
-  cursor: pointer;
-  text-transform: uppercase;
-  text-align: center;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.botao-inscricao:hover {
-  background-color: var(--verde);
-  color: var(--branco);
-}
-
 /*====
-LOJA
+SEÇÃO LOJA
 =====*/
 .secao-carrinho {
   background: transparent;
@@ -656,7 +547,6 @@ LOJA
 }
 .titulo-carrinho{
   color:var(--rosa);
-  font-family: var(--fonte-principal);
   font-size: 2rem;
 }
 .botoes{
@@ -668,25 +558,6 @@ LOJA
 #itens{
   list-style: none;
 }
-.botao-finalizar-pedido{
-  margin-top: 20px;
-  text-transform: uppercase;
-  background-color: var(--rosa);
-  border:1px solid var(rosa);
-  color: var(--branco);
-  padding: 10px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.botao-esvaziar{
-  margin-top: 20px;
-  text-transform: uppercase;
-  background-color: transparent;
-  transition: 0.3s;
-  color: var(--branco);
-}
-
 .secao-cards-loja{
   margin: 50px 0;
   display: flex;
@@ -733,7 +604,6 @@ LOJA
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--branco);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -766,8 +636,6 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
 }
 
 .card-loja h3 {
-  font-family: var(--fonte-principal);
-  color: var(--verde);
   font-size: 1.8em;
   margin: 15px 0 0.5rem;
   text-align: center;
@@ -775,7 +643,6 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
 
 .card-loja p {
   font-size: 1.2rem;
-  color: var(--branco);
   margin: 0 10px 1rem;
   text-align: center;
 }
@@ -789,6 +656,14 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   transition: color 0.2s ease;
 }
 
+.botao-esvaziar{
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: 0.3s;
+  color: var(--branco);
+}
+
 .botao-adicionar{
   font-size: 1rem;
   background-color: var(--rosa);
@@ -796,8 +671,76 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   border-top: 1px solid var(--rosa);
   color: var(--branco);
   padding: 10px;
-
 }
+
+.botao-finalizar-pedido{
+  margin-top: 20px;
+  text-transform: uppercase;
+  background-color: var(--rosa);
+  border:1px solid var(rosa);
+  color: var(--branco);
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+/*===================
+  REALIZAÇÃO E APOIO                           
+====================*/
+
+.secao-realizacao-apoio {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.realizacao,
+.apoio {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.realizacao h3,
+.apoio h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.logos a:hover {
+  transform: scale(1.1);
+}
+
+.logos img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+}
+
 
 /*=======
  RODAPÉ
@@ -806,7 +749,6 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   margin-top: auto; 
   background-color: var(--verde);
   color: var(--preto);
-  font-family: var(--fonte-textos);
   text-align: center;
   padding: 1.5rem 1rem;
   display: flex;
@@ -851,9 +793,43 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
   text-align: center;
   word-wrap: break-word;
   white-space: normal;
+  font-family: var(--fonte-textos);
 }
 
 .desenvolvedora-credito a {
   text-decoration: none;
   color: var(--preto);
+}
+
+/*========
+ BOTÕES GENÉRICOS
+=========*/
+.botao-padrao {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--branco);
+  font-size: 1.2rem;
+  border: 2px solid var(--verde);
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-family: var(--fonte-textos);
+}
+
+.botao-padrao:hover {
+  background: var(--verde);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 480px) {
+  .botao-padrao {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+  }
 }
