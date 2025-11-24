@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=optional');
-
 :root {
   --amarelo: #eac06c;
   --azul: #006bb5;
@@ -7,8 +5,8 @@
   --rosa: #cb5d9f;
   --branco: #fffef6;
   --preto: #212121;
-  --fonte-principal: 'bebas Neue';
-  --fonte-textos: 'Open sans';
+  --fonte-principal: 'Bebas Neue',sans-serif;
+  --fonte-textos: 'Open Sans',sans-serif;
 }
 
 * {
