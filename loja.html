@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 
 <head>
   <!-- ================= META BÁSICO ================= -->
@@ -7,30 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ================= ORIGENS IMPORTANTES (Preconnect) ================= -->
+  <!-- ================= PRECONNECT (Fonts & Vídeos) ================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
-  <!-- ================= FONTS (Preload + Async Load) ================= -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-        media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  </noscript>
+  <!-- ================= GOOGLE FONTS (Bebas Neue + Open Sans) ================= -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+  >
 
-  <!-- ================= CSS CRÍTICO ================= -->
+  <!-- ================= CSS PRINCIPAL ================= -->
   <link rel="preload" href="/styles/style.css" as="style">
-  <link rel="stylesheet" href="/styles/style.css" media="print" onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="/styles/style.css">
-  </noscript>
+  <link rel="stylesheet" href="/styles/style.css" media="all">
 
   <!-- ================= SEO ================= -->
   <title>Rock na Praça | Evento de rua em Esteio/RS</title>
   <meta name="description"
-        content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
+    content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
   <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
 
   <!-- ================= OPEN GRAPH ================= -->
@@ -38,7 +33,7 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
   <meta property="og:description"
-        content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
+    content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita." />
   <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
   <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
@@ -46,7 +41,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
   <meta name="twitter:description"
-        content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
+    content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
   <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ================= ICONES / PWA ================= -->
@@ -54,9 +49,12 @@
   <link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
   <link rel="manifest" href="/site.webmanifest" />
 
+  <!-- ================= JAVASCRIPT ================= -->
   <script src="/script.js" defer></script>
+</head>
 
-<!-- ===== JSON-LD ===== -->
+
+<!-- ===== JSON-LD ===== 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,7 +96,7 @@
     "url": "https://www.instagram.com/balaiada/"
   }
 }
-</script>
+</script>-->
 </head>
 
 <body>
@@ -106,7 +104,7 @@
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
       <a href="./index.html">
-        <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça"></a>
+        <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça" width="150px" height="200px"></a>
     </div>
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
     <nav class="cabecalho-menu" id="menu">
