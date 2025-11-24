@@ -14,8 +14,8 @@
 
   <!-- ================= FONTS (Preload + Async Load) ================= -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-        media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" media="print"
+    onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   </noscript>
@@ -30,7 +30,7 @@
   <!-- ================= SEO ================= -->
   <title>Rock na Praça | Evento de rua em Esteio/RS</title>
   <meta name="description"
-        content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
+    content="O festival de rock independente que transforma Esteio em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
   <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
 
   <!-- ================= OPEN GRAPH ================= -->
@@ -38,7 +38,7 @@
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
   <meta property="og:description"
-        content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
+    content="Há 23 anos movimentando Esteio/RS com bandas independentes, cultura alternativa, economia solidária e entrada gratuita. Energia underground garantida!" />
   <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
   <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
@@ -46,7 +46,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rock na Praça | Evento de rua em Esteio/RS" />
   <meta name="twitter:description"
-        content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
+    content="O festival independente que movimenta Esteio/RS com rock, cultura alternativa e entrada gratuita." />
   <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ================= ICONES / PWA ================= -->
@@ -55,8 +55,6 @@
   <link rel="manifest" href="/site.webmanifest" />
 
   <script src="/script.js" defer></script>
-
-
 
   <!-- ===== JSON-LD ===== -->
   <script type="application/ld+json">
@@ -102,13 +100,15 @@
 }
 </script>
 </head>
+
 <body>
   <!--CABEÇALHO-->
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
       <a href="./index.html">
         <h1> Rock na praça</h1>
-        <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça"></a>
+        <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça">
+      </a>
     </div>
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
     <nav class="cabecalho-menu" id="menu">
@@ -124,7 +124,7 @@
       <div class="secao-carrossel">
         <div class="container-carrossel" id="carrossel">
           <div class="slide">
-            <img src="./assets/Flayer-ROCK-NA-PRAÇA_Novembro.webp" alt="Flyer 1" fetchpriority="high"/>
+            <img src="./assets/Flayer-ROCK-NA-PRAÇA_Novembro.webp" alt="Flyer 1" fetchpriority="high" />
             <div class="banner-popup" id="banner">
               <h2>Atenção, galera do rock!</h2>
               <p>🌧️ São Pedro desafinou dessa vez!<br />
@@ -166,12 +166,18 @@
       </div>
 
       <div class="info">
-        <h2 class="prefixo">+ de</h2><h2 class="numero" data-numero="700">0</h2>
+        <div class="secao-contador-linha">
+        <h2 class="prefixo">+ de </h2>
+        <h2 class="numero" data-numero="700">0</h2>
+        </div>
         <p>bandas</p>
       </div>
 
       <div class="info">
-        <h2 class="prefixo">+ de</h2><h2 class="numero" data-numero="150">0</h2>
+        <div class="secao-contador-linha">
+        <h2 class="prefixo">+ de </h2>
+        <h2 class="numero" data-numero="150">0</h2>
+        </div>
         <p>edições</p>
       </div>
 
@@ -200,10 +206,10 @@
             loading="lazy"></iframe>
         </div>
       </div>
-
-      <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" class="botao-padrao">
-        Assista mais no YouTube →
-      </a>
+      <div class="btn">
+        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" class="botao-ytb">
+          Assista mais no YouTube →</a>
+      </div>
 
     </section>
 
@@ -221,7 +227,8 @@
         <h3 class="subtitulo-pagina">REALIZAÇÃO</h3>
         <div class="logos">
           <a href="https://www.instagram.com/balaiada/" target="_blank">
-            <img src="./assets/Balaiada-Combo-Cultural.webp" alt="Logo Balaiada" width="70px" height="70px" loading="lazy">
+            <img src="./assets/Balaiada-Combo-Cultural.webp" alt="Logo Balaiada" width="70px" height="70px"
+              loading="lazy">
           </a>
         </div>
       </div>
@@ -263,18 +270,23 @@
   <!--RODAPÉ-->
   <footer class="rodape">
     <div class="rodape-conteudo">
-        <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
-        <div class="redes-sociais">
-            <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/instagram.webp" alt="Instagram"></a>
-            
-            <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/facebook.webp" alt="Facebook"></a>
+      <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
+      <div class="redes-sociais">
+        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/instagram.webp"
+            alt="Instagram"></a>
 
-            <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/youtube.webp" alt="Youtube"></a>
+        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/facebook.webp"
+            alt="Facebook"></a>
 
-        </div>
-        <div class="desenvolvedora-credito">Desenvolvido por <a href="https://www.linkedin.com/in/luanasantosb/" target="_blank">Luana Santos</a></div>
+        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/youtube.webp"
+            alt="Youtube"></a>
+
+      </div>
+      <div class="desenvolvedora-credito">Desenvolvido por <a href="https://www.linkedin.com/in/luanasantosb/"
+          target="_blank">Luana Santos</a></div>
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
+
 </html>
