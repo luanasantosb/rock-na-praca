@@ -1,7 +1,3 @@
-/* ======
-  IMPORTAÇÕES E VARIÁVEIS (SETUP)
-========*/
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=optional');
 
 :root {
@@ -15,9 +11,6 @@
   --fonte-textos: 'Open sans';
 }
 
-/* =====
-RESET E ESTILOS BASE
-====== */
 * {
   margin: 0;
   padding: 0;
@@ -40,12 +33,12 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: var(--fonte-principal), Arial, Helvetica, sans-serif;
+  font-family: var(--fonte-principal);
   color: var(--verde);
 }
 
 p,span{
-  font-family: var(--fonte-textos), Arial, Helvetica, sans-serif;
+  font-family: var(--fonte-textos);
   color: var(--branco);
 }
 
@@ -101,25 +94,20 @@ CABEÇALHO
 
 .menu-hamburguer {
   display: none;
-  font-size: 3rem;
-  cursor: pointer;
-  z-index: 2000;
-  color: var(--verde);
 }
 
-/* Media Query do Cabeçalho (Agrupada com o componente) */
 @media (max-width: 768px) {
   .cabecalho-menu {
     position: fixed;
-    top: 80px;
+    top: 60px;
     right: 0;
-    height: calc(100vh - 80px);
-    width: 70%;
+    height:700px;
+    width: 40%;
     background: rgba(0, 0, 0, 0.6);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
@@ -133,11 +121,15 @@ CABEÇALHO
 
   .menu-hamburguer {
     display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2000;
+    color: var(--verde);
   }
 }
 
  /* ===============
-  SEÇÃO CARROSSEL (Fundo e Estrutura)
+  SEÇÃO CARROSSEL
 ================= */
 .secao-fundo-carrossel {
   position: relative;
@@ -195,7 +187,8 @@ CABEÇALHO
 }
 
 /* ===============
-   BANNER POPUP (Elemento dentro do Carrossel)
+   BANNER POPUP 
+
 ================*/
 .banner-popup {
   display: block;
@@ -226,7 +219,7 @@ CABEÇALHO
 
 
 /* ========
-   BOTÕES SETA (Elemento dentro do Carrossel)
+   BOTÕES SETA
 =========*/
 .botao-seta {
   position: absolute;
@@ -248,8 +241,6 @@ CABEÇALHO
 .botao-seta-prev { left: 10px; }
 .botao-seta-next { right: 10px; }
 
-
-/* Media Queries de Carrossel/Popup/Setas (Agrupada) */
 @media (max-width: 768px) {
   .botao-seta {
     font-size: 1.2rem;
@@ -395,18 +386,35 @@ CABEÇALHO
   max-width: clamp(12rem, 20%, 18rem);
   margin: 0 auto;
 }
+.secao-contador-linha {
+  display: flex;
+  gap: 4px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linha-topo {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
 
 .secao-contador h2 {
   font-size: clamp(2rem, 2.5vw, 3rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
 
 .secao-contador p {
   font-size: clamp(1.2rem, 1.5vw, 2rem);
-  margin-top: 0.5rem;
+  margin: 0.3rem 0 0 0;
   line-height: 1.4;
 }
+
 
 
 /*======
@@ -417,18 +425,9 @@ SEÇÃO VÍDEOS
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 70px;
-  padding: 0 20px;
-  gap: 30px;
-}
-
-.titulo-videos {
-  width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  color: var(--branco);
-  margin-bottom: 20px;
-  font-weight: 700;
+  margin-top: 50px;
+  padding: 0 10px;
+  gap: 20px;
 }
 
 .cartao-video {
@@ -460,6 +459,37 @@ SEÇÃO VÍDEOS
   height: 100%;
   border: 5px solid var(--verde);
   box-shadow: 0 0 25px rgba(110, 212, 122, 0.3);
+}
+.btn{
+  display: flex;
+  justify-content: center;  
+  align-items: flex-end; 
+}
+.botao-ytb {
+  text-decoration: none;
+  color: var(--branco); 
+  font-family: var(--fonte-principal); 
+  padding: 15px 23px;
+  background-color: transparent;
+  border: 2px solid var(--verde);
+  border-radius: 5px; 
+  display: inline-block;
+  text-align: center;
+  font-size: 16px; 
+}
+
+.botao-ytb:hover {
+  transform: translateY(-3px); 
+  background-color: var(--verde);
+  border-color:var(--verde);
+}
+
+
+@media (max-width: 480px) {
+  .botao-padrao {
+    text-align: center;
+    font-size: 1.1rem;
+  }
 }
 
 /*======
@@ -828,7 +858,7 @@ box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
 
 @media (max-width: 480px) {
   .botao-padrao {
-    width: 100%;
+    width: 50%;
     text-align: center;
     font-size: 1.1rem;
   }
