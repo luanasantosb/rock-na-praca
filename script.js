@@ -5,11 +5,13 @@ const menuBtn = document.getElementById('menu-hamburguer');
 const menu = document.getElementById('menu');
 let aberto = false;
 
-menuBtn.addEventListener('click', () => {
-  menu.classList.toggle('ativo');
-  aberto = !aberto;
-  menuBtn.innerHTML = aberto ? '&times;' : '&#9776;';
-});
+if (menuBtn && menu) {
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('ativo');
+    aberto = !aberto;
+    menuBtn.innerHTML = aberto ? '&times;' : '&#9776;';
+  });
+}
 
 /* ---------------------------------
    CARROSSEL
@@ -37,7 +39,7 @@ if (banner) {
 }
 
 /* ---------------------------------
-   CONTADOR
+   CONTADORES
 ---------------------------------- */
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
@@ -79,52 +81,8 @@ if (section) {
 }
 
 /* ---------------------------------
-   YOUTUBE (Desativado se não tiver API Key)
----------------------------------- 
-const API_KEY = 'YOUR_API_KEY';
-const CHANNEL_ID = 'YOUR_CHANNEL_ID';
-const MAX_RESULTS = 3;
-
-async function loadVideos() {
-  if (!API_KEY || API_KEY === 'YOUR_API_KEY') return;
-
-  const response = await fetch(
-    `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${MAX_RESULTS}`
-  );
-
-  const data = await response.json();
-  const gallery = document.getElementById('video-gallery');
-  if (!gallery) return;
-
-  gallery.innerHTML = '';
-
-  data.items.forEach(item => {
-    if (item.id.videoId) {
-      const card = document.createElement('div');
-      card.classList.add('video-card');
-
-      card.innerHTML = `
-        <div class="video-thumb">
-          <iframe src="https://www.youtube.com/embed/${item.id.videoId}" allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <h3>${item.snippet.title}</h3>
-          <p>${item.snippet.description.substring(0, 80)}...</p>
-          <a href="https://www.youtube.com/watch?v=${item.id.videoId}" target="_blank">Assistir no YouTube</a>
-        </div>
-      `;
-
-      gallery.appendChild(card);
-    }
-  });
-}
-
-loadVideos();*/
-
-/* ---------------------------------
    CARRINHO DA LOJA
 ---------------------------------- */
-
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 function adicionar(nome, preco) {
@@ -205,3 +163,85 @@ function enviarWhatsApp() {
 }
 
 document.addEventListener("DOMContentLoaded", mostrarCarrinho);
+
+/* ---------------------------------
+   YOUTUBE LAZY-LOAD
+---------------------------------- */
+function loadYouTubeIframe(div) {
+  const id = div.dataset.id;
+  const iframe = document.createElement("iframe");
+  iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=0&rel=0`;
+  iframe.width = "560";
+  iframe.height = "315";
+  iframe.frameBorder = "0";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+  div.appendChild(iframe);
+}
+
+function setupYouTubeLazyLoad() {
+  const divs = document.querySelectorAll(".youtube");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadYouTubeIframe(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "200px" });
+
+  divs.forEach(div => observer.observe(div));
+}
+
+/* ---------------------------------
+   GOOGLE MAPS LAZY-LOAD
+---------------------------------- */
+function initMap() {
+  const mapEl = document.getElementById("map");
+  if (!mapEl) return;
+
+  const map = new google.maps.Map(mapEl, {
+    center: { lat: -29.7356, lng: -51.1539 },
+    zoom: 13,
+  });
+
+  new google.maps.Marker({
+    position: { lat: -29.7356, lng: -51.1539 },
+    map: map,
+    title: "Rock na Praça Esteio",
+  });
+}
+
+function loadMapScript() {
+  if (document.getElementById("google-maps-script")) return;
+
+  const script = document.createElement("script");
+  script.id = "google-maps-script";
+  script.src = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap";
+  script.async = true;
+  document.body.appendChild(script);
+}
+
+function setupMapLazyLoad() {
+  const mapEl = document.getElementById("map");
+  if (!mapEl) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadMapScript();
+        observer.disconnect();
+      }
+    });
+  }, { rootMargin: "200px" });
+
+  observer.observe(mapEl);
+}
+
+/* ---------------------------------
+   INICIALIZAÇÃO AO CARREGAR DOM
+---------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  setupYouTubeLazyLoad();
+  setupMapLazyLoad();
+});
