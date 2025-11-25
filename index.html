@@ -7,26 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ================= PRECONNECT (Fonts & Vídeos) ================= -->
+  <!-- ================= PRECONNECT (Google Fonts + APIs externas) ================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-<link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      media="print"
-      onload="this.media='all'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-</noscript>
 
-<link rel="preconnect" href="https://maps.googleapis.com">
-<link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
-
-
-
+  <link rel="preconnect" href="https://maps.googleapis.com">
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
-  <!-- ================= GOOGLE FONTS (Bebas Neue + Open Sans) ================= -->
+  <!-- ================= GOOGLE FONTS (ÚNICO E OTIMIZADO) ================= -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -34,7 +23,7 @@
 
   <!-- ================= CSS PRINCIPAL ================= -->
   <link rel="preload" href="/styles/style.css" as="style">
-  <link rel="stylesheet" href="/styles/style.css" media="all">
+  <link rel="stylesheet" href="/styles/style.css">
 
   <!-- ================= SEO ================= -->
   <title>Rock na Praça | Evento de rua em Esteio/RS</title>
@@ -67,38 +56,38 @@
   <script src="/script.js" defer></script>
 </head>
 
-
-  <!-- ===== JSON-LD ===== 
+<!-- ===== JSON-LD ===== 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Rock na Praça",
-  "startDate": "2025-11-23T15:00-03:00",
-  "endDate": "2025-11-23T22:00-03:00",
+  "startDate": "2025-11-14T15:00-03:00",
+  "endDate": "2025-11-14T22:00-03:00",
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": {
     "@type": "Place",
-    "name": "Praça Coração de Maria",
+    "name": "Praça da Bandeira,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Rua Padre Felipe",
-      "addressLocality": "Esteio",
-      "postalCode": "93280-020",
+      "streetAddress": "R. Cel. Vicente, 1 - Centro
+      "addressLocality": "Canoas",
+      "postalCode": "92310-000
       "addressRegion": "RS",
       "addressCountry": "BR"
     }
   },
   "image": ["https://www.jornalnopalco.com.br/wp-content/uploads/2017/02/rock-na-pr%C3%A7a.jpg"],
-  "description": "Viva a cena underground no Rock na Praça Esteio! Evento gratuito com bandas independentes, muito rock, cultura e atitude em um espaço aberto para todos os públicos.",
+"description": "Explore a cena underground no Rock na Praça! Um evento gratuito com bandas independentes, muito rock, cultura e atitude, em um espaço aberto e acolhedor para todos os públicos."
+
   "offers": {
     "@type": "Offer",
     "url": "https://www.instagram.com/rocknapraca_/",
     "price": 0,
     "priceCurrency": "BRL",
     "availability": "https://schema.org/InStock",
-    "validFrom": "2025-10-23T00:00-03:00"
+    "validFrom": "2025-10-14T00:00-03:00"
   },
   "performer": {
     "@type": "MusicGroup",
@@ -115,14 +104,14 @@
 
 <body>
   <!--CABEÇALHO-->
-  <header class="cabecalho">
-    <div class="cabecalho-simbolo-logotipo">
-      <a href="./index.html">
-        <h1> Rock na praça</h1>
+   <header class="cabecalho">
+    <div class="cabecalho-simbolo-logotipo" tabindex="1">
+      <a href="./index.html"tabindex="-1">
+        <h1 tabindex="-1"> Rock na praça</h1>
         <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça" width="150px" height="200px">
       </a>
     </div>
-    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+    <div class="menu-hamburguer" id="menu-hamburguer"  aria-label="Abrir ou Fechar menu"></div>☰</div>
     <nav class="cabecalho-menu" id="menu">
       <a href="index.html" class="active">Página Inicial</a>
       <a href="sobre.html">Sobre</a>
@@ -157,12 +146,14 @@
     <section class="secao-localizacao">
       <h3>ONDE O ROCK ACONTECE</h3>
       <p>A praça é o palco e o endereço do rock é aqui:</p>
-      <p>📍 Local:Praça Coração de Maria<br />
-        Rua Padre Felipe - Esteio/RS</p>
+      <p>📍 Local:Praça da Bandeira<br />
+        Rua Coronel Vicente -  Canoas/RS</p>
 
       <div class="container-mapa" style="height: 400px; width: 100%;">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.4981794987116!2d-51.16425!3d-29.8499035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95196f6ddba74b9f%3A0x57654fe357686cfb!2zUHJhw6dhIENvcmHDp8OjbyBkZSBNYXJpYQ!5e0!3m2!1spt-BR!2sbr!4v1762566216366!5m2!1spt-BR!2sbr"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3458.118969412799!2d-51.183052!3d-29.918477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197aa63c00026f%3A0x5b6d00339c7ce9cd!2sPra%C3%A7a%20da%20Bandeira!5e0!3m2!1spt-BR!2sbr!4v1764083182427!5m2!1spt-BR!2sbr"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
           style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -294,7 +285,7 @@
             alt="Youtube"></a>
 
       </div>
-      <div class="desenvolvedora-credito">Desenvolvido por <a href="https://www.linkedin.com/in/luanasantosb/"
+      <div class="desenvolvedora-credito">Desenvolvido por <a href="https://luanasantosb.github.io/"
           target="_blank">Luana Santos</a></div>
     </div>
   </footer>
