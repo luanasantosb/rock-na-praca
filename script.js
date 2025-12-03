@@ -31,12 +31,14 @@ function moverSlide(direcao) {
 /* ---------------------------------
    BANNER
 ---------------------------------- */
-const exibirBanner = false;
-const banner = document.getElementById("banner");
+const mostrarBanner1 = false;
+const mostrarBanner2 = true;
 
-if (banner) {
-  banner.style.display = exibirBanner ? "block" : "none";
-}
+const banner1 = document.querySelector(".banner1");
+const banner2 = document.querySelector(".banner2");
+
+if (banner1) banner1.style.display = mostrarBanner1 ? "block" : "none";
+if (banner2) banner2.style.display = mostrarBanner2 ? "block" : "none";
 
 /* ---------------------------------
    CONTADORES
