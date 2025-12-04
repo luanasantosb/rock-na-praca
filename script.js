@@ -32,13 +32,17 @@ function moverSlide(direcao) {
    BANNER
 ---------------------------------- */
 const mostrarBanner1 = false;
-const mostrarBanner2 = true;
+const mostrarBanner2 = false;
+const mostrarBanner3 = false;
 
 const banner1 = document.querySelector(".banner1");
 const banner2 = document.querySelector(".banner2");
+const banner3 = document.querySelector(".banner3");
 
 if (banner1) banner1.style.display = mostrarBanner1 ? "block" : "none";
 if (banner2) banner2.style.display = mostrarBanner2 ? "block" : "none";
+if (banner3) banner3.style.display = mostrarBanner3 ? "block" : "none";
+
 
 /* ---------------------------------
    CONTADORES
@@ -195,9 +199,7 @@ function setupYouTubeLazyLoad() {
   divs.forEach(div => observer.observe(div));
 }
 
-/* ---------------------------------
-   GOOGLE MAPS LAZY-LOAD
----------------------------------- */
+
 function initMap() {
   const mapEl = document.getElementById("map");
   if (!mapEl) return;
@@ -239,11 +241,3 @@ function setupMapLazyLoad() {
 
   observer.observe(mapEl);
 }
-
-/* ---------------------------------
-   INICIALIZAÇÃO AO CARREGAR DOM
----------------------------------- */
-document.addEventListener("DOMContentLoaded", () => {
-  setupYouTubeLazyLoad();
-  setupMapLazyLoad();
-});
