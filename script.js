@@ -13,20 +13,6 @@ if (menuBtn && menu) {
   });
 }
 
-/* ---------------------------------
-   CARROSSEL
----------------------------------- */
-let index = 0;
-const wrapper = document.getElementById('carrossel');
-const totalSlides = wrapper ? wrapper.children.length : 0;
-
-function moverSlide(direcao) {
-  if (!wrapper) return;
-  index += direcao;
-  if (index < 0) index = totalSlides - 1;
-  if (index >= totalSlides) index = 0;
-  wrapper.style.transform = `translateX(-${index * 100}%)`;
-}
 
 /* ---------------------------------
    BANNER
@@ -49,7 +35,7 @@ if (banner3) banner3.style.display = mostrarBanner3 ? "block" : "none";
 ---------------------------------- */
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
-  const velocidade = 100;
+  const velocidade = 200;
 
   contadores.forEach(contador => {
     const valorFinal = +contador.getAttribute('data-numero');
@@ -70,21 +56,23 @@ function animarContadores() {
   });
 }
 
-const section = document.getElementById('dados');
-let jaAnimou = false;
+const section = document.querySelector('#dados');
 
 if (section) {
-  window.addEventListener('scroll', () => {
-    const posicao = section.getBoundingClientRect().top;
-    const alturaTela = window.innerHeight;
-
-    if (posicao < alturaTela * 0.8 && !jaAnimou) {
-      section.classList.add('ativo');
-      animarContadores();
-      jaAnimou = true;
-    }
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animarContadores();
+        observer.unobserve(section); 
+      }
+    });
+  }, {
+    threshold: 0.5 
   });
+
+  observer.observe(section);
 }
+
 
 /* ---------------------------------
    CARRINHO DA LOJA
@@ -170,74 +158,4 @@ function enviarWhatsApp() {
 
 document.addEventListener("DOMContentLoaded", mostrarCarrinho);
 
-/* ---------------------------------
-   YOUTUBE LAZY-LOAD
----------------------------------- */
-function loadYouTubeIframe(div) {
-  const id = div.dataset.id;
-  const iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=0&rel=0`;
-  iframe.width = "560";
-  iframe.height = "315";
-  iframe.frameBorder = "0";
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-  iframe.allowFullscreen = true;
-  div.appendChild(iframe);
-}
 
-function setupYouTubeLazyLoad() {
-  const divs = document.querySelectorAll(".youtube");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        loadYouTubeIframe(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: "200px" });
-
-  divs.forEach(div => observer.observe(div));
-}
-
-
-function initMap() {
-  const mapEl = document.getElementById("map");
-  if (!mapEl) return;
-
-  const map = new google.maps.Map(mapEl, {
-    center: { lat: -29.7356, lng: -51.1539 },
-    zoom: 13,
-  });
-
-  new google.maps.Marker({
-    position: { lat: -29.7356, lng: -51.1539 },
-    map: map,
-    title: "Rock na Praça Esteio",
-  });
-}
-
-function loadMapScript() {
-  if (document.getElementById("google-maps-script")) return;
-
-  const script = document.createElement("script");
-  script.id = "google-maps-script";
-  script.src = "https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap";
-  script.async = true;
-  document.body.appendChild(script);
-}
-
-function setupMapLazyLoad() {
-  const mapEl = document.getElementById("map");
-  if (!mapEl) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        loadMapScript();
-        observer.disconnect();
-      }
-    });
-  }, { rootMargin: "200px" });
-
-  observer.observe(mapEl);
-}
