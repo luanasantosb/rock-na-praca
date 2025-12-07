@@ -1,38 +1,12 @@
-/* ---------------------------------
-   CABEÇALHO
----------------------------------- */
-const menuBtn = document.getElementById('menu-hamburguer');
-const menu = document.getElementById('menu');
-let aberto = false;
+ /*=====CABECALHO=====*/
+  const btnHamburguer = document.getElementById("menu-hamburguer");
+  const menu = document.getElementById("menu");
 
-if (menuBtn && menu) {
-  menuBtn.addEventListener('click', () => {
-    menu.classList.toggle('ativo');
-    aberto = !aberto;
-    menuBtn.innerHTML = aberto ? '&times;' : '&#9776;';
+  btnHamburguer.addEventListener("click", () => {
+    menu.classList.toggle("abrir");
   });
-}
 
-
-/* ---------------------------------
-   BANNER
----------------------------------- */
-const mostrarBanner1 = false;
-const mostrarBanner2 = false;
-const mostrarBanner3 = false;
-
-const banner1 = document.querySelector(".banner1");
-const banner2 = document.querySelector(".banner2");
-const banner3 = document.querySelector(".banner3");
-
-if (banner1) banner1.style.display = mostrarBanner1 ? "block" : "none";
-if (banner2) banner2.style.display = mostrarBanner2 ? "block" : "none";
-if (banner3) banner3.style.display = mostrarBanner3 ? "block" : "none";
-
-
-/* ---------------------------------
-   CONTADORES
----------------------------------- */
+ /*======  CONTADORES===========*/
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
   const velocidade = 200;
