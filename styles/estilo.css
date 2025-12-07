@@ -45,12 +45,12 @@ main {
   margin-top: 80px;
 }
 
-/* ============= CABEÇALHO=============== */
+/* ************************ CABEÇALHO ***************************** */
 .cabecalho {
   align-items: center;
   display: flex;
   height: 80px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0 28px;
   position: fixed;
   top: 0;
@@ -60,6 +60,14 @@ main {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6));
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(6px);
+}
+
+.cabecalho-simbolo-logotipo a {
+  text-decoration: none;
+  color: var(--verde);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .cabecalho-simbolo-logotipo img {
@@ -83,75 +91,137 @@ main {
 
 .cabecalho-menu a:hover {
   color: var(--branco);
-  transform: translateY(-4px)
+  transform: translateY(-4px);
 }
 
 .cabecalho-menu a.active {
   color: var(--rosa);
 }
 
+.menu-hamburguer {
+  display: none;
+  font-size: 38px;
+  color: var(--verde);
+  cursor: pointer;
+}
+
+/* ************************ responsividade***************************** */
+@media (max-width: 768px) {
+
+  .menu-hamburguer {
+    display: block;
+  }
+
+  .cabecalho-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--preto);
+    width: 220px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .cabecalho-menu.abrir {
+    display: flex;
+  }
+}
+
 /* ======  PRINCIPAL ====== */
+
 .principal-container {
-  background-image: url(../assets/textura-da-parede-grunge.jpg);
-  background-repeat: repeat;
-  background-size: 100%;
+  position: relative;
   width: 100%;
   height: 600px;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: contrast(0.9) brightness(0.9);
-  border-radius: 4px;
   overflow: hidden;
+  z-index: 0;
 }
 
+.principal-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/muro.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+  z-index: -1;
+}
 
-/* O NOVO cartaz que vai por cima */
-.novo-cartaz {
+.principal-container>* {
+  position: relative;
+  z-index: 1;
+}
+
+.cartaz {
   display: flex;
   align-items: center;
-
-
-  /* Posicionamento (exemplo) */
-  top: 5%;
-  left: 10%;
   width: 500px;
-  /* Tamanho do seu novo cartaz */
-
-  /* --- A MÁGICA DO REALISMO AQUI --- */
-
-  /* 1. NÃO USE mix-blend-mode aqui. 
-       Queremos que ele cubra o fundo. Use opacidade quase total. */
+  max-width: 90%;
   opacity: 0.95;
-  /* 95% opaco. Deixa passar só um tiquinho de nada. */
 
-  /* 2. Perspectiva e Rotação 
-       Essencial para paredes que não estão retas. Dá volume. */
   transform: perspective(1000px) rotateY(5deg) rotateZ(-2deg);
 
-  /* 3. A Sombra de "Papel Colado"
-       Sombra curta, escura e difusa. Mostra que é um objeto físico sobre outros. */
-  filter: drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
-
-  /* 4. Integração de Iluminação (IMPORTANTE)
-       Se a foto da parede é meio escura/suja, o cartaz novo não pode ser
-       branco brilhante. Ajuste o brilho e contraste DELE para combinar. */
-  /* Exemplo: Diminuir o brilho e aumentar um pouco o contraste para "assentar" */
-  /* filter: brightness(0.85) contrast(1.1) sepia(0.1); */
-  /* OBS: Se usar o filtro de cima, junte com o drop-shadow assim: */
   filter: brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
 
-  /* Opcional: Uma bordinha branca fina para destacar se o cartaz for escuro */
   border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-/* === CONTADOR ===*/
 
+/* ===== RESPONSIVIDADE ============ */
+
+@media (max-width: 900px) {
+  .principal-container {
+    height: 500px;
+  }
+
+  .cartaz {
+    width: 380px;
+    transform: perspective(800px) rotateY(3deg) rotateZ(-1deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .principal-container {
+    height: 400px;
+  }
+
+  .cartaz {
+    width: 280px;
+    max-width: 90%;
+    opacity: 0.93;
+    transform: perspective(600px) rotateY(1.5deg) rotateZ(-0.5deg);
+    filter: brightness(0.92) contrast(1.05) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.6));
+    border-width: 1.5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .principal-container {
+    height: 350px;
+  }
+
+  .cartaz {
+    width: 230px;
+    transform: none;
+    border-width: 1px;
+  }
+}
+
+
+
+/* XXXXXXXXXXXX CONTADOR XXXXXXXXXXXXXXXXXX */
 .secao-contador {
   margin-top: 0;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border-top: 5px solid var(--verde);
@@ -159,24 +229,22 @@ main {
   padding: clamp(1rem, 4vw, 3rem) clamp(0.5rem, 4vw, 2rem);
   gap: clamp(1.5rem, 4vw, 3rem);
   text-align: center;
-  gap: 40px;
   background-color: var(--preto);
-
 }
 
+
 .secao-contador .info {
-  flex: 0 0 auto;
-  max-width: none;
+  flex: 1 1 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
-  text-align: center;
   padding: 1rem 0.5rem;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: row;
+  text-align: center;
+  min-width: 150px;
 }
+
 
 .secao-contador h2 {
   font-size: clamp(2.2rem, 3vw, 3.6rem);
@@ -187,14 +255,16 @@ main {
   font-family: var(--fonte-principal);
 }
 
+
 .secao-contador p {
   font-size: clamp(1.1rem, 1.6vw, 1.6rem);
   margin: 0;
-font-family: var(--fonte-textos);
+  font-family: var(--fonte-textos);
   color: var(--branco);
   text-shadow: 0 0 3px rgba(0, 255, 120, 0.35);
   opacity: 0.85;
 }
+
 
 .secao-contador-linha {
   display: flex;
@@ -203,49 +273,50 @@ font-family: var(--fonte-textos);
   gap: 6px;
 }
 
+
 .prefixo,
 .numero {
   display: inline-flex;
   white-space: nowrap;
 }
 
-/* ====SEÇÕES GERAIS======= */
+/* XXXXXXXXXXXXXX Responsividade XXXXXXXXXXXX */
+@media (max-width: 768px) {
+  .secao-contador {
+    gap: 20px;
+    padding: 2rem 1rem;
+  }
 
-/* ================================
-   LAYOUT PRINCIPAL
-================================ */
-.principal-conteudo {
-  background-color: var(--preto);
-  display: flex;
-  padding: 3rem 1rem;
-  gap: 2rem;
-  max-width: 100%;
-  margin: 0 auto;
-  color: var(--branco);
+  .secao-contador .info {
+    flex: 1 1 100%;
+    max-width: 260px;
+  }
 }
 
-/* ================================
-   LATERAL
-================================ */
-.bloco-lateral {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+@media (max-width: 480px) {
+  .secao-contador h2 {
+    font-size: 2.4rem;
+  }
+
+  .secao-contador p {
+    font-size: 1.3rem;
+  }
 }
 
-/* === Cards Laterais === */
-.card-videos,
-.card-inscricoes {
-  background: #1a1a1a;
-  padding: 1.7rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(110, 212, 122 0.3);
-  font-family: var(--fonte-textos);
+/* ==============  CONTEUDO PRINCIPAL   ==========*/
+
+/* ~~~~~~~~ ESTILOS ~~~~~~~~~ */
+.card-videos:hover,
+.card-local:hover,
+.card-realizacao-apoio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
 }
 
 .titulo-videos,
-.titulo-inscricoes {
+.titulo-local,
+.titulo-realizacao,
+.titulo-apoio {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--verde);
@@ -253,10 +324,53 @@ font-family: var(--fonte-textos);
   font-family: var(--fonte-principal);
 }
 
-.informacoes-inscricoes {
+.card-local,
+.card-realizacao-apoio,
+.card-videos {
+  background: #1a1a1a;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  font-family: (--fonte-textos);
+  color: var(--branco);
+}
+
+.geral-conteudo {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem 1rem;
+  gap: 2rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.bloco-principal {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  order: 1;
+}
+
+.container-mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.informacoes-local {
   margin-bottom: 1rem;
   opacity: 0.9;
-  font-size: 1.5rem;
+  font-family: var(--fonte-textos);
+  font-size: 1.2rem;
+}
+
+/* ###########   CONTEUDO  LATERAL  ########## */
+.bloco-lateral {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  order: 2;
 }
 
 .videos-grid {
@@ -268,8 +382,8 @@ font-family: var(--fonte-textos);
 .cartao-video iframe {
   width: 100%;
   height: 220px;
-  border-radius: 10px;
   border: none;
+  padding: 2rem;
 }
 
 .btn-ytb {
@@ -279,108 +393,222 @@ font-family: var(--fonte-textos);
   text-align: center;
   background: transparent;
   color: var(--branco);
-  font-weight: bold;
   text-decoration: none;
   border-radius: 10px;
   margin-top: 1rem;
   border: 1px solid var(--verde);
+  font-weight: bold;
+}
+
+/* +++++++++ RESPONSIVIDADE +++++++++*/
+
+@media (max-width: 900px) {
+  .geral-conteudo {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .bloco-principal,
+  .bloco-lateral {
+    width: 100%;
+  }
+
+  .cartao-video iframe {
+    height: 260px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  .geral-conteudo {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0.5rem;
+  }
+
+  .titulo-videos,
+  .titulo-local,
+  .titulo-realizacao,
+  .titulo-apoio {
+    font-size: 1.6rem;
+  }
+
+  .card-local,
+  .card-realizacao-apoio,
+  .card-videos {
+    padding: 1.5rem;
+  }
+
+  .container-mapa iframe {
+    height: 230px;
+  }
+
+  .cartao-video iframe {
+    height: 200px;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .titulo-videos,
+  .titulo-local,
+  .titulo-realizacao,
+  .titulo-apoio {
+    font-size: 1.4rem;
+  }
+
+  .informacoes-local {
+    font-size: 1rem;
+  }
+
+  .cartao-video iframe {
+    height: 190px;
+  }
+}
+
+
+/*----------------- SOBRE/INSCRIÇÕES--------------*/
+.card-sobre:hover,
+.card-inscricoes-bandas:hover,
+.card-inscricoes-feira:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+}
+
+.titulo-sobre,
+.titulo-inscricoes {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: var(--fonte-principal);
+  font-weight: 700;
+  color: var(--verde);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+.informacoes-sobre,
+.informacoes-inscricoes {
+  opacity: 0.9;
+  font-family: var(--fonte-textos);
+  font-size: 1.5rem;
+  color: var(--branco);
+  text-align: justify;
+  text-justify: distribute;
+  padding: 1rem;
+}
+
+.card-sobre {
+  background: #1a1a1a;
+  max-width: 90%;
+  margin: 1.5rem auto;
+  font-family: var(--fonte-textos);
+  color: var(--branco);
+}
+
+.cartao-video-sobre {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  width: 100%;
+  padding: 1rem;
+}
+
+.cartao-video-sobre iframe {
+  width: 90%;
+  max-width: 700px;
+  height: 300px;
+  border: none;
+}
+
+.card-inscricoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+}
+
+.card-inscricoes-bandas,
+.card-inscricoes-feira {
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-color: #1a1a1a;
+
 }
 
 .btn-inscricao {
   display: inline-block;
-  width: 100%;
-  padding: 0.5rem;
-  text-align: center;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
   background: transparent;
   color: var(--branco);
-  font-weight: bold;
   text-decoration: none;
-  border-radius: 10px;
-  margin: 1rem 0;
   border: 1px solid var(--verde);
-}
-
-/* ================================
-   CONTEÚDO PRINCIPAL
-================================ */
-.bloco-conteudo {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.card-sobre,
-.card-local {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-.titulo-sobre,
-.titulo-local {
-  font-size: 2rem;
-  color: var(--branco);
-  margin-bottom: 1rem;
-  color: var(--verde);
-  font-family: var(--fonte-principal);
-}
-
-.informacoes-sobre {
-  margin-bottom: 1rem;
-  opacity: 0.9;
+  transition: background .3s ease, transform .3s ease;
   font-family: var(--fonte-textos);
-  font-size: 1.5rem;
+  margin-top: 20px;
 }
 
-.informacoes-local {
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  font-family: var(--fonte-textos);
-  font-size: 1.5rem;
+.btn-inscricao:hover {
+  background: var(--verde);
+  transform: scale(1.05);
 }
 
-.container-mapa iframe {
-  width: 100%;
-  height: 350px;
-  border: none;
-  border-radius: 10px;
-}
-
-.cartao-video-sobre iframe {
-  width: 100%;
-  height: 580px;
-  border-radius: 10px;
-  border: none;
-}
-
-.card-videos:hover,
-.card-inscricoes:hover .card-sobre:hover,
-.card-local:hover {
-  transform: translateY(-6px);
+@media (max-width: 768px) {
+  .card-inscricoes {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ====== LOJA ====== */
 .secao-carrinho {
-  margin-top: 100px;
-  font-size: 1.5rem;
+  background: #1a1a1a;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   margin-top: 80px;
+  font-size: 1.5rem;
   text-align: center;
   width: 100%;
   color: var(--branco);
-
 }
 
 .titulo-carrinho {
   color: var(--rosa);
   font-size: 2rem;
+  font-family: var(--fonte-principal);
 }
 
 .botoes {
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  gap: 3rem;
   margin: 10px;
+  flex-wrap: wrap;
+}
+
+.botao-finalizar-pedido {
+  background-color: var(--rosa);
+  border: 1px solid var(--rosa);
+  color: var(--branco);
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.botao-esvaziar {
+  background-color: transparent;
+  color: var(--branco);
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  padding: 5px;
 }
 
 #itens {
@@ -390,6 +618,7 @@ font-family: var(--fonte-textos);
 .secao-cards-loja {
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-evenly;
@@ -398,59 +627,20 @@ font-family: var(--fonte-textos);
 }
 
 .card-loja {
-  background-color: transparent;
-  border: 2px solid var(--verde);
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   height: 350px;
-  overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
-  width: 300px;
-}
-
-.card-loja span {
-  align-items: center;
-  display: flex;
-  font-size: 13px;
-  height: 150px;
-  justify-content: center;
-  left: -10px;
-  overflow: hidden;
-  position: absolute;
-  top: -10px;
-  width: 150px;
-}
-
-.card-loja span::before {
-  align-items: center;
-  background-color: var(--rosa);
-  content: 'Sob encomenda';
-  display: flex;
-  font-weight: 600;
-  height: 40px;
-  justify-content: center;
-  letter-spacing: 0.1em;
-  position: absolute;
-  transform: rotate(-45deg) translateY(-20px);
-  text-transform: uppercase;
-  width: 150%;
-}
-
-.card-loja span::after {
-  bottom: 0;
-  content: '';
-  height: 10px;
-  left: 0;
-  position: absolute;
-  width: 10px;
-  z-index: -1;
+  background: #1a1a1a;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  flex: 1 1 250px;
+  max-width: 300px;
 }
 
 .card-loja img {
-  border-bottom: 2px solid var(--verde);
-  height: 60%;
+  height: 70%;
   object-fit: cover;
   width: 100%;
 }
@@ -471,6 +661,7 @@ font-family: var(--fonte-textos);
   text-align: center;
   color: var(--verde);
   text-transform: uppercase;
+  font-family: var(--fonte-principal);
 }
 
 .card-loja p {
@@ -478,24 +669,15 @@ font-family: var(--fonte-textos);
   margin: 0 10px 1rem;
   text-align: center;
   color: var(--branco);
+  font-family: var(--fonte-textos);
 }
 
 .card-loja a {
-  color: var(--verde);
   display: block;
   margin-bottom: 1rem;
   transition: color 0.2s ease;
   text-decoration: none;
   text-align: center;
-}
-
-.botao-esvaziar {
-  background-color: transparent;
-  color: var(--branco);
-  margin-top: 20px;
-  text-transform: uppercase;
-  transition: 0.3s;
-  padding: 5px;
 }
 
 .botao-adicionar {
@@ -507,16 +689,6 @@ font-family: var(--fonte-textos);
   text-transform: uppercase;
 }
 
-.botao-finalizar-pedido {
-  background-color: var(--rosa);
-  border: 1px solid var(rosa);
-  color: var(--branco);
-  font-size: 15px;
-  font-weight: bold;
-  margin-top: 20px;
-  padding: 10px;
-  text-transform: uppercase;
-}
 
 /*=======
  RODAPÉ
@@ -575,4 +747,55 @@ font-family: var(--fonte-textos);
 .desenvolvedora-credito a {
   color: var(--preto);
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+
+  .botoes {
+    gap: 1.5rem;
+  }
+
+  .titulo-carrinho {
+    font-size: 1.6rem;
+  }
+
+  .card-loja {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .card-loja img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .secao-carrinho {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .botoes {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .botao-finalizar-pedido,
+  .botao-esvaziar {
+    width: 100%;
+  }
+
+  .card-loja {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .card-loja h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-loja p {
+    font-size: 1rem;
+  }
 }
