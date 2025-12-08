@@ -174,9 +174,6 @@ main {
   border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-
-/* ===== RESPONSIVIDADE ============ */
-
 @media (max-width: 900px) {
   .principal-container {
     height: 500px;
@@ -214,8 +211,6 @@ main {
     border-width: 1px;
   }
 }
-
-
 
 /* XXXXXXXXXXXX CONTADOR XXXXXXXXXXXXXXXXXX */
 .secao-contador {
@@ -280,7 +275,6 @@ main {
   white-space: nowrap;
 }
 
-/* XXXXXXXXXXXXXX Responsividade XXXXXXXXXXXX */
 @media (max-width: 768px) {
   .secao-contador {
     gap: 20px;
@@ -304,14 +298,6 @@ main {
 }
 
 /* ==============  CONTEUDO PRINCIPAL   ==========*/
-
-/* ~~~~~~~~ ESTILOS ~~~~~~~~~ */
-.card-videos:hover,
-.card-local:hover,
-.card-realizacao-apoio:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
-}
 
 .titulo-videos,
 .titulo-local,
@@ -470,13 +456,6 @@ main {
 
 
 /*----------------- SOBRE/INSCRIÇÕES--------------*/
-.card-sobre:hover,
-.card-inscricoes-bandas:hover,
-.card-inscricoes-feira:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
-}
-
 .titulo-sobre,
 .titulo-inscricoes {
   font-size: 2rem;
@@ -510,8 +489,8 @@ main {
 
 .cartao-video-sobre {
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 1rem;
 }
@@ -565,16 +544,19 @@ main {
   }
 }
 
-/* ====== LOJA ====== */
+
+/* =================  LOJA  ================= */
+
 .secao-carrinho {
   background: #1a1a1a;
   padding: 2rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   margin-top: 80px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   width: 100%;
   color: var(--branco);
+  font-family: var(--fonte-textos);
 }
 
 .titulo-carrinho {
@@ -583,44 +565,41 @@ main {
   font-family: var(--fonte-principal);
 }
 
+#itens{
+  list-style: none;
+}
 .botoes {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   margin: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .botao-finalizar-pedido {
-  background-color: var(--rosa);
-  border: 1px solid var(--rosa);
+  padding: 3px 5px;
   color: var(--branco);
-  font-size: 15px;
-  font-weight: bold;
+  font-family: var(--fonte-textos);
+  background-color: var(--rosa);
   margin-top: 20px;
-  padding: 10px;
+  width: 15%;
   text-transform: uppercase;
 }
 
 .botao-esvaziar {
-  background-color: transparent;
-  color: var(--branco);
+  padding: 5px 7px;
   margin-top: 20px;
   text-transform: uppercase;
-  transition: 0.3s;
-  padding: 5px;
+  font-size: 1rem;
 }
 
-#itens {
-  list-style: none;
-}
 
 .secao-cards-loja {
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: space-evenly;
   margin: 50px 0;
   padding: 10px;
@@ -629,20 +608,21 @@ main {
 .card-loja {
   display: flex;
   flex-direction: column;
-  height: 350px;
-  position: relative;
-  transition: all 0.3s ease;
+  gap: 2rem;
+  min-height: 350px;
   background: #1a1a1a;
-  padding: 2rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  flex: 1 1 250px;
-  max-width: 300px;
+  flex: 1 1 260px;
+  min-width: 300px;
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .card-loja img {
-  height: 70%;
-  object-fit: cover;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 3px;
 }
 
 .card-loja:hover {
@@ -651,48 +631,129 @@ main {
 }
 
 .card-infos {
-  display: flex;
-  flex-direction: column;
+  padding: 0 0.5rem;
+  color: var(--branco);
+
 }
 
 .card-loja h3 {
-  font-size: 1.5em;
-  margin: 15px 0 0.5rem;
+  font-size: 1.4rem;
   text-align: center;
+  margin: 15px 0 5px;
   color: var(--verde);
-  text-transform: uppercase;
   font-family: var(--fonte-principal);
 }
 
 .card-loja p {
-  font-size: 1.2rem;
-  margin: 0 10px 1rem;
+  font-size: 1.1rem;
   text-align: center;
   color: var(--branco);
+  margin-bottom: 5px;
   font-family: var(--fonte-textos);
 }
 
-.card-loja a {
-  display: block;
-  margin-bottom: 1rem;
-  transition: color 0.2s ease;
-  text-decoration: none;
-  text-align: center;
-}
-
 .botao-adicionar {
+  display: block;
   background-color: var(--rosa);
-  border-top: 1px solid var(--rosa);
   color: var(--branco);
   font-size: 1rem;
   padding: 10px;
   text-transform: uppercase;
+  margin-bottom: 1rem;
+  margin: 1rem auto;
+  width: fit-content;
+}
+
+.modal {
+  display: none;
+}
+
+.modal:target {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: var(--branco);
+  padding: 15px;
+  border-radius: 6px;
+  position: relative;
+  max-width: 95vw;
+}
+
+.modal-content img {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: block;
+  margin: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--rosa);
+  text-decoration: none;
+}
+
+/* ==== RESPONSIVIDADE====== */
+
+
+@media (max-width: 900px) {
+  .titulo-carrinho {
+    font-size: 1.7rem;
+  }
+
+  .card-loja {
+    flex: 1 1 45%;
+  }
 }
 
 
-/*=======
- RODAPÉ
-========*/
+@media (max-width: 600px) {
+  .secao-carrinho {
+    font-size: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .botoes {
+    gap: 1rem;
+  }
+
+  .card-loja {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .card-loja h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-loja p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 420px) {
+
+  .botao-finalizar-pedido,
+  .botao-esvaziar {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+/*======= RODAPÉ ==========*/
 .rodape {
   align-items: center;
   background-color: var(--verde);
