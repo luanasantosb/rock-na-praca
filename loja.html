@@ -53,7 +53,7 @@
 </head>
 
 <!-- ===== JSON-LD ===== -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
@@ -100,12 +100,13 @@
 
 
 <body>
-   <!--CABEÇALHO-->
+  <!--CABEÇALHO-->
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo" tabindex="1">
-      <a href="./index.html"tabindex="-1">
+      <a href="./index.html" tabindex="-1">
         <h1 tabindex="-1"> Rock na praça</h1>
-        <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça" width="150px" height="200px"></a>
+        <img src="./assets/Rock-na-praca-logo-e-icone.webp" alt="Ícone rock na praça" width="150px" height="200px">
+      </a>
     </div>
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
     <nav class="cabecalho-menu" id="menu">
@@ -115,35 +116,54 @@
     </nav>
   </header>
   <main>
-     <section class="secao-carrinho">
+    <section class="secao-carrinho">
       <h3 class="titulo-carrinho">Meu Carrinho</h3>
-    <div id="carrinho">
-    <ul id="itens"></ul>
-    <p><strong>Itens:</strong> <span id="quantidadeTotal">0</span></p>
-    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
-    
-      <button class="botao-finalizar-pedido" onclick="enviarWhatsApp()">Finalizar Pedido</button>
+      <div id="carrinho">
+        <ul id="itens"></ul>
+        <p><strong>Itens:</strong> <span id="quantidadeTotal">0</span></p>
+        <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
 
-    <button class="botao-esvaziar" onclick="limparCarrinho()">Esvaziar carrinho</button>
-    <div id="finalizar">
-    </div>
-  </div>
-  </section>
+        <div class="botoes">
+        <div class="botao-finalizar-pedido" onclick="enviarWhatsApp()">Finalizar Pedido</div>
+
+        <div class="botao-esvaziar" onclick="limparCarrinho()">Esvaziar carrinho</div>
+        <div id="finalizar">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="secao-cards-loja">
+
       <!-- CAMISETA 1 -->
       <div class="card-loja">
-        <img src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
-        <span></span>
+
+
+        <a href="#modalFoto">
+          <img class="foto-produto" src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
+        </a>
+
         <div class="card-infos">
           <h3>Camiseta modelo #1</h3>
           <p>R$70,00</p>
-          <button  class="botao-adicionar" onclick="adicionar('Camiseta modelo 1', 70.00)">Adicionar ao carrinho</button>
+          <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 1', 70.00)">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
+          <a href="#" class="close-btn">✕</a>
         </div>
       </div>
 
+
+
       <!-- COPO -->
       <div class="card-loja">
-        <img src="./assets/Rock-na-praca-simbolo.webp" alt="Copo do Rock na Praça">
+
+        <a href="#modalFoto">
+          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Copo do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Copo</h3>
           <p>R$5,00</p>
@@ -151,39 +171,71 @@
         </div>
       </div>
 
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="#" alt="Copo">
+          <a href="#" class="close-btn">✕</a>
+        </div>
+      </div>
+
       <!-- ECOBAG -->
       <div class="card-loja">
-        <img src="./assets/Rock-na-praca-simbolo.webp" alt="Ecobag do Rock na Praça">
+        <a href="#modalFoto">
+          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Ecobag do Rock na Praça">
+        </a>
         <div class="card-infos">
           <h3>Ecobag</h3>
           <p>R$10,00</p>
           <button class="botao-adicionar" onclick="adicionar('Ecobag', 10.00)">Adicionar ao carrinho</button>
         </div>
       </div>
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="#" alt="Ecobag">
+          <a href="#" class="close-btn">✕</a>
+        </div>
+      </div>
 
       <!-- CARTEIRA -->
       <div class="card-loja">
-        <img src="./assets/Rock-na-praca-simbolo.webp" alt="Carteira do Rock na Praça">
+        <a href="#modalFoto">
+          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Carteira do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Carteira</h3>
           <p>R$20,00</p>
           <button class="botao-adicionar" onclick="adicionar('Carteira', 20.00)">Adicionar ao carrinho</button>
         </div>
       </div>
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="#" alt="Ecobag">
+          <a href="#" class="close-btn">✕</a>
+        </div>
+      </div>
 
       <!-- BOTTON -->
       <div class="card-loja">
-        <img src="./assets/Rock-na-praca-simbolo.webp" alt="Botton do Rock na Praça">
+        <a href="#modalFoto">
+          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Botton do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Botton</h3>
           <p>R$5,00</p>
           <button class="botao-adicionar" onclick="adicionar('Botton', 5.00)">Adicionar ao carrinho</button>
         </div>
       </div>
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="#" alt="Ecobag">
+          <a href="#" class="close-btn">✕</a>
+        </div>
+      </div>
 
       <!-- TÊNIS -->
-      <div class="card-loja">
-        <img src="./assets/Rock-na-praca-simbolo.webp" alt="Tênis do Rock na Praça">
+
+       <div class="card-loja">
+        
+        <a href="#modalFoto">
+          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Tênis do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Tênis</h3>
           <p>R$70,00</p>
@@ -191,9 +243,18 @@
         </div>
       </div>
 
-      <!-- MOCHILA -->
-      <div class="card-loja">
-        <img src="./assets/Rock-na-praca-simbolo.webp" alt="Mochila do Rock na Praça">
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="#" alt="Tênis">
+          <a href="#" class="close-btn">✕</a>
+        </div>
+      </div>
+
+        <!-- MOCHILA -->
+           <div class="card-loja">
+        
+        <a href="#modalFoto">
+          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Mochila do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Mochila</h3>
           <p>R$70,00</p>
@@ -201,35 +262,53 @@
         </div>
       </div>
 
-      <!-- CAMISETA 2 -->
-      <div class="card-loja">
-        <span></span>
-        <img src="./assets/camiseta-Rock-Na-Praca-modelo-2.webp" alt="Camiseta modelo 2">
-        <div class="card-infos">
-          <h3>Camiseta modelo #2</h3>
-          <p>R$70,00</p>
-          <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 2', 70.00)">Adicionar ao carrinho</button>
+      <div id="modalFoto" class="modal">
+        <div class="modal-content">
+          <img src="#" alt="Mochila">
+          <a href="#" class="close-btn">✕</a>
         </div>
       </div>
-      </section>
-</main>
+
+          <!-- CAMISETA 2 -->
+          <div class="card-loja">
+            <a href="#modalFoto">
+              <img src="./assets/camiseta-Rock-Na-Praca-modelo-2.webp" alt="Camiseta modelo 2"></a>
+            <div class="card-infos">
+              <h3>Camiseta modelo #2</h3>
+              <p>R$70,00</p>
+              <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 2', 70.00)">Adicionar ao
+                carrinho</button>
+            </div>
+          </div>
+          <div id="modalFoto" class="modal">
+            <div class="modal-content">
+              <img src="./assets/camiseta-Rock-Na-Praca-modelo-2.webp" alt="Ecobag">
+              <a href="#" class="close-btn">✕</a>
+            </div>
+          </div>
+    </section>
+  </main>
 
   <!--RODAPÉ-->
   <footer class="rodape">
     <div class="rodape-conteudo">
-        <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
-        <div class="redes-sociais">
-            <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/instagram.webp" alt="Instagram"></a>
-            
-            <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/facebook.webp" alt="Facebook"></a>
+      <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
+      <div class="redes-sociais">
+        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/instagram.webp"
+            alt="Instagram"></a>
 
-            <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/youtube.webp" alt="Youtube"></a>
+        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/facebook.webp"
+            alt="Facebook"></a>
 
-        </div>
-        <div class="desenvolvedora-credito">Desenvolvido por <a href="https://luanasantosb.github.io/" target="_blank">Luana Santos</a></div>
+        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/youtube.webp"
+            alt="Youtube"></a>
+
+      </div>
+      <div class="desenvolvedora-credito">Desenvolvido por <a href="https://luanasantosb.github.io/"
+          target="_blank">Luana Santos</a></div>
     </div>
   </footer>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-</html>
 
+</html>
