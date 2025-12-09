@@ -384,6 +384,7 @@ main {
   margin-top: 1rem;
   border: 1px solid var(--verde);
   font-weight: bold;
+  font-family: var(--fonte-textos);
 }
 
 /* +++++++++ RESPONSIVIDADE +++++++++*/
