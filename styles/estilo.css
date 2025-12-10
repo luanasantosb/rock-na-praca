@@ -148,7 +148,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../assets/muro.jpg");
+  background-image: url("../assets/BACKGROUND-prinicipal.jpg");
   background-repeat: repeat;
   background-size: cover;
   filter: grayscale(100%);
