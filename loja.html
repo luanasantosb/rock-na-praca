@@ -44,9 +44,8 @@
   <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ================= ICONES / PWA ================= -->
-  <link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
-  <link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/assets/logos/Rock-na-praca-simbolo.webp" type="image/webp" />
+
 
   <!-- ================= JAVASCRIPT ================= -->
   <script src="/script.js" defer></script>
@@ -105,7 +104,7 @@
     <div class="cabecalho-simbolo-logotipo" tabindex="1">
       <a href="./index.html" tabindex="-1">
         <h1 tabindex="-1"> Rock na praça</h1>
-        <img src="./assets/Rock-na-praca-logo-e-icone.png" alt="Ícone rock na praça" width="150px" height="200px">
+        <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone rock na praça" width="150px" height="200px">
       </a>
     </div>
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
@@ -124,10 +123,10 @@
         <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
 
         <div class="botoes">
-        <div class="botao-finalizar-pedido" onclick="enviarWhatsApp()">Finalizar Pedido</div>
+          <div class="botao-finalizar-pedido" onclick="enviarWhatsApp()">Finalizar Pedido</div>
 
-        <div class="botao-esvaziar" onclick="limparCarrinho()">Esvaziar carrinho</div>
-        <div id="finalizar">
+          <div class="botao-esvaziar" onclick="limparCarrinho()">Esvaziar carrinho</div>
+          <div id="finalizar">
           </div>
         </div>
       </div>
@@ -138,154 +137,159 @@
       <div class="card-loja">
 
 
-        <a href="#modalFoto">
-          <img class="foto-produto" src="./assets/LOJA-camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
+        <a href="#modalCamiseta1">
+          <img class="foto-produto" src="./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-1.webp"
+            alt="camiseta modelo 1">
         </a>
 
         <div class="card-infos">
           <h3>Camiseta modelo #1</h3>
           <p>R$70,00</p>
+
+          <label for="cores">Escolha uma cor:</label>
+          <select class="seletor"id="cores" name="cores">
+            <option value="preto">Preto</option>
+            <option value="cinzachumbo">Cinza Chumbo</option>
+            <option value="cinzamescla">Cinza Mescla</option>
+            <option value="pretomescla">Preto Mescla</option>
+            <option value="cinzamedio">Cinza Médio</option>
+            <option value="branco">Branco</option>
+            <option value="marron">Marron</option>
+            <option value="amarelocanario">Amarelo Canário</option>
+            <option value="amareloouro">Amarelo Ouro</option>
+            <option value="amarelomostarda">Amarelo Mostarda</option>
+            <option value="laranja">Laranja</option>
+            <option value="vermelho">Vermelho</option>
+            <option value="bordo">Bordô</option>
+            <option value="rosagoiaba">Rosa Goiaba</option>
+            <option value="rosabebe">Rosa Bebê</option>
+            <option value="rosapink">Rosa Pink</option>
+            <option value="lilas">Lilás</option>
+            <option value="roxo">Roxo</option>
+            <option value="verdefuor">Verde Fuor</option>
+            <option value="azulmarinho">Azul Marinho</option>
+            <option value="azulroyal">Azul Royal</option>
+            <option value="azuljade">Azul Jade</option>
+            <option value="azulturquesa">Azul Turquesa</option>
+            <option value="verdebandeira">Verde Bandeira</option>
+            <option value="verdefolha">Verde Folha</option>
+            <option value="verdemusgo">Verde Musgo</option>
+            <option value="crua">Crua</option>
+            <option value="mesclaepreto">Raglan(Mescla/Preto)</option>
+            <option value="mesclaebordo">Raglan (Mescla/Bordô)</option>
+            <option value="brancoepreto">Raglan (Branco/Preto)</option>
+          </select>
+
+          <label for="tamanhos">Escolha um tamanho:</label>
+          <select class="seletor"id="tamanhos" name="tamanhos">
+            <option value="camisetapp">Camiseta PP</option>
+            <option value="camisetap">Camiseta P</option>
+            <option value="camisetam">Camiseta M</option>
+            <option value="camisetag">Camiseta G</option>
+            <option value="camisetagg">Camiseta GG</option>
+            <option value="camisetaxg">Camiseta XG</option>
+            <option value="babylookm">Baby Look M</option>
+            <option value="babylookg">Baby Look G</option>
+            <option value="babylookgg">Baby Look GG</option>
+            <option value="babylookxg">Baby Look XG</option>
+            <option value="babylookxxg">Baby Look XXG</option>
+          </select>
           <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 1', 70.00)">
             Adicionar ao carrinho
           </button>
         </div>
       </div>
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="./assets/camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
-          <a href="#" class="close-btn">✕</a>
-        </div>
+
+
+
+
       </div>
 
 
-
-      <!-- COPO -->
+      <!-- CAMISETA 2 -->
       <div class="card-loja">
 
-        <a href="#modalFoto">
-          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Copo do Rock na Praça"></a>
+        <a href="#modalCamiseta2">
+          <img src="./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-2.webp" alt="Camiseta modelo 2"></a>
         <div class="card-infos">
-          <h3>Copo</h3>
-          <p>R$5,00</p>
-          <button class="botao-adicionar" onclick="adicionar('Copo', 5.00)">Adicionar ao carrinho</button>
-        </div>
-      </div>
+          <h3>Camiseta modelo #2</h3>
+          <p>R$70,00</p>
+          <label for="cores">Escolha uma cor:</label>
+          <select class="seletor" id="cores" name="cores">
+            <option value="preto">Preto</option>
+            <option value="cinzachumbo">Cinza Chumbo</option>
+            <option value="cinzamescla">Cinza Mescla</option>
+            <option value="pretomescla">Preto Mescla</option>
+            <option value="cinzamedio">Cinza Médio</option>
+            <option value="branco">Branco</option>
+            <option value="marron">Marron</option>
+            <option value="amarelocanario">Amarelo Canário</option>
+            <option value="amareloouro">Amarelo Ouro</option>
+            <option value="amarelomostarda">Amarelo Mostarda</option>
+            <option value="laranja">Laranja</option>
+            <option value="vermelho">Vermelho</option>
+            <option value="bordo">Bordô</option>
+            <option value="rosagoiaba">Rosa Goiaba</option>
+            <option value="rosabebe">Rosa Bebê</option>
+            <option value="rosapink">Rosa Pink</option>
+            <option value="lilas">Lilás</option>
+            <option value="roxo">Roxo</option>
+            <option value="verdefuor">Verde Fuor</option>
+            <option value="azulmarinho">Azul Marinho</option>
+            <option value="azulroyal">Azul Royal</option>
+            <option value="azuljade">Azul Jade</option>
+            <option value="azulturquesa">Azul Turquesa</option>
+            <option value="verdebandeira">Verde Bandeira</option>
+            <option value="verdefolha">Verde Folha</option>
+            <option value="verdemusgo">Verde Musgo</option>
+            <option value="crua">Crua</option>
+            <option value="mesclaepreto">Raglan(Mescla/Preto)</option>
+            <option value="mesclaebordo">Raglan (Mescla/Bordô)</option>
+            <option value="brancoepreto">Raglan (Branco/Preto)</option>
+          </select>
 
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="#" alt="Copo">
-          <a href="#" class="close-btn">✕</a>
-        </div>
-      </div>
+          <label for="tamanhos">Escolha um tamanho:</label>
+          <select class="seletor"id="tamanhos" name="tamanhos">
+            <option value="camisetapp">Camiseta PP</option>
+            <option value="camisetap">Camiseta P</option>
+            <option value="camisetam">Camiseta M</option>
+            <option value="camisetag">Camiseta G</option>
+            <option value="camisetagg">Camiseta GG</option>
+            <option value="camisetaxg">Camiseta XG</option>
+            <option value="babylookm">Baby Look M</option>
+            <option value="babylookg">Baby Look G</option>
+            <option value="babylookgg">Baby Look GG</option>
+            <option value="babylookxg">Baby Look XG</option>
+            <option value="babylookxxg">Baby Look XXG</option>
+          </select>
 
-      <!-- ECOBAG -->
-      <div class="card-loja">
-        <a href="#modalFoto">
-          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Ecobag do Rock na Praça">
-        </a>
-        <div class="card-infos">
-          <h3>Ecobag</h3>
-          <p>R$10,00</p>
-          <button class="botao-adicionar" onclick="adicionar('Ecobag', 10.00)">Adicionar ao carrinho</button>
+          <button class="botao-adicionar" onclick="adicionar('Mochila', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="#" alt="Ecobag">
-          <a href="#" class="close-btn">✕</a>
-        </div>
       </div>
 
       <!-- CARTEIRA -->
       <div class="card-loja">
-        <a href="#modalFoto">
-          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Carteira do Rock na Praça"></a>
+        <a href="#modalCarteira">
+          <img src="./assets/loja/carteira2.jpeg" alt="Carteira do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Carteira</h3>
           <p>R$20,00</p>
           <button class="botao-adicionar" onclick="adicionar('Carteira', 20.00)">Adicionar ao carrinho</button>
         </div>
       </div>
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="#" alt="Ecobag">
-          <a href="#" class="close-btn">✕</a>
-        </div>
-      </div>
-
-      <!-- BOTTON -->
+   
+      <!-- MOCHILA -->
       <div class="card-loja">
-        <a href="#modalFoto">
-          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Botton do Rock na Praça"></a>
-        <div class="card-infos">
-          <h3>Botton</h3>
-          <p>R$5,00</p>
-          <button class="botao-adicionar" onclick="adicionar('Botton', 5.00)">Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="#" alt="Ecobag">
-          <a href="#" class="close-btn">✕</a>
-        </div>
-      </div>
 
-      <!-- TÊNIS -->
-
-       <div class="card-loja">
-        
-        <a href="#modalFoto">
-          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Tênis do Rock na Praça"></a>
-        <div class="card-infos">
-          <h3>Tênis</h3>
-          <p>R$70,00</p>
-          <button class="botao-adicionar" onclick="adicionar('Tênis', 70.00)">Adicionar ao carrinho</button>
-        </div>
-      </div>
-
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="#" alt="Tênis">
-          <a href="#" class="close-btn">✕</a>
-        </div>
-      </div>
-
-        <!-- MOCHILA -->
-           <div class="card-loja">
-        
-        <a href="#modalFoto">
-          <img src="./assets/Rock-na-praca-simbolo.webp" alt="Mochila do Rock na Praça"></a>
+        <a href="#modalMochila">
+          <img src="./assets/loja/Mochila_RNP.jpeg" alt="Mochila do Rock na Praça"></a>
         <div class="card-infos">
           <h3>Mochila</h3>
           <p>R$70,00</p>
           <button class="botao-adicionar" onclick="adicionar('Mochila', 70.00)">Adicionar ao carrinho</button>
         </div>
       </div>
-
-      <div id="modalFoto" class="modal">
-        <div class="modal-content">
-          <img src="#" alt="Mochila">
-          <a href="#" class="close-btn">✕</a>
-        </div>
-      </div>
-
-          <!-- CAMISETA 2 -->
-          <div class="card-loja">
-            <a href="#modalFoto">
-              <img src="./assets/LOJA-camiseta-Rock-Na-Praca-modelo-2.webp" alt="Camiseta modelo 2"></a>
-            <div class="card-infos">
-              <h3>Camiseta modelo #2</h3>
-              <p>R$70,00</p>
-              <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 2', 70.00)">Adicionar ao
-                carrinho</button>
-            </div>
-          </div>
-          <div id="modalFoto" class="modal">
-            <div class="modal-content">
-              <img src="./assets/camiseta-Rock-Na-Praca-modelo-2.webp" alt="Ecobag">
-              <a href="#" class="close-btn">✕</a>
-            </div>
-          </div>
     </section>
   </main>
 
@@ -294,13 +298,13 @@
     <div class="rodape-conteudo">
       <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
       <div class="redes-sociais">
-        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/REDES-instagram.webp"
+        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/logos/REDES-instagram.webp"
             alt="Instagram"></a>
 
-        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/REDES-facebook.webp"
+        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/logos/REDES-facebook.webp"
             alt="Facebook"></a>
 
-        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/REDES-youtube.webp"
+        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/logos/REDES-youtube.webp"
             alt="Youtube"></a>
 
       </div>
@@ -309,6 +313,38 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+    const fotosCarousel = [
+      "./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-1.webp",
+      "./assets/loja/Tamanhos-camisetas.jpeg",
+      "./assets/loja/Cores-camisetas.jpeg",
+      "./assets/loja/Camiseta-modelo1-preta.jpeg",
+    ];
+
+    let fotoIndex = 0;
+
+    function atualizarCarousel() {
+      document.getElementById("fotoCarousel").src = fotosCarousel[fotoIndex];
+    }
+
+    function carrosselNext() {
+      fotoIndex = (fotoIndex + 1) % fotosCarousel.length;
+      atualizarCarousel();
+    }
+
+    function carrosselPrev() {
+      fotoIndex = (fotoIndex - 1 + fotosCarousel.length) % fotosCarousel.length;
+      atualizarCarousel();
+    }
+
+    window.addEventListener("hashchange", () => {
+      if (location.hash === "#modalCamiseta1") {
+        fotoIndex = 0;
+        atualizarCarousel();
+      }
+    });
+  </script>
+
 </body>
 
 </html>
