@@ -42,7 +42,7 @@
   <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ICONS -->
-  <link rel="icon" href="/assets/logos/rock-na-praca-logotipo.png" type="image/webp" />
+  <link rel="icon" href="/assets/Rock-na-praca-logotipo.webp" type="image/webp" />
 
 
   <script src="/script.js" defer></script>
@@ -99,87 +99,116 @@
     <div class="cabecalho-simbolo-logotipo">
       <a href="./index.html">
         <h1>Rock na Praça</h1>
-        <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone rock na praça">
+        <img src="./assets/Rock-na-praca-logo-e-icone.png" alt="Ícone rock na praça">
       </a>
     </div>
 
-    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+    <div class="menu-hamburguer" id="menu-hamburguer" aria-label="Abrir ou Fechar menu">☰</div>
 
     <nav class="cabecalho-menu" id="menu">
       <a href="index.html" class="active">Página Inicial</a>
       <a href="sobre.html">Sobre</a>
       <a href="loja.html">Loja</a>
-
+      
     </nav>
   </header>
+
+  
+
   <main>
 
-    <section class="banner">
-      <div class="esquerda-banner">
-       
+    <section class="principal-container">
+
+        <img src="./assets/FLYER-ROCK-NA-PRAÇA_Dezembro0.jpeg" alt="Novo Cartaz" class="cartaz">
+
+    </section>
+
+
+    <!-- CONTADOR -->
+    <section class="secao-contador" id="dados">
+      <div class="info">
+        <h2 class="numero" data-numero="23">0</h2>
+        <p>anos de existência</p>
       </div>
-      <div class="direita-banner">
-         <img src="./assets/logos/rock-na-praca-logotipo.png">
+
+      <div class="info">
+        <div class="secao-contador-linha">
+          <h2 class="prefixo">+ de </h2>
+          <h2 class="numero" data-numero="700">0</h2>
+        </div>
+        <p>bandas</p>
+      </div>
+
+      <div class="info">
+        <div class="secao-contador-linha">
+          <h2 class="prefixo">+ de </h2>
+          <h2 class="numero" data-numero="150">0</h2>
+        </div>
+        <p>edições</p>
       </div>
     </section>
 
-      <section class="secao-contador" id="dados">
-        <div class="info">
-          <h2 class="numero" data-numero="23">0</h2>
-          <p>anos de existência</p>
-        </div>
+    <section class="geral-conteudo">
 
-        <div class="info">
-          <div class="secao-contador-linha">
-            <h2 class="prefixo">+ de </h2>
-            <h2 class="numero" data-numero="700">0</h2>
-          </div>
-          <p>bandas</p>
-        </div>
+      <!----------LATERAL-->
+      <aside class="bloco-lateral">
 
-        <div class="info">
-          <div class="secao-contador-linha">
-            <h2 class="prefixo">+ de </h2>
-            <h2 class="numero" data-numero="150">0</h2>
-          </div>
-          <p>edições</p>
-        </div>
-      </section>
-<section class="geral-conteudo">
-      <section class="card-prox">
-        <div class="imagem-prox">
-          <img src="./assets/background/FLYER-ROCK-NA-PRAÇA_Dezembro0.jpeg">
-        </div>
-        <div class="info-prox">
-        <h3>Próximo evento</h3><br>
-        <p>
-          🗓️ Domingo, 14/12/25<br>
-          🕒 A partir das 15h<br>
-          📍Praça da Bandeira<br>
-          Rua Coronel Vicente — Canoas/RS<br>
-        </p>
-        <a href="./edicao.html">
-        <div class="btn-mais-info"> Mais Informações</div>
-        </a>
-        </div>
-      </section>
+        <div class="card-videos">
+          <h3 class="titulo-videos">Assista aos Melhores Momentos</h3>
 
-          <section class="card-videos">
-
-            <div class="videos-grid">
-              <div class="cartao-video">
-                <iframe src="https://www.youtube-nocookie.com/embed/4-RIbbc6e4E" loading="lazy"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="cartao-video">
-                <iframe src="https://www.youtube-nocookie.com/embed/r6fuHRSI484" loading="lazy"
-                  allowfullscreen></iframe>
-              </div>
+          <div class="videos-grid">
+            <div class="cartao-video">
+              <iframe src="https://www.youtube-nocookie.com/embed/4-RIbbc6e4E" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="cartao-video">
+              <iframe src="https://www.youtube-nocookie.com/embed/r6fuHRSI484" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="cartao-video">
+              <iframe src="https://www.youtube-nocookie.com/embed/goC_F4LZ2eI?si=-ZtKRIUlXehooFju" loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+            <div class="cartao-video">
+              <iframe src="https://www.youtube-nocookie.com/embed/ZLlpuP0Jrqw?si=SHBgs9GQ1-uFWYHo" loading="lazy"
+                allowfullscreen></iframe>
             </div>
           </div>
-        </section>
+
+          <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" class="btn-ytb">
+            Ver mais no YouTube →
+          </a>
+        </div>
+
+       
+
+      </aside> <!---Fim lateral-->
+
+
+      <section class="bloco-principal">
+        <div class="card-local">
+          <h3 class="titulo-local">ONDE O ROCK ACONTECE</h3>
+          <p class="informacoes-local">
+            A praça é o palco e o endereço do rock é aqui:<br>
+            Praça da Bandeira<br>
+            📍 Rua Coronel Vicente — Canoas/RS
+          </p>
+
+          <div class="container-mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3458.118969412799!2d-51.183052!3d-29.918477!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197aa63c00026f%3A0x5b6d00339c7ce9cd!2sPra%C3%A7a%20da%20Bandeira!5e0!3m2!1spt-BR!2sbr!4v1764083182427!5m2!1spt-BR!2sbr"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+        <div class="card-realizacao-apoio">
+          <h3 class="titulo-realizacao">Realização</h3>
+          <h3 class="titulo-apoio">Apoio</h3>
+
+        </div>
+
       </section>
-      </section>
+
+    </section>
+
+
   </main>
 
   <footer class="rodape">
@@ -187,13 +216,13 @@
       <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
 
       <div class="redes-sociais">
-        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/logos/REDES-instagram.webp"
+        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/REDES-instagram.webp"
             alt="Instagram"></a>
 
-        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/logos/REDES-facebook.webp"
+        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/REDES-facebook.webp"
             alt="Facebook"></a>
 
-        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/logos/REDES-youtube.webp"
+        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/REDES-youtube.webp"
             alt="Youtube"></a>
       </div>
 
