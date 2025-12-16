@@ -19,10 +19,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  height: 100%;
   background-color: var(--preto);
 }
 
@@ -30,14 +26,18 @@ h1 {
   display: none;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 main {
   margin-top: 80px;
+}
+p,span{
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+  font-size: 1rem;
+}
+h2,h3{
+  color: var(--verde);
+  font-family: var(--fonte-principal);
+  font-size: 2rem;
 }
 
 /* ************************ CABEÇALHO ***************************** */
@@ -45,14 +45,13 @@ main {
   align-items: center;
   display: flex;
   height: 80px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0 28px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.6));
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(6px);
 }
@@ -96,7 +95,7 @@ main {
 
 .menu-hamburguer {
   display: none;
-  font-size: 38px;
+  font-size: 2rem;
   color: var(--verde);
   cursor: pointer;
 }
@@ -162,11 +161,8 @@ main {
   width: 500px;
   max-width: 90%;
   opacity: 0.95;
-
   transform: perspective(1000px) rotateY(5deg) rotateZ(-2deg);
-
   filter: brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
-
   border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
@@ -223,7 +219,6 @@ main {
   background-color: var(--preto);
 }
 
-
 .secao-contador .info {
   flex: 1 1 220px;
   display: flex;
@@ -236,7 +231,6 @@ main {
   min-width: 150px;
 }
 
-
 .secao-contador h2 {
   font-size: clamp(2.2rem, 3vw, 3.6rem);
   font-weight: 800;
@@ -245,7 +239,6 @@ main {
   line-height: 1;
   font-family: var(--fonte-principal);
 }
-
 
 .secao-contador p {
   font-size: clamp(1.1rem, 1.6vw, 1.6rem);
@@ -256,14 +249,12 @@ main {
   opacity: 0.85;
 }
 
-
 .secao-contador-linha {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
 }
-
 
 .prefixo,
 .numero {
@@ -296,13 +287,11 @@ main {
 /* ==============  CONTEUDO PRINCIPAL   ==========*/
 
 .geral-conteudo {
-  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   display: flex;
   gap: 2rem;
-  box-sizing: border-box;
 }
 
 .bloco-lateral {
@@ -321,32 +310,11 @@ main {
   width: 70%;
 }
 
-.card {
-  width: 100%;
-  background:
-    repeating-linear-gradient(-45deg,
-      #050505,
-      #050505 6px,
-      #0a0a0a 6px,
-      #0a0a0a 12px);
-  border: 2px solid var(--borda);
-  border-radius: 8px;
-  padding: 2rem;
-  color: var(--texto);
-  font-family: var(--fonte-principal);
-  position: relative;
-}
-
-.card h3 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: var(--verde);
-  letter-spacing: 2px;
-  text-align: center;
+.card p{
+  font-size: 1.5rem;
+   text-align: center;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--borda);
-  padding-bottom: 0.6rem;
-  font-family: var(--fonte-principal);
 }
 
 .videos-grid {
@@ -356,8 +324,7 @@ main {
 }
 
 .cartao-video {
-  background: #000;
-  border: 1px solid var(--borda);
+  border: 1px solid var(--verde);
   border-radius: 6px;
   overflow: hidden;
   aspect-ratio: 16 / 9;
@@ -369,7 +336,6 @@ main {
   height: 100%;
   border: none;
 }
-
 
 .btn-ytb {
   margin: 1.5rem auto 0;
@@ -388,15 +354,7 @@ main {
 .btn-ytb:hover {
   background: var(--verde);
   color: var(--preto);
-  box-shadow: 0 0 18px var(--verde);
-}
-
-.informacoes-local {
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  color: var(--branco);
+  box-shadow: 0 0 10px var(--verde);
 }
 
 .container-mapa {
@@ -416,6 +374,63 @@ main {
 .card img{
   width: 100px;
   height: 100px;
+}
+
+.card {
+  width: 100%;
+  padding: 2rem;
+  background: #0e0e0e;
+  border: 2px solid var(--verde);
+  box-shadow: 0 0 20px rgba(110, 212, 122, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.card h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--verde);
+  margin-bottom: 0.5rem;
+}
+
+.realizacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(26, 255, 100, 0.4);
+}
+
+.card > a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+
+.card img {
+  width: auto;
+  height: 120px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card a:hover img {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2.5rem 3rem;
+  }
+
+  .card img {
+    max-width: 140px;
+  }
 }
 
 @media (max-width: 900px) {
