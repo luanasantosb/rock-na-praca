@@ -561,7 +561,7 @@ h3 {
 
 .card-loja {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
   min-height: 350px;
   background: #1a1a1a;
@@ -576,7 +576,7 @@ h3 {
 .card-loja img {
   width: 300px;
   height: 350px;
-  border-radius: 3px;
+  border: 1px solid white;
 }
 
 .card-loja:hover {
@@ -584,27 +584,35 @@ h3 {
   transform: scale(1.05);
 }
 
-.card-infos {
-  padding: 0 0.5rem;
-  color: var(--branco);
-
-}
-
 .card-loja h3 {
   font-size: 1.4rem;
   text-align: center;
-  margin: 15px 0 5px;
+  margin: 5px 0 5px;
   color: var(--verde);
   font-family: var(--fonte-principal);
 }
 
-.card-loja p {
-  font-size: 1.1rem;
-  text-align: center;
+.card-infos{
+  gap: 0.5rem;
+  padding: 1rem;
   color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  text-align: center;
   margin-bottom: 5px;
   font-family: var(--fonte-textos);
 }
+span{
+  font-family: var(--fonte-textos);
+  color: var(--branco);
+  font-size: 1.5rem;
+}
+select{
+  font-size: 1rem;
+  border: solid var(--verde);
+}
+
 
 .botao-adicionar {
   display: block;
@@ -680,7 +688,7 @@ h3 {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #fff;
+  color: var(--branco);
   font-size: 3rem;
   cursor: pointer;
   z-index: 10;
@@ -698,7 +706,7 @@ h3 {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #fff;
+  color: var(--branco);
   font-size: 1.4rem;
   text-decoration: none;
 }

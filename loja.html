@@ -138,19 +138,49 @@
       <!-- CAMISETA 1 -->
       <div class="card-loja">
         <a href="#modalFoto" class="abrir-modal" data-images="
-       ./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-1.webp,
+       ./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp,
        ./assets/loja/Cores-camisetas.jpeg,
        ./assets/loja/Tamanhos-camisetas.jpeg,
-       ./assets/loja/Camiseta-modelo1-preta.jpeg
-     ">
-          <img class="foto-produto" src="./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-1.webp"
-            alt="camiseta modelo 1">
+       ./assets/loja/Camiseta-RNP-modelo1-preta.jpeg">
+          <img class="foto-produto" src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
         </a>
 
         <div class="card-infos">
           <h3>Camiseta modelo #1</h3>
-          <label>Selecione o tamanho</label>
-          <p>R$70,00</p>
+          <label for="tamanho">Selecione o tamanho</label>
+          <select id="tamanho" name="tamanho">
+            <option value="camisetaPP">Camiseta PP</option>
+            <option value="camisetaP">Camiseta P</option>
+            <option value="camisetaM">Camiseta M</option>
+            <option value="camisetaG">Camiseta G</option>
+            <option value="camisetaGG">Camiseta GG</option>
+            <option value="camisetaXG">Camiseta XG</option>
+            <option value="camisetaXXG">Camiseta XXG</option>
+            </select><br>
+
+            <label for="cor">Selecione a cor</label>
+            <select id="cor" name="cor">
+            <option value="preto">Preto</option>
+            <option value="cinzaChumbo">Cinza Chumbo</option>
+            <option value="cinzaMescla">Cinza Mescla</option>
+            <option value="pretoMescla">Preto Mescla</option>
+            <option value="cinzaMedio">Cinza Medio</option>
+            <option value="branco">Branco</option>
+            <option value ="marron">Marrom</option>
+            <option value="amarelocanario">Amarelo Canário></option>
+            <option value="amareloOuro">Amarelo Ouro</option>
+            <option value="amareloMostarda">Amarelo Mostarda</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+          <span>R$70,00</span>
           <button class="botao-adicionar" onclick="adicionar('Camiseta modelo 1', 70.00)">
             Adicionar ao carrinho
           </button>
@@ -163,7 +193,7 @@
           ./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-2.webp,
             ./assets/loja/Cores-camisetas.jpeg,
             ./assets/loja/Tamanhos-camisetas.jpeg,
-            ./assets/loja/Camiseta-modelo2-vermelha.jpeg,
+            ./assets/loja/Camiseta-modelo2-vermelha.jpeg
           ">
           <img class="foto-produto" src="./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-2.webp"
             alt="camiseta modelo 2">
@@ -195,7 +225,7 @@
       <!-- MOCHILA -->
       <div class="card-loja">
         <a href="#modalFoto" class="abrir-modal" data-images="
-       ./assets/loja/Mochila_RNP.jpeg,
+       ./assets/loja/Mochila_RNP.jpeg
      ">
           <img class="foto-produto" src="./assets/loja/Mochila_RNP.jpeg" alt="mochila">
         </a>
