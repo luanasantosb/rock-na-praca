@@ -49,194 +49,89 @@ if (section) {
 
 
 /* ---------------------------------
-   CARRINHO DA LOJA
----------------------------------- */
-/***********************
- * ESTOQUE
- ***********************/
-let estoquePadrao = {
-  "Camiseta Rock na Praça": {
-    Preta: { P: 5, M: 8, G: 3 },
-    Branca: { P: 2, M: 4, G: 1 }
-  }
-};
+    LOJA
+---------------------------------------*/
+ let carrinho = [];
 
-let estoque = JSON.parse(localStorage.getItem("estoque")) || estoquePadrao;
+function adicionar(botao, nome, preco) {
+  const card = botao.closest('.card-loja');
 
-/***********************
- * CARRINHO
- ***********************/
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-/***********************
- * ADICIONAR PRODUTO
- ***********************/
-function adicionarProduto(nome, preco) {
-  const cor = document.getElementById("cor").value;
-  const tamanho = document.getElementById("tamanho").value;
-
-  if (!cor || !tamanho) {
-    alert("Selecione a cor e o tamanho");
+  if (!card) {
+    alert('Erro: card não encontrado');
     return;
   }
 
-  const disponivel = estoque[nome]?.[cor]?.[tamanho] || 0;
+  const tamanhoSelect = card.querySelector('select[name="tamanho"]');
+  const corSelect = card.querySelector('select[name="cor"]');
 
-  if (disponivel <= 0) {
-    alert("Produto esgotado nessa cor e tamanho");
-    return;
-  }
+  const tamanho = tamanhoSelect
+    ? tamanhoSelect.options[tamanhoSelect.selectedIndex].text
+    : 'Único';
 
-  const itemExistente = carrinho.find(item =>
-    item.nome === nome &&
-    item.cor === cor &&
-    item.tamanho === tamanho
-  );
+  const cor = corSelect
+    ? corSelect.options[corSelect.selectedIndex].text
+    : 'Padrão';
 
-  if (itemExistente) {
-    itemExistente.quantidade += 1;
-  } else {
-    carrinho.push({
-      nome,
-      preco,
-      cor,
-      tamanho,
-      quantidade: 1
-    });
-  }
-
-  estoque[nome][cor][tamanho] -= 1;
-
-  salvarCarrinho();
-  salvarEstoque();
-  mostrarCarrinho();
+  carrinho.push({ nome, preco, tamanho, cor });
+  atualizarCarrinho();
 }
 
-/***********************
- * MOSTRAR CARRINHO
- ***********************/
-function mostrarCarrinho() {
-  const lista = document.getElementById("itens");
-  const totalEl = document.getElementById("total");
-  const qtdEl = document.getElementById("quantidadeTotal");
+function atualizarCarrinho() {
+  const lista = document.getElementById('itens');
+  const totalSpan = document.getElementById('total');
+  const quantidadeSpan = document.getElementById('quantidadeTotal');
 
-  if (!lista || !totalEl || !qtdEl) return;
-
-  lista.innerHTML = "";
+  lista.innerHTML = '';
   let total = 0;
-  let quantidadeTotal = 0;
 
   carrinho.forEach((item, index) => {
-    total += item.preco * item.quantidade;
-    quantidadeTotal += item.quantidade;
+    total += item.preco;
 
-    const li = document.createElement("li");
+    const li = document.createElement('li');
     li.innerHTML = `
       <strong>${item.nome}</strong><br>
-      <small>Cor: ${item.cor} | Tamanho: ${item.tamanho}</small><br>
-      R$${item.preco.toFixed(2)} x ${item.quantidade}
-      <button onclick="removerItem(${index})">X</button>
+      <small>Tam: ${item.tamanho} | Cor: ${item.cor}</small><br>
+      R$ ${item.preco.toFixed(2)}
+      <button onclick="removerItem(${index})">❌</button>
     `;
     lista.appendChild(li);
   });
 
-  totalEl.textContent = total.toFixed(2);
-  qtdEl.textContent = quantidadeTotal;
+  totalSpan.textContent = total.toFixed(2);
+  quantidadeSpan.textContent = carrinho.length;
 }
 
-/***********************
- * REMOVER ITEM
- ***********************/
 function removerItem(index) {
-  const item = carrinho[index];
-
-  estoque[item.nome][item.cor][item.tamanho] += item.quantidade;
-
   carrinho.splice(index, 1);
-
-  salvarCarrinho();
-  salvarEstoque();
-  mostrarCarrinho();
+  atualizarCarrinho();
 }
 
-/***********************
- * LIMPAR CARRINHO
- ***********************/
 function limparCarrinho() {
-  carrinho.forEach(item => {
-    estoque[item.nome][item.cor][item.tamanho] += item.quantidade;
-  });
-
   carrinho = [];
-  localStorage.removeItem("carrinho");
-
-  salvarEstoque();
-  mostrarCarrinho();
+  atualizarCarrinho();
 }
 
-/***********************
- * SALVAR
- ***********************/
-function salvarCarrinho() {
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
-}
-
-function salvarEstoque() {
-  localStorage.setItem("estoque", JSON.stringify(estoque));
-}
-
-/***********************
- * ATUALIZAR TAMANHOS
- ***********************/
-function atualizarTamanhos(nome, cor) {
-  const selectTamanho = document.getElementById("tamanho");
-  selectTamanho.innerHTML = '<option value="">Tamanho</option>';
-
-  if (!estoque[nome] || !estoque[nome][cor]) return;
-
-  Object.entries(estoque[nome][cor]).forEach(([tamanho, qtd]) => {
-    const opt = document.createElement("option");
-    opt.value = tamanho;
-    opt.textContent = `${tamanho} ${qtd === 0 ? "(Esgotado)" : ""}`;
-    opt.disabled = qtd === 0;
-    selectTamanho.appendChild(opt);
-  });
-}
-
-/***********************
- * WHATSAPP
- ***********************/
 function enviarWhatsApp() {
   if (carrinho.length === 0) {
-    alert("Seu carrinho está vazio!");
+    alert('Seu carrinho está vazio!');
     return;
   }
 
-  let mensagem = "*Meu pedido Rock na Praça:*\n\n";
+  let mensagem = '🛒 *Pedido Rock Na Praça*%0A%0A';
+  let total = 0;
 
-  carrinho.forEach(item => {
-    mensagem += `• ${item.nome}
-Cor: ${item.cor} | Tam: ${item.tamanho}
-x${item.quantidade} - R$${(item.preco * item.quantidade).toFixed(2)}\n\n`;
+  carrinho.forEach((item, i) => {
+    mensagem += `${i + 1}. ${item.nome}%0A`;
+    mensagem += `Tam: ${item.tamanho}%0A`;
+    mensagem += `Cor: ${item.cor}%0A`;
+    mensagem += `R$ ${item.preco.toFixed(2)}%0A%0A`;
+    total += item.preco;
   });
 
-  const total = carrinho.reduce(
-    (soma, item) => soma + item.preco * item.quantidade,
-    0
+  mensagem += `💰 *Total: R$ ${total.toFixed(2)}*`;
+
+  window.open(
+    `https://wa.me/5511999999999?text=${mensagem}`,
+    '_blank'
   );
-
-  mensagem += `*Total:* R$${total.toFixed(2)}`;
-
-  const numeroWhatsApp = "555196506622";
-  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-  window.open(url, "_blank");
 }
-
-/***********************
- * INIT
- ***********************/
-document.addEventListener("DOMContentLoaded", mostrarCarrinho);
-
-
-
