@@ -439,6 +439,12 @@ h2,h3{
   padding: 2rem;
   width: 80%;
 }
+.sobre .card h3{
+  font-size: 1.5rem;
+}
+.sobre .card p{
+  font-size: 1rem;
+}
 
 .cartao-video-sobre {
   display: flex;
@@ -461,6 +467,12 @@ h2,h3{
   gap: 2rem;
   padding: 2rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.inscricoes .card h3{
+  font-size: 1.5rem;
+}
+.inscricoes .card p{
+  font-size: 1rem;
 }
 
 .btn-inscricao {
@@ -490,7 +502,6 @@ h2,h3{
 
 /* =================  LOJA  ================= */
 
-/* ===== CARRINHO ===== */
 .secao-carrinho {
   position: sticky;
   top: 20px;
@@ -518,7 +529,6 @@ h2,h3{
   padding: 0;
   margin: 0;
 }
-
 
 .lista-carrinho li {
   background: #1c1c1c;
@@ -588,7 +598,7 @@ h2,h3{
 
 
 .botao-finalizar-pedido {
-  background: var(--verde);
+  background: linear-gradient(135deg, var(--verde), #2e7d32);
   color: var(--preto);
 }
 
@@ -606,15 +616,10 @@ h2,h3{
   transform: translateY(-2px);
 }
 
+/*===== CARDS========*/
 .secao-cards-loja {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 0 auto;
-  gap: 0.5rem;
-  padding: 2rem;
-  width: 80%;
+ display: flex;
+ justify-content: space-evenly;
 }
 
 .card-loja {
@@ -635,7 +640,12 @@ h2,h3{
 .card-loja .card-infos h3 {
   font-size: 1.8rem;
   color: var(--verde);
+  font-size: 1.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
 }
+
 
 .card-loja .card-infos p {
   font-size: 1.5rem;
@@ -658,19 +668,18 @@ h2,h3{
 }
 
 .botao-adicionar {
-  background-color: var(--verde);
-  color: var(--branco);
-  padding: 10px;
+  background: linear-gradient(135deg, var(--verde), #2e7d32);
+  border: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   font-size: 1rem;
-  border-radius: 5px;
-  width: 100%;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 0.5rem;
 }
 
 .botao-adicionar:hover {
-  background-color: #45a049;
+  background: linear-gradient(135deg, #5bd36f, var(--verde));
 }
+
 
 .modal {
   display: none;
@@ -686,13 +695,12 @@ h2,h3{
 }
 
 .modal-content {
-  background-color: var(--branco);
-  padding: 20px;
-  position: relative;
-  max-width: 80%;
-  text-align: center;
-  border-radius: 8px;
+  background-color: #0b0b0b;
+  color: var(--branco);
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  box-shadow: 0 0 40px rgba(0,0,0,0.9);
 }
+
 
 .carousel {
   margin: 20px 0;
@@ -750,9 +758,6 @@ h2,h3{
 .modal:target {
   display: flex;
 }
-
-
-
 
 /*======= RODAPÉ ==========*/
 .rodape {
