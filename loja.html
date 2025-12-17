@@ -140,22 +140,20 @@
 
   <!-- CAMISETA 1 -->
   <div class="card-loja">
-    <a href="produto.html?nome=Camiseta%20modelo%20%231
-      &preco=70.00
-      &imagem=./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp
-      &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
-      class="card-link">
-      <img 
-        class="foto-produto"
-        src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp"
-        alt="Camiseta modelo 1"
-      >
-    </a>
+  <a href="produto.html?
+  nome=Camiseta%20modelo%20%231
+  &preco=70.00
+  &imagens=./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp,
+            ./assets/loja/Camiseta-Rock-Na-Praca-modelo-1-preta.jpeg,
+            ./assets/loja/Tamanhos-camisetas.jpeg,
+            ./assets/loja/Cores-camisetas.jpeg
+  &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
+  class="card-link">
+      <img class="foto-produto" src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp"alt="Camiseta modelo 1"></a>
 
     <div class="card-infos">
-      <h3>Camiseta modelo #1</h3>
-      <p>R$ 70,00</p>
-
+      <h3 id="nomeProduto">Camiseta modelo #1</h3>
+      <p id="precoProduto">R$ 70,00</p>
       <label for="tamanho">Selecione o tamanho</label>
       <select id="tamanho" name="tamanho">
         <option value="PP">Camiseta PP</option>
@@ -180,7 +178,7 @@
               <option value="cinzaMedio">Cinza Medio</option>
               <option value="branco">Branco</option>
               <option value="marron">Marrom</option>
-              <option value="amarelocanario">Amarelo Canário></option>
+              <option value="amarelocanario">Amarelo Canário</option>
               <option value="amareloOuro">Amarelo Ouro</option>
               <option value="amareloMostarda">Amarelo Mostarda</option>
               <option value="aranja">Laranja</option>
@@ -207,8 +205,7 @@
 
       <button 
         class="botao-adicionar"
-        onclick="adicionar(this, 'Camiseta modelo #1', 70.00)"
-      >
+        onclick="adicionar(this, 'Camiseta modelo #1', 70.00)">
         Adicionar ao carrinho
       </button>
     </div>

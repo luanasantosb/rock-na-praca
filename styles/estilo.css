@@ -681,81 +681,74 @@ h2,h3{
 
 
 /*==== Detalhes pedido======*/
+.produto-detalhes {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  border-radius: 12px;
+}
 
-    .produto-detalhes {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: transparent;
-      padding: 30px;
-      display: flex;
-      gap: 40px;
-      border-radius: 12px;
-    }
 
-    .produto-imagem img {
-      width: 380px;
-    }
+.produto-imagens {
+  align-items: flex-start;
+}
 
-    .produto-info {
-      flex: 1;
-    }
 
-    .produto-info h1 {
-      margin-top: 0;
-      font-size: 2rem;
-    }
+.imagem-principal {
+  width: 90%;
+  border-radius: 12px;
+  object-fit: cover;
+}
 
-    .preco {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--verde);
-      margin: 15px 0;
-    }
+.galeria-produto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
 
-    .descricao {
-      margin-bottom: 20px;
-      line-height: 1.5;
-      
-    }
+.galeria-produto img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border 0.2s;
+}
 
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: var(--branco);
-    }
+.galeria-produto img:hover {
+  transform: scale(1.05);
+  border-color: var(--verde);
+}
 
-    select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-    }
+  .produto-info {
+  justify-content: center;
+}
 
-    .botao-adicionar {
-      margin-top: 25px;
-      width: 100%;
-      padding: 15px;
-      font-size: 1rem;
-      background: var(--verde);
-      color: var(--branco);
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
-    }
 
-    .botao-adicionar:hover {
-      opacity: 0.9;
-    }
 
-    @media (max-width: 768px) {
-      .produto-detalhes {
-        flex-direction: column;
-      }
+.produto-info h2 {
+  font-size: 28px;
+}
 
-      .produto-imagem img {
-        width: 100%;
-      }
-    }
+.preco {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--verde);
+}
+
+.descricao {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--branco);
+}
+
+@media (max-width: 768px) {
+  .produto-detalhes {
+    grid-template-columns: 1fr;
+  }
+}
 
 /*======= RODAPÉ ==========*/
 .rodape {
