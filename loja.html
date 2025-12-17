@@ -5,7 +5,7 @@
   <!-- ================= META BÁSICO ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="robots" content="index, follow" />
+  
 
   <!-- ================= PRECONNECT (Google Fonts + APIs externas) ================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
   <title>Rock na Praça | Evento de rua</title>
   <meta name="description"
     content="O festival de rock independente que transforma a praça em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
-  <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+  <link rel="canonical" href="https://rock-na-praca.vercel.app/" />
 
   <!-- ================= OPEN GRAPH ================= -->
   <meta property="og:type" content="website" />
@@ -33,18 +33,18 @@
   <meta property="og:title" content="Rock na Praça | Evento de rua" />
   <meta property="og:description"
     content="Há 23 anos movimentando a cena com bandas independentes, cultura alternativa, economia solidária e entrada gratuita." />
-  <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
-  <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+  <meta property="og:url" content="https://rock-na-praca.vercel.app/" />
+  <meta property="og:image" content="https://rock-na-praca.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ================= TWITTER CARDS ================= -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rock na Praça | Evento de rua" />
   <meta name="twitter:description"
     content="O festival independente que movimenta a cena com rock, cultura alternativa e entrada gratuita." />
-  <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+  <meta name="twitter:image" content="https://rock-na-praca.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ================= ICONES / PWA ================= -->
-  <link rel="icon" href="/assets/Rock-na-praca-simbolo.webp" type="image/webp" />
+  <link rel="icon" href="/assets/logos/rock-na-praca-simbolo.png" type="image/webp" />
   <link rel="apple-touch-icon" href="/assets/Rock-na-praca-simbolo.webp" />
   <link rel="manifest" href="/site.webmanifest" />
 
@@ -113,6 +113,7 @@
       <a href="index.html">Página Inicial</a>
       <a href="sobre.html">Sobre</a>
       <a href="loja.html" class="active">Loja</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
   <main>
@@ -136,35 +137,41 @@
 
       <section class="secao-cards-loja">
 
-        <!-- CAMISETA 1 -->
-        <div class="card-loja">
-          <a href="#modalFoto" class="abrir-modal" data-images="
-       ./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp,
-       ./assets/loja/Cores-camisetas.jpeg,
-       ./assets/loja/Tamanhos-camisetas.jpeg,
-       ./assets/loja/Camiseta-RNP-modelo1-preta.jpeg">
-            <img class="foto-produto" src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp" alt="camiseta modelo 1">
-          </a>
 
-          <div class="card-infos">
-            <h3>Camiseta modelo #1</h3>
-            <p>R$70,00</p>
-            <label for="tamanho">Selecione o tamanho</label>
-            <select id="tamanho" name="tamanho">
-              <option value="camisetaPP">Camiseta PP</option>
-              <option value="camisetaP">Camiseta P</option>
-              <option value="camisetaM">Camiseta M</option>
-              <option value="camisetaG">Camiseta G</option>
-              <option value="camisetaGG">Camiseta GG</option>
-              <option value="camisetaXG">Camiseta XG</option>
-              <option value="camisetaXXG">Camiseta XXG</option>
-               <option value="BabylookM">Babylook M</option>
-              <option value="BabylookG">Babylook  G</option>
-              <option value="BabylookGG">Babylook GG</option>
-              <option value="BabylookXG">Babylook XG</option>
-            </select><br>
+  <!-- CAMISETA 1 -->
+  <div class="card-loja">
+    <a href="produto.html?nome=Camiseta%20modelo%20%231
+      &preco=70.00
+      &imagem=./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp
+      &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
+      class="card-link">
+      <img 
+        class="foto-produto"
+        src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp"
+        alt="Camiseta modelo 1"
+      >
+    </a>
 
-            <label for="cor">Selecione a cor</label>
+    <div class="card-infos">
+      <h3>Camiseta modelo #1</h3>
+      <p>R$ 70,00</p>
+
+      <label for="tamanho">Selecione o tamanho</label>
+      <select id="tamanho" name="tamanho">
+        <option value="PP">Camiseta PP</option>
+        <option value="P">Camiseta P</option>
+        <option value="M">Camiseta M</option>
+        <option value="G">Camiseta G</option>
+        <option value="GG">Camiseta GG</option>
+        <option value="XG">Camiseta XG</option>
+        <option value="XXG">Camiseta XXG</option>
+        <option value="BabylookM">Babylook M</option>
+        <option value="BabylookG">Babylook G</option>
+        <option value="BabylookGG">Babylook GG</option>
+        <option value="BabylookXG">Babylook XG</option>
+      </select>
+
+          <label for="cor">Selecione a cor</label>
             <select id="cor" name="cor">
               <option value="preto">Preto</option>
               <option value="cinzaChumbo">Cinza Chumbo</option>
@@ -196,112 +203,90 @@
               <option value="mesclapreto">Mescla e preto</option>
               <option value="mesclabordo">Mescla e Bordô</option>
               <option value="brancopreto">Branco e preto</option>
-            </select>
-            <button class="botao-adicionar" onclick="adicionar(this,'Camiseta modelo 1', 70.00)">
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </div>
+              </select>
 
-        <!-- CAMISETA 2 -->
-        <div class="card-loja">
-          <a href="#modalFoto" class="abrir-modal" data-images="
-          ./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-2.webp,
-            ./assets/loja/Cores-camisetas.jpeg,
-            ./assets/loja/Tamanhos-camisetas.jpeg,
-            ./assets/loja/Camiseta-modelo2-vermelha.jpeg
-          ">
-            <img class="foto-produto" src="./assets/loja/LOJA-camiseta-Rock-Na-Praca-modelo-2.webp"
-              alt="camiseta modelo 2">
-          </a>
+      <button 
+        class="botao-adicionar"
+        onclick="adicionar(this, 'Camiseta modelo #1', 70.00)"
+      >
+        Adicionar ao carrinho
+      </button>
+    </div>
 
-          <div class="card-infos">
-            <h3>Camiseta modelo #2</h3>
-            <p>R$70,00</p>
-            <label for="tamanho">Selecione o tamanho</label>
-            <select id="tamanho" name="tamanho">
-              <option value="camisetaPP">Camiseta PP</option>
-              <option value="camisetaP">Camiseta P</option>
-              <option value="camisetaM">Camiseta M</option>
-              <option value="camisetaG">Camiseta G</option>
-              <option value="camisetaGG">Camiseta GG</option>
-              <option value="camisetaXG">Camiseta XG</option>
-              <option value="camisetaXXG">Camiseta XXG</option>
-               <option value="BabylookM">Babylook M</option>
-              <option value="BabylookG">Babylook  G</option>
-              <option value="BabylookGG">Babylook GG</option>
-              <option value="BabylookXG">Babylook XG</option>
-            </select><br>
-            <label for="cor">Selecione a cor</label>
-            <select id="cor" name="cor">
-              <option value="preto">Preto</option>
-              <option value="cinzaChumbo">Cinza Chumbo</option>
-              <option value="cinzaMescla">Cinza Mescla</option>
-              <option value="pretoMescla">Preto Mescla</option>
-              <option value="cinzaMedio">Cinza Medio</option>
-              <option value="branco">Branco</option>
-              <option value="marron">Marrom</option>
-              <option value="amarelocanario">Amarelo Canário></option>
-              <option value="amareloOuro">Amarelo Ouro</option>
-              <option value="amareloMostarda">Amarelo Mostarda</option>
-              <option value="aranja">Laranja</option>
-              <option value="vermelho">Vermelho</option>
-              <option value="bordo">Bordô</option>
-              <option value="rosaGoiaba">Rosa Goiaba</option>
-              <option value="rosabebe">Rosa bebê</option>
-              <option value="rosapink">Rosa Pink</option>
-              <option value="lilas">Lilas</option>
-              <option value="roxo">Roxo</option>
-              <option value="verdefluor">Verde Fluor</option>
-              <option value="azulmarinho">Azul Marinho</option>
-              <option value="azulroyal">Azul Royal</option>
-              <option value="azuljade">Azul Jade</option>
-              <option value="azulturquesa">Azul Turquesa</option>
-              <option value="verdebandeira">Verde Bandeira</option>
-              <option value="verdefolha">Verde Folha</option>
-              <option value="verdemusgo">Verde Musgo</option>
-              <option value="crua">Crua</option>
-              <option value="mesclapreto">Mescla e preto</option>
-              <option value="mesclabordo">Mescla e Bordô</option>
-              <option value="brancopreto">Branco e preto</option>
-            </select>
-            <button class="botao-adicionar" onclick="adicionar(this,'Camiseta modelo 2', 70.00)">
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </div>
+  </div>
+  </div>
 
-        <div id="modalFoto" class="modal">
-          <a href="#" class="overlay-fechar"></a>
+       <!-- CAMISETA 2 -->
+  <div class="card-loja">
+    <a href="produto.html?nome=Camiseta%20modelo%20%231
+      &preco=70.00
+      &imagem=./assets/loja/Camiseta-Rock-Na-Praca-modelo-2.webp
+      &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
+      class="card-link">
+      <img 
+        class="foto-produto"
+        src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-2.webp"
+        alt="Camiseta modelo 2"
+      >
+    </a>
 
-          <div class="modal-content">
-            <button class="nav prev">‹</button>
+    <div class="card-infos">
+      <h3>Camiseta modelo #2</h3>
+      <p>R$ 70,00</p>
 
-            <div class="carousel"></div>
+      <label for="tamanho">Selecione o tamanho</label>
+      <select id="tamanho" name="tamanho">
+        <option value="PP">Camiseta PP</option>
+        <option value="P">Camiseta P</option>
+        <option value="M">Camiseta M</option>
+        <option value="G">Camiseta G</option>
+        <option value="GG">Camiseta GG</option>
+        <option value="XG">Camiseta XG</option>
+        <option value="XXG">Camiseta XXG</option>
+        <option value="BabylookM">Babylook M</option>
+        <option value="BabylookG">Babylook G</option>
+        <option value="BabylookGG">Babylook GG</option>
+        <option value="BabylookXG">Babylook XG</option>
+      </select>
+      <button 
+        class="botao-adicionar"
+        onclick="adicionar(this, 'Camiseta modelo #2', 70.00)"
+      >
+        Adicionar ao carrinho
+      </button>
+    </div>
 
-            <button class="nav next">›</button>
+  </div>
+  </div>
 
-            <a href="#" class="close-btn">✕</a>
-          </div>
-        </div>
+  <!--MOCHILA-->
+  <div class="card-loja">
+    <a href="produto.html?nome=Camiseta%20modelo%20%231
+      &preco=70.00
+      &imagem=./assets/loja/Mochila_RNP.jpeg
+      &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
+      class="card-link">
+      <img 
+        class="foto-produto"
+        src="./assets/loja/Mochila_RNP.jpeg"
+        alt="Mochila"
+      >
+    </a>
 
-        <!-- MOCHILA -->
-        <div class="card-loja">
-          <a href="#modalFoto" class="abrir-modal" data-images="
-       ./assets/loja/Mochila_RNP.jpeg
-     ">
-            <img class="foto-produto" src="./assets/loja/Mochila_RNP.jpeg" alt="mochila">
-          </a>
+    <div class="card-infos">
+      <h3>Camiseta modelo #1</h3>
+      <p>R$ 70,00</p>
 
-          <div class="card-infos">
-            <h3>mochila</h3>
-            <p>R$70,00</p>
-            <button class="botao-adicionar" onclick="adicionar(this,'Mochila', 70.00)">
-              Adicionar ao carrinho
-            </button>
-          </div>
-        </div>
-        </div>
+      <button 
+        class="botao-adicionar"
+        onclick="adicionar(this, 'Mochila', 70.00)"
+      >
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+  </div>
+  </div>
       </section>
     </section>
 
@@ -309,7 +294,10 @@
     <footer class="rodape">
       <div class="rodape-conteudo">
         <div class="direitos-autorais">© Rock na praça. Todos os Direitos Reservados.</div>
-        <div class="redes-sociais">
+         <div id="contato"class="contato">
+         <a href="mailto:rocknapracaesteio@gmail.com">
+          <img src="./assets/logos/email.png"
+            alt="email"></a>
           <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img
               src="./assets/logos/REDES-instagram.webp" alt="Instagram"></a>
 

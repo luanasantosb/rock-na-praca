@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock na Praça | Detalhes do Produto</title>
+
+   <meta name="description"
+    content="O festival de rock independente que transforma a praça em palco da cultura underground. Entrada franca, economia solidária e muita atitude!" />
+  <link rel="canonical" href="https://rock-na-praca-esteio.vercel.app/" />
+
+  <!-- PRECONNECT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://maps.googleapis.com">
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+
+  <!-- FONTS -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/estilo.css">
+
+
+  <!-- OG -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Rock na Praça | Evento de rua" />
+  <meta property="og:description"
+    content="Há 23 anos movimentando a cena com bandas independentes, cultura alternativa, economia solidária e entrada gratuita." />
+  <meta property="og:url" content="https://rock-na-praca-esteio.vercel.app/" />
+  <meta property="og:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rock na Praça | Evento de rua" />
+  <meta name="twitter:description"
+    content="O festival independente que movimenta a cena com rock, cultura alternativa e entrada gratuita." />
+  <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
+
+  <!-- ICONS -->
+    <link rel="icon" href="/assets/logos/rock-na-praca-simbolo.png" type="image/webp" />
+
+
+  <script src="/script.js" defer></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Rock na Praça",
+    "startDate": "2025-12-14T15:00-03:00",
+    "endDate": "2025-12-14T22:00-03:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Praça da Bandeira",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Cel. Vicente, 1 - Centro",
+        "addressLocality": "Canoas",
+        "postalCode": "92310-000",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      }
+    },
+    "image": ["https://www.jornalnopalco.com.br/wp-content/uploads/2017/02/rock-na-pr%C3%A7a.jpg"],
+    "description": "Explore a cena underground no Rock na Praça! Um evento gratuito com bandas independentes, muito rock, cultura e atitude, em um espaço aberto e acolhedor para todos os públicos.",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.instagram.com/rocknapraca_/",
+      "price": 0,
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2025-12-14T00:00-03:00"
+    },
+    "performer": {
+      "@type": "MusicGroup",
+      "name": "Vários artistas"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Balaiada Combo Cultural",
+      "url": "https://www.instagram.com/balaiada/"
+    }
+  }
+  </script>
+
+</head>
+</head>
+<body>
+
+  <main class="produto-detalhes">
+
+    <div class="produto-imagem">
+      <img id="imagemProduto" src="" alt="">
+    </div>
+
+    <div class="produto-info">
+      <h1 id="nomeProduto"></h1>
+
+      <div class="preco">
+        R$ <span id="precoProduto"></span>
+      </div>
+
+      <p class="descricao" id="descricaoProduto"></p>
+
+      <label for="tamanho">Selecione o tamanho</label>
+      <select id="tamanho">
+        <option value="PP">PP</option>
+        <option value="P">P</option>
+        <option value="M">M</option>
+        <option value="G">G</option>
+        <option value="GG">GG</option>
+        <option value="XG">XG</option>
+        <option value="XXG">XXG</option>
+        <option value="Babylook M">Babylook M</option>
+        <option value="Babylook G">Babylook G</option>
+        <option value="Babylook GG">Babylook GG</option>
+      </select>
+
+          <label for="cor">Selecione a cor</label>
+            <select id="cor" name="cor">
+              <option value="preto">Preto</option>
+              <option value="cinzaChumbo">Cinza Chumbo</option>
+              <option value="cinzaMescla">Cinza Mescla</option>
+              <option value="pretoMescla">Preto Mescla</option>
+              <option value="cinzaMedio">Cinza Medio</option>
+              <option value="branco">Branco</option>
+              <option value="marron">Marrom</option>
+              <option value="amarelocanario">Amarelo Canário></option>
+              <option value="amareloOuro">Amarelo Ouro</option>
+              <option value="amareloMostarda">Amarelo Mostarda</option>
+              <option value="aranja">Laranja</option>
+              <option value="vermelho">Vermelho</option>
+              <option value="bordo">Bordô</option>
+              <option value="rosaGoiaba">Rosa Goiaba</option>
+              <option value="rosabebe">Rosa bebê</option>
+              <option value="rosapink">Rosa Pink</option>
+              <option value="lilas">Lilas</option>
+              <option value="roxo">Roxo</option>
+              <option value="verdefluor">Verde Fluor</option>
+              <option value="azulmarinho">Azul Marinho</option>
+              <option value="azulroyal">Azul Royal</option>
+              <option value="azuljade">Azul Jade</option>
+              <option value="azulturquesa">Azul Turquesa</option>
+              <option value="verdebandeira">Verde Bandeira</option>
+              <option value="verdefolha">Verde Folha</option>
+              <option value="verdemusgo">Verde Musgo</option>
+              <option value="crua">Crua</option>
+              <option value="mesclapreto">Mescla e preto</option>
+              <option value="mesclabordo">Mescla e Bordô</option>
+              <option value="brancopreto">Branco e preto</option>
+              </select>
+
+      </select>
+
+      <button class="botao-adicionar" id="btnAdicionar">
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+  </main>
+
+  <script>
+    // ===== LENDO DADOS DA URL =====
+    const params = new URLSearchParams(window.location.search);
+
+    const produto = {
+      nome: params.get("nome"),
+      preco: params.get("preco"),
+      imagem: params.get("imagem"),
+      descricao: params.get("descricao")
+    };
+
+    // ===== POPULANDO A TELA =====
+    document.getElementById("nomeProduto").innerText = produto.nome;
+    document.getElementById("precoProduto").innerText =
+      parseFloat(produto.preco).toFixed(2);
+    document.getElementById("descricaoProduto").innerText = produto.descricao;
+    document.getElementById("imagemProduto").src = produto.imagem;
+    document.getElementById("imagemProduto").alt = produto.nome;
+
+    // ===== BOTÃO CARRINHO =====
+    document.getElementById("btnAdicionar").addEventListener("click", () => {
+      const tamanho = document.getElementById("tamanho").value;
+      const cor = document.getElementById("cor").value;
+
+      adicionar(
+        null,
+        produto.nome + " - " + tamanho + " - " + cor,
+        parseFloat(produto.preco)
+      );
+    });
+  </script>
+
+</body>
+</html>
