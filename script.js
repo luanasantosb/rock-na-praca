@@ -57,17 +57,16 @@ const PIX_NOME = "Ricardo Varela";
 const PIX_INSTITUICAO = "Mercado Livre";
 const WHATSAPP_NUMERO = "555192179735";
 
-
 let carrinho = [];
 let valorTotal = 0;
-
-
 
 const listaItens = document.getElementById("itens");
 const totalSpan = document.getElementById("total");
 const quantidadeSpan = document.getElementById("quantidadeTotal");
 
-
+/* ===============================
+   LOCAL STORAGE
+================================ */
 
 function salvarCarrinho() {
   localStorage.setItem("carrinhoRNP", JSON.stringify(carrinho));
@@ -92,7 +91,36 @@ function carregarCarrinho() {
 
 carregarCarrinho();
 
+/* ===============================
+   CARROSSEL (SE EXISTIR)
+================================ */
 
+document.querySelectorAll(".card-loja").forEach(card => {
+  const imagensData = card.dataset.imagens;
+  const img = card.querySelector(".foto-produto");
+  const prev = card.querySelector(".prev");
+  const next = card.querySelector(".next");
+
+  // Se não tiver carrossel, ignora o card
+  if (!imagensData || !img || !prev || !next) return;
+
+  const imagens = JSON.parse(imagensData);
+  let index = 0;
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + imagens.length) % imagens.length;
+    img.src = imagens[index];
+  });
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % imagens.length;
+    img.src = imagens[index];
+  });
+});
+
+/* ===============================
+   ADICIONAR AO CARRINHO
+================================ */
 
 document.querySelectorAll(".botao-adicionar").forEach(botao => {
   botao.addEventListener("click", () => {
@@ -133,6 +161,9 @@ document.querySelectorAll(".botao-adicionar").forEach(botao => {
   });
 });
 
+/* ===============================
+   FUNÇÕES DO CARRINHO
+================================ */
 
 function adicionarAoCarrinho(item) {
   carrinho.push(item);
@@ -188,7 +219,9 @@ function renderCarrinho() {
   totalSpan.textContent = valorTotal.toFixed(2);
 }
 
-
+/* ===============================
+   WHATSAPP
+================================ */
 
 function enviarWhatsApp() {
   if (carrinho.length === 0) {
@@ -218,22 +251,6 @@ function enviarWhatsApp() {
   )}`;
 
   window.open(url, "_blank");
-}
-
-
-function abrirProduto(link) {
-  const card = link.closest(".card-loja");
-  if (!card) return;
-
-  localStorage.setItem(
-    "produtoSelecionado",
-    JSON.stringify({
-      nome: card.dataset.nome,
-      preco: card.dataset.preco,
-      descricao: card.dataset.descricao,
-      imagens: card.dataset.imagens
-    })
-  );
 }
 
 

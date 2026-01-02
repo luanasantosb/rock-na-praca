@@ -42,7 +42,7 @@
   <meta name="twitter:image" content="https://rock-na-praca-esteio.vercel.app/assets/og-image-rocknapraca.webp" />
 
   <!-- ICONS -->
-  <link rel="icon" href="/assets/logos/rock-na-praca-logotipo.png" type="image/webp" />
+    <link rel="icon" href="/assets/logos/rock-na-praca-simbolo.png" type="image/webp" />
 
 
   <script src="/script.js" defer></script>
@@ -90,96 +90,179 @@
     }
   }
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock na Praça</title>
+
 </head>
-<header class="cabecalho">
-  <div class="cabecalho-simbolo-logotipo">
-    <a href="./index.html">
-      <h1>Rock na Praça</h1>
-      <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone rock na praça">
-    </a>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--preto);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container-produto {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      border-radius: 8px;
+    }
+
+    /* ===== IMAGENS ===== */
+    .galeria {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .imagem-principal {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .miniaturas {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .miniaturas img {
+      width: 70px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+    }
+
+    .miniaturas img:hover {
+      border-color: #000;
+    }
+
+    /* ===== INFOS ===== */
+    .infos h1 {
+      margin: 0 0 10px;
+    }
+
+    .preco {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .descricao {
+      margin: 15px 0;
+      color: #555;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      background: #000;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container-produto {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-produto">
+    
+    <!-- GALERIA -->
+    <div class="galeria">
+      <img id="imagemPrincipal" class="imagem-principal" src="" alt="Produto">
+      <div id="miniaturas" class="miniaturas"></div>
+    </div>
+
+    <!-- INFOS -->
+    <div class="infos">
+      <h1 id="nomeProduto"></h1>
+      <div class="preco" id="precoProduto"></div>
+      <p class="descricao" id="descricaoProduto"></p>
+
+      <label>Tamanho</label>
+      <select>
+        <option>PP</option>
+        <option>P</option>
+        <option>M</option>
+        <option>G</option>
+        <option>GG</option>
+        <option>XG</option>
+      </select>
+
+      <label>Cor</label>
+      <select>
+        <option>Preto</option>
+        <option>Branco</option>
+        <option>Cinza</option>
+        <option>Vermelho</option>
+      </select>
+
+      <button>Adicionar ao carrinho</button>
+    </div>
+
   </div>
 
-  <div class="menu-hamburguer" id="menu-hamburguer" aria-label="Abrir ou Fechar menu">☰</div>
+  <script>
+    const produto = JSON.parse(localStorage.getItem("produtoSelecionado"));
 
-  <nav class="cabecalho-menu" id="menu">
-    <a href="sobre.html">Sobre</a>
-    <a href="loja.html">Loja</a>
-    <a href="#rodape">Contato</a>
+    if (!produto) {
+      alert("Nenhum produto selecionado.");
+      window.location.href = "index.html";
+    }
 
-  </nav>
-</header>
-  <main class="cards-edicao">
-  <section class="lineup">
-    <h2 class="titulo">Quem faz o som</h2>
-    <div class="card-lineup">TEMPLO DE SOPHIA - 16H15</div>
-    <div class="card-lineup">ANTI ZERO - 17H</div>
-    <div class="card-lineup">JULIO IGREJAS - 17H45</div>
-    <div class="card-lineup">CANCELLI - 18H30</div>
-    <div class="card-lineup">ASTER - 19H15</div>
-    <div class="card-lineup">COR DO INVISÍVEL - 20H</div>
-  </section>
+    const imagemPrincipal = document.getElementById("imagemPrincipal");
+    const miniaturas = document.getElementById("miniaturas");
 
-    <section class="feira">
-    <h2 class="titulo">mercado underground</h2>
-    <div class="card-feira">banca 1</div>
-    <div class="card-feira">banca 2</div>
-    <div class="card-feira">banca 3</div>
-    <div class="card-feira">banca 4</div>
-  </section>
+    document.getElementById("nomeProduto").textContent = produto.nome;
+    document.getElementById("precoProduto").textContent = 
+      "R$ " + Number(produto.preco).toFixed(2).replace(".", ",");
+    document.getElementById("descricaoProduto").textContent = produto.descricao;
 
-    <section class="apoio">
-    <h2 class="titulo">Amigos do rock </h2>
-    <div class="card-apoio">apoio 1</div>
-    <div class="card-apoio">apoio 2</div>
-    <div class="card-apoio">apoio 3</div>
-    <div class="card-apoio">apoio 4</div>
-  </section>
+    // imagem principal inicial
+    imagemPrincipal.src = produto.imagens[0];
 
-      
-  </main>
+    // criar miniaturas
+    produto.imagens.forEach(img => {
+      const imagem = document.createElement("img");
+      imagem.src = img;
 
-  <footer class="rodape" id="rodape">
-  <div class="rodape-conteudo">
+      imagem.addEventListener("click", () => {
+        imagemPrincipal.src = img;
+      });
 
-    <p class="direitos-autorais">
-      © 2002–2026 Rock na Praça. Todos os direitos reservados.
-    </p>
-
-    <!-- CONTATO -->
-    <nav class="contato" aria-label="Formas de contato">
-      <h4>Contato</h4>
-
-      <a href="mailto:rocknapracaesteio@gmail.com" aria-label="Enviar e-mail">
-        <img src="./assets/logos/email.png" alt="E-mail">
-        <span>rocknapracaesteio@gmail.com</span>
-      </a>
-
-      <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <img src="./assets/logos/REDES-instagram.webp" alt="Instagram">
-      </a>
-
-      <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <img src="./assets/logos/REDES-facebook.webp" alt="Facebook">
-      </a>
-
-      <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <img src="./assets/logos/REDES-youtube.webp" alt="YouTube">
-      </a>
-    </nav>
-
-    <p class="desenvolvedora-credito">
-      Desenvolvido por
-      <a href="https://luanasantosb.github.io/" target="_blank" rel="noopener noreferrer">
-        Luana Santos
-      </a>
-    </p>
-
-  </div>
-</footer>
+      miniaturas.appendChild(imagem);
+    });
+  </script>
 
 </body>
-
 </html>
