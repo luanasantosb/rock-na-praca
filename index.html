@@ -106,10 +106,9 @@
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
     <nav class="cabecalho-menu" id="menu">
-      <a href="index.html" class="active">Página Inicial</a>
       <a href="sobre.html">Sobre</a>
       <a href="loja.html">Loja</a>
-      <a href="#contato">Contato</a>
+      <a href="#rodape">Contato</a>
     </nav>
   </header>
 
@@ -226,29 +225,46 @@
     </section>
   </main>
 
-  <footer class="rodape">
-    <div class="rodape-conteudo">
-      <div class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os Direitos Reservados.</div>
+  <footer class="rodape" id="rodape">
+  <div class="rodape-conteudo">
 
-       <div id="contato"class="contato">
-         <a href="mailto:rocknapracaesteio@gmail.com">
-          <img src="./assets/logos/email.png"
-            alt="email"></a>
-        <a href="https://www.instagram.com/rocknapraca_/" target="_blank"><img src="./assets/logos/REDES-instagram.webp"
-            alt="Instagram"></a>
+    <p class="direitos-autorais">
+      © 2002–2026 Rock na Praça. Todos os direitos reservados.
+    </p>
 
-        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank"><img src="./assets/logos/REDES-facebook.webp"
-            alt="Facebook"></a>
+    <!-- CONTATO -->
+    <nav class="contato" aria-label="Formas de contato">
+      <h4>Contato</h4>
 
-        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank"><img src="./assets/logos/REDES-youtube.webp"
-            alt="Youtube"></a>
-      </div>
+      <a href="mailto:rocknapracaesteio@gmail.com" aria-label="Enviar e-mail">
+        <img src="./assets/logos/email.png" alt="E-mail">
+        <span>rocknapracaesteio@gmail.com</span>
+      </a>
 
-      <div class="desenvolvedora-credito">
-        Desenvolvido por <a href="https://luanasantosb.github.io/" target="_blank">Luana Santos</a>
-      </div>
-    </div>
-  </footer>
+      <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="./assets/logos/REDES-instagram.webp" alt="Instagram">
+      </a>
+
+      <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <img src="./assets/logos/REDES-facebook.webp" alt="Facebook">
+      </a>
+
+      <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="./assets/logos/REDES-youtube.webp" alt="YouTube">
+      </a>
+    </nav>
+
+    <p class="desenvolvedora-credito">
+      Desenvolvido por
+      <a href="https://luanasantosb.github.io/" target="_blank" rel="noopener noreferrer">
+        Luana Santos
+      </a>
+    </p>
+
+  </div>
+</footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
