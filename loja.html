@@ -97,8 +97,6 @@
 }
 </script>
 </head>
-
-
 <body>
   <!--CABEÇALHO-->
   <header class="cabecalho">
@@ -136,12 +134,10 @@
       </section>
 
       <section class="secao-cards-loja">
-
-
-  <!-- CAMISETA 1 -->
-  <div class="card-loja">
+  <!--CAMISETA#1--> 
+  <!--<div class="card-loja">
   <a href="produto.html?
-  nome=Camiseta%20modelo%20%231
+  &nome=Camiseta%20modelo%20%1
   &preco=70.00
   &imagens=./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp,
             ./assets/loja/Camiseta-Rock-Na-Praca-modelo-1-preta.jpeg,
@@ -209,29 +205,30 @@
         Adicionar ao carrinho
       </button>
     </div>
+  </div>-->
+<!-- CAMISETA 1-->
+  <div class="card-loja"
+  data-nome="Camiseta modelo #1"
+  data-preco="70.00"
+  data-descricao="Camiseta oficial Rock na Praça. 100% algodão, confortável, ideal para shows e uso diário."
+  data-imagens='[
+    "./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp",
+    "./assets/loja/Camiseta-Rock-Na-Praca-modelo-1-preta.jpeg",
+    "./assets/loja/Tamanhos-camisetas.jpeg",
+    "./assets/loja/Cores-camisetas.jpeg"
+  ]'>
 
-  </div>
-  </div>
+  <a href="produto.html" class="card-link">
+    <img
+      class="foto-produto"
+      src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp"
+      alt="Camiseta modelo 1">
+  </a>
 
-       <!-- CAMISETA 2 -->
-  <div class="card-loja">
-    <a href="produto.html?nome=Camiseta%20modelo%20%231
-      &preco=70.00
-      &imagem=./assets/loja/Camiseta-Rock-Na-Praca-modelo-2.webp
-      &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
-      class="card-link">
-      <img 
-        class="foto-produto"
-        src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-2.webp"
-        alt="Camiseta modelo 2"
-      >
-    </a>
-
-    <div class="card-infos">
-      <h3>Camiseta modelo #2</h3>
-      <p>R$ 70,00</p>
-
-      <label for="tamanho">Selecione o tamanho</label>
+  <div class="card-infos">
+    <h3>Camiseta modelo #1</h3>
+    <p>R$ 70,00</p>
+    <label for="tamanho">Selecione o tamanho</label>
       <select id="tamanho" name="tamanho">
         <option value="PP">Camiseta PP</option>
         <option value="P">Camiseta P</option>
@@ -245,46 +242,228 @@
         <option value="BabylookGG">Babylook GG</option>
         <option value="BabylookXG">Babylook XG</option>
       </select>
-      <button 
-        class="botao-adicionar"
-        onclick="adicionar(this, 'Camiseta modelo #2', 70.00)"
-      >
-        Adicionar ao carrinho
-      </button>
-    </div>
 
+          <label for="cor">Selecione a cor</label>
+            <select id="cor" name="cor">
+              <option value="preto">Preto</option>
+              <option value="cinzaChumbo">Cinza Chumbo</option>
+              <option value="cinzaMescla">Cinza Mescla</option>
+              <option value="pretoMescla">Preto Mescla</option>
+              <option value="cinzaMedio">Cinza Medio</option>
+              <option value="branco">Branco</option>
+              <option value="marron">Marrom</option>
+              <option value="amarelocanario">Amarelo Canário</option>
+              <option value="amareloOuro">Amarelo Ouro</option>
+              <option value="amareloMostarda">Amarelo Mostarda</option>
+              <option value="aranja">Laranja</option>
+              <option value="vermelho">Vermelho</option>
+              <option value="bordo">Bordô</option>
+              <option value="rosaGoiaba">Rosa Goiaba</option>
+              <option value="rosabebe">Rosa bebê</option>
+              <option value="rosapink">Rosa Pink</option>
+              <option value="lilas">Lilas</option>
+              <option value="roxo">Roxo</option>
+              <option value="verdefluor">Verde Fluor</option>
+              <option value="azulmarinho">Azul Marinho</option>
+              <option value="azulroyal">Azul Royal</option>
+              <option value="azuljade">Azul Jade</option>
+              <option value="azulturquesa">Azul Turquesa</option>
+              <option value="verdebandeira">Verde Bandeira</option>
+              <option value="verdefolha">Verde Folha</option>
+              <option value="verdemusgo">Verde Musgo</option>
+              <option value="crua">Crua</option>
+              <option value="mesclapreto">Mescla e preto</option>
+              <option value="mesclabordo">Mescla e Bordô</option>
+              <option value="brancopreto">Branco e preto</option>
+              </select>
+
+    <button class="botao-adicionar">
+      Adicionar ao carrinho
+    </button>
   </div>
+</div>
+
+<div class="card-loja"
+  data-nome="Camiseta modelo #2"
+  data-preco="70.00"
+  data-descricao="Camiseta oficial Rock na Praça. 100% algodão, confortável, ideal para shows e uso diário."
+  data-imagens='[
+    "./assets/loja/Camiseta-Rock-Na-Praca-modelo-2.webp",
+    "./assets/loja/Camiseta-Rock-Na-Praca-modelo-2-vermelha.jpeg",
+    "./assets/loja/Tamanhos-camisetas.jpeg",
+    "./assets/loja/Cores-camisetas.jpeg"
+  ]'>
+
+  <a href="produto.html" class="card-link">
+    <img
+      class="foto-produto"
+      src="./assets/loja/Camiseta-Rock-Na-Praca-modelo-2.webp"
+      alt="Camiseta modelo 2">
+  </a>
+
+  <div class="card-infos">
+    <h3>Camiseta modelo #2</h3>
+    <p>R$ 70,00</p>
+    <label for="tamanho">Selecione o tamanho</label>
+      <select id="tamanho" name="tamanho">
+        <option value="PP">Camiseta PP</option>
+        <option value="P">Camiseta P</option>
+        <option value="M">Camiseta M</option>
+        <option value="G">Camiseta G</option>
+        <option value="GG">Camiseta GG</option>
+        <option value="XG">Camiseta XG</option>
+        <option value="XXG">Camiseta XXG</option>
+        <option value="BabylookM">Babylook M</option>
+        <option value="BabylookG">Babylook G</option>
+        <option value="BabylookGG">Babylook GG</option>
+        <option value="BabylookXG">Babylook XG</option>
+      </select>
+
+          <label for="cor">Selecione a cor</label>
+            <select id="cor" name="cor">
+              <option value="preto">Preto</option>
+              <option value="cinzaChumbo">Cinza Chumbo</option>
+              <option value="cinzaMescla">Cinza Mescla</option>
+              <option value="pretoMescla">Preto Mescla</option>
+              <option value="cinzaMedio">Cinza Medio</option>
+              <option value="branco">Branco</option>
+              <option value="marron">Marrom</option>
+              <option value="amarelocanario">Amarelo Canário</option>
+              <option value="amareloOuro">Amarelo Ouro</option>
+              <option value="amareloMostarda">Amarelo Mostarda</option>
+              <option value="aranja">Laranja</option>
+              <option value="vermelho">Vermelho</option>
+              <option value="bordo">Bordô</option>
+              <option value="rosaGoiaba">Rosa Goiaba</option>
+              <option value="rosabebe">Rosa bebê</option>
+              <option value="rosapink">Rosa Pink</option>
+              <option value="lilas">Lilas</option>
+              <option value="roxo">Roxo</option>
+              <option value="verdefluor">Verde Fluor</option>
+              <option value="azulmarinho">Azul Marinho</option>
+              <option value="azulroyal">Azul Royal</option>
+              <option value="azuljade">Azul Jade</option>
+              <option value="azulturquesa">Azul Turquesa</option>
+              <option value="verdebandeira">Verde Bandeira</option>
+              <option value="verdefolha">Verde Folha</option>
+              <option value="verdemusgo">Verde Musgo</option>
+              <option value="crua">Crua</option>
+              <option value="mesclapreto">Mescla e preto</option>
+              <option value="mesclabordo">Mescla e Bordô</option>
+              <option value="brancopreto">Branco e preto</option>
+              </select>
+    <button class="botao-adicionar">
+      Adicionar ao carrinho
+    </button>
   </div>
+</div>
 
-  <!--MOCHILA-->
-  <div class="card-loja">
-    <a href="produto.html?nome=Camiseta%20modelo%20%231
-      &preco=70.00
-      &imagem=./assets/loja/Mochila_RNP.jpeg
-      &descricao=Camiseta%20oficial%20Rock%20na%20Praça.%20100%%20algodão,%20confortável,%20ideal%20para%20shows%20e%20uso%20diário."
-      class="card-link">
-      <img 
-        class="foto-produto"
-        src="./assets/loja/Mochila_RNP.jpeg"
-        alt="Mochila"
-      >
-    </a>
+<!-- Mochila-->
+<div class="card-loja"
+  data-nome="Mochila Rock na Praça"
+  data-preco="70.00"
+  data-descricao=""
+  data-imagens='[
+    "./assets/loja/Mochila-rock-na-praça.jpeg",
+  ]'>
 
-    <div class="card-infos">
-      <h3>Camiseta modelo #1</h3>
-      <p>R$ 70,00</p>
+  <a href="produto.html" class="card-link">
+    <img
+      class="foto-produto"
+      src="./assets/loja/Mochila-rock-na-praça.jpeg"
+      alt="Mochila">
+  </a>
 
-      <button 
-        class="botao-adicionar"
-        onclick="adicionar(this, 'Mochila', 70.00)"
-      >
-        Adicionar ao carrinho
-      </button>
-    </div>
+  <div class="card-infos">
+    <h3>Mochila</h3>
+    <p>R$ 70,00</p>
 
+    <button class="botao-adicionar">
+      Adicionar ao carrinho
+    </button>
   </div>
+</div>
+
+<!-- Carteira-->
+<div class="card-loja"
+  data-nome="Carteira Rock na Praça"
+  data-preco="70.00"
+  data-descricao=""
+  data-imagens='[
+    "./assets/loja/carteira-RNP.jpg",
+  ]'>
+
+  <a href="produto.html" class="card-link">
+    <img
+      class="foto-produto"
+      src="./assets/loja/carteira-RNP.jpg"
+      alt="Mochila">
+  </a>
+
+  <div class="card-infos">
+    <h3>CARTEIRA</h3>
+    <p>R$ 70,00</p>
+
+    <button class="botao-adicionar">
+      Adicionar ao carrinho
+    </button>
   </div>
-      </section>
+</div>
+
+<!-- Carteira-->
+<div class="card-loja"
+  data-nome="Carteira Rock na Praça"
+  data-preco="70.00"
+  data-descricao=""
+  data-imagens='[
+    "./assets/loja/carteira-RNP.jpg",
+  ]'>
+
+  <a href="produto.html" class="card-link">
+    <img
+      class="foto-produto"
+      src="./assets/loja/carteira-RNP.jpg"
+      alt="Mochila">
+  </a>
+
+  <div class="card-infos">
+    <h3>CARTEIRA</h3>
+    <p>R$ 70,00</p>
+
+    <button class="botao-adicionar">
+      Adicionar ao carrinho
+    </button>
+  </div>
+</div>
+
+<!-- Carteira-->
+<div class="card-loja"
+  data-nome="Carteira Rock na Praça"
+  data-preco="70.00"
+  data-descricao=""
+  data-imagens='[
+    "./assets/loja/carteira-RNP.jpg",
+  ]'>
+
+  <a href="produto.html" class="card-link">
+    <img
+      class="foto-produto"
+      src="./assets/loja/carteira-RNP.jpg"
+      alt="Mochila">
+  </a>
+
+  <div class="card-infos">
+    <h3>CARTEIRA</h3>
+    <p>R$ 70,00</p>
+
+    <button class="botao-adicionar">
+      Adicionar ao carrinho
+    </button>
+  </div>
+</div>
+
+
+      
     </section>
 
     <!--RODAPÉ-->
