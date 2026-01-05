@@ -487,6 +487,91 @@ h2,h3{
   transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+  .geral-conteudo {
+    grid-template-columns: 1fr 320px;
+    gap: 1rem;
+  }
+
+  .card-local {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .geral-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+
+  .bloco-principal {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+
+  .bloco-lateral {
+    grid-column: 1;
+    grid-row: auto;
+    min-width: 100%;
+  }
+
+  .card-lateral {
+    position: relative;
+    top: auto;
+  }
+
+  .bloco-inferior {
+    padding: 1.5rem;
+  }
+
+
+  .cartao-video {
+    padding-top: 48%;
+  }
+
+
+  .btn-videos,
+  .btn-inscricao {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-inscricao {
+    min-height: 40px;
+  }
+}
+
+
+  .bloco-inferior-inscricoes {
+    gap: 1.5rem;
+  }
+
+
+@media (max-width: 480px) {
+  .card-local,
+  .card-lateral,
+  .bloco-inferior {
+    padding: 1rem;
+  }
+
+  .card-inscricoes h3 {
+    font-size: 1.1rem;
+  }
+
+  .cartao-video {
+    padding-top: 45%;
+  }
+
+  .btn-videos,
+  .btn-inscricao {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+}
+
+
 /* *********************** SOBRE/BICI ****************************/
 .sobre,
 .bici{
