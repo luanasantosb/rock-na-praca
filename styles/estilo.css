@@ -901,7 +901,6 @@ h2,h3{
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: var(--verde);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -930,6 +929,11 @@ h2,h3{
     filter 0.15s ease;
 }
 
+.lineup a,
+.feira a,
+.apoio a{
+  text-decoration: none;
+}
 
 .card-lineup:hover,
 .card-apoio:hover,
