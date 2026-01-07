@@ -1,4 +1,4 @@
- /* VERSÃO DE PRODUÇÃO */
+ 
  /*=====CABECALHO=====*/
   const btnHamburguer = document.getElementById("menu-hamburguer");
   const menu = document.getElementById("menu");
