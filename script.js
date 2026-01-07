@@ -6,6 +6,28 @@
     menu.classList.toggle("abrir");
   });
 
+  /*============================*/
+  const toggle = document.querySelector(".menu-toggle");
+  const submenu = document.querySelector(".submenu");
+  const menuItem = document.querySelector(".menu-item");
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const aberto = submenu.style.display === "block";
+    submenu.style.display = aberto ? "none" : "block";
+    toggle.textContent = aberto ? "Participe" : "Participe";
+    toggle.setAttribute("aria-expanded", !aberto);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menuItem.contains(e.target)) {
+      submenu.style.display = "none";
+      toggle.textContent = "Participe↴";
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+  
  /*======  CONTADORES===========*/
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
