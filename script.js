@@ -1,3 +1,4 @@
+ /* VERSÃO DE PRODUÇÃO */
  /*=====CABECALHO=====*/
   const btnHamburguer = document.getElementById("menu-hamburguer");
   const menu = document.getElementById("menu");
@@ -114,7 +115,7 @@ function carregarCarrinho() {
 carregarCarrinho();
 
 /* ===============================
-   CARROSSEL (SE EXISTIR)
+   CARROSSEL
 ================================ */
 
 document.querySelectorAll(".card-loja").forEach(card => {
