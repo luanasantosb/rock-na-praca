@@ -419,7 +419,7 @@ h2,h3{
 
 .btn-videos:hover {
   background: var(--verde);
-  color:var(--branco);
+  color: var(--branco);
   transform: translateY(-2px);
 }
 
@@ -475,19 +475,46 @@ h2,h3{
   border-radius: 10px;
 }
 
+/************************* RESPONSIVO ****************************/
 
-@media (min-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .card-mapa {
-    grid-column: 1 / -1;
+/* Telas até 1024px: reduz a lateral */
+@media (max-width: 1024px) {
+  .geral-conteudo {
+    grid-template-columns: 1fr 300px;
   }
 }
 
-@media (min-width: 1024px) {
+/* Telas até 768px: transforma em uma coluna só */
+@media (max-width: 768px) {
+  .geral-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .bloco-lateral {
+    grid-column: 1;
+    position: relative;
+    top: auto;
+    margin-top: 2rem;
+  }
+
+  .card-lateral {
+    border-left: none;
+  }
+}
+
+/* Ajuste de mapa para telas pequenas */
+@media (max-width: 480px) {
+  .card-mapa iframe {
+    height: 200px;
+  }
+
   .cards-container {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
   }
 }
 
@@ -968,7 +995,7 @@ main.cards-edicao {
 
 .direitos-autorais,
 .desenvolvedora-credito {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   opacity: 0.85;
   margin: 0;
   color: var(--preto);
