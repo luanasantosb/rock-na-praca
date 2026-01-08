@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,13 +8,15 @@
 
   <title>Rock na Praça Janeiro de 2026 em Esteio/RS | Evento gratuito de Rock</title>
 
-  <meta name="description" content="Rock na Praça é um evento gratuito de rock em Esteio (RS), com bandas independentes, cultura urbana e muita atitude. Dia 25 de janeiro de 2026 na Praça Coração de Maria.">
+  <meta name="description"
+    content="Rock na Praça é um evento gratuito de rock em Esteio (RS), com bandas independentes, cultura urbana e muita atitude. Dia 25 de janeiro de 2026 na Praça Coração de Maria.">
 
   <link rel="canonical" href="https://www.rocknapraca.com/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Rock na Praça 2026 | Evento gratuito de Rock em Esteio">
-  <meta property="og:description" content="Evento gratuito com bandas independentes, cultura e muito rock. Dia 25/01/2026 na Praça Coração de Maria.">
+  <meta property="og:description"
+    content="Evento gratuito com bandas independentes, cultura e muito rock. Dia 25/01/2026 na Praça Coração de Maria.">
   <meta property="og:image" content="https://www.jornalnopalco.com.br/wp-content/uploads/2017/02/rock-na-pr%C3%A7a.jpg">
   <meta property="og:url" content="https://www.rocknapraca.com/">
   <meta property="og:type" content="website">
@@ -31,7 +34,8 @@
   <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
 
   <!-- FONTS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
 
   <!-- ICON -->
   <link rel="icon" href="/assets/logos/rock-na-praca-logotipo.png" type="image/png">
@@ -39,7 +43,7 @@
   <!-- SCRIPT -->
   <script src="/script.js" defer></script>
 
-    <!-- JSON-LD -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -153,38 +157,85 @@
 
 </head>
 
-  <!-- ================== CABEÇALHO ================== -->
-  <header class="cabecalho">
-    <div class="cabecalho-simbolo-logotipo">
-      <a href="./index.html">
-        <h1>Rock na Praça</h1>
-        <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone Rock na Praça">
-      </a>
+<!-- ================== CABEÇALHO ================== -->
+<header class="cabecalho">
+  <div class="cabecalho-simbolo-logotipo">
+    <a href="./index.html">
+      <h1>Rock na Praça</h1>
+      <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone Rock na Praça">
+    </a>
+  </div>
+
+  <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+
+  <nav class="cabecalho-menu" id="menu">
+    <a href="sobre.html">Sobre</a>
+    <a href="loja.html">Loja</a>
+
+    <div class="menu-item">
+      <button class="menu-toggle" aria-expanded="false">
+        Participe ↴
+      </button>
+
+      <div class="submenu">
+        <a href="programacao-completa.html">Programação</a>
+        <a href="./bandas.html">Bandas</a>
+        <a href="./feira.html">Economia Criativa</a>
+      </div>
     </div>
 
-    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+    <a href="#rodape">Contato</a>
+  </nav>
+</header>
 
-    <nav class="cabecalho-menu" id="menu">
-      <a href="sobre.html">Sobre</a>
-      <a href="loja.html">Loja</a>
+<main>
 
-      <div class="menu-item">
-        <button class="menu-toggle" aria-expanded="false">
-          Participe ↴
-        </button>
+  <h3 class="titulo-evento">
+    ☀️ ROCK NA PRAÇA • JANEIRO / 2026
+  </h3>
 
-        <div class="submenu">
-          <a href="programacao-completa.html">Programação</a>
-          <a href="./bandas.html">Bandas</a>
-          <a href="./feira.html">Economia Criativa</a>
+  <section class="informacoes">
+    <div class="info-detalhes bloco">
+
+      <article class="evento">
+        <div class="dados-evento">
+          <p>📅 <strong>25 de Janeiro</strong></p>
+          <p>⏰ <strong>15h</strong></p>
+          <p>📍 <strong>Praça Coração de Maria, Esteio/RS</strong></p>
         </div>
+
+        <div class="mapa bloco">
+          <iframe src="https://www.google.com/maps?q=Praça+Coração+de+Maria+Esteio&output=embed" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </article>
       </div>
 
-      <a href="#rodape">Contato</a>
-    </nav>
-  </header>
-  
-  <main>
+      <!-- BLOCO: BIKE -->
+      <article id="bike" class="bike bloco">
+        <h3 class="titulo-bike">🚲 Vem de Bike • Vem de Trem</h3>
+
+        <p>Pedale ou combine Trensurb + bicicleta.</p>
+        <p>Prático, sustentável e acessível.</p>
+
+        <ul class="lista-bike">
+          <li>✅ Bicicletário</li>
+          <li>🔒 Traga seu cadeado</li>
+        </ul>
+
+        <p class="link-bike">
+          🚆 Orientações:
+          <a href="https://www.gov.br/trensurb/pt-br/servicos/servicos-especiais/ciclista-trensurb" target="_blank"
+            rel="noopener">
+            Site da Trensurb
+          </a>
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
   <section class="cards-edicao">
 
     <!-- LINEUP -->
@@ -220,30 +271,66 @@
     <section class="grupo">
       <h2 class="titulo">Mercado underground</h2>
 
-      <a href="./feira.html"><article class="card small "> SUA LOJA AQUI</article></a>
-      <a href="./feira.html"><article class="card small ">Banca 2</article></a>
-      <a href="./feira.html"><article class="card small ">Banca 3</article></a>
-      <a href="./feira.html"><article class="card small">Banca 4</article></a>
-      <a href="./feira.html"><article class="card small">Banca 5</article></a>
-      <a href="./feira.html"><article class="card small">Banca 6</article></a>
-      <a href="./feira.html"><article class="card small">Banca 7</article></a>
-      <a href="./feira.html"><article class="card small">Banca 8</article></a>
-      <a href="./feira.html"><article class="card small">Banca 9</article></a>
-      <a href="./feira.html"><article class="card small">Banca 10</article></a>
-      <a href="./feira.html"><article class="card small">Banca 11</article></a>
-      <a href="./feira.html"><article class="card small">Banca 12</article></a>
-      <a href="./feira.html"><article class="card small">Banca 13</article></a>
-      <a href="./feira.html"><article class="card small">Banca 14</article></a>
-      <a href="./feira.html"><article class="card small">Banca 15</article></a>
+      <a href="./feira.html">
+        <article class="card small "> SUA LOJA AQUI</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small ">Banca 2</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small ">Banca 3</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 4</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 5</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 6</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 7</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 8</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 9</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 10</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 11</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 12</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 13</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 14</article>
+      </a>
+      <a href="./feira.html">
+        <article class="card small">Banca 15</article>
+      </a>
     </section>
 
     <!-- EXTRAS -->
     <section class="grupo">
       <h2 class="titulo">E mais</h2>
 
-      <a href="https://www.instagram.com/esteiart_studio/"><article class="card">Flash tattoo</article></a>
-      <a href="https://www.instagram.com/pihlocacoes/"><article class="card">Brinquedos infláveis</article></a>
-      <a href="#"><article class="card">Praça de alimentação</article></a>
+      <a href="https://www.instagram.com/esteiart_studio/">
+        <article class="card">Flash tattoo</article>
+      </a>
+      <a href="https://www.instagram.com/pihlocacoes/">
+        <article class="card">Brinquedos infláveis</article>
+      </a>
+      <a href="#">
+        <article class="card">Praça de alimentação</article>
+      </a>
     </section>
 
     <!-- APOIO -->
@@ -275,51 +362,50 @@
 </main>
 
 
-  <footer class="rodape" id="rodape">
-    <div class="rodape-conteudo">
+<footer class="rodape" id="rodape">
+  <div class="rodape-conteudo">
 
-      <p class="direitos-autorais">
-        © 2002–2026 Rock na Praça. Todos os direitos reservados.
-      </p>
+    <p class="direitos-autorais">
+      © 2002–2026 Rock na Praça. Todos os direitos reservados.
+    </p>
 
-      <h4>Realização</h4>
-      <a href="https://www.instagram.com/balaiada/">
-        <img src="./assets/logos/Balaiada_logo_colorido_fundo_preto.png" alt="Logo Balaiada">
+    <h4>Realização</h4>
+    <a href="https://www.instagram.com/balaiada/">
+      <img src="./assets/logos/Balaiada_logo_colorido_fundo_preto.png" alt="Logo Balaiada">
+    </a>
+
+    <!-- CONTATO -->
+    <nav class="contato" aria-label="Formas de contato">
+      <h4>Contato</h4>
+
+      <a href="mailto:rocknapracaesteio@gmail.com" aria-label="Enviar e-mail">
+        <img src="./assets/logos/email.png" alt="E-mail">
+        <span>rocknapracaesteio@gmail.com</span>
+      </a>
+      <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer"
+        aria-label="Instagram">
+        <img src="./assets/logos/REDES-instagram.webp" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer"
+        aria-label="Facebook">
+        <img src="./assets/logos/REDES-facebook.webp" alt="Facebook">
       </a>
 
-      <!-- CONTATO -->
-      <nav class="contato" aria-label="Formas de contato">
-        <h4>Contato</h4>
+      <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <img src="./assets/logos/REDES-youtube.webp" alt="YouTube">
+      </a>
+    </nav>
 
-        <a href="mailto:rocknapracaesteio@gmail.com" aria-label="Enviar e-mail">
-          <img src="./assets/logos/email.png" alt="E-mail">
-          <span>rocknapracaesteio@gmail.com</span>
-        </a>
-        <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer"
-          aria-label="Instagram">
-          <img src="./assets/logos/REDES-instagram.webp" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer"
-          aria-label="Facebook">
-          <img src="./assets/logos/REDES-facebook.webp" alt="Facebook">
-        </a>
+    <p class="desenvolvedora-credito">
+      Desenvolvido por
+      <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer">
+        Luana Santos
+      </a>
+    </p>
 
-        <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer"
-          aria-label="YouTube">
-          <img src="./assets/logos/REDES-youtube.webp" alt="YouTube">
-        </a>
-      </nav>
+  </div>
+</footer>
 
-      <p class="desenvolvedora-credito">
-        Desenvolvido por
-        <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer">
-          Luana Santos
-        </a>
-      </p>
-
-    </div>
-  </footer>
-
-  </body>
+</body>
 
 </html>

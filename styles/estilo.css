@@ -5,6 +5,7 @@
   --rosa: #cb5d9f;
   --branco: #fffef6;
   --preto: #212121;
+  --bkg-secundario:#151515;
   --sombra-preta: 0 0 25px rgba(0, 0, 0, 0.8);
   --sombra-verde: 0 0 25px rgba(110, 212, 122, 0.5);
   --fonte-principal: 'Bebas Neue', sans-serif;
@@ -869,35 +870,173 @@ div[btn-inscricao] {
   }
 }
 
-/***** EDIÇÃO ATUAL *******/
+/**********PROGRAMAÇÃO COMPLETA*************/
+.titulo-evento {
+  max-width: 1100px;
+  margin: 3rem auto 2rem;
+  padding: 2rem;
 
-/***** EDIÇÃO ATUAL *******/
+  text-align: center;
+
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--branco);
+ 
+  box-shadow: var(--sombra);
+   font-size: 2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--branco);
+}
+
+.bloco {
+  background: var(--bkg-secundario);
+  border: 2px solid var(--verde);
+  border-radius: 0;
+  box-shadow: var(--sombra);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bloco:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--verde);
+}
+
+/* ========================= */
+
+.informacoes {
+  width: 100%;
+  padding: 0 1rem 3rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.info-detalhes {
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ========================= */
+
+.evento {
+  padding: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dados-evento p {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--branco);
+}
+
+.dados-evento strong {
+  color: var(--verde);
+}
+
+/* ========================= */
+
+.mapa {
+  padding: 0;
+  overflow: hidden;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 180px;
+  border: none;
+  display: block;
+}
+
+/* ========================= */
+
+.bike {
+  padding: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.titulo-bike {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--branco);
+}
+
+.bike p,
+.lista-bike li {
+  font-size: 0.85rem;
+  color: var(--branco);
+}
+
+/* ========================= */
+
+.lista-bike {
+  list-style: none;
+  padding-left: 0;
+}
+
+.lista-bike li {
+  margin-bottom: 0.2rem;
+}
+
+/* ========================= */
+
+.link-bike a {
+  color: var(--rosa);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-bike a:hover {
+  text-decoration: underline;
+}
+
 
 .cards-edicao {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 1rem;
+
   display: flex;
   flex-direction: column;
   gap: 5rem;
 }
 
-/* Grupo */
+.cards-edicao a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
 .grupo {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1.5rem;
 }
 
-/* Título ocupa linha inteira */
 .grupo .titulo {
   grid-column: 1 / -1;
 }
 
 .titulo {
   font-size: 2rem;
-  text-transform: uppercase;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--branco);
 }
 
@@ -906,70 +1045,40 @@ div[btn-inscricao] {
   display: block;
   width: 60px;
   height: 4px;
-  background: var(--verde);
   margin-top: 0.5rem;
+  background: var(--verde);
 }
 
-/* Links */
-.cards-edicao a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Card base */
 .card {
-  background: #151515;
-  border: 2px solid var(--verde);
   min-height: 90px;
   padding: 1.2rem 1rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+
+  background: var(--fundo-card);
+  border: 2px solid var(--verde);
 
   color: var(--branco);
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 1rem;
 
+  box-shadow: var(--sombra);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* Modificadores */
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 var(--verde);
+}
+
 .card.small {
   font-size: 0.85rem;
   border-width: 1px;
 }
-
-.card.dashed {
-  border-style: dashed;
-}
-
-/* Hover */
-.card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 6px 6px 0 var(--verde);
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .titulo {
-    font-size: 1.5rem;
-  }
-
-  .card {
-    min-height: 80px;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .grupo {
-    grid-template-columns: 1fr;
-  }
-}
-
-
 
 /********* RODAPÉ *************/
 .rodape {
