@@ -351,7 +351,7 @@ h2,h3{
   }
 }
 
-/*************************GERAL*****************************/
+/*************************CONTEUDO*****************************/
 .geral-conteudo {
   max-width: 1200px;
   margin: 0 auto;
@@ -409,7 +409,7 @@ h2,h3{
   margin-top: 1.5rem;
   padding: 0.75rem 1rem;
   text-align: center;
-  color: var(--verde);
+  color: var(--branco);
   text-decoration: none;
   font-weight: 600;
   border: 2px solid var(--verde);
@@ -433,7 +433,8 @@ h2,h3{
   padding: 2rem;
 }
 
-.card {
+.card-bike,
+.card-detalhes {
   background-color: #151515;
   padding: 1.5rem;
   border-radius: 10px;
@@ -454,7 +455,8 @@ h2,h3{
   color: var(--branco);
 }
 
-.card a {
+.card-bike a,
+.card-detalhes a {
   color: var(--rosa);
   text-decoration: none;
 }
@@ -463,7 +465,7 @@ h2,h3{
   text-decoration: underline;
 }
 
-/* Mapa ocupa linha completa */
+
 .card-mapa {
   grid-column: 1 / -1;
 }
@@ -475,16 +477,13 @@ h2,h3{
   border-radius: 10px;
 }
 
-/************************* RESPONSIVO ****************************/
 
-/* Telas até 1024px: reduz a lateral */
 @media (max-width: 1024px) {
   .geral-conteudo {
     grid-template-columns: 1fr 300px;
   }
 }
 
-/* Telas até 768px: transforma em uma coluna só */
 @media (max-width: 768px) {
   .geral-conteudo {
     grid-template-columns: 1fr;
@@ -502,7 +501,7 @@ h2,h3{
   }
 }
 
-/* Ajuste de mapa para telas pequenas */
+
 @media (max-width: 480px) {
   .card-mapa iframe {
     height: 200px;
@@ -519,7 +518,7 @@ h2,h3{
 }
 
 
-/* *********************** SOBRE ****************************/
+/* *********************** TEXTOS***************************/
 .sobre,
 .feira,
 .bandas{
@@ -777,7 +776,6 @@ div[btn-inscricao] {
   color: var(--branco);
 }
 
-
 .card-loja select {
   width: 100%;
   padding: 8px;
@@ -871,27 +869,36 @@ div[btn-inscricao] {
   }
 }
 
+/***** EDIÇÃO ATUAL *******/
 
-/***** EDIÇÃO ATUAL ********/
+/***** EDIÇÃO ATUAL *******/
 
-main.cards-edicao {
-  max-width: 1300px;
+.cards-edicao {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  margin-top: 80px;
 }
 
+/* Grupo */
+.grupo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Título ocupa linha inteira */
+.grupo .titulo {
+  grid-column: 1 / -1;
+}
 
 .titulo {
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--branco);
-  margin-bottom: 2rem;
-  position: relative;
 }
 
 .titulo::after {
@@ -903,78 +910,68 @@ main.cards-edicao {
   margin-top: 0.5rem;
 }
 
-.lineup,
-.mercado-under,
-.apoio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.2rem;
-}
-
-
+/* Links */
 .cards-edicao a {
   text-decoration: none;
   color: inherit;
 }
 
-/* CARDS */
-.card-lineup,
-.card-mercado-under,
-.card-apoio {
-  background: #0a0a0a;
+/* Card base */
+.card {
+  background: #151515;
   border: 2px solid var(--verde);
-  padding: 1.2rem 1rem;
   min-height: 90px;
+  padding: 1.2rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   color: var(--branco);
   text-transform: uppercase;
-  font-size: 0.9rem;
   letter-spacing: 0.08em;
-  transition: transform 0.12s linear, box-shadow 0.12s linear;
-}
-
-
-.card-lineup {
   font-size: 1rem;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.card-mercado-under {
+/* Modificadores */
+.card.small {
+  font-size: 0.85rem;
+  border-width: 1px;
+}
+
+.card.dashed {
   border-style: dashed;
 }
 
-.card-apoio {
-  border-width: 1px;
-  font-size: 0.85rem;
-}
-
-
-.card-lineup:hover,
-.card-mercado-under:hover,
-.card-apoio:hover {
-  transform: translate(-3px, -3px);
+/* Hover */
+.card:hover {
+  transform: translate(-4px, -4px);
   box-shadow: 6px 6px 0 var(--verde);
 }
 
-
+/* Responsivo */
 @media (max-width: 600px) {
   .titulo {
     font-size: 1.5rem;
   }
 
-  .card-lineup,
-  .card-mercado-under,
-  .card-apoio {
-    font-size: 0.85rem;
+  .card {
     min-height: 80px;
+    font-size: 0.85rem;
   }
 }
 
+@media (max-width: 400px) {
+  .grupo {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 /********* RODAPÉ *************/
-
-
 .rodape {
   background: var(--verde);
   color: var(--branco);
