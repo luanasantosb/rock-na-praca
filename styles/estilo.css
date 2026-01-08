@@ -28,6 +28,10 @@
 html,
 body {
   background-color: var(--preto);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -37,7 +41,7 @@ h1 {
 main {
   margin-top: 80px;
 }
-p, li{
+p, ul,li{
   color:var(--branco);
   font-family: var(--fonte-textos);
   font-size:1rem;
@@ -488,9 +492,10 @@ h2,h3{
 }
 
 
-/* *********************** SOBRE/BICI ****************************/
+/* *********************** SOBRE ****************************/
 .sobre,
-.bici{
+.feira,
+.bandas{
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -500,14 +505,15 @@ h2,h3{
   flex-direction: column;
 }
 
-.sobre .card p,
-.bici .card p{
+.cartao-texto h3{
+  color: var(--verde);
+  margin-bottom: 1rem;
+}
+
+.cartao-texto p{
   font-size: 1.2rem;
 }
-.bici .card a{
-  color: var(--branco);
-  text-decoration: none;
-}
+
 .cartao-video-sobre {
   display: flex;
   justify-content: center;
@@ -523,52 +529,6 @@ h2,h3{
   border: none;
 }
 
-.btn-inscricao {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  background: transparent;
-  color: var(--branco);
-  border-radius: 8px;
-  border: 2px solid var(--verde);
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-inscricao:hover {
-  background: var(--verde);
-  color: var(--preto);
-  transform: translateY(-2px);
-}
-
-/************************* SEÇÃO BANDAS *************************/
-.bandas,
-.feira{
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 64px 24px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-}
-
-.bandas h3,
-.feira h3{
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-  padding-left: 12px;
-}
-
-.bandas p,
-.feira p{
-  margin-bottom: 18px;
-  font-size: 1rem;
-}
-
 .bandas strong,
 .feira strong{
   display: block;
@@ -577,20 +537,20 @@ h2,h3{
   font-size: 1.1rem;
 }
 
-
 .bandas li,
 .feira li{
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size: 1.2rem;
+  font-family: var(--fonte-textos);
 }
 
 .bandas li ul,
 .feira li ul{
-  margin-bottom: 12px;
-  padding-left: 18px;
-  position: relative;
-  font-size: 0.95rem;
+    font-size: 1.2rem;
+  font-family: var(--fonte-textos);
+  margin-bottom: 10px;
 }
 
 .btn-inscricao {
@@ -603,7 +563,7 @@ h2,h3{
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  border-radius: 4px;
+  border:1px solid var(--verde);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
