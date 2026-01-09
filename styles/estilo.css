@@ -104,14 +104,17 @@ h2,h3{
 }
 
 
-.cabecalho-menu {
+.menu-hamburguer {
   display: none;
+  font-size: 2rem;
+  color: var(--verde);
+  cursor: pointer;
 }
 
-.cabecalho-menu.abrir {
-  display: flex;
-}
 
+.menu-item {
+  position: relative;
+}
 
 
 .menu-toggle {
@@ -364,17 +367,7 @@ h2,h3{
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-
-  background: var(--bkg-secundario);
-  border: 2px solid var(--verde);
-  box-shadow: var(--sombra);
-
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.cartao-resumo-texto:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 var(--verde);
 }
 
 .cartao-resumo-texto h3 {
@@ -382,11 +375,11 @@ h2,h3{
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--branco);
+  color: var(--verde);
 }
 
 .cartao-resumo-texto p {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.7;
   color: var(--branco);
   max-width: 65ch;
@@ -398,17 +391,7 @@ h2,h3{
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-
-  background: #000;
   border: 2px solid var(--verde);
-  box-shadow: var(--sombra);
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.cartao-resumo-video:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 var(--verde);
 }
 
 .cartao-resumo-video iframe {
@@ -426,21 +409,9 @@ h2,h3{
 .card-lateral {
   width: 100%;
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-
-  background: var(--bkg-secundario);
-  border: 2px solid var(--verde);
-  box-shadow: var(--sombra);
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.card-lateral:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 var(--verde);
 }
 
 .card-lateral h3 {
@@ -448,7 +419,7 @@ h2,h3{
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--branco);
+  color: var(--verde);
 }
 
 .videos-lateral {
@@ -463,17 +434,7 @@ h2,h3{
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-
-  background: #000;
   border: 2px solid var(--verde);
-  box-shadow: var(--sombra);
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.cartao-video:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0 var(--verde);
 }
 
 .cartao-video iframe {
@@ -482,7 +443,6 @@ h2,h3{
   border: none;
   display: block;
 }
-
 
 .btn-videos {
   margin-top: auto;
@@ -498,8 +458,6 @@ h2,h3{
   text-decoration: none;
   background: transparent;
   border: 2px solid var(--verde);
-
-  transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
 .btn-videos:hover {
@@ -523,68 +481,134 @@ h2,h3{
 }
 
 /* --------------------PROGRAMAÇÃO---------------------*/
-
-
 .titulo-evento {
   max-width: 1100px;
-  margin: 3rem auto 2rem;
-  padding: 2rem;
+  margin: clamp(2rem, 5vw, 3rem) auto 2rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
   text-align: center;
-  font-size: 2rem;
+
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+
   color: var(--branco);
-  box-shadow: var(--sombra);
+  line-height: 1.2;
 }
 
+/* ===== CONTAINER DOS CARDS ===== */
 .informacoes-evento {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.2rem, 3vw, 2.5rem);
 
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: clamp(2rem, 4vw, 3rem) 1rem;
 }
 
-.card {
-  flex: 1 1 300px;
-  max-width: 420px;
-
+/* ===== CARD GRANDE (BASE) ===== */
+.card-grande {
   background: var(--bkg-secundario);
   border: 2px solid var(--verde);
-  padding: 1.5rem;
+
+  padding: clamp(1.5rem, 3vw, 2.2rem);
   box-shadow: var(--sombra);
 
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
 }
 
-.card-dados p {
-  margin-bottom: 0.4rem;
+/* ===== EFEITO DE INTERAÇÃO ===== */
+.card-grande:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.25);
 }
 
+/* ===== CARD DADOS ===== */
+.card-dados p,
+.card-dados address {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--branco);
+  text-transform: uppercase;
+}
+
+.card-dados address {
+  font-family: var(--fonte-textos);
+}
+
+/* ===== MAPA ===== */
 .mapa {
-  margin-top: auto; 
+  margin-top: auto;
+  overflow: hidden;
 }
 
 .mapa iframe {
   width: 100%;
-  height: 200px;
+  height: clamp(180px, 25vw, 260px);
   border: none;
-  border-radius: 6px;
+  display: block;
+   border:1px solid var(--verde);
 }
 
-.link-bike a{
-  color: var(--rosa);
-  text-decoration: none;
+
+.card-bike {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lista-bike{
+.titulo-bike {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: .05em;
+  margin-bottom: .4rem;
+  font-family: var(--fonte-principal);
+}
+
+.lista-bike {
   list-style: none;
+  padding-left: 0;
+  margin: .6rem 0;
+  font-family: var(--fonte-textos);
+  font-size: 1rem;
 }
+
+.lista-bike li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+   font-family: var(--fonte-textos);
+  font-size: 1rem;
+}
+
+
+.link-bike a {
+  color: var(--rosa);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+}
+
+.link-bike a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .25s ease;
+}
+
+
+
 /******** CARDS DE EDIÇÃO ********/
 .cards-edicao {
   max-width: 1200px;
@@ -648,7 +672,7 @@ h2,h3{
   box-shadow: 10px 10px 0 var(--verde);
 }
 
-.card.small {
+.card.pequeno {
   font-size: 0.85rem;
   border-width: 1px;
 }
@@ -761,14 +785,6 @@ h2,h3{
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.sobre:hover,
-.feira:hover,
-.bandas:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 var(--verde);
-}
-
-/* Cartão interno de texto */
 .cartao-texto {
   width: 100%;
   max-width: 900px;
@@ -887,7 +903,6 @@ div[btn-inscricao] {
 
 /*********************************** LOJA ********************************/
 
-/* =========== CARRINHO ====== */
 
 .secao-carrinho {
   background: var(--bkg-secundario);
@@ -907,12 +922,6 @@ div[btn-inscricao] {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.secao-carrinho:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 var(--verde);
-}
-
-/* Scroll */
 .secao-carrinho::-webkit-scrollbar {
   width: 6px;
 }
@@ -942,7 +951,7 @@ div[btn-inscricao] {
   background: var(--verde);
 }
 
-/* Lista */
+
 .lista-carrinho {
   list-style: none;
   padding: 0;
@@ -953,7 +962,6 @@ div[btn-inscricao] {
   gap: 1.2rem;
 }
 
-/* Item */
 .lista-carrinho li {
   background: var(--bkg-secundario);
   padding: 1.2rem 1.3rem;
@@ -962,7 +970,6 @@ div[btn-inscricao] {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 1.2rem;
-
   border-radius: 0;
   border: 2px solid var(--verde);
   box-shadow: var(--sombra);
@@ -970,12 +977,7 @@ div[btn-inscricao] {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.lista-carrinho li:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0 var(--verde);
-}
 
-/* Texto do item */
 .lista-carrinho li strong {
   font-size: 0.95rem;
   letter-spacing: 0.06em;
@@ -996,7 +998,6 @@ div[btn-inscricao] {
   color: var(--verde);
 }
 
-/* Botão remover */
 .lista-carrinho button {
   background: transparent;
   border: none;
@@ -1015,12 +1016,11 @@ div[btn-inscricao] {
   outline: 2px solid var(--rosa);
 }
 
-/* Total */
+
 #carrinho p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 1.6rem 0 0.6rem;
   font-size: 0.95rem;
   letter-spacing: 0.06em;
@@ -1028,7 +1028,6 @@ div[btn-inscricao] {
   color: var(--branco);
 }
 
-/* Botões */
 .botoes {
   display: flex;
   flex-direction: column;
@@ -1059,7 +1058,7 @@ div[btn-inscricao] {
 .botao-esvaziar:hover,
 .botao-adicionar:hover {
   background-color: var(--verde);
-  color: #000;
+  color: var(--preto);
   transform: translateY(-2px);
 }
 
@@ -1095,11 +1094,6 @@ div[btn-inscricao] {
   color: var(--branco);
 
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.card-loja:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0 var(--verde);
 }
 
 .card-loja .foto-produto {
@@ -1152,7 +1146,7 @@ div[btn-inscricao] {
 
 .carrossel button:hover {
   background-color: var(--verde);
-  color: #000;
+  color: var(--preto);
   transform: translateY(-50%) scale(1.05);
 }
 
