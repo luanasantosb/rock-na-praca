@@ -104,17 +104,14 @@ h2,h3{
 }
 
 
-.menu-hamburguer {
+.cabecalho-menu {
   display: none;
-  font-size: 2rem;
-  color: var(--verde);
-  cursor: pointer;
 }
 
-
-.menu-item {
-  position: relative;
+.cabecalho-menu.abrir {
+  display: flex;
 }
+
 
 
 .menu-toggle {
