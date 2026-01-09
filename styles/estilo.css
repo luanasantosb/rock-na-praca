@@ -777,11 +777,6 @@ h2,h3{
   padding: 3rem 2rem;
   width: 80%;
   flex-direction: column;
-
-  background: var(--bkg-secundario);
-  border: 2px solid var(--verde);
-  box-shadow: var(--sombra);
-
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -790,7 +785,6 @@ h2,h3{
   max-width: 900px;
 }
 
-/* Título */
 .cartao-texto h3 {
   font-size: 1.6rem;
   font-weight: 800;
@@ -809,7 +803,6 @@ h2,h3{
   background: var(--verde);
 }
 
-/* Texto */
 .cartao-texto p {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -818,6 +811,7 @@ h2,h3{
 
 /* Vídeo */
 .cartao-video-sobre {
+   margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -831,11 +825,6 @@ h2,h3{
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.cartao-video-sobre:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0 var(--verde);
-}
-
 .cartao-video-sobre iframe {
   width: 100%;
   max-width: 720px;
@@ -844,7 +833,6 @@ h2,h3{
   display: block;
 }
 
-/* Destaques */
 .bandas strong,
 .feira strong {
   display: block;
