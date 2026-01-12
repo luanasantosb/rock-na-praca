@@ -845,7 +845,8 @@ h3 {
 
 /************************** INSCRIÇÕES*********************************************/
 
-.bandas-titulo{
+.bandas-titulo,
+.feira-titulo{
   font-size: 2.2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -855,7 +856,8 @@ h3 {
   position: relative;
 }
 
-.bandas-titulo::after {
+.bandas-titulo::after,
+.feira-titulo::after {
   content: "";
   display: block;
   width: 90px;
@@ -865,7 +867,8 @@ h3 {
   border-radius: 2px;
 }
 
-.bandas{
+.bandas,
+.feira{
   max-width: 80%;
   display: flex;
   align-items: center;
@@ -874,21 +877,17 @@ h3 {
   flex-direction: column;
 }
 
-.bandas-texto p {
+.bandas-texto p,
+.feira-texto p{
   margin-bottom: 18px;
   font-size: 1.2rem;
   color: var(--branco);
   font-family: var(--fonte-textos);
 }
 
-
-.sobre-texto strong {
-  color: var(--branco);
-  font-family: var(--fonte-textos);
-}
-
-.bandas-lista{
-list-style: none;
+.bandas-lista,
+.feira-lista{
+  list-style: none;
   padding: 0;
   margin: 0.2rem 0;
   font-size: 1.5rem;
@@ -896,14 +895,16 @@ list-style: none;
   color: var(--branco);
   
 }
-.bandas-item{
+.bandas-item,
+.feira-item{
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
   font-family: var(--fonte-textos);
 }
 
 
-.btn-inscricao {
+.feira-btn,
+.bandas-btn{
   display: inline-block;
   margin-top: 3rem;
   padding: 14px 32px;
@@ -911,7 +912,6 @@ list-style: none;
   background-color: transparent;
   color: var(--branco);
   font-family: var(--fonte-principal);
-  text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -920,80 +920,97 @@ list-style: none;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 
-.btn-inscricao:hover {
+.bandas-btn a,
+.feira-btn a{
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.bandas-btn:hover,
+.feira-btn:hover {
   background-color: var(--verde);
   color: var(--preto);
   transform: translateY(-2px);
 }
 
-/* 📱 Tablets e telas médias */
+
 @media (max-width: 1024px) {
 
-  .bandas {
+  .bandas,
+  .feira {
     max-width: 90%;
   }
 
-  .bandas-titulo {
+  .bandas-titulo,
+  .feira-titulo {
     font-size: 1.9rem;
     text-align: center;
   }
 
-  .bandas-titulo::after {
+  .bandas-titulo::after,
+  .feira-titulo::after {
     margin-left: auto;
     margin-right: auto;
   }
 
   .bandas-texto p,
-  .bandas-item {
+  .bandas-item,
+  .feira-texto p,
+  .feira-item {
     font-size: 1.1rem;
   }
 
-  .bandas-lista {
+  .bandas-lista,
+  .feira-lista {
     font-size: 1.3rem;
   }
 
-  .btn-inscricao {
+  .bandas-btn,
+  .feira-btn {
     padding: 12px 26px;
   }
 }
 
-
-/* 📱 Celulares */
 @media (max-width: 600px) {
 
-  .bandas {
+  .bandas,
+  .feira{
     max-width: 95%;
   }
 
-  .bandas-titulo {
+  .bandas-titulo,
+  .feira-titulo {
     font-size: 1.6rem;
     letter-spacing: 1px;
   }
 
-  .bandas-titulo::after {
+  .bandas-titulo::after,
+  .feira-titulo::after{
     width: 60px;
     height: 3px;
   }
 
   .bandas-texto p,
-  .bandas-item {
+  .bandas-item,
+  .feira-texto p,
+  .feira-item{
     font-size: 1rem;
     text-align: center;
   }
 
-  .bandas-lista {
+  .bandas-lista,
+  .feira-lista {
     font-size: 1.1rem;
     text-align: center;
   }
 
-  .btn-inscricao {
+  .bandas-btn,
+  .feira-btn {
     width: 100%;
     text-align: center;
     padding: 12px;
   }
 }
-
-
 
 
 /*********************************** LOJA ********************************/
