@@ -1,33 +1,57 @@
  
  /*=====CABECALHO=====*/
-  const btnHamburguer = document.getElementById("menu-hamburguer");
-  const menu = document.getElementById("menu");
 
-  btnHamburguer.addEventListener("click", () => {
-    menu.classList.toggle("abrir");
-  });
+ const btnMenu = document.getElementById("menu-hamburguer");
+const menu = document.getElementById("menu");
+const submenuToggle = document.querySelector(".menu-toggle");
+const submenu = document.querySelector(".submenu");
 
-  /*============================*/
-  const toggle = document.querySelector(".menu-toggle");
-  const submenu = document.querySelector(".submenu");
-  const menuItem = document.querySelector(".menu-item");
+// Abrir / fechar menu no mobile
+btnMenu.addEventListener("click", () => {
+  menu.classList.toggle("abrir");
 
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
+  const aberto = menu.classList.contains("abrir");
+  btnMenu.setAttribute("aria-expanded", aberto);
+});
 
-    const aberto = submenu.style.display === "block";
-    submenu.style.display = aberto ? "none" : "block";
-    toggle.textContent = aberto ? "Participe" : "Participe";
-    toggle.setAttribute("aria-expanded", !aberto);
-  });
+// Abrir / fechar submenu no mobile
+submenuToggle.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    const isOpen = submenu.classList.toggle("submenu-mobile");
 
-  document.addEventListener("click", (e) => {
-    if (!menuItem.contains(e.target)) {
-      submenu.style.display = "none";
-      toggle.textContent = "Participe↴";
-      toggle.setAttribute("aria-expanded", "false");
+    submenuToggle.setAttribute("aria-expanded", isOpen);
+  }
+});
+
+// Fecha menu ao clicar em um link (mobile)
+menu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      menu.classList.remove("abrir");
+      submenu.classList.remove("submenu-mobile");
     }
   });
+});
+
+// Fecha menu ao clicar fora
+document.addEventListener("click", (event) => {
+  if (
+    !menu.contains(event.target) &&
+    !btnMenu.contains(event.target)
+  ) {
+    menu.classList.remove("abrir");
+    submenu.classList.remove("submenu-mobile");
+  }
+});
+
+// Fecha menu com ESC
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    menu.classList.remove("abrir");
+    submenu.classList.remove("submenu-mobile");
+  }
+});
+
   
  /*======  CONTADORES===========*/
 function animarContadores() {
