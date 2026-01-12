@@ -29,10 +29,6 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  display: none;
-}
-
 main {
   margin-top: 80px;
   flex-grow: 1;
@@ -548,131 +544,157 @@ h3 {
 }
 
 /* --------------------PROGRAMAÇÃO---------------------*/
-.titulo-evento {
-  max-width: 1100px;
-  margin: clamp(2rem, 5vw, 3rem) auto 2rem;
-  padding: clamp(1.5rem, 4vw, 2rem);
-  text-align: center;
 
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  color: var(--branco);
-  line-height: 1.2;
-}
-
-/* ===== CONTAINER DOS CARDS ===== */
+/* =====================
+   CONTAINER PRINCIPAL
+===================== */
 .informacoes-evento {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(1.2rem, 3vw, 2.5rem);
-
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem) 1rem;
-}
-
-/* ===== CARD GRANDE (BASE) ===== */
-.card-grande {
-  background: var(--bkg-secundario);
-  border: 2px solid var(--verde);
-
-  padding: clamp(1.5rem, 3vw, 2.2rem);
-  box-shadow: var(--sombra);
-
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  align-items: center; 
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-/* ===== EFEITO DE INTERAÇÃO ===== */
-.card-grande:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, .25);
+.titulo-evento {
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--verde);
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #000;
+  margin-bottom: 1rem;
+  font-family: var(--fonte-principal);
 }
 
-/* ===== CARD DADOS ===== */
-.card-dados p,
-.card-dados address {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--branco);
-  text-transform: uppercase;
+
+.titulo-card {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--verde);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px #000;
+  width: 100%;
 }
 
-.card-dados address {
-  font-family: var(--fonte-textos);
-}
-
-/* ===== MAPA ===== */
-.mapa {
-  margin-top: auto;
+.card-info-total {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  background: #151515;
+  border: 2px solid var(--verde);
+  padding: 3rem 2rem 2rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
   overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.bloco-informacoes {
+  align-self: start; 
+}
+
+.bloco-bike {
+  align-self: end; 
+}
+
+
+.bloco-informacoes, .bloco-bike {
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px dashed var(--verde);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.titulo-bike {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--amarelo);
+  letter-spacing: 1px;
 }
 
 .mapa iframe {
   width: 100%;
-  height: clamp(180px, 25vw, 260px);
-  border: none;
-  display: block;
+  height: 250px;
   border: 1px solid var(--verde);
 }
 
 
-.card-bike {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.titulo-bike {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 800;
-  letter-spacing: .05em;
-  margin-bottom: .4rem;
-  font-family: var(--fonte-principal);
-}
-
 .lista-bike {
   list-style: none;
-  padding-left: 0;
-  margin: .6rem 0;
-  font-family: var(--fonte-textos);
-  font-size: 1rem;
+  margin: 1rem 0;
+  padding: 0;
 }
 
 .lista-bike li {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-  font-family: var(--fonte-textos);
-  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--amarelo)
 }
 
 
 .link-bike a {
   color: var(--rosa);
-  font-weight: 600;
   text-decoration: none;
-  position: relative;
+  font-weight: bold;
 }
 
-.link-bike a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform .25s ease;
+.link-bike a:hover {
+  text-decoration: underline;
 }
+
+
+.card-info-total:hover {
+  transform: scale(1.01) rotate(-0.2deg);
+}
+
+
+
+@media (max-width: 1024px) {
+  .card-info-total {
+    grid-template-columns: 1fr;
+  }
+
+  .bloco-informacoes, .bloco-bike {
+    width: 100%;
+    align-self: auto; /* remove diferença de altura em mobile */
+  }
+
+  .titulo-card {
+    font-size: 1.8rem;
+  }
+
+  .titulo-bike {
+    font-size: 1.6rem;
+  }
+
+  .titulo-evento {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-card {
+    font-size: 1.6rem;
+  }
+
+  .titulo-evento {
+    font-size: 1.8rem;
+  }
+
+  .bloco-informacoes, .bloco-bike {
+    padding: 1rem;
+  }
+}
+
 
 
 
