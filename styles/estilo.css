@@ -967,7 +967,7 @@ h3 {
 .feira-btn,
 .bandas-btn{
   display: inline-block;
-  margin-top: 3rem;
+  margin: 3rem 0;
   padding: 14px 32px;
 
   background-color: transparent;
