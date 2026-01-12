@@ -293,7 +293,7 @@ h3 {
   opacity: 0.95;
   transform: perspective(1000px) rotateY(5deg) rotateZ(-2deg);
   filter: brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  border: 2px solid --var(branco);
 }
 
 @media (max-width: 900px) {
@@ -1322,46 +1322,43 @@ h3 {
   margin: 0;
 }
 
-/* ================= SELECT MINIMALISTA ================= */
 
 .card-infos label {
   font-size: 0.7rem;
-  color: #aaa;
+  color: #666;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-top: 0.4rem;
 }
 
-/* Remove estilo padrão do navegador */
+
 .card-infos select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
+  border-bottom: 1px solid #666;
   padding: 0.35rem 1.4rem 0.35rem 0;
   font-size: 0.8rem;
-  color: #fff;
+  color: var(--branco);
   cursor: pointer;
   outline: none;
   transition: border-color 0.2s ease, opacity 0.2s ease;
 }
 
-/* Hover + foco */
+
 .card-infos select:hover,
 .card-infos select:focus {
-  border-bottom-color: #2ecc71;
+  border-bottom-color: var(--verde);
 }
 
-/* Placeholder da option */
+
 .card-infos select option {
-  background: #111;
-  color: #fff;
+  background: var(--preto);
+  color: var(--branco);
 }
 
-/* Seta custom */
 .card-infos select {
   background-image: 
     linear-gradient(45deg, transparent 50%, #aaa 50%),
