@@ -775,7 +775,7 @@ h3 {
 
 /***** SOBRE *******/
 
-.titulo-sobre {
+.sobre-titulo{
   font-size: 2.2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -785,7 +785,7 @@ h3 {
   position: relative;
 }
 
-.titulo-sobre::after { /* linha*/
+.sobre-titulo::after { /* linha*/
   content: "";
   display: block;
   width: 90px;
@@ -843,100 +843,66 @@ h3 {
   }
 }
 
-/* *********************** TEXTOS ***************************/
-.feira,
-.bandas {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  gap: 2.5rem;
-  padding: 3rem 2rem;
-  width: 80%;
-  flex-direction: column;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
+/************************** INSCRIÇÕES*********************************************/
 
-.cartao-texto {
-  width: 100%;
-  max-width: 900px;
-}
-
-.cartao-texto h3 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+.bandas-titulo{
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
-  color: var(--branco);
-  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: var(--verde);
+  position: relative;
 }
 
-.cartao-texto h3::after {
+.bandas-titulo::after {
   content: "";
   display: block;
-  width: 50px;
+  width: 90px;
   height: 4px;
-  margin-top: 0.4rem;
-  background: var(--verde);
+  background: var(--branco);
+  margin-top: 12px;
+  border-radius: 2px;
 }
 
-.cartao-texto p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--branco);
-}
-
-/* Vídeo */
-.cartao-video-sobre {
-  margin-top: 2rem;
+.bandas{
+  max-width: 80%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 1.2rem;
-
-  background: #000;
-  border: 2px solid var(--verde);
-  box-shadow: var(--sombra);
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
 }
 
-.cartao-video-sobre iframe {
-  width: 100%;
-  max-width: 720px;
-  height: 320px;
-  border: none;
-  display: block;
+.bandas-texto p {
+  margin-bottom: 18px;
+  font-size: 1.2rem;
+  color: var(--branco);
+  font-family: var(--fonte-textos);
 }
 
-.bandas strong,
-.feira strong {
-  display: block;
-  margin-top: 2rem;
-  margin-bottom: 0.6rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--verde);
+
+.sobre-texto strong {
+  color: var(--branco);
+  font-family: var(--fonte-textos);
 }
 
-/* Listas */
-.bandas li,
-.feira li {
-  list-style: none;
+.bandas-lista{
+list-style: none;
   padding: 0;
   margin: 0.2rem 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: var(--fonte-textos);
   color: var(--branco);
+  
 }
-
-.bandas li ul,
-.feira li ul {
+.bandas-item{
   margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-family: var(--fonte-textos);
 }
 
-/* Botão inscrição */
+
 .btn-inscricao {
   display: inline-block;
   margin-top: 3rem;
@@ -944,6 +910,7 @@ h3 {
 
   background-color: transparent;
   color: var(--branco);
+  font-family: var(--fonte-principal);
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
@@ -955,13 +922,77 @@ h3 {
 
 .btn-inscricao:hover {
   background-color: var(--verde);
-  color: #000;
+  color: var(--preto);
   transform: translateY(-2px);
 }
 
-div[btn-inscricao] {
-  text-align: center;
+/* 📱 Tablets e telas médias */
+@media (max-width: 1024px) {
+
+  .bandas {
+    max-width: 90%;
+  }
+
+  .bandas-titulo {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  .bandas-titulo::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bandas-texto p,
+  .bandas-item {
+    font-size: 1.1rem;
+  }
+
+  .bandas-lista {
+    font-size: 1.3rem;
+  }
+
+  .btn-inscricao {
+    padding: 12px 26px;
+  }
 }
+
+
+/* 📱 Celulares */
+@media (max-width: 600px) {
+
+  .bandas {
+    max-width: 95%;
+  }
+
+  .bandas-titulo {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .bandas-titulo::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .bandas-texto p,
+  .bandas-item {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .bandas-lista {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .btn-inscricao {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
 
 
 
