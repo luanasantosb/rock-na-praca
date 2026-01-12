@@ -1204,94 +1204,76 @@ div[btn-inscricao] {
 
 
 
+/* -------------------- RODAPÉ -------------------- */
 
-/********* RODAPÉ *************/
 .rodape {
   background: var(--verde);
-  color: var(--branco);
-  padding: 0.5rem 12px;
-   font-family: var(--fonte-textos);
+  color: var(--preto);
+  padding: 1.5rem 1rem;
+  font-family: var(--fonte-textos);
 }
 
 .rodape-conteudo {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;          /* sempre em linha */
   align-items: center;
-  gap: 10px;
-  text-align: center;
- 
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  flex-wrap: nowrap;            /* não permite quebrar linha */
 }
 
 .direitos-autorais,
 .desenvolvedora-credito {
-  font-size: 0.95rem;
-  opacity: 0.85;
+  font-size: 0.9rem;
   margin: 0;
+  opacity: 0.9;
   color: var(--preto);
+  white-space: nowrap;          /* evita quebra de texto */
 }
-
 
 .rodape h4 {
   font-size: 0.75rem;
-  margin: 4px 0;
+  margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-weight: 700;
   color: var(--preto);
-  font-weight: 800;
+  white-space: nowrap;
 }
 
-
 .rodape img {
-  max-width: 90px;
+  width: 90px;
   height: auto;
 }
 
 .contato {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-wrap: nowrap;            /* mantém tudo na mesma linha */
   justify-content: center;
-}
-
-.contato img{
-  max-width: 80px;
-  height: auto;
 }
 
 .contato a {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  color: var(--preto);
+  gap: 0.4rem;
   font-size: 0.75rem;
+  color: var(--preto);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .contato img {
-  width: 16px;
-  height: 16px;
+  width: 50px;
+  height: 50px;
 }
-
 
 .desenvolvedora-credito a {
   color: var(--preto);
   font-weight: 600;
   text-decoration: none;
-}
-
-
-@media (min-width: 768px) {
-  .rodape-conteudo {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-
-  .contato {
-    justify-content: flex-start;
-  }
 }
