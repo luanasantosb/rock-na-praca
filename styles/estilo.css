@@ -1081,141 +1081,110 @@ h3 {
 
 /* -- LOJA --*/
 
-/* ** CARRINHO ** */
+.loja {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 
 .secao-carrinho {
   max-width: 520px;
-  margin: 4rem auto;
-  padding: 1.6rem 1.8rem;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  background: rgba(255,255,255,.02);
+  margin: 3rem auto;
+  padding: 1.5rem;
+  border: 1px solid rgba(255,255,255,.08);
+  background: transparent;
 }
 
-.secao-carrinho::-webkit-scrollbar {
-  width: 4px;
-}
-.secao-carrinho::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,.2);
-  border-radius: 10px;
-}
 
 .titulo-carrinho {
   text-align: center;
-  margin-bottom: 1.8rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: .18em;
+  margin-bottom: 1.2rem;
+  font-size: .95rem;
+  font-weight: 500;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--rosa);
 }
 
+
 .lista-carrinho {
   list-style: none;
-  padding: 0;
-  margin: 0;
-
   display: flex;
   flex-direction: column;
-  gap: .7rem;
+  gap: .6rem;
 }
 
 .lista-carrinho li {
-  border: 1px solid rgba(255,255,255,.08);
-  background: rgba(255,255,255,.02);
-  transition: border .2s ease, transform .2s ease;
+  padding: .4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 .lista-carrinho li strong {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: .85rem;
+  font-weight: 400;
   color: var(--branco);
 }
 
 .lista-carrinho li small {
-  font-size: .5rem;
-  color: var(--branco);
+  font-size: .65rem;
+  opacity: .5;
 }
 
 .lista-carrinho li span {
-  font-size: .75rem;
-  font-weight: 600;
+  font-size: .7rem;
   color: var(--rosa);
 }
 
-.lista-carrinho button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: .85rem;
-  opacity: .4;
-}
-
-.lista-carrinho button:hover {
-  opacity: .8;
-}
-
-#carrinho p {
-  font-size: .6rem;
-  letter-spacing: .22em;
-  color: rgba(255,255,255,.7);
-}
 
 .botoes {
   display: flex;
-  flex-direction: column;
-  gap: .7rem;
+  gap: .8rem;
+  margin-top: 1rem;
 }
 
-.botao-finalizar-pedido,
-.botao-esvaziar {
-  padding: .65rem;
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  background: transparent;
+.botao-finalizar-pedido {
+  background: none;
+  border: none;
   color: var(--branco);
-  border-radius: 6px;
+  font-size: .75rem;
+  letter-spacing: .08em;
   cursor: pointer;
-  transition: border-color .2s ease, color .2s ease;
+  padding: .3rem .5rem;
+  border:1px solid var(--rosa);
 }
 
-.botao-finalizar-pedido:hover,
-.botao-esvaziar:hover {
-  border-color: var(--rosa);
+.botao-esvaziar{
+  background: none;
+  border: none;
   color: var(--branco);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  cursor: pointer;
+  padding: .3rem .5rem;
 }
-
-/* ** CARDS LOJA ** */
-
 
 .secao-cards-loja {
-  width: min(90%, 1200px);
-  margin: 3rem auto;
-  padding: 0 1rem;
+  width: min(80%, 1100px);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
+
 
 .loja-card-grande,
 .loja-card-pequeno {
   display: flex;
   flex-direction: column;
   background: transparent;
-  border-radius: 6px;
-  overflow: hidden;
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 
 .foto-produto {
   width: 100%;
-  height: 260px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: block;
 }
 
 
@@ -1227,132 +1196,69 @@ h3 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  border: none;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
+  background: transparent;
   color: var(--branco);
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  opacity: .4;
 }
 
-.carrossel:hover button {
-  opacity: 1;
-}
+.carrossel .prev { left: .3rem; }
+.carrossel .next { right: .3rem; }
 
 .carrossel button:hover {
-  background: rgba(0,0,0,0.7);
+  opacity: .9;
 }
-
-.carrossel .prev { left: 8px; }
-.carrossel .next { right: 8px; }
-
 
 .card-infos {
-  padding: 0.75rem 0;
+  padding: .8rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: .3rem;
 }
 
-.titulo-produto{
-  font-size: 1rem;
-  font-weight: 500;
+.status-produto {
+  font-size: .6rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.titulo-produto {
+  font-size: 1.2rem;
+  font-weight: 400;
   color: var(--verde);
-  margin: 0;
 }
 
-.card-infos p {
-  font-size: 0.8rem;
-  color: var(--rosa);
-  margin: 0;
+.preco-produto {
+  font-size: 1rem;
 }
+
 
 .card-infos label {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  color: var(--branco);
-  margin-top: 0.3rem;
-  font-size: .55rem;
+  font-size: .5rem;
   letter-spacing: .18em;
-  opacity: .6;
+  text-transform: uppercase;
+  color:var(--branco);
+  margin-top: .4rem;
 }
 
 .card-infos select {
-  border-bottom: 1px solid rgba(255,255,255,.25);
-  appearance: none;
   background: transparent;
   border: none;
-  padding: 0.3rem 1.2rem 0.3rem 0;
-  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,.2);
   color: var(--branco);
-  cursor: pointer;
+  font-size: .7rem;
+  padding: .2rem 0;
   outline: none;
-  transition: border-color 0.2s ease;
 }
-
-.card-infos select:hover,
-.card-infos select:focus {
-  border-bottom-color: var(--verde);
-}
-
-.card-infos select option {
-  background: var(--preto);
-}
-
-
-.card-infos select {
-  background-image:
-    linear-gradient(45deg, transparent 50%, #888 50%),
-    linear-gradient(135deg, #888 50%, transparent 50%);
-  background-position:
-    calc(100% - 10px) 50%,
-    calc(100% - 5px) 50%;
-  background-size: 5px 5px;
-  background-repeat: no-repeat;
-}
-
-.card-infos select:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-
-.botao-adicionar {
-  margin-top: .8rem;
-  letter-spacing: .12em;
-  padding: .55rem 0;
-  background: none;
-  border: 1px solid var(--verde);
-  color: var(--verde);
-  font-size: 0.75rem;
-  font-weight: 500;
+.botao-adicionar{
+ background: none;
+  border: none;
+  color: var(--branco);
+  font-size: .75rem;
+  letter-spacing: .08em;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  padding: .3rem .5rem;
+  border:1px solid var(--verde);
 }
-
-.botao-adicionar:hover {
-  background: var(--verde);
-  color: var(--preto);
-}
-
-.esgotado {
-  opacity: .45;
-  filter: grayscale(.4);
-}
-
-.esgotado .botao-adicionar {
-  opacity: .3;
-}
-
-
-.loja-card-grande.esgotado .botao-adicionar,
-.loja-card-pequeno.esgotado .botao-adicionar {
-  pointer-events: none;
-}
-
 
 /* -------------------- RODAPÉ -------------------- */
 
