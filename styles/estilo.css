@@ -60,20 +60,44 @@ h3 {
 
 /* -- CABECALHO -- */
 
+/* ================================
+   CABEÇALHO BASE (SEM TRANSPARÊNCIA BUGADA)
+================================ */
+
 .cabecalho {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto 0;
   height: 80px;
+
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 32px;
+  justify-content: space-between;
   padding: 0 32px;
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  gap: 32px;
+
+  /* 🎯 Fundo real, sempre visível */
+  background-color: #111111;
+  opacity: 1;
+
+  /* ✨ Profundidade */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+
+  z-index: 9999;
 }
+
+/* Se o navegador suportar blur, ativa o glass */
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .cabecalho {
+    background-color: rgba(17,17,17,0.88);
+    -webkit-backdrop-filter: blur(10px) saturate(130%);
+    backdrop-filter: blur(10px) saturate(130%);
+  }
+}
+
+/* ================================
+   LOGO
+================================ */
 
 .cabecalho-simbolo-logotipo a {
   display: flex;
@@ -86,12 +110,16 @@ h3 {
 .cabecalho-simbolo-logotipo img {
   width: clamp(90px, 10vw, 120px);
   display: block;
-  transition: transform .3s ease;
+  transition: transform .25s ease;
 }
 
 .cabecalho-simbolo-logotipo a:hover img {
   transform: scale(1.05);
 }
+
+/* ================================
+   MENU
+================================ */
 
 .cabecalho-menu {
   display: flex;
@@ -101,15 +129,15 @@ h3 {
 
 .cabecalho-menu a,
 .menu-toggle {
-  color: var(--verde);
   font: 2rem var(--fonte-principal);
+  color: var(--verde);
   text-decoration: none;
   text-transform: uppercase;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
   position: relative;
-  transition: color .25s ease, transform .25s ease;
+  transition: color .2s ease, transform .2s ease;
 }
 
 .cabecalho-menu a::after,
@@ -121,7 +149,7 @@ h3 {
   width: 0%;
   height: 2px;
   background: var(--rosa);
-  transition: width .3s ease;
+  transition: width .25s ease;
 }
 
 .cabecalho-menu a:hover::after,
@@ -132,12 +160,16 @@ h3 {
 .cabecalho-menu a:hover,
 .menu-toggle:hover {
   color: var(--branco);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .cabecalho-menu a.active {
   color: var(--rosa);
 }
+
+/* ================================
+   SUBMENU
+================================ */
 
 .menu-item {
   position: relative;
@@ -145,18 +177,22 @@ h3 {
 
 .submenu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 10px);
   left: 0;
+
   min-width: 200px;
   padding: 12px 16px;
-  background: var(--preto);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-radius: 8px;
+
+  background-color: #0d0d0d;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all .25s ease;
+  transform: translateY(8px);
+  transition: .25s ease;
+
   z-index: 2000;
 }
 
@@ -180,41 +216,56 @@ h3 {
   transform: translateX(6px);
 }
 
+/* ================================
+   HAMBURGUER
+================================ */
+
 .menu-hamburguer {
   display: none;
   font-size: 2.4rem;
   color: var(--verde);
   cursor: pointer;
-  transition: transform .3s ease;
+  transition: transform .25s ease;
 }
 
 .menu-hamburguer:hover {
   transform: rotate(90deg);
 }
 
+/* ================================
+   MOBILE
+================================ */
+
 @media (max-width: 768px) {
   .menu-hamburguer {
     display: block;
   }
+
   .cabecalho-menu {
     position: absolute;
     top: 100%;
     right: 0;
+
     width: 240px;
-    padding: 24px;
-    flex-direction: column;
+    padding: 20px;
     gap: 18px;
-    backdrop-filter: blur(10px);
+    flex-direction: column;
+
+    background-color: #111111;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: all .3s ease;
+    transform: translateY(-8px);
+    transition: .3s ease;
   }
+
   .cabecalho-menu.abrir {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
+
   .submenu {
     position: static;
     opacity: 1;
@@ -224,6 +275,7 @@ h3 {
     padding-left: 12px;
   }
 }
+
 
 
 /* -- PAGINA INICIAL -- */
@@ -265,44 +317,6 @@ h3 {
   transform: perspective(1000px) rotateY(5deg) rotateZ(-2deg);
   filter: brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
   border: 2px solid --var(branco);
-}
-
-@media (max-width: 900px) {
-  .banner-container {
-    height: 500px;
-  }
-
-  .cartaz {
-    width: 380px;
-    transform: perspective(800px) rotateY(3deg) rotateZ(-1deg);
-  }
-}
-
-@media (max-width: 600px) {
-  .banner-container {
-    height: 400px;
-  }
-
-  .cartaz {
-    width: 280px;
-    max-width: 90%;
-    opacity: 0.93;
-    transform: perspective(600px) rotateY(1.5deg) rotateZ(-0.5deg);
-    filter: brightness(0.92) contrast(1.05) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.6));
-    border-width: 1.5px;
-  }
-}
-
-@media (max-width: 400px) {
-  .banner-container {
-    height: 350px;
-  }
-
-  .cartaz {
-    width: 230px;
-    transform: none;
-    border-width: 1px;
-  }
 }
 
 
@@ -363,27 +377,6 @@ h3 {
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-  .secao-contador {
-    gap: 20px;
-    padding: 2rem 1rem;
-  }
-
-  .secao-contador .info {
-    flex: 1 1 100%;
-    max-width: 260px;
-  }
-}
-
-@media (max-width: 480px) {
-  .secao-contador h2 {
-    font-size: 2.4rem;
-  }
-
-  .secao-contador p {
-    font-size: 1.3rem;
-  }
-}
 
 /* ** CONTEUDO ** */
 .geral-conteudo {
@@ -500,19 +493,86 @@ h3 {
   transform: translateY(-2px);
 }
 
-@media (max-width: 900px) {
-  .geral-conteudo {
-    grid-template-columns: 1fr;
+
+@media (max-width: 1024px) {
+
+  .banner-container {
+    height: 460px;
   }
 
-  .card-lateral {
-    margin-top: 1.5rem;
+  .cartaz {
+    width: 420px;
+    transform: perspective(800px) rotateY(3deg) rotateZ(-1deg);
+  }
+
+  .geral-conteudo {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .cartao-resumo-texto p {
     max-width: 100%;
   }
+
+  .bloco-lateral {
+    justify-content: center;
+  }
+
+  .videos-lateral {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+@media (max-width: 600px) {
+
+  .banner-container {
+    height: 360px;
+    padding-inline: 1rem;
+  }
+
+  .cartaz {
+    width: 100%;
+    max-width: 320px;
+    transform: none;
+  }
+
+  .secao-contador {
+    gap: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .secao-contador .info {
+    flex: 1 1 140px;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .secao-contador h2 {
+    font-size: 2rem;
+  }
+
+  .secao-contador p {
+    font-size: 1rem;
+  }
+
+  .geral-conteudo {
+    padding: 2rem 1rem;
+  }
+
+  .cartao-resumo-texto {
+    padding: 1.6rem;
+  }
+
+  .videos-lateral {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-videos {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+  }
+}
+
 
 /* -- PROGRAMAÇÃO -- */
 
@@ -1260,7 +1320,121 @@ h3 {
   border:1px solid var(--verde);
 }
 
-/* -------------------- RODAPÉ -------------------- */
+
+@media (min-width: 1400px) {
+  .secao-cards-loja {
+    width: min(70%, 1300px);
+    gap: 2rem;
+  }
+
+  .titulo-produto {
+    font-size: 1.35rem;
+  }
+
+  .preco-produto {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+
+  .secao-cards-loja {
+    width: 90%;
+    gap: 1.2rem;
+  }
+
+  .secao-carrinho {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+
+  .botoes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .botao-finalizar-pedido,
+  .botao-esvaziar,
+  .botao-adicionar {
+    font-size: .8rem;
+    padding: .5rem .7rem;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+
+  .loja {
+    gap: 1.2rem;
+  }
+
+  .secao-carrinho {
+    padding: 1rem;
+  }
+
+  .titulo-carrinho {
+    font-size: .8rem;
+  }
+
+  .lista-carrinho li strong {
+    font-size: .8rem;
+  }
+
+  .lista-carrinho li span {
+    font-size: .75rem;
+  }
+
+  .botoes {
+    flex-direction: column;
+    gap: .6rem;
+  }
+
+  .botao-finalizar-pedido,
+  .botao-esvaziar,
+  .botao-adicionar {
+    width: 100%;
+    text-align: center;
+    padding: .6rem;
+    font-size: .8rem;
+  }
+
+  .secao-cards-loja {
+    width: 94%;
+    gap: 1rem;
+  }
+
+  .card-infos {
+    gap: .4rem;
+  }
+
+  .titulo-produto {
+    font-size: 1.05rem;
+  }
+
+  .preco-produto {
+    font-size: .95rem;
+  }
+
+  .status-produto {
+    font-size: .55rem;
+  }
+
+  .card-infos select {
+    font-size: .75rem;
+  }
+
+  .carrossel button {
+    font-size: 1rem;
+    opacity: .6;
+  }
+}
+
+
+
+/* -- RODAPÉ -- */
 
 .rodape {
   background: var(--verde);
@@ -1360,8 +1534,6 @@ h3 {
   font-weight: 600;
   text-decoration: none;
 }
-
-
 
 @media (max-width: 768px) {
 
