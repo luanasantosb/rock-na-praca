@@ -1,5 +1,4 @@
- 
- /*=====CABECALHO=====*/
+/*=====CABECALHO=====*/
 
  const btnMenu = document.getElementById("menu-hamburguer");
 const menu = document.getElementById("menu");
@@ -14,7 +13,7 @@ btnMenu.addEventListener("click", () => {
   btnMenu.setAttribute("aria-expanded", aberto);
 });
 
-// Abrir / fechar submenu no mobile
+
 submenuToggle.addEventListener("click", () => {
   if (window.innerWidth <= 768) {
     const isOpen = submenu.classList.toggle("submenu-mobile");
@@ -23,7 +22,7 @@ submenuToggle.addEventListener("click", () => {
   }
 });
 
-// Fecha menu ao clicar em um link (mobile)
+
 menu.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
@@ -53,7 +52,8 @@ document.addEventListener("keydown", (event) => {
 });
 
   
- /*======  CONTADORES===========*/
+ /*======  CONTADORES ===========*/
+
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
   const velocidade = 200;
@@ -95,7 +95,7 @@ if (section) {
 }
 
 
-/*************    LOJA ************ */
+/*==============    LOJA ================ */
 
 const PIX_CHAVE = "83161163087";
 const PIX_NOME = "Ricardo Varela";
@@ -109,9 +109,6 @@ const listaItens = document.getElementById("itens");
 const totalSpan = document.getElementById("total");
 const quantidadeSpan = document.getElementById("quantidadeTotal");
 
-/* ===============================
-   LOCAL STORAGE
-================================ */
 
 function salvarCarrinho() {
   localStorage.setItem("carrinhoRNP", JSON.stringify(carrinho));
@@ -136,9 +133,7 @@ function carregarCarrinho() {
 
 carregarCarrinho();
 
-/* ===============================
-   CARROSSEL
-================================ */
+/* ********** CARD - CARROSSEL ********* */
 
 document.querySelectorAll(".card-loja").forEach(card => {
   const imagensData = card.dataset.imagens;
@@ -170,9 +165,8 @@ document.querySelectorAll(".card-loja").forEach(card => {
   });
 });
 
-/* ===============================
-   ADICIONAR AO CARRINHO
-================================ */
+
+/* **************ADICIONAR AO CARRINHO ****** */
 
 document.querySelectorAll(".card-loja .botao-adicionar").forEach(botao => {
   botao.addEventListener("click", () => {
@@ -210,9 +204,7 @@ document.querySelectorAll(".card-loja .botao-adicionar").forEach(botao => {
   });
 });
 
-/* ===============================
-   FUNÇÕES DO CARRINHO
-================================ */
+  /* ******** FUNÇÕES DO CARRINHO ********* */
 
 function adicionarAoCarrinho(item) {
   carrinho.push(item);
@@ -262,9 +254,8 @@ function renderCarrinho() {
   totalSpan.textContent = valorTotal.toFixed(2);
 }
 
-/* ===============================
-   WHATSAPP
-================================ */
+/* *****  WHATSAPP ******* */
+
 
 function enviarWhatsApp() {
   if (carrinho.length === 0) {
