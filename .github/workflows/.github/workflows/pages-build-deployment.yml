@@ -10,16 +10,20 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages-deploy"
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: .   # arquivos do site já estão na raiz
           
   publish:
     needs: deploy
@@ -27,4 +31,6 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v4
+
+
