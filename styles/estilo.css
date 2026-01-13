@@ -544,27 +544,42 @@ h3 {
 
 /* --------------------PROGRAMAÇÃO---------------------*/
 
-.titulo-evento {
+.cartao-evento {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: transparent;
   text-align: center;
+  font-family: var(--fonte-textos);
   color: var(--branco);
-  font-family: var(--fonte-principal);
-  font-size: 3rem;            /* destaque natural */
-  font-weight: 700;            /* forte, mas limpo */
-  letter-spacing: 1.5px;
-  margin: 1.5rem 0 0.5rem 0;
-  line-height: 1.2;
+  position: relative;
+  border: 1px dashed var(--verde);
+  background-color: var(--bkg-secundario);
 }
 
-.subtitulo-evento h2 {
-  text-align: center;
+.tag-gratuito {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-color: var(--azul);
   color: var(--branco);
-  font-family: var(--fonte-principal);
-  font-size: 2.2rem;
-  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.titulo-evento {
+  font-size: 1.8rem;
+  margin: 1.2rem 0;
+  color: var(--verde);
   letter-spacing: 1px;
-  margin: 0.5rem auto 1.5rem auto;
-  line-height: 1.3;
-  opacity: 0.85;
+}
+
+.detalhes-evento p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--branco);
 }
 
 .card-grande.card-info-total {
@@ -583,6 +598,7 @@ h3 {
 .mapa {
   flex: 1;
   overflow: hidden;
+  border: 1px dashed var(--verde);
 }
 
 .mapa iframe {
