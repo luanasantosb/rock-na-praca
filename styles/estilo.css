@@ -70,12 +70,9 @@ h3 {
   justify-content: space-between;
   padding: 0 32px;
   gap: 32px;
-
-   background-color: rgba(17, 17, 17, 0.82);
-
-   border-bottom: 1px solid rgba(255,255,255,0.08);
+  background-color: rgba(17, 17, 17, 0.82);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 6px 20px rgba(0,0,0,0.45);
-
   z-index: 9999;
 }
 
@@ -161,27 +158,20 @@ h3 {
   position: absolute;
   top: calc(100% + 10px);
   left: 0;
-
   min-width: 220px;
   padding: 12px 16px;
-
-
-
   background-color: rgba(17, 17, 17, 0.78);
   background-image: linear-gradient(
     to bottom,
     rgba(255,255,255,0.04),
     rgba(255,255,255,0)
   );
-
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 12px 26px rgba(0,0,0,0.55);
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
   transition: transform .25s ease, opacity .25s ease;
-
   z-index: 2000;
 }
 
@@ -192,7 +182,6 @@ h3 {
     backdrop-filter: blur(12px) saturate(130%);
   }
 }
-
 
 .menu-item:hover .submenu {
   opacity: 1;
@@ -213,7 +202,6 @@ h3 {
   color: var(--branco);
   transform: translateX(6px);
 }
-
 
 .menu-hamburguer {
   all: unset; 
@@ -241,24 +229,18 @@ h3 {
   position: absolute;
   top: 100%;
   right: 0;
-
   width: 260px;
   padding: 20px;
   gap: 18px;
   flex-direction: column;
-
-
   background-color: rgba(17, 17, 17, 0.78);
   background-image: linear-gradient(
     to bottom,
     rgba(255,255,255,0.04),
     rgba(255,255,255,0)
   );
-
   border: 1px solid rgba(255,255,255,0.06);
-
   box-shadow: 0 14px 30px rgba(0,0,0,0.6);
-
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);

@@ -33,7 +33,7 @@ menu.querySelectorAll("a").forEach(link => {
   });
 });
 
-// Fecha menu ao clicar fora
+
 document.addEventListener("click", (event) => {
   if (
     !menu.contains(event.target) &&
@@ -44,7 +44,7 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Fecha menu com ESC
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     menu.classList.remove("abrir");
