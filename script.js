@@ -94,14 +94,9 @@ if (section) {
   observer.observe(section);
 }
 
-
-/* ===============================
-   LOJA
-================================ */
-
 const PIX_CHAVE = "rocknapracaesteio@gmail.com";
 const PIX_NOME = "Ricardo Varela";
-const PIX_INSTITUICAO = "Mercado Livre";
+const PIX_INSTITUICAO = "PIC PAY";
 const WHATSAPP_NUMERO = "555192179735";
 
 let carrinho = [];
@@ -139,6 +134,16 @@ function carregarCarrinho() {
 carregarCarrinho();
 
 /* ===============================
+   MOSTRAR PREÇOS NOS CARDS
+================================ */
+
+document.querySelectorAll(".card-loja").forEach(card => {
+  const preco = parseFloat(card.dataset.preco).toFixed(2);
+  const precoSpan = card.querySelector(".preco");
+  if (precoSpan) precoSpan.textContent = preco;
+});
+
+/* ===============================
    CARROSSEL
 ================================ */
 
@@ -148,7 +153,6 @@ document.querySelectorAll(".card-loja").forEach(card => {
   const prev = card.querySelector(".prev");
   const next = card.querySelector(".next");
 
-  // Se não tiver carrossel, ignora o card
   if (!imagensData || !img || !prev || !next) return;
 
   const imagens = JSON.parse(imagensData);
@@ -169,18 +173,11 @@ document.querySelectorAll(".card-loja").forEach(card => {
    ADICIONAR AO CARRINHO
 ================================ */
 
-document.querySelectorAll(".botao-adicionar").forEach(botao => {
+document.querySelectorAll(".card-loja .botao-adicionar").forEach(botao => {
   botao.addEventListener("click", () => {
     const card = botao.closest(".card-loja");
-    if (!card) return;
-
     const nome = card.dataset.nome;
     const preco = parseFloat(card.dataset.preco);
-
-    if (!nome || isNaN(preco)) {
-      alert("Produto inválido.");
-      return;
-    }
 
     const tamanhoSelect = card.querySelector('select[name="tamanho"]');
     const corSelect = card.querySelector('select[name="cor"]');
@@ -192,7 +189,6 @@ document.querySelectorAll(".botao-adicionar").forEach(botao => {
       alert("Selecione o tamanho.");
       return;
     }
-
     if (corSelect && !cor) {
       alert("Selecione a cor.");
       return;
@@ -215,7 +211,6 @@ document.querySelectorAll(".botao-adicionar").forEach(botao => {
 function adicionarAoCarrinho(item) {
   carrinho.push(item);
   valorTotal += item.preco;
-
   salvarCarrinho();
   renderCarrinho();
 }
@@ -223,10 +218,8 @@ function adicionarAoCarrinho(item) {
 function removerItem(id) {
   const index = carrinho.findIndex(item => item.id === id);
   if (index === -1) return;
-
   valorTotal -= carrinho[index].preco;
   carrinho.splice(index, 1);
-
   salvarCarrinho();
   renderCarrinho();
 }
@@ -234,31 +227,25 @@ function removerItem(id) {
 function limparCarrinho() {
   carrinho = [];
   valorTotal = 0;
-
   salvarCarrinho();
   renderCarrinho();
 }
 
 function renderCarrinho() {
   listaItens.innerHTML = "";
-
   carrinho.forEach(item => {
     const li = document.createElement("li");
-
     const variacao =
       item.tamanho && item.cor
         ? ` (${item.tamanho} / ${item.cor})`
         : "";
-
     li.innerHTML = `
       ${item.nome}${variacao} - R$ ${item.preco.toFixed(2)}
       <button aria-label="Remover item">✖</button>
     `;
-
     li.querySelector("button").addEventListener("click", () => {
       removerItem(item.id);
     });
-
     listaItens.appendChild(li);
   });
 
@@ -287,24 +274,9 @@ function enviarWhatsApp() {
   });
 
   mensagem += `\nTotal: R$ ${valorTotal.toFixed(2)}\n\n`;
-  mensagem += `Pagamento via PIX\n`;
-  mensagem += `Chave: ${PIX_CHAVE}\n`;
-  mensagem += `Nome: ${PIX_NOME}\n`;
-  mensagem += `Instituição: ${PIX_INSTITUICAO}\n\n`;
+  mensagem += `PIX:\nChave: ${PIX_CHAVE}\nNome: ${PIX_NOME}\nInstituição: ${PIX_INSTITUICAO}\n\n`;
   mensagem += `Envie o comprovante após o pagamento.`;
 
-  const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(
-    mensagem
-  )}`;
-
+  const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }
-
-
-
-
-
-
-
-
-
