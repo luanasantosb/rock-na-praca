@@ -599,6 +599,7 @@ h3 {
   flex: 1;
   overflow: hidden;
   border: 1px dashed var(--verde);
+    filter: grayscale(100%); 
 }
 
 .mapa iframe {
@@ -606,7 +607,6 @@ h3 {
   height: 100%;
   border: 0;
 }
-
 
 .bloco-bike {
   flex: 1;         
