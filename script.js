@@ -97,9 +97,9 @@ if (section) {
 
 /*************    LOJA ************ */
 
-const PIX_CHAVE = "rocknapracaesteio@gmail.com";
+const PIX_CHAVE = "83161163087";
 const PIX_NOME = "Ricardo Varela";
-const PIX_INSTITUICAO = "PIC PAY";
+const PIX_INSTITUICAO = "Pag Bank";
 const WHATSAPP_NUMERO = "555192179735";
 
 let carrinho = [];
