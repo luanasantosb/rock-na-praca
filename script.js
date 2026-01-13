@@ -94,6 +94,9 @@ if (section) {
   observer.observe(section);
 }
 
+
+/*************    LOJA ************ */
+
 const PIX_CHAVE = "rocknapracaesteio@gmail.com";
 const PIX_NOME = "Ricardo Varela";
 const PIX_INSTITUICAO = "PIC PAY";
@@ -134,16 +137,6 @@ function carregarCarrinho() {
 carregarCarrinho();
 
 /* ===============================
-   MOSTRAR PREÇOS NOS CARDS
-================================ */
-
-document.querySelectorAll(".card-loja").forEach(card => {
-  const preco = parseFloat(card.dataset.preco).toFixed(2);
-  const precoSpan = card.querySelector(".preco");
-  if (precoSpan) precoSpan.textContent = preco;
-});
-
-/* ===============================
    CARROSSEL
 ================================ */
 
@@ -155,7 +148,15 @@ document.querySelectorAll(".card-loja").forEach(card => {
 
   if (!imagensData || !img || !prev || !next) return;
 
-  const imagens = JSON.parse(imagensData);
+  let imagens = [];
+
+  try {
+    imagens = JSON.parse(imagensData);
+  } catch (e) {
+    console.error("Erro ao ler data-imagens:", e);
+    return;
+  }
+
   let index = 0;
 
   prev.addEventListener("click", () => {
@@ -178,6 +179,11 @@ document.querySelectorAll(".card-loja .botao-adicionar").forEach(botao => {
     const card = botao.closest(".card-loja");
     const nome = card.dataset.nome;
     const preco = parseFloat(card.dataset.preco);
+
+    if (isNaN(preco)) {
+      alert("Preço inválido.");
+      return;
+    }
 
     const tamanhoSelect = card.querySelector('select[name="tamanho"]');
     const corSelect = card.querySelector('select[name="cor"]');
@@ -232,7 +238,10 @@ function limparCarrinho() {
 }
 
 function renderCarrinho() {
+  if (!listaItens || !totalSpan || !quantidadeSpan) return;
+
   listaItens.innerHTML = "";
+
   carrinho.forEach(item => {
     const li = document.createElement("li");
     const variacao =
@@ -263,7 +272,7 @@ function enviarWhatsApp() {
     return;
   }
 
-  let mensagem = "🛒 Pedido Rock na Praça\n\n";
+  let mensagem = "Pedido Rock na Praça\n\n";
 
   carrinho.forEach(item => {
     mensagem += `• ${item.nome}`;
@@ -275,8 +284,9 @@ function enviarWhatsApp() {
 
   mensagem += `\nTotal: R$ ${valorTotal.toFixed(2)}\n\n`;
   mensagem += `PIX:\nChave: ${PIX_CHAVE}\nNome: ${PIX_NOME}\nInstituição: ${PIX_INSTITUICAO}\n\n`;
-  mensagem += `Envie o comprovante após o pagamento.`;
+  mensagem += `Envie aqui o comprovante após o pagamento.`;
 
   const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, "_blank");
 }
+
