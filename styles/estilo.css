@@ -60,10 +60,6 @@ h3 {
 
 /* -- CABECALHO -- */
 
-/* ================================
-   CABEÇALHO BASE (SEM TRANSPARÊNCIA BUGADA)
-================================ */
-
 .cabecalho {
   position: fixed;
   inset: 0 0 auto 0;
@@ -75,29 +71,21 @@ h3 {
   padding: 0 32px;
   gap: 32px;
 
-  /* 🎯 Fundo real, sempre visível */
-  background-color: #111111;
-  opacity: 1;
+   background-color: rgba(17, 17, 17, 0.82);
 
-  /* ✨ Profundidade */
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 6px 20px rgba(0,0,0,0.45);
 
   z-index: 9999;
 }
 
-/* Se o navegador suportar blur, ativa o glass */
 @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
   .cabecalho {
-    background-color: rgba(17,17,17,0.88);
-    -webkit-backdrop-filter: blur(10px) saturate(130%);
-    backdrop-filter: blur(10px) saturate(130%);
+    background-color: rgba(17, 17, 17, 0.72);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    backdrop-filter: blur(12px) saturate(130%);
   }
 }
-
-/* ================================
-   LOGO
-================================ */
 
 .cabecalho-simbolo-logotipo a {
   display: flex;
@@ -117,9 +105,6 @@ h3 {
   transform: scale(1.05);
 }
 
-/* ================================
-   MENU
-================================ */
 
 .cabecalho-menu {
   display: flex;
@@ -167,9 +152,6 @@ h3 {
   color: var(--rosa);
 }
 
-/* ================================
-   SUBMENU
-================================ */
 
 .menu-item {
   position: relative;
@@ -180,21 +162,37 @@ h3 {
   top: calc(100% + 10px);
   left: 0;
 
-  min-width: 200px;
+  min-width: 220px;
   padding: 12px 16px;
-  border-radius: 8px;
 
-  background-color: #0d0d0d;
 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+
+  background-color: rgba(17, 17, 17, 0.78);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0)
+  );
+
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.55);
 
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
-  transition: .25s ease;
+  transition: transform .25s ease, opacity .25s ease;
 
   z-index: 2000;
 }
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .submenu {
+    background-color: rgba(17, 17, 17, 0.68);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    backdrop-filter: blur(12px) saturate(130%);
+  }
+}
+
 
 .menu-item:hover .submenu {
   opacity: 1;
@@ -216,25 +214,23 @@ h3 {
   transform: translateX(6px);
 }
 
-/* ================================
-   HAMBURGUER
-================================ */
 
 .menu-hamburguer {
+  all: unset; 
   display: none;
   font-size: 2.4rem;
   color: var(--verde);
   cursor: pointer;
   transition: transform .25s ease;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
 .menu-hamburguer:hover {
   transform: rotate(90deg);
 }
-
-/* ================================
-   MOBILE
-================================ */
 
 @media (max-width: 768px) {
   .menu-hamburguer {
@@ -242,23 +238,41 @@ h3 {
   }
 
   .cabecalho-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
 
-    width: 240px;
-    padding: 20px;
-    gap: 18px;
-    flex-direction: column;
+  width: 260px;
+  padding: 20px;
+  gap: 18px;
+  flex-direction: column;
 
-    background-color: #111111;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+  /* 🌫️ Fundo translúcido */
+  background-color: rgba(17, 17, 17, 0.78);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0)
+  );
 
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-8px);
-    transition: .3s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow: 0 14px 30px rgba(0,0,0,0.6);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: .3s ease;
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .cabecalho-menu {
+    background-color: rgba(17, 17, 17, 0.68);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    backdrop-filter: blur(14px) saturate(130%);
   }
+}
+
 
   .cabecalho-menu.abrir {
     opacity: 1;
@@ -275,7 +289,6 @@ h3 {
     padding-left: 12px;
   }
 }
-
 
 
 /* -- PAGINA INICIAL -- */
