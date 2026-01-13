@@ -19,7 +19,7 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: .
+          path: .   # arquivos do site já estão na raiz
           
   publish:
     needs: deploy
@@ -28,3 +28,4 @@ jobs:
       name: github-pages
     steps:
       - uses: actions/deploy-pages@v1
+
