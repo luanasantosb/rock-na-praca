@@ -247,7 +247,7 @@ h3 {
   gap: 18px;
   flex-direction: column;
 
-  /* 🌫️ Fundo translúcido */
+
   background-color: rgba(17, 17, 17, 0.78);
   background-image: linear-gradient(
     to bottom,
