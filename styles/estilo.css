@@ -575,7 +575,7 @@ h3 {
   position: absolute;
   top: -10px;
   left: -10px;
-  background-color: var(--amarelo);
+  background-color: var(--azul);
   color: var(--branco);
   padding: 0.4rem 0.8rem;
   font-weight: bold;
@@ -1128,7 +1128,6 @@ h3 {
   gap: 2rem;
 }
 
-
 .secao-carrinho {
   max-width: 520px;
   margin: 3rem auto;
@@ -1347,6 +1346,7 @@ h3 {
 
 
 @media (max-width: 600px) {
+  
 
   .loja {
     gap: 1.2rem;
@@ -1383,37 +1383,44 @@ h3 {
   }
 
   .secao-cards-loja {
-    width: 94%;
+    width: 100%;
+    padding: 0 1rem;
     gap: 1rem;
+
+    /* força 2 colunas no mobile */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card-infos {
     gap: .4rem;
   }
 
-  .titulo-produto {
-    font-size: 1.05rem;
+.titulo-produto {
+    font-size: 1rem;
   }
 
   .preco-produto {
-    font-size: .95rem;
+    font-size: .9rem;
   }
 
   .status-produto {
-    font-size: .55rem;
+    font-size: .5rem;
   }
 
   .card-infos select {
     font-size: .75rem;
   }
 
+  .botao-adicionar {
+    font-size: .65rem;
+    padding: .25rem .4rem;
+  }
+
+  /* deixa as setas menos dominantes */
   .carrossel button {
-    font-size: 1rem;
-    opacity: .6;
+    font-size: .8rem;
   }
 }
-
-
 
 /* -- RODAPÉ -- */
 
