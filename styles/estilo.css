@@ -845,76 +845,21 @@ h3 {
 }
 
 
-/* --- SOBRE --- */
 
-.sobre {
+/* ** INSCRIÇÕES / SOBRE ** */
+
+.sobre,
+.bandas,
+.feira{
   max-width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;         
+  margin: 0 auto;
+  flex-direction: column;
 }
 
-.sobre-titulo{
-  font-size: 2.2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--verde);
-  position: relative;
-}
-
-.sobre-titulo::after { /* linha*/
-  content: "";
-  display: block;
-  width: 90px;
-  height: 4px;
-  background: var(--branco);
-  margin-top: 12px;
-  border-radius: 2px;
-}
-
-.sobre-texto p {
-  margin-bottom: 18px;
-  font-size: 1rem;
-  color: var(--branco);
-  font-family: var(--fonte-textos);
-}
-
-
-.sobre-texto strong {
-  color: var(--branco);
-}
-
-.sobre-texto a {
-  color: var(--verde);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--verde);
-  transition: 0.3s;
-}
-
-.sobre-texto a:hover {
-  color: var(--rosa);
-  border-bottom-color: transparent;
-}
-
-@media (max-width: 768px) {
-  .sobre-texto {
-    padding: 28px;
-  }
-
-  .sobre-texto h3 {
-    font-size: 1.6rem;
-  }
-
-  .sobre-texto p {
-    font-size: 1rem;
-  }
-}
-
-/* ** INSCRIÇÕES ** */
-
+.sobre-titulo,
 .bandas-titulo,
 .feira-titulo{
   font-size: 2.2rem;
@@ -924,8 +869,10 @@ h3 {
   letter-spacing: 2px;
   color: var(--verde);
   position: relative;
+  font-family: var(--fonte-principal);
 }
 
+.sobre-titulo::after,
 .bandas-titulo::after,
 .feira-titulo::after {
   content: "";
@@ -937,22 +884,23 @@ h3 {
   border-radius: 2px;
 }
 
-.bandas,
-.feira{
-  max-width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  flex-direction: column;
-}
-
+.sobre-texto p,
 .bandas-texto p,
 .feira-texto p{
   margin-bottom: 18px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--branco);
   font-family: var(--fonte-textos);
+}
+
+.sobre-texto strong,
+.bandas-texto strong,
+.feira-texto strong {
+  color: var(--verde);
+}
+.subtitutlo-bandas,
+.subtitutlo-feira{
+  text-transform: uppercase;
 }
 
 .bandas-lista,
@@ -960,15 +908,15 @@ h3 {
   list-style: none;
   padding: 0;
   margin: 0.2rem 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: var(--fonte-textos);
   color: var(--branco);
-  
 }
+
 .bandas-item,
 .feira-item{
   margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: var(--fonte-textos);
 }
 
@@ -976,6 +924,13 @@ h3 {
 .bandas-btn{
   margin: 3rem 0;
   text-align: center;
+}
+
+.sobre-texto a {
+  color: var(--verde);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--verde);
+  transition: 0.3s;
 }
 
 .feira-btn a,
@@ -996,6 +951,11 @@ h3 {
   will-change: transform;
 }
 
+.sobre-texto a:hover {
+  color: var(--rosa);
+  border-bottom-color: transparent;
+}
+
 .feira-btn a:hover,
 .bandas-btn a:hover {
   background-color: var(--verde);
@@ -1003,113 +963,95 @@ h3 {
   transform: scale(1.02);
 }
 
-
+/* ===== Responsividade ===== */
 @media (max-width: 1024px) {
-
-  .bandas,
-  .feira {
+  .sobre, .bandas, .feira {
     max-width: 90%;
   }
 
+  .sobre-titulo,
   .bandas-titulo,
   .feira-titulo {
-    font-size: 1.9rem;
-    text-align: center;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
-  .bandas-titulo::after,
-  .feira-titulo::after {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  .sobre-texto p,
   .bandas-texto p,
-  .bandas-item,
-  .feira-texto p,
-  .feira-item {
-    font-size: 1.1rem;
+  .feira-texto p {
+    font-size: 0.95rem;
   }
 
   .bandas-lista,
   .feira-lista {
-    font-size: 1.3rem;
+    font-size: 0.95rem;
   }
 
-  .bandas-btn,
-  .feira-btn {
-    padding: 12px 26px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .bandas,
-  .feira{
-    max-width: 95%;
-  }
-
-  .bandas,
-.feira {
-  padding: 0 0.5rem;
-}
-
-.bandas-texto,
-.feira-texto {
-  width: 100%;
-}
-
-
-  .bandas-titulo,
-  .feira-titulo {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-  }
-
-  .bandas-titulo::after,
-  .feira-titulo::after{
-    width: 60px;
-    height: 3px;
-  }
-
-  .bandas-texto p,
-  .bandas-item,
-  .feira-texto p,
-  .feira-item{
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .bandas-lista,
-  .feira-lista {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .bandas-btn,
-.feira-btn {
-  width: 100%;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.95rem;
-}
-
-}
-
-@media (max-width: 400px) {
-
-  .bandas-titulo,
-  .feira-titulo {
-    font-size: 1.4rem;
-  }
-
-  .bandas-texto p,
-  .bandas-item,
-  .feira-texto p,
-  .feira-item {
+  .feira-btn a,
+  .bandas-btn a {
+    padding: 12px 28px;
     font-size: 0.95rem;
   }
 }
+
+@media (max-width: 768px) {
+  .sobre, .bandas, .feira {
+    max-width: 95%;
+  }
+
+  .sobre-titulo,
+  .bandas-titulo,
+  .feira-titulo {
+    font-size: 1.8rem;
+  }
+
+  .sobre-texto p,
+  .bandas-texto p,
+  .feira-texto p {
+    font-size: 0.9rem;
+  }
+
+  .bandas-lista,
+  .feira-lista {
+    font-size: 0.9rem;
+  }
+
+  .feira-btn a,
+  .bandas-btn a {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-titulo,
+  .bandas-titulo,
+  .feira-titulo {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .sobre-texto p,
+  .bandas-texto p,
+  .feira-texto p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .bandas-lista,
+  .feira-lista {
+    font-size: 0.85rem;
+  }
+
+  .feira-btn a,
+  .bandas-btn a {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+
 
 /* -- LOJA --*/
 
