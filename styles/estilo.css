@@ -744,128 +744,106 @@ h3 {
   box-shadow: 10px 10px 0 var(--verde);
 }
 
-.card.pequeno {
-  font-size: 0.85rem;
-  border-width: 1px;
-}
-
+/* ========================= */
+/* 📱 Tablets (até 1024px) */
+/* ========================= */
 @media (max-width: 1024px) {
-  .card-grande.card-info-total {
-    flex-direction: column; 
-    align-items: center;
+
+  .cartoes {
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
   }
 
-  .mapa, .bloco-bike {
-    width: 100%;          
-    flex: none;           
+  .titulo-evento {
+    font-size: 3rem;
+  }
+
+  .tag {
+    font-size: 1.5rem;
+  }
+
+  .mapa iframe {
+    height: 260px;
+  }
+
+  .cartao-bike {
+    flex: 0 0 260px;
+    height: auto;
   }
 }
 
-@media (max-width: 900px) {
+/* ========================= */
+/* 📱 Celulares (até 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .cartoes {
+    flex-direction: column;
+  }
+
+  .cartao-evento {
+    padding: 1rem;
+  }
+
   .titulo-evento {
-    font-size: 1.6rem;
-    padding: 1.5rem 1rem;
-    letter-spacing: 0.1em;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .detalhes-evento p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .tag {
+    font-size: 1.2rem;
+    padding: 4px 10px;
+  }
+
+  .mapa iframe {
+    height: 220px;
+  }
+
+  .cartao-bike {
+    position: relative;   /* remove sticky no mobile */
+    top: auto;
+    transform: none;
+    width: 100%;
   }
 
   .cards-edicao {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     gap: 3rem;
   }
 
   .titulo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================= */
+/* 📱 Telas muito pequenas (até 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .titulo-evento {
+    font-size: 1.8rem;
   }
 
-  .grupo {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  .tag {
+    font-size: 1rem;
   }
 
   .mapa iframe {
     height: 180px;
   }
-}
-
-@media (max-width: 600px) {
-
-  
-  .titulo-evento {
-    font-size: 1.3rem;
-    padding: 1.2rem 0.8rem;
-  }
-
-  .informacoes {
-    padding: 1rem 0.5rem;
-  }
-
-  .info-detalhes {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .bloco {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .evento,
-  .bike {
-    padding: 1rem;
-  }
-
-  .dados-evento p {
-    font-size: 0.75rem;
-  }
-
-  .titulo-bike {
-    font-size: 1rem;
-  }
-
-  .bike p,
-  .lista-bike li {
-    font-size: 0.75rem;
-  }
-
-  .mapa iframe {
-    height: 140px;
-  }
-
-  .cards-edicao {
-    padding: 2rem 0.5rem;
-    gap: 2.5rem;
-  }
-
-  .titulo {
-    font-size: 1.3rem;
-  }
-
-  .grupo {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
 
   .card {
     font-size: 0.85rem;
-    min-height: 70px;
     padding: 0.8rem;
   }
 }
-
-@media (max-width: 480px) {
-  .titulo-bike {
-    font-size: 1.5rem;
-  }
-
-  .bloco-bike p,
-  .lista-bike li {
-    font-size: 0.95rem;
-  }
-
-  .card-grande.card-info-total {
-    padding: 1rem;
-  }
-}
-
 
 
 /* ** INSCRIÇÕES / SOBRE ** */
