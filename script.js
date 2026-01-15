@@ -1,3 +1,16 @@
+/*====== MODAL ========= */
+
+
+  function abrirMapa() {
+    document.getElementById("modalMapa").classList.add("ativo");
+  }
+
+  function fecharMapa() {
+    document.getElementById("modalMapa").classList.remove("ativo");
+  }
+
+
+
 /*=====CABECALHO=====*/
 
  const btnMenu = document.getElementById("menu-hamburguer");
