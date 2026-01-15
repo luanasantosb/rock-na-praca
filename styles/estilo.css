@@ -49,7 +49,7 @@ h3 {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
 
@@ -72,7 +72,7 @@ h3 {
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
   z-index: 9999;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
@@ -192,7 +192,7 @@ h3 {
 
 
 .menu-hamburguer {
-  all: unset; 
+  all: unset;
   display: none;
   font-size: 2.4rem;
   color: var(--verde);
@@ -221,7 +221,7 @@ h3 {
     background-color: rgba(17, 17, 17, 0.65);
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     opacity: 0;
     pointer-events: none;
@@ -548,141 +548,124 @@ h3 {
 
 /* -- PROGRAMAÇÃO -- */
 
-/* ** CARDS LOCAL E TRANSPORTE** */
 
-.cartoes {
-  display: flex;
-  width: 90%;
-  min-height: 100vh;
+/* ** CARDS SUPERIORES** */
+.secao-cartoes-top {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
-  padding: 1.2rem 2rem; 
+  margin-top: 80px; 
 }
 
-.cartao-evento {
-  flex: 1 1 auto; 
+.secao-cartoes-top .mapa {
+  grid-column: 1 / -1;
+}
+
+.cartao .titulo {
+  font-size: 1.8rem;
+  margin-bottom: .8rem;
+}
+
+.cartao.mapa iframe {
   width: 100%;
-  position: relative; 
-  display: flex;
-  flex-direction: column;
-  background: var(--bkg-secundario);
-  gap: 0.9rem; 
-  padding: 1.4rem 1.6rem;
-  overflow: hidden;
+  height: 320px;
+  border: 0;
+  border-radius: 12px;
 }
 
+.cartao.infos,
+.cartao.bike{
+  width: 500px;
+  min-height: 180px;
+  padding: 20px;
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+  font-size: 18px;
+  line-height: 1.4;
+  box-shadow: 
+    2px 2px 5px rgba(0,0,0,0.2),
+    0 8px 15px rgba(0,0,0,0.15);
+  position: relative;
+}
 
+.cartao.bike:hover,
+.cartao.infos:hover,
+.cartao.mapa:hover{
+  transform: none;
+  box-shadow: none;
+  background: inherit;
+  transition: none;
+}
+
+.cartao.infos {
+  flex: 2;
+  position: relative;
+}
+
+.cartao.infos p{
+  font-size: 1.5rem;
+}
 .tag {
-  position: absolute; 
-  top: 0.8rem;         
-  left: 0.8rem;          
+  position: absolute;
+  top: -12px;
+  left: -12px;
   background: var(--azul);
   color: var(--branco);
-  font-weight: 700;
-  font-size: 2rem;
   padding: 6px 14px;
-  border-radius: 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .9rem;
 }
-
-
-.titulo-evento {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2.6rem;         
-  margin-bottom: 0.6rem;
-  font-size: 4rem; 
-  letter-spacing: 0.5px;
-  color: var(--verde);
-  font-family: var(--fonte-principal);
-}
-
 
 .detalhes-evento p {
-  margin: 0.4rem 0;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.mapa iframe {
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 100%;
-  height: 320px;
-  display: block;
-  border-radius: 10px;
-}
-
-.cartao-evento,
-.mapa,
-.mapa iframe {
-  box-sizing: border-box;
+  margin: .3rem 0;
+  line-height: 1.4;
 }
 
 
-/* ** BIKE ** */
-
-.cartao-bike {
-  flex: 0 0 320px; 
-  background: var(--amarelo);
-  color: var(--preto);
-  padding: 24px 20px;
-  position: sticky;
-  top: 20px;
-  transform: rotate(-1.2deg);
-  color:var(--preto);
-  height: 200px; 
+.cartao.bike {
+  flex: 1;
 }
 
-.cartao-bike::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 28px;
-  height: 28px;
-  background: var(--rosa);
-  clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  box-shadow: -2px -2px 3px rgba(0,0,0,0.15);
-}
-
-.titulo-bike {
-  margin-top: 0;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  color:var(--rosa);
-}
-
-.cartao-bike p{
-   color: var(--preto);
-}
-
-.lista-bike li {
-  margin-bottom: 8px;
-  color:var(--preto);
+.lista-bike {
+  margin: .8rem 0;
+  padding-left: 1.2rem;
   list-style: none;
 }
 
+.lista-bike li {
+  margin-bottom: .4rem;
+}
 
 .link-bike a {
-  color: var(--preto);
-  background: rgba(203, 93, 159,0.6);
-  padding: 2px 4px;
-  border-radius: 3px;
+  color: var(--azul);
+  font-weight: 600;
   text-decoration: none;
-  transition: 0.2s;
 }
 
 .link-bike a:hover {
-  background: rgba(0, 107, 181, 0.9);
+  text-decoration: underline;
+}
+
+.cartao.mapa {
+  padding: 0;
+  overflow: hidden;
+  filter: grayscale(80%);
+}
+
+.cartao.mapa iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  display: block;
 }
 
 
-/* ** CARDS DE EDIÇÃO ** */
-.cards-edicao {
+/* ** CARDS INFERIORES** */
+.secao-cartoes-bottom {
   max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 1rem;
@@ -691,29 +674,29 @@ h3 {
   gap: 5rem;
 }
 
-.cards-edicao a {
+.secao-cartoes-bottom a {
   color: inherit;
   text-decoration: none;
 }
 
-.grupo {
+.grupo-cartoes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-.grupo .titulo {
+.grupo-cartoes-titulo{
   grid-column: 1 / -1;
 }
 
-.titulo {
+.grupo-cartoes-titulo {
   font-size: 2rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--branco);
 }
 
-.titulo::after {
+.grupo-cartoes-titulo::after {
   content: "";
   display: block;
   width: 60px;
@@ -722,10 +705,11 @@ h3 {
   background: var(--verde);
 }
 
-.card {
+.cartao {
   min-height: 90px;
   padding: 1.2rem 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: var(--bkg-secundario);
@@ -739,118 +723,18 @@ h3 {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.card:hover {
+.cartao:hover {
   transform: translate(-4px, -4px);
   box-shadow: 10px 10px 0 var(--verde);
 }
 
 /* ========================= */
-/* 📱 Tablets (até 1024px) */
-/* ========================= */
-@media (max-width: 1024px) {
-
-  .cartoes {
-    width: 100%;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .titulo-evento {
-    font-size: 3rem;
-  }
-
-  .tag {
-    font-size: 1.5rem;
-  }
-
-  .mapa iframe {
-    height: 260px;
-  }
-
-  .cartao-bike {
-    flex: 0 0 260px;
-    height: auto;
-  }
-}
-
-/* ========================= */
-/* 📱 Celulares (até 768px) */
-/* ========================= */
-@media (max-width: 768px) {
-
-  .cartoes {
-    flex-direction: column;
-  }
-
-  .cartao-evento {
-    padding: 1rem;
-  }
-
-  .titulo-evento {
-    font-size: 2.2rem;
-    text-align: center;
-  }
-
-  .detalhes-evento p {
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .tag {
-    font-size: 1.2rem;
-    padding: 4px 10px;
-  }
-
-  .mapa iframe {
-    height: 220px;
-  }
-
-  .cartao-bike {
-    position: relative;   /* remove sticky no mobile */
-    top: auto;
-    transform: none;
-    width: 100%;
-  }
-
-  .cards-edicao {
-    padding: 2rem 1rem;
-    gap: 3rem;
-  }
-
-  .titulo {
-    font-size: 1.5rem;
-  }
-}
-
-/* ========================= */
-/* 📱 Telas muito pequenas (até 480px) */
-/* ========================= */
-@media (max-width: 480px) {
-
-  .titulo-evento {
-    font-size: 1.8rem;
-  }
-
-  .tag {
-    font-size: 1rem;
-  }
-
-  .mapa iframe {
-    height: 180px;
-  }
-
-  .card {
-    font-size: 0.85rem;
-    padding: 0.8rem;
-  }
-}
-
-
 /* ** INSCRIÇÕES / SOBRE ** */
+/* ========================= */
 
 .sobre,
 .bandas,
-.feira{
+.feira {
   max-width: 80%;
   display: flex;
   align-items: center;
@@ -861,7 +745,7 @@ h3 {
 
 .sobre-titulo,
 .bandas-titulo,
-.feira-titulo{
+.feira-titulo {
   font-size: 2.2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -886,7 +770,7 @@ h3 {
 
 .sobre-texto p,
 .bandas-texto p,
-.feira-texto p{
+.feira-texto p {
   margin-bottom: 18px;
   font-size: 1rem;
   color: var(--branco);
@@ -898,13 +782,14 @@ h3 {
 .feira-texto strong {
   color: var(--verde);
 }
+
 .subtitulo-bandas,
-.subtitulo-feira{
+.subtitulo-feira {
   text-transform: uppercase;
 }
 
 .bandas-lista,
-.feira-lista{
+.feira-lista {
   list-style: none;
   padding: 0;
   margin: 0.2rem 0;
@@ -914,14 +799,14 @@ h3 {
 }
 
 .bandas-item,
-.feira-item{
+.feira-item {
   margin-bottom: 0.8rem;
   font-size: 1rem;
   font-family: var(--fonte-textos);
 }
 
 .feira-btn,
-.bandas-btn{
+.bandas-btn {
   margin: 3rem 0;
   text-align: center;
 }
@@ -965,7 +850,10 @@ h3 {
 
 
 @media (max-width: 1024px) {
-  .sobre, .bandas, .feira {
+
+  .sobre,
+  .bandas,
+  .feira {
     max-width: 90%;
   }
 
@@ -996,7 +884,10 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  .sobre, .bandas, .feira {
+
+  .sobre,
+  .bandas,
+  .feira {
     max-width: 95%;
   }
 
@@ -1025,6 +916,7 @@ h3 {
 }
 
 @media (max-width: 480px) {
+
   .sobre-titulo,
   .bandas-titulo,
   .feira-titulo {
@@ -1065,7 +957,7 @@ h3 {
   max-width: 520px;
   margin: 3rem auto;
   padding: 1.5rem;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255, 255, 255, .08);
   background: transparent;
 }
 
@@ -1090,7 +982,7 @@ h3 {
 
 .lista-carrinho li {
   padding: .4rem 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
 }
 
 .lista-carrinho li strong {
@@ -1124,10 +1016,10 @@ h3 {
   letter-spacing: .08em;
   cursor: pointer;
   padding: .3rem .5rem;
-  border:1px solid var(--rosa);
+  border: 1px solid var(--rosa);
 }
 
-.botao-esvaziar{
+.botao-esvaziar {
   background: none;
   border: none;
   color: var(--branco);
@@ -1174,8 +1066,13 @@ h3 {
   opacity: .4;
 }
 
-.carrossel .prev { left: .3rem; }
-.carrossel .next { right: .3rem; }
+.carrossel .prev {
+  left: .3rem;
+}
+
+.carrossel .next {
+  right: .3rem;
+}
 
 .carrossel button:hover {
   opacity: .9;
@@ -1209,28 +1106,29 @@ h3 {
   font-size: .5rem;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color:var(--branco);
+  color: var(--branco);
   margin-top: .4rem;
 }
 
 .card-infos select {
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
   color: var(--branco);
   font-size: .7rem;
   padding: .2rem 0;
   outline: none;
 }
-.botao-adicionar{
- background: none;
+
+.botao-adicionar {
+  background: none;
   border: none;
   color: var(--branco);
   font-size: .75rem;
   letter-spacing: .08em;
   cursor: pointer;
   padding: .3rem .5rem;
-  border:1px solid var(--verde);
+  border: 1px solid var(--verde);
 }
 
 
@@ -1277,7 +1175,7 @@ h3 {
 }
 
 @media (max-width: 600px) {
-  
+
 
   .loja {
     gap: 1.2rem;
@@ -1324,7 +1222,7 @@ h3 {
     gap: .4rem;
   }
 
-.titulo-produto {
+  .titulo-produto {
     font-size: 1rem;
   }
 
@@ -1420,7 +1318,7 @@ h3 {
   color: var(--preto);
 }
 
-.desenvolvedora-credito a{
+.desenvolvedora-credito a {
   color: var(--preto);
   text-decoration: none;
   font-weight: 700;
@@ -1476,18 +1374,3 @@ h3 {
     justify-content: center;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
