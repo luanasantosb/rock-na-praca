@@ -38,9 +38,10 @@ li {
   font-size: 1rem;
 }
 
+h1,
 h2,
-h3 {
-  font-size: 2rem;
+h3,
+h4{
   font-family: var(--fonte-principal);
 }
 
@@ -1367,10 +1368,12 @@ h3 {
   margin: 0;
   font-size: 0.90rem;
   color: var(--preto);
+  font-family: var(--fonte-textos);
 }
 
 .desenvolvedora-credito a {
   color: var(--preto);
+  font-family: var(--fonte-textos);
   text-decoration: none;
   font-weight: 700;
 }
@@ -1388,6 +1391,7 @@ h3 {
   font-size: 0.75rem;
   text-decoration: none;
   color: inherit;
+  font-family: var(--fonte-textos);
 }
 
 
