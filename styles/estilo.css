@@ -898,8 +898,8 @@ h3 {
 .feira-texto strong {
   color: var(--verde);
 }
-.subtitutlo-bandas,
-.subtitutlo-feira{
+.subtitulo-bandas,
+.subtitulo-feira{
   text-transform: uppercase;
 }
 
@@ -963,7 +963,7 @@ h3 {
   transform: scale(1.02);
 }
 
-/* ===== Responsividade ===== */
+
 @media (max-width: 1024px) {
   .sobre, .bandas, .feira {
     max-width: 90%;
@@ -1276,8 +1276,6 @@ h3 {
   }
 }
 
-
-
 @media (max-width: 600px) {
   
 
@@ -1309,18 +1307,16 @@ h3 {
   .botao-finalizar-pedido,
   .botao-esvaziar,
   .botao-adicionar {
-    width: 100%;
+    width: 80%;
     text-align: center;
     padding: .6rem;
     font-size: .8rem;
   }
 
   .secao-cards-loja {
-    width: 100%;
+    width: 80%;
     padding: 0 1rem;
     gap: 1rem;
-
-   
     grid-template-columns: repeat(1, 1fr);
   }
 
