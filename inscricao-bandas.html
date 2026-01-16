@@ -2,170 +2,186 @@
 <html lang="pt-BR">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta básicos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <title>Inscreva sua Banda | Rock na Praça – Evento Gratuito</title>
+  <title>Inscreva sua Banda | Rock na Praça – Evento Gratuito</title>
 
-    <meta name="description"
-        content="Cadastre sua banda e toque no Rock na Praça, evento gratuito de rock🎸 Inscrições abertas o ano todo para novas edições. Garanta sua vaga e mostre sua música para o público local!">
+  <meta name="description"
+    content="Cadastre sua banda e toque no Rock na Praça, evento gratuito de rock🎸 Inscrições abertas o ano todo para novas edições. Garanta sua vaga e mostre sua música para o público local!">
+  <link rel="canonical" href="https://www.rocknapraca.com/inscricao-bandas/">
 
-    <link rel="canonical" href="https://www.rocknapraca.com/inscricao-bandas/">
+  <!-- Favicons e PWA -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logos/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logos/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1a1a1a">
 
-    <!-- Open Graph -->
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="Rock na Praça">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Inscreva sua Banda | Rock na Praça – Evento Gratuito">
-    <meta property="og:description"
-        content="Participe do Rock na Praça! Inscrições abertas o ano todo para bandas se apresentarem no evento gratuito de rock.">
-    <meta property="og:image" content="https://www.rocknapraca.com/assets/imagens/inscricao-bandas.jpg">
-    <meta property="og:image:alt" content="Inscrição de Bandas para Rock na Praça">
-    <meta property="og:url" content="https://www.rocknapraca.com/inscricao-bandas/">
+  <!-- Google Fonts otimizada -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet">
+  </noscript>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Inscreva sua Banda | Rock na Praça – Evento Gratuito">
-    <meta name="twitter:description"
-        content="Cadastre sua banda e toque no Rock na Praça, evento gratuito de rock 🎸 Inscrições abertas o ano todo.">
-    <meta name="twitter:image" content="https://www.rocknapraca.com/assets/imagens/inscricao-bandas.jpg">
+  <!-- CSS principal -->
+  <link rel="preload" href="styles/estilo.css" as="style">
+  <link rel="stylesheet" href="styles/estilo.css">
 
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="styles/estilo.css">
+  <!-- JS deferido -->
+  <script src="/script.js" defer></script>
 
-    <!-- PRECONNECT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://maps.googleapis.com">
-    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
 
-    <!-- FONTS -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Rock na Praça">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Inscreva sua Banda | Rock na Praça – Evento Gratuito">
+  <meta property="og:description"
+    content="Participe do Rock na Praça! Inscrições abertas o ano todo para bandas se apresentarem no evento gratuito de rock.">
+  <meta property="og:image" content="https://www.rocknapraca.com/assets/imagens/inscricao-bandas.jpg">
+  <meta property="og:image:alt" content="Inscrição de Bandas para Rock na Praça">
+  <meta property="og:url" content="https://www.rocknapraca.com/inscricao-bandas/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Inscreva sua Banda | Rock na Praça – Evento Gratuito">
+  <meta name="twitter:description"
+    content="Cadastre sua banda e toque no Rock na Praça, evento gratuito de rock 🎸 Inscrições abertas o ano todo.">
+  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/imagens/inscricao-bandas.jpg">
 
-    <!-- ICON -->
-    <link rel="icon" href="/assets/logos/rock-na-praca-logotipo.png" type="image/png">
-
-    <!-- SCRIPT -->
-    <script src="/script.js" defer></script>
-
-    <!-- JSON-LD: Evento Inscrição -->
-    <script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Inscrição de Bandas - Rock na Praça",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "Online",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "BR"
+  "@graph": [
+    {
+      "@type": "Event",
+      "name": "Inscrição de Bandas - Rock na Praça",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Online",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "BR"
+        }
+      },
+      "startDate": "2026-01-01T00:00-03:00",
+      "endDate": "2026-12-31T23:59-03:00",
+      "description": "Inscrição aberta para bandas se apresentarem no Rock na Praça, evento gratuito de rock.",
+      "keywords": "Inscrição de bandas, Rock, Rock independente, Esteio, Sapucaia do Sul, Porto Alegre, São Leopoldo, Canoas, Evento gratuito, Bandas ao vivo, Cultura urbana, Cadastro de bandas",
+      "organizer": {
+        "@type": "Organization",
+        "name": "Rock na Praça",
+        "url": "https://www.rocknapraca.com"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.rocknapraca.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Inscrições",
+          "item": "https://www.rocknapraca.com/inscricao-bandas/"
+        }
+      ]
     }
-  },
-  "startDate": "2026-01-01T00:00-03:00",
-  "endDate": "2026-12-31T23:59-03:00",
-  "description": "Inscrição aberta para bandas se apresentarem no Rock na Praça, evento gratuito de rock.",
-  "keywords": "Inscrição de bandas, Rock, Rock independente, Esteio, Sapucaia do Sul, Porto Alegre, São Leopoldo, Canoas. Evento gratuito, Bandas ao vivo, Cultura urbana, Cadastro de bandas",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Rock na Praça",
-    "url": "https://www.rocknapraca.com"
-  }
-}
-</script>
-
-<!-- JSON-LD: Breadcrumb -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem","position":1,"name":"Início","item":"https://www.rocknapraca.com/"},
-    {"@type": "ListItem","position":2,"name":"Inscrição de Bandas","item":"https://www.rocknapraca.com/inscricao-bandas/"}
   ]
 }
 </script>
+
+
 </head>
 
-
 <body>
-    <!-- ================== CABEÇALHO ================== -->
-    <header class="cabecalho">
-        <div class="cabecalho-simbolo-logotipo">
-            <a href="./index.html">
-                <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone Rock na Praça">
-            </a>
+  <!-- ================== CABEÇALHO ================== -->
+  <header class="cabecalho">
+    <div class="cabecalho-simbolo-logotipo">
+      <a href="./index.html">
+        <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone Rock na Praça">
+      </a>
+    </div>
+
+    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+
+    <nav class="cabecalho-menu" id="menu">
+      <a href="janeiro-2026.html">Programação</a>
+      <a href="sobre.html">Sobre</a>
+      <div class="menu-item">
+        <button class="menu-toggle" aria-expanded="false">
+          Participe
+        </button>
+        <div class="submenu">
+          <a href="inscricao-bandas.html">Bandas</a>
+          <a href="inscricao-feira.html">Economia Criativa</a>
         </div>
+      </div>
+      <a href="loja.html">Loja</a>
+      <a href="#rodape">Contato</a>
+    </nav>
 
-        <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+  </header>
+  <main>
+    <section class="bandas">
 
-        <nav class="cabecalho-menu" id="menu">
-            <a href="janeiro-2026.html">Programação</a>
-            <a href="sobre.html">Sobre</a>
-            <div class="menu-item">
-                <button class="menu-toggle" aria-expanded="false">
-                    Participe
-                </button>
-                <div class="submenu">
-                    <a href="inscricao-bandas.html">Bandas</a>
-                    <a href="inscricao-feira.html">Economia Criativa</a>
-                </div>
-            </div>
-            <a href="#rodape">Contato</a>
-            <a href="loja.html">Loja</a>
-        </nav>
-        
-    </header>
-    <main>
-        <section class="bandas">
+      <div class="bandas-texto">
+        <h1 class="visually-hidden"> Inscreva sua Banda no Rock na Praça</h1>
 
-            <div class="bandas-texto">
-                <h1 class="visually-hidden"> Inscreva sua Banda no Rock na Praça</h1>
+        <h2 class="bandas-titulo">inscreva sua banda</h2>
 
-                <h2 class="bandas-titulo">inscreva sua banda</h2>
+        <p>Estão abertas as inscrições para o cadastro de bandas interessadas em participar do festival Rock
+          na Praça no ano de 2026. O evento é dedicado exclusivamente à música autoral e busca artistas
+          com identidade própria e produção independente.</p>
 
-                <p>Estão abertas as inscrições para o cadastro de bandas interessadas em participar do festival Rock
-                    na Praça no ano de 2026. O evento é dedicado exclusivamente à música autoral e busca artistas
-                    com identidade própria e produção independente.</p>
-
-                <p>O Rock na Praça é um festival independente realizado na região metropolitana de Porto Alegre, com
-                    atuação contínua em espaços públicos e foco na democratização do acesso à cultura. Em 2026, o
-                    festival completa 24 anos de existência e resistência cultural.</p>
+        <p>O Rock na Praça é um festival independente realizado na região metropolitana de Porto Alegre, com
+          atuação contínua em espaços públicos e foco na democratização do acesso à cultura. Em 2026, o
+          festival completa 24 anos de existência e resistência cultural.</p>
 
 
-                <p class="subtitulo-bandas"><strong>Diretrizes para inscrição</strong></p>
+        <p class="subtitulo-bandas"><strong>Diretrizes para inscrição</strong></p>
 
-                <ul class="bandas-lista">
-                    <li class="bandas-item">O festival contempla <strong>exclusivamente bandas autorais</strong>, não
-                        sendo selecionados projetos cover
-                        ou tributo.</li>
+        <ul class="bandas-lista">
+          <li class="bandas-item">O festival contempla <strong>exclusivamente bandas autorais</strong>, não
+            sendo selecionados projetos cover
+            ou tributo.</li>
 
-                    <li class="bandas-item">O envio deste formulário <strong>não garante a participação no
-                            evento</strong>, servindo como banco de dados
-                        para a curadoria e seleção das bandas pela produção do festival.</li>
+          <li class="bandas-item">O envio deste formulário <strong>não garante a participação no
+              evento</strong>, servindo como banco de dados
+            para a curadoria e seleção das bandas pela produção do festival.</li>
 
-                    <li class="bandas-item">cadastro terá <strong>validade durante todo o ano de 2026</strong>, não
-                        sendo necessário realizar nova
-                        inscrição ao longo do período.</li>
+          <li class="bandas-item">cadastro terá <strong>validade durante todo o ano de 2026</strong>, não
+            sendo necessário realizar nova
+            inscrição ao longo do período.</li>
 
-                    <li class="bandas-item">A seleção das bandas ocorrerá <strong>exclusivamente por meio deste
-                            formulário.</strong> Não serão
-                        consideradas inscrições realizadas por redes sociais ou outros canais</li>
-                </ul>
-            </div>
+          <li class="bandas-item">A seleção das bandas ocorrerá <strong>exclusivamente por meio deste
+              formulário.</strong> Não serão
+            consideradas inscrições realizadas por redes sociais ou outros canais</li>
+        </ul>
+      </div>
 
-            <div class=bandas-btn>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeObK2dxF06Y3phcMLH3HByMGIOGObLx4NvHc--cOicYZG30w/viewform"
-                    target="_blank" class="btn-inscricao">Inscreva-se agora!</a>
-            </div>
+      <div class=bandas-btn>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeObK2dxF06Y3phcMLH3HByMGIOGObLx4NvHc--cOicYZG30w/viewform"
+          target="_blank" class="btn-inscricao">Inscreva-se agora!</a>
+      </div>
 
-        </section>
-    </main>
-    <!--RODAPÉ-->
-    
-      <footer class="rodape" id="rodape">
+    </section>
+  </main>
+  <!--RODAPÉ-->
+
+  <footer class="rodape" id="rodape">
     <div class="rodape-conteudo">
 
       <div class="esquerda-realizacao">
@@ -176,14 +192,14 @@
       </div>
 
       <div class="centro-textos">
-      <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-      <p class="desenvolvedora-credito">
-     Desenvolvido por
-    <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer">
-      Luana Santos
-      </a>
-    </p>
-    </div>
+        <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
+        <p class="desenvolvedora-credito">
+          Desenvolvido por
+          <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer">
+            Luana Santos
+          </a>
+        </p>
+      </div>
 
       <div class="direita-contato">
         <h3>Contato</h3>
