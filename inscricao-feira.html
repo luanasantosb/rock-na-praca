@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
+  <!-- Meta básicos -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <title>Inscreva seu Estande | Rock na Praça – Feira de Economia Criativa</title>
-
-  <meta name="description"
-    content="Garanta sua participação na Feira de Economia Criativa do Rock na Praça 🎨 Inscreva seu estande agora! Vagas limitadas por evento. Exponha seus produtos e conecte-se com o público local.">
-
+  <!-- Title + Description (CTR + intenção de busca) -->
+  <title>Inscreva seu Estande | Rock na Praça – Feira de Economia Criativa</title>
+  <meta name="description" content="Inscreva seu estande na Feira de Economia Criativa do Rock na Praça 🎨 Vagas limitadas por evento. Exponha produtos autorais, artesanato e empreendedorismo cultural no RS.">
   <link rel="canonical" href="https://www.rocknapraca.com/inscricao-feira/">
 
   <!-- Favicons e PWA -->
@@ -20,91 +19,88 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1a1a1a">
 
+  <!-- Preload imagem principal (LCP) -->
+  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpg" fetchpriority="high">
+
   <!-- Google Fonts otimizada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   </noscript>
 
   <!-- CSS principal -->
-  <link rel="preload" href="styles/estilo.css" as="style">
-  <link rel="stylesheet" href="styles/estilo.css">
+  <link rel="preload" href="/styles/estilo.css" as="style">
+  <link rel="stylesheet" href="/styles/estilo.css">
 
   <!-- JS deferido -->
   <script src="/script.js" defer></script>
 
+  <!-- Open Graph -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Rock na Praça">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Inscreva seu Estande | Rock na Praça – Feira de Economia Criativa">
-  <meta property="og:description"
-    content="Participe da Feira de Economia Criativa do Rock na Praça. Inscreva seu estande agora! Vagas limitadas por evento. Exponha seus produtos e conecte-se com o público local.">
-  <meta property="og:image"
-    content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpg">
+  <meta property="og:description" content="Participe da Feira de Economia Criativa do Rock na Praça. Inscreva seu estande agora! Vagas limitadas por evento. Exponha seus produtos e conecte-se com o público local.">
+  <meta property="og:image" content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpg">
   <meta property="og:image:alt" content="Inscrição de estandes para Rock na Praça – Feira de Economia Criativa">
   <meta property="og:url" content="https://www.rocknapraca.com/inscricao-feira/">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Inscreva seu Estande | Rock na Praça – Feira de Economia Criativa">
-  <meta name="twitter:description"
-    content="Garanta sua participação na Feira de Economia Criativa do Rock na Praça. Inscreva seu estande agora! Vagas limitadas por evento.">
-  <meta name="twitter:image"
-    content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpg">
+  <meta name="twitter:description" content="Garanta sua participação na Feira de Economia Criativa do Rock na Praça. Inscreva seu estande agora! Vagas limitadas por evento.">
+  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpg">
 
+  <!-- Schema (CORRETO: WebPage + Organization + Breadcrumb) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Event",
-      "name": "Inscrição da Feira de Economia criativa - Rock na Praça",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "Online",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "BR"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.rocknapraca.com/inscricao-feira/#webpage",
+        "url": "https://www.rocknapraca.com/inscricao-feira/",
+        "name": "Inscreva seu Estande | Rock na Praça",
+        "description": "Página de inscrição de estandes para a Feira de Economia Criativa do Rock na Praça.",
+        "inLanguage": "pt-BR",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.rocknapraca.com/#website"
         }
       },
-      "startDate": "2026-01-01T00:00-03:00",
-      "endDate": "2026-12-31T23:59-03:00",
-      "description": "Garanta sua participação na Feira de Economia Criativa do Rock na Praça. Inscreva seu estande agora! Vagas limitadas por evento.",
-      "keywords": "Inscrição de feira, Rock, Rock independente, Esteio, Sapucaia do Sul, Porto Alegre, São Leopoldo, Canoas, Evento gratuito, Bandas ao vivo, Cultura urbana, Cadastro de bandas",
-      "organizer": {
+      {
         "@type": "Organization",
+        "@id": "https://www.rocknapraca.com/#organization",
         "name": "Rock na Praça",
-        "url": "https://www.rocknapraca.com"
+        "url": "https://www.rocknapraca.com/",
+        "logo": "https://www.rocknapraca.com/assets/logos/Rock-na-praca-logo-e-icone.png"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.rocknapraca.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Inscrição Feira",
+            "item": "https://www.rocknapraca.com/inscricao-feira/"
+          }
+        ]
       }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Início",
-          "item": "https://www.rocknapraca.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Inscrições",
-          "item": "https://www.rocknapraca.com/inscricao-feira/"
-        }
-      ]
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
 </head>
+
 
 <body>
 
@@ -122,7 +118,7 @@
     </button>
 
     <nav class="cabecalho-menu" id="menu">
-            <a href="janeiro-2026.html">Programação</a>
+            <a href="esteio-jan-2026.html">Programação</a>
             <a href="sobre.html">Sobre</a>
             <div class="menu-item">
                 <button class="menu-toggle" aria-expanded="false">
