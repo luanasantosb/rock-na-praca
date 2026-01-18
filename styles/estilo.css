@@ -557,7 +557,7 @@ h4{
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: 80%;
+  width: 90%;
 }
 
 .secao-cartoes-top {
@@ -572,6 +572,12 @@ h4{
 .secao-cartoes-top article {
   flex: 0 0 30%;
 }
+
+.secao-cartoes-top section,
+.secao-cartoes-top article {
+  flex: 1 1 100%;
+}
+
 .cartao-top {
   background: var(--bkg-secundario);
   border: 2px dashed var(--verde);
@@ -608,7 +614,7 @@ h4{
   width: 100%;
   max-width: 900px;
   margin: 40px auto;  
-  padding: 32px 28px;
+  padding: 24px 18px;
   background: var(--bkg-secundario);
   color: var(--branco);
   border-radius: 16px;
@@ -685,7 +691,7 @@ h4{
   border: 1px dashed var(--verde);
   padding: 5px;
   position: relative;
-  width: 70%;
+  width: 90%;
   height: 80vh; 
 }
 
@@ -839,13 +845,71 @@ h4{
   100% { transform: translate(0) rotate(0); }
 }
 
-@media (max-width: 500px) {
-  .grupo-cartoes {
-    grid-template-columns: 1fr;
+
+@media (max-width: 1024px) {
+  .programacao {
+    width: 95%;
+    gap: 40px;
   }
 
-  .cartoes-top-titulo {
-    font-size: 1.2rem;
+  .cartao-top.infos h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .secao-cartoes-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cartao-top.infos h1 {
+    font-size: 2rem;
+  }
+
+  .cartao-top.infos p {
+    font-size: 1.1rem;
+  }
+
+  .cartao-top.infos button {
+    width: 100%;
+  }
+
+  .cartao-top.bike {
+    height: auto;
+  }
+
+  .modal-conteudo {
+    width: 95%;
+    height: 85vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .programacao {
+    margin: 30px auto;
+    gap: 30px;
+  }
+
+  .cartao-top.infos {
+    padding: 18px 14px;
+  }
+
+  .cartao-top.infos h1 {
+    font-size: 1.6rem;
+  }
+
+  .cartao-top.infos p {
+    font-size: 1rem;
+  }
+
+  .cartao {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .grupo-cartoes {
+    gap: 10px;
   }
 }
 
