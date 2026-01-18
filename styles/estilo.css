@@ -561,11 +561,17 @@ h4{
 }
 
 .secao-cartoes-top {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.secao-cartoes-top section {
+  flex: 0 0 70%;
 }
 
+.secao-cartoes-top article {
+  flex: 0 0 30%;
+}
 .cartao-top {
   background: var(--bkg-secundario);
   border: 2px dashed var(--verde);
@@ -574,11 +580,6 @@ h4{
   animation: fadeInUp 0.35s ease-out both;
   overflow: hidden;
 }
-
-.cartao-top.bike {
-  border-color: var(--rosa);
-}
-
 
 .cartao-top::after {
   content: "";
@@ -590,7 +591,6 @@ h4{
   transform: rotate(-4deg);
   box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
-
 
 .cartao-top {
   clip-path: polygon(
@@ -604,60 +604,71 @@ h4{
   );
 }
 
+.cartao-top.infos {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;  
+  padding: 32px 28px;
+  background: var(--bkg-secundario);
+  color: var(--branco);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.tag {
+.cartao-top.infos .tag {
+  align-self: flex-start;
   background: var(--amarelo);
   color: var(--preto);
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   font-weight: 900;
-  padding: 4px 10px;
-  display: inline-block;
-  margin-bottom: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
 }
-
-.cartoes-top-titulo {
-  font-size: 1.4rem;
-  letter-spacing: 2px;
+.cartao-top.infos h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 10px 0 14px;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  color:var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.detalhes-evento p {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  line-height: 1.3;
+.cartao-top.infos p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 0;
+   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.link-bike a {
-  color: var(--verde);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--verde);
-  transition: 0.3s;
-}
-
-.link-bike a:hover {
-  color: var(--rosa);
-  border-bottom-color: transparent;
-}
-
-
-.btn-mapa {
-  margin-top: 10px;
-  padding: 8px 14px;
+.cartao-top.infos button {
+  margin-top: 1rem auto;
+  font-size: 1.2rem;
+  font-weight: 900;
+  padding: 14px 22px;
   background: var(--verde);
   color: var(--preto);
   border: none;
-  font-weight: 900;
+  width: 50%;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+   justify-content: center;
+  align-items: center;
 }
 
-.btn-mapa:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 0 8px var(--verde);
+.cartao-top.infos button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--verde);
 }
-
 
 .modal {
   position: fixed;
@@ -699,6 +710,39 @@ h4{
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+/* -- BIKE -- */
+
+.cartao-top.bike {
+  border-color: var(--rosa);
+  height: 200px;
+}
+
+.cartao-top.bike h2{
+  font-size: 1.9rem;
+  color:var(--branco);
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartao-top.bike p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.cartao-top.bike a {
+  color: var(--verde);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--verde);
+  transition: 0.3s;
+}
+
+.cartao-top.bike a:hover {
+  color: var(--rosa);
+  border-bottom-color: transparent;
 }
 
 .secao-cartoes-bottom {
