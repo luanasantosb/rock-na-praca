@@ -559,13 +559,11 @@ h4{
   width: 80%;
 }
 
-
 .secao-cartoes-top {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
 }
-
 
 .cartao-top {
   background: var(--bkg-secundario);
@@ -575,7 +573,6 @@ h4{
   animation: fadeInUp 0.35s ease-out both;
   overflow: hidden;
 }
-
 
 .cartao-top.bike {
   border-color: var(--rosa);
@@ -719,7 +716,7 @@ h4{
   font-size: 1.4rem;
   letter-spacing: 2px;
   border-left: 4px solid var(--verde);
-  padding-left: 10px;
+  padding-left: 1rem;
   text-transform: uppercase;
   color:var(--branco);
 }
@@ -797,8 +794,6 @@ h4{
 }
 
 
-
-
 /* ========================= */
 /* ** INSCRIÇÕES / SOBRE ** */
 /* ========================= */
@@ -815,32 +810,21 @@ h4{
 }
 
 .sobre-titulo,
-.bandas-titulo,
+.bandas h2,
 .feira-titulo {
   font-size: 2.2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--verde);
   position: relative;
   font-family: var(--fonte-principal);
-}
-
-.sobre-titulo::after,
-.bandas-titulo::after,
-.feira-titulo::after {
-  content: "";
-  display: block;
-  width: 90px;
-  height: 4px;
-  background: var(--branco);
-  margin-top: 12px;
-  border-radius: 2px;
+  border-left: 4px solid var(--branco);
+  padding-left: 1rem;
 }
 
 .sobre-texto p,
-.bandas-texto p,
+.bandas p,
 .feira-texto p {
   margin-bottom: 18px;
   font-size: 1rem;
@@ -848,18 +832,16 @@ h4{
   font-family: var(--fonte-textos);
 }
 
-.sobre-texto strong,
-.bandas-texto strong,
-.feira-texto strong {
-  color: var(--verde);
-}
-
-.subtitulo-bandas,
+.bandas h3,
 .subtitulo-feira {
   text-transform: uppercase;
+  color:var(--verde);
+  font-size: 1.5rem;
+  padding-left: 1rem;
+ 
 }
 
-.bandas-lista,
+.bandas ul,
 .feira-lista {
   list-style: none;
   padding: 0;
@@ -869,7 +851,7 @@ h4{
   color: var(--branco);
 }
 
-.bandas-item,
+.bandas li,
 .feira-item {
   margin-bottom: 0.8rem;
   font-size: 1rem;
@@ -877,15 +859,21 @@ h4{
 }
 
 .feira-btn,
-.bandas-btn {
+.bandas-btn{
   margin: 3rem 0;
   text-align: center;
+  color:var(--branco);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 1rem;
 }
+
 
 .sobre-texto a {
   color: var(--verde);
   text-decoration: none;
-  border-bottom: 1px dashed var(--verde);
+  border-bottom: 1px dased var(--verde);
   transition: 0.3s;
 }
 
@@ -1028,19 +1016,19 @@ h4{
   max-width: 520px;
   margin: 3rem auto;
   padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, .08);
-  background: transparent;
+  background: var(--bkg-secundario);
 }
 
 
 .titulo-carrinho {
   text-align: center;
   margin-bottom: 1.2rem;
-  font-size: .95rem;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--rosa);
+  font-family: var(--fonte-principal);
 }
 
 
@@ -1053,7 +1041,7 @@ h4{
 
 .lista-carrinho li {
   padding: .4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  border-bottom: 1px solid #666;
 }
 
 .lista-carrinho li strong {
@@ -1081,13 +1069,13 @@ h4{
 
 .botao-finalizar-pedido {
   background: none;
-  border: none;
   color: var(--branco);
   font-size: .75rem;
   letter-spacing: .08em;
   cursor: pointer;
   padding: .3rem .5rem;
   border: 1px solid var(--rosa);
+  text-transform: uppercase;
 }
 
 .botao-esvaziar {
