@@ -715,7 +715,7 @@ h4{
 
 .cartao-top.bike {
   border-color: var(--rosa);
-  height: 200px;
+  height: 300px;
 }
 
 .cartao-top.bike h2{
@@ -726,6 +726,7 @@ h4{
   justify-content: center;
   align-items: center;
 }
+
 .cartao-top.bike p{
   display: flex;
   justify-content: center;
@@ -733,6 +734,16 @@ h4{
   font-size: 1rem;
   line-height: 1.5;
 }
+
+.cartao-top.bike p strong{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color:var(--rosa);
+}
+
 .cartao-top.bike a {
   color: var(--verde);
   text-decoration: none;
