@@ -43,6 +43,7 @@ h2,
 h3,
 h4{
   font-family: var(--fonte-principal);
+  color:var(--branco);
 }
 
 .visually-hidden {
@@ -795,10 +796,88 @@ h4{
 
 
 /* ========================= */
-/* ** INSCRIÇÕES / SOBRE ** */
+/*                    SOBRE                      */
 /* ========================= */
 
-.sobre,
+.sobre{
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.sobre h2{
+   font-size: 2.2rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--verde);
+  position: relative;
+  font-family: var(--fonte-principal);
+  border-left: 4px solid var(--branco);
+  padding-left: 1rem;
+}
+
+.sobre-texto p{
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+}
+
+.sobre-texto a {
+  color: var(--verde);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--verde);
+  transition: 0.3s;
+}
+
+.sobre-texto a:hover {
+  color: var(--rosa);
+  border-bottom-color: transparent;
+}
+
+/* Telas médias (tablets) */
+@media (max-width: 900px) {
+  .sobre {
+    max-width: 90%;
+    padding: 1.5rem 1rem;
+  }
+
+  .sobre h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    letter-spacing: 1.5px;
+  }
+
+  .sobre-texto p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .sobre {
+    max-width: 95%;
+    padding: 1rem 1rem;
+  }
+
+  .sobre h2 {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    letter-spacing: 1px;
+  }
+
+  .sobre-texto p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ** INSCRIÇÕES** */
+
 .bandas,
 .feira {
   max-width: 80%;
@@ -809,9 +888,8 @@ h4{
   flex-direction: column;
 }
 
-.sobre-titulo,
 .bandas h2,
-.feira-titulo {
+.feira h2 {
   font-size: 2.2rem;
   margin: 2rem 0;
   text-transform: uppercase;
@@ -823,9 +901,8 @@ h4{
   padding-left: 1rem;
 }
 
-.sobre-texto p,
 .bandas p,
-.feira-texto p {
+.feira p {
   margin-bottom: 18px;
   font-size: 1rem;
   color: var(--branco);
@@ -833,16 +910,16 @@ h4{
 }
 
 .bandas h3,
-.subtitulo-feira {
+.feira h3 {
   text-transform: uppercase;
   color:var(--verde);
   font-size: 1.5rem;
   padding-left: 1rem;
- 
+
 }
 
 .bandas ul,
-.feira-lista {
+.feira ul {
   list-style: none;
   padding: 0;
   margin: 0.2rem 0;
@@ -852,156 +929,38 @@ h4{
 }
 
 .bandas li,
-.feira-item {
+.feira li {
   margin-bottom: 0.8rem;
   font-size: 1rem;
   font-family: var(--fonte-textos);
 }
 
-.feira-btn,
-.bandas-btn{
-  margin: 3rem 0;
-  text-align: center;
-  color:var(--branco);
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding-left: 1rem;
-}
-
-
-.sobre-texto a {
-  color: var(--verde);
-  text-decoration: none;
-  border-bottom: 1px dased var(--verde);
-  transition: 0.3s;
-}
-
-.feira-btn a,
-.bandas-btn a {
-  display: inline-flex;
-  width: fit-content;
-  max-width: 100%;
-  padding: 14px 32px;
+.bandas-btn,
+.feira-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  text-decoration: none; 
+  font-weight: 700;
   background-color: transparent;
   color: var(--branco);
-  font-family: var(--fonte-principal);
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  border: 2px solid var(--verde);
-  text-decoration: none;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
-  will-change: transform;
+  border:1px dashed var(--verde);             
+  cursor: pointer;         
+  transition: transform .2s, background-color .2s;
+  margin-bottom: 1rem;
 }
 
-.sobre-texto a:hover {
-  color: var(--rosa);
-  border-bottom-color: transparent;
-}
-
-.feira-btn a:hover,
-.bandas-btn a:hover {
+.bandas-btn:hover,
+.feira-btn:hover {
+  transform: translateY(-2px);
+  color:var(--preto);
   background-color: var(--verde);
-  color: var(--preto);
-  transform: scale(1.02);
+  border:1px solid var(--verde);
 }
 
-
-@media (max-width: 1024px) {
-
-  .sobre,
-  .bandas,
-  .feira {
-    max-width: 90%;
-  }
-
-  .sobre-titulo,
-  .bandas-titulo,
-  .feira-titulo {
-    font-size: 2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .sobre-texto p,
-  .bandas-texto p,
-  .feira-texto p {
-    font-size: 0.95rem;
-  }
-
-  .bandas-lista,
-  .feira-lista {
-    font-size: 0.95rem;
-  }
-
-  .feira-btn a,
-  .bandas-btn a {
-    padding: 12px 28px;
-    font-size: 0.95rem;
-  }
+.bandas-btn:active,
+.feira-btn:active {
+  transform: translateY(0px);
 }
-
-@media (max-width: 768px) {
-
-  .sobre,
-  .bandas,
-  .feira {
-    max-width: 95%;
-  }
-
-  .sobre-titulo,
-  .bandas-titulo,
-  .feira-titulo {
-    font-size: 1.8rem;
-  }
-
-  .sobre-texto p,
-  .bandas-texto p,
-  .feira-texto p {
-    font-size: 0.9rem;
-  }
-
-  .bandas-lista,
-  .feira-lista {
-    font-size: 0.9rem;
-  }
-
-  .feira-btn a,
-  .bandas-btn a {
-    padding: 10px 24px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .sobre-titulo,
-  .bandas-titulo,
-  .feira-titulo {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .sobre-texto p,
-  .bandas-texto p,
-  .feira-texto p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .bandas-lista,
-  .feira-lista {
-    font-size: 0.85rem;
-  }
-
-  .feira-btn a,
-  .bandas-btn a {
-    padding: 8px 20px;
-    font-size: 0.85rem;
-  }
-}
-
 
 
 /* -- LOJA --*/
@@ -1358,6 +1317,7 @@ h4{
   text-transform: uppercase;
   font-weight: 600;
   margin: 0;
+  color:var(--preto);
 }
 
 .centro-textos {
