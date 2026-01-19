@@ -516,9 +516,23 @@ h1,h2,h3,h4 {
 /*            PROGRAMAÇÃO              */
 /* ========================= */
 
-/* =========================
-   CONTAINER PRINCIPAL
-========================= */
+.programacao,
+.secao-cartoes-top,
+.secao-cartoes-bottom {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.secao-cartoes-top > section,
+.secao-cartoes-top > article,
+.grupo-cartoes,
+.cartao-top,
+.cartao {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .programacao {
   display: flex;
   flex-direction: column;
@@ -529,29 +543,13 @@ h1,h2,h3,h4 {
   gap: 2rem;
 }
 
-/* =========================
-   SEÇÃO TOPO
-========================= */
+
 .secao-cartoes-top {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* desktop topo */
-@media (min-width: 768px) {
-  .secao-cartoes-top {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .secao-cartoes-top > section { flex: 2; }
-  .secao-cartoes-top > article { flex: 1; }
-}
-
-/* =========================
-   CARTÃO TOP
-========================= */
 .cartao-top {
   background: var(--bg-preto);
   border: 4px dashed var(--verde);
@@ -617,7 +615,6 @@ h1,h2,h3,h4 {
   transform: translateY(-2px);
 }
 
-/* variação bike */
 .cartao-top.bike { border-color: var(--rosa); }
 
 .cartao-top.bike h2 {
@@ -645,35 +642,17 @@ h1,h2,h3,h4 {
   text-transform: uppercase;
 }
 
-/* =========================
-   SEÇÃO BOTTOM
-========================= */
 .secao-cartoes-bottom {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* GRID DOS CARTÕES — SEMPRE GRID */
 .grupo-cartoes {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: 1fr; /* mobile */
+  grid-template-columns: 1fr;
   align-items: start;
-}
-
-/* tablet */
-@media (min-width: 600px) {
-  .grupo-cartoes {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* desktop */
-@media (min-width: 1024px) {
-  .grupo-cartoes {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
 }
 
 .grupo-cartoes-titulo {
@@ -683,9 +662,6 @@ h1,h2,h3,h4 {
   text-transform: uppercase;
 }
 
-/* =========================
-   CARTÃO
-========================= */
 .cartao {
   background: var(--bg-preto);
   padding: 0.9rem;
@@ -704,9 +680,6 @@ h1,h2,h3,h4 {
   animation: skane 0.25s linear;
 }
 
-/* =========================
-   MODAL
-========================= */
 .modal {
   position: fixed;
   inset: 0;
@@ -753,9 +726,7 @@ h1,h2,h3,h4 {
   cursor: pointer;
 }
 
-/* =========================
-   ANIMAÇÃO
-========================= */
+
 @keyframes skane {
   0% { transform: translate(0) rotate(0); }
   15% { transform: translate(-1px, 1px) rotate(-0.5deg); }
@@ -764,6 +735,27 @@ h1,h2,h3,h4 {
   60% { transform: translate(1px, 1px) rotate(0.3deg); }
   75% { transform: translate(-1px, -1px) rotate(-0.2deg); }
   100% { transform: translate(0) rotate(0); }
+}
+
+@media (min-width: 1024px) {
+  .grupo-cartoes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .secao-cartoes-top {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .secao-cartoes-top > section { flex: 2; }
+  .secao-cartoes-top > article { flex: 1; }
+}
+
+@media (min-width: 600px) {
+  .grupo-cartoes {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 
