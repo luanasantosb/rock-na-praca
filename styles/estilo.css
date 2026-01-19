@@ -1372,7 +1372,9 @@ form label {
   }
 }
 
-/* -- RODAPÉ -- */
+/* ========================= */
+/*                    RODAPE                    */
+/* ========================= */
 
 
 .rodape {
@@ -1451,37 +1453,23 @@ form label {
 }
 
 .esquerda-realizacao img {
-  width: 75px;
+  width: 100px;
   opacity: 0.9;
 }
 
-
-.direita-contato a {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  text-decoration: none;
-  color: inherit;
-  font-family: var(--fonte-textos);
-}
-
-
 .direita-contato img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   opacity: 0.75;
 }
-
 
 .redes-sociais {
   display: flex;
   gap: 0.4rem;
 }
 
-
 .rodape a:hover {
-  opacity: 0.9;
+  transform: scale(1.08);
 }
 
 
