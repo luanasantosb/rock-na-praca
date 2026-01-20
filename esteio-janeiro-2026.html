@@ -274,6 +274,7 @@
             <iframe id="link-mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
             </iframe>
 
+
           </div>
 
         </div>
@@ -487,13 +488,8 @@
       const modal = document.getElementById("modalMapa");
       const iframe = document.getElementById("link-mapa");
 
-      // Abre o modal primeiro
       modal.classList.add("ativo");
-
-      // Pequeno delay para garantir renderização
-      setTimeout(() => {
-        iframe.src = linkMapaGlobal;
-      }, 100);
+      iframe.src = linkMapaGlobal;
     }
 
     function fecharMapa() {
@@ -503,6 +499,7 @@
       modal.classList.remove("ativo");
       iframe.src = "";
     }
+
 
 
   </script>
