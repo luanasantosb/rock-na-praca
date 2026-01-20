@@ -5,8 +5,15 @@
   --rosa: #cb5d9f;
   --branco: #fffef6;
   --preto: #212121;
-  --bg-preto: #121212;
-  --fonte-principal: 'Bebas Neue', sans-serif;
+
+  /*transparencia*/
+  --amarelo-soft: rgba(234, 192, 108, 0.18);
+  --azul-soft: rgba(0, 107, 181, 0.12); 
+  --verde-soft: rgba(110, 212, 122, 0.15);
+  --rosa-soft: rgba(203, 93, 159, 0.15);
+  --overlay-dark: rgba(33, 33, 33, 0.6);
+  
+  --fonte-titulos: 'Bebas Neue', sans-serif;
   --fonte-textos: 'Open Sans', sans-serif;
 }
 
@@ -37,7 +44,7 @@ p,ul,li {
 }
 
 h1,h2,h3,h4 {
-  font-family: var(--fonte-principal);
+  font-family: var(--fonte-titulos);
   color: var(--branco);
 }
 
@@ -102,7 +109,7 @@ h1,h2,h3,h4 {
 
 .cabecalho-menu a,
 .menu-toggle {
-  font: 2rem var(--fonte-principal);
+  font: 2rem var(--fonte-titulos);
   color: var(--verde);
   text-decoration: none;
   text-transform: uppercase;
@@ -168,7 +175,7 @@ h1,h2,h3,h4 {
 .submenu a {
   display: block;
   padding: 0.5rem 0;
-  font: 1.4rem var(--fonte-principal);
+  font: 1.4rem var(--fonte-titulos);
   color: var(--verde);
   text-decoration: none;
 }
@@ -304,7 +311,7 @@ h1,h2,h3,h4 {
   margin: 0;
   color: var(--verde);
   line-height: 1;
-  font-family: var(--fonte-principal);
+  font-family: var(--fonte-titulos);
 }
 
 .secao-contador p {
@@ -328,7 +335,7 @@ h1,h2,h3,h4 {
   white-space: nowrap;
 }
 
-.geral-conteudo {
+.bloco-principal {
   max-width: 1200px;
   margin-inline: auto;
   padding: 3rem 1.5rem;
@@ -337,14 +344,14 @@ h1,h2,h3,h4 {
   gap: 1rem;
 }
 
-.cartao-resumo-texto {
+.apresentacao-texto {
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.cartao-resumo-texto h3 {
+.apresentacao-texto h3 {
   font-size: clamp(1.6rem, 2.5vw, 2rem);
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -352,21 +359,21 @@ h1,h2,h3,h4 {
   color: var(--verde);
 }
 
-.cartao-resumo-texto p {
+.apresentacao-texto p {
   font-size: 1.3rem;
   line-height: 1.5;
   color: var(--branco);
 }
 
-.cartao-resumo-video {
+.apresentacao-video {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 4px dashed var(--verde);
+  border: 8px dashed var(--verde);
 }
 
-.cartao-resumo-video iframe {
+.apresentacao-video iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -377,7 +384,7 @@ h1,h2,h3,h4 {
   display: flex;
 }
 
-.card-lateral {
+.videos-conteudo {
   width: 100%;
   padding: 1rem;
   display: flex;
@@ -385,7 +392,7 @@ h1,h2,h3,h4 {
   gap: 1rem;
 }
 
-.card-lateral h3 {
+.videos-conteudo h3 {
   font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -393,13 +400,13 @@ h1,h2,h3,h4 {
   color: var(--verde);
 }
 
-.videos-lateral {
+.videos-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-.cartao-video {
+.video-cartao {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -407,14 +414,14 @@ h1,h2,h3,h4 {
   border: 2px dashed var(--verde);
 }
 
-.cartao-video iframe {
+.video-cartao iframe {
   width: 100%;
   height: 100%;
   border: none;
   display: block;
 }
 
-.btn-videos {
+.videos-btn {
   margin-top: auto;
   padding: 1rem 1rem;
   text-align: center;
@@ -423,14 +430,14 @@ h1,h2,h3,h4 {
   text-transform: uppercase;
   color: var(--branco);
   text-decoration: none;
-  background: transparent;
+  background: var(--overlay-dark);
   border: 2px dashed var(--verde);
 }
 
 .btn-videos:hover {
   color: var(--preto);
   background-color: var(--verde);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 @media (max-width: 1024px) {
@@ -551,8 +558,8 @@ h1,h2,h3,h4 {
 }
 
 .cartao-top {
-  background: var(--bg-preto);
-  border: 4px dashed var(--verde);
+  background: var(--overlay-dark);
+  border: 10px dashed var(--verde);
   padding: 1.2rem;
   position: relative;
   overflow: hidden;
@@ -663,7 +670,7 @@ h1,h2,h3,h4 {
 }
 
 .cartao {
-  background: var(--bg-preto);
+  background: var(--azul-soft);
   padding: 0.9rem;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -699,8 +706,8 @@ h1,h2,h3,h4 {
 }
 
 .modal-conteudo {
-  background: var(--bg-preto);
-  border: 4px dashed var(--verde);
+  background: var(--overlay-dark);
+  border: 5px dashed var(--verde);
   width: min(95%, 900px);
   height: min(90vh, 600px);
   padding: 0.5rem;
@@ -715,10 +722,10 @@ h1,h2,h3,h4 {
 
 .fechar-modal {
   position: absolute;
-  top: -18px;
-  right: -18px;
-  width: 44px;
-  height: 44px;
+  top: 150px;
+  right: 500px;
+  width: 50px;
+  height: 50px;
   background: var(--rosa);
   color: var(--branco);
   border: none;
@@ -779,7 +786,7 @@ h1,h2,h3,h4 {
   letter-spacing: 2px;
   color: var(--verde);
   position: relative;
-  font-family: var(--fonte-principal);
+  font-family: var(--fonte-titulos);
   border-left: 4px solid var(--branco);
   padding-left: 1rem;
 }
@@ -859,7 +866,7 @@ h1,h2,h3,h4 {
   letter-spacing: 2px;
   color: var(--verde);
   position: relative;
-  font-family: var(--fonte-principal);
+  font-family: var(--fonte-titulos);
   border-left: 4px solid var(--branco);
   padding-left: 1rem;
 }
