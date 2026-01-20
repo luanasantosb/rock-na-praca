@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow">
-  <meta http-equiv="content-language" content="pt-BR">
 
   <!-- SEO principal -->
   <title>Rock na Praça em Esteio | Evento de Rock Gratuito – Janeiro 2026</title>
@@ -245,17 +244,17 @@
   <section class="cartao-top infos">
     <span class="tag">GRATUITO</span>
 
-    <h1>
+    <h1 id="titulo-evento">
       🎸 ROCK NA PRAÇA
     </h1>
-      <p>📅 25 de janeiro • 15h</p>
-      <p>📌 Praça Coração de Maria</p>
-      <p>Padre Felipe • Centro • Esteio</p>
+      <p id="dia-hora">📅 25 de janeiro •  15h</p>
+      <p id="local">📌 Praça Coração de Maria</p>
+      <p id="endereco">Padre Felipe • Centro • Esteio</p>
 
       <button class="btn-mapa" type="button" onclick="abrirMapa()">
         📍 Ver no mapa
       </button>
-    </div>
+ 
 
   </section>
 
@@ -265,8 +264,7 @@
 
           <button class="fechar-modal" onclick="fecharMapa()">✕</button>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d6920.849033467621!2d-51.17643066142482!3d-29.852028750083687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x95196f61fd4d6127%3A0x99bb6b8a91e8aed6!2sEsta%C3%A7%C3%A3o%20Esteio%20Trensurb%20-%20Rua%20Maur%C3%ADcio%20Cardoso%20-%20Centro%2C%20Esteio%20-%20RS!3m2!1d-29.852066699999998!2d-51.1794018!4m5!1s0x95196f6ddba74b9f%3A0x57654fe357686cfb!2sPra%C3%A7a%20Cora%C3%A7%C3%A3o%20de%20Maria%20-%20R.%20Padre%20Felipe%20-%20Centro%2C%20Esteio%20-%20RS%2C%2093280-000!3m2!1d-29.8499035!2d-51.164249999999996!5e0!3m2!1spt-BR!2sbr!4v1768671984763!5m2!1spt-BR!2sbr">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d6920.849033467621!2d-51.17643066142482!3d-29.852028750083687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x95196f61fd4d6127%3A0x99bb6b8a91e8aed6!2sEsta%C3%A7%C3%A3o%20Esteio%20Trensurb%20-%20Rua%20Maur%C3%ADcio%20Cardoso%20-%20Centro%2C%20Esteio%20-%20RS!3m2!1d-29.852066699999998!2d-51.1794018!4m5!1s0x95196f6ddba74b9f%3A0x57654fe357686cfb!2sPra%C3%A7a%20Cora%C3%A7%C3%A3o%20de%20Maria%20-%20R.%20Padre%20Felipe%20-%20Centro%2C%20Esteio%20-%20RS%2C%2093280-000!3m2!1d-29.8499035!2d-51.164249999999996!5e0!3m2!1spt-BR!2sbr!4v1768671984763!5m2!1spt-BR!2sbr" id="link-mapa">
           </iframe>
         </div>
 
@@ -294,27 +292,27 @@
       <section class="grupo-cartoes">
         <h2 class="grupo-cartoes-titulo">Quem faz o som</h2>
 
-        <a href="https://www.instagram.com/purpleweedoriginal/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/purpleweedoriginal/" target="_blank" rel="noopener" class="cartao" id="banda1">
           Purple Weed
         </a>
 
-        <a href="https://www.instagram.com/soldeicarobanda/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/soldeicarobanda/" target="_blank" rel="noopener" class="cartao" id="banda2">
           Sol de Ícaro
         </a>
 
-        <a href="https://www.instagram.com/bandasindromerock/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/bandasindromerock/" target="_blank" rel="noopener" class="cartao" id="banda3">
           Síndrome
         </a>
 
-        <a href="https://www.instagram.com/davidarcaideofic/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/davidarcaideofic/" target="_blank" rel="noopener" class="cartao" id="banda4">
           David Arcade e os Elegantes
         </a>
 
-        <a href="https://www.instagram.com/inimigoeuhc/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/inimigoeuhc/" target="_blank" rel="noopener" class="cartao" id="banda5">
           Inimigo Eu
         </a>
 
-        <a href="https://www.instagram.com/lucashankee/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/lucashankee/" target="_blank" rel="noopener" class="cartao" id="banda6">
           Lucas Hanke &amp; O Cromatismo de Sensações
         </a>
       </section>
@@ -323,21 +321,35 @@
       <section class="grupo-cartoes">
         <h2 class="grupo-cartoes-titulo">Mercado underground</h2>
 
-        <a href="https://www.instagram.com/moonerd_store" class="cartao">MooNerd Store</a>
-        <a href="https://www.instagram.com/horripilos" class="cartao">Horripilos</a>
-        <a href="https://www.instagram.com/brecho.viralata" class="cartao">Brechó Vira Lata</a>
-        <a href="https://www.instagram.com/itemsstoreoficial" class="cartao">Items Store</a>
-        <a href="https://www.instagram.com/catsrockersstore" class="cartao">Cats Rocks Store</a>
-        <a href="https://www.instagram.com/orbitaloja" class="cartao">Órbita</a>
-        <a href="https://www.instagram.com/subversive.atelier" class="cartao">Subversive Atelier</a>
-        <a href="https://www.instagram.com/riffartefatos" class="cartao">Riff Artefatos</a>
-        <a href="https://www.instagram.com/laranjaciclica/" class="cartao">Laranja Cíclica Brechó</a>
-        <a href="https://www.instagram.com/maldita3d/" class="cartao">Maldita</a>
-        <a href="https://www.instagram.com/loja_refugionerd/" class="cartao">Refúgio Nerd</a>
-        <a href="https://www.instagram.com/ChimadaPrih/" class="cartao">Chima da Prih</a>
-        <a href="./inscricao-feira.html" class="cartao destaque">Ritmo da feira… quase lá 🎶</a>
-        <a href="./inscricao-feira.html" class="cartao destaque">Segure sua sacola, vem novidade 🛍️</a>
-        <a href="./inscricao-feira.html" class="cartao destaque">Cuidado: criatividade liberada ⚡</a>
+        <a href="https://www.instagram.com/moonerd_store" class="cartao" id="loja1">MooNerd Store</a>
+
+        <a href="https://www.instagram.com/horripilos" class="cartao" id="loja2">Horripilos</a>
+
+        <a href="https://www.instagram.com/brecho.viralata" class="cartao" id="loja3">Brechó Vira Lata</a>
+
+        <a href="https://www.instagram.com/itemsstoreoficial" class="cartao" id="loja4">Items Store</a>
+
+        <a href="https://www.instagram.com/catsrockersstore" class="cartao" id="loja5">Cats Rocks Store</a>
+       
+        <a href="https://www.instagram.com/orbitaloja" class="cartao" id="loja6">Órbita</a>
+        
+        <a href="https://www.instagram.com/subversive.atelier" class="cartao" id="loja7">Subversive Atelier</a>
+        
+        <a href="https://www.instagram.com/riffartefatos" class="cartao" id="loja8">Riff Artefatos</a>
+        
+        <a href="https://www.instagram.com/laranjaciclica/" class="cartao" id="loja9">Laranja Cíclica Brechó</a>
+        
+        <a href="https://www.instagram.com/maldita3d/" class="cartao" id="loja10">Maldita</a>
+        
+        <a href="https://www.instagram.com/loja_refugionerd/" class="cartao" id="loja11">Refúgio Nerd</a>
+        
+        <a href="https://www.instagram.com/ChimadaPrih/" class="cartao" id="loja12">Chima da Prih</a>
+        
+        <a href="./inscricao-feira.html" class="cartao destaque" id="loja13">Ritmo da feira… quase lá 🎶</a>
+        
+        <a href="./inscricao-feira.html" class="cartao destaque" id="loja14">Segure sua sacola, vem novidade 🛍️</a>
+        
+        <a href="./inscricao-feira.html" class="cartao destaque" id="loja15">Cuidado: criatividade liberada ⚡</a>
       </section>
 
       <!-- EXTRAS -->
@@ -353,23 +365,23 @@
       <section class="grupo-cartoes">
         <h2 class="grupo-cartoes-titulo">Amigos do rock</h2>
 
-        <a href="https://www.instagram.com/prefaesteio/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/prefaesteio/" target="_blank" rel="noopener" class="cartao" id="apoio1">
           Prefeitura de Esteio
         </a>
 
-        <a href="https://www.instagram.com/lojabackinblack/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/lojabackinblack/" target="_blank" rel="noopener" class="cartao" id="apoio2">
           Back in Black
         </a>
 
-        <a href="https://www.instagram.com/chopphoffnung_/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/chopphoffnung_/" target="_blank" rel="noopener" class="cartao" id="apoio3" >
           Chopp Hoffnung
         </a>
 
-        <a href="https://www.instagram.com/bandasindependenteslocais/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/bandasindependenteslocais/" target="_blank" rel="noopener" class="cartao" id="apoio4">
           B.I.L
         </a>
 
-        <a href="https://www.instagram.com/skatchebar/" target="_blank" rel="noopener" class="cartao">
+        <a href="https://www.instagram.com/skatchebar/" target="_blank" rel="noopener" class="cartao" id="apoio5">
           Skatchê Bar
         </a>
       </section>
