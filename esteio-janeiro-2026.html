@@ -478,24 +478,33 @@
       return `${partes[2]}/${partes[1]}/${partes[0]}`;
     }
 
-    // ⬇️ AGORA ESTÃO NO ESCOPO GLOBAL ⬇️
     function abrirMapa() {
       if (!linkMapaGlobal) {
         alert("Mapa ainda não carregou 😅");
         return;
       }
 
+      const modal = document.getElementById("modalMapa");
       const iframe = document.getElementById("link-mapa");
-      iframe.src = linkMapaGlobal;
 
-      document.getElementById("modalMapa").classList.add("ativo");
+      // Abre o modal primeiro
+      modal.classList.add("ativo");
+
+      // Pequeno delay para garantir renderização
+      setTimeout(() => {
+        iframe.src = linkMapaGlobal;
+      }, 100);
     }
-
 
     function fecharMapa() {
-      document.getElementById("modalMapa").classList.remove("ativo");
-      document.getElementById("link-mapa").src = "";
+      const modal = document.getElementById("modalMapa");
+      const iframe = document.getElementById("link-mapa");
+
+      modal.classList.remove("ativo");
+      iframe.src = "";
     }
+
+
   </script>
 
 
