@@ -302,32 +302,23 @@
         <section class="grupo-cartoes">
           <h2 class="grupo-cartoes-titulo">Quem faz o som</h2>
 
-          <a href="https://www.instagram.com/purpleweedoriginal/" target="_blank" rel="noopener" class="cartao"
-            id="banda1">
-            Purple Weed
+          <a href="" target="_blank" rel="noopener" class="cartao"
+            id="banda1"> </a>
+
+          <a href="" target="_blank" rel="noopener" class="cartao"
+            id="banda2"></a>
+
+          <a href="" target="_blank" rel="noopener" class="cartao"
+            id="banda3"></a>
+
+          <a href="" target="_blank" rel="noopener" class="cartao"
+            id="banda4"></a>
+
+          <a href="" target="_blank" rel="noopener" class="cartao" id="banda5">
           </a>
 
-          <a href="https://www.instagram.com/soldeicarobanda/" target="_blank" rel="noopener" class="cartao"
-            id="banda2">
-            Sol de Ícaro
-          </a>
-
-          <a href="https://www.instagram.com/bandasindromerock/" target="_blank" rel="noopener" class="cartao"
-            id="banda3">
-            Síndrome
-          </a>
-
-          <a href="https://www.instagram.com/davidarcaideofic/" target="_blank" rel="noopener" class="cartao"
-            id="banda4">
-            David Arcade e os Elegantes
-          </a>
-
-          <a href="https://www.instagram.com/inimigoeuhc/" target="_blank" rel="noopener" class="cartao" id="banda5">
-            Inimigo Eu
-          </a>
-
-          <a href="https://www.instagram.com/lucashankee/" target="_blank" rel="noopener" class="cartao" id="banda6">
-            Lucas Hanke &amp; O Cromatismo de Sensações
+          <a href="" target="_blank" rel="noopener" class="cartao" id="banda6">
+           
           </a>
         </section>
 
@@ -361,9 +352,9 @@
 
           <a href="./inscricao-feira.html" class="cartao destaque" id="loja13">Ritmo da feira… quase lá 🎶</a>
 
-          <a href="./inscricao-feira.html" class="cartao destaque" id="loja14">Segure sua sacola, vem novidade 🛍️</a>
+          <a href="" class="cartao destaque" id="loja14">Segure sua sacola, vem novidade 🛍️</a>
 
-          <a href="./inscricao-feira.html" class="cartao destaque" id="loja15">Cuidado: criatividade liberada ⚡</a>
+          <a href="" class="cartao destaque" id="loja15"></a>
         </section>
 
         <!-- EXTRAS -->
@@ -397,9 +388,7 @@
             B.I.L
           </a>
 
-          <a href="https://www.instagram.com/skatchebar/" target="_blank" rel="noopener" class="cartao" id="apoio5">
-            Skatchê Bar
-          </a>
+          <a href="" target="_blank" rel="noopener" class="cartao" id="apoio5"></a>
         </section>
 
       </section>
@@ -447,60 +436,50 @@
   </footer>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbzS3tmK-T8EQDLcqMctSA1cIaAlQnvhl2lVv7KqnWtgINUQjIZmpBlvPJ2AiOuDizaI/exec";
-    let linkMapaGlobal = "";
 
-    document.addEventListener("DOMContentLoaded", () => {
+  const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw3zJ13Ks8flI4mSyrAxc3qlec5FAN9uV3fFEW9Z2ovA6FYUfGiCryusscBnLGG4Sxn/exec";
 
-      console.log("DOM pronto ✅");
+// ====== Atualiza Infos (título, data, local, endereço, mapa) ======
+fetch(WEBAPP_URL + "?sheet=Infos")
+  .then(res => res.json())
+  .then(data => {
+    // data é um objeto {idElemento: valor, ...}
+    for (const id in data) {
+      const elem = document.getElementById(id);
+      if (!elem) continue;
 
-      fetch(API_URL)
-        .then(res => res.json())
-        .then(lista => {
-          const dados = lista[0];
-
-          document.getElementById("titulo-edicao").innerText = dados.titulo;
-          document.getElementById("dia-hora").innerText =
-            `📅 ${formatarData(dados.data)} • ⏰ ${dados.hora}`;
-          document.getElementById("local").innerText = `📍 ${dados.local}`;
-          document.getElementById("endereco").innerText = dados.endereco;
-
-          linkMapaGlobal = dados.mapa.replace(/"/g, "").trim();
-          console.log("Mapa carregado:", linkMapaGlobal);
-        })
-        .catch(err => {
-          console.error("Erro ao carregar dados:", err);
-        });
-    });
-
-    function formatarData(iso) {
-      if (!iso) return "";
-
-      const partes = iso.split("T")[0].split("-");
-      return `${partes[2]}/${partes[1]}/${partes[0]}`;
-    }
-
-    function abrirMapa() {
-      if (!linkMapaGlobal) {
-        alert("Mapa ainda não carregou 😅");
-        return;
+      if (elem.tagName === "IFRAME") {
+        elem.src = data[id];  // Atualiza iframe do mapa
+      } else {
+        elem.textContent = data[id]; // Atualiza h1, p, span, etc.
       }
-
-      const modal = document.getElementById("modalMapa");
-      const iframe = document.getElementById("link-mapa");
-
-      modal.classList.add("ativo");
-      iframe.src = linkMapaGlobal;
     }
+  })
+  .catch(err => console.error("Erro ao carregar Infos:", err));
 
-    function fecharMapa() {
-      const modal = document.getElementById("modalMapa");
-      const iframe = document.getElementById("link-mapa");
+// ====== Atualiza Cartões (bandas, lojas, extras, apoios) ======
+fetch(WEBAPP_URL + "?sheet=Cartoes")
+  .then(res => res.json())
+  .then(rows => {
+    // rows é um array de objetos [{ID do cartão, Nome do cartão, Link}, ...]
+    rows.forEach(row => {
+      const id = row["ID do cartão"];
+      const nome = row["Nome do cartão"];
+      const link = row["Link"];
+      const elem = document.getElementById(id);
+      if (!elem) return;
 
-      modal.classList.remove("ativo");
-      iframe.src = "";
-    }
+      if (elem.tagName === "A") {
+        elem.href = link || "#";
+        elem.textContent = nome || "";
+      } else if (elem.tagName === "SPAN") {
+        elem.textContent = nome || "";
+      }
+    });
+  })
+  .catch(err => console.error("Erro ao carregar Cartoes:", err));
 
+  
 
 
   </script>
