@@ -118,16 +118,34 @@ const MAX_RESULTS = 3;
 const container = document.getElementById("videos-lateral");
 
 async function carregarVideos() {
-  const url = `https://www.googleapis.com/youtube/v3/search?` +
-    `part=snippet&channelId=${UCeHYadsCTWgUghjYBnlwrxA}` +
-    `&maxResults=${3}` +
-    `&order=date&type=video&key=${API_KEY}`;
+  const url =
+    `https://www.googleapis.com/youtube/v3/search?` +
+    `part=snippet` +
+    `&channelId=${CHANNEL_ID}` +
+    `&maxResults=${MAX_RESULTS}` +
+    `&order=date&type=video` +
+    `&key=${API_KEY}`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log("Resposta da API:", data);
+
+    console.log(data); // 👈 ajuda a debugar
 
     container.innerHTML = "";
+
+    if (!data.items) {
+      container.innerHTML = "<p>Erro ao carregar vídeos.</p>";
+      return;
+    }
+
+    if (data.error) {
+  console.error("Erro da API:", data.error.message);
+  container.innerHTML = `<p>${data.error.message}</p>`;
+  return;
+}
+
 
     data.items.forEach(video => {
       const videoId = video.id.videoId;
