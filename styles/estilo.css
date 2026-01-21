@@ -811,8 +811,8 @@ h1,h2,h3,h4 {
 
 .fechar-modal {
   position: absolute;
-  top: 150px;
-  right: 500px;
+  top: 10px;
+  right: 250px;
   width: 50px;
   height: 50px;
   background: var(--rosa);
