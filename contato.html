@@ -2,6 +2,16 @@
 <html lang="pt-BR">
 <head>
 
+ <!-- Google tag (gtag.js) NÃO ALTERAR-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ENQ5CCB9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T4ENQ5CCB9');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -127,7 +137,11 @@
         </nav>
     </header>
     <main>
-        <section class="contato">
+        <h1 class="visually-hidden">
+            Rock na praça Contato
+        </h1>
+
+        <div class="contato">
             <section class="contato-conteudo">
                 <h2>Contato</h2>
                 <p>
@@ -154,10 +168,10 @@
 
                 <input type="submit" value="ENVIAR" class="contato-enviar">
             </form>
-        </section>
+        </div>
     </main>
 
-    <footer class="rodape" id="rodape">
+    <footer class="rodape">
         <div class="rodape-conteudo">
 
             <div class="esquerda-realizacao">
@@ -194,16 +208,6 @@
             </div>
         </div>
     </footer>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ENQ5CCB9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T4ENQ5CCB9');
-</script>
-
 </body>
 
 </html>
