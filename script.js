@@ -129,36 +129,28 @@ async function carregarVideos() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log("Resposta da API:", data);
 
-    console.log(data); // 👈 ajuda a debugar
-
-    container.innerHTML = "";
-
-    if (!data.items) {
-      container.innerHTML = "<p>Erro ao carregar vídeos.</p>";
+    if (data.error) {
+      console.error("Erro da API:", data.error.message);
+      container.innerHTML = `<p>${data.error.message}</p>`;
       return;
     }
 
-    if (data.error) {
-  console.error("Erro da API:", data.error.message);
-  container.innerHTML = `<p>${data.error.message}</p>`;
-  return;
-}
-
+    container.innerHTML = "";
 
     data.items.forEach(video => {
       const videoId = video.id.videoId;
+      const snippet = video.snippet;
 
       const card = document.createElement("div");
       card.className = "cartao-video";
 
       card.innerHTML = `
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/${videoId}"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+          <img src="${snippet.thumbnails.medium.url}" alt="${snippet.title}">
+          ${snippet.title}
+        </a>
+        <p>${snippet.description.substring(0, 80)}${snippet.description.length > 80 ? "..." : ""}</p>
       `;
 
       container.appendChild(card);
@@ -170,7 +162,10 @@ async function carregarVideos() {
   }
 }
 
+// Atualiza os vídeos automaticamente ao abrir a página
 carregarVideos();
+
+
 
 /*==============    LOJA ================ */
 
