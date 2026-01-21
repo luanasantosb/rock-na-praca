@@ -1,16 +1,3 @@
-/*====== MODAL ========= */
-
-
-  function abrirMapa() {
-    document.getElementById("modalMapa").classList.add("ativo");
-  }
-
-  function fecharMapa() {
-    document.getElementById("modalMapa").classList.remove("ativo");
-  }
-
-
-
 /*=====CABECALHO=====*/
 
  const btnMenu = document.getElementById("menu-hamburguer");
@@ -107,8 +94,6 @@ if (section) {
   observer.observe(section);
 }
 
-/*=============Videos================*/
-
 /*====================YOUTUBE ====================== */
 
 const API_KEY = "AIzaSyBWMWYdYgsi-dMEOS-SGTNAKsqRTSPLtvQ";
@@ -165,7 +150,15 @@ async function carregarVideos() {
 // Atualiza os vídeos automaticamente ao abrir a página
 carregarVideos();
 
+/*====== MODAL ========= */
 
+  function abrirMapa() {
+    document.getElementById("modalMapa").classList.add("ativo");
+  }
+
+  function fecharMapa() {
+    document.getElementById("modalMapa").classList.remove("ativo");
+  }
 
 /*==============    LOJA ================ */
 
