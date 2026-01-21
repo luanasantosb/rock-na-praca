@@ -107,6 +107,52 @@ if (section) {
   observer.observe(section);
 }
 
+/*=============Videos================*/
+
+/*====================YOUTUBE ====================== */
+
+const API_KEY = "AIzaSyBWMWYdYgsi-dMEOS-SGTNAKsqRTSPLtvQ";
+const CHANNEL_ID = "UCeHYadsCTWgUghjYBnlwrxA";
+const MAX_RESULTS = 3;
+
+const container = document.getElementById("videos-lateral");
+
+async function carregarVideos() {
+  const url = `https://www.googleapis.com/youtube/v3/search?` +
+    `part=snippet&channelId=${UCeHYadsCTWgUghjYBnlwrxA}` +
+    `&maxResults=${3}` +
+    `&order=date&type=video&key=${API_KEY}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    container.innerHTML = "";
+
+    data.items.forEach(video => {
+      const videoId = video.id.videoId;
+
+      const card = document.createElement("div");
+      card.className = "cartao-video";
+
+      card.innerHTML = `
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/${videoId}"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      `;
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Erro ao carregar vídeos:", error);
+    container.innerHTML = "<p>Não foi possível carregar os vídeos.</p>";
+  }
+}
+
+carregarVideos();
 
 /*==============    LOJA ================ */
 
