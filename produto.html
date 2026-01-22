@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Produto | Rock na Praça</title>
+  <link rel="stylesheet" href="/styles/estilo.css">
+</head>
+
+<body>
+
+  <div class="voltar-loja">
+    <a href="/loja.html">← Voltar à loja</a>
+  </div>
+
+  <h1 id="titulo-produto"></h1>
+
+  <div class="produto-container">
+    <div class="imagens-produto" id="imagens-produto"></div>
+
+    <div class="infos-produto">
+      <p id="preco-produto"></p>
+      <p id="descricao-produto"></p>
+
+      <label for="tamanho-produto" id="label-tamanho">Selecione o tamanho</label>
+      <select id="tamanho-produto"></select>
+
+      <label for="cor-produto" id="label-cor">Selecione a cor</label>
+      <select id="cor-produto"></select>
+
+      <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+    </div>
+  </div>
+
+  <script>
+    /* ==================== PRODUTOS ==================== */
+    const produtos = [
+      {
+        id: "camiseta-rock-na-praca-1",
+        nome: "CAMISETA MODELO #1",
+        preco: 70.00,
+        descricao: "Camiseta oficial Rock na Praça. 100% algodão.",
+        imagens: [
+          "./assets/loja/camiseta-rock-na-praca-1.webp",
+          "./assets/loja/camiseta-tabela-cores.jpeg",
+          "./assets/loja/camiseta-tabela-tamanhos.jpeg"
+        ],
+        tamanhos: ["Babylook M", "Babylook G", "Babylook GG", "Babylook XG",
+          "Camiseta PP", "Camiseta P", "Camiseta M", "Camiseta G", "Camiseta GG", "Camiseta XG", "Camiseta XXG"],
+        cores: ["Preto","Cinza Chumbo","Cinza Mescla","Preto Mescla","Cinza Médio","Branco","Marrom","Amarelo Canário","Amarelo Ouro","Amarelo Mostarda","Laranja","Vermelho","Bordô","Rosa Goiaba","Rosa Bebê","Rosa Pink","Lilás","Roxo","Verde Fluor","Azul Marinho","Azul Royal","Azul Jade","Azul Turquesa","Verde Bandeira","Verde Folha","Verde Musgo","Crua (tom cru/bege claro)","Raglan Mescla/Preto","Raglan Mescla/Bordô","Raglan Branco/Preto"]
+      },
+      {
+        id: "camiseta-rock-na-praca-2",
+        nome: "CAMISETA MODELO #2",
+        preco: 70.00,
+        descricao: "Camiseta oficial Rock na Praça. 100% algodão.",
+        imagens: [
+          "./assets/loja/camiseta-rock-na-praca-2.webp",
+          "./assets/loja/camiseta-tabela-cores.jpeg",
+          "./assets/loja/camiseta-tabela-tamanhos.jpeg"
+        ],
+        tamanhos: ["Babylook M", "Babylook G", "Babylook GG", "Babylook XG",
+          "Camiseta PP", "Camiseta P", "Camiseta M", "Camiseta G", "Camiseta GG", "Camiseta XG", "Camiseta XXG"],
+        cores: ["Preto","Cinza Chumbo","Cinza Mescla","Preto Mescla","Cinza Médio","Branco","Marrom","Amarelo Canário","Amarelo Ouro","Amarelo Mostarda","Laranja","Vermelho","Bordô","Rosa Goiaba","Rosa Bebê","Rosa Pink","Lilás","Roxo","Verde Fluor","Azul Marinho","Azul Royal","Azul Jade","Azul Turquesa","Verde Bandeira","Verde Folha","Verde Musgo","Crua (tom cru/bege claro)","Raglan Mescla/Preto","Raglan Mescla/Bordô","Raglan Branco/Preto"]
+      },
+      {
+        id: "mochila-rock-na-praca",
+        nome: "Mochila Rock na Praça",
+        preco: 100.00,
+        descricao: "Produto oficial.",
+        imagens: ["./assets/loja/mochila-rock-na-praca.jpeg"]
+      },
+      {
+        id: "carteira-rock-na-praca",
+        nome: "Carteira Rock na Praça",
+        preco: 40.00,
+        descricao: "Produto oficial.",
+        imagens: ["./assets/loja/carteira-rock-na-praca.jpeg",
+          "./assets/loja/carteira-rock-na-praca-aberta.jpeg",
+          "./assets/loja/carteira-rock-na-praca-fechada.jpeg"
+        ],
+      },
+       {
+        id: "copo-rock-na-praca",
+        nome: "CopoRock na Praça",
+        preco: 10.00,
+        descricao: "Produto oficial.",
+        imagens: ["./assets/loja/copo-rock-na-praca.jpeg",
+          "./assets/loja/copo-rock-na-praca-costas.jpeg",
+          "./assets/loja/copo-rock-na-praca-frente.jpeg"
+        ],
+      },
+       {
+        id: "bone-rock-na-praca-1",
+        nome: "Boné Rock na Praça #1",
+        preco: 70.00,
+        descricao: "Produto oficial.",
+        imagens: ["./assets/loja/bone-rock-na-praca-1.jpeg"]
+      },
+       {
+        id: "bone-rock-na-praca-2",
+        nome: "Boné Rock na Praça #2",
+        preco: 70.00,
+        descricao: "Produto oficial.",
+        imagens: ["./assets/loja/bone-rock-na-praca-2.jpeg"]
+      },
+
+    ];
+
+    /* ==================== FUNÇÃO DE VARIAÇÃO ==================== */
+    function configurarVariacao({ selectId, lista, valorPadrao }) {
+      const select = document.getElementById(selectId);
+      const label = document.getElementById(`label-${selectId.split('-')[0]}`);
+
+      if (!Array.isArray(lista) || lista.length === 0) {
+        select.innerHTML = `<option>${valorPadrao}</option>`;
+        select.disabled = true;
+        select.style.display = "none";
+        if (label) label.style.display = "none";
+        return;
+      }
+
+      select.innerHTML = `<option value="">Selecione...</option>`;
+      [...new Set(lista)].forEach(valor => {
+        const opt = document.createElement("option");
+        opt.value = valor;
+        opt.textContent = valor;
+        select.appendChild(opt);
+      });
+
+      select.disabled = false;
+      select.style.display = "block";
+      if (label) label.style.display = "block";
+    }
+
+    /* ==================== PEGAR PRODUTO ==================== */
+    const params = new URLSearchParams(window.location.search);
+    const produtoId = params.get("produto");
+    const produto = produtos.find(p => p.id === produtoId);
+
+    if (!produto) {
+      document.body.innerHTML = "<h1>Produto não encontrado</h1>";
+      throw new Error("Produto não encontrado");
+    }
+
+    document.getElementById("titulo-produto").textContent = produto.nome;
+    document.getElementById("preco-produto").textContent = `R$ ${produto.preco.toFixed(2)}`;
+    document.getElementById("descricao-produto").textContent = produto.descricao;
+
+    /* ==================== VARIAÇÕES ==================== */
+    configurarVariacao({
+      selectId: "tamanho-produto",
+      lista: produto.tamanhos,
+      valorPadrao: "Único"
+    });
+
+    configurarVariacao({
+      selectId: "cor-produto",
+      lista: produto.cores,
+      valorPadrao: "Única"
+    });
+
+    /* ==================== IMAGENS ==================== */
+    const containerImgs = document.getElementById("imagens-produto");
+    containerImgs.innerHTML = "";
+
+    (produto.imagens || []).forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = produto.nome;
+      img.onclick = () => window.open(src, "_blank");
+      containerImgs.appendChild(img);
+    });
+
+    /* ==================== CARRINHO ==================== */
+    document.getElementById("adicionar-carrinho").addEventListener("click", () => {
+      const tamanhoSelect = document.getElementById("tamanho-produto");
+      const corSelect = document.getElementById("cor-produto");
+
+      const tamanho = tamanhoSelect.disabled ? "Único" : tamanhoSelect.value;
+      const cor = corSelect.disabled ? "Única" : corSelect.value;
+
+      if (!tamanho && !tamanhoSelect.disabled) return alert("Selecione o tamanho");
+      if (!cor && !corSelect.disabled) return alert("Selecione a cor");
+
+      const carrinho = JSON.parse(localStorage.getItem("carrinhoRNP")) || [];
+      const total = parseFloat(localStorage.getItem("totalRNP")) || 0;
+
+      carrinho.push({
+        id: Date.now(),
+        produtoId: produto.id,
+        nome: produto.nome,
+        preco: produto.preco,
+        tamanho,
+        cor
+      });
+
+      localStorage.setItem("carrinhoRNP", JSON.stringify(carrinho));
+      localStorage.setItem("totalRNP", (total + produto.preco).toFixed(2));
+
+      alert("Produto adicionado ao carrinho!");
+    });
+  </script>
+
+</body>
+
+</html>
