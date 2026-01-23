@@ -57,7 +57,6 @@ h1,h2,h3,h4 {
   white-space: nowrap;
 }
 
-
 /* ========================= */
 /*            CABECALHO                     */
 /* ========================= */
@@ -68,7 +67,7 @@ h1,h2,h3,h4 {
   left: 0;
   right: 0;
   height: 80px;
-  padding: 0 32px;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -81,9 +80,7 @@ h1,h2,h3,h4 {
 .cabecalho-simbolo-logotipo a {
   display: flex;
   align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--verde);
+  gap: 1rem;
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
@@ -97,14 +94,46 @@ h1,h2,h3,h4 {
   transform: scale(1.08);
 }
 
-.cabecalho-simbolo-logotipo a:hover {
-  color: var(--rosa);
-}
-
 .cabecalho-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 1rem;
+}
+
+.menu-toggle {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  font: inherit;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus,
+.menu-toggle:active {
+  background-color: transparent;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--rosa);
+  transition: width 0.2s ease;
 }
 
 .cabecalho-menu a,
@@ -140,7 +169,7 @@ h1,h2,h3,h4 {
 .cabecalho-menu a:hover,
 .menu-toggle:hover {
   color: var(--branco);
-  transform: translateY(-2px);
+
 }
 
 .cabecalho-menu a.active {
@@ -1023,9 +1052,6 @@ h1,h2,h3,h4 {
 /*                    LOJA                         */
 /* ========================= */
 
-/* ========================= */
-/*                    LOJA                         */
-/* ========================= */
 
 .loja {
   display: flex;
@@ -1114,68 +1140,54 @@ h1,h2,h3,h4 {
 }
 
 
-.secao-cards-loja {
+.loja-cartoes {
   width: min(80%, 1100px);
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-.loja-card{
+.loja-cartao{
   display: flex;
   flex-direction: column;
-  background: transparent;
 }
 
-.foto-produto {
+.produto-foto{
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-.card-infos {
+.produto-infos {
   padding: .8rem 0;
   display: flex;
   flex-direction: column;
   gap: .3rem;
 }
 
-.status-produto {
-  font-size: .6rem;
+.produto-status{
+  font-size: 1rem;
   letter-spacing: .18em;
   text-transform: uppercase;
 }
 
-.titulo-produto {
-  font-size: 1.2rem;
+.produto-titulo {
+  font-size: 1.8rem;
   font-weight: 400;
   color: var(--verde);
 }
 
-.preco-produto {
-  font-size: 1rem;
+.produto-preco{
+  font-size: 1.2rem;
+  color:var(--rosa);
+  margin:1rem 0;
+  font-weight: 800;
+
 }
 
-.card-infos label {
-  font-size: .5rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--branco);
-  margin-top: .4rem;
-}
 
-.card-infos select {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, .2);
-  color: var(--branco);
-  font-size: .7rem;
-  padding: .2rem 0;
-  outline: none;
-}
-
-.detalhes-btn {
+.produto-detalhes {
   display:flex;
   text-align: center;
   justify-content: center;
@@ -1346,13 +1358,13 @@ h1,h2,h3,h4 {
 .imagens-produto {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
 }
 
 .imagens-produto img {
-  width: 100%;
-  max-width: 280px;
+  width: 300px;
+  height: auto;
   cursor: pointer;
   border: 2px solid var(--verde);
   border-radius: 6px;
