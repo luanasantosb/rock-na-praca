@@ -136,37 +136,41 @@
             <a href="./contato.html">Contato</a>
         </nav>
     </header>
-    <main>
-        <h1 class="visually-hidden">
-            Rock na praça Contato
-        </h1>
 
+    <main>
         <div class="contato">
             <section class="contato-conteudo">
                 <h2>Contato</h2>
                 <p>
-                    Você possui alguma sugestão para contribuir com a melhoria do Rock na Praça? Conhece um espaço adequado para a realização do evento ou deseja compartilhar sua experiência conosco? Este é o canal apropriado para contato. Para tanto, basta preencher o formulário ou encaminhar sua mensagem para o e-mail rocknapracaesteio@gmail.com.
+                    Você possui alguma sugestão para contribuir com a melhoria do Rock na Praça? Conhece um espaço
+                    adequado para a realização do evento ou deseja compartilhar sua experiência conosco? Este é o canal
+                    apropriado para contato. Para tanto, basta preencher o formulário ou encaminhar sua mensagem para o  <a href="mailto:rocknapracaesteio@gmail.com"></a>
+                    e-mail rocknapracaesteio@gmail.com.</a>
                 </p>
 
                 <p>
-                    Entendemos que a escuta do público é fundamental para o aprimoramento contínuo do evento e para a construção de uma experiência cada vez mais qualificada, inclusiva e relevante para toda a comunidade. Suas contribuições, opiniões e feedbacks são de grande importância para o planejamento das próximas edições. Aguardamos seu contato.
+                    Entendemos que a escuta do público é fundamental para o aprimoramento contínuo do evento e para a
+                    construção de uma experiência cada vez mais qualificada, inclusiva e relevante para toda a
+                    comunidade. Suas contribuições, opiniões e feedbacks são de grande importância para o planejamento
+                    das próximas edições. Aguardamos seu contato.
                 </p>
             </section>
 
             <form class="contato-form" action="https://formsubmit.co/rocknapracaesteio@gmail.com" method="POST">
+                
                 <label>Nome:</label>
-                <input type="text" name="nome" class="contato-input">
+                <input type="text" name="nome" class="contato-input" required>
 
                 <label>E-mail:</label>
-                <input type="email" name="email" class="contato-input">
+                <input type="email" name="email" class="contato-input" required>
 
                 <label>Telefone:</label>
                 <input type="tel" name="telefone" class="contato-input">
 
                 <label>Mensagem:</label>
-                <textarea name="mensagem" class="contato-input" rows="1" maxlength="200"></textarea>
+                <textarea name="mensagem" class="contato-input" rows="1" maxlength="200" required></textarea>
 
-                <input type="submit" value="ENVIAR" class="contato-enviar">
+                <button type="submit" class="contato-enviar">Enviar </button>
             </form>
         </div>
     </main>
