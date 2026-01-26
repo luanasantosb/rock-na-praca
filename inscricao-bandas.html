@@ -188,49 +188,93 @@
           Em 2026, o festival completa 24 anos de existência e resistência cultural.
         </p>
       </header>
-
-      <section aria-labelledby="diretrizes">
-        <h3 id="diretrizes">Diretrizes para inscrição</h3>
-
-        <ul>
-          <li>
-            O festival contempla <strong>exclusivamente bandas autorais</strong>.
-            Não são selecionados projetos cover ou tributo.
-          </li>
-
-          <li>
-            O envio deste formulário <strong>não garante a participação no evento</strong>.
-            Ele funciona como banco de dados para a curadoria e seleção das bandas.
-          </li>
-
-          <li>
-            O cadastro terá <strong>validade durante todo o ano de 2026</strong>,
-            não sendo necessária nova inscrição durante o período.
-          </li>
-
-          <li>
-            A seleção das bandas ocorrerá <strong>exclusivamente por meio deste formulário</strong>.
-            Inscrições realizadas por outros canais não serão consideradas.
-          </li>
-        </ul>
-      </section>
     </article>
 
-    <div class="bandas-acao">
-      <a
-        href="https://script.google.com/macros/s/AKfycbyNUPW3Kicz0TrAv6Fof9hDfHocqsCBHZUjOAzdukUtqr4-BEQPha3ywU7nIX9QEnuH/exec"
-        class="bandas-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Abrir formulário de inscrição para bandas"
+    <!-- FORMULÁRIO -->
+    <form id="formSite" novalidate aria-describedby="mensagem">
+
+      <fieldset>
+        <legend>Dados da Banda</legend>
+
+        <label for="banda_nome">Nome da banda *</label>
+        <input id="banda_nome" name="banda_nome" class="bandas-input" required>
+
+        <label for="banda_cidade">Cidade / Estado / País *</label>
+        <input id="banda_cidade" name="banda_cidade" class="bandas-input" required>
+
+        <label for="banda_redes">Rede social *</label>
+        <input id="banda_redes" name="banda_redes" class="bandas-input" required>
+
+        <label for="banda_streaming">Streaming</label>
+        <input id="banda_streaming" name="banda_streaming" class="bandas-input">
+
+        <label for="banda_youtube">YouTube *</label>
+        <input id="banda_youtube" name="banda_youtube" class="bandas-input" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Materiais</legend>
+
+        <label for="release">Release (PDF ou DOC)</label>
+        <input
+          type="file"
+          id="release"
+          class="bandas-input"
+          accept=".pdf,.doc,.docx"
+        >
+
+        <label for="mapa">Mapa de Palco (Imagem ou PDF)</label>
+        <input
+          type="file"
+          id="mapa"
+          class="bandas-input"
+          accept="image/*,.pdf"
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Contato</legend>
+
+        <label for="banda_responsavel">Responsável *</label>
+        <input id="banda_responsavel" name="banda_responsavel" class="bandas-input" required>
+
+        <label for="banda_whatsapp">WhatsApp *</label>
+        <input
+          id="banda_whatsapp"
+          name="banda_whatsapp"
+          class="bandas-input"
+          inputmode="tel"
+          placeholder="(51) 99999-9999"
+          required
+        >
+
+        <label for="banda_email">Email</label>
+        <input
+          id="banda_email"
+          name="banda_email"
+          type="email"
+          class="bandas-input"
+          placeholder="contato@banda.com"
+        >
+      </fieldset>
+
+      <div
+        id="mensagem"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+      <button
+        type="submit"
+        class="bandas-enviar"
       >
-        Inscreva sua banda
-      </a>
-    </div>
+        Enviar inscrição
+      </button>
+
+    </form>
 
   </section>
 </main>
-
 
   <!--RODAPÉ-->
 
@@ -272,6 +316,59 @@
 
     </div>
   </footer>
+  <script>
+const URL = "https://script.google.com/macros/s/AKfycbyNUPW3Kicz0TrAv6Fof9hDfHocqsCBHZUjOAzdukUtqr4-BEQPha3ywU7nIX9QEnuH/exec";
+
+const form = document.getElementById("formSite");
+const msg = document.getElementById("mensagem");
+const botao = document.querySelector("button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  botao.disabled = true;
+  msg.textContent = "Enviando...";
+
+  const dados = {
+    banda_nome: form.banda_nome.value,
+    banda_cidade: form.banda_cidade.value,
+    banda_redes: form.banda_redes.value,
+    banda_streaming: form.banda_streaming.value,
+    banda_youtube: form.banda_youtube.value,
+    banda_responsavel: form.banda_responsavel.value,
+    banda_whatsapp: form.banda_whatsapp.value,
+    banda_email: form.banda_email.value,
+    banda_release: await base64(document.getElementById("release").files[0]),
+    banda_mapa: await base64(document.getElementById("mapa").files[0])
+  };
+
+  try {
+    const r = await fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(dados)
+    });
+
+    const json = await r.json();
+    msg.textContent = json.mensagem;
+    msg.className = json.sucesso ? "sucesso" : "erro";
+    if (json.sucesso) form.reset();
+
+  } catch (err) {
+    msg.textContent = "Erro de conexão.";
+    msg.className = "erro";
+  }
+
+  botao.disabled = false;
+});
+
+function base64(file) {
+  return new Promise(resolve => {
+    if (!file) return resolve("");
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+</script>
 </body>
 
 </html>

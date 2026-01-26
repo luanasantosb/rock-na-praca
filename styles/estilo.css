@@ -912,18 +912,19 @@ h1,h2,h3,h4 {
 /*              INSCRIÇÕES                  */
 /* ========================= */
 
+/* ================== SEÇÃO BANDAS / FEIRA ================== */
+
 .bandas,
 .feira {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1rem;
+  padding: clamp(2rem, 4vw, 3rem) 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
-
 
 .bandas-conteudo,
 .feira-conteudo {
@@ -931,54 +932,54 @@ h1,h2,h3,h4 {
   width: 100%;
 }
 
+/* ================== TÍTULOS ================== */
 
 .bandas h2,
 .feira h2 {
-  font-size: clamp(1.8rem, 4vw, 2.3rem);
-  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  margin: 0 0 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--verde);
   font-family: var(--fonte-titulos);
-  padding-left: 1rem;
   text-align: center;
 }
 
 .bandas h3,
 .feira h3 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   font-size: clamp(1.3rem, 3vw, 1.7rem);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--verde);
   font-family: var(--fonte-titulos);
 }
 
+/* ================== TEXTO ================== */
 
 .bandas p,
 .feira p {
   margin: 0;
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.75;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
   color: var(--branco);
   font-family: var(--fonte-textos);
 }
 
-
 .bandas p + p,
 .feira p + p {
-  margin-top: 1.2rem;
+  margin-top: 1.4rem;
 }
 
+/* ================== LISTAS ================== */
 
 .bandas ul,
 .feira ul {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin: 1.8rem 0 0;
+  display: grid;
+  gap: 1.1rem;
   font-family: var(--fonte-textos);
   color: var(--branco);
 }
@@ -987,69 +988,139 @@ h1,h2,h3,h4 {
 .feira li {
   font-size: 1rem;
   line-height: 1.6;
+  padding-left: 1.2rem;
+  position: relative;
 }
 
-
-.bandas-acao,
-.feira-acao {
-  margin-top: 2rem;
+.bandas li::before,
+.feira li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--verde);
 }
 
+/* ================== FORMULÁRIO ================== */
 
-.bandas-btn,
-.feira-btn {
-  padding: 0.9rem 1.4rem;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+#formSite {
+  width: 100%;
+  max-width: 560px;
+  margin: 3rem auto 0;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(0,0,0,0.2)
+  );
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* Agrupamentos */
+#formSite fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+#formSite legend {
+  font-family: var(--fonte-titulos);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  background-color: transparent;
-  color: var(--branco);
-  border: 2px dashed var(--verde);
-  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--verde);
+  margin-bottom: 0.6rem;
+}
+
+/* Labels */
+#formSite label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Inputs */
+.bandas-input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.35);
+  color: #fffef6;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bandas-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.bandas-input:focus {
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgba(110,212,122,0.25);
+}
+
+/* Upload */
+.bandas-input[type="file"] {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Botão */
+.bandas-enviar {
+  margin-top: 1.5rem;
+  align-self: center;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6ed47a, #4fbf67);
+  color: #162116;
+  border: none;
   cursor: pointer;
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.bandas-btn:hover,
-.feira-btn:hover {
-  color: var(--preto);
-  background-color: var(--verde);
-  border-style: solid;
-  transform: translateY(-2px);
+.bandas-enviar:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.1);
 }
 
-@media (max-width: 768px) {
-  .bandas,
-  .feira {
-    padding: 2rem 1rem;
-  }
-
-  .bandas-conteudo,
-  .feira-conteudo {
-    max-width: 100%;
-  }
-
-  .bandas p,
-  .feira p {
-    font-size: 0.95rem;
-  }
+.bandas-enviar:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
-@media (max-width: 480px) {
-  .bandas,
-  .feira {
-    padding: 1.5rem 1rem;
+.bandas-enviar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mensagens */
+#mensagem {
+  min-height: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#mensagem.sucesso { color: var(--verde); }
+#mensagem.erro { color: var(--rosa); }
+
+/* ================== RESPONSIVO ================== */
+
+@media (max-width: 600px) {
+  #formSite {
+    padding: 2rem 1.4rem;
   }
 
-  .bandas p,
-  .feira p {
-    font-size: 0.9rem;
+  .bandas-enviar {
+    width: 100%;
   }
 }
 
@@ -1681,3 +1752,4 @@ button:hover {
     justify-content: center;
   }
 }
+ 
