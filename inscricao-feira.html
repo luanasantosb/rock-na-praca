@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
  <!-- Google tag (gtag.js) NÃO ALTERAR
-  https://script.google.com/macros/s/AKfycbzYqrB3eC_yV1KLDdom8x-cG90Hq98qcVRxas8Z6yOWgzgOH5BmRPcXJQjYThvKe8nn8Q/exec-->
+-->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -339,5 +339,56 @@
     </div>
   </footer>
 </body>
+<script>
+const URL = " https://script.google.com/macros/s/AKfycbzYqrB3eC_yV1KLDdom8x-cG90Hq98qcVRxas8Z6yOWgzgOH5BmRPcXJQjYThvKe8nn8Q/exec";
+
+const form = document.getElementById("formSite");
+const msg = document.getElementById("mensagem");
+const botao = document.querySelector("button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  botao.disabled = true;
+  msg.textContent = "Enviando...";
+
+  const dados = {
+    loja_nome: form.loja_nome.value,
+    loja_cidade: form.loja_cidade.value,
+    loja_redes: form.loja_redes.value,
+    loja_responsavel: form.loja_responsavel.value,
+    loja_whatsapp: form.loja_whatsapp.value,
+    loja_email: form.loja_email.value,
+    loja_release: await base64(document.getElementById("logo").files[0]),
+    loja_mapa: await base64(document.getElementById("comprovante").files[0])
+  };
+
+  try {
+    const r = await fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(dados)
+    });
+
+    const json = await r.json();
+    msg.textContent = json.mensagem;
+    msg.className = json.sucesso ? "sucesso" : "erro";
+    if (json.sucesso) form.reset();
+
+  } catch (err) {
+    msg.textContent = "Erro de conexão.";
+    msg.className = "erro";
+  }
+
+  botao.disabled = false;
+});
+
+function base64(file) {
+  return new Promise(resolve => {
+    if (!file) return resolve("");
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+</script>
 
 </html>
