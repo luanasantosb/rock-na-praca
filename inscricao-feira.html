@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <!-- Google tag (gtag.js) NÃO ALTERAR-->
+ <!-- Google tag (gtag.js) NÃO ALTERAR
+  https://script.google.com/macros/s/AKfycbzYqrB3eC_yV1KLDdom8x-cG90Hq98qcVRxas8Z6yOWgzgOH5BmRPcXJQjYThvKe8nn8Q/exec-->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -201,8 +202,7 @@
 
         <ul>
           <li>
-            Para garantir sua participação, basta preencher o formulário e realizar o pagamento
-            da taxa de inscrição.
+            Para confirmar sua participação, realize o pagamento da taxa de R$50 via Pix (chave: 831.611.630-87 – PagBank), preencha o formulário e envie o comprovante.
           </li>
 
           <li>
@@ -210,7 +210,7 @@
           </li>
 
           <li>
-            Cada banca poderá utilizar um espaço máximo de 3x3 metros.
+            Cada banca poderá utilizar um espaço máximo de 3x3 metros eo evento não fornece estrutura.
           </li>
 
           <li>
@@ -221,17 +221,79 @@
       </section>
     </article>
 
-    <div class="feira-acao">
-      <a
-        href="https://script.google.com/macros/s/AKfycbzYqrB3eC_yV1KLDdom8x-cG90Hq98qcVRxas8Z6yOWgzgOH5BmRPcXJQjYThvKe8nn8Q/exec"
-        class="feira-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Abrir formulário de inscrição para a Feira de Economia Criativa"
+    <!-- FORMULÁRIO -->
+    <form id="formSite" novalidate aria-describedby="mensagem">
+
+      <fieldset>
+        <legend>Dados da Loja</legend>
+
+        <label for="loja_nome">Nome da Loja *</label>
+        <input id="loja_nome" name="loja_nome" class="lojas-input" required>
+
+        <label for="loja_cidade">Cidade / Estado / País *</label>
+        <input id="loja_cidade" name="loja_cidade" class="lojas-input" required>
+
+        <label for="loja_redes">Rede social *</label>
+        <input id="loja_redes" name="loja_redes" class="lojas-input" required>
+
+        <label for="logo">logo (Imagem ou PDF)</label>
+        <input
+          type="file"
+          id="logo"
+          class="lojas-input"
+          accept="image/*,.pdf"
+        >
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Contato</legend>
+
+        <label for="loja_responsavel">Responsável *</label>
+        <input id="loja_responsavel" name="loja_responsavel" class="lojas-input" required>
+
+        <label for="loja_whatsapp">WhatsApp *</label>
+        <input
+          id="loja_whatsapp"
+          name="loja_whatsapp"
+          class="lojas-input"
+          inputmode="tel"
+          placeholder="(51) 99999-9999"
+          required
+        >
+
+        <label for="loja_email">Email</label>
+        <input
+          id="loja_email"
+          name="loja_email"
+          type="email"
+          class="lojas-input"
+          placeholder="contato@loja.com"
+        >
+
+          <label for="comprovante">Comprovante (PDF ou imagem)</label>
+        <input
+          type="file"
+          id="release"
+          class="lojas-input"
+          accept=".pdf,.img,.jpeg"
+        >
+      </fieldset>
+
+      <div
+        id="mensagem"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+      <button
+        type="submit"
+        class="lojas-enviar"
       >
-        Garanta sua vaga
-      </a>
-    </div>
+        Enviar inscrição
+      </button>
+
+    </form>
 
   </section>
 </main>
