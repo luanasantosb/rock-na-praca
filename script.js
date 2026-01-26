@@ -135,7 +135,6 @@ async function carregarVideos() {
           <img src="${snippet.thumbnails.medium.url}" alt="${snippet.title}">
           ${snippet.title}
         </a>
-        <p>${snippet.description.substring(0, 80)}${snippet.description.length > 80 ? "..." : ""}</p>
       `;
 
       container.appendChild(card);
