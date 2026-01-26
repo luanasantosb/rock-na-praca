@@ -96,7 +96,7 @@ if (section) {
 
 /*====================YOUTUBE ====================== */
 
-const API_KEY = "AIzaSyBWMWYdYgsi-dMEOS-SGTNAKsqRTSPLtvQ";
+const API_KEY = "AIzaSyBDXEDjWMGEqF2ihUEqaRaj-TAnSDN5o_g";
 const CHANNEL_ID = "UCeHYadsCTWgUghjYBnlwrxA";
 const MAX_RESULTS = 3;
 
