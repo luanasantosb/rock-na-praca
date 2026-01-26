@@ -5,7 +5,6 @@ const menu = document.getElementById("menu");
 const submenuToggle = document.querySelector(".menu-toggle");
 const submenu = document.querySelector(".submenu");
 
-// Abrir / fechar menu no mobile
 btnMenu.addEventListener("click", () => {
   menu.classList.toggle("abrir");
 
@@ -98,7 +97,7 @@ if (section) {
 
 const API_KEY = "AIzaSyBDXEDjWMGEqF2ihUEqaRaj-TAnSDN5o_g";
 const CHANNEL_ID = "UCeHYadsCTWgUghjYBnlwrxA";
-const MAX_RESULTS = 5;
+const MAX_RESULTS = 3;
 
 const container = document.getElementById("videos-lateral");
 
