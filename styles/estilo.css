@@ -423,6 +423,7 @@ h1,h2,h3,h4 {
   margin-bottom: 15px;
   font-size: 1.8rem;
   color:var(--verde);
+  font-family: var(--fonte-titulos);
 }
 
 .videos-container {
@@ -453,12 +454,9 @@ h1,h2,h3,h4 {
   color: var(--branco);
   font-weight: bold;
   margin-top: 3px;
+  font-family: var(--fonte-textos);
 }
 
-.cartao-video p {
-  font-size: 0.85rem;
-  color: var(--branco);
-}
 
 .videos-btn {
   display: inline-block;
@@ -470,6 +468,7 @@ h1,h2,h3,h4 {
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
+  font-family: var(--fonte-textos);
 }
 
 .videos-btn:hover {
