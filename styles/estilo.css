@@ -450,14 +450,14 @@ h1,h2,h3,h4 {
 
 .cartao-video a {
   text-decoration: none;
-  color: #333;
+  color: var(--branco);
   font-weight: bold;
   margin-top: 3px;
 }
 
 .cartao-video p {
   font-size: 0.85rem;
-  color: #555;
+  color: var(--branco);
 }
 
 .videos-btn {
