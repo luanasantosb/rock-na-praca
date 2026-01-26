@@ -98,7 +98,7 @@ if (section) {
 
 const API_KEY = "AIzaSyBDXEDjWMGEqF2ihUEqaRaj-TAnSDN5o_g";
 const CHANNEL_ID = "UCeHYadsCTWgUghjYBnlwrxA";
-const MAX_RESULTS = 3;
+const MAX_RESULTS = 5;
 
 const container = document.getElementById("videos-lateral");
 
@@ -146,7 +146,6 @@ async function carregarVideos() {
   }
 }
 
-// Atualiza os vídeos automaticamente ao abrir a página
 carregarVideos();
 
 /*====== MODAL ========= */
@@ -197,7 +196,7 @@ function carregarCarrinho() {
 
 carregarCarrinho();
 
-/* ********** CARD - CARROSSEL ********* */
+
 
 document.querySelectorAll(".card-loja").forEach(card => {
   const imagensData = card.dataset.imagens;
