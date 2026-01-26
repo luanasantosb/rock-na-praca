@@ -274,7 +274,7 @@
           <label for="comprovante">Comprovante (PDF ou imagem)</label>
         <input
           type="file"
-          id="release"
+          id="comprovante"
           class="lojas-input"
           accept=".pdf,.img,.jpeg"
         >
@@ -340,7 +340,7 @@
   </footer>
 </body>
 <script>
-const URL = " https://script.google.com/macros/s/AKfycbzYqrB3eC_yV1KLDdom8x-cG90Hq98qcVRxas8Z6yOWgzgOH5BmRPcXJQjYThvKe8nn8Q/exec";
+const URL = "https://script.google.com/macros/s/AKfycbzizhz7B5Ad2w8G4VIdhkGoMWkped9Dq88icWPBdF8StxkhrkT-IqArqm_uxHdvXbK6ww/exec";
 
 const form = document.getElementById("formSite");
 const msg = document.getElementById("mensagem");
@@ -358,8 +358,8 @@ form.addEventListener("submit", async (e) => {
     loja_responsavel: form.loja_responsavel.value,
     loja_whatsapp: form.loja_whatsapp.value,
     loja_email: form.loja_email.value,
-    loja_release: await base64(document.getElementById("logo").files[0]),
-    loja_mapa: await base64(document.getElementById("comprovante").files[0])
+    loja_logo: await base64(document.getElementById("logo").files[0]),
+    loja_comprovante: await base64(document.getElementById("comprovante").files[0])
   };
 
   try {
