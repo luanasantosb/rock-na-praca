@@ -776,7 +776,7 @@ h1,h2,h3,h4 {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
-  background-color: #666;
+  background-color: var(--overlay-dark);
 }
 
 .cartao {
@@ -786,7 +786,8 @@ h1,h2,h3,h4 {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
-  background-color: #666;
+  background-color: var(--overlay-dark);
+  object-fit: contain;
 }
 
 .cartao:hover {
