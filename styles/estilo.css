@@ -759,9 +759,8 @@ h1,h2,h3,h4 {
 
 .grupo-cartoes {
   display: grid;
-  gap: 0.75rem;
-  grid-template-columns: 1fr;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .grupo-cartoes-titulo {
@@ -769,6 +768,15 @@ h1,h2,h3,h4 {
   border-left: 4px solid var(--verde);
   padding-left: 1rem;
   text-transform: uppercase;
+}
+.cartao-bandas{
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  background-color: #666;
 }
 
 .cartao {
@@ -778,6 +786,7 @@ h1,h2,h3,h4 {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
+  background-color: #666;
 }
 
 .cartao:hover {
