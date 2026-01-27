@@ -1416,16 +1416,6 @@ h1,h2,h3,h4 {
   padding: 1rem;
 }
 
-
-.voltar-loja {
-  display: inline-block;
-  margin: 1.5rem auto 0;
-  max-width: 1100px;
-  padding: 0 1rem;
-  border:2px dashed var(--verde);
-  padding: 1rem;
-}
-
 .voltar-loja a {
   color: var(--verde);
   text-decoration: none;

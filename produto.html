@@ -19,29 +19,44 @@
 
 <body>
 
-  <div class="voltar-loja">
-    <a href="/loja.html">← Voltar à loja</a>
-  </div>
+  <a href="loja.html" class="voltar">⬅ Voltar para a loja</a>
 
-  <h1 id="titulo-produto"></h1>
+  <main class="produto-container">
 
-  <div class="produto-container">
-    <div class="imagens-produto" id="imagens-produto"></div>
+    <section class="galeria">
+      <img id="fotoPrincipal" class="foto-principal" alt="Produto">
+      <div id="miniaturas" class="miniaturas"></div>
+    </section>
 
-    <div class="infos-produto">
-      <p id="preco-produto"></p>
-      <p id="descricao-produto"></p>
+    <section class="info">
+      <div id="variacoes" class="variacoes hidden">
 
-      <label for="tamanho-produto" id="label-tamanho">Selecione o tamanho</label>
-      <select id="tamanho-produto"></select>
+        <div class="campo">
+          <label for="tamanho">Tamanho</label>
+          <select id="tamanho">
+            <option value="">Selecione</option>
+          </select>
+        </div>
 
-      <label for="cor-produto" id="label-cor">Selecione a cor</label>
-      <select id="cor-produto"></select>
+        <div class="campo">
+          <label for="cor">Cor</label>
+          <select id="cor">
+            <option value="">Selecione</option>
+          </select>
+        </div>
 
-      <button id="adicionar-carrinho">Adicionar ao carrinho</button>
-    </div>
-  </div>
+      </div>
 
+      <h1 id="nome"></h1>
+      <p id="descricao"></p>
+      <div id="preco" class="preco"></div>
+
+      <button id="btnCarrinho" class="btn-carrinho">
+        Adicionar ao carrinho
+      </button>
+    </section>
+
+  </main>
   <script>
     /* ==================== PRODUTOS ==================== */
     const produtos = [
