@@ -354,8 +354,8 @@
             <img src="./assets/logos/lojas/orbita loja_logo.png" alt="Foto da loja"></a>
             
             <!-- #7 -->
-            <a href="#" class="cartao" target="_blank">
-            <img src="./assets/logos/" alt="Foto da loja"></a>
+            <a href="https://www.instagram.com/moonerd_store/" class="cartao" target="_blank">
+            <img src="./assets/logos/lojas/MooNerd_logo.jpg" alt="Foto da loja"></a>
             
             <!-- #8 -->
             <a href="#" class="cartao" target="_blank">
@@ -415,7 +415,7 @@
             <img src="./assets/logos/apoio/logo_prefaEsteio.jpeg" alt="Foto do apoio"></a>
 
            <a href="https://www.instagram.com/lojabackinblack/" class="cartao" target="_blank">
-            <img src="./assets/logos/apoio/Back-In-Black_Logo_Branco.png" alt="Foto do apoio"></a>
+            <img src="./assets/logos/apoio/logo_blackinBack.jpg" alt="Foto do apoio"></a>
             
              <a href="https://www.instagram.com/bandasindependenteslocais/" class="cartao" target="_blank">
             <img src="./assets/logos/apoio/logo_BIL_OFICIAL.png" alt="Foto do apoio"></a>
@@ -424,7 +424,7 @@
             <img src="./assets/logos/apoio/Chopp-Hoffnung-1.png" alt="Foto do apoio"></a>
         
             <a href="https://www.instagram.com/skatchebar/" class="cartao" target="_blank">
-            <img src="./assets/logos/apoio/logo_skathebar.jpg" alt="Foto do apoio"></a>
+            <img src="./assets/logos/apoio/logo_skatchebar.png" alt="Foto do apoio"></a>
 
         </section>
 
@@ -471,50 +471,6 @@
 
     </div>
   </footer>
-  <!-- NÃO ALTERAR-->
-  <script>
-    const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw3zJ13Ks8flI4mSyrAxc3qlec5FAN9uV3fFEW9Z2ovA6FYUfGiCryusscBnLGG4Sxn/exec";
-
-    // ====== Atualiza Infos (título, data, local, endereço, mapa) ======
-    fetch(WEBAPP_URL + "?sheet=Infos")
-      .then(res => res.json())
-      .then(data => {
-        // data é um objeto {idElemento: valor, ...}
-        for (const id in data) {
-          const elem = document.getElementById(id);
-          if (!elem) continue;
-
-          if (elem.tagName === "IFRAME") {
-            elem.src = data[id];  // Atualiza iframe do mapa
-          } else {
-            elem.textContent = data[id]; // Atualiza h1, p, span, etc.
-          }
-        }
-      })
-      .catch(err => console.error("Erro ao carregar Infos:", err));
-
-    // ====== Atualiza Cartões (bandas, lojas, extras, apoios) ======
-    fetch(WEBAPP_URL + "?sheet=Cartoes")
-      .then(res => res.json())
-      .then(rows => {
-        // rows é um array de objetos [{ID do cartão, Nome do cartão, Link}, ...]
-        rows.forEach(row => {
-          const id = row["ID do cartão"];
-          const nome = row["Nome do cartão"];
-          const link = row["Link"];
-          const elem = document.getElementById(id);
-          if (!elem) return;
-
-          if (elem.tagName === "A") {
-            elem.href = link || "#";
-            elem.textContent = nome || "";
-          } else if (elem.tagName === "SPAN") {
-            elem.textContent = nome || "";
-          }
-        });
-      })
-      .catch(err => console.error("Erro ao carregar Cartoes:", err));
-  </script>
 </body>
 
 </html>
