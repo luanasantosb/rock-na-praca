@@ -216,49 +216,49 @@
       </article>
       <details class="feira-detalhes">
         <summary>Realizar inscrição</summary>
-        <form id="formSite" novalidate aria-describedby="mensagem">
+        <form id="formSite" novalidate aria-describedby="mensagem" enctype="multipart/form-data">
 
           <fieldset>
             <legend>Dados da Banda</legend>
 
             <label for="banda_nome">Nome da banda *</label>
-            <input id="banda_nome" name="banda_nome" class="bandas-input" required>
+            <input type="text" id="banda_nome" name="banda_nome" class="bandas-input" required>
 
             <label for="banda_cidade">Cidade / Estado / País *</label>
-            <input id="banda_cidade" name="banda_cidade" class="bandas-input" required>
+            <input type="text" id="banda_cidade" name="banda_cidade" class="bandas-input" required>
 
             <label for="banda_redes">Rede social *</label>
-            <input id="banda_redes" name="banda_redes" class="bandas-input" required>
+            <input type="text" id="banda_redes" name="banda_redes" class="bandas-input" required>
 
             <label for="banda_streaming">Streaming</label>
-            <input id="banda_streaming" name="banda_streaming" class="bandas-input">
+            <input type="text" id="banda_streaming" name="banda_streaming" class="bandas-input">
 
             <label for="banda_youtube">YouTube *</label>
-            <input id="banda_youtube" name="banda_youtube" class="bandas-input" required>
+            <input type="text" id="banda_youtube" name="banda_youtube" class="bandas-input" required>
           </fieldset>
 
           <fieldset>
             <legend>Materiais</legend>
 
             <label for="release">Release (PDF ou DOC)</label>
-            <input type="file" id="release" class="bandas-input" accept=".pdf,.doc,.docx">
+            <input type="file" id="release" name="release_file" class="bandas-input" accept=".pdf,.doc,.docx">
 
             <label for="mapa">Mapa de Palco (Imagem ou PDF)</label>
-            <input type="file" id="mapa" class="bandas-input" accept="image/*,.pdf">
+            <input type="file" id="mapa" name="mapa_file" class="bandas-input" accept="image/*,.pdf">
           </fieldset>
 
           <fieldset>
             <legend>Contato</legend>
 
             <label for="banda_responsavel">Responsável *</label>
-            <input id="banda_responsavel" name="banda_responsavel" class="bandas-input" required>
+            <input type="text" id="banda_responsavel" name="banda_responsavel" class="bandas-input" required>
 
             <label for="banda_whatsapp">WhatsApp *</label>
-            <input id="banda_whatsapp" name="banda_whatsapp" class="bandas-input" inputmode="tel"
+            <input type="tel" id="banda_whatsapp" name="banda_whatsapp" class="bandas-input" inputmode="tel"
               placeholder="(51) 99999-9999" required>
 
             <label for="banda_email">Email</label>
-            <input id="banda_email" name="banda_email" type="email" class="bandas-input"
+            <input type="email" id="banda_email" name="banda_email" class="bandas-input"
               placeholder="contato@banda.com">
           </fieldset>
 
@@ -267,75 +267,64 @@
           <button type="submit" class="bandas-enviar">
             Enviar inscrição
           </button>
-
+              <!--- -->
         </form>
 
-        //
-
         <script>
-          const URL = "https://script.google.com/macros/s/AKfycbxcnRslGQgX8oIMkwJaOR3ptkwoKnvwkv6uI9L2sSj0mCS-aUFcsGp6Xlvt-YmdhLUz/exec";
+    const URL = "https://script.google.com/macros/s/AKfycbz54BT3XeR_h3zIPXxYrWqZnonNCiiiaHrxNnsA9_VlSr8vT97Cdvxm_k925JuozDRs/exec";
 
-          document.getElementById("formSite").addEventListener("submit", async e => {
-            e.preventDefault();
+    const form = document.getElementById("formSite");
+    const msg = document.getElementById("mensagem");
+    const botao = document.querySelector("button");
 
-            const form = e.target;
-            const dados = Object.fromEntries(new FormData(form));
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      botao.disabled = true;
+      msg.textContent = "Enviando...";
 
-            const releaseFile = document.getElementById("release").files[0];
-            const mapaFile = document.getElementById("mapa").files[0];
+      const dados = {
+        banda_nome: form.banda_nome.value,
+        banda_cidade: form.banda_cidade.value,
+        banda_redes: form.banda_redes.value,
+        banda_streaming: form.banda_streaming.value,
+        banda_youtube: form.banda_youtube.value,
+        banda_responsavel: form.banda_responsavel.value,
+        banda_whatsapp: form.banda_whatsapp.value,
+        banda_email: form.banda_email.value,
+        banda_release: await base64(document.getElementById("release").files[0]),
+        banda_mapa: await base64(document.getElementById("mapa").files[0])
+      };
 
-            if (!validarArquivo(releaseFile, 10)) {
-              return mostrarMensagem("Release muito grande (máx 10MB).", false);
-            }
+      try {
+        const r = await fetch(URL, {
+          method: "POST",
+          body: JSON.stringify(dados)
+        });
 
-            if (!validarArquivo(mapaFile, 10)) {
-              return mostrarMensagem("Mapa muito grande (máx 10MB).", false);
-            }
+        const json = await r.json();
+        msg.textContent = json.mensagem;
+        msg.className = json.sucesso ? "sucesso" : "erro";
+        if (json.sucesso) form.reset();
 
-            dados.release = await fileToBase64(releaseFile);
-            dados.mapa = await fileToBase64(mapaFile);
+      } catch (err) {
+        msg.textContent = "Erro de conexão.";
+        msg.className = "erro";
+      }
 
-            try {
-              const resposta = await fetch(URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(dados)
-              });
+      botao.disabled = false;
+    });
 
-              const json = await resposta.json();
-              mostrarMensagem(json.mensagem, json.sucesso);
+    function base64(file) {
+      return new Promise(resolve => {
+        if (!file) return resolve("");
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.readAsDataURL(file);
+      });
+    }
+  </script>
+  
 
-              if (json.sucesso) form.reset();
-
-            } catch (erro) {
-              mostrarMensagem("Erro de conexão com o servidor.", false);
-            }
-          });
-
-          // ===============================
-          // UTIL
-          // ===============================
-          function validarArquivo(file, maxMB) {
-            if (!file) return true;
-            return file.size <= maxMB * 1024 * 1024;
-          }
-
-          function fileToBase64(file) {
-            return new Promise(resolve => {
-              if (!file) return resolve("");
-
-              const reader = new FileReader();
-              reader.onload = () => resolve(reader.result);
-              reader.readAsDataURL(file);
-            });
-          }
-
-          function mostrarMensagem(texto, sucesso) {
-            const msg = document.getElementById("mensagem");
-            msg.textContent = texto;
-            msg.style.color = sucesso ? "green" : "red";
-          }
-        </script>
       </details>
     </section>
   </main>
