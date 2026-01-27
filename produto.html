@@ -132,84 +132,16 @@
 
     ];
 
-    /* ==================== FUNÇÃO DE VARIAÇÃO ==================== */
-    function configurarVariacao({ selectId, lista, valorPadrao }) {
-      const select = document.getElementById(selectId);
-      const label = document.getElementById(`label-${selectId.split('-')[0]}`);
-
-      if (!Array.isArray(lista) || lista.length === 0) {
-        select.innerHTML = `<option>${valorPadrao}</option>`;
-        select.disabled = true;
-        select.style.display = "none";
-        if (label) label.style.display = "none";
-        return;
-      }
-
-      select.innerHTML = `<option value="">Selecione...</option>`;
-      [...new Set(lista)].forEach(valor => {
-        const opt = document.createElement("option");
-        opt.value = valor;
-        opt.textContent = valor;
-        select.appendChild(opt);
-      });
-
-      select.disabled = false;
-      select.style.display = "block";
-      if (label) label.style.display = "block";
+    function getCarrinho() {
+      return JSON.parse(localStorage.getItem("carrinhoRNP")) || [];
     }
 
-    /* ==================== PEGAR PRODUTO ==================== */
-    const params = new URLSearchParams(window.location.search);
-    const produtoId = params.get("produto");
-    const produto = produtos.find(p => p.id === produtoId);
-
-    if (!produto) {
-      document.body.innerHTML = "<h1>Produto não encontrado</h1>";
-      throw new Error("Produto não encontrado");
+    function salvarCarrinho(carrinho) {
+      localStorage.setItem("carrinhoRNP", JSON.stringify(carrinho));
     }
 
-    document.getElementById("titulo-produto").textContent = produto.nome;
-    document.getElementById("preco-produto").textContent = `R$ ${produto.preco.toFixed(2)}`;
-    document.getElementById("descricao-produto").textContent = produto.descricao;
-
-    /* ==================== VARIAÇÕES ==================== */
-    configurarVariacao({
-      selectId: "tamanho-produto",
-      lista: produto.tamanhos,
-      valorPadrao: "Único"
-    });
-
-    configurarVariacao({
-      selectId: "cor-produto",
-      lista: produto.cores,
-      valorPadrao: "Única"
-    });
-
-    /* ==================== IMAGENS ==================== */
-    const containerImgs = document.getElementById("imagens-produto");
-    containerImgs.innerHTML = "";
-
-    (produto.imagens || []).forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = produto.nome;
-      img.onclick = () => window.open(src, "_blank");
-      containerImgs.appendChild(img);
-    });
-
-    /* ==================== CARRINHO ==================== */
-    document.getElementById("adicionar-carrinho").addEventListener("click", () => {
-      const tamanhoSelect = document.getElementById("tamanho-produto");
-      const corSelect = document.getElementById("cor-produto");
-
-      const tamanho = tamanhoSelect.disabled ? "Único" : tamanhoSelect.value;
-      const cor = corSelect.disabled ? "Única" : corSelect.value;
-
-      if (!tamanho && !tamanhoSelect.disabled) return alert("Selecione o tamanho");
-      if (!cor && !corSelect.disabled) return alert("Selecione a cor");
-
-      const carrinho = JSON.parse(localStorage.getItem("carrinhoRNP")) || [];
-      const total = parseFloat(localStorage.getItem("totalRNP")) || 0;
+    function adicionarProduto(produto, tamanho, cor) {
+      const carrinho = getCarrinho();
 
       carrinho.push({
         id: Date.now(),
@@ -220,11 +152,111 @@
         cor
       });
 
-      localStorage.setItem("carrinhoRNP", JSON.stringify(carrinho));
-      localStorage.setItem("totalRNP", (total + produto.preco).toFixed(2));
+      salvarCarrinho(carrinho);
+      alert("Produto adicionado ao carrinho ");
+    }
 
-      alert("Produto adicionado ao carrinho!");
+    /* ================= PRODUTO PAGE ================= */
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const params = new URLSearchParams(window.location.search);
+      const produtoId = params.get("produto");
+
+      if (!produtoId) {
+        alert("Produto não informado na URL.");
+        return;
+      }
+
+      const produto = produtos[produtoId];
+
+      if (!produto) {
+        alert("Produto não encontrado ");
+        return;
+      }
+
+      const nomeEl = document.getElementById("nome");
+      const descEl = document.getElementById("descricao");
+      const precoEl = document.getElementById("preco");
+      const fotoPrincipal = document.getElementById("fotoPrincipal");
+      const miniaturas = document.getElementById("miniaturas");
+      const variacoesDiv = document.getElementById("variacoes");
+      const selectTamanho = document.getElementById("tamanho");
+      const selectCor = document.getElementById("cor");
+      const btnCarrinho = document.getElementById("btnCarrinho");
+
+      if (!nomeEl) return;
+
+      nomeEl.textContent = produto.nome;
+      descEl.textContent = produto.descricao;
+      precoEl.textContent = `R$ ${produto.preco.toFixed(2).replace(".", ",")}`;
+      fotoPrincipal.src = produto.fotos[0];
+
+      miniaturas.innerHTML = "";
+      produto.fotos.forEach(foto => {
+        const img = document.createElement("img");
+        img.src = foto;
+        img.onclick = () => fotoPrincipal.src = foto;
+        miniaturas.appendChild(img);
+      });
+
+      configurarVariacoes(produto, variacoesDiv, selectTamanho, selectCor);
+
+      if (btnCarrinho) {
+        btnCarrinho.addEventListener("click", () => {
+          const tamanho = selectTamanho?.value || null;
+          const cor = selectCor?.value || null;
+
+          if (produto.tamanhos && !tamanho) {
+            alert("Selecione um tamanho ");
+            return;
+          }
+
+          if (produto.cores && !cor) {
+            alert("Selecione uma cor ");
+            return;
+          }
+
+          adicionarProduto(produto, tamanho, cor);
+        });
+      }
+
     });
+
+
+
+    function configurarVariacoes(produto, variacoesDiv, selectTamanho, selectCor) {
+      if (!produto.tamanhos && !produto.cores) {
+        variacoesDiv.style.display = "none";
+        return;
+      }
+
+      variacoesDiv.style.display = "block";
+
+      if (produto.tamanhos) {
+        selectTamanho.innerHTML = `<option value="">Selecione o tamanho</option>`;
+        produto.tamanhos.forEach(t => {
+          const opt = document.createElement("option");
+          opt.value = t;
+          opt.textContent = t;
+          selectTamanho.appendChild(opt);
+        });
+      } else {
+        selectTamanho.parentElement.style.display = "none";
+      }
+
+      if (produto.cores) {
+        selectCor.innerHTML = `<option value="">Selecione a cor</option>`;
+        produto.cores.forEach(c => {
+          const opt = document.createElement("option");
+          opt.value = c;
+          opt.textContent = c;
+          selectCor.appendChild(opt);
+        });
+      } else {
+        selectCor.parentElement.style.display = "none";
+      }
+    }
   </script>
 
 </body>

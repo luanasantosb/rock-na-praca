@@ -728,21 +728,22 @@ h1,h2,h3,h4 {
 }
 
 .cartao {
-  background: var(--azul-soft);
-  padding: 0.9rem;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: var(--branco);
-  cursor: pointer;
-  text-decoration: none;
-  width: auto;
-  clip-path: polygon(0% 3%, 100% 2%, 98% 98%, 0% 100%);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
 }
 
-.cartao:hover,
-.cartao-top:hover {
-  animation: skane 0.25s linear;
+.cartao:hover {
+  transform: scale(1.03);
+}
+
+.cartao img {
+  width: 100px;
+  height: auto;
+  display: block;
 }
 
 .modal {
