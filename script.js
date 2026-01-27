@@ -93,9 +93,10 @@ if (section) {
   observer.observe(section);
 }
 
-/*====================YOUTUBE ====================== */
+/*====== YOUTUBE ============*/
+
 const container = document.getElementById("videos-lateral");
-const PROXY_URL = "https://script.google.com/macros/s/AKfycbwqZu3Yg-KUp9DpbZX5-vthJrFI_6tZGZTiI_nRnGQCVtYTXdRyx-5nkWkUwqgLLbOlJg/exec";
+const PROXY_URL = "https://script.google.com/macros/s/AKfycbz4SVirs8EtFIs9WVa5_lE7gkvP4xpj9CkdXQ13Z8qUwUtXwL0TG_fwTYbfLUrZlMsx/exec";
 
 async function carregarVideos() {
   try {
@@ -103,6 +104,11 @@ async function carregarVideos() {
     const data = await response.json();
 
     container.innerHTML = "";
+
+    if (data.message) {
+      container.innerHTML = `<p>${data.message}</p>`;
+      return;
+    }
 
     data.items.forEach(video => {
       const videoId = video.id.videoId;
