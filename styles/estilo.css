@@ -308,6 +308,50 @@ h1,h2,h3,h4 {
   filter: brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
 }
 
+.cartaz.institucional {
+  height: 450px;
+  background: rgba(0,0,0,.85);
+  border: 4px dashed var(--verde);
+  padding: 40px 36px;
+  text-decoration: none;
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+}
+
+.cartaz.institucional .conteudo {
+  max-width: 500px;
+}
+
+.cartaz.institucional h2 {
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.cartaz.institucional p {
+  margin: 18px 0 22px;
+  font-size: 1.1rem;
+  opacity: .9;
+}
+
+.cartaz.institucional .cta {
+  color: var(--verde);
+  font-weight: bold;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.cartaz.institucional:hover {
+  transform: 
+    perspective(1000px) 
+    rotateY(0deg) 
+    rotateZ(0deg) 
+    scale(1.03);
+  filter: brightness(1.05) contrast(1.1) drop-shadow(6px 8px 12px rgba(0,0,0,.8));
+}
+
 .secao-contador {
   margin-top: 0;
   display: flex;

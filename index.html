@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
- <!-- Google tag (gtag.js) NÃO ALTERAR-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-Z7RKDPPXTG');
-</script>
-  
-<!-- =====================================================
+<head>
+  <!-- Google tag (gtag.js) NÃO ALTERAR-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z7RKDPPXTG');
+  </script>
+
+  <!-- =====================================================
        Básico
   ====================================================== -->
   <meta charset="UTF-8">
@@ -20,7 +21,8 @@
   <meta name="theme-color" content="#000000">
 
   <title>Rock na Praça | Festival Itinerante Gratuito no RS</title>
-  <meta name="description" content="Rock na Praça é um festival itinerante gratuito no Rio Grande do Sul, com shows de bandas autorais e cultura urbana em praças públicas. Confira a agenda e participe.">
+  <meta name="description"
+    content="Rock na Praça é um festival itinerante gratuito no Rio Grande do Sul, com shows de bandas autorais e cultura urbana em praças públicas. Confira a agenda e participe.">
   <link rel="canonical" href="https://www.rocknapraca.com/">
 
   <!-- =====================================================
@@ -35,15 +37,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpeg" fetchpriority="high">
+  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpeg"
+    fetchpriority="high">
 
   <link rel="preload" href="/styles/estilo.css" as="style">
   <link rel="stylesheet" href="/styles/estilo.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap"
-        rel="stylesheet" media="print" onload="this.media='all'">
+    rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap"
+      rel="stylesheet">
   </noscript>
 
   <script src="/script.js" defer></script>
@@ -54,7 +58,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4ENQ5CCB9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-T4ENQ5CCB9');
   </script>
@@ -65,10 +69,12 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
   <meta property="og:title" content="Rock na Praça – Festival Itinerante de Rock Gratuito no RS">
-  <meta property="og:description" content="Rock na Praça é um festival itinerante gratuito no Rio Grande do Sul, com shows de bandas autorais e cultura urbana em praças públicas. Confira a agenda e participe.">
+  <meta property="og:description"
+    content="Rock na Praça é um festival itinerante gratuito no Rio Grande do Sul, com shows de bandas autorais e cultura urbana em praças públicas. Confira a agenda e participe.">
   <meta property="og:url" content="https://www.rocknapraca.com/">
   <meta property="og:image" content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpeg">
-  <meta property="og:image:secure_url" content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpeg">
+  <meta property="og:image:secure_url"
+    content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpeg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -80,7 +86,8 @@
   ====================================================== -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rock na Praça – Festival Itinerante de Rock Gratuito no RS">
-  <meta name="twitter:description" content="Rock gratuito, bandas independentes e cultura urbana em praças públicas do Rio Grande do Sul.">
+  <meta name="twitter:description"
+    content="Rock gratuito, bandas independentes e cultura urbana em praças públicas do Rio Grande do Sul.">
   <meta name="twitter:image" content="https://www.rocknapraca.com/assets/background/Flayer-rock-na-praca-Janeiro.jpeg">
 
   <!-- =====================================================
@@ -146,41 +153,55 @@
 
 <body>
 
-    <!--  CABEÇALHO  -->
-    <header class="cabecalho">
-        <div class="cabecalho-simbolo-logotipo">
-            <a href="./index.html">
-                <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone Rock na Praça">
-            </a>
+  <!--  CABEÇALHO  -->
+  <header class="cabecalho">
+    <div class="cabecalho-simbolo-logotipo">
+      <a href="./index.html">
+        <img src="./assets/logos/Rock-na-praca-logo-e-icone.png" alt="Ícone Rock na Praça">
+      </a>
+    </div>
+
+    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+
+    <nav class="cabecalho-menu" id="menu">
+      <a href="programacao.html">Programação</a>
+      <a href="sobre.html">Sobre</a>
+      <div class="menu-item">
+        <button class="menu-toggle" aria-expanded="false">
+          Participe
+        </button>
+        <div class="submenu">
+          <a href="inscricao-bandas.html">Bandas</a>
+          <a href="inscricao-feira.html">Economia Criativa</a>
         </div>
+      </div>
+      <a href="loja.html">Loja</a>
+      <a href="./contato.html">Contato</a>
+    </nav>
 
-        <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
-
-        <nav class="cabecalho-menu" id="menu">
-            <a href="programacao.html">Programação</a>
-            <a href="sobre.html">Sobre</a>
-            <div class="menu-item">
-                <button class="menu-toggle" aria-expanded="false">
-                    Participe
-                </button>
-                <div class="submenu">
-                    <a href="inscricao-bandas.html">Bandas</a>
-                    <a href="inscricao-feira.html">Economia Criativa</a>
-                </div>
-            </div>
-            <a href="loja.html">Loja</a>
-            <a href="./contato.html">Contato</a>
-        </nav>
-
-    </header>
+  </header>
 
   <main>
-    
+
     <h1 class="visually-hidden"> Rock na Praça</h1>
     <div class="banner-container">
-      <a href="./programacao.html">
-        <img src="./assets/background/Flayer-rock-na-praca-Janeiro.jpeg" alt="Cartaz do Rock na Praça" class="cartaz">
+      <!--<a href="./programacao.html">
+        <img src="#" class="cartaz">
+      </a>-->
+      <a href="./programacao.html" class="cartaz institucional">
+        <div class="conteudo">
+          <h2>Aguarde</h2>
+          <h2>a próxima edição</h2>
+
+          <p>
+            A nova programação do Rock na Praça está sendo preparada.
+            Em breve divulgamos as próximas bandas e datas.
+          </p>
+
+          <span class="cta">Fique ligado →</span>
+        </div>
       </a>
+
     </div>
 
     <!-- CONTADOR -->
@@ -207,43 +228,42 @@
       </div>
     </section>
 
-  <section class="bloco-principal">
+    <section class="bloco-principal">
 
-  <div class="apresentacao-texto">
-    <h3>A praça vira palco e o rock toma conta</h3>
+      <div class="apresentacao-texto">
+        <h3>A praça vira palco e o rock toma conta</h3>
 
-<p>
-Desde 2002, o <strong>Rock na Praça</strong> ocupa praças em várias cidades do <strong>Rio Grande do Sul</strong>, reinventando a cena do <strong>rock autoral</strong>. Gratuito e independente, o festival conecta gerações, fortalece a <strong>cena musical independente</strong> e transforma praças em palcos de <strong>música ao vivo e cultura urbana</strong>. Reconhecido como Patrimônio Cultural Imaterial de Esteio – a casa oficial do evento – o Rock na Praça garante experiências memoráveis para todos os públicos.
-</p>
+        <p>
+          Desde 2002, o <strong>Rock na Praça</strong> ocupa praças em várias cidades do <strong>Rio Grande do
+            Sul</strong>, reinventando a cena do <strong>rock autoral</strong>. Gratuito e independente, o festival
+          conecta gerações, fortalece a <strong>cena musical independente</strong> e transforma praças em palcos de
+          <strong>música ao vivo e cultura urbana</strong>. Reconhecido como Patrimônio Cultural Imaterial de Esteio – a
+          casa oficial do evento – o Rock na Praça garante experiências memoráveis para todos os públicos.
+        </p>
 
-  <div class="apresentacao-video">
-      <iframe 
-        src="https://www.youtube-nocookie.com/embed/RoGtOp9N05U?si=fsfUjkrA5HLFR9ZZ"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+        <div class="apresentacao-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/RoGtOp9N05U?si=fsfUjkrA5HLFR9ZZ" loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
 
-  
-  <aside class="bloco-lateral">
-  <div class="videos-conteudo">
-    <h3>Rock na Praça – Melhores Momentos</h3>
 
-    <div class="videos-container" id="videos-lateral">
+      <aside class="bloco-lateral">
+        <div class="videos-conteudo">
+          <h3>Rock na Praça – Melhores Momentos</h3>
 
-    </div>
+          <div class="videos-container" id="videos-lateral">
 
-    <a
-      href="https://www.youtube.com/@Rocknapraca_RS"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="videos-btn">
-      Ver mais no YouTube →
-    </a>
-  </div>
-</aside>
-</section>
+          </div>
+
+          <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer"
+            class="videos-btn">
+            Ver mais no YouTube →
+          </a>
+        </div>
+      </aside>
+    </section>
 
 
   </main>
@@ -259,14 +279,14 @@ Desde 2002, o <strong>Rock na Praça</strong> ocupa praças em várias cidades d
       </div>
 
       <div class="centro-textos">
-      <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-      <p class="desenvolvedora-credito">
-     Desenvolvido por
-    <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer">
-      Luana Santos
-      </a>
-    </p>
-    </div>
+        <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
+        <p class="desenvolvedora-credito">
+          Desenvolvido por
+          <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer">
+            Luana Santos
+          </a>
+        </p>
+      </div>
 
       <div class="direita-contato">
         <div class="redes-sociais">
@@ -286,4 +306,5 @@ Desde 2002, o <strong>Rock na Praça</strong> ocupa praças em várias cidades d
     </div>
   </footer>
 </body>
+
 </html>
