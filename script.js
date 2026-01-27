@@ -96,7 +96,7 @@ if (section) {
 /*====== YOUTUBE ============*/
 
 const container = document.getElementById("videos-lateral");
-const PROXY_URL = "https://script.google.com/macros/s/AKfycbz4SVirs8EtFIs9WVa5_lE7gkvP4xpj9CkdXQ13Z8qUwUtXwL0TG_fwTYbfLUrZlMsx/exec";
+const PROXY_URL = "https://script.google.com/macros/s/AKfycbwU9oCYvnZGm2B68_Nbse5k4-MJ72iPC_vLSXktqPx0NAc73ZvvaYEhFnarmUSc6m5W/exec";
 
 async function carregarVideos() {
   try {
@@ -105,8 +105,13 @@ async function carregarVideos() {
 
     container.innerHTML = "";
 
-    if (data.message) {
-      container.innerHTML = `<p>${data.message}</p>`;
+    if (data.error) {
+      container.innerHTML = `<p>Erro: ${data.error}</p>`;
+      return;
+    }
+
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = "<p>Não há vídeos disponíveis.</p>";
       return;
     }
 
@@ -120,7 +125,7 @@ async function carregarVideos() {
       card.innerHTML = `
         <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
           <img src="${snippet.thumbnails.medium.url}" alt="${snippet.title}">
-          ${snippet.title}
+          <h4>${snippet.title}</h4>
         </a>
       `;
 
@@ -134,6 +139,7 @@ async function carregarVideos() {
 }
 
 carregarVideos();
+
 
 /*====== MODAL ========= */
 
