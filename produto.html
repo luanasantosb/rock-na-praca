@@ -9,13 +9,7 @@
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-Z7RKDPPXTG');
-</script>
 
 <body>
 
@@ -72,7 +66,7 @@
         ],
         tamanhos: ["Babylook M", "Babylook G", "Babylook GG", "Babylook XG",
           "Camiseta PP", "Camiseta P", "Camiseta M", "Camiseta G", "Camiseta GG", "Camiseta XG", "Camiseta XXG"],
-        cores: ["Preto","Cinza Chumbo","Cinza Mescla","Preto Mescla","Cinza Médio","Branco","Marrom","Amarelo Canário","Amarelo Ouro","Amarelo Mostarda","Laranja","Vermelho","Bordô","Rosa Goiaba","Rosa Bebê","Rosa Pink","Lilás","Roxo","Verde Fluor","Azul Marinho","Azul Royal","Azul Jade","Azul Turquesa","Verde Bandeira","Verde Folha","Verde Musgo","Crua (tom cru/bege claro)","Raglan Mescla/Preto","Raglan Mescla/Bordô","Raglan Branco/Preto"]
+        cores: ["Preto", "Cinza Chumbo", "Cinza Mescla", "Preto Mescla", "Cinza Médio", "Branco", "Marrom", "Amarelo Canário", "Amarelo Ouro", "Amarelo Mostarda", "Laranja", "Vermelho", "Bordô", "Rosa Goiaba", "Rosa Bebê", "Rosa Pink", "Lilás", "Roxo", "Verde Fluor", "Azul Marinho", "Azul Royal", "Azul Jade", "Azul Turquesa", "Verde Bandeira", "Verde Folha", "Verde Musgo", "Crua (tom cru/bege claro)", "Raglan Mescla/Preto", "Raglan Mescla/Bordô", "Raglan Branco/Preto"]
       },
       {
         id: "camiseta-rock-na-praca-2",
@@ -86,7 +80,7 @@
         ],
         tamanhos: ["Babylook M", "Babylook G", "Babylook GG", "Babylook XG",
           "Camiseta PP", "Camiseta P", "Camiseta M", "Camiseta G", "Camiseta GG", "Camiseta XG", "Camiseta XXG"],
-        cores: ["Preto","Cinza Chumbo","Cinza Mescla","Preto Mescla","Cinza Médio","Branco","Marrom","Amarelo Canário","Amarelo Ouro","Amarelo Mostarda","Laranja","Vermelho","Bordô","Rosa Goiaba","Rosa Bebê","Rosa Pink","Lilás","Roxo","Verde Fluor","Azul Marinho","Azul Royal","Azul Jade","Azul Turquesa","Verde Bandeira","Verde Folha","Verde Musgo","Crua (tom cru/bege claro)","Raglan Mescla/Preto","Raglan Mescla/Bordô","Raglan Branco/Preto"]
+        cores: ["Preto", "Cinza Chumbo", "Cinza Mescla", "Preto Mescla", "Cinza Médio", "Branco", "Marrom", "Amarelo Canário", "Amarelo Ouro", "Amarelo Mostarda", "Laranja", "Vermelho", "Bordô", "Rosa Goiaba", "Rosa Bebê", "Rosa Pink", "Lilás", "Roxo", "Verde Fluor", "Azul Marinho", "Azul Royal", "Azul Jade", "Azul Turquesa", "Verde Bandeira", "Verde Folha", "Verde Musgo", "Crua (tom cru/bege claro)", "Raglan Mescla/Preto", "Raglan Mescla/Bordô", "Raglan Branco/Preto"]
       },
       {
         id: "mochila-rock-na-praca",
@@ -105,7 +99,7 @@
           "./assets/loja/carteira-rock-na-praca-fechada.jpeg"
         ],
       },
-       {
+      {
         id: "copo-rock-na-praca",
         nome: "Copo Rock na Praça",
         preco: 10.00,
@@ -115,22 +109,22 @@
           "./assets/loja/copo-rock-na-praca-frente.jpeg"
         ],
       },
-       {
+      {
         id: "bone-rock-na-praca-1",
         nome: "Boné Rock na Praça #1",
         preco: 70.00,
         descricao: "Produto oficial.",
         imagens: ["./assets/loja/bone-rock-na-praça-1.jpeg"]
       },
-       {
+      {
         id: "bone-rock-na-praca-2",
         nome: "Boné Rock na Praça #2",
         preco: 70.00,
         descricao: "Produto oficial.",
         imagens: ["./assets/loja/bone-rock-na-praca-2.jpeg"]
       },
-
     ];
+
 
     function getCarrinho() {
       return JSON.parse(localStorage.getItem("carrinhoRNP")) || [];
@@ -156,7 +150,6 @@
       alert("Produto adicionado ao carrinho ");
     }
 
-    /* ================= PRODUTO PAGE ================= */
 
     document.addEventListener("DOMContentLoaded", () => {
 
@@ -168,10 +161,11 @@
         return;
       }
 
-      const produto = produtos[produtoId];
+
+      const produto = produtos.find(p => p.id === produtoId);
 
       if (!produto) {
-        alert("Produto não encontrado ");
+        alert("Produto não encontrado.");
         return;
       }
 
@@ -185,53 +179,55 @@
       const selectCor = document.getElementById("cor");
       const btnCarrinho = document.getElementById("btnCarrinho");
 
-      if (!nomeEl) return;
-
       nomeEl.textContent = produto.nome;
       descEl.textContent = produto.descricao;
       precoEl.textContent = `R$ ${produto.preco.toFixed(2).replace(".", ",")}`;
-      fotoPrincipal.src = produto.fotos[0];
+
+      fotoPrincipal.src = produto.imagens[0];
+
 
       miniaturas.innerHTML = "";
-      produto.fotos.forEach(foto => {
+      produto.imagens.forEach(imgSrc => {
         const img = document.createElement("img");
-        img.src = foto;
-        img.onclick = () => fotoPrincipal.src = foto;
+        img.src = imgSrc;
+        img.classList.add("miniatura");
+        img.addEventListener("click", () => {
+          fotoPrincipal.src = imgSrc;
+        });
         miniaturas.appendChild(img);
       });
 
       configurarVariacoes(produto, variacoesDiv, selectTamanho, selectCor);
 
-      if (btnCarrinho) {
-        btnCarrinho.addEventListener("click", () => {
-          const tamanho = selectTamanho?.value || null;
-          const cor = selectCor?.value || null;
+      btnCarrinho.addEventListener("click", () => {
+        const tamanho = selectTamanho?.value || null;
+        const cor = selectCor?.value || null;
 
-          if (produto.tamanhos && !tamanho) {
-            alert("Selecione um tamanho ");
-            return;
-          }
+        if (produto.tamanhos && !tamanho) {
+          alert("Selecione um tamanho" );
+      return;
+        }
 
-          if (produto.cores && !cor) {
-            alert("Selecione uma cor ");
-            return;
-          }
+        if (produto.cores && !cor) {
+          alert("Selecione uma cor ");
+          return;
+        }
 
-          adicionarProduto(produto, tamanho, cor);
-        });
-      }
+        adicionarProduto(produto, tamanho, cor);
+      });
 
     });
 
 
-
     function configurarVariacoes(produto, variacoesDiv, selectTamanho, selectCor) {
+
       if (!produto.tamanhos && !produto.cores) {
         variacoesDiv.style.display = "none";
         return;
       }
 
       variacoesDiv.style.display = "block";
+
 
       if (produto.tamanhos) {
         selectTamanho.innerHTML = `<option value="">Selecione o tamanho</option>`;
@@ -245,6 +241,7 @@
         selectTamanho.parentElement.style.display = "none";
       }
 
+
       if (produto.cores) {
         selectCor.innerHTML = `<option value="">Selecione a cor</option>`;
         produto.cores.forEach(c => {
@@ -257,6 +254,7 @@
         selectCor.parentElement.style.display = "none";
       }
     }
+
   </script>
 
 </body>
