@@ -94,31 +94,13 @@ if (section) {
 }
 
 /*====================YOUTUBE ====================== */
-
-const API_KEY = "AIzaSyBDXEDjWMGEqF2ihUEqaRaj-TAnSDN5o_g";
-const CHANNEL_ID = "UCeHYadsCTWgUghjYBnlwrxA";
-const MAX_RESULTS = 3;
-
 const container = document.getElementById("videos-lateral");
+const PROXY_URL = "URL_DO_WEBAPP_DO_APPS_SCRIPT";
 
 async function carregarVideos() {
-  const url =
-    `https://www.googleapis.com/youtube/v3/search?` +
-    `part=snippet` +
-    `&channelId=${CHANNEL_ID}` +
-    `&maxResults=${MAX_RESULTS}` +
-    `&order=date&type=video` +
-    `&key=${API_KEY}`;
-
   try {
-    const response = await fetch(url);
+    const response = await fetch(PROXY_URL);
     const data = await response.json();
-
-    if (data.error) {
-      console.error("Erro da API:", data.error.message);
-      container.innerHTML = `<p>${data.error.message}</p>`;
-      return;
-    }
 
     container.innerHTML = "";
 
