@@ -912,8 +912,6 @@ h1,h2,h3,h4 {
 /*              INSCRIÇÕES                  */
 /* ========================= */
 
-/* ================== SEÇÃO BANDAS / FEIRA ================== */
-
 .bandas,
 .feira {
   max-width: 1100px;
@@ -989,6 +987,23 @@ h1,h2,h3,h4 {
   position: relative;
 }
 
+.feira-detalhes {
+  border: 1px solid red;  
+  margin: 50px 0;          
+  padding: 20px;          
+  display: block;         
+  border-radius: 8px;
+}
+
+.feira-detalhes summary,
+.bandas-detalhes summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color:var(--verde);
+  font-size: 1.8rem;    
+}
+
 #formSite {
   margin: 3rem auto 0;
   padding: 2.5rem 2rem;
@@ -1004,6 +1019,7 @@ h1,h2,h3,h4 {
   margin: 0 0 1.5rem;
   display: grid;
   gap: 0.6rem;
+  margin: 1rem;
 }
 
 #formSite legend {
@@ -1014,7 +1030,6 @@ h1,h2,h3,h4 {
   color: var(--verde);
   margin-bottom: 0.6rem;
 }
-
 
 #formSite label {
   font-size: 0.85rem;
@@ -1028,7 +1043,7 @@ h1,h2,h3,h4 {
   padding: 0.8rem 0.9rem;
   outline: none;
   border:none;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid var(--verde);
   background: var(--overlay-dark);
   color: var(--branco);
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
