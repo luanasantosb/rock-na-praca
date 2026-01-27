@@ -95,7 +95,7 @@ if (section) {
 
 /*====================YOUTUBE ====================== */
 const container = document.getElementById("videos-lateral");
-const PROXY_URL = "URL_DO_WEBAPP_DO_APPS_SCRIPT";
+const PROXY_URL = "https://script.google.com/macros/s/AKfycbwqZu3Yg-KUp9DpbZX5-vthJrFI_6tZGZTiI_nRnGQCVtYTXdRyx-5nkWkUwqgLLbOlJg/exec";
 
 async function carregarVideos() {
   try {
