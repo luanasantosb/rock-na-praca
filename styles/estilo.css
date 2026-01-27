@@ -1011,8 +1011,6 @@ h1,h2,h3,h4 {
   margin: 3rem 0;
   padding: 1.5rem 2rem;
   display: block;
-  border-radius: 8px;
-  background: var(--overlay-dark);
 }
 
 .feira-detalhes summary,
@@ -1027,7 +1025,6 @@ h1,h2,h3,h4 {
 #formSite {
   margin: 2rem auto 0;
   padding: 2.5rem 2rem;
-  background: var(--overlay-dark);
   display: grid;
   gap: 1.2rem;
   border-radius: 6px;
@@ -1141,10 +1138,14 @@ h1,h2,h3,h4 {
 
   .bandas-enviar,
   .lojas-enviar {
-    width: 100%;
+    width: 90%;
   }
+  .bandas-conteudo,
+.feira-conteudo,
+#formSite {
+  width: 80%;
 }
-
+}
 
 
 /* ========================= */
@@ -1575,7 +1576,6 @@ body {
   transform: translateY(0);
 }
 
-/* ================= RESPONSIVO ================= */
 @media (max-width: 900px) {
   .produto-container {
     grid-template-columns: 1fr;
