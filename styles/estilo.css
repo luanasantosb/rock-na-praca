@@ -784,9 +784,8 @@ h1,h2,h3,h4 {
   width: 100px;
   height: 100px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
-  background-color: var(--overlay-dark);
+  background-color: transparent;
   object-fit: contain;
 }
 
@@ -848,16 +847,6 @@ h1,h2,h3,h4 {
   cursor: pointer;
 }
 
-
-@keyframes skane {
-  0% { transform: translate(0) rotate(0); }
-  15% { transform: translate(-1px, 1px) rotate(-0.5deg); }
-  30% { transform: translate(1px, -1px) rotate(0.5deg); }
-  45% { transform: translate(-1px, 0) rotate(-0.3deg); }
-  60% { transform: translate(1px, 1px) rotate(0.3deg); }
-  75% { transform: translate(-1px, -1px) rotate(-0.2deg); }
-  100% { transform: translate(0) rotate(0); }
-}
 
 @media (min-width: 1024px) {
   .grupo-cartoes {

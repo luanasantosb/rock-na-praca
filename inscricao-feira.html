@@ -173,96 +173,150 @@
 
   </header>
 
-<main>
+  <main>
 
-  <!-- H1 invisível para SEO e acessibilidade -->
-  <h1 class="visually-hidden">
-    Inscrição para a Feira de Economia Criativa do Rock na Praça
-  </h1>
+    <!-- H1 invisível para SEO e acessibilidade -->
+    <h1 class="visually-hidden">
+      Inscrição para a Feira de Economia Criativa do Rock na Praça
+    </h1>
 
-  <section class="feira" aria-labelledby="titulo-feira">
+    <section class="feira" aria-labelledby="titulo-feira">
 
-    <article class="feira-conteudo">
-      <header>
-        <h2 id="titulo-feira">Feira de Economia Criativa e Solidária</h2>
+      <article class="feira-conteudo">
+        <header>
+          <h2 id="titulo-feira">Feira de Economia Criativa e Solidária</h2>
 
-        <p>
-          A iniciativa promove a economia solidária e o empreendedorismo cultural, reunindo artesãs, artistas e
-          produtores independentes em um espaço dedicado à exposição e venda de seus produtos. Mais que um ponto de
-          comércio, o projeto valoriza o trabalho autoral, fortalece a produção cultural local e conecta o público a
-          criações feitas de forma consciente, sustentável e socialmente responsável, transformando cada visita em uma
-          experiência de descoberta e inspiração.
-        </p>
-      </header>
+          <p>
+            A iniciativa promove a economia solidária e o empreendedorismo cultural, reunindo artesãs, artistas e
+            produtores independentes em um espaço dedicado à exposição e venda de seus produtos. Mais que um ponto de
+            comércio, o projeto valoriza o trabalho autoral, fortalece a produção cultural local e conecta o público a
+            criações feitas de forma consciente, sustentável e socialmente responsável, transformando cada visita em uma
+            experiência de descoberta e inspiração.
+          </p>
+        </header>
 
-      <section aria-labelledby="diretrizes-feira">
-        <h3 id="diretrizes-feira">Diretrizes para inscrição</h3>
+        <section aria-labelledby="diretrizes-feira">
+          <h3 id="diretrizes-feira">Diretrizes para inscrição</h3>
 
-        <ul>
-          <li>Para garantir sua participação, basta preencher o formulário e realizar o pagamento da taxa de inscrição.</li>
-          <li>O número de vagas é limitado, de acordo com a estrutura e a capacidade de cada edição.</li>
-          <li>Cada banca pode ocupar até 3x3 metros. Mesas e cadeiras não são fornecidas.</li>
-          <li><strong>Não é permitida</strong> a comercialização de bebidas nem de produtos alimentícios no espaço da feira.</li>
-        </ul>
-      </section>
-    </article>
+          <ul>
+            <li>Para garantir sua participação, basta preencher o formulário e realizar o pagamento da taxa de
+              inscrição.</li>
+            <li>O número de vagas é limitado, de acordo com a estrutura e a capacidade de cada edição.</li>
+            <li>Cada banca pode ocupar até 3x3 metros. Mesas e cadeiras não são fornecidas.</li>
+            <li><strong>Não é permitida</strong> a comercialização de bebidas nem de produtos alimentícios no espaço da
+              feira.</li>
+          </ul>
+        </section>
+      </article>
 
-    <details class="feira-detalhes">
-      <summary>Realizar inscrição</summary>
-      
-      <form id="formSite" novalidate aria-describedby="mensagem">
-        <p >
-          Para confirmar sua participação, realize o pagamento da taxa de R$50 via Pix (chave: 831.611.630-87 – PagBank),
-          preencha o formulário e envie o comprovante. Vagas limitadas: 15 bancas. 
-          📅 Data: 01 de março de 2026 📍 Local: Praça Coração de Maria, Esteio.
-        </p>
+      <details class="feira-detalhes">
+        <summary>Realizar inscrição</summary>
 
-        <fieldset>
-          <legend>Dados da Loja</legend>
+        <form id="formSite" novalidate aria-describedby="mensagem">
+          <p>
+            Para confirmar sua participação, realize o pagamento da taxa de R$50 via Pix (chave: 831.611.630-87 –
+            PagBank),
+            preencha o formulário e envie o comprovante. Vagas limitadas: 15 bancas.
+            📅 Data: 01 de março de 2026 📍 Local: Praça Coração de Maria, Esteio.
+          </p>
 
-          <label for="loja_nome">Nome da Loja *</label>
-          <input id="loja_nome" name="loja_nome" class="lojas-input" required>
+          <fieldset>
+            <legend>Dados da Loja</legend>
 
-          <label for="loja_cidade">Cidade / Estado / País *</label>
-          <input id="loja_cidade" name="loja_cidade" class="lojas-input" required>
+            <label for="loja_nome">Nome da Loja *</label>
+            <input id="loja_nome" name="loja_nome" class="lojas-input" required>
 
-          <label for="loja_redes">Rede social *</label>
-          <input id="loja_redes" name="loja_redes" class="lojas-input" required>
+            <label for="loja_cidade">Cidade / Estado / País *</label>
+            <input id="loja_cidade" name="loja_cidade" class="lojas-input" required>
 
-          <label for="logo">Logo (Imagem ou PDF)</label>
-          <input type="file" id="logo" name="logo" class="lojas-input" accept="image/*,.pdf">
-        </fieldset>
+            <label for="loja_redes">Rede social *</label>
+            <input id="loja_redes" name="loja_redes" class="lojas-input" required>
 
-        <fieldset>
-          <legend>Contato</legend>
+            <label for="logo">Logo (Imagem ou PDF)</label>
+            <input type="file" id="logo" name="logo" class="lojas-input" accept="image/*,.pdf">
+          </fieldset>
 
-          <label for="loja_responsavel">Responsável *</label>
-          <input id="loja_responsavel" name="loja_responsavel" class="lojas-input" required>
+          <fieldset>
+            <legend>Contato</legend>
 
-          <label for="loja_whatsapp">WhatsApp *</label>
-          <input id="loja_whatsapp" name="loja_whatsapp" class="lojas-input" inputmode="tel"
-            placeholder="(51) 99999-9999" required>
+            <label for="loja_responsavel">Responsável *</label>
+            <input id="loja_responsavel" name="loja_responsavel" class="lojas-input" required>
 
-          <label for="loja_email">Email</label>
-          <input id="loja_email" name="loja_email" type="email" class="lojas-input" placeholder="contato@loja.com">
+            <label for="loja_whatsapp">WhatsApp *</label>
+            <input id="loja_whatsapp" name="loja_whatsapp" class="lojas-input" inputmode="tel"
+              placeholder="(51) 99999-9999" required>
 
-          <label for="comprovante">Comprovante (PDF ou imagem)</label>
-          <input type="file" id="comprovante" name="comprovante" class="lojas-input" accept=".pdf,image/*">
-        </fieldset>
+            <label for="loja_email">Email</label>
+            <input id="loja_email" name="loja_email" type="email" class="lojas-input" placeholder="contato@loja.com">
 
-        <div id="mensagem" role="status" aria-live="polite"></div>
+            <label for="comprovante">Comprovante (PDF ou imagem)</label>
+            <input type="file" id="comprovante" name="comprovante" class="lojas-input" accept=".pdf,image/*">
+          </fieldset>
 
-        <button type="submit" class="lojas-enviar">
-          Enviar inscrição
-        </button>
-      </form>
-    </details>
+          <div id="mensagem" role="status" aria-live="polite"></div>
 
-  </section>
-</main>
+          <button type="submit" class="lojas-enviar">
+            Enviar inscrição
+          </button>
+        </form>
+        <script>
+          const URL = "https://script.google.com/macros/s/AKfycbzizhz7B5Ad2w8G4VIdhkGoMWkped9Dq88icWPBdF8StxkhrkT-IqArqm_uxHdvXbK6ww/exec";
+
+          const form = document.getElementById("formSite");
+          const msg = document.getElementById("mensagem");
+          const botao = document.querySelector("button");
+
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            botao.disabled = true;
+            msg.textContent = "Enviando...";
+
+            const dados = {
+              loja_nome: form.loja_nome.value,
+              loja_cidade: form.loja_cidade.value,
+              loja_redes: form.loja_redes.value,
+              loja_responsavel: form.loja_responsavel.value,
+              loja_whatsapp: form.loja_whatsapp.value,
+              loja_email: form.loja_email.value,
+              loja_logo: await base64(document.getElementById("logo").files[0]),
+              loja_comprovante: await base64(document.getElementById("comprovante").files[0])
+            };
+
+            try {
+              const r = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(dados)
+              });
+
+              const json = await r.json();
+              msg.textContent = json.mensagem;
+              msg.className = json.sucesso ? "sucesso" : "erro";
+              if (json.sucesso) form.reset();
+
+            } catch (err) {
+              msg.textContent = "Erro de conexão.";
+              msg.className = "erro";
+            }
+
+            botao.disabled = false;
+          });
+
+          function base64(file) {
+            return new Promise(resolve => {
+              if (!file) return resolve("");
+              const reader = new FileReader();
+              reader.onload = () => resolve(reader.result);
+              reader.readAsDataURL(file);
+            });
+          }
+        </script>
+      </details>
+
+    </section>
+  </main>
 
 
- <!-- RODAPÉ -->
+  <!-- RODAPÉ -->
   <footer class="rodape">
     <div class="rodape-conteudo">
 
@@ -286,73 +340,23 @@
       <div class="direita-contato">
         <div class="redes-sociais">
           <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/logos/redes/logo_instagram.webp" alt="Instagram">
+            <img src="./assets/logos/redes/instagram_logo.webp" alt="Instagram">
           </a>
 
           <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/logos/redes/logo_facebook.webp" alt="Facebook">
+            <img src="./assets/logos/redes/facebook_logo.webp" alt="Facebook">
           </a>
 
           <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/logos/redes/logo_youtube.webp" alt="YouTube">
+            <img src="./assets/logos/redes/youtube_logo.webp" alt="YouTube">
           </a>
         </div>
       </div>
 
     </div>
   </footer>
-  
-  <script>
-    const URL = "https://script.google.com/macros/s/AKfycbzizhz7B5Ad2w8G4VIdhkGoMWkped9Dq88icWPBdF8StxkhrkT-IqArqm_uxHdvXbK6ww/exec";
 
-    const form = document.getElementById("formSite");
-    const msg = document.getElementById("mensagem");
-    const botao = document.querySelector("button");
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      botao.disabled = true;
-      msg.textContent = "Enviando...";
-
-      const dados = {
-        loja_nome: form.loja_nome.value,
-        loja_cidade: form.loja_cidade.value,
-        loja_redes: form.loja_redes.value,
-        loja_responsavel: form.loja_responsavel.value,
-        loja_whatsapp: form.loja_whatsapp.value,
-        loja_email: form.loja_email.value,
-        loja_logo: await base64(document.getElementById("logo").files[0]),
-        loja_comprovante: await base64(document.getElementById("comprovante").files[0])
-      };
-
-      try {
-        const r = await fetch(URL, {
-          method: "POST",
-          body: JSON.stringify(dados)
-        });
-
-        const json = await r.json();
-        msg.textContent = json.mensagem;
-        msg.className = json.sucesso ? "sucesso" : "erro";
-        if (json.sucesso) form.reset();
-
-      } catch (err) {
-        msg.textContent = "Erro de conexão.";
-        msg.className = "erro";
-      }
-
-      botao.disabled = false;
-    });
-
-    function base64(file) {
-      return new Promise(resolve => {
-        if (!file) return resolve("");
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.readAsDataURL(file);
-      });
-    }
-  </script>
 </body>
 
 
