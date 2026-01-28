@@ -216,7 +216,7 @@
           <p>
             Para confirmar sua participação, realize o pagamento da taxa de R$50 via Pix (chave: 831.611.630-87 –
             PagBank),
-            preencha o formulário e envie o comprovante. 
+            preencha o formulário e envie o comprovante.
             Vagas limitadas: 15 bancas.<br>
             📅 Data: 01 de março de 2026 <br>
             📍 Local: Praça Coração de Maria, Esteio.
@@ -232,7 +232,7 @@
             <input id="loja_cidade" name="loja_cidade" class="lojas-input" required>
 
             <label for="loja_redes">Rede social *</label>
-            <input id="loja_redes" name="loja_redes" class="lojas-input" type="url" placeholder="https://loja.com" required>
+            <input id="loja_redes" name="loja_redes" class="lojas-input" type="url" placeholder="https://instragram.com/loja"required>
 
             <label for="logo">Logo (Imagem ou PDF)</label>
             <input type="file" id="logo" name="logo" class="lojas-input" accept="image/*,.pdf">
@@ -270,6 +270,17 @@
 
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
+
+            if (
+              !form.loja_nome.value.trim() ||
+              !form.loja_cidade.value.trim() ||
+              !form.loja_whatsapp.value.trim()
+            ) {
+              msg.textContent = "Preencha todos os campos obrigatórios.";
+              msg.className = "erro";
+              return;
+            }
+
             botao.disabled = true;
             msg.textContent = "Enviando...";
 

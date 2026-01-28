@@ -279,6 +279,16 @@
 
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
+            // 🔎 Validação básica
+            if (
+              !form.banda_nome.value.trim() ||
+              !form.banda_cidade.value.trim() ||
+              !form.banda_whatsapp.value.trim()
+            ) {
+              msg.textContent = "Preencha todos os campos obrigatórios.";
+              msg.className = "erro";
+              return; // ⛔ bloqueia o envio
+            }
             botao.disabled = true;
             msg.textContent = "Enviando...";
 
