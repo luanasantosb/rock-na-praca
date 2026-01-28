@@ -96,7 +96,7 @@ if (section) {
 /*====== YOUTUBE ============*/
 
 const container = document.getElementById("videos-lateral");
-const PROXY_URL = "https://script.google.com/macros/s/AKfycbwU9oCYvnZGm2B68_Nbse5k4-MJ72iPC_vLSXktqPx0NAc73ZvvaYEhFnarmUSc6m5W/exec";
+const PROXY_URL = "https://script.google.com/macros/s/AKfycbxzFVPEnl9xdaj2uF89ZCSe8ONRF4vJjdaWfSWJSWst7bsnpGTooKGEs8HoPVRU9XQQ/exec";
 
 async function carregarVideos() {
   try {
@@ -116,7 +116,7 @@ async function carregarVideos() {
     }
 
     data.items.forEach(video => {
-      const videoId = video.id.videoId;
+      const videoId = video.snippet.resourceId.videoId;
       const snippet = video.snippet;
 
       const card = document.createElement("div");
