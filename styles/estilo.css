@@ -1034,24 +1034,13 @@ position: relative;
 .bandas h2,
 .feira h2 {
   font-size: clamp(1.9rem, 4vw, 2.4rem);
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--verde);
   font-family: var(--fonte-titulos);
   text-align: center;
 }
-
-.bandas h3,
-.feira h3 {
-  margin-top: 2.5rem;
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--verde);
-  font-family: var(--fonte-titulos);
-}
-
 
 .bandas p,
 .feira p {
@@ -1064,16 +1053,27 @@ position: relative;
 
 .bandas p+p,
 .feira p+p {
-  margin-top: 1.4rem;
+  margin-top: 1rem;
+}
+
+.bandas h3,
+.feira h3 {
+  margin-top: 1rem;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde);
+  font-family: var(--fonte-titulos);
 }
 
 .bandas ul,
 .feira ul {
   list-style: none;
   padding: 0;
-  margin: 1.8rem 0 0;
-  display: grid;
-  gap: 1.1rem;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   font-family: var(--fonte-textos);
   color: var(--branco);
 }
@@ -1086,11 +1086,10 @@ position: relative;
   position: relative;
 }
 
-
 .feira-detalhes,
 .bandas-detalhes {
   margin: 0.5rem 0;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   display: block;
 }
 
@@ -1101,6 +1100,7 @@ position: relative;
   margin: 0 0 1rem 0;
   color: var(--verde);
   font-size: clamp(1.6rem, 3vw, 1.8rem);
+  text-transform: uppercase;
 }
 
 #formSite {
