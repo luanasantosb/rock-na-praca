@@ -571,6 +571,10 @@ h4 {
 /*            PROGRAMAÇÃO              */
 /* ========================= */
 
+/* ========================= */
+/*            PROGRAMAÇÃO              */
+/* ========================= */
+
 .programacao,
 .secao-cartoes-top,
 .secao-cartoes-bottom {
@@ -598,27 +602,35 @@ h4 {
   gap: 2rem;
 }
 
-
 .secao-cartoes-top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
 }
 
 .cartao-top {
-  background: var(--overlay-dark);
-  border: 10px dashed var(--verde);
-  padding: 1.2rem;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-  clip-path: polygon(0% 3%, 5% 0%, 10% 3%, 15% 1%, 20% 3%, 25% 0%, 30% 3%,
-      35% 1%, 40% 3%, 45% 0%, 50% 3%, 55% 1%, 60% 3%, 65% 0%,
-      70% 3%, 75% 1%, 80% 3%, 85% 0%, 90% 3%, 95% 1%, 100% 3%,
-      100% 97%, 95% 100%, 90% 97%, 85% 99%, 80% 97%, 75% 100%,
-      70% 97%, 65% 99%, 60% 97%, 55% 100%, 50% 97%, 45% 99%,
-      40% 97%, 35% 100%, 30% 97%, 25% 99%, 20% 97%, 15% 100%,
-      10% 97%, 5% 99%, 0% 97%);
+  width: 70%;
+  border-width: 4px;
+  border-style: dashed;
+  border-color: var(--verde);
+  filter: contrast(1.15) saturate(0.9);
+  transform: rotate(-0.4deg);
+}
+
+.cartao-top:hover {
+  transform: rotate(-0.8deg) scale(1.02);
+}
+
+.cartao-top::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 6px);
+  pointer-events: none;
 }
 
 .cartao-top.infos {
@@ -628,6 +640,7 @@ h4 {
   gap: 1rem;
   text-align: center;
   color: var(--branco);
+  transform: rotate(-1deg);
 }
 
 .cartao-top.infos .tag {
@@ -643,6 +656,7 @@ h4 {
   letter-spacing: clamp(0.2rem, 1vw, 1rem);
   text-transform: uppercase;
   color: var(--verde);
+position: relative;
 }
 
 .cartao-top.infos p {
@@ -650,26 +664,49 @@ h4 {
   line-height: 1.5;
 }
 
+
 .cartao-top.infos button {
   margin-top: 1rem;
   width: min(100%, 320px);
-  padding: 0.9rem;
+  padding: 0.2rem;
   font-size: 1.1rem;
-  font-weight: 900;
   background: transparent;
   color: var(--branco);
-  border: 3px dashed var(--verde);
   cursor: pointer;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.4));
 }
 
-.cartao-top.infos button:hover,
-.cartao-top.infos button:focus-visible {
-  background: var(--verde);
-  color: var(--preto);
-  transform: translateY(-2px);
+.cartao-top.infos button {
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cartao-top.infos button:hover {
+  transform: translate(-2px, -2px) rotate(-1deg);
+}
+
+.cartao-top.infos button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: translateX(-120%);
+}
+
+.cartao-top.infos button:hover::before {
+  transform: translateX(120%);
+  transition: transform 0.6s;
 }
 
 .cartao-top.bike {
+  width: 30%;
   border-color: var(--rosa);
 }
 
@@ -706,7 +743,7 @@ h4 {
 
 .grupo-cartoes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
@@ -718,33 +755,66 @@ h4 {
 }
 
 .cartao-bandas {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 320px;
+  margin:0 auto;
+  height: auto;
+  overflow: hidden;
   transition: transform 0.2s ease;
-  background-color: var(--overlay-dark);
+  border: 3px solid rgba(255, 255, 255, 0.08);
+}
+
+.cartao-bandas:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.cartao-bandas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nome-banda {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.6rem;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.2),
+    transparent
+  );
+  color: var(--branco);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  text-shadow:
+    2px 2px 0 #000,
+    -1px -1px 0 rgba(0,0,0,0.8);
+  pointer-events: none;
 }
 
 .cartao {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-  background-color: transparent;
-  object-fit: contain;
+  transform: rotate(-2deg);
+  filter: contrast(1.3);
+}
+
+.cartao:nth-child(even) {
+  transform: rotate(1.5deg);
 }
 
 .cartao:hover {
-  transform: scale(1.03);
+  transform: rotate(0deg) scale(1.1);
+  filter: grayscale(0.2) contrast(1.6);
 }
 
 .cartao img {
-  width: 100px;
-  height: auto;
-  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
 
 .modal {
@@ -781,11 +851,10 @@ h4 {
   border: none;
 }
 
-
 .fechar-modal {
   position: absolute;
   top: 10px;
-  right: 250px;
+  right: 10px;
   width: 50px;
   height: 50px;
   background: var(--rosa);
@@ -796,33 +865,48 @@ h4 {
 }
 
 
-@media (min-width: 1024px) {
+@media (max-width: 900px) {
+  .programacao {
+    padding: 0.8rem;
+  }
+
+  .cartao img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .cartao:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 600px) {
+  .cartao-top.infos h1 {
+    letter-spacing: 0.15rem;
+  }
+
+  .cartao-top.infos button {
+    font-size: 1rem;
+  }
+
+  .nome-banda {
+    font-size: 0.85rem;
+  }
+
+  .cartao:hover {
+    transform: scale(1.02);
+  }
+
+  .modal-conteudo {
+    width: 95%;
+    height: 85vh;
+  }
+
   .grupo-cartoes {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
   }
+
 }
-
-@media (min-width: 768px) {
-  .secao-cartoes-top {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .secao-cartoes-top>section {
-    flex: 2;
-  }
-
-  .secao-cartoes-top>article {
-    flex: 1;
-  }
-}
-
-@media (min-width: 600px) {
-  .grupo-cartoes {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 
 /* ========================= */
 /*                    SOBRE                      */
