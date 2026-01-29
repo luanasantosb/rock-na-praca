@@ -1008,7 +1008,7 @@ position: relative;
 }
 
 /* ========================= */
-/*              INSCRIÇÕES                  */
+/*       INSCRIÇÕES          */
 /* ========================= */
 
 .bandas,
@@ -1089,7 +1089,7 @@ position: relative;
 
 .feira-detalhes,
 .bandas-detalhes {
-  margin: 3rem 0;
+  margin: 0.5rem 0;
   padding: 1.5rem 2rem;
   display: block;
 }
@@ -1098,17 +1098,16 @@ position: relative;
 .bandas-detalhes summary {
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
   color: var(--verde);
   font-size: clamp(1.6rem, 3vw, 1.8rem);
 }
 
 #formSite {
-  margin: 2rem auto 0;
-  padding: 2.5rem 2rem;
+  margin: 1px auto 0;
+  padding: 0.5rem 2rem;
   display: grid;
-  gap: 1.2rem;
-  border-radius: 6px;
+  gap: 1rem;
 }
 
 #formSite fieldset {
@@ -1128,10 +1127,12 @@ position: relative;
 }
 
 #formSite label {
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   opacity: 0.85;
   display: block;
+  color:var(--branco);
+  font-family: var(--fonte-textos);
 }
 
 .bandas-input,
@@ -1163,8 +1164,9 @@ position: relative;
   font-size: 0.85rem;
   background-color: var(--verde);
   cursor: pointer;
+  outline: none;
+  border: none;
 }
-
 
 .bandas-enviar,
 .lojas-enviar {
@@ -1235,7 +1237,7 @@ position: relative;
 }
 
 /* ========================= */
-/*                    LOJA                         */
+/*                      LOJA                       */
 /* ========================= */
 
 
@@ -1564,7 +1566,7 @@ position: relative;
 }
 
 /*==========================*/
-/*              PRODUTO                     */
+/*    PRODUTO               */
 /*=========================*/
 
 
