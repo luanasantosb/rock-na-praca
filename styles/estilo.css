@@ -571,9 +571,6 @@ h4 {
 /*            PROGRAMAÇÃO              */
 /* ========================= */
 
-/* ========================= */
-/*            PROGRAMAÇÃO              */
-/* ========================= */
 
 .programacao,
 .secao-cartoes-top,
@@ -864,49 +861,56 @@ position: relative;
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
 
-@media (max-width: 900px) {
-  .programacao {
-    padding: 0.8rem;
+
+  .secao-cartoes-top,
+  .secao-cartoes-bottom,
+  .grupo-cartoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+
+  .cartao-top,
+  .cartao-top.bike,
+  .cartao,
+  .cartao-bandas {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+
+  .cartao-top.infos,
+  .grupo-cartoes-titulo {
+    text-align: center;
+    align-items: center;
+  }
+
 
   .cartao img {
     width: 120px;
     height: 120px;
   }
 
-  .cartao:hover {
-    transform: scale(1.05);
-  }
-}
 
-@media (max-width: 600px) {
-  .cartao-top.infos h1 {
-    letter-spacing: 0.15rem;
+  .cartao,
+  .cartao-top,
+  .cartao-bandas {
+    transform: none;
   }
 
-  .cartao-top.infos button {
-    font-size: 1rem;
-  }
-
-  .nome-banda {
-    font-size: 0.85rem;
-  }
-
-  .cartao:hover {
-    transform: scale(1.02);
-  }
-
-  .modal-conteudo {
-    width: 95%;
-    height: 85vh;
-  }
-
-  .grupo-cartoes {
-    justify-items: center;
+  .cartao:hover,
+  .cartao-top:hover,
+  .cartao-bandas:hover {
+    transform: none;
   }
 
 }
+
+
 
 /* ========================= */
 /*                    SOBRE                      */
