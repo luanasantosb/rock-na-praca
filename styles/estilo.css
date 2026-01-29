@@ -1008,7 +1008,7 @@ position: relative;
 }
 
 /* ========================= */
-/*       INSCRIÇÕES          */
+/*              INSCRIÇÕES                   */
 /* ========================= */
 
 .bandas,
@@ -1132,6 +1132,7 @@ position: relative;
   opacity: 0.85;
   display: block;
   color:var(--branco);
+  text-transform: uppercase;
   font-family: var(--fonte-textos);
 }
 
