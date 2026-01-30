@@ -872,7 +872,6 @@ position: relative;
     align-items: center;
   }
 
-
   .cartao-top,
   .cartao-top.bike,
   .cartao,
@@ -881,7 +880,6 @@ position: relative;
     max-width: 420px;
     margin: 0 auto;
   }
-
 
   .cartao-top.infos,
   .grupo-cartoes-titulo {
@@ -909,8 +907,6 @@ position: relative;
   }
 
 }
-
-
 
 /* ========================= */
 /*                    SOBRE                      */
