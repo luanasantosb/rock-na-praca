@@ -606,10 +606,7 @@ h4 {
 }
 
 .cartao-top {
-  width: 70%;
-  border-width: 4px;
-  border-style: dashed;
-  border-color: var(--verde);
+  width: 60%;
   filter: contrast(1.15) saturate(0.9);
   transform: rotate(-0.4deg);
 }
@@ -618,7 +615,7 @@ h4 {
   transform: rotate(-0.8deg) scale(1.02);
 }
 
-.cartao-top::after {
+.cartao-top.bike::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -703,8 +700,12 @@ position: relative;
 }
 
 .cartao-top.bike {
-  width: 30%;
-  border-color: var(--rosa);
+  border: 4px dashed var(--rosa);
+  width: 40%;
+}
+
+.bike-conteudo{
+  margin: 2rem 0 0 1rem;
 }
 
 .cartao-top.bike h2 {
@@ -740,9 +741,10 @@ position: relative;
 
 .grupo-cartoes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
+
 
 .grupo-cartoes-titulo {
   grid-column: 1 / -1;
