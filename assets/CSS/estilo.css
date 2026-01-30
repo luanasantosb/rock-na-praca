@@ -1066,6 +1066,7 @@ position: relative;
   color: var(--verde);
   font-size: clamp(1.6rem, 3vw, 1.8rem);
   text-transform: uppercase;
+  font-family: var(--fonte-titulos);
 }
 
 #formSite {
