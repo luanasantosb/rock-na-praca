@@ -954,7 +954,7 @@ position: relative;
   }
 
   .sobre-texto {
-    max-width: 100%;
+    max-width: 80%;
   }
 
   .sobre-texto p {
@@ -1785,6 +1785,7 @@ position: relative;
 @media (max-width: 768px) {
   .contato {
     padding: 1.5rem 1rem;
+    width: 80%;
   }
 
   .contato p {
