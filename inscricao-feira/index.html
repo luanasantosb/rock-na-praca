@@ -198,7 +198,7 @@
       <details class="feira-detalhes">
         <summary>Realizar inscrição</summary>
 
-
+        <div id="status-vagas"></div>
         <form id="formSite" novalidate aria-describedby="mensagem">
 
 
@@ -263,7 +263,44 @@
           /* =====================
              STATUS DAS VAGAS
           ===================== */
-          async function atualizarStatusVagas() {
+
+  async function verificarStatus() {
+    try {
+      const res = await fetch(STATUS_URL);
+      const data = await res.json();
+
+      if (!statusEl) return;
+
+      statusEl.textContent = data.mensagem;
+
+      if (data.status === "encerrado") {
+        statusEl.style.color = "red";
+        statusEl.style.fontWeight = "bold";
+
+        form.style.display = "none";
+        botao.disabled = true;
+
+      } else if (data.status === "ultima") {
+        statusEl.style.color = "orange";
+        form.style.display = "block";
+        botao.disabled = false;
+
+      } else {
+        statusEl.style.color = "green";
+        form.style.display = "block";
+        botao.disabled = false;
+      }
+
+    } catch (e) {
+      console.error("Erro ao buscar status das vagas", e);
+    }
+  }
+
+  verificarStatus();
+  setInterval(verificarStatus, 30000);
+
+
+         /* async function atualizarStatusVagas() {
             if (!statusEl) return;
 
             try {
@@ -287,7 +324,7 @@
           }
 
           atualizarStatusVagas();
-          setInterval(atualizarStatusVagas, 30000);
+          setInterval(atualizarStatusVagas, 30000);*/
 
           /* =====================
              ENVIO DO FORMULÁRIO
