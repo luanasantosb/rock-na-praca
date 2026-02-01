@@ -977,10 +977,6 @@ position: relative;
 /* ========================= */
 /*              INSCRIÇÕES                   */
 /* ========================= */
-main {
-  display: flex;
-  justify-content: center;
-}
 
 .inscricao-conteudo {
   max-width: 900px;
@@ -1236,7 +1232,7 @@ main {
   gap: 1rem;
 }
 
-.lista-carrinho {
+#listaCarrinho {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1532,24 +1528,30 @@ main {
 /*    PRODUTO               */
 /*=========================*/
 
-
 .voltar {
   display: inline-block;
-  margin: 1.5rem;
+  margin: 1.5rem 0;
   color: var(--branco);
   text-decoration: none;
   font-weight: 600;
   transition: opacity .2s ease;
 }
 
+.voltar:hover {
+  opacity: .7;
+}
+
 .produto-container {
   max-width: 1100px;
-  margin: auto;
-  padding: 1rem 1.5rem 3rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 520px 1fr;
+  gap: 4rem;
+  align-items: start;
 }
+
+/* ===== GALERIA (ESQUERDA) ===== */
 
 .galeria {
   display: flex;
@@ -1559,9 +1561,10 @@ main {
 
 .foto-principal {
   width: 100%;
-  height: 420px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   background: var(--overlay-dark);
+  border-radius: 8px;
   padding: 1rem;
 }
 
@@ -1574,22 +1577,23 @@ main {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  background: var(--overlay-dark);
-  border-radius: 0.5rem;
+  border-radius: 6px;
   cursor: pointer;
-  opacity: .7;
-  transition: transform .2s ease, opacity .2s ease;
+  opacity: .6;
+  transition: opacity .2s ease;
 }
 
-.miniaturas img:hover {
-  transform: scale(1.05);
+.miniaturas img:hover,
+.miniaturas img.ativa {
+  opacity: 1;
 }
 
+/* ===== INFO (DIREITA) ===== */
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .info h1 {
@@ -1598,8 +1602,8 @@ main {
 }
 
 .info p {
-  color: var(--branco );
-  line-height: 1.5;
+  line-height: 1.6;
+  opacity: .85;
 }
 
 .preco {
@@ -1608,66 +1612,28 @@ main {
   color: var(--rosa);
 }
 
-.variacoes {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
+/* ===== RESPONSIVO ===== */
 
-.campo {
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-  min-width: 160px;
-}
-
-.campo label {
-  font-size: .85rem;
-  color: var(--branco);
-}
-
-.campo select {
-  padding: .6rem .5rem;
-  border-radius: 6px;
-  border: none;
-  background: var(--preto);
-  color: var(--branco);
-  font-size: 1rem;
-  outline: none;
-}
-
-.btn-adicionar {
-  margin-top: 1rem;
-  text-transform: uppercase;
-  padding: .9rem 1.2rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  background: var(--verde);
-  color: var(--preto);
-  font-size: 1rem;
-  font-weight: 700;
-  transition: transform .15s ease, filter .15s ease;
-}
-
-.btn-adicionar:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
-
-.btn-adicionar:active {
-  transform: translateY(0);
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .produto-container {
     grid-template-columns: 1fr;
-  }
-
-  .foto-principal {
-    height: 320px;
+    gap: 2.5rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ========================= */
 /*                    CONTATO                   */

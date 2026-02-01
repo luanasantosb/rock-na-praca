@@ -13,7 +13,7 @@
   </script>
 
   <!-- Meta básicos -->
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000000">
@@ -26,11 +26,11 @@
 
   <link rel="canonical" href="https://www.rocknapraca.com/loja/">
 
- <!-- Favicon-->
+  <!-- Favicon-->
   <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
   <link rel="apple-touch-icon" href="/assets/logos/Rocknapraca/favicon.png">
 
-    <!--Performance (LCP + Fonts + CSS + JS) -->
+  <!--Performance (LCP + Fonts + CSS + JS) -->
   <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/imagens/sobre-rock-na-praca.jpg"
     fetchpriority="high">
 
@@ -47,9 +47,9 @@
 
   <link rel="preload" href="../assets/CSS/estilo.css" as="style">
   <link rel="stylesheet" href="../assets/CSS/estilo.css">
-  
+
   <script src="../assets/JS/script.js" defer></script>
-  
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
@@ -69,7 +69,7 @@
   <meta name="twitter:image" content="https://www.rocknapraca.com/assets/loja/Camiseta-Rock-Na-Praca-modelo-1.webp">
 
   <!-- Schema.org -->
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -339,7 +339,7 @@
       ☰
     </button>
 
-      <nav class="cabecalho-menu" id="menu">
+    <nav class="cabecalho-menu" id="menu">
       <a href="/programacao/">Programação</a>
       <a href="/sobre/">Sobre</a>
       <div class="menu-item">
@@ -365,23 +365,30 @@
         <h2 class="titulo-carrinho">Meu Carrinho</h2>
 
         <div id="carrinho">
-          <ul id="itens" class="lista-carrinho">
 
-            <li><strong>Itens:</strong> <span id="quantidadeTotal">0</span></li>
-            <li><strong>Total:</strong> R$ <span id="total">0.00</span></li>
+          <!-- Lista dinâmica de produtos -->
+          <div id="listaCarrinho"></div>
 
-          </ul>
+          <!-- Resumo do carrinho -->
+          <div class="resumo-carrinho">
+            <p><strong>Itens:</strong> <span id="quantidadeTotal">0</span></p>
+            <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+          </div>
+
+          <!-- Botões -->
           <div class="botoes">
-            <button id="btnFinalizar" class="botao-finalizar-pedido" onclick="enviarWhatsApp()">
+            <button id="btnFinalizar" class="botao-finalizar-pedido">
               Finalizar Pedido
             </button>
 
-            <button id="btnLimpar" class="botao-esvaziar" onclick="limparCarrinho()">
+            <button id="btnLimpar" class="botao-esvaziar">
               Esvaziar carrinho
             </button>
           </div>
+
         </div>
       </section>
+
 
 
 
@@ -390,7 +397,8 @@
         <!--- CARD #1-->
         <div class="loja-cartao" data-id="camiseta-rock-na-praca-1" data-nome="Camiseta modelo #1" data-preco="70.00"
           data-descricao="Camiseta oficial Rock na Praça. 100% algodão.">
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Camiseta-1_Rock-na-Praca.webp" alt="Camiseta modelo 1">
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Camiseta-1_Rock-na-Praca.webp"
+            alt="Camiseta modelo 1">
 
           <div class="produto-infos">
             <p class="produto-status">Produto sob encomenda</p>
@@ -407,7 +415,8 @@
         <div class="loja-cartao" data-id="camiseta-rock-na-praca-2" data-nome="Camiseta modelo #2" data-preco="70.00"
           data-descricao="Camiseta oficial Rock na Praça. 100% algodão.">
 
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Camiseta-2_Rock-na-Praca.webp" alt="Camiseta modelo 2">
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Camiseta-2_Rock-na-Praca.webp"
+            alt="Camiseta modelo 2">
 
           <div class="produto-infos">
             <p class="produto-status">Produto sob encomenda</p>
@@ -424,7 +433,7 @@
         <div class="loja-cartao" data-id="copo-rock-na-praça" data-nome="Copo Rock na Praça" data-preco="10.00"
           data-descricao="Carteira oficial Rock na Praça.">
 
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Copo_Rock-na-Praca.webp" alt="Copo">
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Copo_Rock-na-Praca.webp" alt="Copo">
 
           <div class="produto-infos">
             <p class="produto-status">Pronta entrega</p>
@@ -441,7 +450,7 @@
         <div class="loja-cartao" data-id="bone-rock-na-praça-1" data-nome="Boné Rock na Praça #1" data-preco="70.00"
           data-descricao="Boné oficial Rock na Praça.">
 
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Bone-1_Rock-na-Praca.webp" alt="boné modelo 1">
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Bone-1_Rock-na-Praca.webp" alt="boné modelo 1">
 
           <div class="produto-infos">
             <p class="produto-status">Sob encomenda</p>
@@ -456,9 +465,9 @@
         <!--CARD #5-->
         <div class="loja-cartao" data-id="bone-rock-na-praça-2" data-nome="Boné Rock na Praça #2" data-preco="70.00"
           data-descricao="Boné oficial Rock na Praça.">
-          
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Bone-2_Rock-na-Praca.webp" alt="boné modelo 2">
-          
+
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Bone-2_Rock-na-Praca.webp" alt="boné modelo 2">
+
           <div class="produto-infos">
             <p class="produto-status">Sob encomenda</p>
             <h2 class="produto-titulo">Boné modelo #2</h2>
@@ -473,8 +482,8 @@
         <div class="loja-cartao" data-id="carteira-rock-na-praça" data-nome="Carteira Rock na Praça" data-preco="40.00"
           data-descricao="Carteira oficial Rock na Praça.">
 
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Carteira_Rock-na-Praca.webp" alt="Carteira">
-          
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Carteira_Rock-na-Praca.webp" alt="Carteira">
+
 
           <div class="produto-infos">
             <p class="produto-status">Pronta entrega</p>
@@ -492,7 +501,7 @@
         <div class="loja-cartao" data-id="mochila-rock-na-praça" data-nome="Mochila Rock na Praça" data-preco="100.00"
           data-descricao="Mochila oficial Rock na Praça.">
 
-            <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Mochila_Rock-na-Praca.webp" alt="Mochila">
+          <img class="produto-foto" src="../assets/loja_Rock-na-Praca/Mochila_Rock-na-Praca.webp" alt="Mochila">
 
           <div class="produto-infos">
             <p class="produto-status">Pronta entrega</p>

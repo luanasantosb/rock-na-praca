@@ -2,13 +2,14 @@
 <html lang="pt-BR">
 
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000000">
   <title>Produto | Rock na Praça</title>
   <link rel="stylesheet" href="../assets/CSS/estilo.css">
 </head>
+<main>
 
 <body>
 
@@ -16,12 +17,19 @@
 
   <main class="produto-container">
 
+    <!-- ESQUERDA -->
     <div class="galeria">
       <img id="fotoPrincipal" class="foto-principal" alt="Produto">
       <div id="miniaturas" class="miniaturas"></div>
     </div>
 
+    <!-- DIREITA -->
     <div class="info">
+
+      <h1 id="nome"></h1>
+      <p id="descricao"></p>
+      <div id="preco" class="preco"></div>
+
       <div id="variacoes" class="variacoes hidden">
 
         <div class="campo">
@@ -29,9 +37,7 @@
           <select id="tamanho">
             <option value="">Selecione</option>
           </select>
-          </div>
         </div>
-  
 
         <div class="campo">
           <label for="cor">Cor</label>
@@ -41,21 +47,20 @@
         </div>
 
       </div>
-    
-
-      <h1 id="nome"></h1>
-      <p id="descricao"></p>
-      <div id="preco" class="preco"></div>
 
       <button id="btnCarrinho" class="btn-adicionar">
         Adicionar ao carrinho
       </button>
+
     </div>
 
   </main>
+
+</body>
+
   <script>
-  
-  /* ==================== PRODUTOS ==================== */
+
+    /* ==================== PRODUTOS ==================== */
     const produtos = [
       {
         id: "camiseta-rock-na-praca-1",
@@ -209,8 +214,8 @@
         const cor = selectCor?.value || null;
 
         if (produto.tamanhos && !tamanho) {
-          alert("Selecione um tamanho" );
-      return;
+          alert("Selecione um tamanho");
+          return;
         }
 
         if (produto.cores && !cor) {
@@ -262,6 +267,6 @@
 
   </script>
 
-</body>
+</main>
 
 </html>

@@ -50,8 +50,9 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+/*===== FIM CABECALHO =====*/
   
- /*======  CONTADORES ===========*/
+ /*======  CONTADOR===========*/
 
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
@@ -92,6 +93,8 @@ if (section) {
 
   observer.observe(section);
 }
+
+/*====== FIM CONTADOR======= */
 
 /*====== YOUTUBE ============*/
 
@@ -140,6 +143,8 @@ async function carregarVideos() {
 
 carregarVideos();
 
+/*====== FIM YOUTUBE ======= */
+
 
 /*====== MODAL ========= */
 
@@ -151,7 +156,9 @@ carregarVideos();
     document.getElementById("modalMapa").classList.remove("ativo");
   }
 
-/*==============    LOJA ================ */
+  /*====== FIM MODAL ====== */
+
+/*==============   LOJA ================ */
 
 const PIX_CHAVE = "83161163087";
 const PIX_NOME = "Ricardo Varela";
@@ -164,12 +171,90 @@ const quantidadeSpan = document.getElementById("quantidadeTotal");
 const totalSpan = document.getElementById("total");
 const btnLimpar = document.getElementById("btnLimpar");
 const btnFinalizar = document.getElementById("btnFinalizar");
+const listaCarrinho = document.getElementById("listaCarrinho");
 
-// 📥 Ler carrinho salvo
 function carregarCarrinho() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
 
+function salvarCarrinho(carrinho) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(carrinho));
+}
+
+function agruparItens(carrinho) {
+  const mapa = {};
+
+  carrinho.forEach(item => {
+    const chave = `${item.nome}-${item.tamanho || ""}-${item.cor || ""}`;
+
+    if (!mapa[chave]) {
+      mapa[chave] = {
+        nome: item.nome,
+        tamanho: item.tamanho,
+        cor: item.cor,
+        preco: item.preco,
+        quantidade: 1
+      };
+    } else {
+      mapa[chave].quantidade++;
+    }
+  });
+
+  return Object.values(mapa);
+}
+
+function removerItem(nome, tamanho, cor) {
+  let carrinho = carregarCarrinho();
+
+  const index = carrinho.findIndex(item =>
+    item.nome === nome &&
+    item.tamanho === tamanho &&
+    item.cor === cor
+  );
+
+  if (index !== -1) {
+    carrinho.splice(index, 1);
+    salvarCarrinho(carrinho);
+    atualizarCarrinho();
+  }
+}
+
+function renderizarItens(carrinho) {
+  listaCarrinho.innerHTML = "";
+
+  if (carrinho.length === 0) {
+    listaCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    return;
+  }
+
+  const itensAgrupados = agruparItens(carrinho);
+
+  itensAgrupados.forEach(item => {
+    const div = document.createElement("div");
+    div.classList.add("item-carrinho");
+
+    let variacao = "";
+    if (item.tamanho) variacao += item.tamanho;
+    if (item.cor) variacao += variacao ? ` - ${item.cor}` : item.cor;
+
+    const subtotal = item.preco * item.quantidade;
+
+    div.innerHTML = `
+      <p><strong>${item.nome}</strong></p>
+      <p>${variacao}</p>
+      <p>Quantidade: ${item.quantidade}</p>
+      <p>Subtotal: R$ ${subtotal.toFixed(2)}</p>
+      <button class="btn-remover">❌ Remover 1</button>
+      <hr>
+    `;
+
+    div.querySelector(".btn-remover").addEventListener("click", () => {
+      removerItem(item.nome, item.tamanho, item.cor);
+    });
+
+    listaCarrinho.appendChild(div);
+  });
+}
 
 function atualizarCarrinho() {
   const carrinho = carregarCarrinho();
@@ -179,17 +264,16 @@ function atualizarCarrinho() {
 
   quantidadeSpan.textContent = quantidade;
   totalSpan.textContent = total.toFixed(2);
+
+  renderizarItens(carrinho);
 }
 
-
 document.addEventListener("DOMContentLoaded", atualizarCarrinho);
-
 
 btnLimpar.addEventListener("click", () => {
   localStorage.removeItem(STORAGE_KEY);
   atualizarCarrinho();
 });
-
 
 btnFinalizar.addEventListener("click", () => {
   const carrinho = carregarCarrinho();
@@ -201,19 +285,23 @@ btnFinalizar.addEventListener("click", () => {
 
   let mensagem = "Meu pedido Rock na Praça:\n";
 
-  carrinho.forEach((item, index) => {
+  const itensAgrupados = agruparItens(carrinho);
+
+  itensAgrupados.forEach((item, index) => {
     mensagem += `${index + 1}. ${item.nome}`;
     if (item.tamanho) mensagem += ` (${item.tamanho})`;
     if (item.cor) mensagem += ` - ${item.cor}`;
-    mensagem += ` - R$ ${item.preco.toFixed(2)}\n`;
+    mensagem += ` x${item.quantidade}`;
+    mensagem += ` - R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
   });
 
   const total = carrinho.reduce((soma, i) => soma + i.preco, 0);
-  mensagem += `Total: R$ ${total.toFixed(2)}\n Efetue o pagamento para chave pix ${PIX_CHAVE}\n Nome ${PIX_NOME},\n Banco ${PIX_INSTITUICAO} e envie seu comprovante aqui`;
+
+  mensagem += `Total: R$ ${total.toFixed(2)}\nEfetue o pagamento para chave pix ${PIX_CHAVE}\nNome ${PIX_NOME},\nBanco ${PIX_INSTITUICAO} e envie seu comprovante aqui`;
 
   const telefone = "555192179735";
   const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
   window.open(url, "_blank");
 });
-
+/*===== FIM LOJA =====*/
