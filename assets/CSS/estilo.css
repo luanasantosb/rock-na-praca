@@ -409,7 +409,13 @@ h4 {
 
 /*==================VIDEOS===========================*/
 
-.bloco-lateral { width: 100%; max-width: 350px; margin: 20px auto; padding: 1rem; background-color: var(--overlay-dark); }
+.bloco-lateral {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 1rem;
+  background-color: var(--overlay-dark);
+}
 
 .videos-conteudo h3 {
   margin-bottom: 1rem;
@@ -650,7 +656,7 @@ h4 {
   letter-spacing: clamp(0.2rem, 1vw, 1rem);
   text-transform: uppercase;
   color: var(--verde);
-position: relative;
+  position: relative;
 }
 
 .cartao-top.infos p {
@@ -704,7 +710,7 @@ position: relative;
   width: 40%;
 }
 
-.bike-conteudo{
+.bike-conteudo {
   margin: 2rem 0 0 1rem;
 }
 
@@ -758,7 +764,7 @@ position: relative;
   overflow: hidden;
   width: 100%;
   max-width: 320px;
-  margin:0 auto;
+  margin: 0 auto;
   height: auto;
   overflow: hidden;
   transition: transform 0.2s ease;
@@ -779,12 +785,10 @@ position: relative;
   position: absolute;
   inset: auto 0 0 0;
   padding: 0.6rem;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.85),
-    rgba(0,0,0,0.2),
-    transparent
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.2),
+      transparent);
   color: var(--branco);
   font-weight: 900;
   text-transform: uppercase;
@@ -792,7 +796,7 @@ position: relative;
   font-size: 1rem;
   text-shadow:
     2px 2px 0 #000,
-    -1px -1px 0 rgba(0,0,0,0.8);
+    -1px -1px 0 rgba(0, 0, 0, 0.8);
   pointer-events: none;
 }
 
@@ -1064,7 +1068,8 @@ position: relative;
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
-  padding: 0.5rem;;
+  padding: 0.5rem;
+  ;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -1184,6 +1189,10 @@ position: relative;
 
 
 @media (max-width: 600px) {
+  .inscricao-conteudo {
+    width: 80%;
+  }
+
   #formSite {
     padding: 1.5rem 1rem;
   }
@@ -1209,10 +1218,10 @@ position: relative;
 .secao-carrinho {
   width: min(80%, 700px);
   border: 2px solid #222;
-  background-color: rgba(17,17,17,.85);
+  background-color: rgba(17, 17, 17, .85);
   box-shadow:
-    0 0 0 2px rgba(255,0,120,.15),
-    0 15px 40px rgba(0,0,0,.8);
+    0 0 0 2px rgba(255, 0, 120, .15),
+    0 15px 40px rgba(0, 0, 0, .8);
   border-radius: 6px;
   max-width: 600px;
   margin: 2rem auto;
@@ -1244,14 +1253,13 @@ position: relative;
   padding: 1rem;
   background-color: transparent;
   font-size: 1rem;
-  border-bottom: 1px dashed rgba(255,255,255,.15);
-  text-shadow: 0 0 4px rgba(255,0,120,.2);
+  border-bottom: 1px dashed rgba(255, 255, 255, .15);
+  text-shadow: 0 0 4px rgba(255, 0, 120, .2);
 }
 
 #carrinho>li {
   list-style: none;
   font-size: 1rem;
-  color: var(--branco);
 }
 
 #quantidadeTotal,
@@ -1278,8 +1286,8 @@ position: relative;
   transition: background-color 0.3s ease;
   background: linear-gradient(135deg, var(--rosa), var(--rosa-soft));
   box-shadow:
-    0 0 12px rgba(255,0,120,.6),
-    inset 0 0 8px rgba(255,255,255,.15);
+    0 0 12px rgba(255, 0, 120, .6),
+    inset 0 0 8px rgba(255, 255, 255, .15);
   position: relative;
   overflow: hidden;
 }
@@ -1288,13 +1296,11 @@ position: relative;
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(255,255,255,.12) 0px,
-    rgba(255,255,255,.12) 2px,
-    transparent 2px,
-    transparent 6px
-  );
+  background: repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, .12) 0px,
+      rgba(255, 255, 255, .12) 2px,
+      transparent 2px,
+      transparent 6px);
   mix-blend-mode: overlay;
   pointer-events: none;
 }
@@ -1529,16 +1535,11 @@ position: relative;
 /*=========================*/
 
 .voltar {
-  display: inline-block;
-  margin: 1.5rem 0;
+  margin: 0 1.5rem;
   color: var(--branco);
   text-decoration: none;
   font-weight: 600;
   transition: opacity .2s ease;
-}
-
-.voltar:hover {
-  opacity: .7;
 }
 
 .produto-container {
@@ -1551,7 +1552,6 @@ position: relative;
   align-items: start;
 }
 
-/* ===== GALERIA (ESQUERDA) ===== */
 
 .galeria {
   display: flex;
@@ -1588,8 +1588,6 @@ position: relative;
   opacity: 1;
 }
 
-/* ===== INFO (DIREITA) ===== */
-
 .info {
   display: flex;
   flex-direction: column;
@@ -1599,6 +1597,7 @@ position: relative;
 .info h1 {
   font-size: 2rem;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .info p {
@@ -1612,7 +1611,31 @@ position: relative;
   color: var(--rosa);
 }
 
-/* ===== RESPONSIVO ===== */
+.btn-adicionar {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--preto);
+  background-color: var(--verde);
+  width: 50%;
+  border: none;
+  padding: 0.5rem;
+}
+
+.campo label {
+  text-transform: uppercase;
+  color: var(--branco);
+  margin: 0.5rem;
+}
+
+.campo select {
+  margin: 0.5rem;
+  gap: 0.5rem;
+  width: 50%;
+  height: 1rem;
+  background-color: var(--preto);
+  color: var(--branco);
+  border: none;
+}
 
 @media (max-width: 1024px) {
   .produto-container {
@@ -1620,17 +1643,6 @@ position: relative;
     gap: 2.5rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

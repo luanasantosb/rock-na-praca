@@ -240,11 +240,11 @@ function renderizarItens(carrinho) {
     const subtotal = item.preco * item.quantidade;
 
     div.innerHTML = `
-      <p><strong>${item.nome}</strong></p>
-      <p>${variacao}</p>
-      <p>Quantidade: ${item.quantidade}</p>
-      <p>Subtotal: R$ ${subtotal.toFixed(2)}</p>
-      <button class="btn-remover">❌ Remover 1</button>
+      <p><strong>${item.nome}</strong>
+      ${variacao}
+      Quantidade: ${item.quantidade}
+      Subtotal: R$ ${subtotal.toFixed(2)}
+      <button class="btn-remover">X </button>
       <hr>
     `;
 
