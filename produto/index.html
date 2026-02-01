@@ -9,9 +9,6 @@
   <title>Produto | Rock na Praça</title>
   <link rel="stylesheet" href="../assets/CSS/estilo.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
-
 
 <body>
 
@@ -19,12 +16,12 @@
 
   <main class="produto-container">
 
-    <section class="galeria">
+    <div class="galeria">
       <img id="fotoPrincipal" class="foto-principal" alt="Produto">
       <div id="miniaturas" class="miniaturas"></div>
-    </section>
+    </div>
 
-    <section class="info">
+    <div class="info">
       <div id="variacoes" class="variacoes hidden">
 
         <div class="campo">
@@ -32,7 +29,9 @@
           <select id="tamanho">
             <option value="">Selecione</option>
           </select>
+          </div>
         </div>
+  
 
         <div class="campo">
           <label for="cor">Cor</label>
@@ -42,6 +41,7 @@
         </div>
 
       </div>
+    
 
       <h1 id="nome"></h1>
       <p id="descricao"></p>
@@ -50,11 +50,12 @@
       <button id="btnCarrinho" class="btn-adicionar">
         Adicionar ao carrinho
       </button>
-    </section>
+    </div>
 
   </main>
   <script>
-    /* ==================== PRODUTOS ==================== */
+  
+  /* ==================== PRODUTOS ==================== */
     const produtos = [
       {
         id: "camiseta-rock-na-praca-1",
