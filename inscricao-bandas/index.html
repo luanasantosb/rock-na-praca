@@ -149,28 +149,21 @@
   </header>
 
   <main>
-    <section class="bandas" aria-labelledby="titulo-bandas">
+    <div class="inscricao-conteudo" aria-labelledby="titulo-bandas">
 
       <h1 id="titulo-bandas" class="visually-hidden">
         Inscreva sua banda no Rock na Praça
       </h1>
 
-      <article class="bandas-conteudo">
-        <h2>Traga seu som para a praça</h2>
-
+      <section class="inscricao-texto">
+        <h2 class="inscricao-titulo">Traga seu som para a praça</h2>
         <p>
-          Estão abertas as inscrições para o cadastro de bandas interessadas em participar do
-          evento Rock na Praça em 2026. O evento é dedicado exclusivamente à música autoral
-          e busca artistas com identidade própria e produção independente.
+          Estão abertas as inscrições para o cadastro de bandas interessadas em participar do Rock na Praça 2026, evento dedicado exclusivamente à música autoral e à valorização de artistas com identidade própria e produção independente. Realizado de forma autônoma na região metropolitana de Porto Alegre, o Rock na Praça ocupa espaços públicos com atuação contínua e compromisso firme com a democratização do acesso à cultura. Em 2026, o projeto celebra 24 anos de trajetória, consolidando-se como um espaço de resistência cultural e fortalecimento da cena independente. 
         </p>
+        </section>
 
-        <p>
-          O Rock na Praça é um evento independente realizado na região metropolitana de Porto Alegre,
-          com atuação contínua em espaços públicos e foco na democratização do acesso à cultura.
-          Em 2026, o evento completa 24 anos de existência e resistência cultural.
-        </p>
-        <section aria-labelledby="diretrizes-feira">
-          <h3 id="diretrizes-feira">Diretrizes para inscrição</h3>
+        <section class="inscricao-regras">
+          <h3 class="inscricao-subtitulo">Diretrizes para inscrição</h3>
 
           <ul>
             <li>
@@ -195,58 +188,65 @@
           </ul>
         </section>
 
-      </article>
-      <details class="feira-detalhes">
+      <details class="inscricao-detalhes">
         <summary>Realizar inscrição</summary>
         <form id="formSite" novalidate aria-describedby="mensagem" enctype="multipart/form-data">
+          <div class="inscricao-aviso">
+          <p>
+            Fique atento:<br>
+            o preenhimento correto<br>
+            de todos os campos obrigatórios<br>
+            é essencial para o sucesso da sua inscrição.
+          </p>
+          </div>
 
           <fieldset>
             <legend>Dados da Banda</legend>
 
             <label for="banda_nome">Nome da banda *</label>
-            <input type="text" id="banda_nome" name="banda_nome" class="bandas-input" required>
+            <input type="text" id="banda_nome" name="banda_nome" class="inscricao-input" required>
 
             <label for="banda_cidade">Cidade / Estado / País *</label>
-            <input type="text" id="banda_cidade" name="banda_cidade" class="bandas-input" required>
+            <input type="text" id="banda_cidade" name="banda_cidade" class="inscricao-input" required>
 
             <label for="banda_redes">Rede social *</label>
-            <input type="text" id="banda_redes" name="banda_redes" class="bandas-input" required>
+            <input type="text" id="banda_redes" name="banda_redes" class="inscricao-input" required>
 
             <label for="banda_streaming">Streaming</label>
-            <input type="text" id="banda_streaming" name="banda_streaming" class="bandas-input">
+            <input type="text" id="banda_streaming" name="banda_streaming" class="inscricao-input">
 
             <label for="banda_youtube">YouTube *</label>
-            <input type="text" id="banda_youtube" name="banda_youtube" class="bandas-input" required>
+            <input type="text" id="banda_youtube" name="banda_youtube" class="inscricao-input" required>
           </fieldset>
 
           <fieldset>
             <legend>Materiais</legend>
 
             <label for="release">Release (PDF ou DOC)</label>
-            <input type="file" id="release" name="release_file" class="bandas-input" accept=".pdf,.doc,.docx">
+            <input type="file" id="release" name="release_file" class="inscricao-input" accept=".pdf,.doc,.docx">
 
             <label for="mapa">Mapa de Palco (Imagem ou PDF)</label>
-            <input type="file" id="mapa" name="mapa_file" class="bandas-input" accept="image/*,.pdf">
+            <input type="file" id="mapa" name="mapa_file" class="inscricao-input" accept="image/*,.pdf">
           </fieldset>
 
           <fieldset>
             <legend>Contato</legend>
 
             <label for="banda_responsavel">Responsável *</label>
-            <input type="text" id="banda_responsavel" name="banda_responsavel" class="bandas-input" required>
+            <input type="text" id="banda_responsavel" name="banda_responsavel" class="inscricao-input" required>
 
             <label for="banda_whatsapp">WhatsApp *</label>
-            <input type="tel" id="banda_whatsapp" name="banda_whatsapp" class="bandas-input" inputmode="tel"
+            <input type="tel" id="banda_whatsapp" name="banda_whatsapp" class="inscricao-input" inputmode="tel"
               placeholder="(51) 99999-9999" required>
 
             <label for="banda_email">Email</label>
-            <input type="email" id="banda_email" name="banda_email" class="bandas-input"
+            <input type="email" id="banda_email" name="banda_email" class="inscricao-input"
               placeholder="contato@banda.com">
           </fieldset>
 
           <div id="mensagem" role="status" aria-live="polite"></div>
 
-          <button type="submit" class="bandas-enviar">
+          <button type="submit" class="inscricao-enviar">
             Enviar inscrição
           </button>
 
@@ -316,10 +316,8 @@
             });
           }
         </script>
-
-
       </details>
-    </section>
+    </div>
   </main>
 
   <!-- RODAPÉ -->
