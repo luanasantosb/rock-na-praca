@@ -670,7 +670,9 @@ h4 {
 }
 
 .cartao-top.infos .tag {
-  align-self: flex-start;
+  position: relative;
+  left: -300px;
+  top:10px;
   background: var(--amarelo);
   color: var(--preto);
   font-weight: 900;
