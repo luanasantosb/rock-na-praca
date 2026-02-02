@@ -97,7 +97,7 @@ h4 {
 }
 
 .cabecalho-simbolo-logotipo a:hover img {
-   transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .cabecalho-menu {
@@ -440,24 +440,24 @@ h4 {
   flex-direction: column;
   gap: 5px;
   padding: 0.5rem;
-  background-color:var(--overlay-dark);
+  background-color: var(--overlay-dark);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .cartao-video:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cartao-video img {
   width: 100%;
   cursor: pointer;
   transition: transform 0.2s;
-  border:1px solid var(--verde);
+  border: 1px solid var(--verde);
 }
 
 .cartao-video img:hover {
-   transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .cartao-video a {
@@ -603,6 +603,14 @@ h4 {
   width: 100%;
 }
 
+.cartao,
+.cartao-top,
+.cartao-bandas {
+  transition: transform 0.25s ease, filter 0.25s ease;
+  will-change: transform;
+}
+
+
 .secao-cartoes-top>section,
 .secao-cartoes-top>article,
 .grupo-cartoes,
@@ -613,7 +621,7 @@ h4 {
   overflow-wrap: break-word;
 }
 
-.programacao-conteudo{
+.programacao-conteudo {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -630,7 +638,7 @@ h4 {
 }
 
 .cartao-top {
-  width: 60%;
+  flex: 1 1 600px;
   filter: contrast(1.15) saturate(0.9);
   transform: rotate(-0.4deg);
 }
@@ -669,13 +677,30 @@ h4 {
   padding: 0.4rem 0.8rem;
 }
 
-.cartao-top.infos h1 {
-  font-size: clamp(1.6rem, 5vw, 3rem);
-  letter-spacing: clamp(0.2rem, 1vw, 1rem);
+.cartao-top.infos h1,
+.cartao-top.infos h2{
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
   text-transform: uppercase;
-  color: var(--verde);
-  position: relative;
+  letter-spacing: 0.4rem;
+  line-height: 1;
+  color: var(--branco);
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 6px solid var(--rosa);
 }
+
+.cartao-top.infos h1,
+.cartao-top .infos h2{
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
 
 .cartao-top.infos p {
   font-size: clamp(1rem, 2.5vw, 1.4rem);
@@ -684,6 +709,12 @@ h4 {
 
 
 .cartao-top.infos button {
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid var(--verde);
+  backdrop-filter: blur(6px);
   margin-top: 1rem;
   width: min(100%, 320px);
   padding: 0.2rem;
@@ -696,16 +727,12 @@ h4 {
       rgba(0, 0, 0, 0.4));
 }
 
-.cartao-top.infos button {
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
 .cartao-top.infos button:hover {
   transform: translate(-2px, -2px) rotate(-1deg);
+  background: var(--verde);
+  color: var(--preto);
 }
+
 
 .cartao-top.infos button::before {
   content: "";
@@ -723,40 +750,6 @@ h4 {
   transition: transform 0.6s;
 }
 
-.cartao-top.bike {
-  border: 4px dashed var(--rosa);
-  width: 40%;
-}
-
-.bike-conteudo {
-  margin: 2rem 0 0 1rem;
-}
-
-.cartao-top.bike h2 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-}
-
-.cartao-top.bike p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.cartao-top.bike a {
-  color: var(--verde);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--verde);
-}
-
-.cartao-top.bike a:hover {
-  color: var(--rosa);
-  border: none;
-}
-
-.cartao-top.bike strong {
-  color: var(--rosa);
-  text-transform: uppercase;
-}
-
 .secao-cartoes-bottom {
   display: flex;
   flex-direction: column;
@@ -772,19 +765,23 @@ h4 {
 
 .grupo-cartoes-titulo {
   grid-column: 1 / -1;
-  border-left: 4px solid var(--verde);
-  padding-left: 1rem;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--verde);
+  color: var(--preto);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   text-transform: uppercase;
+  letter-spacing: 3px;
+  transform: rotate(-1deg);
+  box-shadow: 6px 6px 0 var(--rosa);
 }
 
 .cartao-bandas {
   position: relative;
-  overflow: hidden;
-  width: 350px;
   margin: 0 auto;
-  height: 300px;
   overflow: hidden;
-  transition: transform 0.2s ease;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   border: 3px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -884,8 +881,17 @@ h4 {
   cursor: pointer;
 }
 
+a:focus,
+button:focus {
+  outline: 3px solid var(--rosa);
+  outline-offset: 4px;
+}
+
 @media (max-width: 768px) {
 
+  .programacao-conteudo {
+    gap: 3rem;
+  }
 
   .secao-cartoes-top,
   .secao-cartoes-bottom,
@@ -893,6 +899,10 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .grupo-cartoes {
+    gap: 2rem;
   }
 
   .cartao-top,
@@ -1401,14 +1411,14 @@ h4 {
 
 .cartao-produto-detalhes:hover {
   transform: translate(-2px, -2px);
-  color:var(--preto);
+  color: var(--preto);
   background-color: var(--verde);
 }
 
 
 .cartao-produto-detalhes {
-   transition: transform .2s ease, box-shadow .2s ease;
-   transform: translateY(-2px) scale(1.02);
+  transition: transform .2s ease, box-shadow .2s ease;
+  transform: translateY(-2px) scale(1.02);
   display: flex;
   text-align: center;
   justify-content: center;
@@ -1536,8 +1546,8 @@ h4 {
 /*=========================*/
 
 .produto-voltar {
-  border:1px solid var(--rosa);
-  padding:0.5rem;
+  border: 1px solid var(--rosa);
+  padding: 0.5rem;
   margin: 0 1.5rem;
   color: var(--branco);
   text-decoration: none;
@@ -1546,8 +1556,8 @@ h4 {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.produto-voltar:hover{
-  color:var(--preto);
+.produto-voltar:hover {
+  color: var(--preto);
   background-color: var(--rosa);
 }
 
@@ -1572,7 +1582,7 @@ h4 {
   aspect-ratio: 1 / 1;
   object-fit: contain;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 .produo-miniaturas {
@@ -1600,7 +1610,7 @@ h4 {
   font-size: 2rem;
   line-height: 1.2;
   text-transform: uppercase;
-  color:var(--verde);
+  color: var(--verde);
 }
 
 .info p {
@@ -1621,7 +1631,7 @@ h4 {
   width: 50%;
   border: none;
   padding: 0.5rem;
-  border:1px solid var(--verde);
+  border: 1px solid var(--verde);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
@@ -1651,7 +1661,7 @@ h4 {
   background-color: var(--preto);
   color: var(--branco);
   border: none;
-  gap:1rem;
+  gap: 1rem;
 }
 
 @media (max-width: 1024px) {
@@ -1755,7 +1765,7 @@ h4 {
 
 
 @media (max-width: 768px) {
-  .contato-texto{
+  .contato-texto {
     padding: 1.5rem 1rem;
     width: 80%;
   }
