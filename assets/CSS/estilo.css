@@ -299,7 +299,7 @@ h4 {
   opacity: 0.95;
   transform: perspective(1000px) rotateY(5deg) rotateZ(-2deg);
   filter:
-    brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6)) grayscale(100%);
+    brightness(0.9) contrast(1.05) drop-shadow(2px 3px 4px rgba(0, 0, 0, 0.6));
 }
 
 
