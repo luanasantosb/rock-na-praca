@@ -384,6 +384,7 @@ h4 {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--verde);
+  font-family: var(--fonte-titulos);
 }
 
 .apresentacao-texto p {
@@ -397,7 +398,9 @@ h4 {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 8px dashed var(--verde);
+  border: 2px solid var(--verde);
+  background-color: var(--overlay-dark);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .apresentacao-video iframe {
@@ -412,28 +415,38 @@ h4 {
 .bloco-lateral {
   width: 100%;
   max-width: 350px;
-  margin: 20px auto;
+  margin: 1rem auto;
   padding: 1rem;
   background-color: var(--overlay-dark);
 }
 
 .videos-conteudo h3 {
   margin-bottom: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--verde);
   font-family: var(--fonte-titulos);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .videos-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .cartao-video {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 0.5rem;
+  background-color:var(--overlay-dark);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cartao-video:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .cartao-video img {
@@ -767,10 +780,9 @@ h4 {
 .cartao-bandas {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  max-width: 320px;
+  width: 350px;
   margin: 0 auto;
-  height: auto;
+  height: 300px;
   overflow: hidden;
   transition: transform 0.2s ease;
   border: 3px solid rgba(255, 255, 255, 0.08);
