@@ -435,6 +435,8 @@ h1,h2,h3{
 
 .cartao-video img {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;   
   cursor: pointer;
   transition: transform 0.2s;
   border: 1px solid var(--verde);

@@ -273,18 +273,29 @@ function atualizarCarrinho() {
   const quantidade = carrinho.length;
   const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
 
-  quantidadeSpan.textContent = quantidade;
-  totalSpan.textContent = total.toFixed(2);
+  // Verifica se os elementos existem antes de atribuir valores
+  if (quantidadeSpan) {
+    quantidadeSpan.textContent = quantidade;
+  }
+  
+  if (totalSpan) {
+    totalSpan.textContent = total.toFixed(2);
+  }
 
-  renderizarItens(carrinho);
+
+  if (typeof renderizarItens === "function") {
+    renderizarItens(carrinho);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", atualizarCarrinho);
 
+if (btnLimpar){
 btnLimpar.addEventListener("click", () => {
   localStorage.removeItem(STORAGE_KEY);
   atualizarCarrinho();
 });
+}
 
 btnFinalizar.addEventListener("click", () => {
   const carrinho = carregarCarrinho();
