@@ -118,6 +118,9 @@ async function carregarVideos() {
       return;
     }
 
+    // Criamos um DocumentFragment para injetar tudo de uma vez (evita múltiplos reflows)
+    const fragment = document.createDocumentFragment();
+
     data.items.forEach(video => {
       const videoId = video.snippet.resourceId.videoId;
       const snippet = video.snippet;
@@ -126,14 +129,19 @@ async function carregarVideos() {
       card.className = "cartao-video";
 
       card.innerHTML = `
-        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-          <img src="${snippet.thumbnails.medium.url}" alt="${snippet.title}">
+        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">
+          <img src="${snippet.thumbnails.medium.url}" 
+               alt="${snippet.title}" 
+               loading="lazy" 
+               width="320" height="180">
           <h4>${snippet.title}</h4>
         </a>
       `;
 
-      container.appendChild(card);
+      fragment.appendChild(card);
     });
+
+    container.appendChild(fragment);
 
   } catch (error) {
     console.error("Erro ao carregar vídeos:", error);
@@ -141,7 +149,10 @@ async function carregarVideos() {
   }
 }
 
-carregarVideos();
+window.addEventListener('load', () => {
+
+  setTimeout(carregarVideos, 1000);
+});
 
 /*====== FIM YOUTUBE ======= */
 
