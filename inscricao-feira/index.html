@@ -66,7 +66,7 @@
   <meta name="twitter:image"
     content="https://miro.medium.com/v2/resize:fit:4608/format:webp/1*m2DoDACaDsDZBvWZuiH3wQ.jpeg">
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
@@ -177,16 +177,19 @@
       </section>
 
       <span class="aviso">Inscrições encerradas!</span>
+
       <details class="inscricao-detalhes">
         <summary>Realizar inscrição</summary>
+
         <form id="formSite" novalidate aria-describedby="mensagem" enctype="multipart/form-data">
           <div id="status-vagas"></div>
+
           <div class="inscricao-aviso">
             <p>
               Apenas 15 bancas<br>
               📅 01/03/2026<br>
-              📍Praça coração de Maria - Esteio.<br>
-              Pix R$50 (831.611.630-87 – PagBank).
+              📍 Praça Coração de Maria – Esteio<br>
+              Pix R$ 50 (CPF 831.611.630-87 – PagBank)
             </p>
           </div>
 
@@ -201,7 +204,7 @@
 
             <label for="loja_redes">Rede social *</label>
             <input id="loja_redes" name="loja_redes" class="inscricao-input" type="url"
-              placeholder="https://instragram.com/loja" required>
+              placeholder="https://instagram.com/sualoja" required>
 
             <label for="logo">Logo (Imagem ou PDF)</label>
             <input type="file" id="logo" name="logo" class="inscricao-input" accept="image/*,.pdf">
@@ -231,95 +234,97 @@
             Enviar inscrição
           </button>
         </form>
+
         <script>
-        document.addEventListener("DOMContentLoaded", () => {
+          document.addEventListener("DOMContentLoaded", () => {
+            const URL =
+              "https://script.google.com/macros/s/AKfycbx6ppv9eC3zwuen0Z-0vKUraLRDsPM_VGQA4d7vHbpzAjgcZnfOkhN39hYQvtFgbIctqw/exec";
 
-        const URL =
-        "https://script.google.com/macros/s/AKfycbwuo8N_cuMNe_BPi6HDw0mTeTzCdPYvk4-JZnIyC0KC6oGCga1NHZq8r0x_suDnclD_TQ/exec";
+            const form = document.getElementById("formSite");
+            const msg = document.getElementById("mensagem");
+            const botao = document.getElementById("botaoEnviar");
 
-        const form = document.getElementById("formSite");
-        const msg = document.getElementById("mensagem");
-        const botao = document.getElementById("botaoEnviar");
+            if (!form) return;
 
-        if (!form) return;
+            // Verifica se ainda há vagas
+            fetch(URL)
+              .then(r => r.json())
+              .then(data => {
+                if (!data.abertas) {
+                  form.style.display = "none";
+                  msg.textContent = "As inscrições foram encerradas.";
+                  msg.className = "erro";
+                }
+              })
+              .catch(() => {
+                console.log("Não foi possível verificar o status das vagas.");
+              });
 
-        // 🔎 Verifica se ainda há vagas
-        fetch(URL)
-        .then(r => r.json())
-        .then(data => {
-        if (!data.abertas) {
-        form.style.display = "none";
-        msg.textContent = "As inscrições foram encerradas.";
-        msg.className = "erro";
-        }
-        })
-        .catch(() => {
-        console.log("Não foi possível verificar status.");
-        });
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
 
-        form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+              if (
+                !form.loja_nome.value.trim() ||
+                !form.loja_cidade.value.trim() ||
+                !form.loja_redes.value.trim() ||
+                !form.loja_responsavel.value.trim() ||
+                !form.loja_whatsapp.value.trim()
+              ) {
+                msg.textContent = "Preencha todos os campos obrigatórios.";
+                msg.className = "erro";
+                return;
+              }
 
-        if (
-        !form.loja_nome.value.trim() ||
-        !form.loja_cidade.value.trim() ||
-        !form.loja_whatsapp.value.trim()
-        ) {
-        msg.textContent = "Preencha todos os campos obrigatórios.";
-        msg.className = "erro";
-        return;
-        }
+              botao.disabled = true;
+              msg.textContent = "Enviando...";
 
-        botao.disabled = true;
-        msg.textContent = "Enviando...";
+              try {
+                const dados = {
+                  loja_nome: form.loja_nome.value,
+                  loja_cidade: form.loja_cidade.value,
+                  loja_redes: form.loja_redes.value,
+                  loja_responsavel: form.loja_responsavel.value,
+                  loja_whatsapp: form.loja_whatsapp.value,
+                  loja_email: form.loja_email.value,
+                  loja_logo: await base64(document.getElementById("logo").files[0]),
+                  loja_comprovante: await base64(document.getElementById("comprovante").files[0])
+                };
 
-        try {
-        const dados = {
-        loja_nome: form.loja_nome.value,
-        loja_cidade: form.loja_cidade.value,
-        loja_redes: form.loja_redes.value,
-        loja_responsavel: form.loja_responsavel.value,
-        loja_whatsapp: form.loja_whatsapp.value,
-        loja_email: form.loja_email.value,
-        loja_logo: await base64(document.getElementById("logo")?.files[0]),
-        loja_comprovante: await base64(document.getElementById("comprovante")?.files[0])
-        };
+                const r = await fetch(URL, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(dados)
+                });
 
-        const r = await fetch(URL, {
-        method: "POST",
-        body: JSON.stringify(dados)
-        });
+                const json = await r.json();
 
-        const json = await r.json();
+                msg.textContent = json.mensagem || "Resposta recebida.";
+                msg.className = json.sucesso ? "sucesso" : "erro";
 
-        msg.textContent = json.mensagem || "Resposta recebida.";
-        msg.className = json.sucesso ? "sucesso" : "erro";
+                if (json.sucesso) form.reset();
 
-        if (json.sucesso) form.reset();
+              } catch (err) {
+                console.error(err);
+                msg.textContent = "Erro ao enviar. Tente novamente.";
+                msg.className = "erro";
+              } finally {
+                botao.disabled = false;
+              }
+            });
 
-        } catch (err) {
-        console.error(err);
-        msg.textContent = "Erro ao enviar. Tente novamente.";
-        msg.className = "erro";
-        }
-
-        botao.disabled = false;
-        });
-
-        function base64(file) {
-        return new Promise(resolve => {
-        if (!file) return resolve("");
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.readAsDataURL(file);
-        });
-        }
-
-        });
+            function base64(file) {
+              return new Promise(resolve => {
+                if (!file) return resolve("");
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.readAsDataURL(file);
+              });
+            }
+          });
         </script>
-
-
       </details>
+
+
     </div>
   </main>
 
