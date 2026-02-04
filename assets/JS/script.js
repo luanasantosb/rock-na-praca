@@ -1,65 +1,69 @@
-/*=====CABECALHO=====*/
+/*===== CABECALHO =====*/
 
- const btnMenu = document.getElementById("menu-hamburguer");
+const btnMenu = document.getElementById("menu-hamburguer");
 const menu = document.getElementById("menu");
 const submenuToggle = document.querySelector(".menu-toggle");
 const submenu = document.querySelector(".submenu");
 
-btnMenu.addEventListener("click", () => {
-  menu.classList.toggle("abrir");
+if (btnMenu && menu) {
+  btnMenu.addEventListener("click", () => {
+    menu.classList.toggle("abrir");
+    const aberto = menu.classList.contains("abrir");
+    btnMenu.setAttribute("aria-expanded", aberto);
+  });
+}
 
-  const aberto = menu.classList.contains("abrir");
-  btnMenu.setAttribute("aria-expanded", aberto);
-});
-
-
-submenuToggle.addEventListener("click", () => {
-  if (window.innerWidth <= 768) {
-    const isOpen = submenu.classList.toggle("submenu-mobile");
-
-    submenuToggle.setAttribute("aria-expanded", isOpen);
-  }
-});
-
-
-menu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
+if (submenuToggle && submenu) {
+  submenuToggle.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
-      menu.classList.remove("abrir");
-      submenu.classList.remove("submenu-mobile");
+      const isOpen = submenu.classList.toggle("submenu-mobile");
+      submenuToggle.setAttribute("aria-expanded", isOpen);
     }
   });
-});
+}
 
+if (menu) {
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        menu.classList.remove("abrir");
+        if (submenu) submenu.classList.remove("submenu-mobile");
+      }
+    });
+  });
 
-document.addEventListener("click", (event) => {
-  if (
-    !menu.contains(event.target) &&
-    !btnMenu.contains(event.target)
-  ) {
-    menu.classList.remove("abrir");
-    submenu.classList.remove("submenu-mobile");
-  }
-});
+  document.addEventListener("click", (event) => {
+    if (
+      menu &&
+      btnMenu &&
+      !menu.contains(event.target) &&
+      !btnMenu.contains(event.target)
+    ) {
+      menu.classList.remove("abrir");
+      if (submenu) submenu.classList.remove("submenu-mobile");
+    }
+  });
 
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      menu.classList.remove("abrir");
+      if (submenu) submenu.classList.remove("submenu-mobile");
+    }
+  });
+}
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    menu.classList.remove("abrir");
-    submenu.classList.remove("submenu-mobile");
-  }
-});
-
-/*===== FIM CABECALHO =====*/
-  
- /*======  CONTADOR===========*/
+/*===== CONTADOR =====*/
 
 function animarContadores() {
   const contadores = document.querySelectorAll('.numero');
+  if (!contadores.length) return;
+
   const velocidade = 200;
 
   contadores.forEach(contador => {
     const valorFinal = +contador.getAttribute('data-numero');
+    if (!valorFinal) return;
+
     const incremento = Math.ceil(valorFinal / velocidade);
     let valorAtual = 0;
 
@@ -84,24 +88,22 @@ if (section) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         animarContadores();
-        observer.unobserve(section); 
+        observer.unobserve(section);
       }
     });
-  }, {
-    threshold: 0.5 
-  });
+  }, { threshold: 0.5 });
 
   observer.observe(section);
 }
 
-/*====== FIM CONTADOR======= */
-
-/*====== YOUTUBE ============*/
+/*====== YOUTUBE =======*/
 
 const container = document.getElementById("videos-lateral");
 const PROXY_URL = "https://script.google.com/macros/s/AKfycbxzFVPEnl9xdaj2uF89ZCSe8ONRF4vJjdaWfSWJSWst7bsnpGTooKGEs8HoPVRU9XQQ/exec";
 
 async function carregarVideos() {
+  if (!container) return;
+
   try {
     const response = await fetch(PROXY_URL);
     const data = await response.json();
@@ -118,7 +120,6 @@ async function carregarVideos() {
       return;
     }
 
-    // Criamos um DocumentFragment para injetar tudo de uma vez (evita múltiplos reflows)
     const fragment = document.createDocumentFragment();
 
     data.items.forEach(video => {
@@ -132,8 +133,7 @@ async function carregarVideos() {
         <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">
           <img src="${snippet.thumbnails.medium.url}" 
                alt="${snippet.title}" 
-               loading="lazy" 
-               width="320" height="180">
+               loading="lazy">
           <h4>${snippet.title}</h4>
         </a>
       `;
@@ -150,31 +150,22 @@ async function carregarVideos() {
 }
 
 window.addEventListener('load', () => {
-
-  setTimeout(carregarVideos, 1000);
+  if (container) setTimeout(carregarVideos, 1000);
 });
 
-/*====== FIM YOUTUBE ======= */
+/*====== MODAL =======*/
 
+function abrirMapa() {
+  const modal = document.getElementById("modalMapa");
+  if (modal) modal.classList.add("ativo");
+}
 
-/*====== MODAL ========= */
+function fecharMapa() {
+  const modal = document.getElementById("modalMapa");
+  if (modal) modal.classList.remove("ativo");
+}
 
-  function abrirMapa() {
-    document.getElementById("modalMapa").classList.add("ativo");
-  }
-
-  function fecharMapa() {
-    document.getElementById("modalMapa").classList.remove("ativo");
-  }
-
-  /*====== FIM MODAL ====== */
-
-/*==============   LOJA ================ */
-
-const PIX_CHAVE = "83161163087";
-const PIX_NOME = "Ricardo Varela";
-const PIX_INSTITUICAO = "Pag Bank";
-const WHATSAPP_NUMERO = "555192179735";
+/*============== LOJA ================*/
 
 const STORAGE_KEY = "carrinhoRNP";
 
@@ -192,45 +183,9 @@ function salvarCarrinho(carrinho) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(carrinho));
 }
 
-function agruparItens(carrinho) {
-  const mapa = {};
-
-  carrinho.forEach(item => {
-    const chave = `${item.nome}-${item.tamanho || ""}-${item.cor || ""}`;
-
-    if (!mapa[chave]) {
-      mapa[chave] = {
-        nome: item.nome,
-        tamanho: item.tamanho,
-        cor: item.cor,
-        preco: item.preco,
-        quantidade: 1
-      };
-    } else {
-      mapa[chave].quantidade++;
-    }
-  });
-
-  return Object.values(mapa);
-}
-
-function removerItem(nome, tamanho, cor) {
-  let carrinho = carregarCarrinho();
-
-  const index = carrinho.findIndex(item =>
-    item.nome === nome &&
-    item.tamanho === tamanho &&
-    item.cor === cor
-  );
-
-  if (index !== -1) {
-    carrinho.splice(index, 1);
-    salvarCarrinho(carrinho);
-    atualizarCarrinho();
-  }
-}
-
 function renderizarItens(carrinho) {
+  if (!listaCarrinho) return;
+
   listaCarrinho.innerHTML = "";
 
   if (carrinho.length === 0) {
@@ -238,30 +193,16 @@ function renderizarItens(carrinho) {
     return;
   }
 
-  const itensAgrupados = agruparItens(carrinho);
-
-  itensAgrupados.forEach(item => {
+  carrinho.forEach(item => {
     const div = document.createElement("div");
     div.classList.add("item-carrinho");
 
-    let variacao = "";
-    if (item.tamanho) variacao += item.tamanho;
-    if (item.cor) variacao += variacao ? ` - ${item.cor}` : item.cor;
-
-    const subtotal = item.preco * item.quantidade;
-
     div.innerHTML = `
       <p><strong>${item.nome}</strong>
-      ${variacao}
-      Quantidade: ${item.quantidade}
-      Subtotal: R$ ${subtotal.toFixed(2)}
-      <button class="btn-remover">X </button>
+      Quantidade: 1
+      Subtotal: R$ ${item.preco.toFixed(2)}
       <hr>
     `;
-
-    div.querySelector(".btn-remover").addEventListener("click", () => {
-      removerItem(item.nome, item.tamanho, item.cor);
-    });
 
     listaCarrinho.appendChild(div);
   });
@@ -270,60 +211,48 @@ function renderizarItens(carrinho) {
 function atualizarCarrinho() {
   const carrinho = carregarCarrinho();
 
-  const quantidade = carrinho.length;
-  const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
+  if (quantidadeSpan)
+    quantidadeSpan.textContent = carrinho.length;
 
-  // Verifica se os elementos existem antes de atribuir valores
-  if (quantidadeSpan) {
-    quantidadeSpan.textContent = quantidade;
-  }
-  
   if (totalSpan) {
+    const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
     totalSpan.textContent = total.toFixed(2);
   }
 
-
-  if (typeof renderizarItens === "function") {
-    renderizarItens(carrinho);
-  }
+  renderizarItens(carrinho);
 }
 
 document.addEventListener("DOMContentLoaded", atualizarCarrinho);
 
-if (btnLimpar){
-btnLimpar.addEventListener("click", () => {
-  localStorage.removeItem(STORAGE_KEY);
-  atualizarCarrinho();
-});
+if (btnLimpar) {
+  btnLimpar.addEventListener("click", () => {
+    localStorage.removeItem(STORAGE_KEY);
+    atualizarCarrinho();
+  });
 }
 
-btnFinalizar.addEventListener("click", () => {
-  const carrinho = carregarCarrinho();
+if (btnFinalizar) {
+  btnFinalizar.addEventListener("click", () => {
+    const carrinho = carregarCarrinho();
 
-  if (carrinho.length === 0) {
-    alert("Carrinho vazio");
-    return;
-  }
+    if (carrinho.length === 0) {
+      alert("Carrinho vazio");
+      return;
+    }
 
-  let mensagem = "Meu pedido Rock na Praça:\n";
+    let mensagem = "Meu pedido Rock na Praça:\n";
 
-  const itensAgrupados = agruparItens(carrinho);
+    carrinho.forEach((item, index) => {
+      mensagem += `${index + 1}. ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
+    });
 
-  itensAgrupados.forEach((item, index) => {
-    mensagem += `${index + 1}. ${item.nome}`;
-    if (item.tamanho) mensagem += ` (${item.tamanho})`;
-    if (item.cor) mensagem += ` - ${item.cor}`;
-    mensagem += ` x${item.quantidade}`;
-    mensagem += ` - R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
+    const total = carrinho.reduce((soma, i) => soma + i.preco, 0);
+
+    mensagem += `Total: R$ ${total.toFixed(2)}`;
+
+    const telefone = "555192179735";
+    const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
   });
-
-  const total = carrinho.reduce((soma, i) => soma + i.preco, 0);
-
-  mensagem += `Total: R$ ${total.toFixed(2)}\nEfetue o pagamento para chave pix ${PIX_CHAVE}\nNome ${PIX_NOME},\nBanco ${PIX_INSTITUICAO} e envie seu comprovante aqui`;
-
-  const telefone = "555192179735";
-  const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-
-  window.open(url, "_blank");
-});
-/*===== FIM LOJA =====*/
+}
