@@ -220,12 +220,11 @@
         <script>
           document.addEventListener("DOMContentLoaded", () => {
 
-            const URL = "https://script.google.com/macros/s/AKfycbwDwI2nYkLpmPG44YGLK79OGbEupxCLqeZkOWvGQAH_voOcH4CO_yRxZF28TcsZEy3ihw/exec";
+            const URL = "https://script.google.com/macros/s/AKfycbzbVEW6lcu5giAoI1WQCeDQkmFS0EDiofIIdOtArOMdeP1mvwH9H5w4wIkNkiWesPuEhg/exec";
 
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
             const botao = document.getElementById("botaoEnviar");
-
 
             if (!form) return;
 
@@ -258,17 +257,10 @@
                   loja_comprovante: await base64(document.getElementById("comprovante")?.files[0])
                 };
 
-                const formData = new FormData();
-                formData.append("dados", JSON.stringify(dados));
-
                 const r = await fetch(URL, {
                   method: "POST",
-                  body: formData
+                  body: JSON.stringify(dados)
                 });
-
-                if (!r.ok) {
-                  throw new Error("Erro HTTP: " + r.status);
-                }
 
                 const json = await r.json();
 
@@ -297,8 +289,6 @@
 
           });
         </script>
-
-
 
       </details>
     </div>
