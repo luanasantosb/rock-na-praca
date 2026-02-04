@@ -1025,6 +1025,12 @@ h1,h2,h3{
   font-family: var(--fonte-textos);
 }
 
+.aviso{
+  color:red;
+  padding: 0.5rem;
+  font-family: var(--fonte-textos);
+  background-color: rgba(255,0,0,0.1);
+}
 
 .inscricao-regras ul {
   list-style-position: inside;
