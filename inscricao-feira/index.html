@@ -212,122 +212,92 @@
 
           <div id="mensagem" role="status" aria-live="polite"></div>
 
-          <button type="submit" class="inscricao-enviar">
+          <button id="botaoEnviar" type="submit" class="inscricao-enviar">
             Enviar inscrição
           </button>
         </form>
 
         <script>
-          const URL = "https://script.google.com/macros/s/AKfycbxObmzW_HGhXf-NRQNXZLCvNrtOEwNt_kJvpA5XVb9bYiuXzstHdNoxdI362CmOT38c8g/exec";
-          const STATUS_URL = URL + "?status=vagas";
+          document.addEventListener("DOMContentLoaded", () => {
 
-          const form = document.getElementById("formSite");
-          const msg = document.getElementById("mensagem");
-          const botao = document.querySelector(".lojas-enviar");
-          const statusEl = document.getElementById("status-vagas");
+            const URL = "https://script.google.com/macros/s/AKfycbwDwI2nYkLpmPG44YGLK79OGbEupxCLqeZkOWvGQAH_voOcH4CO_yRxZF28TcsZEy3ihw/exec";
 
-          /* =====================
-             STATUS DAS VAGAS
-          ===================== */
+            const form = document.getElementById("formSite");
+            const msg = document.getElementById("mensagem");
+            const botao = document.getElementById("botaoEnviar");
 
-          async function verificarStatus() {
-            try {
-              const res = await fetch(STATUS_URL);
-              const data = await res.json();
 
-              if (!statusEl) return;
+            if (!form) return;
 
-              statusEl.textContent = data.mensagem;
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
 
-              if (data.status === "encerrado") {
-                statusEl.style.color = "red";
-                statusEl.style.fontWeight = "bold";
-                form.style.display = "none";
-                botao.disabled = true;
-
-              } else if (data.status === "ultima") {
-                statusEl.style.color = "orange";
-                form.style.display = "block";
-                botao.disabled = false;
-
-              } else {
-                statusEl.style.color = "green";
-                form.style.display = "block";
-                botao.disabled = false;
+              if (
+                !form.loja_nome.value.trim() ||
+                !form.loja_cidade.value.trim() ||
+                !form.loja_whatsapp.value.trim()
+              ) {
+                msg.textContent = "Preencha todos os campos obrigatórios.";
+                msg.className = "erro";
+                return;
               }
 
-            } catch (e) {
-              console.error("Erro ao buscar status das vagas", e);
-            }
-          }
+              botao.disabled = true;
+              msg.textContent = "Enviando...";
 
-          verificarStatus();
-          setInterval(verificarStatus, 30000);
+              try {
 
-          /* =====================
-             ENVIO DO FORMULÁRIO
-          ===================== */
+                const dados = {
+                  loja_nome: form.loja_nome.value,
+                  loja_cidade: form.loja_cidade.value,
+                  loja_redes: form.loja_redes.value,
+                  loja_responsavel: form.loja_responsavel.value,
+                  loja_whatsapp: form.loja_whatsapp.value,
+                  loja_email: form.loja_email.value,
+                  loja_logo: await base64(document.getElementById("logo")?.files[0]),
+                  loja_comprovante: await base64(document.getElementById("comprovante")?.files[0])
+                };
 
-          form.addEventListener("submit", async (e) => {
-            e.preventDefault();
+                const formData = new FormData();
+                formData.append("dados", JSON.stringify(dados));
 
-            if (
-              !form.loja_nome.value.trim() ||
-              !form.loja_cidade.value.trim() ||
-              !form.loja_whatsapp.value.trim()
-            ) {
-              msg.textContent = "Preencha todos os campos obrigatórios.";
-              msg.className = "erro";
-              return;
-            }
+                const r = await fetch(URL, {
+                  method: "POST",
+                  body: formData
+                });
 
-            botao.disabled = true;
-            msg.textContent = "Enviando...";
+                if (!r.ok) {
+                  throw new Error("Erro HTTP: " + r.status);
+                }
 
-            const dados = {
-              loja_nome: form.loja_nome.value,
-              loja_cidade: form.loja_cidade.value,
-              loja_redes: form.loja_redes.value,
-              loja_responsavel: form.loja_responsavel.value,
-              loja_whatsapp: form.loja_whatsapp.value,
-              loja_email: form.loja_email.value,
-              loja_logo: await base64(document.getElementById("logo").files[0]),
-              loja_comprovante: await base64(document.getElementById("comprovante").files[0])
-            };
+                const json = await r.json();
 
-            try {
-              const r = await fetch(URL, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dados)
-              });
+                msg.textContent = json.mensagem || "Resposta recebida.";
+                msg.className = json.sucesso ? "sucesso" : "erro";
 
-              const json = await r.json();
-              msg.textContent = json.mensagem;
-              msg.className = json.sucesso ? "sucesso" : "erro";
+                if (json.sucesso) form.reset();
 
-              if (json.sucesso) form.reset();
+              } catch (err) {
+                console.error(err);
+                msg.textContent = "Erro ao enviar. Tente novamente.";
+                msg.className = "erro";
+              }
 
-            } catch (err) {
-              console.error(err);
-              msg.textContent = "Erro de conexão.";
-              msg.className = "erro";
-            }
-
-            botao.disabled = false;
-          });
-
-          function base64(file) {
-            return new Promise(resolve => {
-              if (!file) return resolve("");
-              const reader = new FileReader();
-              reader.onload = () => resolve(reader.result);
-              reader.readAsDataURL(file);
+              botao.disabled = false;
             });
-          }
+
+            function base64(file) {
+              return new Promise(resolve => {
+                if (!file) return resolve("");
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.readAsDataURL(file);
+              });
+            }
+
+          });
         </script>
+
 
 
       </details>
