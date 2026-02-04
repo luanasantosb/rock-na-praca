@@ -220,7 +220,23 @@
         <script>
           document.addEventListener("DOMContentLoaded", () => {
 
-            const URL = "https://script.google.com/macros/s/AKfycbz0wzrmoGacVn_L6GGW-g0xyJzdPr1CEjcZRkTg37PnVHU0-Me0epY0eSKc-7ecQbarPg/exec";
+            const URL = "https://script.google.com/macros/s/AKfycbzopE_aB7vJGR8vq-bF4nQYiRO3k7CpTZPWJbEzPdPD-bX2SAHelb1Q6l-gHc-JbND2gA/exec";
+
+            // Verifica se ainda há vagas
+            fetch(URL)
+              .then(r => r.json())
+              .then(data => {
+                if (!data.abertas) {
+                  form.style.display = "none";
+
+                  msg.textContent = "As inscrições foram encerradas.";
+                  msg.className = "erro";
+                }
+              })
+              .catch(() => {
+                console.log("Não foi possível verificar status.");
+              });
+
 
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
