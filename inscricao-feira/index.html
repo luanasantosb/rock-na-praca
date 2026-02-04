@@ -176,6 +176,7 @@
         </ul>
       </section>
 
+      <div id="mensagem" role="status" aria-live="polite"></div>
       <span class="aviso">Inscrições encerradas!</span>
 
       <details class="inscricao-detalhes">
@@ -238,7 +239,7 @@
         <script>
           document.addEventListener("DOMContentLoaded", () => {
             const URL =
-              "https://script.google.com/macros/s/AKfycbx6ppv9eC3zwuen0Z-0vKUraLRDsPM_VGQA4d7vHbpzAjgcZnfOkhN39hYQvtFgbIctqw/exec";
+              "https://script.google.com/macros/s/AKfycbz1DbWPV_YmVP4eX5reAxvFk7salssnGq1MPznUVqGukyFUjReG53hXA6EYSRlSDepSkg/exec";
 
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
@@ -246,19 +247,21 @@
 
             if (!form) return;
 
-            // Verifica se ainda há vagas
             fetch(URL)
               .then(r => r.json())
               .then(data => {
                 if (!data.abertas) {
                   form.style.display = "none";
-                  msg.textContent = "As inscrições foram encerradas.";
+                  msg.textContent = data.mensagem || "Inscrições encerradas.";
                   msg.className = "erro";
                 }
               })
               .catch(() => {
-                console.log("Não foi possível verificar o status das vagas.");
+                msg.textContent = "Erro ao verificar inscrições.";
+                msg.className = "erro";
               });
+
+
 
             form.addEventListener("submit", async (e) => {
               e.preventDefault();
