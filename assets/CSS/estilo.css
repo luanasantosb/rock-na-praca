@@ -1181,10 +1181,14 @@ h1,h2,h3{
 
 #mensagem.sucesso {
   color: var(--verde);
+  font-size: 1rem;
+
 }
 
 #mensagem.erro {
   color: var(--rosa);
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 

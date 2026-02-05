@@ -177,7 +177,6 @@
       </section>
 
       <div id="mensagem" role="status" aria-live="polite"></div>
-      <span class="aviso">Inscrições encerradas!</span>
 
       <details class="inscricao-detalhes">
         <summary>Realizar inscrição</summary>
@@ -252,7 +251,7 @@
               .then(data => {
                 if (!data.abertas) {
                   form.style.display = "none";
-                  msg.textContent = data.mensagem || "Inscrições encerradas.";
+                  msg.textContent = data.mensagem || " ❌ Inscrições encerradas.";
                   msg.className = "erro";
                 }
               })
@@ -260,8 +259,6 @@
                 msg.textContent = "Erro ao verificar inscrições.";
                 msg.className = "erro";
               });
-
-
 
             form.addEventListener("submit", async (e) => {
               e.preventDefault();
