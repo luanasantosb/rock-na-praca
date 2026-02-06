@@ -631,7 +631,7 @@ h1,h2,h3{
   transform: rotate(-0.8deg) scale(1.02);
 }
 
-.cartao-top.infos {
+.cartao-top {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -641,7 +641,7 @@ h1,h2,h3{
   transform: rotate(-1deg);
 }
 
-.cartao-top.infos .tag {
+.cartao-top .tag {
   position: relative;
   left: -300px;
   top:10px;
@@ -651,7 +651,8 @@ h1,h2,h3{
   padding: 0.4rem 0.8rem;
 }
 
-.cartao-top.infos h1{
+.cartao-top h1{
+  text-align: center;
   font-size: clamp(2.4rem, 6vw, 4.2rem);
   font-weight: 900;
   text-transform: uppercase;
@@ -660,10 +661,6 @@ h1,h2,h3{
   color: var(--branco);
   margin: 0;
   padding-bottom: 0.5rem;
-  border-bottom: 6px solid var(--rosa);
-}
-
-.cartao-top.infos h1{
   background-image: repeating-linear-gradient(
     0deg,
     rgba(255,255,255,0.03),
@@ -672,14 +669,25 @@ h1,h2,h3{
     transparent 4px
   );
 }
-
-.cartao-top.infos p {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  line-height: 1.5;
+.cartao-top h2 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--verde);
+  margin: 0;
 }
 
+.cartao-top p {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  line-height: 1.5;
+  text-align: center;
+}
 
-.cartao-top.infos button {
+.cartao-top button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
