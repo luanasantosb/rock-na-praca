@@ -1774,7 +1774,7 @@ h3 {
 .contato-input {
   width: 100%;
   padding: 0.8rem 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background:var(--overlay-dark);
   color: var(--branco);
   border: none;
   border-bottom: 2px solid rgba(110, 212, 122, 0.3);
