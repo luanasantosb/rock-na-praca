@@ -1214,6 +1214,16 @@ h1,h2,h3{
   padding: 2rem 0;
 }
 
+.loja p{
+  color: var(--branco);
+  font-family: var(--fonte-textos);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .secao-carrinho {
   width: min(80%, 700px);
   border: 2px solid #222;
@@ -1349,10 +1359,11 @@ h1,h2,h3{
   gap: .3rem;
 }
 
-.cartao-produto-status {
-  font-size: 1rem;
+.cartao-produto-status{
+  font-size: 0.8rem;
   letter-spacing: .18em;
   text-transform: uppercase;
+  color:var(--rosa);
 }
 
 .cartao-produto-titulo {
