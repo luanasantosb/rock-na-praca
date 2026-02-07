@@ -4,12 +4,12 @@
 <head>
   <!-- Google tag (gtag.js) NÃO ALTERAR-->
   <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-Z7RKDPPXTG');
-</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Z7RKDPPXTG');
+  </script>
 
   <!-- Básico -->
   <meta charset="UTF-8">
@@ -27,22 +27,21 @@
   <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
   <link rel="apple-touch-icon" href="/assets/logos/Rocknapraca/favicon.png">
 
- <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preload" as="image" href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp"
+    fetchpriority="high">
 
-<link rel="stylesheet" href="../assets/CSS/estilo.css">
+  <link rel="stylesheet" href="../assets/CSS/estilo.css">
 
-<link 
-  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" 
-  rel="stylesheet" 
-  media="print" 
-  onload="this.media='all'">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
 
-<script src="../assets/JS/script.js" defer></script>
+  <script src="../assets/JS/script.js" defer></script>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -68,80 +67,75 @@
   <meta name="twitter:image" content="https://www.rocknapraca.com/assets/background/Rock-na-Praca_Marco-Flyer.webp">
 
   <!-- Schema.org -->
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.rocknapraca.com/#organization",
-      "name": "Rock na Praça",
-      "url": "https://www.rocknapraca.com/",
-      "logo": "https://www.rocknapraca.com/assets/logos/Rocknapraca/favicon.png",
-      "foundingDate": "2002-05-29",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "rocknapracaesteio@gmail.com"
-      },
-      "sameAs": [
-        "https://www.instagram.com/rocknapraca_",
-        "https://www.facebook.com/rocknapracaesteio",
-        "https://www.youtube.com/@Rocknapraca_RS"
-      ]
+  "@type": "MusicFestival",
+  "name": "Rock na Praça em Esteio - Março 2026",
+  "description": "Evento gratuito com shows de bandas autorais como Comunidade Nin-Jitsu, mercado underground, cultura urbana e praça de alimentação.",
+  "startDate": "2026-03-01T15:00:00-03:00",
+  "endDate": "2026-03-01T22:00:00-03:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Praça Coração de Maria",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Padre Felipe",
+      "addressLocality": "Esteio",
+      "addressRegion": "RS",
+      "addressCountry": "BR"
     },
-    {
-      "@type": "MusicFestival",
-      "@id": "https://www.rocknapraca.com/#festival",
-      "name": "Rock na Praça - Edição Esteio",
-      "description": "Evento itinerante de rock gratuito realizado em praças públicas do Rio Grande do Sul. Patrimônio Cultural Imaterial de Esteio.",
-      "image": [
-        "https://www.rocknapraca.com/assets/background/Rock-na-Praca_Marco-Flyer.webp"
-      ],
-      "startDate": "2026-03-01T15:00:00-03:00", 
-      "endDate": "2026-03-01T22:00:00-03:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "Praça Coração de Maria",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "R. Padre Felipe",
-          "addressLocality": "Centro",
-          "addressRegion": "Esteio",
-          "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -29.8499035,
-          "longitude": -51.16425
-        }
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.rocknapraca.com/",
-        "price": "0",
-        "priceCurrency": "BRL",
-        "availability": "https://schema.org/InStock",
-        "validFrom": "2026-12-31"
-      },
-      "organizer": {
-        "@id": "https://www.rocknapraca.com/#organization"
-      },
-      "subjectOf": {
-        "@type": "Legislation",
-        "name": "Lei Municipal nº 8.147 - Patrimônio Cultural Imaterial de Esteio",
-        "url": "https://leismunicipais.com.br/a/rs/e/esteio/lei-ordinaria/2022/815/8147/lei-ordinaria-n-8147-2022-declara-patrimonio-cultural-imaterial-do-municipio-de-esteio-o-rock-na-praca-e-da-outras-providencias"
-      }
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -29.8499035,
+      "longitude": -51.16425
     }
+  },
+  "image": [
+    "https://www.rocknapraca.com/assets/background/Rock-na-Praca_Marco-Flyer.webp"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.rocknapraca.com/programacao/",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-01-01T12:00:00-03:00"
+  },
+  "performer": [
+    { "@type": "MusicGroup", "name": "Comunidade Nin-Jitsu", "url": "https://www.instagram.com/comunidadeninjitsu/" },
+    { "@type": "MusicGroup", "name": "Lokos d' Bira", "url": "https://www.instagram.com/lokosdbira/" },
+    { "@type": "MusicGroup", "name": "Os Aciderais", "url": "https://www.instagram.com/osaciderais/" },
+    { "@type": "MusicGroup", "name": "Cansei do Sol", "url": "https://www.instagram.com/canseidosol/" },
+    { "@type": "MusicGroup", "name": "Ogro Gus", "url": "https://www.instagram.com/ogrogus/" },
+    { "@type": "MusicGroup", "name": "Insira Aqui", "url": "https://www.instagram.com/insira_aqui/" }
+  ],
+  "subEvent": {
+    "@type": "Event",
+    "name": "Mercado Underground e Expositores",
+    "description": "Feira de economia criativa, marcas locais e cultura urbana dentro do Rock na Praça.",
+    "location": { "@type": "Place", "name": "Praça Coração de Maria" }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Balaiada",
+    "url": "https://www.instagram.com/balaiada/"
+  },
+  "sponsor": [
+    {"@type": "Organization", "name": "Prefeitura de Esteio"},
+    {"@type": "Organization", "name": "Black in Black"},
+    {"@type": "Organization", "name": "Chopp Hoffnung"},
+    {"@type": "Organization", "name": "B.I.L"},
+    {"@type": "Organization", "name": "Skatchê Bar"},
+    {"@type": "Organization", "name": "Unipeople"},  
+    {"@type": "Organization", "name": "Estreiart Studio"}
   ]
 }
 </script>
 
-
 </head>
-
 
 <body>
 
@@ -157,7 +151,6 @@
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
     <nav class="cabecalho-menu" id="menu">
-      <a href="/programacao/">Programação</a>
       <a href="/sobre/">Sobre</a>
       <div class="menu-item">
         <button class="menu-toggle" aria-expanded="false">
@@ -175,82 +168,177 @@
   </header>
 
   <main>
+    <section class="hero-section">
+      <h1 class="visually-hidden">Rock na Praça - Edição Especial em Esteio</h1>
+      <div class="banner-container">
+        <img src="./assets/banner/Rock-na-Praca_Marco-Flyer.webp" class="cartaz"
+          alt="Cartaz oficial do evento Rock na Praça">
+      </div>
 
-    <h1 class="visually-hidden"> Rock na Praça</h1>
-    <div class="banner-container" fetchpriority="high">
-      <a href="/programacao/">
-        <img src="./assets/banner/Rock-na-Praca_Marco-Flyer.webp" class="cartaz" alt="cartaz do rock na praça" fetchpriority="high" loading="eager"
-    decoding="sync">
-      </a>
+      <div class="acao-imediata">
+        <button class="btn-mapa" type="button" onclick="abrirMapa()">
+          📍 Como chegar na Praça Coração de Maria
+        </button>
+      </div>
+    </section>
+
+    <div class="modal" id="modalMapa" onclick="fecharMapa()">
+      <div class="modal-conteudo" onclick="event.stopPropagation()">
+        <button class="fechar-modal" onclick="fecharMapa()">✕</button>
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.4981794987116!2d-51.16425!3d-29.8499035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95196f6ddba74b9f%3A0x57654fe357686cfb!2zUHJhw6dhIENvcmHDp8OjbyBkZSBNYXJpYQ!5e0!3m2!1spt-BR!2sbr!4v1768996441820!5m2!1spt-BR!2sbr"
+            loading="lazy"></iframe>
+        </div>
+      </div>
     </div>
 
-    <!-- CONTADOR -->
-    <section class="secao-contador" id="dados">
-      <div class="info">
-        <h2 class="numero" data-numero="23">0</h2>
-        <p>anos de existência</p>
-      </div>
+    <section class="grupo-cartoes">
+      <div class="grid-bandas">
 
-      <div class="info">
-        <div class="secao-contador-linha">
-          <h2 class="prefixo">+ de</h2>
-          <h2 class="numero" data-numero="700">0</h2>
-        </div>
-        <p>bandas</p>
-      </div>
-
-      <div class="info">
-        <div class="secao-contador-linha">
-          <h2 class="prefixo">+ de</h2>
-          <h2 class="numero" data-numero="150">0</h2>
-        </div>
-        <p>edições</p>
-      </div>
-    </section>
-
-    <!----- APRESENTAÇÃO-->
-
-    <section class="bloco-principal">
-
-      <div class="apresentacao-texto">
-        <h3>A praça vira palco e o rock toma conta</h3>
-
-        <p>
-          Desde 2002, o <strong>Rock na Praça</strong> ocupa praças de diferentes cidades do Rio Grande do Sul, levando o rock
-          autoral para além de um único endereço. Gratuito, independente e itinerante, o evento conecta gerações,
-          fortalece a cena musical e transforma espaços públicos em palcos de música ao vivo e cultura urbana.</p>
-
-        <p>Nascido em Esteio, onde é reconhecido como Patrimônio Cultural Imaterial, o Rock na Praça já realizou mais de
-          150 edições e reuniu centenas de bandas, consolidando-se como referência da música independente no estado.
-          Mais do que um festival, é um movimento que circula, aproxima territórios e celebra a arte em comunidade.</p>
-
-        </p>
-
-        <div class="apresentacao-video">
-          <iframe title="Vídeo documentário Rock na Praça"
-          src="https://www.youtube-nocookie.com/embed/RoGtOp9N05U?si=fsfUjkrA5HLFR9ZZ" loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-
-
-      <aside class="bloco-lateral">
-        <div class="videos-conteudo">
-          <h3>Rock na Praça – Melhores Momentos</h3>
-
-          <div class="videos-container" id="videos-lateral">
-
-          </div>
-
-          <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer"
-            class="videos-btn">
-            Ver mais no YouTube →
+        <article class="cartao-bandas">
+          <a href="https://www.instagram.com/lokosdbira" target="_blank">
+            <img src="../assets/bandas/lokosdbira.webp" alt="Lokos D' Bira" loading="lazy">
+            <span class="nome-banda">Lokos D' Bira</span>
           </a>
-        </div>
-      </aside>
+        </article>
+
+        <article class="cartao-bandas">
+          <a href="https://www.instagram.com/insiraoficial/" target="_blank">
+            <img src="../assets/bandas/insiraqui.webp" alt="Foto da banda Insira Aqui" loading="lazy">
+            <span class="nome-banda">Insira aqui</span>
+          </a>
+        </article>
+
+        <article class="cartao-bandas">
+          <a href="https://www.instagram.com/os.aciderais/" target="_blank">
+            <img src="../assets/bandas/osaciderais2.webp" alt="Os Aciderais" loading="lazy">
+            <span class="nome-banda">Os Aciderais</span>
+          </a>
+        </article>
+
+        <article class="cartao-bandas">
+          <a href="https://www.instagram.com/canseidosol/" target="_blank">
+            <img src="../assets/bandas/canseidosol.webp" alt="Cansei do Sol" loading="lazy">
+            <span class="nome-banda">Cansei do Sol</span>
+          </a>
+        </article>
+
+        <article class="cartao-bandas">
+          <a href="https://www.instagram.com/ogrogus/" target="_blank">
+            <img src="../assets/bandas/ogrogus.webp" alt="Ogro Gus" loading="lazy">
+            <span class="nome-banda">Ogro Gus</span>
+          </a>
+        </article>
+
+        <article class="cartao-bandas">
+          <a href="https://www.instagram.com/comunidadeninjitsu/" target="_blank">
+            <img src="../assets/bandas/comunidadeninjitsu.webp" alt="Comunidade Nin-Jitsu" loading="lazy">
+            <span class="nome-banda">Comunidade Nin-Jitsu</span>
+          </a>
+        </article>
+
+      </div>
     </section>
 
+    <section class="grupo-feira">
+      <h2>Mercado Underground</h2>
+
+      <div class="grid-feira">
+
+        <a href="https://www.instagram.com/horripilos" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Horripilos_logo.webp" alt="Horripilos">
+        </a>
+
+        <a href="https://www.instagram.com/magiasdadeh/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Magias-da-Deh_logo.webp" alt="Magias da Deh"></a>
+        <!-- #3 -->
+        <a href="https://www.instagram.com/labrujasilk/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/La-Bruja-Silk_logo.webp" alt="La Bruja Silk"></a>
+
+        <!-- #4 -->
+        <a href="https://www.instagram.com/catsrockersstore/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Cats-Rocks-Store_logo.webp" alt="Cats Rocks Store"></a>
+
+        <!-- #5 -->
+        <a href="https://www.instagram.com/itemsstoreoficial/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Items-Store_logo.webp" alt="Items Store"></a>
+
+        <!-- #6 -->
+        <a href="https://www.instagram.com/orbitaloja/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Orbita-loja_logo.webp" alt="Orbita Loja"></a>
+        <!-- #7 -->
+        <a href="https://www.instagram.com/moonerd_store/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/MooNerd_logo.webp" alt="MooNerd"></a>
+
+        <!-- #8 -->
+        <a href="https://www.instagram.com/riffartefatos/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Riff-artefatos_logo.webp" alt="Riff Artefatos"></a>
+        <!-- #9 -->
+        <a href="https://www.instagram.com/brecho.viralata/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Brecho-Vira-Lata_logo.webp" alt="Brecho Vira Lata"></a>
+
+        <!-- #10 -->
+        <a href="https://www.instagram.com/theravenbr/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/The-Raven_logo.webp" alt="The Raven"></a>
+        <!-- #11 -->
+        <a href="https://www.instagram.com/maldita3d/" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Maldita_logo.webp" alt="Maldita 3D"></a>
+
+        <!-- #12 -->
+        <a href="https://www.instagram.com/loja_refugionerd" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Refugio-Nerd_logo.webp" alt="Refúgio Nerd"></a>
+
+        <!-- #13 -->
+        <a href="https://www.instagram.com/subversive.atelier" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Subversive-Atelier.webp" alt="Subversive Atelier"></a>
+
+        <!-- #14 -->
+        <a href="https://www.instagram.com/chimadapri" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Chima-da-Prih_logo.webp" alt="Chima da Pri"></a>
+
+        <a href="https://www.instagram.com/risco.furtado" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/risco-tacia-furtado_logo.webp" alt="Risco Tacia Furtado"></a>
+
+        <a href="https://www.instagram.com/clau_poucaseboas" class="cartao-logo" target="_blank">
+          <img src="../assets/logos/lojas/Poucas-e-boas_logo.webp" alt="Poucas e Boas"></a>
+
+      </div>
+    </section>
+
+    <section class="grupo-apoio">
+      <h2>Apoio</h2>
+      <div class="grid-apoio">
+
+        <a href="https://www.instagram.com/prefaesteio/" class="cartao-logo" target="_blank" rel="noopener noreferrer">
+          <img src="./assets/logos/apoio/prefa-Esteio_logo.webp" alt="Prefeitura de Esteio">
+        </a>
+
+
+        <a href="https://www.instagram.com/lojabackinblack/" class="cartao-logo" target="_blank">
+          <img src="./assets/logos/apoio/Black-in-Back_logo.webp" alt="Black in Back"></a>
+
+        <a href="https://www.instagram.com/bandasindependenteslocais/" class="cartao-logo" target="_blank">
+          <img src="./assets/logos/apoio/BIL_logo.webp" alt="B.I.L"></a>
+
+        <a href="https://www.instagram.com/chopphoffnung_" class="cartao-logo" target="_blank">
+          <img src="./assets/logos/apoio/Hoffnung_logo.webp" alt="Chopp Hoffnung"></a>
+
+        <a href="https://www.instagram.com/skatchebar/" class="cartao-logo" target="_blank">
+          <img src="./assets/logos/apoio/skatchebar_logo.webp" alt="Skatchebar"></a>
+
+        <a href="https://www.instagram.com/unipeopleeducation" class="cartao-logo" target="_blank">
+          <img src="./assets/logos/apoio/unupor.jpeg" alt="Unipeople"></a>
+
+        <a href="https://www.instagram.com/esteiart_studio/" class="cartao-logo" target="_blank">
+          <img src="./assets/logos/apoio/estreiart.jpeg" alt="Estúdio Estreiart"></a>
+
+
+      </div>
+    </section>
+
+    </div>
+    </div>
 
   </main>
 
