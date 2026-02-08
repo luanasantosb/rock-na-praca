@@ -405,6 +405,29 @@ h3 {
   padding: 10px 10px;
 }
 
+.conteudo-principal h1{
+  color:var(--verde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.description-seo {
+    font-family: var(--fonte-textos);
+    font-size: 1.1rem;
+    color: var(--branco);
+    max-width: 800px;
+    margin: 15px auto;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.description-seo strong {
+    color: var(--verde);
+    font-weight: 700;
+}
+
 .grupo-local .container {
   max-width: 1000px;
   margin: 0 auto;
