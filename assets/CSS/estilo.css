@@ -348,11 +348,10 @@ h3 {
   }
 }
 
-
-
 /* =======================
    PROGRAMAÇÃO
 ======================= */
+
 .cabecalho-programacao {
   display: flex;
   flex-direction: column;
@@ -593,19 +592,25 @@ h3 {
 
 .grid-apoio {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   place-items: center;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin: 0;
+  row-gap: 2rem;
+  column-gap: 10rem;
 }
 
 @media (max-width: 1024px) {
-
   .cabecalho-programacao {
     width: 120px;
     padding: 15px;
+  }
+
+  .cabecalho-simbolo img {
+    width: 90px;
+    margin-bottom: 20px;
   }
 
   .cabecalho-menu-programacao a {
@@ -613,50 +618,112 @@ h3 {
   }
 
   .conteudo-principal {
-    margin-left: 140px;
-  }
-
-  .grid-bandas {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .grid-feira {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
+    margin-left: 150px;
   }
 }
 
 @media (max-width: 768px) {
-
-    .cabecalho-menu-programacao {
-        gap: 1rem;             
-    }
-
-  .cabecalho-simbolo img {
-  width: 70px;
-  height: auto;
-  margin-bottom: 30px;
-}
-
-    .cabecalho-menu-programacao a {
-        font-size: 1.2rem;    
-        padding: 4px 6px;     
-        line-height: 1;  
-    }
-}
-
-
-@media (max-width: 480px) {
-  .grupo-local h2,
-  .grupo-bandas h2,
-  .grupo-feira h2,
-  .grupo-apoio h2 {
-    font-size: 1.5rem;
+  .cabecalho-programacao {
+    position: fixed;
+    width: 80px;
+    height: 100vh;
+    flex-direction: column; 
+    align-items: center;
+    padding: 7px 5px;
   }
 
-  .cartao-logo img {
-    max-width: 120px;
+  .cabecalho-simbolo img {
+    width: 80px;
+    margin-bottom: 15px;
+  }
+
+  .cabecalho-menu-programacao {
+    align-items: center;
+    gap: 5px;
+  }
+
+  .cabecalho-menu-programacao a {
+    font-size: 1rem;
+    padding: 5px 0;
+  }
+
+  .conteudo-principal {
+    margin-left: 100px;
+    padding: 5px;
+  }
+
+  .mapa {
+  flex: 1 1 300px;
+  min-width: 200px;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+  .grid-bandas {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-feira,
+  .grid-apoio {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+    .cabecalho-programacao {
+    position: fixed;
+    width: 70px;
+    height: 100vh;
+    flex-direction: column; 
+    align-items: center;
+    padding: 3px 2px;
+  }
+
+  .cabecalho-simbolo img {
+    width: 70px;
+    margin-bottom: 15px;
+  }
+
+  .cabecalho-menu-programacao {
+    align-items: center;
+    gap: 2px;
+  }
+
+  .cabecalho-menu-programacao a {
+    font-size: 1rem;
+    padding: 2px 0;
+  }
+
+  .conteudo-principal {
+    margin-left: 80px;
+    padding: 2px;
+  }
+
+  .mapa {
+  flex: 1 1 200px;
+  min-width: 100px;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+  .grid-bandas {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-feira,
+  .grid-apoio {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1rem;
   }
 }
 
