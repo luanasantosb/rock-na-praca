@@ -11,85 +11,88 @@
     gtag('config', 'G-Z7RKDPPXTG');
   </script>
 
-  <!-- Básico -->
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000000">
 
-  <!-- SEO principal -->
   <title>Rock na Praça | Site Oficial | Shows Gratuitos no RS</title>
-  <meta name="description"
-    content="O Rock na Praça leva o melhor do rock gaúcho para cidades do RS. Entrada gratuita, cultura e música ao vivo. Confira a agenda completa!">
+  <meta name="description" content="O Rock na Praça leva o melhor do rock gaúcho para as cidades do RS. Shows gratuitos, cultura e música ao vivo. Confira a agenda em Esteio, Canoas e região!">
   <link rel="canonical" href="https://rocknapraca.com/">
 
-  <!-- Favicon-->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/logos/Rocknapraca/favicon.png">
 
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.google-analytics.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp"
-    fetchpriority="high">
+  
+  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp" fetchpriority="high">
 
   <link rel="stylesheet" href="../assets/CSS/estilo.css">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
   <script src="../assets/JS/script.js" defer></script>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
   <meta property="og:locale" content="pt_BR">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta property="og:url" content="https://rocknapraca.com/">
   <meta property="og:title" content="Rock na Praça | Evento Itinerante Gratuito no RS">
-  <meta property="og:description"
-    content="Música, cultura e rock gaúcho ocupando os espaços públicos. Saiba onde será o próximo Rock na Praça!">
+  <meta property="og:description" content="Música, cultura e rock gaúcho ocupando os espaços públicos. Saiba onde será o próximo Rock na Praça!">
   <meta property="og:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
   <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
 
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="Rock na Praça | Evento Itinerante no RS">
-  <meta property="twitter:description" content="Confira a agenda do maior evento itinerante de rock gratuito do RS.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rock na Praça | Evento Itinerante no RS">
+  <meta name="twitter:description" content="Confira a agenda do maior evento itinerante de rock gratuito do RS.">
+  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
 
-  <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Rock na Praça",
-    "url": "https://rocknapraca.com/",
-    "logo": "https://rocknapraca.com/assets/logos/Rocknapraca/favicon.png",
-    "description": "Evento itinerante de rock gratuito, reconhecido como Patrimônio Público e Cultural pela Lei Municipal nº 8147/2022 de Esteio/RS.",
-    "award": "Patrimônio Público e Cultural (Lei Municipal 8147/2022)",
-    "sameAs": [
-      "https://www.instagram.com/rocknapraca_/",
-      "https://www.facebook.com/rocknapracaesteio",
-      "https://www.youtube.com/@Rocknapraca_RS"
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "EventSeries",
-    "name": "Rock na Praça",
-    "description": "Circuito de shows gratuitos nas praças do RS, instituído como patrimônio oficial.",
-    "location": {
-      "@type": "Place",
-      "name": "Praças Públicas",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "RS",
-        "addressCountry": "BR"
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rocknapraca.com/#organization",
+      "name": "Rock na Praça",
+      "url": "https://rocknapraca.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rocknapraca.com/assets/logos/Rocknapraca/rock-na-praca_logotipo_simbolo.webp",
+        "width": "512",
+        "height": "512"
+      },
+      "description": "Evento itinerante de rock gratuito, reconhecido como Patrimônio Público e Cultural em Esteio/RS.",
+      "sameAs": [
+        "https://www.instagram.com/rocknapraca_/",
+        "https://www.facebook.com/rocknapracaesteio",
+        "https://www.youtube.com/@Rocknapraca_RS"
+      ]
+    },
+    {
+      "@type": "EventSeries",
+      "name": "Circuito Rock na Praça",
+      "description": "Shows gratuitos de rock em praças públicas do Rio Grande do Sul.",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": [
+        { "@type": "Place", "name": "Esteio, RS" },
+        { "@type": "Place", "name": "Canoas, RS" },
+        { "@type": "Place", "name": "Sapucaia do Sul, RS" },
+        { "@type": "Place", "name": "São Leopoldo, RS" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL",
+        "url": "https://rocknapraca.com/",
+        "availability": "https://schema.org/InStock",
+        "description": "Entrada Gratuita"
       }
     }
-  }
-]
+  ]
+}
 </script>
 
 </head>
