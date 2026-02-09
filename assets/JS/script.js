@@ -54,47 +54,33 @@ if (menu) {
 
 /*===== CONTADOR =====*/
 
-function animarContadores() {
-  const contadores = document.querySelectorAll('.numero');
-  if (!contadores.length) return;
+const counters = document.querySelectorAll('.contador-numero');
 
-  const velocidade = 200;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counter = entry.target;
+      const target = +counter.dataset.target;
+      let current = 0;
+      const increment = target / 100;
 
-  contadores.forEach(contador => {
-    const valorFinal = +contador.getAttribute('data-numero');
-    if (!valorFinal) return;
+      const update = () => {
+        if (current < target) {
+          current += increment;
+          counter.innerText = Math.ceil(current);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target;
+        }
+      };
 
-    const incremento = Math.ceil(valorFinal / velocidade);
-    let valorAtual = 0;
-
-    const atualizar = () => {
-      valorAtual += incremento;
-      if (valorAtual >= valorFinal) {
-        contador.textContent = valorFinal.toLocaleString('pt-BR');
-      } else {
-        contador.textContent = valorAtual.toLocaleString('pt-BR');
-        requestAnimationFrame(atualizar);
-      }
-    };
-
-    atualizar();
+      update();
+      observer.unobserve(counter);
+    }
   });
-}
+}, { threshold: 0.6 });
 
-const section = document.querySelector('#dados');
-
-if (section) {
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animarContadores();
-        observer.unobserve(section);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  observer.observe(section);
-}
+counters.forEach(counter => observer.observe(counter));
 
 /*====== YOUTUBE =======*/
 
