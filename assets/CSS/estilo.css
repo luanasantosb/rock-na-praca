@@ -37,7 +37,7 @@ body {
 }
 
 main {
-  margin-top: 80px;
+  margin-top: 5rem;
   flex-grow: 1;
   background-color: var(--preto);
 }
@@ -74,7 +74,7 @@ h3 {
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 5rem;
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -184,7 +184,7 @@ h3 {
   top: calc(100% + 2px);
   left: 0;
   min-width: 220px;
-  padding: 12px 1rem;
+  padding: 0.75rem 1rem;
   background-color: rgba(17, 17, 17, 0.65);
   opacity: 0;
   visibility: hidden;
@@ -235,9 +235,9 @@ h3 {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 260px;
-    padding: 20px;
-    gap: 18px;
+    width: 16rem;
+    padding: 1rem;
+    gap: 1rem;
     flex-direction: column;
     background-color: rgba(17, 17, 17, 0.65);
     backdrop-filter: blur(12px) saturate(150%);
@@ -281,7 +281,7 @@ h3 {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
     url("../banner/Background_muro.webp") center / cover no-repeat;
   text-align: center;
-  padding: 20px;
+  padding: 1.25rem;
   overflow: hidden;
   gap: 2rem;
 }
@@ -289,7 +289,7 @@ h3 {
 
 .banner-container img {
   width: 100%;
-  max-width: 450px;
+  max-width: 28rem;
   height: auto;
   will-change: transform;
 }
@@ -299,7 +299,7 @@ h3 {
   background-color: var(--verde);
   color: var(--preto);
   border: none;
-  padding: 18px 45px;
+  padding: 1rem 3rem;
   font-weight: 900;
   cursor: pointer;
   text-transform: uppercase;
@@ -1700,11 +1700,13 @@ h3 {
 }
 
 .direitos-autorais,
+.lei-patrimonio,
 .desenvolvedora-credito {
   margin: 0;
   font-size: 0.90rem;
   color: var(--preto);
   font-family: var(--fonte-textos);
+  line-height: 1.5;
 }
 
 .desenvolvedora-credito a {
