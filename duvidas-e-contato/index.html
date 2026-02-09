@@ -61,43 +61,69 @@
   <meta name="twitter:image:alt" content="Replicantes no Rock na Praça">
   <meta name="twitter:image:width" content="1200">
   <meta name="twitter:image:height" content="630">
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Quando acontece o próximo evento do Rock na Praça?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Acompanhe nossa agenda atualizada diretamente no site oficial da Rock na Praça para conferir as próximas datas, locais e horários das apresentações."
-    }
-  }, {
-    "@type": "Question",
-    "name": "O evento Rock na Praça é gratuito?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Sim, o projeto Rock na Praça é totalmente gratuito e realizado em espaços públicos para democratizar o acesso ao rock e à cultura."
-    }
-  }, {
-    "@type": "Question",
-    "name": "Como bandas podem se inscrever para tocar no festival?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Bandas interessadas devem preencher o formulário de cadastro disponível na nossa seção participe."
-    }
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.rocknapraca.com/FAQ/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quando acontece o próximo evento do Rock na Praça?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acompanhe nossa agenda atualizada diretamente aqui em nosso site oficial para conferir as próximas datas, locais e horários das apresentações em Esteio e região."
+          }
+        },
+        {
+          "@type": "Question",
+          "name":"O evento Rock na Praça é gratuito?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Sim! O projeto é totalmente gratuito e realizado em praças e espaços públicos, garantindo acesso livre à cultura e ao rock para toda a comunidade."
+          }
+      },
+      {
+        "@type":"Question",
+        "name":"Como bandas podem se inscrever para tocar no evento?",
+         "acceptedAnswer":{
+           "@type":"Answer",
+           "text":"Por ser realizado em local aberto, o Rock na Praça não acontece em caso de chuva. Caso seja necessário cancelar o evento, todas as informações serão divulgadas em nossos canais oficiais."
+         }
+      },
+        {
+          "@type": "Question",
+          "name": "O evento acontece em caso de chuva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Por ser realizado em local aberto, o Rock na Praça não acontece em caso de chuva. Caso seja necessário cancelar o evento, todas as informações serão divulgadas em nossos canais oficiais."
+          }
+        }
+      ]
     },
     {
-    "@type": "Question",
-    "name": "O evento acontece em caso de chuva?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Por ser realizado em local aberto, o Rock na Praça não acontece em caso de chuva. Caso seja necessário cancelar o evento, todas as informações serão divulgadas em nossos canais oficiais."
+      "@type": "ContactPage",
+      "@id": "https://www.rocknapraca.com/FAQ/#contact",
+      "description": "Página central de suporte, dúvidas e contato do Rock na Praça.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Rock na Praça",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "rocknapracaesteio@gmail.com",
+          "contactType": "Suporte e Parcerias",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese"
+        }
+      }
     }
-  }]
-}
+  ]
 }
 </script>
+
 </head>
 
 <body>
@@ -146,18 +172,6 @@
             <p>Acompanhe nossa agenda atualizada diretamente aqui em nosso site oficial para conferir as próximas datas,
               locais e horários das apresentações em Esteio e região.</p>
           </div>
-
-          <div class="faq-item">
-            <h2>O evento Rock na Praça é gratuito?</h2>
-            <p>Sim! O projeto é totalmente gratuito e realizado em praças e espaços públicos, garantindo acesso livre à
-              cultura e ao rock para toda a comunidade.</p>
-          </div>
-
-          <div class="faq-item">
-            <h2>Como bandas podem se inscrever para tocar no evento?</h2>
-            <p>Bandas interessadas devem preencher o formulário de cadastro disponível na nossa seção participe.</p>
-          </div>
-
           <div class="faq-item">
             <h2>O evento acontece em caso de chuva?</h2>
             <p>Por ser realizado em local aberto, o Rock na Praça não acontece em caso de chuva. Caso seja necessário
