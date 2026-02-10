@@ -270,139 +270,210 @@ h3 {
 /*            PAGINA INICIAL               */
 /* ========================= */
 
+/* ===== HERO SECTION ===== */
+
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 50vh;
+  min-height: clamp(60vh, 70vh, 90vh);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-    url("../banner/Background_muro.webp") center / cover no-repeat;
+  gap: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 4rem);
   text-align: center;
-  padding: 1.25rem;
   overflow: hidden;
-  gap: 2rem;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+    url("../banner/Background_muro.webp") center / cover no-repeat;
 }
 
 
 .banner-container img {
   width: 100%;
-  max-width: 28rem;
+  max-width: clamp(16rem, 35vw, 28rem);
   height: auto;
-  will-change: transform;
 }
+
 
 
 .btn {
   background-color: var(--verde);
   color: var(--preto);
   border: none;
-  padding: 1rem 3rem;
+  padding: clamp(0.8rem, 1.2vw, 1.2rem)
+           clamp(1.8rem, 3vw, 3rem);
   font-weight: 900;
-  cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  cursor: pointer;
   transition: all var(--transition-fast);
-  outline: none;
+  font-size: clamp(0.8rem, 1vw, 1rem);
   text-decoration: none;
 }
 
+
 .contador-container {
-  border-top:4px solid var(--verde);
-  border-bottom:4px solid var(--verde);
+  border-top: 4px solid var(--verde);
+  border-bottom: 4px solid var(--verde);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 3rem;
-}
-.contador-item{
-  margin:1rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 4rem);
+  padding: clamp(1rem, 2vw, 2rem) 0;
+  text-align: center;
 }
 
 .contador-numero {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
   font-family: var(--fonte-titulos);
   color: var(--verde);
   font-weight: bold;
 }
 
 .prefixo {
+  font-size: clamp(1rem, 3vw, 2rem);
   font-family: var(--fonte-titulos);
   color: var(--verde);
   font-weight: 700;
-  font-size: 2rem;
 }
 
 .contador-texto {
+  font-size: clamp(1rem, 2.5vw, 2rem);
   font-family: var(--fonte-titulos);
-  font-size: 2rem;
   color: var(--branco);
   margin-top: 8px;
-  text-align: center;
   text-transform: uppercase;
 }
+
 
 
 .resumo-conteudo {
   max-width: 600px;
   width: 100%;
-  margin: 2rem auto;
+  margin: clamp(1.5rem, 4vw, 3rem) auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .resumo-conteudo h2 {
+  font-size: clamp(1.3rem, 3vw, 2rem);
   color: var(--verde);
-  font-size: 2rem;
   margin: 0.5rem 0;
 }
 
 .resumo-conteudo p {
-  font-family: 1rem;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.6;
+}
+
+.resumo-video{
+  margin-top: 1rem;
+  display:flex;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+}
+
+.resumo-video iframe{
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 1024px) {
   .hero-section {
-    min-height: 60vh;
+    flex-direction: column;
     gap: 1.5rem;
   }
 
-  .banner-container img {
-    max-width: 380px;
+  .contador-numero {
+    font-size: 3rem;
+  }
+
+  .contador-texto {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-section {
+    padding: 2rem 1rem;
     flex-direction: column;
-    min-height: auto;
-    padding: 40px 20px;
   }
 
   .banner-container img {
-    max-width: 300px;
+    max-width: 20rem;
   }
 
   .btn {
-    padding: 14px 32px;
+    padding: 0.8rem 2rem;
     font-size: 0.9rem;
   }
+
+  .contador-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contador-numero {
+    font-size: 2.5rem;
+  }
+
+  .contador-texto {
+    font-size: 1.2rem;
+  }
+
+  .resumo-conteudo h2 {
+    font-size: 1.5rem;
+  }
+  .resumo-video{
+  margin-top: 1rem;
+  display:flex;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+}
+
+.resumo-video iframe{
+  width: 100%;
+  height: 100%;
+}
 }
 
 @media (max-width: 480px) {
-  .banner-container img {
-    max-width: 260px;
+  .contador-numero {
+    font-size: 2rem;
+  }
+
+  .contador-texto {
+    font-size: 1rem;
   }
 
   .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 250px;
   }
+  .resumo-conteudo{
+    width: 70%;
+  }
+
+  .resumo-video{
+  margin-top: 1rem;
+  display:flex;
+  align-items: center;
+  width: 380px;
+  height: 200px;
+}
+
+.resumo-video iframe{
+  width: 100%;
+  height: 100%;
+}
+
 }
 
 /* =======================
