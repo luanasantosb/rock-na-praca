@@ -46,38 +46,72 @@
   <meta name="twitter:description" content="Sua marca na Feira de Economia Criativa do Rock na Praça. Inscreva-se para as próximas edições.">
   <meta name="twitter:image" content="https://miro.medium.com/v2/resize:fit:4608/format:webp/1*m2DoDACaDsDZBvWZuiH3wQ.jpeg">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ContactPage",
-        "@id": "https://rocknapraca.com/inscricao-feira/#webpage",
-        "url": "https://rocknapraca.com/inscricao-feira/",
-        "name": "Página de Inscrição para Expositores - Rock na Praça",
-        "description": "Formulário de candidatura para artesãos e marcas independentes na Feira de Economia Criativa do Rock na Praça.",
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rocknapraca.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Inscrição de Estande" }
-          ]
-        }
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://rocknapraca.com/inscricao-feira/#webpage",
+      "url": "https://rocknapraca.com/inscricao-feira/",
+      "name": "Inscrição para Expositores - Feira Rock na Praça",
+      "description": "Cadastro para artesãos, microempreendedores e marcas independentes interessados em expor na Feira de Economia Criativa do Rock na Praça.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://rocknapraca.com/"
       },
-      {
-        "@type": "Service",
-        "serviceType": "Locação de Estande e Exposição Cultural",
-        "provider": {
-          "@type": "Organization",
-          "name": "Rock na Praça",
-          "url": "https://rocknapraca.com"
-        },
-        "areaServed": { "@type": "State", "name": "Rio Grande do Sul" },
-        "description": "Oportunidade de exposição para microempreendedores, artesãos e marcas autorais em eventos públicos de grande circulação."
+      "about": {
+        "@id": "https://rocknapraca.com/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://rocknapraca.com/inscricao-feira/#breadcrumb"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://rocknapraca.com/inscricao-feira/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://rocknapraca.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Inscrição de Estande",
+          "item": "https://rocknapraca.com/inscricao-feira/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://rocknapraca.com/inscricao-feira/#service",
+      "serviceType": "Inscrição para Expositores em Feira de Economia Criativa",
+      "provider": {
+        "@id": "https://rocknapraca.com/#organization"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Rio Grande do Sul"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Artesãos, Microempreendedores e Marcas Autorais"
+      },
+      "description": "Oportunidade para expositores participarem da Feira de Economia Criativa do evento Rock na Praça, com grande circulação de público em espaços públicos."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://rocknapraca.com/#organization",
+      "name": "Rock na Praça",
+      "url": "https://rocknapraca.com/"
+    }
+  ]
+}
+</script>
+
 
 </head>
 
