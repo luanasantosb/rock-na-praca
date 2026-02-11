@@ -269,72 +269,139 @@ h3 {
 /* ========================= */
 /*            PAGINA INICIAL               */
 /* ========================= */
-
 .hero-section {
+  position: relative; 
+}
+
+
+.hero-banner {
   position: relative;
   width: 100%;
   min-height: clamp(60vh, 70vh, 90vh);
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: clamp(1rem, 3vw, 3rem);
   padding: clamp(1.5rem, 4vw, 4rem);
   text-align: center;
   overflow: hidden;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
-    url("../banner/Background_muro.webp") center / cover no-repeat;
+  background: url("../banner/Background_muro.webp") center / cover no-repeat;
 }
 
-.banner-container {
-  position: relative;
-  display: inline-block;
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); 
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
-.banner-container img {
+
+.hero-banner > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-infos h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color:var(--branco);
+}
+
+.hero-infos h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  color:var(--branco);
+}
+.hero-meta {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hero-meta p {
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+}
+
+.hero-highlight {
+  font-weight: 700;
+  color: var(--verde); 
+  font-size: 1.2rem;
+}
+
+.hero-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--amarelo);
+  border-bottom: 2px solid var(--amarelo);
+  padding-bottom: 4px;
+  transition: 0.3s ease;
+}
+
+.hero-link:hover {
+  color: var(--rosa);
+  border-color: var(--rosa);
+}
+
+.btn-calendar {
+  text-transform: uppercase;
+  background-color: var(--verde);
+  color: var(--preto);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 5px 0 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-calendar:hover {
+  background-color: var(--amarelo);
+}
+
+
+.hero-cartaz {
+  width: 320px;
   height: auto;
   display: block;
-  width: 400px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+  transition: transform 0.3s ease;
 }
 
-.banner-adiamento {
-  position: absolute;
-  top: 50%;
+.hero-cartaz:hover {
+  transform: scale(1.03);
+}
+
+.hero-adiamento {
+  position: absolute; 
+  top: 50%; 
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-20deg);
-  padding: 25px 70px;
-  font-size: 64px;
+  transform: translate(-50%, -30%);
+  padding: 10px 30px;
+  font-size: 5vw; 
   font-weight: 900;
   font-family: 'Impact', sans-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--verde);
-  border: 10px solid var(--verde);
-  background: transparent;
-  z-index: 2;
+  color: var(--verde); 
+  border: 5px solid var(--verde);
+  background: rgba(0,0,0,0.5);
+  z-index: 9999; 
   text-align: center;
-  
   filter: contrast(140%) saturate(120%);
-  position: absolute;
+  pointer-events: none;
 }
-
-
-.btn {
-  background-color: var(--verde);
-  color: var(--preto);
-  border: none;
-  padding: clamp(0.8rem, 1.2vw, 1.2rem)
-           clamp(1.8rem, 3vw, 3rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  text-decoration: none;
-}
-
 
 .contador-container {
   border-top: 4px solid var(--verde);
@@ -610,13 +677,14 @@ h3 {
 
 .informacoes address {
   color: var(--branco);
-  font-style: normal;
-  margin-bottom: 20px;
+  font-family: var(--fonte-textos);
+  margin-bottom: 1rem;
 }
 
 .informacoes ul {
   list-style: none;
   padding: 0;
+  font-family: var(--fonte-textos);
 }
 
 .informacoes ul li {
@@ -625,6 +693,7 @@ h3 {
   align-items: center;
   gap: 10px;
   font-size: 1em;
+  font-family: var(--fonte-textos);
 }
 
 .grupo-bandas {
@@ -712,7 +781,6 @@ h3 {
   max-width: 150px;
   transition: all 0.4s ease;
   display: block;
-  transform: rotate(-1deg);
 }
 
 .cartao-logo:hover img {
