@@ -270,8 +270,6 @@ h3 {
 /*            PAGINA INICIAL               */
 /* ========================= */
 
-/* ===== HERO SECTION ===== */
-
 .hero-section {
   position: relative;
   width: 100%;
@@ -290,13 +288,36 @@ h3 {
     url("../banner/Background_muro.webp") center / cover no-repeat;
 }
 
-
+.banner-container {
+  position: relative;
+  display: inline-block;
+}
 .banner-container img {
-  width: 100%;
-  max-width: clamp(16rem, 35vw, 28rem);
   height: auto;
+  display: block;
+  width: 400px;
 }
 
+.banner-adiamento {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  padding: 25px 70px;
+  font-size: 64px;
+  font-weight: 900;
+  font-family: 'Impact', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--verde);
+  border: 10px solid var(--verde);
+  background: transparent;
+  z-index: 2;
+  text-align: center;
+  
+  filter: contrast(140%) saturate(120%);
+  position: absolute;
+}
 
 
 .btn {
@@ -347,8 +368,6 @@ h3 {
   margin-top: 8px;
   text-transform: uppercase;
 }
-
-
 
 .resumo-conteudo {
   max-width: 600px;
