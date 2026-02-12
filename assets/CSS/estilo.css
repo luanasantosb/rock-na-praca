@@ -1410,6 +1410,32 @@ h3 {
   background-color: var(--verde);
 }
 
+.contador-loja {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--amarelo);
+  font-size: 1rem;
+}
+.loja-cartao.encerrado {
+  background-color: #eee; 
+  color: #888;           
+  border: 1px solid #ccc;
+}
+
+.loja-cartao.encerrado .cartao-produto-foto {
+  opacity: 0.5;          
+}
+
+.loja-cartao.encerrado .cartao-produto-detalhes {
+  pointer-events: none; 
+  opacity: 0.5;         
+}
+
+.loja-cartao.encerrado .contador-loja {
+  color: #555;           
+}
+
 
 .cartao-produto-detalhes {
   transition: transform .2s ease, box-shadow .2s ease;

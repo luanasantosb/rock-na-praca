@@ -242,3 +242,39 @@ if (btnFinalizar) {
     window.open(url, "_blank");
   });
 }
+/*CONTADOR LOJA*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  const produtos = document.querySelectorAll('.loja-cartao');
+
+  produtos.forEach(produto => {
+    const expiraData = produto.dataset.expira;
+    const contador = produto.querySelector('.contador-loja');
+    const link = produto.querySelector('.cartao-produto-detalhes');
+
+    if (!expiraData || !contador) return;
+
+    const expira = new Date(expiraData);
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diff = expira - agora;
+
+      if (diff <= 0) {
+        contador.textContent = "Venda encerrada";
+        produto.classList.add('encerrado');
+        clearInterval(intervalo);
+        return;
+      }
+
+      const horas = Math.floor(diff / (1000 * 60 * 60));
+      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+      contador.textContent = `Tempo restante: ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    atualizarContador();
+    const intervalo = setInterval(atualizarContador, 1000);
+  });
+});
