@@ -109,8 +109,10 @@ h3 {
 }
 
 .menu-toggle {
+  display: inline-block;
+  min-height: 3rem;
+  min-width: 3rem;
   all: unset;
-  display: inline-flex;
   align-items: center;
   font: inherit;
   color: inherit;
@@ -118,7 +120,7 @@ h3 {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  padding: 0;
+  padding: 1rem;
   appearance: none;
   -webkit-appearance: none;
 }
@@ -1874,14 +1876,12 @@ h3 {
 .rodape-conteudo {
   max-width: 900px;
   margin: 0 auto;
-
   display: grid;
+  align-items: center;
+  gap: 1rem;
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
     "esquerda centro direita";
-
-  align-items: center;
-  gap: 1rem;
 }
 
 
