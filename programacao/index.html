@@ -3,12 +3,27 @@
 
 <head>
     <!-- Google tag (gtag.js) NÃO ALTERAR-->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-Z7RKDPPXTG');
+        function loadGTM() {
+            if (window.gtmLoaded) return;
+            window.gtmLoaded = true;
+
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG";
+            script.async = true;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-Z7RKDPPXTG');
+
+            console.log('Google Tag Manager carregado após interação.');
+        }
+
+        window.addEventListener('scroll', loadGTM, { once: true });
+        window.addEventListener('mousemove', loadGTM, { once: true });
+        window.addEventListener('touchstart', loadGTM, { once: true });
     </script>
 
     <!-- Básico -->
@@ -27,18 +42,20 @@
     <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
     <link rel="apple-touch-icon" href="/assets/logos/Rocknapraca/favicon.png">
 
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap">
     <link rel="stylesheet" href="../assets/CSS/estilo.css">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-
-    <script src="../assets/JS/script.js" defer></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap">
+    </noscript>
+    <script src="./assets/JS/script.js" defer></script>
+    <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -59,7 +76,7 @@
         content="Shows gratuitos com Comunidade Nin-Jitsu e bandas autorais na Praça Coração de Maria.">
     <meta name="twitter:image" content="https://rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "MusicEvent",
@@ -342,7 +359,7 @@
                     rel="sponsored noopener noreferrer">
                     <img src="../assets/logos/apoio/estreiart.jpeg" alt="Estúdio Estreiart"></a>
             </div>
-            
+
         </section>
     </main>
     <!-- RODAPÉ -->

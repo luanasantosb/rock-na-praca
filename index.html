@@ -2,13 +2,29 @@
 <html lang="pt-BR">
 
 <head>
+
   <!-- Google tag (gtag.js) NÃO ALTERAR-->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-Z7RKDPPXTG');
+    function loadGTM() {
+      if (window.gtmLoaded) return;
+      window.gtmLoaded = true;
+
+      var script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG";
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-Z7RKDPPXTG');
+
+      console.log('Google Tag Manager carregado após interação.');
+    }
+
+    window.addEventListener('scroll', loadGTM, { once: true });
+    window.addEventListener('mousemove', loadGTM, { once: true });
+    window.addEventListener('touchstart', loadGTM, { once: true });
   </script>
 
   <meta charset="UTF-8">
@@ -26,23 +42,22 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="./assets/logos/Rocknapraca/favicon.png">
 
-  <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
-
-  <link rel="preload" as="image" href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp"
-    fetchpriority="high">
-
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap">
+  <link rel="preload" fetchpriority="high" as="image"
+    href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp" type="image/webp">
   <link rel="stylesheet" href="./assets/CSS/estilo.css">
-
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap" media="print"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap" media="print"
     onload="this.media='all'">
-
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap">
+  </noscript>
   <script src="./assets/JS/script.js" defer></script>
-
-  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">

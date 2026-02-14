@@ -3,12 +3,27 @@
 
 <head>
   <!-- Google tag (gtag.js) NÃO ALTERAR-->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-Z7RKDPPXTG');
+    function loadGTM() {
+      if (window.gtmLoaded) return;
+      window.gtmLoaded = true;
+
+      var script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG";
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-Z7RKDPPXTG');
+
+      console.log('Google Tag Manager carregado após interação.');
+    }
+
+    window.addEventListener('scroll', loadGTM, { once: true });
+    window.addEventListener('mousemove', loadGTM, { once: true });
+    window.addEventListener('touchstart', loadGTM, { once: true });
   </script>
 
   <!-- Meta básicos -->
@@ -27,21 +42,20 @@
   <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
   <link rel="apple-touch-icon" href="/assets/logos/Rocknapraca/favicon.png">
 
-  <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link rel="preload" as="image"
-    href="https://miro.medium.com/v2/resize:fit:4608/format:webp/1*m2DoDACaDsDZBvWZuiH3wQ.jpeg">
-
-   <link rel="stylesheet" href="../assets/CSS/estilo.css">
-
-  <link rel="stylesheet" 
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap" 
-      media="print" 
-      onload="this.media='all'">
-
-  <script src="../assets/JS/script.js" defer></script>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap">
+  <link rel="stylesheet" href="../assets/CSS/estilo.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap">
+  </noscript>
+  <script src="./assets/JS/script.js" defer></script>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
@@ -222,7 +236,7 @@
 
       <div class="centro-textos">
         <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-       <p class="desenvolvedora-credito">
+        <p class="desenvolvedora-credito">
           Design & Desenvolvimento:
           <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer"
             title="Conheça o portfólio de Luana Santos">
