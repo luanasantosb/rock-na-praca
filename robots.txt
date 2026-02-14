@@ -29,7 +29,6 @@ Disallow: /
 User-agent: *
 Allow: /
 # Bloqueie pastas sensíveis ou administrativas abaixo:
-Disallow: /wp-admin/
 Disallow: /admin/
 Disallow: /search/
 Disallow: /temp/

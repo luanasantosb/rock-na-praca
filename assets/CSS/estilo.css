@@ -93,6 +93,9 @@ h3 {
 }
 
 .cabecalho-simbolo-logotipo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   width: clamp(90px, 10vw, 120px);
   display: block;
   transition: transform 0.25s ease;
@@ -348,6 +351,9 @@ h3 {
 
 
 .hero-cartaz {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   width: 320px;
   height: 400px;
   display: block;
