@@ -7,56 +7,54 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000000">
   <title>Produto | Rock na Praça</title>
- <link rel="stylesheet" href="estilo.css">
+
+  <link rel="stylesheet" href="../assets/CSS/estilo.css">
 </head>
-<main>
 
-  <body>
+<body>
 
-    <a href="../loja/" class="produto-voltar">⬅ Voltar para a loja</a>
+  <a href="../loja/" class="produto-voltar">⬅ Voltar para a loja</a>
 
-    <main class="produto-container">
+  <main class="produto-container">
 
-      <!-- ESQUERDA -->
-      <div class="produto-galeria">
-        <img id="fotoPrincipal" class="produto-foto-principal" alt="Produto">
-        <div id="miniaturas" class="produto-miniaturas"></div>
-      </div>
+    <!-- ESQUERDA -->
+    <div class="produto-galeria">
+      <img src="  id=" fotoPrincipal" class="produto-foto-principal" alt="Produto">
+      <div id="miniaturas" class="produto-miniaturas"></div>
+    </div>
 
-      <!-- DIREITA -->
-      <div class="produto-info">
+    <!-- DIREITA -->
+    <div class="produto-info">
 
-        <h1 id="nome"></h1>
-        <p id="descricao"></p>
-        <div id="preco" class="preco"></div>
+      <h1 id="nome"></h1>
+      <p id="descricao"></p>
+      <div id="preco" class="preco"></div>
 
-        <div id="variacoes" class="variacoes hidden">
+      <div id="variacoes" class="variacoes hidden">
 
-          <div class="campo">
-            <label for="tamanho">Tamanho</label>
-            <select id="tamanho">
-              <option value="">Selecione</option>
-            </select>
-          </div>
-
-          <div class="campo">
-            <label for="cor">Cor</label>
-            <select id="cor">
-              <option value="">Selecione</option>
-            </select>
-          </div>
-
+        <div class="campo">
+          <label for="tamanho">Tamanho</label>
+          <select id="tamanho">
+            <option value="">Selecione</option>
+          </select>
         </div>
 
-        <button id="btnCarrinho" class="btn-adicionar">
-          Adicionar ao carrinho
-        </button>
+        <div class="campo">
+          <label for="cor">Cor</label>
+          <select id="cor">
+            <option value="">Selecione</option>
+          </select>
+        </div>
 
       </div>
 
-    </main>
+      <button id="btnCarrinho" class="btn-adicionar">
+        Adicionar ao carrinho
+      </button>
 
-  </body>
+    </div>
+
+  </main>
 
   <script>
 
@@ -266,7 +264,6 @@
     }
 
   </script>
-
-</main>
+</body>
 
 </html>
