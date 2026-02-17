@@ -2,147 +2,148 @@
 <html lang="pt-BR">
 
 <head>
-  <link rel="preload" href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK77vklz-y7KE4.woff2" as="font"
-    type="font/woff2" crossorigin>
-  <!-- Google tag (gtag.js) NÃO ALTERAR-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="theme-color" content="#000000">
+
+  <title>Rock na Praça | O Maior Evento de Rock Gratuito do RS - Site Oficial</title>
+  <meta name="description" content="O Rock na Praça leva o puro rock para as ruas do RS. Shows gratuitos e cultura underground em Esteio, Sapucaia, São Leopoldo, Porto Alegre, Canoas e região.">
+  <link rel="canonical" href="https://www.rocknapraca.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  
+  <link rel="preload" href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK77vklz-y7KE4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="./assets/banner/flyer-desktop.webp" imagesrcset="./assets/banner/flyer-mobile.webp 720w, ./assets/banner/flyer-desktop.webp 1200w" imagesizes="100vw" fetchpriority="high">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Rock na Praça">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="./assets/logos/Rocknapraca/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/logos/Rocknapraca/apple-touch-icon.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css">
+  <link rel="stylesheet" href="./assets/CSS/estilo.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="./assets/CSS/estilo.css"></noscript>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rock na Praça">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://www.rocknapraca.com/">
+  <meta property="og:title" content="Rock na Praça | Evento Itinerante Gratuito no RS">
+  <meta property="og:description" content="O maior evento itinerante de rock do RS. Música ao vivo, cultura e ocupação dos espaços públicos. Confira a nossa agenda e junte-se a cena!">
+  <meta property="og:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
+  <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rock na Praça | Evento Itinerante no RS">
+  <meta name="twitter:description" content="Confira todas as informações do maior evento itinerante de rock gratuito do RS.">
+  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
+
+  <script src="./assets/JS/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.js" defer></script>
+  
   <script>
     function loadGTM() {
       if (window.gtmLoaded) return;
       window.gtmLoaded = true;
-
       var script = document.createElement('script');
       script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG";
       script.async = true;
       document.head.appendChild(script);
-
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-Z7RKDPPXTG');
-
-      console.log('Google Tag Manager carregado após interação.');
+      console.log('GTM carregado.');
     }
-
     window.addEventListener('scroll', loadGTM, { once: true });
     window.addEventListener('mousemove', loadGTM, { once: true });
     window.addEventListener('touchstart', loadGTM, { once: true });
   </script>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-    <title>Rock na Praça | Site Oficial</title>
-    <meta name="description"
-      content="O Rock na Praça leva o puro rock para as ruas do RS. Shows gratuitos e cultura underground em Esteio, Sapucaia, São Leopoldo, Porto Alegre, Canoas e região.">
-
-    <link rel="canonical" href="https://www.rocknapraca.com/">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#000000">
-
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="./assets/logos/Rocknapraca/favicon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.youtube-nocookie.com">
-
-    <link rel="preload" as="image" href="./assets/banner/flyer-desktop.webp"
-      imagesrcset="./assets/banner/flyer-mobile.webp 720w, ./assets/banner/flyer-desktop.webp 1200w" imagesizes="100vw"
-      fetchpriority="high">
-
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap"
-      rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/CSS/estilo.css" media="print" onload="this.media='all'">
-    <noscript>
-      <link rel="stylesheet" href="./assets/CSS/estilo.css">
-    </noscript>
-
-    <script src="./assets/JS/script.js" defer></script>
-
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Rock na Praça">
-    <meta property="og:locale" content="pt_BR">
-    <meta property="og:url" content="https://rocknapraca.com/">
-    <meta property="og:title" content="Rock na Praça | Evento Itinerante Gratuito no RS">
-    <meta property="og:description"
-      content="O maior evento itinerante de rock do RS. Música ao vivo, cultura e ocupação dos espaços públicos. Confira a nossa agenda e junte-se a cena!">
-    <meta property="og:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
-    <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rock na Praça | Evento Itinerante no RS">
-    <meta name="twitter:description"
-      content="Confira todas as informações do maior evento itinerante de rock gratuito do RS.">
-    <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
-
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-  "@type": "VideoObject",
-  "name": "Rock na Praça - Primeiros anos (documentário)",
-  "description": "Os idealizadores do Rock na Praça relembram algumas histórias, perrengues e situações que deram origem ao evento. Inicialmente o que era para ser uma atividade para integrar o Dia do Desafio acabou se transformando em um dos eventos de maior longevidade da cena underground do Rio Grande do Sul.",
-  "thumbnailUrl": [
-    "https://img.youtube.com/vi/RoGtOp9N05U/maxresdefault.jpg"
-  ],
-  "uploadDate": "2025-11-11T08:00:00-03:00",
-  "contentUrl": "https://www.youtube.com/watch?v=RoGtOp9N05U",
-  "embedUrl": "https://www.youtube.com/embed/RoGtOp9N05U",
-  "interactionStatistic": {
-    "@type": "InteractionCounter",
-    "interactionType": { "@type": "WatchAction" },
-    "userInteractionCount": 1234
-  }
-},
-    {
       "@type": "Organization",
-      "@id": "https://rocknapraca.com/#organization",
+      "@id": "https://www.rocknapraca.com/#organization",
       "name": "Rock na Praça",
-      "url": "https://rocknapraca.com/",
+      "url": "https://www.rocknapraca.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://rocknapraca.com/assets/logos/Rocknapraca/rock-na-praca_logotipo_simbolo.webp",
+        "url": "https://www.rocknapraca.com/assets/logos/Rocknapraca/rock-na-praca_logotipo_simbolo.webp",
         "width": "512",
         "height": "512"
       },
-      "description": "Evento itinerante de rock gratuito, reconhecido como Patrimônio Público e Cultural em Esteio/RS.",
+      "description": "Evento itinerante de rock gratuito no Rio Grande do Sul, reconhecido como Patrimônio Público e Cultural em Esteio/RS.",
       "sameAs": [
         "https://www.instagram.com/rocknapraca_/",
         "https://www.facebook.com/rocknapracaesteio",
         "https://www.youtube.com/@Rocknapraca_RS"
-      ]
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Produção",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.rocknapraca.com/#video",
+      "isPartOf": { "@id": "https://www.rocknapraca.com/#organization" },
+      "name": "Rock na Praça - Primeiros anos (documentário)",
+      "description": "Documentário sobre a origem e a trajetória do evento de rock mais longevo da cena underground do RS.",
+      "thumbnailUrl": [
+        "https://img.youtube.com/vi/RoGtOp9N05U/maxresdefault.jpg"
+      ],
+      "uploadDate": "2025-11-11T08:00:00-03:00",
+      "contentUrl": "https://www.youtube.com/watch?v=RoGtOp9N05U",
+      "embedUrl": "https://www.youtube.com/embed/RoGtOp9N05U",
+      "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": { "@type": "WatchAction" },
+        "userInteractionCount": "1234"
+      }
     },
     {
       "@type": "EventSeries",
+      "@id": "https://www.rocknapraca.com/#series",
+      "organizer": { "@id": "https://www.rocknapraca.com/#organization" },
+      "subjectOf": { "@id": "https://www.rocknapraca.com/#video" },
       "name": "Circuito Rock na Praça",
-      "description": "Shows gratuitos de rock em praças públicas do Rio Grande do Sul.",
+      "description": "Circuito itinerante de shows gratuitos em praças públicas do Rio Grande do Sul.",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": [
         { "@type": "Place", "name": "Esteio, RS" },
-        {"@type":"Place","name":"Sapucaia do Sul,RS"},
+        { "@type": "Place", "name": "Sapucaia do Sul, RS" },
         { "@type": "Place", "name": "Porto Alegre, RS" },
         { "@type": "Place", "name": "São Leopoldo, RS" },
         { "@type": "Place", "name": "Canoas, RS" }
-        
       ],
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "BRL",
-        "url": "https://rocknapraca.com/",
+        "url": "https://www.rocknapraca.com/",
         "availability": "https://schema.org/InStock",
-        "description": "Entrada Gratuita"
+        "validFrom": "2026-01-25",
+        "description": "Entrada Franca / Gratuito"
       }
     }
   ]
 }
 </script>
 
-  </head>
+</head>
 
 <body>
 
@@ -232,7 +233,10 @@
         transcende fronteiras, conectando a cena local ao cenário nacional e internacional.</p>
       <div class="resumo-video">
         <iframe src="https://www.youtube-nocookie.com/embed/RoGtOp9N05U?si=HjXUQO6iDLDDIm3F"
-          title="YouTube video player" loading="lazy"></iframe>
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
+        </iframe>
       </div>
     </section>
   </main>
@@ -244,7 +248,7 @@
       <div class="esquerda-realizacao">
         <h3>Realização</h3>
         <a href="https://www.instagram.com/balaiada/" target="_blank" rel="noopener noreferrer">
-          <img src="./assets/logos/realizacao/Balaiada_logo.webp" alt="Logo Balaiada">
+          <img src="./assets/logos/realizacao/Balaiada_logo.webp" alt="Logo Balaiada" height="100" width="100">
         </a>
       </div>
 
@@ -252,7 +256,7 @@
         <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
         <p class="desenvolvedora-credito">
           Design & Desenvolvimento:
-          <a href="https://github.com/luanasantosb" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.github.com/luanasantosb" target="_blank" rel="noopener noreferrer"
             title="Conheça o portfólio de Luana Santos">
             Luana Santos
           </a>
