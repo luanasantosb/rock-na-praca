@@ -1,40 +1,6 @@
-# =========================================================
-# ROBOTS.TXT - Otimizado para SEO e Proteção de IA
-# =========================================================
-
-# 1. BLOQUEIO DE IA (Treinamento e Rastreamento)
-# Impede que os principais modelos de IA usem seu conteúdo
-
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: AnthropicAI
-Disallow: /
-
-# 2. DIRETRIZES PARA BUSCADORES GERAIS (Google, Bing, etc.)
-# Permite a indexação normal para busca orgânica
-
 User-agent: *
 Allow: /
-# Bloqueie pastas sensíveis ou administrativas abaixo:
 Disallow: /admin/
 Disallow: /search/
-Disallow: /temp/
 
-# 3. SINALIZAÇÃO ADICIONAL (Como comentário para evitar erros)
-# # Content-Signal: search=yes,ai-train=no
-
-# 4. LOCALIZAÇÃO DO MAPA DO SITE
 Sitemap: https://www.rocknapraca.com/sitemap.xml

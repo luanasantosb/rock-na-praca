@@ -573,11 +573,14 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 0.8rem;
 }
 
 .cabecalho-menu-programacao a {
+  display: inline-block;
   font-size: 1.5rem;
+  padding: 12px;
+  min-width: 44px;
+  min-height: 44px;
   font-family: var(--fonte-titulos);
   color: var(--branco);
   text-decoration: none;
@@ -760,7 +763,8 @@ h3 {
 }
 
 .cartao-logo img {
-  max-width: 150px;
+  max-width: 100%;
+  height: auto;
   transition: all 0.4s ease;
   display: block;
 }

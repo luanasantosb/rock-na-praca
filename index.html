@@ -59,7 +59,7 @@
 
   <link rel="preload" fetchpriority="high" as="image"
     href="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp" type="image/webp">
-  <link rel="stylesheet" href="./assets/CSS/estilo.css">
+  <link rel="stylesheet" href="./assets/CSS/estilo.css" media="print" onload="this.media='all'">
   <script src="./assets/JS/script.js" defer></script>
   <link rel="preconnect" href="https://www.youtube-nocookie.com">
 
@@ -198,10 +198,10 @@
             </a>
           </div>
         </div>
-        <img src="./assets/banner/Rock-na-Praca_Marco-Flyer.webp" srcset="./assets/banner/flyer-mobile.webp 720w, 
-          ./assets/banner/flyer-desktop.webp 400w" sizes="(max-width: 600px) 100vw, 400px"
+        <img src="./assets/banner/flyer-mobile.webp" srcset="./assets/banner/flyer-mobile.webp 525w, 
+          ./assets/banner/flyer-desktop.webp 800w" sizes="(max-width: 600px) 100vw, 400px"
           alt="Cartaz Rock na Praça edição aniversário de Esteio - 1 de Março com a banda Comunidade Nin-Jitsu"
-          class="hero-cartaz" fetchpriority="high" width="320" height="430">
+          class="hero-cartaz" fetchpriority="high" loading="eager" width="320" height="430">
       </div>
     </section>
 
