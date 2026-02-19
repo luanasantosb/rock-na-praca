@@ -9,16 +9,26 @@
   <meta name="theme-color" content="#000000">
 
   <title>Rock na Praça | O Maior Evento de Rock Gratuito do RS - Site Oficial</title>
-  <meta name="description" content="O Rock na Praça leva o puro rock para as ruas do RS. Shows gratuitos e cultura underground em Esteio, Sapucaia, São Leopoldo, Porto Alegre, Canoas e região.">
+  <meta name="description"
+    content="O Rock na Praça leva o puro rock para as ruas do RS. Shows gratuitos e cultura underground em Esteio, Sapucaia, São Leopoldo, Porto Alegre, Canoas e região.">
   <link rel="canonical" href="https://www.rocknapraca.com/">
   <meta name="robots" content="index, follow, max-image-preview:large">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="./assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="./assets/CSS/estilo.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js" defer></script>
+
   <link rel="preconnect" href="https://www.youtube-nocookie.com">
-  
-  <link rel="preload" href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK77vklz-y7KE4.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="./assets/banner/flyer-desktop.webp" imagesrcset="./assets/banner/flyer-mobile.webp 720w, ./assets/banner/flyer-desktop.webp 1200w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preconnect" href="https://www.google.com">
+
+  <link rel="preload" as="image" href="./assets/banner/flyer-desktop.webp"
+    imagesrcset="./assets/banner/flyer-mobile.webp 720w, ./assets/banner/flyer-desktop.webp 1200w" imagesizes="100vw"
+    fetchpriority="high">
 
   <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,27 +38,31 @@
   <link rel="icon" type="image/png" href="./assets/logos/Rocknapraca/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/logos/Rocknapraca/apple-touch-icon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css">
   <link rel="stylesheet" href="./assets/CSS/estilo.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="./assets/CSS/estilo.css"></noscript>
+  <noscript>
+    <link rel="stylesheet" href="./assets/CSS/estilo.css">
+  </noscript>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://www.rocknapraca.com/">
   <meta property="og:title" content="Rock na Praça | Evento Itinerante Gratuito no RS">
-  <meta property="og:description" content="O maior evento itinerante de rock do RS. Música ao vivo, cultura e ocupação dos espaços públicos. Confira a nossa agenda e junte-se a cena!">
+  <meta property="og:description"
+    content="O maior evento itinerante de rock do RS. Música ao vivo, cultura e ocupação dos espaços públicos. Confira a nossa agenda e junte-se a cena!">
   <meta property="og:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
   <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rock na Praça | Evento Itinerante no RS">
-  <meta name="twitter:description" content="Confira todas as informações do maior evento itinerante de rock gratuito do RS.">
+  <meta name="twitter:description"
+    content="Confira todas as informações do maior evento itinerante de rock gratuito do RS.">
   <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
 
   <script src="./assets/JS/script.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.js" defer></script>
-  
+
   <script>
     function loadGTM() {
       if (window.gtmLoaded) return;
@@ -68,7 +82,7 @@
     window.addEventListener('touchstart', loadGTM, { once: true });
   </script>
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -232,11 +246,9 @@
         cidadania e a diversidade. Com mais de 150 edições realizadas e cerca de 700 bandas no currículo, o projeto
         transcende fronteiras, conectando a cena local ao cenário nacional e internacional.</p>
       <div class="resumo-video">
-        <iframe src="https://www.youtube-nocookie.com/embed/RoGtOp9N05U?si=HjXUQO6iDLDDIm3F"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
-        </iframe>
+        <lite-youtube videoid="RoGtOp9N05U" playlabel="Assistir vídeo"
+          style="background-image: url('https://i.ytimg.com/vi/RoGtOp9N05U/hqdefault.jpg'); width: 100%; height: 315px; margin-bottom: 20px;">
+        </lite-youtube>
       </div>
     </section>
   </main>
@@ -281,7 +293,19 @@
 
     </div>
   </footer>
+  <script>
+    const vidObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.src = el.getAttribute('data-src');
+          observer.unobserve(el);
+        }
+      });
+    }, { rootMargin: '100px' });
 
+    vidObserver.observe(document.getElementById('video-footer'));
+  </script>
 </body>
 
 </html>
