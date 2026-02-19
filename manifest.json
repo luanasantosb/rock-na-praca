@@ -1,12 +1,11 @@
 {
   "name": "Rock na Praça - Site Oficial",
   "short_name": "Rock na Praça",
-  "description": "O maior evento itinerante de rock gratuito do RS.",
-  "start_url": "/?utm_source=pwa",
+  "description": "O maior evento underground gratuito do RS",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "./assets/logos/Rocknapraca/icon-192x192.png",
