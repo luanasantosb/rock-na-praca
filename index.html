@@ -56,7 +56,6 @@
   <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
 
 
-
   <script>
     const loadGTM = () => {
       if (window.gtmLoaded) return;
@@ -78,6 +77,16 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.rocknapraca.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+},
   "@type": "Event",
   "name": "Rock na Praça - Aniversário de Esteio",
   "startDate": "2026-03-01T15:00:00-03:00",
@@ -164,7 +173,7 @@
 
   <main>
     <section class="hero-section">
-      <img src="./assets/banner/Background_muro.webp" alt="muro" class="hero-bg" loading="lazy" width="1920"
+      <img src="./assets/banner/Background_muro.webp" alt="muro-rock-na-praca" class="hero-bg" loading="lazy" width="1920"
         height="1080">
       <div class="hero-banner">
         <div class="hero-infos">
@@ -191,7 +200,7 @@
           <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" type="image/webp">
           <img src="./assets/banner/flyer-desktop.webp" class="hero-cartaz" fetchpriority="high" loading="eager"
             width="400" height="533" style="width:100%; max-width:400px; height:auto;"
-            alt="Cartaz do evento Rock na Praça" type="image/webp">
+            alt="Line-up oficial Rock na Praça março de 2026 - Aniversário de Esteio RS" type="image/webp">
         </picture>
 
       </div>
