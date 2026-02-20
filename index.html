@@ -35,7 +35,7 @@
   </noscript>
 
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="./assets/logos/Rocknapraca/favicon.png" sizes="any">
   <script src="./assets/JS/script.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js" defer></script>
 
@@ -164,7 +164,8 @@
 
   <main>
     <section class="hero-section">
-      <img src="./assets/banner/Background_muro.webp" alt="" class="hero-bg" fetchpriority="high" decoding="async">
+      <img src="./assets/banner/Background_muro.webp" alt="" class="hero-bg" fetchpriority="low" decoding="async"
+        loading="lazy">
       <div class="hero-banner">
         <div class="hero-infos">
           <h1> Rock na Praça - Site Oficial </h1>
@@ -185,18 +186,15 @@
             </a>
           </div>
         </div>
-       <picture>
-  <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp" width="320" height="427">
-  
-  <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" width="400" height="533">
+        <picture>
+          <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp" width="400" height="533">
 
-  <img src="./assets/banner/flyer-desktop.webp" 
-       class="hero-cartaz" 
-       width="400" 
-       height="533" 
-       style="height: auto; width: 100%; max-width: 400px;" 
-       alt="Cartaz Rock na Praça">
-</picture>
+          <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" width="400" height="533">
+
+          <img src="./assets/banner/flyer-desktop.webp" class="hero-cartaz" fetchpriority="high" loading="eager"
+            width="400" height="533" style="height: auto; width: 100%; max-width: 400px;"
+            alt="Cartaz do evento Rock na Praça">
+        </picture>
       </div>
     </section>
 
