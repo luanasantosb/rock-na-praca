@@ -164,7 +164,8 @@
 
   <main>
     <section class="hero-section">
-      <img src="./assets/banner/Background_muro.webp" alt="muro" class="hero-bg" loading="lazy">
+      <img src="./assets/banner/Background_muro.webp" alt="muro" class="hero-bg" loading="lazy" width="1920"
+        height="1080">
       <div class="hero-banner">
         <div class="hero-infos">
           <h1> Rock na Praça - Site Oficial </h1>
@@ -186,14 +187,13 @@
           </div>
         </div>
         <picture>
-          <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp" width="400" height="533">
-
-          <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" width="400" height="533">
-
+          <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp" type="image/webp">
+          <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" type="image/webp">
           <img src="./assets/banner/flyer-desktop.webp" class="hero-cartaz" fetchpriority="high" loading="eager"
-            width="400" height="533" style="height: auto; width: 100%; max-width: 400px;"
-            alt="Cartaz do evento Rock na Praça">
+            width="400" height="533" style="width:100%; max-width:400px; height:auto;"
+            alt="Cartaz do evento Rock na Praça" type="image/webp">
         </picture>
+
       </div>
     </section>
 

@@ -4,7 +4,6 @@
   font-weight: 400;
   font-display: swap;
   src: url('../fonts/OpenSans.woff2') format('woff2');
-  font-display: optional;
 }
 
 @font-face {
@@ -13,7 +12,6 @@
   font-weight: 700;
   font-display: swap;
   src: url('../fonts/BebasNeue.woff2') format('woff2');
-  font-display: optional;
 }
 
 :root {
@@ -276,6 +274,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 16/9;
 }
 
 .hero-banner {
@@ -417,6 +416,8 @@ h3 {
 }
 
 .contador-numero {
+  display: inline-block;
+  min-width: 3ch;
   font-size: clamp(2rem, 6vw, 4rem);
   font-family: var(--fonte-titulos);
   color: var(--verde);
