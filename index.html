@@ -164,8 +164,8 @@
 
   <main>
     <section class="hero-section">
+      <img src="./assets/banner/Background_muro.webp" alt="" class="hero-bg" fetchpriority="high" decoding="async">
       <div class="hero-banner">
-        <img src="./assets/banner/Background_muro.webp" alt="" class="hero-bg" fetchpriority="high" decoding="async">
         <div class="hero-infos">
           <h1> Rock na Praça - Site Oficial </h1>
           <h2> O Aniversário de Esteio vai tremer com o maior evento underground do RS! </h2>
@@ -185,13 +185,18 @@
             </a>
           </div>
         </div>
-        <picture>
-          <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp">
-          <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp">
+       <picture>
+  <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp" width="320" height="427">
+  
+  <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" width="400" height="533">
 
-          <img src="./assets/banner/flyer-desktop.webp" class="hero-cartaz" width="400" height="533"
-            fetchpriority="high" loading="eager" alt="Cartaz Rock na Praça">
-        </picture>
+  <img src="./assets/banner/flyer-desktop.webp" 
+       class="hero-cartaz" 
+       width="400" 
+       height="533" 
+       style="height: auto; width: 100%; max-width: 400px;" 
+       alt="Cartaz Rock na Praça">
+</picture>
       </div>
     </section>
 
