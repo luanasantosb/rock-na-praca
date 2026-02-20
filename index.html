@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -18,25 +17,27 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://www.youtube-nocookie.com">
-  <link rel="preconnect" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
 
   <link rel="preload" href="./assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="./assets/banner/flyer-desktop.webp"
-    imagesrcset="./assets/banner/flyer-mobile.webp 720w, ./assets/banner/flyer-desktop.webp 1200w" imagesizes="100vw"
-    fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/banner/Background_muro.webp" fetchpriority="high">
 
+  <link rel="preload" href="./assets/CSS/estilo.css" as="style">
   <link rel="stylesheet" href="./assets/CSS/estilo.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.css">
+
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css">
+  </noscript>
 
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/Rocknapraca/apple-touch-icon.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Rock na Praça">
+  <script src="./assets/JS/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js" defer></script>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
@@ -49,13 +50,12 @@
   <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
 
   <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Rock na Praça | Site Oficial do Maior Evento Underground do RS">
+  <meta name="twitter:title" content="Rock na Praça | Site Oficial do Maior Evento Underground do RS">
   <meta name="twitter:description"
     content="Confira todas as informações do maior evento itinerante de rock gratuito do RS.">
   <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
 
-  <script src="./assets/JS/script.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.min.js" defer></script>
+
 
   <script>
     const loadGTM = () => {
@@ -165,6 +165,7 @@
   <main>
     <section class="hero-section">
       <div class="hero-banner">
+        <img src="./assets/banner/Background_muro.webp" alt="" class="hero-bg" fetchpriority="high" decoding="async">
         <div class="hero-infos">
           <h1> Rock na Praça - Site Oficial </h1>
           <h2> O Aniversário de Esteio vai tremer com o maior evento underground do RS! </h2>
@@ -184,10 +185,13 @@
             </a>
           </div>
         </div>
-        <img src="./assets/banner/flyer-mobile.webp" srcset="./assets/banner/flyer-mobile.webp 720w, 
-          ./assets/banner/flyer-desktop.webp 800w" sizes="(max-width: 600px) 100vw, 400px"
-          alt="Cartaz oficial do Rock na Praça em Esteio - Programação de bandas underground e aniversário da cidade"
-          class="hero-cartaz" fetchpriority="high" loading="eager" width="320" height="430">
+        <picture>
+          <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp">
+          <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp">
+
+          <img src="./assets/banner/flyer-desktop.webp" class="hero-cartaz" width="400" height="533"
+            fetchpriority="high" loading="eager" alt="Cartaz Rock na Praça">
+        </picture>
       </div>
     </section>
 
@@ -217,11 +221,13 @@
         de Esteio (Lei nº 8.147), o festival une música, skate e economia criativa em espaços públicos, promovendo a
         cidadania e a diversidade. Com mais de 150 edições realizadas e cerca de 700 bandas no currículo, o projeto
         transcende fronteiras, conectando a cena local ao cenário nacional e internacional.</p>
+
+
       <div class="resumo-video">
-        <lite-youtube videoid="RoGtOp9N05U" playlabel="Assistir vídeo"
-          style="background-image: url('https://i.ytimg.com/vi/RoGtOp9N05U/hqdefault.jpg'); width: 100%; height: 315px; margin-bottom: 20px;">
-        </lite-youtube>
+        <lite-youtube videoid="RoGtOp9N05U" playlabel="Assistir documentário"></lite-youtube>
       </div>
+
+
     </section>
   </main>
 
@@ -265,19 +271,8 @@
 
     </div>
   </footer>
-  <script>
-    const vidObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.src = el.getAttribute('data-src');
-          observer.unobserve(el);
-        }
-      });
-    }, { rootMargin: '100px' });
 
-    vidObserver.observe(document.getElementById('video-footer'));
-  </script>
+
 </body>
 
 </html>
