@@ -19,13 +19,11 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
 
-  <link rel="preload" href="./assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="./assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="./assets/banner/Background_muro.webp" fetchpriority="high">
-
   <link rel="preload" href="./assets/CSS/estilo.css" as="style">
-  <link rel="stylesheet" href="./assets/CSS/estilo.css">
+  <link rel="stylesheet" href="./assets/CSS/estilo.css" media="print" onload="this.media='all'">
 
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css" as="style">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css"
@@ -173,8 +171,8 @@
 
   <main>
     <section class="hero-section">
-      <img src="./assets/banner/Background_muro.webp" alt="muro-rock-na-praca" class="hero-bg" loading="lazy" width="1920"
-        height="1080">
+      <img src="./assets/banner/Background_muro.webp" alt="muro-rock-na-praca" class="hero-bg" loading="lazy"
+        width="1920" height="1080">
       <div class="hero-banner">
         <div class="hero-infos">
           <h1> Rock na Praça - Site Oficial </h1>
@@ -196,11 +194,14 @@
           </div>
         </div>
         <picture>
+
           <source media="(max-width: 600px)" srcset="./assets/banner/flyer-mobile.webp" type="image/webp">
+
           <source media="(min-width: 601px)" srcset="./assets/banner/flyer-desktop.webp" type="image/webp">
+
           <img src="./assets/banner/flyer-desktop.webp" class="hero-cartaz" fetchpriority="high" loading="eager"
-            width="400" height="533" style="width:100%; max-width:400px; height:auto;"
-            alt="Line-up oficial Rock na Praça março de 2026 - Aniversário de Esteio RS" type="image/webp">
+            width="323" height="430" style="width:100%; max-width:400px; height:auto; display: block;"
+            alt="Line-up oficial Rock na Praça março de 2026 - Aniversário de Esteio RS">
         </picture>
 
       </div>

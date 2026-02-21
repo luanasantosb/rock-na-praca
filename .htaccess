@@ -1,9 +1,5 @@
 RewriteEngine On
-
-# 1. Forçar HTTPS (Segurança)
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# 2. Forçar WWW (Consistência com seu Sitemap)
+RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^(.*)$ https://www.rocknapraca.com [L,R=301]
+
