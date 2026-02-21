@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    
+    <title>Programação Rock na Praça Março 2026 | Esteio | Comunidade Nin-Jitsu</title>
+    <meta name="description"
+        content="Confira os horários e bandas do Rock na Praça em Esteio: Comunidade Nin-Jitsu, Insira Aqui e mais. Dia 01/03 na Praça Coração de Maria. Entrada Franca!">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="../assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../assets/bandas/lokosdbira.webp" as="image" type="image/webp" fetchpriority="high">
 
-    <link rel="preload" href="../assets/CSS/estilo.css" as="style">
     <link rel="stylesheet" href="../assets/CSS/estilo.css">
 
-    <title>Programação Rock na Praça Março 2026 | Esteio | Comunidade Nin-Jitsu</title>
-    <meta name="description" content="Confira os horários e bandas do Rock na Praça em Esteio: Comunidade Nin-Jitsu, Lokos d' Bira e mais. Dia 01/03 na Praça Coração de Maria. Entrada Franca!">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="author" content="Balaiada">
-    <meta name="theme-color" content="#000000">
     <link rel="canonical" href="https://www.rocknapraca.com/programacao/">
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/Rocknapraca/apple-touch-icon.png">
-
-    <script src="../assets/JS/script.js" defer></script>
-
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Programação Oficial Rock na Praça Esteio 2026">
     <meta property="og:description"
         content="Comunidade Nin-Jitsu, Insira Aqui e grande elenco no aniversário de Esteio. Entrada franca!">
@@ -31,8 +25,18 @@
     <meta property="og:image" content="https://www.rocknapraca.com/assets/background/Rock-na-Praca_Marco-Flyer.webp">
     <meta property="og:image:alt" content="Flyer oficial do Rock na Praça Esteio com a lista de bandas">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/Rocknapraca/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
 
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
         function loadGTM() {
             if (window.gtmLoaded) return;
             window.gtmLoaded = true;
@@ -40,15 +44,13 @@
             script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG";
             script.async = true;
             document.head.appendChild(script);
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
             gtag('config', 'G-Z7RKDPPXTG');
         }
-        window.addEventListener('scroll', loadGTM, { once: true });
-        window.addEventListener('mousemove', loadGTM, { once: true });
-        window.addEventListener('touchstart', loadGTM, { once: true });
+        ['scroll', 'mousemove', 'touchstart'].forEach(event => {
+            window.addEventListener(event, loadGTM, { once: true, passive: true });
+        });
     </script>
+    <script src="../assets/JS/script.js" defer></script>
 
     <script type="application/ld+json">
     [
@@ -56,12 +58,9 @@
         "@context": "https://schema.org",
         "@type": "MusicEvent",
         "name": "Rock na Praça - Edição Aniversário de Esteio",
-        "description": "Evento gratuito com shows de bandas autorais, mercado underground e gastronomia.",
+        "description": "Evento gratuito com shows de bandas autorais como Insira Aqui e Comunidade Nin-Jitsu.",
         "startDate": "2026-03-01T15:00:00-03:00",
         "endDate": "2026-03-01T22:00:00-03:00",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "isAccessibleForFree": true,
         "location": {
           "@type": "Place",
           "name": "Praça Coração de Maria",
@@ -76,24 +75,11 @@
         },
         "performer": [
           { "@type": "MusicGroup", "name": "Comunidade Nin-Jitsu" },
+          { "@type": "MusicGroup", "name": "Insira Aqui" },
           { "@type": "MusicGroup", "name": "Lokos d' Bira" },
           { "@type": "MusicGroup", "name": "Os Aciderais" },
           { "@type": "MusicGroup", "name": "Cansei do Sol" },
-          { "@type": "MusicGroup", "name": "Ogro Gus" },
-          { "@type": "MusicGroup", "name": "Insira Aqui" }
-        ],
-        "organizer": {
-          "@type": "Organization",
-          "name": "Rock na Praça",
-          "url": "https://www.rocknapraca.com"
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rocknapraca.com" },
-          { "@type": "ListItem", "position": 2, "name": "Programação", "item": "https://www.rocknapraca.com/programacao/" }
+          { "@type": "MusicGroup", "name": "Ogro Gus" }
         ]
       }
     ]
@@ -104,8 +90,9 @@
     <header class="cabecalho-programacao">
         <div class="cabecalho-simbolo">
             <a href="../index.html">
-                <img src="../assets/logos/Rocknapraca/rock-na-praca_simbolo.webp"
-                    alt="Rock na Praça logo: Cabeça estilizada de criatura verde com espinhos representando a marca do evento" height="80" width="130">
+                <img src="../assets/geral/rock-na-praca_logotipo_simbolo.webp"
+                    alt="Rock na Praça logo: Cabeça estilizada de criatura verde com espinhos representando a marca do evento"
+                    height="80" width="130">
             </a>
         </div>
 
@@ -134,23 +121,21 @@
 
                 <article class="cartao-bandas">
                     <a href="https://www.instagram.com/lokosdbira" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/bandas/lokosdbira.webp" alt="Foto promocional da banda Lokos D' Bira"
-                            loading="lazy">
+                        <img src="../assets/pagina_programacao/bandas/lokosdbira.webp" alt="Foto promocional da banda Lokos D' Bira">
                         <span class="nome-banda">Lokos D' Bira</span>
                     </a>
                 </article>
 
                 <article class="cartao-bandas">
                     <a href="https://www.instagram.com/insiraoficial/" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/bandas/insiraqui.webp" alt="Foto promocional da banda Insira Aqui"
-                            loading="lazy">
+                        <img src="../assets/pagina_programacao/bandas/insiraqui.webp" alt="Foto promocional da banda Insira Aqui">
                         <span class="nome-banda">Insira aqui</span>
                     </a>
                 </article>
 
                 <article class="cartao-bandas">
                     <a href="https://www.instagram.com/os.aciderais/" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/bandas/osaciderais2.webp" alt="Foto promocional da banda Os Aciderais"
+                        <img src="../assets/pagina_programacao/bandas/osaciderais2.webp" alt="Foto promocional da banda Os Aciderais"
                             loading="lazy">
                         <span class="nome-banda">Os Aciderais</span>
                     </a>
@@ -158,7 +143,7 @@
 
                 <article class="cartao-bandas">
                     <a href="https://www.instagram.com/canseidosol/" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/bandas/canseidosol.webp" alt="Foto promocional da banda Cansei do Sol"
+                        <img src="../assets/pagina_programacao/bandas/canseidosol.webp" alt="Foto promocional da banda Cansei do Sol"
                             loading="lazy">
                         <span class="nome-banda">Cansei do Sol</span>
                     </a>
@@ -166,7 +151,7 @@
 
                 <article class="cartao-bandas">
                     <a href="https://www.instagram.com/ogrogus/" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/bandas/ogrogus.webp" alt="Foto promocional da banda Ogro Gus"
+                        <img src="../assets/pagina_programacao/bandas/ogrogus.webp" alt="Foto promocional da banda Ogro Gus"
                             loading="lazy">
                         <span class="nome-banda">Ogro Gus</span>
                     </a>
@@ -174,7 +159,7 @@
 
                 <article class="cartao-bandas">
                     <a href="https://www.instagram.com/comunidadeninjitsu/" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/bandas/comunidadeninjitsu.webp"
+                        <img src="../assets/pagina_programacao/bandas/comunidadeninjitsu.webp"
                             alt="Foto promocional da banda Comunidade Nin-Jitsu" loading="lazy">
                         <span class="nome-banda">Comunidade Nin-Jitsu</span>
                     </a>
@@ -191,88 +176,88 @@
 
                 <a href="https://www.instagram.com/horripilos" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Horripilos_logo.webp" alt="Horripilos" width="150" height="100">
+                    <img src="../assets/pagina_programacao/lojas/Horripilos_logo.webp" alt="Horripilos" width="150" height="100">
                 </a>
 
                 <a href="https://www.instagram.com/magiasdadeh/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Magias-da-Deh_logo.webp" alt="Magias da Deh" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Magias-da-Deh_logo.webp" alt="Magias da Deh" width="150"
                         height="100">
                 </a>
                 <!-- #3 -->
                 <a href="https://www.instagram.com/labrujasilk/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/La-Bruja-Silk_logo.webp" alt="La Bruja Silk" width="150"
+                    <img src="../assets/pagina_programacao/lojas/La-Bruja-Silk_logo.webp" alt="La Bruja Silk" width="150"
                         height="100"></a>
 
                 <!-- #4 -->
                 <a href="https://www.instagram.com/catsrockersstore/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Cats-Rocks-Store_logo.webp" alt="Cats Rocks Store" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Cats-Rocks-Store_logo.webp" alt="Cats Rocks Store" width="150"
                         height="100"></a>
 
                 <!-- #5 -->
                 <a href="https://www.instagram.com/itemsstoreoficial/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Items-Store_logo.webp" alt="Items Store" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Items-Store_logo.webp" alt="Items Store" width="150"
                         height="100"></a>
 
                 <!-- #6 -->
                 <a href="https://www.instagram.com/orbitaloja/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Orbita-loja_logo.webp" alt="Orbita Loja" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Orbita-loja_logo.webp" alt="Orbita Loja" width="150"
                         height="100"></a>
                 <!-- #7 -->
                 <a href="https://www.instagram.com/moonerd_store/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/MooNerd_logo.webp" alt="MooNerd" width="150" height="100"></a>
+                    <img src="../assets/pagina_programacao/lojas/MooNerd_logo.webp" alt="MooNerd" width="150" height="100"></a>
 
                 <!-- #8 -->
                 <a href="https://www.instagram.com/riffartefatos/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Riff-artefatos_logo.webp" alt="Riff Artefatos" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Riff-artefatos_logo.webp" alt="Riff Artefatos" width="150"
                         height="100"></a>
                 <!-- #9 -->
                 <a href="https://www.instagram.com/brecho.viralata/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Brecho-Vira-Lata_logo.webp" alt="Brecho Vira Lata" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Brecho-Vira-Lata_logo.webp" alt="Brecho Vira Lata" width="150"
                         height="100"></a>
 
                 <!-- #10 -->
                 <a href="https://www.instagram.com/theravenbr/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/The-Raven_logo.webp" alt="The Raven" width="150" height="100"></a>
+                    <img src="../assets/pagina_programacao/lojas/The-Raven_logo.webp" alt="The Raven" width="150" height="100"></a>
                 <!-- #11 -->
                 <a href="https://www.instagram.com/maldita3d/" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Maldita_logo.webp" alt="Maldita 3D" width="150" height="100"></a>
+                    <img src="../assets/pagina_programacao/lojas/Maldita_logo.webp" alt="Maldita 3D" width="150" height="100"></a>
 
                 <!-- #12 -->
                 <a href="https://www.instagram.com/loja_refugionerd" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Refugio-Nerd_logo.webp" alt="Refúgio Nerd" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Refugio-Nerd_logo.webp" alt="Refúgio Nerd" width="150"
                         height="100"></a>
 
                 <!-- #13 -->
                 <a href="https://www.instagram.com/subversive.atelier" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Subversive-Atelier.webp" alt="Subversive Atelier" width="150"
-                        height="100"></a>
+                    <img src="../assets/pagina_programacao/lojas/Subversive-Atelier.webp" alt="Subversive Atelier" width="150"
+                    height="100"></a>
 
                 <!-- #14 -->
                 <a href="https://www.instagram.com/chimadapri" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Chima-da-Prih_logo.webp" alt="Chima da Pri" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Chima-da-Prih_logo.webp" alt="Chima da Pri" width="150"
                         height="100"></a>
 
                 <a href="https://www.instagram.com/risco.furtado" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/risco-tacia-furtado_logo.webp" alt="Risco Tacia Furtado" width="150"
+                    <img src="../assets/pagina_programacao/lojas/risco-tacia-furtado_logo.webp" alt="Risco Tacia Furtado" width="150"
                         height="100"></a>
 
                 <a href="https://www.instagram.com/clau_poucaseboas" class="cartao-logo" target="_blank"
                     rel="noopener noreferrer">
-                    <img src="../assets/logos/lojas/Poucas-e-boas_logo.webp" alt="Poucas e Boas" width="150"
+                    <img src="../assets/pagina_programacao/lojas/Poucas-e-boas_logo.webp" alt="Poucas e Boas" width="150"
                         height="100"></a>
             </div>
         </section>
@@ -284,32 +269,32 @@
 
                 <a href="https://www.instagram.com/prefaesteio/" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/prefa-Esteio_logo.webp" alt="Prefeitura de Esteio">
+                    <img src="../assets/pagina_programacao/apoio/prefa-Esteio_logo.webp" alt="Prefeitura de Esteio">
                 </a>
 
                 <a href="https://www.instagram.com/lojabackinblack/" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/Black-in-Back_logo.webp" alt="Black in Back"></a>
+                    <img src="../assets/pagina_programacao/apoio/Black-in-Back_logo.webp" alt="Black in Back"></a>
 
                 <a href="https://www.instagram.com/bandasindependenteslocais/" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/BIL_logo.webp" alt="B.I.L"></a>
+                    <img src="../assets/pagina_programacao/apoio/BIL_logo.webp" alt="B.I.L"></a>
 
                 <a href="https://www.instagram.com/chopphoffnung_" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/Hoffnung_logo.webp" alt="Chopp Hoffnung"></a>
+                    <img src="../assets/pagina_programacao/apoio/Hoffnung_logo.webp" alt="Chopp Hoffnung"></a>
 
                 <a href="https://www.instagram.com/skatchebar/" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/skatchebar_logo.webp" alt="Skatchebar"></a>
+                    <img src="../assets/pagina_programacao/apoio/skatchebar_logo.webp" alt="Skatchebar"></a>
 
                 <a href="https://www.instagram.com/unipeopleeducation" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/unupor.webp" alt="Unipeople"></a>
+                    <img src="../assets/pagina_programacao/apoio/unupor.webp" alt="Unipeople"></a>
 
                 <a href="https://www.instagram.com/esteiart_studio/" class="cartao-logo" target="_blank"
                     rel="sponsored noopener noreferrer">
-                    <img src="../assets/logos/apoio/estreiart.webp" alt="Estúdio Estreiart"></a>
+                    <img src="../assets/pagina_programacao/apoio/estreiart.webp" alt="Estúdio Estreiart"></a>
             </div>
 
         </section>
@@ -320,11 +305,11 @@
                 <div class="local-secao">
                     <div class="mapa-secao">
                         <iframe title="Mapa de localização"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.4981794987116!2d-51.16425!3d-29.8499035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95196f6ddba74b9f%3A0x57654fe357686cfb!2zUHJhw6dhIENvcmHDp8OjbyBkZSBNYXJpYQ!5e0!3m2!1spt-BR!2sbr!4v1770508196158!5m2!1spt-BR!2sbr"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.4981794987116!2d-51.16425!3d-29.8499035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95196f6ddba74b9f%3A0x57654fe357686cfb!2zUHJhw6dhIENvcmHDp8OjbyBkZSBNYXJpYQ!5e0!3m2!1spt-BR!2sbr!4v1770508196158!5m2!1spt-BR!2sbr"
+                            src="about:blank" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-
                     <div class="local-informacoes">
                         <address>
                             <strong>Endereço:</strong><br>
@@ -355,7 +340,8 @@
             <div class="esquerda-realizacao">
                 <h3>Realização</h3>
                 <a href="https://www.instagram.com/balaiada/" target="_blank" rel="noopener noreferrer">
-                    <img src="../assets/logos/realizacao/Balaiada_logo.webp" alt="Logo Balaiada">
+                    <img src="../assets/geral/Balaiada_logo.webp" alt="Logo Balaiada" width="120"
+                        height="180">
                 </a>
             </div>
 
@@ -377,15 +363,15 @@
             <div class="direita-contato">
                 <div class="redes-sociais">
                     <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/logos/redes/instagram_logo.webp" alt="Instagram">
+                        <img src="../assets/geral/instagram_logo.webp" alt="Instagram">
                     </a>
 
                     <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/logos/redes/facebook_logo.webp" alt="Facebook">
+                        <img src="../assets/geral/facebook_logo.webp" alt="Facebook">
                     </a>
 
                     <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer">
-                        <img src="../assets/logos/redes/youtube_logo.webp" alt="YouTube">
+                        <img src="../assets/geral/youtube_logo.webp" alt="YouTube">
                     </a>
                 </div>
             </div>

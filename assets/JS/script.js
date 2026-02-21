@@ -1,3 +1,16 @@
+/*==== MAPA ======*/
+function carregarMapa() {
+    const iframe = document.querySelector('.mapa-secao iframe');
+    if (iframe && iframe.getAttribute('src') === 'about:blank') {
+        iframe.setAttribute('src', iframe.getAttribute('data-src'));
+    }
+}
+
+window.addEventListener('scroll', carregarMapa, { once: true });
+window.addEventListener('mousemove', carregarMapa, { once: true });
+window.addEventListener('touchstart', carregarMapa, { once: true });
+
+/*===== ?????======*/
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
