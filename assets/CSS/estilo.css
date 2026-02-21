@@ -278,6 +278,7 @@ h3 {
 }
 
 .hero-banner {
+  color:var(--preto);
   position: relative;
   z-index: 1; 
   display: flex;
@@ -295,6 +296,7 @@ h3 {
 }
 
 .hero-bg {
+  color:var(--preto);
   position: absolute;
   inset: 0;
   width: 100%;
