@@ -171,10 +171,8 @@
   </header>
 
   <main>
-    <section class="hero-section">
-      <img src="./assets/pagina_index/Background_muro.webp" alt=" " role="presentation" aria-hidden="true" class="hero-bg"
-        width="700" height="400">
-      <div class="hero-banner">
+    <section class="hero-secao">
+      <div class="hero-banner background-muro">
         <div class="hero-infos">
           <h1> Rock na Praça - Site Oficial </h1>
           <h2> O Aniversário de Esteio vai tremer com o maior evento underground do RS! </h2>
@@ -182,7 +180,7 @@
           <div class="hero-meta">
             <p>📅 01 de março • 15h</p>
             <p>📍 Praça Coração de Maria — <strong>Esteio, Rio Grande do Sul</strong></p>
-            <p class="hero-highlight">🎉 Evento gratuito</p>
+            <p class="hero-destaque">🎉 Evento gratuito</p>
 
             <a href="/programacao" class="hero-link">
               Ver programação completa do Rock na Praça →
@@ -194,16 +192,15 @@
             </a>
           </div>
         </div>
-        <picture>
+      <picture>
+        <source media="(max-width: 600px)" srcset="/assets/pagina_index/flyer-mobile.webp" type="image/webp" width="323"
+          height="430">
 
-          <source media="(max-width: 600px)" srcset="./assets/pagina_index/flyer-mobile.webp" type="image/webp">
-
-          <source media="(min-width: 601px)" srcset="./assets/pagina_index/flyer-desktop.webp" type="image/webp">
-
-          <img src="./assets/pagina_index/flyer-desktop.webp" class="hero-cartaz" fetchpriority="high" loading="eager"
-            width="323" height="430" style="width:100%; max-width:400px; height:auto; display: block;"
-            alt="Line-up oficial Rock na Praça março de 2026 - Aniversário de Esteio RS">
-        </picture>
+        <source media="(min-width: 601px)" srcset="/assets/pagina_index/flyer-desktop.webp" type="image/webp"
+          width="800" height="600"> <img src="/assets/pagina_index/flyer-desktop.webp" class="hero-cartaz"
+          alt="Line-up oficial Rock na Praça março de 2026 - Aniversário de Esteio RS" fetchpriority="high"
+          loading="eager" style="width: 100%; max-width: 400px; height: auto; display: block;">
+      </picture>
 
       </div>
     </section>
