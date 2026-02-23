@@ -421,20 +421,42 @@ h3 {
 }
 
 lite-youtube {
+  contain: content;
+  background-size: cover; 
+  background-position: center;
   width: 100%;
   aspect-ratio: 16 / 9;
-}
-
-#meu-video {
-  background-image: url('https://i.ytimg.com/vi/RoGtOp9N05U/mqdefault.jpg') !important;
-}
-
-lite-youtube {
   max-width: 560px;
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+lite-youtube:hover {
+  cursor: pointer;
+  filter: brightness(1.1); 
+  transition: filter 0.3s ease;
+}
+
+.legenda-video {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc; 
+  margin-top: 1rem;
+  font-family: var(--fonte-textos);
+  letter-spacing: 0.5px;
+}
+
+.tag-live {
+  background-color: var(--rosa); 
+  color: var(--branco);
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  text-transform: uppercase;
 }
 
 @media (max-width: 900px) {
