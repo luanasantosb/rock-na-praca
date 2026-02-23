@@ -222,8 +222,8 @@
             <label for="banda_redes">Rede social *</label>
             <input type="text" id="banda_redes" name="banda_redes" class="inscricao-input" required>
 
-            <label for="banda_streaming">Streaming</label>
-            <input type="text" id="banda_streaming" name="banda_streaming" class="inscricao-input">
+            <label for="banda_streaming">Streaming*</label>
+            <input type="text" id="banda_streaming" name="banda_streaming" class="inscricao-input" required>
 
             <label for="banda_youtube">YouTube *</label>
             <input type="text" id="banda_youtube" name="banda_youtube" class="inscricao-input" required>
@@ -232,11 +232,11 @@
           <fieldset>
             <legend>Materiais</legend>
 
-            <label for="release">Release (PDF ou DOC)</label>
-            <input type="file" id="release" name="release_file" class="inscricao-input" accept=".pdf,.doc,.docx">
+            <label for="release">Release* (PDF ou DOC)</label>
+            <input type="file" id="release" name="release_file" class="inscricao-input" accept=".pdf,.doc,.docx" required>
 
-            <label for="mapa">Mapa de Palco (Imagem ou PDF)</label>
-            <input type="file" id="mapa" name="mapa_file" class="inscricao-input" accept="image/*,.pdf">
+            <label for="mapa">Mapa de Palco* (Imagem ou PDF)</label>
+            <input type="file" id="mapa" name="mapa_file" class="inscricao-input" accept="image/*,.pdf" required>
           </fieldset>
 
           <fieldset>
@@ -245,13 +245,13 @@
             <label for="banda_responsavel">Responsável *</label>
             <input type="text" id="banda_responsavel" name="banda_responsavel" class="inscricao-input" required>
 
-            <label for="banda_whatsapp">WhatsApp *</label>
+            <label for="banda_whatsapp">WhatsApp*</label>
             <input type="tel" id="banda_whatsapp" name="banda_whatsapp" class="inscricao-input" inputmode="tel"
               placeholder="(51) 99999-9999" required>
 
-            <label for="banda_email">Email</label>
+            <label for="banda_email">Email*</label>
             <input type="email" id="banda_email" name="banda_email" class="inscricao-input"
-              placeholder="contato@banda.com">
+              placeholder="contato@banda.com" required>
           </fieldset>
 
           <div id="mensagem" role="status" aria-live="polite"></div>
@@ -262,72 +262,106 @@
 
         </form>
 
-        <script>
-          const URL = "https://script.google.com/macros/s/AKfycbzOBXvszLeoXEvV7MXzcCfPy6TCLAF2QP8hPw9IFwBLIrRLQqS4cquGf-VNm5zzWTk/exec";
+  <script>
+  const URL = "https://script.google.com/macros/s/AKfycbzOBXvszLeoXEvV7MXzcCfPy6TCLAF2QP8hPw9IFwBLIrRLQqS4cquGf-VNm5zzWTk/exec";
 
-          const form = document.getElementById("formSite");
-          const msg = document.getElementById("mensagem");
-          const botao = document.querySelector("button");
+  const form = document.getElementById("formSite");
+  const msg = document.getElementById("mensagem");
+  const botao = document.querySelector("button");
 
-          form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            if (
-              !form.banda_nome.value.trim() ||
-              !form.banda_cidade.value.trim() ||
-              !form.banda_responsavel.value.trim() ||
-              !form.banda_whatsapp.value.trim() ||
-              !form.banda_email.value.trim()
-            ) {
-              msg.textContent = "Preencha todos os campos obrigatórios.";
-              msg.className = "erro";
-              return;
-            }
+  // 1. Variável de controle global (A trava mestre)
+  let enviando = false;
 
-            botao.disabled = true;
-            msg.textContent = "Enviando...";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-            const dados = {
-              banda_nome: form.banda_nome.value,
-              banda_cidade: form.banda_cidade.value,
-              banda_redes: form.banda_redes.value,
-              banda_streaming: form.banda_streaming.value,
-              banda_youtube: form.banda_youtube.value,
-              banda_responsavel: form.banda_responsavel.value,
-              banda_whatsapp: form.banda_whatsapp.value,
-              banda_email: form.banda_email.value,
-              banda_release: await base64(document.getElementById("release").files[0]),
-              banda_mapa: await base64(document.getElementById("mapa").files[0])
-            };
+    // 2. Se já estiver enviando, ignora qualquer novo clique imediatamente
+    if (enviando) return;
 
-            try {
-              const r = await fetch(URL, {
-                method: "POST",
-                body: JSON.stringify(dados)
-              });
+    // Validação básica
+    if (
+      !form.banda_nome.value.trim() ||
+      !form.banda_cidade.value.trim() ||
+      !form.banda_responsavel.value.trim() ||
+      !form.banda_whatsapp.value.trim() ||
+      !form.banda_email.value.trim()
+    ) {
+      msg.textContent = "Preencha todos os campos obrigatórios.";
+      msg.className = "erro";
+      return;
+    }
 
-              const json = await r.json();
-              msg.textContent = json.mensagem;
-              msg.className = json.sucesso ? "sucesso" : "erro";
-              if (json.sucesso) form.reset();
+    // 3. Ativa a trava e desabilita o visual ANTES de qualquer await
+    enviando = true;
+    botao.disabled = true;
+    botao.textContent = "Aguarde, processando..."; // Feedback claro
+    msg.textContent = "Preparando arquivos...";
+    msg.className = "";
 
-            } catch (err) {
-              msg.textContent = "Erro de conexão.";
-              msg.className = "erro";
-            }
+    try {
+      // O processamento Base64 acontece com o botão já travado pela variável 'enviando'
+      const releaseFile = await base64(document.getElementById("release").files[0]);
+      const mapaFile = await base64(document.getElementById("mapa").files[0]);
 
-            botao.disabled = false;
-          });
+      const dados = {
+        banda_nome: form.banda_nome.value,
+        banda_cidade: form.banda_cidade.value,
+        banda_redes: form.banda_redes.value,
+        banda_streaming: form.banda_streaming.value,
+        banda_youtube: form.banda_youtube.value,
+        banda_responsavel: form.banda_responsavel.value,
+        banda_whatsapp: form.banda_whatsapp.value,
+        banda_email: form.banda_email.value,
+        banda_release: releaseFile,
+        banda_mapa: mapaFile
+      };
 
-          function base64(file) {
-            return new Promise(resolve => {
-              if (!file) return resolve("");
-              const reader = new FileReader();
-              reader.onload = () => resolve(reader.result);
-              reader.readAsDataURL(file);
-            });
-          }
-        </script>
-      </details>
+      msg.textContent = "Enviando dados para o servidor...";
+
+      const r = await fetch(URL, {
+        method: "POST",
+        body: JSON.stringify(dados)
+      });
+
+      const json = await r.json();
+      
+      if (json.sucesso) {
+        msg.textContent = "Inscrição realizada com sucesso!";
+        msg.className = "sucesso";
+        form.reset();
+        // 4. IMPORTANTE: Não voltamos 'enviando' para false aqui 
+        // para evitar que ele envie de novo sem dar refresh.
+        botao.textContent = "Enviado!";
+      } else {
+        msg.textContent = json.mensagem;
+        msg.className = "erro";
+        // Se o servidor deu erro, permitimos tentar de novo
+        enviando = false;
+        botao.disabled = false;
+        botao.textContent = "Enviar Inscrição";
+      }
+
+    } catch (err) {
+      msg.textContent = "Erro de conexão. Verifique sua internet.";
+      msg.className = "erro";
+      // Em caso de erro técnico, libera o botão para nova tentativa
+      enviando = false;
+      botao.disabled = false;
+      botao.textContent = "Tentar Novamente";
+    }
+  });
+
+  function base64(file) {
+    return new Promise(resolve => {
+      if (!file) return resolve("");
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.readAsDataURL(file);
+    });
+  }
+</script>
+      
+    </details>
     </div>
   </main>
 
