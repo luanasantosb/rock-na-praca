@@ -12,17 +12,16 @@
   <meta name="description"
     content="Quer tocar no maior evento itinerante de rock gratuito do RS? Inscrições abertas o ano todo para bandas autorais. Cadastre seu material e participe da curadoria 2026!">
   <link rel="canonical" href="https://www.rocknapraca.com/inscricao-bandas/">
+  <link rel="icon" type="image/png" href="/assets/geral/rock-na-praca_favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/CSS/estilo.css">
+  <script src="/assets/JS/script.js" defer></script>
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" type="image/png" href="/assets/logos/Rocknapraca/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/Rocknapraca/apple-touch-icon.png">
-
-  <link rel="preload" href="../assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
-
-  <link rel="preload" href="../assets/CSS/estilo.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="../assets/CSS/estilo.css"></noscript>
-
-  <script src="../assets/JS/script.js" defer></script>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
@@ -42,7 +41,7 @@
   <meta name="twitter:image"
     content="https://miro.medium.com/v2/resize:fit:4608/format:webp/1*m2DoDACaDsDZBvWZuiH3wQ.jpeg">
 
- <script>
+  <script>
     function loadGTM() {
       if (window.gtmLoaded) return;
       window.gtmLoaded = true;
@@ -233,7 +232,8 @@
             <legend>Materiais</legend>
 
             <label for="release">Release* (PDF ou DOC)</label>
-            <input type="file" id="release" name="release_file" class="inscricao-input" accept=".pdf,.doc,.docx" required>
+            <input type="file" id="release" name="release_file" class="inscricao-input" accept=".pdf,.doc,.docx"
+              required>
 
             <label for="mapa">Mapa de Palco* (Imagem ou PDF)</label>
             <input type="file" id="mapa" name="mapa_file" class="inscricao-input" accept="image/*,.pdf" required>
@@ -262,106 +262,106 @@
 
         </form>
 
-  <script>
-  const URL = "https://script.google.com/macros/s/AKfycbwmDN-8gGRqZo0FUS-FV6_6Yr8vZNMKNIes3wWx4vRqLSXWjs5dHvhvk_amcvxbgfF_/exec";
+        <script>
+          const URL = "https://script.google.com/macros/s/AKfycbwmDN-8gGRqZo0FUS-FV6_6Yr8vZNMKNIes3wWx4vRqLSXWjs5dHvhvk_amcvxbgfF_/exec";
 
-  const form = document.getElementById("formSite");
-  const msg = document.getElementById("mensagem");
-  const botao = document.querySelector("button");
+          const form = document.getElementById("formSite");
+          const msg = document.getElementById("mensagem");
+          const botao = document.querySelector("button");
 
-  // 1. Variável de controle global (A trava mestre)
-  let enviando = false;
+          // 1. Variável de controle global (A trava mestre)
+          let enviando = false;
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-    // 2. Se já estiver enviando, ignora qualquer novo clique imediatamente
-    if (enviando) return;
+            // 2. Se já estiver enviando, ignora qualquer novo clique imediatamente
+            if (enviando) return;
 
-    // Validação básica
-    if (
-      !form.banda_nome.value.trim() ||
-      !form.banda_cidade.value.trim() ||
-      !form.banda_responsavel.value.trim() ||
-      !form.banda_whatsapp.value.trim() ||
-      !form.banda_email.value.trim()
-    ) {
-      msg.textContent = "Preencha todos os campos obrigatórios.";
-      msg.className = "erro";
-      return;
-    }
+            // Validação básica
+            if (
+              !form.banda_nome.value.trim() ||
+              !form.banda_cidade.value.trim() ||
+              !form.banda_responsavel.value.trim() ||
+              !form.banda_whatsapp.value.trim() ||
+              !form.banda_email.value.trim()
+            ) {
+              msg.textContent = "Preencha todos os campos obrigatórios.";
+              msg.className = "erro";
+              return;
+            }
 
-    // 3. Ativa a trava e desabilita o visual ANTES de qualquer await
-    enviando = true;
-    botao.disabled = true;
-    botao.textContent = "Aguarde, processando..."; // Feedback claro
-    msg.textContent = "Preparando arquivos...";
-    msg.className = "";
+            // 3. Ativa a trava e desabilita o visual ANTES de qualquer await
+            enviando = true;
+            botao.disabled = true;
+            botao.textContent = "Aguarde, processando..."; // Feedback claro
+            msg.textContent = "Preparando arquivos...";
+            msg.className = "";
 
-    try {
-      // O processamento Base64 acontece com o botão já travado pela variável 'enviando'
-      const releaseFile = await base64(document.getElementById("release").files[0]);
-      const mapaFile = await base64(document.getElementById("mapa").files[0]);
+            try {
+              // O processamento Base64 acontece com o botão já travado pela variável 'enviando'
+              const releaseFile = await base64(document.getElementById("release").files[0]);
+              const mapaFile = await base64(document.getElementById("mapa").files[0]);
 
-      const dados = {
-        banda_nome: form.banda_nome.value,
-        banda_cidade: form.banda_cidade.value,
-        banda_redes: form.banda_redes.value,
-        banda_streaming: form.banda_streaming.value,
-        banda_youtube: form.banda_youtube.value,
-        banda_responsavel: form.banda_responsavel.value,
-        banda_whatsapp: form.banda_whatsapp.value,
-        banda_email: form.banda_email.value,
-        banda_release: releaseFile,
-        banda_mapa: mapaFile
-      };
+              const dados = {
+                banda_nome: form.banda_nome.value,
+                banda_cidade: form.banda_cidade.value,
+                banda_redes: form.banda_redes.value,
+                banda_streaming: form.banda_streaming.value,
+                banda_youtube: form.banda_youtube.value,
+                banda_responsavel: form.banda_responsavel.value,
+                banda_whatsapp: form.banda_whatsapp.value,
+                banda_email: form.banda_email.value,
+                banda_release: releaseFile,
+                banda_mapa: mapaFile
+              };
 
-      msg.textContent = "Enviando dados para o servidor...";
+              msg.textContent = "Enviando dados para o servidor...";
 
-      const r = await fetch(URL, {
-        method: "POST",
-        body: JSON.stringify(dados)
-      });
+              const r = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(dados)
+              });
 
-      const json = await r.json();
-      
-      if (json.sucesso) {
-        msg.textContent = "Inscrição realizada com sucesso!";
-        msg.className = "sucesso";
-        form.reset();
-        // 4. IMPORTANTE: Não voltamos 'enviando' para false aqui 
-        // para evitar que ele envie de novo sem dar refresh.
-        botao.textContent = "Enviado!";
-      } else {
-        msg.textContent = json.mensagem;
-        msg.className = "erro";
-        // Se o servidor deu erro, permitimos tentar de novo
-        enviando = false;
-        botao.disabled = false;
-        botao.textContent = "Enviar Inscrição";
-      }
+              const json = await r.json();
 
-    } catch (err) {
-      msg.textContent = "Erro de conexão. Verifique sua internet.";
-      msg.className = "erro";
-      // Em caso de erro técnico, libera o botão para nova tentativa
-      enviando = false;
-      botao.disabled = false;
-      botao.textContent = "Tentar Novamente";
-    }
-  });
+              if (json.sucesso) {
+                msg.textContent = "Inscrição realizada com sucesso!";
+                msg.className = "sucesso";
+                form.reset();
+                // 4. IMPORTANTE: Não voltamos 'enviando' para false aqui 
+                // para evitar que ele envie de novo sem dar refresh.
+                botao.textContent = "Enviado!";
+              } else {
+                msg.textContent = json.mensagem;
+                msg.className = "erro";
+                // Se o servidor deu erro, permitimos tentar de novo
+                enviando = false;
+                botao.disabled = false;
+                botao.textContent = "Enviar Inscrição";
+              }
 
-  function base64(file) {
-    return new Promise(resolve => {
-      if (!file) return resolve("");
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.readAsDataURL(file);
-    });
-  }
-</script>
-      
-    </details>
+            } catch (err) {
+              msg.textContent = "Erro de conexão. Verifique sua internet.";
+              msg.className = "erro";
+              // Em caso de erro técnico, libera o botão para nova tentativa
+              enviando = false;
+              botao.disabled = false;
+              botao.textContent = "Tentar Novamente";
+            }
+          });
+
+          function base64(file) {
+            return new Promise(resolve => {
+              if (!file) return resolve("");
+              const reader = new FileReader();
+              reader.onload = () => resolve(reader.result);
+              reader.readAsDataURL(file);
+            });
+          }
+        </script>
+
+      </details>
     </div>
   </main>
 
