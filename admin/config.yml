@@ -1,28 +1,4 @@
 backend:
   name: github
-  repo: luanasantosb./rocknapraca.com # <--- COLOQUE SEU USUÁRIO/REPOSITÓRIO AQUI
+  repo: luanasantosb./rocknapraca.com
   branch: main
-  base_url: https://api.netlify.com
-
-media_folder: "img"
-public_folder: "/img"
-
-collections:
-  - name: "paginas"
-    label: "Editar Páginas"
-    delete: false 
-    files:
-      - name: "home"
-        label: "Página Inicial"
-        file: "index.html"
-        fields:
-          - { label: "Título da Página", name: "title", widget: "string" }
-          - { label: "Texto Principal", name: "headline", widget: "string" }
-          - { label: "Banner Principal", name: "image", widget: "image" }
-
-      - name: "programacao"
-        label: "Página de Programação"
-        file: "programacao/index.html" 
-        fields:
-          - { label: "Título da Seção", name: "section_title", widget: "string" }
-          - { label: "Lista de Bandas e Horários", name: "body", widget: "markdown" }
