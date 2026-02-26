@@ -33,6 +33,8 @@
   <meta property="og:description"
     content="O maior evento itinerante de rock do RS. Música ao vivo, cultura e ocupação dos espaços públicos.">
   <meta property="og:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -60,81 +62,56 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://www.rocknapraca.com/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-},
-  "@type": "Event",
-  "name": "Rock na Praça - Aniversário de Esteio",
-  "startDate": "2026-03-01T15:00:00-03:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "Praça Coração de Maria",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Esteio",
-      "addressRegion": "RS",
-      "addressCountry": "BR"
-    }
-  },
-  "description": "Edição especial de aniversário de Esteio com muito rock underground e entrada gratuita.",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.rocknapraca.com/",
-    "price": "0",
-    "priceCurrency": "BRL",
-    "availability": "https://schema.org/InStock"
-  }
-},
-      {
-        "@type": "Organization",
-        "@id": "https://www.rocknapraca.com/#organization",
-        "name": "Rock na Praça",
-        "url": "https://www.rocknapraca.com/",
-        "logo": "https://www.rocknapraca.com/assets/logos/Rocknapraca/rock-na-praca_logotipo_simbolo.webp",
-        "sameAs": [
-          "https://www.instagram.com/rocknapraca_/",
-          "https://www.facebook.com/rocknapracaesteio",
-          "https://www.youtube.com/@Rocknapraca_RS"
-        ]
-      },
-      {
-        "@type": "EventSeries",
-        "name": "Circuito Rock na Praça",
-        "description": "Circuito itinerante de shows gratuitos em praças públicas do RS.",
-        "location": { "@type": "Place", "name": "Rio Grande do Sul, Brasil" },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "BRL",
-          "availability": "https://schema.org/InStock"
-        }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.rocknapraca.com/#website",
+      "url": "https://www.rocknapraca.com/",
+      "name": "Rock na Praça",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Event",
+      "name": "Rock na Praça - Aniversário de Esteio",
+      "startDate": "2026-03-01T15:00:00-03:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Praça Coração de Maria",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Esteio",
+          "addressRegion": "RS",
+          "addressCountry": "BR"
+        }
+      },
+      "description": "Edição especial de aniversário de Esteio com muito rock underground e entrada gratuita.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.rocknapraca.com/",
+        "price": "0",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
   </script>
 </head>
 
 <body>
-
   <!--  CABEÇALHO  -->
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
       <a href="index.html">
-        <img src="./assets/geral/rock-na-praca_logotipo_simbolo.webp"
-          alt="Rock na Praça logo: Cabeça estilizada de criatura verde com espinhos representando a marca do evento"
-          height="80" width="130">
+        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp" alt="Rock na Praça logotipo e simbolo" width="130"
+          height="80" style="width: 130px; height: auto;">
       </a>
     </div>
 
@@ -158,38 +135,57 @@
   </header>
 
   <main>
-    <section class="hero-secao">
-      <div class="hero-banner background-muro">
+
+    <section class="hero-secao" aria-labelledby="main-event-title">
+      <div class="hero-banner">
         <div class="hero-infos">
-          <h1> Rock na Praça - Site Oficial </h1>
-          <h2> O Aniversário de Esteio vai tremer com o maior evento underground do RS! </h2>
+          <div class="badge-container">
+            <span class="badge-patrimonio">
+              <span class="badge-icon">🏛️</span> Patrimônio Cultural • Lei 8.147
+            </span>
+          </div>
+
+          <h1 id="main-event-title" class="hero-titulo">
+            Rock na Praça <span class="sub-titulo-oficial">- Site Oficial</span>
+          </h1>
+
+          <h2>O Aniversário de Esteio vai tremer com o maior evento underground do RS!</h2>
 
           <div class="hero-meta">
-            <p>📅 01 de março • 15h</p>
-            <p>📍 Praça Coração de Maria — <strong>Esteio, Rio Grande do Sul</strong></p>
-            <p class="hero-destaque">🎉 Evento gratuito</p>
+            <p>
+              <span class="icon">📅</span>
+              <time datetime="2026-03-01T15:00">01 de março • 15h</time>
+            </p>
 
-            <a href="/programacao" class="hero-link">
-              Ver programação completa do Rock na Praça →
-            </a>
+            <address class="hero-localizacao">
+              <span class="icon">📍</span>
+              Praça Coração de Maria — <strong>Esteio, RS</strong>
+            </address>
 
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rock+na+Praça&dates=20260301T180000Z/20260302T010000Z&details=Aniversário+de+Esteio+-+Evento+gratuito&location=Praça+Coração+de+Maria"
-              target="_blank" rel="noopener" class="btn btn-calendar">
-              Adicionar ao Google Calendar
-            </a>
+            <p class="hero-destaque">
+              <span class="icon">🎉</span> <strong>Evento gratuito</strong>
+            </p>
+
+            <div class="hero-actions">
+              <a href="/programacao" class="hero-link">
+                Ver programação completa →
+              </a>
+
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rock+na+Praça&dates=20260301T180000Z/20260302T010000Z&details=Aniversário+de+Esteio+-+Evento+gratuito&location=Praça+Coração+de+Maria"
+                target="_blank" rel="noopener" class="btn btn-calendar"
+                aria-label="Adicionar Rock na Praça ao Google Agenda">
+                Adicionar ao Google Calendar
+              </a>
+            </div>
           </div>
         </div>
-        <picture>
-          <source media="(max-width: 600px)" srcset="/assets/pagina_index/flyer-mobile.avif" type="image/avif"
-            width="323" height="430">
 
-          <source media="(min-width: 601px)" srcset="/assets/pagina_index/flyer-desktop.avif" type="image/avif"
-            width="800" height="600"> <img src="/assets/pagina_index/flyer-desktop.webp" class="hero-cartaz"
-            alt="Line-up oficial Rock na Praça março de 2026 - Aniversário de Esteio RS" fetchpriority="high"
-            loading="eager" style="width: 100%; max-width: 400px; height: auto; display: block;">
-        </picture>
-
-      </div>
+        <div class="hero-container">
+          <img src="/assets/pagina_index/flyer-350.webp" srcset="/assets/pagina_index/flyer-350.webp 350w, 
+            /assets/pagina_index/flyer-700.webp 700w" sizes="(max-width: 600px) 350px, 700px" class="hero-cartaz"
+            alt="Cartaz oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
+            fetchpriority="high">
+        </div>
     </section>
 
     <div class="contador-container">
@@ -230,51 +226,50 @@
         Documentário Rock na Praça - Primeiros anos.
       </p>
 
-
     </section>
   </main>
 
   <!-- RODAPÉ -->
-  <footer class="rodape">
-    <div class="rodape-conteudo">
+<footer class="rodape">
+  <div class="rodape-conteudo">
 
-      <div class="esquerda-realizacao">
-        <h3>Realização</h3>
-        <a href="https://www.instagram.com/balaiada/" target="_blank" rel="noopener noreferrer">
-          <img src="./assets/geral/Balaiada_logo.webp" alt="Logo Balaiada" height="100" width="100">
-        </a>
-      </div>
-
-      <div class="centro-textos">
-        <p class="direitos-autorais">© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-        <p class="desenvolvedora-credito">
-          Design & Desenvolvimento:
-          <a href="https://www.github.com/luanasantosb" target="_blank" rel="noopener noreferrer"
-            title="Conheça o portfólio de Luana Santos">
-            Luana Santos
-          </a>
-        </p>
-      </div>
-
-      <div class="direita-contato">
-        <div class="redes-sociais">
-          <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/geral/instagram_logo.webp" alt="Instagram">
-          </a>
-
-          <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/geral/facebook_logo.webp" alt="Facebook">
-          </a>
-
-          <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer">
-            <img src="./assets/geral/youtube_logo.webp" alt="YouTube">
-          </a>
-        </div>
-      </div>
-
+    <div class="rodape-secao realizacao">
+      <h3>Realização</h3>
+      <a href="https://www.instagram.com/balaiada/" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/geral/Balaiada_logo.webp" alt="Logo Balaiada" width="100" height="100">
+      </a>
     </div>
-  </footer>
 
+    <div class="rodape-secao info">
+      <p>&copy; 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
+      <p>
+        Design & Desenvolvimento:
+        <a href="https://www.github.com/luanasantosb" target="_blank" rel="noopener noreferrer">Luana Santos</a>
+      </p>
+    </div>
+
+    <nav class="rodape-secao redes" aria-label="Redes Sociais">
+      <ul class="redes-lista">
+        <li>
+          <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram">
+            <img src="/assets/geral/instagram_logo.webp" alt="" aria-hidden="true">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Facebook">
+            <img src="/assets/geral/facebook_logo.webp" alt="" aria-hidden="true">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer" aria-label="Inscreva-se no nosso YouTube">
+            <img src="/assets/geral/youtube_logo.webp" alt="" aria-hidden="true">
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</footer>
 
 </body>
 

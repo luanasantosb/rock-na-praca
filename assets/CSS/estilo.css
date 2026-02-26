@@ -281,16 +281,17 @@ h3 {
   padding: 40px 5%;
   max-width: 1200px;
   margin: 0 auto;
+ 
 }
 
 
 .hero-infos {
   flex: 1 1 450px; 
-  text-align: left;
+  align-items: center;
 }
 
 .badge-container {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .badge-patrimonio {
@@ -1954,173 +1955,98 @@ lite-youtube:hover {
 /*                    RODAPE                    */
 /* ========================= */
 
-
 .rodape {
-  background: var(--verde);
-  padding: 0.75rem 1rem;
-  font-size: 0.85rem;
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 40px 20px;
+    font-family: sans-serif;
+    border-top: 4px solid var(--verde);
 }
 
 .rodape-conteudo {
-  max-width: 900px;
-  margin: 0 auto;
-  display: grid;
-  align-items: center;
-  gap: 1rem;
-  grid-template-columns: auto 1fr auto;
-  grid-template-areas:
-    "esquerda centro direita";
-}
-
-
-.esquerda-realizacao {
-  grid-area: esquerda;
-}
-
-.centro-textos {
-  grid-area: centro;
-}
-
-.direita-contato {
-  grid-area: direita;
-}
-
-.esquerda-realizacao,
-.direita-contato {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.rodape h3 {
-  display: block;
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 0;
-  color: var(--preto);
-}
-
-.centro-textos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  line-height: 1.2;
-  gap: 0.15rem;
-}
-
-.direitos-autorais,
-.lei-patrimonio,
-.desenvolvedora-credito {
-  margin: 0;
-  font-size: 0.90rem;
-  color: var(--preto);
-  font-family: var(--fonte-textos);
-  line-height: 1.5;
-}
-
-.desenvolvedora-credito a {
-  color: var(--preto);
-  font-family: var(--fonte-textos);
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.esquerda-realizacao img {
-  width: 100px;
-  height: 100px;
-  opacity: 0.9;
-}
-
-.direita-contato img {
-  width: 50px;
-  height: 50px;
-  opacity: 0.75;
-}
-
-.redes-sociais {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.rodape a:hover {
-  transform: translateY(-2px) scale(1.02);
-
-}
-
-
-@media (max-width: 640px) {
-  .rodape-conteudo {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "esquerda"
-      "centro"
-      "direita";
-    text-align: center;
-    gap: 0.75rem;
-  }
-
-  .esquerda-realizacao,
-  .direita-contato {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .rodape-conteudo {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "esquerda"
-      "centro"
-      "direita";
-    text-align: center;
-    gap: 0.6rem;
-  }
-
-  .esquerda-realizacao,
-  .direita-contato {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 0.4rem;
-  }
-
-  .rodape h3 {
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-  }
-
-  .centro-textos {
-    line-height: 1.4;
-  }
-
-  .direitos-autorais,
-  .lei-patrimonio,
-  .desenvolvedora-credito {
-    font-size: 0.7rem;
-    line-height: 1.4;
-  }
-
-  .desenvolvedora-credito a {
-    font-weight: 600;
-  }
-
-  .esquerda-realizacao img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .direita-contato img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .redes-sociais {
-    gap: 0.4rem;
-  }
+    gap: 2rem;
 }
+
+.rodape-secao {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.realizacao h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--branco);
+}
+
+.realizacao img {
+    transition: transform 0.3s ease;
+}
+
+.realizacao img:hover {
+    transform: scale(1.05);
+}
+
+.info p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 5px 0;
+    color:var(--branco);
+}
+
+.info a {
+    color: var(--verde);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.info a:hover {
+    color: var(--branco);
+    text-decoration: underline;
+}
+
+.redes-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.redes-lista img {
+    width: 32px;
+    height: 32px;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.redes-lista a:hover img {
+    transform: translateY(-5px);
+    filter: brightness(1) invert(0); 
+}
+
+
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .rodape-secao {
+        min-width: 100%;
+    }
+}
+
+
