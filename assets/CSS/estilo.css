@@ -267,27 +267,22 @@ h3 {
 /* ========================= */
 
 .hero-secao {
-  contain: content;
-  min-height: 500px; 
+  min-height: 100vh;
+  padding: 0 1.5rem;
 }
 
 .hero-banner {
+  margin: 2rem auto;
   display: flex;
-  flex-direction: row; 
-  flex-wrap: wrap;     
-  align-items: center; 
-  justify-content: space-evenly;
-  gap: 40px;           
-  padding: 40px 5%;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
   max-width: 1200px;
-  margin: 0 auto;
- 
 }
 
-
 .hero-infos {
-  flex: 1 1 450px; 
-  align-items: center;
+  flex: 1 1 600px;
+  max-width: 650px;
 }
 
 .badge-container {
@@ -324,7 +319,6 @@ h3 {
   font-weight: 400;
   margin-bottom: 25px;
   color: var(--verde);
-  border-left: 4px solid var(--verde);
   padding-left: 15px;
 }
 
@@ -349,7 +343,7 @@ text-decoration: none;
   color: var(--branco);
   text-decoration: underline;
   text-underline-offset: 5px;
-  margin-top: 10px;
+  margin-top: 0.5rem;
   font-weight: bold;
   transition: color 0.2s ease-in-out;
 }
@@ -379,20 +373,15 @@ text-decoration: none;
 }
 
 .hero-container {
-  flex: 0 1 380px; 
+  flex: 0 0 350px;
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
-
 .hero-cartaz {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   height: auto;
-  aspect-ratio: 350 / 467;
-  display: block;
-  will-change: transform; 
-  transition: transform 0.3s ease;
 }
 
 .hero-cartaz:hover {
@@ -410,7 +399,7 @@ text-decoration: none;
   font-family: 'Impact', sans-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--verde);
+  color: red;
   border: 5px solid var(--verde);
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
@@ -527,123 +516,74 @@ lite-youtube:hover {
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
   .hero-banner {
-    flex-direction: column; 
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .hero-infos h2 {
-    border-left: none;
-    padding-left: 0;
-  }
-  
-  .btn-calendar {
-    width: 100%; 
-  }
-
-  .hero-container {
-    order: -1;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .background-muro {
-    padding: 2rem 1rem;
-    flex-direction: column; 
-    text-align: center;     
-  }
-
-  .hero-infos h1 {
-    font-size: 2.2rem;   
-  }
-
-  .hero-infos h2 {
-    font-size: 1.2rem;
-  }
-
-.hero-container {
-  flex: 1 1 300px; 
-  max-width: 350px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
- 
-}
-
-  .hero-adiamento {
-    width: 90%;           
-    font-size: 2.5rem;     
-    transform: translate(-50%, -50%) rotate(-5deg); 
-  }
-  .contador-container {
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-  }
-
-  .contador-numero {
-    font-size: 2.5rem; 
-  }
-
-  .resumo-conteudo {
-    padding: 0 1.25rem; 
-    text-align: center;
-  }
-
-  .resumo-conteudo p {
-    font-size: 1rem; 
-    text-align: center; 
-  }
-
-  .resumo-video {
-    width: 100%;
-    max-width: 100%; 
-  }
-}
-@media (max-width: 480px) {
-  .contador-container {
-    flex-direction: column; 
     gap: 2rem;
   }
 
-  .tag-live {
-    display: block; 
-    margin-bottom: 0.5rem;
-    margin-right: 0;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (max-width: 400px) {
-  .background-muro {
-    padding: 1.5rem 0.5rem; 
-  }
-
-  .hero-infos h1 {
-    font-size: 1.8rem; 
+  .hero-infos {
+    flex: 1 1 55%;
+    max-width: 550px;
   }
 
   .hero-container {
-    order: 2; 
-    min-width: auto; 
-    flex: 0 1 90%; 
+    flex: 1 1 40%;
   }
 
-.hero-cartaz {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 600 / 800; 
-  display: block;
-  border-radius: 8px;
+  .hero-cartaz {
+    max-width: 300px;
+  }
 }
 
-  .hero-adiamento {
-    font-size: 1.5rem; 
-    padding: 5px 15px;
-    border-width: 3px;
-    width: 80%;
+@media (max-width: 768px) {
+
+  .hero-secao {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-infos {
+    max-width: 100%;
+  }
+
+  .hero-infos h2 {
+    padding-left: 0;
+  }
+
+  .hero-meta {
+    align-items: center;
+  }
+
+  .hero-actions {
+    align-items: center;
+  }
+
+  .hero-container {
+    flex: none;
+  }
+
+  .hero-cartaz {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-cartaz {
+    max-width: 240px;
+  }
+
+  .btn-calendar {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -733,6 +673,60 @@ lite-youtube:hover {
   color: var(--verde);
   font-weight: 700;
 }
+
+
+.grade-horarios {
+    color: var(--branco);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.grade-horarios h2 {
+    font-family: var(--fonte-titulos);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    color: var(--rosa);
+}
+
+.grade-horarios ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.grade-horarios li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 18px 25px;
+    border-left: 5px solid var(--verde);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.grade-horarios li:hover {
+    background: #222;
+    transform: translateX(5px);
+    border-left: 5px solid var(--rosa);
+}
+
+.grade-horarios li strong {
+    font-size: 1.3rem;
+    color:var(--verde);
+    font-weight: 700;
+    min-width: 80px;
+    text-align: left;
+}
+
+.grade-horarios li span {
+    flex: 1;
+    text-align: right;
+}
+
+
 
 .grupo-local .container {
   max-width: 1000px;
@@ -1010,6 +1004,20 @@ lite-youtube:hover {
 
 }
 
+
+@media (max-width: 600px) {
+
+    .grade-horarios li {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 8px;
+    }
+
+    .grade-horarios li strong {
+        font-size: 1.2rem;
+    }
+}
 
 @media (max-width: 480px) {
 
