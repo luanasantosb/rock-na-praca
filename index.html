@@ -3,24 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>Rock na Praça Esteio | Março de 2026 | Site Oficial</title>
-  <link rel="icon" type="image/png" href="/assets/geral/rock-na-praca_favicon.png">
+  <title>Rock na Praça | Patrimônio Cultural de Esteio - RS</title>
   <meta name="description"
-    content="Confira a programação do Rock na Praça em Março de 2026. Shows gratuitos no aniversário de Esteio, RS. O melhor do underground gaúcho na Praça Coração de Maria.">
+    content="Rock na Praça: Patrimônio Cultural de Esteio/RS. Fomento à cultura underground, democratização do acesso à música e impacto social através do rock gaúcho.">
   <link rel="canonical" href="https://www.rocknapraca.com/">
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="rating" content="general">
+  <meta name="language" content="Portuguese">
+  <meta name="geo.region" content="BR-RS">
+  <meta name="geo.placename" content="Esteio">
 
+  <link rel="icon" type="image/png" href="/assets/geral/rock-na-praca_favicon.png">
+  <link rel="apple-touch-icon" href="/assets/geral/apple-touch-icon.png">
+
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
   <link rel="preload" as="image" href="/assets/pagina_index/flyer-700.webp" fetchpriority="high">
-
   <link rel="preload" href="/assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
+  <link rel="preload" href="/assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="/assets/CSS/estilo.css">
   <script src="/assets/JS/script.js" defer></script>
@@ -30,20 +37,19 @@
   <meta property="og:site_name" content="Rock na Praça">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://www.rocknapraca.com/">
-  <meta property="og:title" content="Rock na Praça | Site Oficial do Maior Evento Underground do RS">
+  <meta property="og:title" content="Rock na Praça | Projeto de Fomento e Circulação Cultural no RS">
   <meta property="og:description"
-    content="O maior evento itinerante de rock do RS. Música ao vivo, cultura e ocupação dos espaços públicos.">
-  <meta property="og:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
+    content="Patrimônio público que une música, ocupação urbana e gratuidade. Saiba como apoiar o maior evento itinerante de rock do RS.">
+  <meta property="og:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Cartaz do evento Rock na Praça com datas e atrações">
+  <meta property="og:image:alt" content="Público assistindo o show de uma banda na Praça Coração de Maria em Esteio/RS">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rock na Praça | Site Oficial do Maior Evento Underground do RS">
+  <meta name="twitter:title" content="Rock na Praça | Projeto de Fomento e Circulação Cultural no RS">
   <meta name="twitter:description"
-    content="Confira todas as informações do maior evento itinerante de rock gratuito do RS.">
-  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/banner/Rock-na-Praca_Marco-Flyer.webp">
-
+    content="Uma iniciativa de impacto cultural que une música, ocupação urbana e gratuidade. Patrimônio Cultural de Esteio/RS.">
+  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
 
   <script>
     const loadGTM = () => {
@@ -63,46 +69,56 @@
 
   <script type="application/ld+json">
   {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://www.rocknapraca.com/#website",
-      "url": "https://www.rocknapraca.com/",
-      "name": "Rock na Praça",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "Event",
-      "name": "Rock na Praça - Aniversário de Esteio",
-      "startDate": "2026-03-01T15:00:00-03:00",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": {
-        "@type": "Place",
-        "name": "Praça Coração de Maria",
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.rocknapraca.com/#organization",
+        "name": "Rock na Praça - Patrimônio Cultural e Produções",
+        "url": "https://www.rocknapraca.com/",
+        "logo": "https://www.rocknapraca.com/assets/geral/rock-na-praca_logo.png",
+        "description": "Instituição responsável pelo Rock na Praça, evento instituído como patrimônio cultural imaterial de Esteio/RS (Lei nº 8.147/2022).",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Esteio",
           "addressRegion": "RS",
           "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/rocknapraca_",
+          "https://www.facebook.com/rocknapracaesteio",
+          "https://www.youtube.com/@Rocknapraca_RS"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.rocknapraca.com/#website",
+        "url": "https://www.rocknapraca.com/",
+        "name": "Rock na Praça",
+        "publisher": { "@id": "https://www.rocknapraca.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
       },
-      "description": "Edição especial de aniversário de Esteio com muito rock underground e entrada gratuita.",
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.rocknapraca.com/",
-        "price": "0",
-        "priceCurrency": "BRL",
-        "availability": "https://schema.org/InStock"
+      {
+        "@type": "EventSeries",
+        "@id": "https://www.rocknapraca.com/#series",
+        "name": "Circuito Cultural Rock na Praça",
+        "description": "Bem cultural e patrimônio público da cidade de Esteio/RS. Projeto itinerante de circulação musical gratuita e fomento cultural.",
+        "organizer": { "@id": "https://www.rocknapraca.com/#organization" },
+        "location": { "@type": "Place", "name": "Espaços Públicos do Rio Grande do Sul" },
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock"
+        }
       }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 
@@ -139,8 +155,11 @@
 
     <section class="hero-secao" aria-labelledby="main-event-title">
       <div class="hero-banner">
+        <!--<div class="hero-adiamento">
+          EVENTO ADIADO!
+        </div>-->
 
-        <div class="hero-infos">
+        <div class="hero-esquerda">
 
           <div class="badge-container">
             <span class="badge-patrimonio">
@@ -152,8 +171,8 @@
             Rock na Praça <span class="sub-titulo-oficial">• Março 2026</span>
           </h1>
 
-          <h2>
-             Esteio celebra seu aniversário com muito Rock Underground
+          <h2 class="subtitulo">
+            Esteio celebra seu aniversário com muito Rock Underground
           </h2>
 
           <div class="hero-meta">
@@ -173,7 +192,7 @@
           </div>
 
           <div class="hero-actions">
-            
+
             <a href="/programacao" class="hero-link">
               Programação de Março →
             </a>
@@ -188,7 +207,7 @@
         </div>
 
         <!-- LADO DIREITO (CARTAZ) -->
-        <div class="hero-container">
+        <div class="hero-direita">
           <img src="/assets/pagina_index/flyer-350.webp" srcset="/assets/pagina_index/flyer-350.webp 350w, 
                 /assets/pagina_index/flyer-700.webp 700w" sizes="(max-width: 600px) 350px, 700px" class="hero-cartaz"
             alt="Cartaz oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
@@ -292,6 +311,16 @@
         }
       });
     }
+  </script>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
 </body>
 
