@@ -1,23 +1,24 @@
-/*==== MAPA ======*/
-function carregarMapa() {
-    const iframe = document.querySelector('.mapa-secao iframe');
-    if (iframe && iframe.getAttribute('src') === 'about:blank') {
-        iframe.setAttribute('src', iframe.getAttribute('data-src'));
-    }
-}
+/* ==== VLIBRAS=====*/
 
-window.addEventListener('scroll', carregarMapa, { once: true });
-window.addEventListener('mousemove', carregarMapa, { once: true });
-window.addEventListener('touchstart', carregarMapa, { once: true });
+(function() {
+  // Cria o container do VLibras
+  const vw = document.createElement('div');
+  vw.setAttribute('vw', '');
+  vw.className = 'enabled';
+  vw.innerHTML = `
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>`;
+  document.body.appendChild(vw);
 
-/*===== ?????======*/
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registado com sucesso!', reg))
-      .catch(err => console.log('Erro ao registar o Service Worker', err));
-  });
-}
+  // Injeta o script do widget
+  const s = document.createElement('script');
+  s.src = 'https://vlibras.gov.br';
+  s.onload = () => new window.VLibras.Widget('https://vlibras.gov.br');
+  document.head.appendChild(s);
+})();
+
 
 /*===== CABECALHO =====*/
 
@@ -160,17 +161,6 @@ window.addEventListener('load', () => {
   if (container) setTimeout(carregarVideos, 1000);
 });
 
-/*====== MODAL =======*/
-
-function abrirMapa() {
-  const modal = document.getElementById("modalMapa");
-  if (modal) modal.classList.add("ativo");
-}
-
-function fecharMapa() {
-  const modal = document.getElementById("modalMapa");
-  if (modal) modal.classList.remove("ativo");
-}
 
 /*============== LOJA ================*/
 
@@ -263,7 +253,6 @@ if (btnFinalizar) {
     window.open(url, "_blank");
   });
 }
-/*CONTADOR LOJA*/
 
 document.addEventListener('DOMContentLoaded', function() {
   const produtos = document.querySelectorAll('.loja-cartao');
