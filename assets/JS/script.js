@@ -1,23 +1,24 @@
 /* ==== VLIBRAS=====*/
 
-(function() {
-  // Cria o container do VLibras
-  const vw = document.createElement('div');
-  vw.setAttribute('vw', '');
-  vw.className = 'enabled';
-  vw.innerHTML = `
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>`;
-  document.body.appendChild(vw);
-
-  // Injeta o script do widget
-  const s = document.createElement('script');
-  s.src = 'https://vlibras.gov.br';
-  s.onload = () => new window.VLibras.Widget('https://vlibras.gov.br');
-  document.head.appendChild(s);
-})();
+document.addEventListener("DOMContentLoaded", function() {
+  const vlibrasDiv = document.createElement('div');
+  vlibrasDiv.innerHTML = `
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(vlibrasDiv);
+  const scriptVlibras = document.createElement('script');
+  scriptVlibras.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+  scriptVlibras.async = true;
+  scriptVlibras.onload = () => {
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  };
+  document.head.appendChild(scriptVlibras);
+});
 
 
 /*===== CABECALHO =====*/

@@ -465,13 +465,13 @@ h3 {
   align-items: center;
 }
 
-.resumo-conteudo h2 {
+.resumo-container h2 {
   font-size: clamp(1.3rem, 3vw, 2rem);
   color: var(--verde);
   margin: 0.5rem 0;
 }
 
-.resumo-conteudo p {
+.resumo-container p {
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   line-height: 1.6;
 }
@@ -802,105 +802,94 @@ lite-youtube:hover {
 .banda-sociais a img:hover {
     transform: scale(1.08);
 }
-/* ===== Seção Feira ===== */
 
-.grid-feira {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-}
+/* ========= Seção feira e apoio ============ */
 
-.cartao-feira {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.cartao-feira:hover {
-    transform: scale(1.05);
-}
-
-.nome-expositor {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #fff;
+.grupo-feira,
+.grupo-apoio {
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* ===== Seção Apoio ===== */
-
-.grupo-apoio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+.grupo-feira h2,
 .grupo-apoio h2 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color:var(--rosa);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+.grupo-feira p,
 .grupo-apoio p {
-  margin-bottom: 2rem;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    color: var(--branco);
+    font-size: 1rem;
+}
+
+.grid-feira {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cartao-feira {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.cartao-feira img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.cartao-feira:hover {
+    transform: translateY(-6px);
+    border-color: var(--rosa);
+}
+
+.cartao-feira:hover img {
+    transform: scale(1.05);
 }
 
 .grid-apoio {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: 2rem;
-  width: 100%;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .cartao-apoio {
-  position: relative;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
-  isolation: isolate;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .cartao-apoio img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1);
-  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-  will-change: transform;
+    max-width: 140px;
+    max-height: 100px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.cartao-apoio:hover {
+    border-color: var(--rosa);
+    transform: translateY(-5px);
 }
 
 .cartao-apoio:hover img {
-  transform: translateY(-8px) scale(1.05);
-}
-
-.grupo-local{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grupo-apoio h2 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2rem;
+    opacity: 1;
 }
 
 /* ===== Seção Como Chegar ===== */

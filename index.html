@@ -68,58 +68,45 @@
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.rocknapraca.com/#organization",
-        "name": "Rock na Praça - Patrimônio Cultural e Produções",
-        "url": "https://www.rocknapraca.com/",
-        "logo": "https://www.rocknapraca.com/assets/geral/rock-na-praca_logo.png",
-        "description": "Instituição responsável pelo Rock na Praça, evento instituído como patrimônio cultural imaterial de Esteio/RS (Lei nº 8.147/2022).",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Esteio",
-          "addressRegion": "RS",
-          "addressCountry": "BR"
-        },
-        "sameAs": [
-          "https://www.instagram.com/rocknapraca_",
-          "https://www.facebook.com/rocknapracaesteio",
-          "https://www.youtube.com/@Rocknapraca_RS"
-        ]
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.rocknapraca.com/#organization",
+      "name": "Rock na Praça - Patrimônio Cultural e Produções",
+      "url": "https://www.rocknapraca.com/",
+      "foundingDate": "2002-05-29", 
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/assets/geral/share-image.jpg"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.rocknapraca.com/#website",
-        "url": "https://www.rocknapraca.com/",
-        "name": "Rock na Praça",
-        "publisher": { "@id": "https://www.rocknapraca.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "EventSeries",
-        "@id": "https://www.rocknapraca.com/#series",
-        "name": "Circuito Cultural Rock na Praça",
-        "description": "Bem cultural e patrimônio público da cidade de Esteio/RS. Projeto itinerante de circulação musical gratuita e fomento cultural.",
-        "organizer": { "@id": "https://www.rocknapraca.com/#organization" },
-        "location": { "@type": "Place", "name": "Espaços Públicos do Rio Grande do Sul" },
-        "isAccessibleForFree": true,
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "BRL",
-          "availability": "https://schema.org/InStock"
-        }
+      "description": "Instituição cultural fundada em 2002, responsável pelo Rock na Praça, evento reconhecido como patrimônio cultural imaterial de Esteio/RS (Lei nº 8.147/2022).",
+      "award": "Patrimônio Cultural Imaterial de Esteio (Lei nº 8.147/2022)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Esteio",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
       }
-    ]
-  }
+    },
+    {
+      "@type": "EventSeries",
+      "@id": "https://www.rocknapraca.com/#series",
+      "name": "Circuito Cultural Rock na Praça",
+      "description": "Festival itinerante de rock e fomento cultural realizado desde 2001 no Rio Grande do Sul. Um bem cultural e patrimônio público da cidade de Esteio.",
+      "organizer": { "@id": "https://www.rocknapraca.com/#organization" },
+      "isAccessibleForFree": true,
+      "keywords": "Rock na Praça, Festival de Rock, Esteio, Patrimônio Cultural, Música Independente",
+      "location": { 
+        "@type": "Place", 
+        "name": "Espaços Públicos do Rio Grande do Sul" 
+      }
+    }
+  ]
+}
   </script>
+
 </head>
 
 <body>
