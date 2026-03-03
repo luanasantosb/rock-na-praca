@@ -523,6 +523,50 @@ lite-youtube:hover {
   text-transform: uppercase;
 }
 
+#widget-inferior {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  max-width: 95vw;
+  height: 80vh;
+  max-height: 600px;
+  background: var(--azul);
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.4s ease;
+  transform: translateY(100%);
+  z-index: 9999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#widget-inferior.aberto {
+  transform: translateY(0);
+}
+
+#widget-inferior .elfsight-app-c9481474-373e-4c18-ad66-29ee754fceb7 {
+  flex: 1;
+  overflow-y: auto;
+}
+
+#toggle-widget {
+  border: 3px solid var(--preto);
+  box-shadow: 6px 6px 0px #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--azul);
+  color: var(--branco);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
 @media (max-width: 1024px) {
 
   .hero-banner {
@@ -693,208 +737,208 @@ lite-youtube:hover {
 
 /* ===== Seção Bandas ===== */
 .grade-bandas {
-    color: var(--branco);
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  color: var(--branco);
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .grade-bandas h2 {
-    font-family: var(--fonte-titulos);
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-    color: var(--rosa);
+  font-family: var(--fonte-titulos);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  color: var(--rosa);
 }
 
 .grade-bandas-container {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .grade-bandas-item {
-    display: contents;
+  display: contents;
 }
 
 .hora {
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    color: var(--verde);
-    font-size: 1.2rem;
-    text-align: right;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--verde);
+  font-size: 1.2rem;
+  text-align: right;
 }
 
 .banda {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .banda-inner {
-    display: flex;
-    align-items: center;
-    border-left: 5px solid var(--verde);
-    padding-left: 10px;
-    gap: 20px;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  border-left: 5px solid var(--verde);
+  padding-left: 10px;
+  gap: 20px;
+  transition: all 0.3s ease;
 }
 
 .banda-inner img:first-child {
-    width: 220px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.4s ease;
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.4s ease;
 }
 
 .banda-inner img:first-child:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .banda-inner:hover {
-    transform: translateX(5px);
-    border-left: 5px solid var(--rosa);
+  transform: translateX(5px);
+  border-left: 5px solid var(--rosa);
 }
 
 .banda-nome {
-    font-size: 1.3rem;
-    font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .banda img {
-    width: 220px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.4s ease;
+  width: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.4s ease;
 }
 
 .banda img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .banda-sociais {
-    display: inline-flex;
-    gap: 1rem;
-    align-items: center;
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .banda-sociais a {
-    width: 28px;
-    height: 28px;
-    display: inline-flex;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
 }
 
 .banda-sociais a img {
-    width: 50px !important;
-    height: 50px !important;
-    max-width: 50px;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.2s ease;
+  width: 50px !important;
+  height: 50px !important;
+  max-width: 50px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
 .banda-sociais a img:hover {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 /* ========= Seção feira e apoio ============ */
 
 .grupo-feira,
 .grupo-apoio {
-    padding: 40px 20px;
-    text-align: center;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .grupo-feira h2,
 .grupo-apoio h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .grupo-feira p,
 .grupo-apoio p {
-    max-width: 700px;
-    margin: 0 auto 50px auto;
-    color: var(--branco);
-    font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  color: var(--branco);
+  font-size: 1rem;
 }
 
 .grid-feira {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .cartao-feira {
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .cartao-feira img {
-    max-width: 120px;
-    max-height: 120px;
-    object-fit: contain;
-    transition: all 0.3s ease;
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .cartao-feira:hover {
-    transform: translateY(-6px);
-    border-color: var(--rosa);
+  transform: translateY(-6px);
+  border-color: var(--rosa);
 }
 
 .cartao-feira:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .grid-apoio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .cartao-apoio {
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .cartao-apoio img {
-    max-width: 140px;
-    max-height: 100px;
-    object-fit: contain;
-    opacity: 0.8;
-    transition: all 0.3s ease;
+  max-width: 140px;
+  max-height: 100px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 .cartao-apoio:hover {
-    border-color: var(--rosa);
-    transform: translateY(-5px);
+  border-color: var(--rosa);
+  transform: translateY(-5px);
 }
 
 .cartao-apoio:hover img {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* ===== Seção Como Chegar ===== */
 .grupo-local {
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
@@ -905,64 +949,64 @@ lite-youtube:hover {
 }
 
 .grupo-local h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--rosa);
-    margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--rosa);
+  margin-bottom: 1rem;
 }
 
 .local-secao {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 20px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  align-items: start;
 }
 
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .mapa-secao iframe {
-    width: 100%;
-    height: 420px;
-    border: 2px solid var(--rosa);
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: 420px;
+  border: 2px solid var(--rosa);
+  transition: transform 0.3s ease;
 }
 
 .mapa-secao iframe:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .local-informacoes {
-padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .local-informacoes address {
-    font-style: normal;
-    margin-bottom: 25px;
-    line-height: 1.6;
-    color: var(--branco);
+  font-style: normal;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: var(--branco);
 }
 
 .local-informacoes strong {
-    color: var(--branco);
+  color: var(--branco);
 }
 
 .local-informacoes ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .local-informacoes li {
-    margin-bottom: 0.9rem;
-    line-height: 1.2;
-    color: var(--branco);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.2rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.2;
+  color: var(--branco);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2rem;
 }
 
 

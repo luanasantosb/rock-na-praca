@@ -243,7 +243,13 @@
       </p>
 
     </section>
-  </main>
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<button id="toggle-widget">Abrir Enquete</button>
+<div id="widget-inferior">
+  <div class="elfsight-app-e07a26ff-d52d-484a-9297-b9b81d5ce4a9" data-elfsight-app-lazy></div>  
+</div>
+
+</main>
 
   <!-- RODAPÉ -->
   <footer class="rodape">
@@ -299,6 +305,20 @@
       });
     }
   </script>
+  <script>
+  const widget = document.getElementById("widget-inferior");
+  const botao = document.getElementById("toggle-widget");
+
+  botao.addEventListener("click", () => {
+    widget.classList.toggle("aberto");
+
+    if (widget.classList.contains("aberto")) {
+      botao.textContent = "Fechar";
+    } else {
+      botao.textContent = "Abrir Enquete";
+    }
+  });
+</script>
 </body>
 
 </html>
