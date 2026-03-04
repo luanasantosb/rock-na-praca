@@ -18,7 +18,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/CSS/estilo.css">
   <script src="/assets/JS/script.js" defer></script>
@@ -41,7 +42,7 @@
   <meta name="twitter:image"
     content="https://miro.medium.com/v2/resize:fit:4608/format:webp/1*m2DoDACaDsDZBvWZuiH3wQ.jpeg">
 
-<script>
+  <script>
     function loadGTM() {
       if (window.gtmLoaded) return;
       window.gtmLoaded = true;
@@ -128,8 +129,8 @@
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
       <a href="/" aria-label="Página inicial do Rock na Praça">
-        <img src="../assets/geral/rock-na-praca_logotipo_simbolo.webp"
-          alt="Logotipo do evento Rock na Praça" height="80" width="130">
+        <img src="../assets/geral/rock-na-praca_logotipo_simbolo.webp" alt="Logotipo do evento Rock na Praça"
+          height="80" width="130">
       </a>
     </div>
 
@@ -213,8 +214,8 @@
             <label for="loja_cidade">Cidade / Estado / País *</label>
             <input id="loja_cidade" name="loja_cidade" class="inscricao-input" required>
 
-            <label for="loja_redes">Rede social *</label>
-            <input id="loja_redes" name="loja_redes" class="inscricao-input" type="url"
+            <label for="loja_rede">Rede social *</label>
+            <input id="loja_rede" name="loja_rede" class="inscricao-input" type="url"
               placeholder="https://instagram.com/sualoja" required>
 
             <label for="logo">Logo (Imagem ou PDF)</label>
@@ -248,9 +249,7 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-            const URL =
-              "https://script.google.com/macros/s/AKfycbz1DbWPV_YmVP4eX5reAxvFk7salssnGq1MPznUVqGukyFUjReG53hXA6EYSRlSDepSkg/exec";
-
+            const URL = "https://script.google.com/macros/s/AKfycbzaoKZ1bNkgBlJ0l-t02YCqqX7vUE-kTe541iWpbYmWCnY7LHZiWlQ3uLue3Tt1S2XXkw/exec";
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
             const botao = document.getElementById("botaoEnviar");
@@ -273,42 +272,60 @@
 
             form.addEventListener("submit", async (e) => {
               e.preventDefault();
+              msg.textContent = "";
+              botao.disabled = true;
+
+              const logo = document.getElementById("logo")?.files[0];
+              const comprovante = document.getElementById("comprovante")?.files[0];
+
 
               if (
                 !form.loja_nome.value.trim() ||
                 !form.loja_cidade.value.trim() ||
-                !form.loja_redes.value.trim() ||
+                !form.loja_rede.value.trim() ||
                 !form.loja_responsavel.value.trim() ||
                 !form.loja_whatsapp.value.trim()
               ) {
                 msg.textContent = "Preencha todos os campos obrigatórios.";
                 msg.className = "erro";
+                botao.disabled = false;
                 return;
               }
 
-              botao.disabled = true;
+
+              if (logo && logo.size > 5 * 1024 * 1024) {
+                msg.textContent = "Logo excede 5 MB.";
+                msg.className = "erro";
+                botao.disabled = false;
+                return;
+              }
+              if (comprovante && comprovante.size > 5 * 1024 * 1024) {
+                msg.textContent = "Comprovante excede 5 MB.";
+                msg.className = "erro";
+                botao.disabled = false;
+                return;
+              }
+
+              const dados = {
+                loja_nome: form.loja_nome.value,
+                loja_cidade: form.loja_cidade.value,
+                loja_rede: form.loja_rede.value,
+                loja_responsavel: form.loja_responsavel.value,
+                loja_whatsapp: form.loja_whatsapp.value,
+                loja_email: form.loja_email.value,
+                loja_logo: await fileToBase64(logo),
+                loja_comprovante: await fileToBase64(comprovante)
+              };
+
               msg.textContent = "Enviando...";
 
               try {
-                const dados = {
-                  loja_nome: form.loja_nome.value,
-                  loja_cidade: form.loja_cidade.value,
-                  loja_redes: form.loja_redes.value,
-                  loja_responsavel: form.loja_responsavel.value,
-                  loja_whatsapp: form.loja_whatsapp.value,
-                  loja_email: form.loja_email.value,
-                  loja_logo: await base64(document.getElementById("logo").files[0]),
-                  loja_comprovante: await base64(document.getElementById("comprovante").files[0])
-                };
-
                 const r = await fetch(URL, {
                   method: "POST",
-                  headers: { "Content-Type": "application/json" },
                   body: JSON.stringify(dados)
                 });
 
                 const json = await r.json();
-
                 msg.textContent = json.mensagem || "Resposta recebida.";
                 msg.className = json.sucesso ? "sucesso" : "erro";
 
@@ -323,7 +340,7 @@
               }
             });
 
-            function base64(file) {
+            function fileToBase64(file) {
               return new Promise(resolve => {
                 if (!file) return resolve("");
                 const reader = new FileReader();
@@ -333,54 +350,32 @@
             }
           });
         </script>
+
       </details>
-
-
     </div>
   </main>
 
 
   <!-- RODAPÉ -->
-<footer class="rodape">
-  <div class="rodape-conteudo">
+  <footer class="rodape">
+    <div class="rodape-container">
+      <div class="redes-sociais">
+        <a href="https://instagram.com/rocknapraca_/" target="_blank"><img src="/assets/geral/instagram_logo.webp"
+            alt="Instagram"></a>
+        <a href="https://facebook.com/rocknapracaesteio" target="_blank"><img src="/assets/geral/facebook_logo.webp"
+            alt="Facebook"></a>
+        <a href="https://youtube.com/@Rocknapraca_RS" target="_blank"><img src="/assets/geral/youtube_logo.webp"
+            alt="YouTube"></a>
+      </div>
 
-    <div class="rodape-secao realizacao">
-      <h3>Realização</h3>
-      <a href="https://www.instagram.com/balaiada/" target="_blank" rel="noopener noreferrer">
-        <img src="/assets/geral/Balaiada_logo.webp" alt="Logo Balaiada" width="100" height="100">
-      </a>
+      <div class="creditos">
+        <p>© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
+        <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank">Luana Santos</a></p>
+        <!--<p>Designer Gráfico: <a href="#" target="_blank">Guilherme Leal</a></p>-->
+      </div>
     </div>
-
-    <div class="rodape-secao info">
-      <p>&copy; 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-      <p>
-        Design & Desenvolvimento:
-        <a href="https://www.github.com/luanasantosb" target="_blank" rel="noopener noreferrer">Luana Santos</a>
-      </p>
     </div>
-
-    <nav class="rodape-secao redes" aria-label="Redes Sociais">
-      <ul class="redes-lista">
-        <li>
-          <a href="https://www.instagram.com/rocknapraca_/" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram">
-            <img src="/assets/geral/instagram_logo.webp" alt="" aria-hidden="true">
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/rocknapracaesteio" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Facebook">
-            <img src="/assets/geral/facebook_logo.webp" alt="" aria-hidden="true">
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/@Rocknapraca_RS" target="_blank" rel="noopener noreferrer" aria-label="Inscreva-se no nosso YouTube">
-            <img src="/assets/geral/youtube_logo.webp" alt="" aria-hidden="true">
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
 
