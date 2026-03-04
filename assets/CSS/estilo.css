@@ -713,15 +713,17 @@ lite-youtube:hover {
 
 .programacao-conteudo h1 {
   color: var(--verde);
+  font-size: 3rem;
 }
 
 .programacao-conteudo h2 {
   color: var(--rosa);
+  font-size: 2rem;
 }
 
 .conteudo-descricao{
   font-family: var(--fonte-textos);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--branco);
   max-width: 600px;
   margin: 1rem auto;
@@ -1995,6 +1997,14 @@ lite-youtube:hover {
   line-height: 1.6;
   color: var(--branco);
   margin: 0;
+}
+.faq-item a{
+  color:var(verde);
+  text-decoration: none;
+}
+
+.faq-item a:visited {
+  color: var(--rosa);
 }
 
 .contato-intro {

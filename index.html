@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>Rock na Praça | Patrimônio Cultural de Esteio - RS</title>
+  <title>Rock na Praça: Site Oficial | Agenda e Cultura em Esteio - RS</title>
   <meta name="description"
     content="Rock na Praça: Patrimônio Cultural de Esteio/RS. Fomento à cultura underground, democratização do acesso à música e impacto social através do rock gaúcho.">
   <link rel="canonical" href="https://www.rocknapraca.com/">
@@ -35,6 +35,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça">
+  <meta name="apple-mobile-web-app-title" content="Rock na Praça">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://www.rocknapraca.com/">
   <meta property="og:title" content="Rock na Praça | Projeto de Fomento e Circulação Cultural no RS">
@@ -102,7 +103,32 @@
         "@type": "Place", 
         "name": "Espaços Públicos do Rio Grande do Sul" 
       }
-    }
+    },
+    {
+  "@type": "LocalBusiness",
+  "name": "Rock na Praça",
+  "image": "https://www.rocknapraca.com/assets/geral/share-image.jpg",
+  "@id": "https://www.rocknapraca.com/",
+  "url": "https://www.rocknapraca.com/",
+  "telephone": "", 
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Praça Coração de Maria",
+    "addressLocality": "Esteio",
+    "addressRegion": "RS",
+    "postalCode": "93260-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.8519,
+    "longitude": -51.1825
+  },
+  "sameAs": [
+    "https://www.instagram.com/rocknapraca_",
+    "https://www.facebook.com/rocknapracaesteio"
+  ]
+}
   ]
 }
   </script>
@@ -114,7 +140,7 @@
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
       <a href="index.html">
-        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp" alt="Rock na Praça logotipo e simbolo" width="130"
+        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp" alt="Rock na Praça site oficial" width="130"
           height="80" style="width: 130px; height: auto;">
       </a>
     </div>
@@ -140,13 +166,18 @@
 
   <main>
 
-    <section class="hero-secao" aria-labelledby="main-event-title">
+    <section class="hero-secao" aria-labelledby="main-event-title" itemscope itemtype="https://schema.org/Event">
       <div class="hero-banner">
         <!--<div class="hero-adiamento">
           EVENTO ADIADO!
         </div>-->
 
         <div class="hero-esquerda">
+          <meta itemprop="name" content="Rock na Praça Abril 2026">
+          <meta itemprop="startDate" content="2026-04-12T15:00">
+          <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
+          <meta itemprop="eventAttendanceMode" content="https://schema.org/OfflineEventAttendanceMode">
+          <link itemprop="url" href="https://www.rocknapraca.com/">
 
           <div class="insigna-container">
             <span class="insignia-patrimonio">
@@ -155,17 +186,17 @@
           </div>
 
           <h1 id="main-event-title" class="hero-titulo">
-            Rock na Praça <span class="sub-titulo-oficial">• Março 2026</span>
+            Rock na Praça <span class="sub-titulo-oficial">• Abril 2026</span>
           </h1>
 
           <h2 class="hero-subtitulo">
-            Esteio celebra seu aniversário com muito Rock Underground
+            Save The Date!
           </h2>
 
           <div class="hero-meta">
             <p>
               <span class="icon">📅</span>
-              <time datetime="2026-03-01T15:00">Domingo, <strong>01 de Março de 2026</strong> • 15h</time>
+              <time datetime="2026-04-12T15:00">Domingo, <strong>12 de Abril de 2026</strong> • 15h</time>
             </p>
 
             <address class="hero-localizacao">
@@ -181,10 +212,10 @@
           <div class="hero-actions">
 
             <a href="/programacao" class="hero-link">
-              Programação de Março →
+              Programação de Abril →
             </a>
 
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rock+na+Praça&dates=20260301T180000Z/20260302T010000Z&details=Aniversário+de+Esteio+-+Evento+gratuito&location=Praça+Coração+de+Maria"
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rock+na+Praça&dates=20260412T180000Z/20260413T010000Z&details=Evento+gratuito&location=Praça+Coração+de+Maria"
               target="_blank" rel="noopener" class="btn btn-calendar"
               aria-label="Adicionar Rock na Praça ao Google Agenda">
               Adicionar ao Google agenda
@@ -195,9 +226,10 @@
 
         <!-- LADO DIREITO (CARTAZ) -->
         <div class="hero-direita">
-          <img src="/assets/pagina_index/flyer-350.webp" srcset="/assets/pagina_index/flyer-350.webp 350w, 
-                /assets/pagina_index/flyer-700.webp 700w" sizes="(max-width: 600px) 350px, 700px" class="hero-cartaz"
-            alt="Cartaz oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
+          <img src="/assets/pagina_index/flyer-abril-350.jpeg" srcset="/assets/pagina_index/flyer-abril-350.jpeg 350w, 
+                /assets/pagina_index/flyer-abril-700.jpeg 700w" sizes="(max-width: 600px) 350px, 700px" class="hero-cartaz"
+            title="Line-up oficial Rock na Praça Abril 2026 em Esteio"
+            alt="Save the date oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
             fetchpriority="high">
         </div>
 
@@ -224,10 +256,11 @@
     </div>
 
     <section class="resumo-container">
-      <h2>Rock na Praça: Música, História e Resistência </h2>
-      <p>Nascido em 2002 como um movimento de mobilização comunitária, o Rock na Praça consolidou-se como um dos
-        principais eventos gratuitos e itinerantes do Rio Grande do Sul. Reconhecido como Patrimônio Cultural Imaterial
-        de Esteio (Lei nº 8.147), o festival une música, skate e economia criativa em espaços públicos, promovendo a
+      <h2>A História do Rock na Praça: Música e Resistência</h2>
+      <p>Nascido em 2002 como um movimento de mobilização comunitária,
+        o Rock na Praça consolidou-se como um dos
+        principais<strong>eventos gratuitos</strong> e itinerantes do Rio Grande do Sul. Reconhecido como <strong>Patrimônio Cultural Imaterial
+        de Esteio (Lei nº 8.147)</strong>, o festival une música, skate e economia criativa em espaços públicos, promovendo a
         cidadania e a diversidade. Com mais de 150 edições realizadas e cerca de 700 bandas no currículo, o projeto
         transcende fronteiras, conectando a cena local ao cenário nacional e internacional.</p>
 
@@ -241,31 +274,34 @@
         <span class="tag-live">DOC</span>
         Documentário Rock na Praça - Primeiros anos.
       </p>
-</section>
-<!--ENQUETE-->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<button id="toggle-widget">Abrir Enquete</button>
-<div id="widget-inferior">
-  <div class="elfsight-app-e07a26ff-d52d-484a-9297-b9b81d5ce4a9" data-elfsight-app-lazy></div>  
-</div>
+    </section>
+    <!--ENQUETE-->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <button id="toggle-widget">Abrir Enquete</button>
+    <div id="widget-inferior">
+      <div class="elfsight-app-e07a26ff-d52d-484a-9297-b9b81d5ce4a9" data-elfsight-app-lazy></div>
+    </div>
 
-</main>
+  </main>
 
   <!-- RODAPÉ -->
- <footer class="rodape">
-      <div class="rodape-container">
-        <div class="redes-sociais">
-          <a href="https://instagram.com/rocknapraca_/" target="_blank"><img src="/assets/geral/instagram_logo.webp" alt="Instagram"></a>
-          <a href="https://facebook.com/rocknapracaesteio" target="_blank"><img src="/assets/geral/facebook_logo.webp" alt="Facebook"></a>
-          <a href="https://youtube.com/@Rocknapraca_RS" target="_blank"><img src="/assets/geral/youtube_logo.webp" alt="YouTube"></a>
-        </div>
-
-        <div class="creditos">
-          <p>© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-          <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank">Luana Santos</a></p>
-          <!--<p>Designer Gráfico: <a href="#" target="_blank">Guilherme Leal</a></p>-->
-        </div>
+  <footer class="rodape">
+    <div class="rodape-container">
+      <div class="redes-sociais">
+        <a href="https://instagram.com/rocknapraca_/" target="_blank"><img src="/assets/geral/instagram_logo.webp"
+            alt="Instagram"></a>
+        <a href="https://facebook.com/rocknapracaesteio" target="_blank"><img src="/assets/geral/facebook_logo.webp"
+            alt="Facebook"></a>
+        <a href="https://youtube.com/@Rocknapraca_RS" target="_blank"><img src="/assets/geral/youtube_logo.webp"
+            alt="YouTube"></a>
       </div>
+
+      <div class="creditos">
+        <p>© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
+        <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank">Luana Santos</a></p>
+        <!--<p>Designer Gráfico: <a href="#" target="_blank">Guilherme Leal</a></p>-->
+      </div>
+    </div>
     </div>
   </footer>
   <script>
@@ -280,19 +316,19 @@
     }
   </script>
   <script>
-  const widget = document.getElementById("widget-inferior");
-  const botao = document.getElementById("toggle-widget");
+    const widget = document.getElementById("widget-inferior");
+    const botao = document.getElementById("toggle-widget");
 
-  botao.addEventListener("click", () => {
-    widget.classList.toggle("aberto");
+    botao.addEventListener("click", () => {
+      widget.classList.toggle("aberto");
 
-    if (widget.classList.contains("aberto")) {
-      botao.textContent = "Fechar";
-    } else {
-      botao.textContent = "Abrir Enquete";
-    }
-  });
-</script>
+      if (widget.classList.contains("aberto")) {
+        botao.textContent = "Fechar";
+      } else {
+        botao.textContent = "Abrir Enquete";
+      }
+    });
+  </script>
 </body>
 
 </html>
