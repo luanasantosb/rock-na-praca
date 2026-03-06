@@ -20,6 +20,17 @@ document.addEventListener("DOMContentLoaded", function() {
   document.head.appendChild(scriptVlibras);
 });
 
+/*=====ENQUETE======*/
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const script = document.createElement('script');
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.head.appendChild(script);
+  }, 5000); 
+});
+
 
 /*===== CABECALHO =====*/
 

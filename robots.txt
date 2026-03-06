@@ -1,5 +1,18 @@
 User-agent: *
 Allow: /
 
-# Indica o caminho do seu mapa do site para os buscadores
+# Bloqueia pastas de sistema e arquivos de configuração que não precisam ser indexados
+Disallow: /assets/CSS/
+Disallow: /assets/JS/
+Disallow: /manifest.json
+Disallow: /busca?q=
+
+# Protege a área de checkout da loja ou painéis (se houver)
+Disallow: /carrinho/
+Disallow: /finalizar-compra/
+
+# Crawl-delay ajuda se o servidor for compartilhado e ficar lento
+Crawl-delay: 1
+
+# Caminho absoluto para o Sitemap
 Sitemap: https://www.rocknapraca.com/sitemap.xml

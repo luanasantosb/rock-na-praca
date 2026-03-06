@@ -8,49 +8,49 @@
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>Rock na Praça: Site Oficial | Agenda e Cultura em Esteio - RS</title>
+  <title>Rock na Praça Esteio 2026: Programação, Inscrições e Agenda de Shows</title>
   <meta name="description"
-    content="Rock na Praça: Patrimônio Cultural de Esteio/RS. Fomento à cultura underground, democratização do acesso à música e impacto social através do rock gaúcho.">
+    content="Site Oficial do Rock na Praça em Esteio/RS. Confira a agenda de shows, bandas confirmadas e informações sobre o patrimônio cultural do rock gaúcho. Entrada gratuita!">
   <link rel="canonical" href="https://www.rocknapraca.com/">
+
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="rating" content="general">
-  <meta name="language" content="Portuguese">
   <meta name="geo.region" content="BR-RS">
   <meta name="geo.placename" content="Esteio">
+  <meta name="geo.position" content="-29.8519;-51.1825">
+  <meta name="ICBM" content="-29.8519, -51.1825">
 
   <link rel="icon" type="image/png" href="/assets/geral/rock-na-praca_favicon.png">
   <link rel="apple-touch-icon" href="/assets/geral/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
 
-  <meta http-equiv="X-Frame-Options" content="DENY">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.google-analytics.com">
-  <link rel="preload" as="image" href="/assets/pagina_index/flyer-700.webp" fetchpriority="high">
+  <link rel="preconnect" href="https://elfsightcdn.com" crossorigin>
+  <link rel="preconnect" href="https://universe-static.elfsightcdn.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="assets/CSS/estilo.css">
+
+
   <link rel="preload" href="/assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="/assets/CSS/estilo.css">
+
   <script src="/assets/JS/script.js" defer></script>
-  <link rel="manifest" href="/manifest.json">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Rock na Praça">
-  <meta name="apple-mobile-web-app-title" content="Rock na Praça">
+  <meta property="og:site_name" content="Rock na Praça Oficial">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:url" content="https://www.rocknapraca.com/">
-  <meta property="og:title" content="Rock na Praça | Projeto de Fomento e Circulação Cultural no RS">
+  <meta property="og:title" content="Rock na Praça Esteio | O Site Oficial do Festival">
   <meta property="og:description"
-    content="Patrimônio público que une música, ocupação urbana e gratuidade. Saiba como apoiar o maior evento itinerante de rock do RS.">
+    content="Acompanhe as próximas edições, confira o line-up das bandas e saiba tudo sobre o Patrimônio Cultural de Esteio. Entrada gratuita!">
   <meta property="og:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Público assistindo o show de uma banda na Praça Coração de Maria em Esteio/RS">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rock na Praça | Projeto de Fomento e Circulação Cultural no RS">
-  <meta name="twitter:description"
-    content="Uma iniciativa de impacto cultural que une música, ocupação urbana e gratuidade. Patrimônio Cultural de Esteio/RS.">
-  <meta name="twitter:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
+  <meta name="twitter:site" content="@rocknapraca">
 
   <script>
     const loadGTM = () => {
@@ -63,75 +63,93 @@
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', 'G-Z7RKDPPXTG');
+      gtag('config', 'G-Z7RKDPPXTG', { 'anonymize_ip': true });
     };
     ['scroll', 'mousemove', 'touchstart'].forEach(evt => window.addEventListener(evt, loadGTM, { once: true, passive: true }));
   </script>
 
   <script type="application/ld+json">
- {
+{
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.rocknapraca.com/#website",
+      "url": "https://www.rocknapraca.com/",
+      "name": "Rock na Praça - Portal Oficial",
+      "description": "Programação completa, inscrições para bandas, loja oficial e FAQ do maior festival de rock gratuito de Esteio.",
+      "publisher": {
+        "@id": "https://www.rocknapraca.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.rocknapraca.com/busca?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
       "@type": "Organization",
       "@id": "https://www.rocknapraca.com/#organization",
-      "name": "Rock na Praça - Patrimônio Cultural e Produções",
+      "name": "Rock na Praça - Patrimônio Cultural",
       "url": "https://www.rocknapraca.com/",
-      "foundingDate": "2002-05-29", 
-      "logo": {
-        "@type": "ImageObject",
-        "url": "/assets/geral/share-image.jpg"
-      },
-      "description": "Instituição cultural fundada em 2002, responsável pelo Rock na Praça, evento reconhecido como patrimônio cultural imaterial de Esteio/RS (Lei nº 8.147/2022).",
-      "award": "Patrimônio Cultural Imaterial de Esteio (Lei nº 8.147/2022)",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Esteio",
-        "addressRegion": "RS",
-        "addressCountry": "BR"
-      }
+      "logo": "https://www.rocknapraca.com/assets/geral/share-image.webp",
+      "sameAs": [
+        "https://www.instagram.com/rocknapraca_",
+        "https://www.facebook.com/rocknapracaesteio"
+      ]
     },
     {
       "@type": "EventSeries",
-      "@id": "https://www.rocknapraca.com/#series",
-      "name": "Circuito Cultural Rock na Praça",
-      "description": "Festival itinerante de rock e fomento cultural realizado desde 2001 no Rio Grande do Sul. Um bem cultural e patrimônio público da cidade de Esteio.",
-      "organizer": { "@id": "https://www.rocknapraca.com/#organization" },
-      "isAccessibleForFree": true,
-      "keywords": "Rock na Praça, Festival de Rock, Esteio, Patrimônio Cultural, Música Independente",
-      "location": { 
-        "@type": "Place", 
-        "name": "Espaços Públicos do Rio Grande do Sul" 
+      "name": "Festival Rock na Praça",
+      "description": "Evento gratuito de rock e cultura independente",
+      "location": {
+        "@type": "Place",
+        "name": "Praça Coração de Maria",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Esteio",
+          "addressRegion": "RS",
+          "addressCountry": "BR"
+        }
+      },
+      "organizer": {
+        "@id": "https://www.rocknapraca.com/#organization"
       }
     },
     {
-  "@type": "LocalBusiness",
-  "name": "Rock na Praça",
-  "image": "https://www.rocknapraca.com/assets/geral/share-image.jpg",
-  "@id": "https://www.rocknapraca.com/",
-  "url": "https://www.rocknapraca.com/",
-  "telephone": "", 
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Praça Coração de Maria",
-    "addressLocality": "Esteio",
-    "addressRegion": "RS",
-    "postalCode": "93260-000",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -29.8519,
-    "longitude": -51.1825
-  },
-  "sameAs": [
-    "https://www.instagram.com/rocknapraca_",
-    "https://www.facebook.com/rocknapracaesteio"
+      "@type": "ItemList",
+      "@id": "https://www.rocknapraca.com/#main-menu",
+      "name": "Menu de Navegação",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Sobre",
+          "url": "https://www.rocknapraca.com/sobre/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Inscrição de Bandas",
+          "url": "https://www.rocknapraca.com/inscricao-bandas/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Loja Oficial",
+          "url": "https://www.rocknapraca.com/loja/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Dúvidas e Contato",
+          "url": "https://www.rocknapraca.com/duvidas-e-contato/"
+        }
+      ]
+    }
   ]
 }
-  ]
-}
-  </script>
+</script>
 
 </head>
 
@@ -139,27 +157,35 @@
   <!--  CABEÇALHO  -->
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
-      <a href="index.html">
-        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp" alt="Rock na Praça site oficial" width="130"
-          height="80" style="width: 130px; height: auto;">
+
+      <a href="/" style="display: inline-block;">
+        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp"
+          srcset="/assets/geral/rock-na-praca_logotipo_simbolo.webp 260w" sizes="130px"
+          title="Ir para a página inicial do Rock na Praça" alt="Logotipo e simbolo do rock na praça" width="130"
+          height="82" style="width: 130px; height: auto; display: block;" loading="eager">
       </a>
+
     </div>
 
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
-    <nav class="cabecalho-menu" id="menu">
-      <a href="/sobre/">Sobre</a>
+    <nav class="cabecalho-menu" id="menu" role="navigation" aria-label="Menu Principal" itemscope="itemscope"
+      itemtype="https://schema.org/SiteNavigationElement">
+      <a itemprop="url" href="/sobre/" title="Saiba mais sobre a história do Rock na Praça"><span
+          itemprop="name"></span>Sobre</a>
       <div class="menu-item">
-        <button class="menu-toggle" aria-expanded="false">
+        <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
           Participe
         </button>
         <div class="submenu">
-          <a href="/inscricao-bandas/">Bandas</a>
-          <a href="/inscricao-feira/">Economia Criativa</a>
+          <a itemprop="url" href="/inscricao-bandas/" title="Inscrições para bandas de Rock"><span
+              itemprop="name">Bandas</span></a>
+          <a itemprop="url" href="/inscricao-feira/" title="Venda na nossa feira de economia criativa"><span
+              itemprop="name">Economia Criativa</span></a>
         </div>
       </div>
-      <a href="/loja/">Loja</a>
-      <a href="/duvidas-e-contato/">Dúvidas e Contato</a>
+      <a itemprop="url" href="/loja/" title="Produtos oficiais Rock na Praça"><span itemprop="name">Loja</span></a>
+      <a itemprop="url" href="/duvidas-e-contato/"><span itemprop="name">Dúvidas e Contato</span></a>
     </nav>
 
   </header>
@@ -168,40 +194,49 @@
 
     <section class="hero-secao" aria-labelledby="main-event-title" itemscope itemtype="https://schema.org/Event">
       <div class="hero-banner">
-        <!--<div class="hero-adiamento">
-          EVENTO ADIADO!
-        </div>-->
-
         <div class="hero-esquerda">
-          <meta itemprop="name" content="Rock na Praça Abril 2026">
+          <meta itemprop="name" content="Rock na Praça Esteio - Edição de Abril 2026">
           <meta itemprop="startDate" content="2026-04-12T15:00">
+          <meta itemprop="description"
+            content="O maior festival de rock gratuito de Esteio. Patrimônio Cultural com shows ao vivo na Praça Coração de Maria.">
           <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
           <meta itemprop="eventAttendanceMode" content="https://schema.org/OfflineEventAttendanceMode">
           <link itemprop="url" href="https://www.rocknapraca.com/">
 
+          <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="0">
+            <meta itemprop="priceCurrency" content="BRL">
+            <link itemprop="availability" href="https://schema.org/InStock">
+          </div>
+
           <div class="insigna-container">
             <span class="insignia-patrimonio">
-              <span class="insignia-icon">🏛️</span> Patrimônio Cultural • Lei 8.147
+              <span class="insignia-icon">🏛️</span> Patrimônio Cultural de Esteio • Lei 8.147
             </span>
           </div>
 
           <h1 id="main-event-title" class="hero-titulo">
-            Rock na Praça <span class="sub-titulo-oficial">• Abril 2026</span>
+            Rock na Praça Esteio <span class="sub-titulo-oficial">Edição de Abril 2026</span>
           </h1>
 
           <h2 class="hero-subtitulo">
-            Save The Date!
+            Prepare-se: o <strong>Festival de Rock</strong> é no segundo domingo do mês!
           </h2>
 
           <div class="hero-meta">
             <p>
               <span class="icon">📅</span>
-              <time datetime="2026-04-12T15:00">Domingo, <strong>12 de Abril de 2026</strong> • 15h</time>
+              <time itemprop="startDate" datetime="2026-04-12T15:00">Domingo, <strong>12 de Abril de 2026</strong> •
+                15h</time>
             </p>
 
-            <address class="hero-localizacao">
+            <address class="hero-localizacao" itemprop="location" itemscope itemtype="https://schema.org/Place">
               <span class="icon">📍</span>
-              Praça Coração de Maria — <strong>Esteio, RS</strong>
+              <span itemprop="name">Praça Coração de Maria</span> —
+              <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <strong><span itemprop="addressLocality">Esteio</span>, <span
+                    itemprop="addressRegion">RS</span></strong>
+              </span>
             </address>
 
             <p class="hero-destaque">
@@ -210,33 +245,27 @@
           </div>
 
           <div class="hero-actions">
-
             <a href="/programacao" class="hero-link">
-              Programação de Abril →
-            </a>
-
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Rock+na+Praça&dates=20260412T180000Z/20260413T010000Z&details=Evento+gratuito&location=Praça+Coração+de+Maria"
-              target="_blank" rel="noopener" class="btn btn-calendar"
-              aria-label="Adicionar Rock na Praça ao Google Agenda">
-              Adicionar ao Google agenda
+              Ver Programação Completa Abril →
             </a>
           </div>
-
         </div>
 
         <!-- LADO DIREITO (CARTAZ) -->
         <div class="hero-direita">
-          <img src="/assets/pagina_index/flyer-abril-350.jpeg" srcset="/assets/pagina_index/flyer-abril-350.jpeg 350w, 
-                /assets/pagina_index/flyer-abril-700.jpeg 700w" sizes="(max-width: 600px) 350px, 700px" class="hero-cartaz"
-            title="Line-up oficial Rock na Praça Abril 2026 em Esteio"
-            alt="Save the date oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
-            fetchpriority="high">
-        </div>
-
+        <img src="/assets/pagina_index/flyer-abril-700.jpeg" 
+             srcset="/assets/pagina_index/flyer-abril-350.jpeg 350w, /assets/pagina_index/flyer-abril-700.jpeg 700w" 
+             sizes="(max-width: 600px) 280px, 700px" 
+             class="hero-cartaz"
+             title="Programação Rock na Praça Esteio - Abril 2026"
+             alt="Cartaz oficial do Rock na Praça Esteio com o line-up das bandas da edição de abril" 
+             width="350" height="467"
+             fetchpriority="high">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="contador-container">
+    <div class="contador-container" aria-label="Estatísticas do Festival">
       <div class="contador-item">
         <span class="contador-numero" data-target="23">0</span>
         <p class="contador-texto">anos de existência</p>
@@ -258,23 +287,24 @@
     <section class="resumo-container">
       <h2>A História do Rock na Praça: Música e Resistência</h2>
       <p>Nascido em 2002 como um movimento de mobilização comunitária,
-        o Rock na Praça consolidou-se como um dos
-        principais<strong>eventos gratuitos</strong> e itinerantes do Rio Grande do Sul. Reconhecido como <strong>Patrimônio Cultural Imaterial
-        de Esteio (Lei nº 8.147)</strong>, o festival une música, skate e economia criativa em espaços públicos, promovendo a
+        o <strong>Rock na Praça</strong> consolidou-se como um dos
+        principais<strong>eventos gratuitos</strong> e itinerantes do Rio Grande do Sul. Reconhecido como
+        <strong>Patrimônio Cultural Imaterial
+          de Esteio (Lei nº 8.147)</strong>, o festival une música, skate e economia criativa em espaços públicos,
+        promovendo a
         cidadania e a diversidade. Com mais de 150 edições realizadas e cerca de 700 bandas no currículo, o projeto
-        transcende fronteiras, conectando a cena local ao cenário nacional e internacional.</p>
-
-
-      <div class="resumo-video">
-        <lite-youtube videoid="RoGtOp9N05U" playlabel="Assistir documentário"
-          style="background-image: url('assets/pagina_index/hqdefault.webp');">
-        </lite-youtube>
-      </div>
-      <p class="legenda-video">
-        <span class="tag-live">DOC</span>
-        Documentário Rock na Praça - Primeiros anos.
+        transcende fronteiras, conectando a cena local ao cenário nacional e internacional.
       </p>
-    </section>
+
+
+   <div class="resumo-video" itemscope itemtype="https://schema.org/VideoObject">
+      <meta itemprop="name" content="Documentário Rock na Praça - História do Rock em Esteio">
+      <lite-youtube videoid="RoGtOp9N05U" playlabel="Assistir documentário sobre o Rock na Praça"
+        style="background-image: url('assets/pagina_index/hqdefault.webp');">
+      </lite-youtube>
+    </div>
+  </section>
+
     <!--ENQUETE-->
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <button id="toggle-widget">Abrir Enquete</button>
