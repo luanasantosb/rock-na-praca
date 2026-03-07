@@ -23,23 +23,23 @@
   <link rel="apple-touch-icon" href="/assets/geral/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
 
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://elfsightcdn.com" crossorigin>
-  <link rel="preconnect" href="https://universe-static.elfsightcdn.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="assets/CSS/estilo.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link rel="preload" href="/assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" href="/assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/CSS/estilo.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
+<script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js"></script>
+<script src="/assets/JS/script.js" defer></script>
 
-  <script src="/assets/JS/script.js" defer></script>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://elfsightcdn.com">
+<link rel="dns-prefetch" href="https://universe-static.elfsightcdn.com">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Rock na Praça Oficial">
@@ -268,8 +268,10 @@
 
         <!-- LADO DIREITO (CARTAZ) -->
         <div class="hero-direita">
-          <img src="/assets/pagina_index/flyer-abril-350.jpeg" srcset="/assets/pagina_index/flyer-abril-350.webp 350w, 
-             /assets/pagina_index/flyer-abril-700.webp 700w" sizes="(max-width: 600px) 280px, 700px"
+          <img src="/assets/pagina_index/flyer-abril-350.webp" 
+          srcset="/assets/pagina_index/flyer-abril-350.webp 350w, 
+             /assets/pagina_index/flyer-abril-700.webp 700w" 
+             sizes="(max-width: 600px) 280px, 700px"
             class="hero-cartaz" alt="Cartaz oficial do Rock na Praça Esteio com o line-up das bandas" width="350"
             height="467" fetchpriority="high">
         </div>
@@ -306,8 +308,7 @@
         cidadania e a diversidade. Com mais de 150 edições realizadas e cerca de 700 bandas no currículo, o projeto
         transcende fronteiras, conectando a cena local ao cenário nacional e internacional.
       </p>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
-
+   
       <div class="resumo-video" itemscope itemtype="https://schema.org/VideoObject">
         <meta itemprop="name" content="Rock na Praça - Primeiros anos (documentário)">
         <meta itemprop="description"
@@ -323,9 +324,6 @@
           </button>
         </lite-youtube>
       </div>
-
-      <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js"></script>
-
     </section>
 
     <!--ENQUETE-->
