@@ -1319,12 +1319,6 @@ lite-youtube:hover {
   font-family: var(--fonte-textos);
 }
 
-.aviso {
-  color: red;
-  padding: 0.5rem;
-  font-family: var(--fonte-textos);
-  background-color: rgba(255, 0, 0, 0.1);
-}
 
 .inscricao-regras ul {
   list-style-position: inside;
@@ -1344,6 +1338,14 @@ lite-youtube:hover {
   line-height: 1.6;
 }
 
+#mensagemTopo {
+  color: var(--rosa);
+  text-transform: uppercase;
+  padding: 0.5rem;
+  font-family: var(--fonte-textos);
+  font-size: 1.4rem;
+  background-color: var(--overlay-dark);
+}
 
 .inscricao-detalhes {
   text-transform: uppercase;

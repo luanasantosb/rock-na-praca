@@ -31,7 +31,7 @@
   <meta property="og:description"
     content="Exponha sua marca na Feira de Economia Criativa do Rock na Praça. Inscrições abertas para o circuito 2026.">
   <meta property="og:url" content="https://www.rocknapraca.com/inscricao-feira/">
-    <meta property="og:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
+  <meta property="og:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Inscrição de Estande | Feira de Economia Criativa">
@@ -126,7 +126,7 @@
   <!-- CABEÇALHO -->
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
-         <a href="/" style="display: inline-block;">
+      <a href="/" style="display: inline-block;">
         <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp"
           srcset="/assets/geral/rock-na-praca_logotipo_simbolo.webp 260w" sizes="130px"
           title="Ir para a página inicial do Rock na Praça" alt="Logotipo e simbolo do rock na praça" width="130"
@@ -188,7 +188,7 @@
         </ul>
       </section>
 
-      <div id="mensagem" role="status" aria-live="polite"></div>
+      <div id="mensagemTopo" role="status" aria-live="polite"></div>
 
       <details class="inscricao-detalhes">
         <summary>Realizar inscrição</summary>
@@ -197,12 +197,10 @@
           <div id="status-vagas"></div>
 
           <div class="inscricao-aviso">
-            <p>
-              Apenas 15 bancas<br>
-              📅 12/04/2026<br>
-              📍 Praça Coração de Maria – Esteio<br>
-              Pix R$ 50 (CPF 831.611.630-87 – PagBank)
-            </p>
+            <p><strong>Inscrições abertas para a edição de 12/04</strong></p>
+            <p>📍 Praça Coração de Maria – Esteio</p>
+              <p>💰 Taxa de inscrição: R$ 50</p>
+              <p>💳 Pix: CPF 831.611.630-87 (PagBank)</p>
           </div>
 
           <fieldset>
@@ -250,8 +248,10 @@
         <script>
           document.addEventListener("DOMContentLoaded", () => {
             const URL = "https://script.google.com/macros/s/AKfycbzaoKZ1bNkgBlJ0l-t02YCqqX7vUE-kTe541iWpbYmWCnY7LHZiWlQ3uLue3Tt1S2XXkw/exec";
+
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
+            const msgTopo = document.getElementById("mensagemTopo");
             const botao = document.getElementById("botaoEnviar");
 
             if (!form) return;
@@ -259,15 +259,25 @@
             fetch(URL)
               .then(r => r.json())
               .then(data => {
+
+                if (data.total !== undefined && data.limite !== undefined) {
+
+                  const vagasRestantes = data.limite - data.total;
+
+                  msgTopo.textContent = `☠️ Restam apenas ${vagasRestantes} vagas`;
+                  msgTopo.className = "aviso";
+
+                }
                 if (!data.abertas) {
                   form.style.display = "none";
-                  msg.textContent = data.mensagem || " ❌ Inscrições encerradas.";
-                  msg.className = "erro";
+                  msgTopo.textContent = data.mensagem || "❌ Inscrições encerradas.";
+                  msgTopo.className = "erro";
                 }
+
               })
               .catch(() => {
-                msg.textContent = "Erro ao verificar inscrições.";
-                msg.className = "erro";
+                msgTopo.textContent = "Erro ao verificar inscrições.";
+                msgTopo.className = "erro";
               });
 
             form.addEventListener("submit", async (e) => {
