@@ -271,6 +271,7 @@ h3 {
 .hero-secao {
   min-height: 100vh;
   padding: 0 1.5rem;
+  position: relative;
 }
 
 .hero-banner {
@@ -280,6 +281,25 @@ h3 {
   justify-content: center;
   gap: 3rem;
   max-width: 1200px;
+}
+
+.hero-adiamento {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  display: inline-block;
+  font-family: var(--fonte-titulos);
+  font-size: clamp(1.4rem, 5vw, 10rem); 
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #ff0000;
+  border: 10px dashed #ff0000;
+  background: rgba(0,0,0,0.65);
+  padding: 110px 250px;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .hero-esquerda {
@@ -394,25 +414,6 @@ h3 {
 
 .hero-cartaz:hover {
   transform: rotate(0deg) scale(1.02);
-}
-
-.hero-adiamento {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  font-family: 'Impact', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: red;
-  border: 5px dashed red;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  text-align: center;
-  filter: contrast(140%) saturate(120%);
-  pointer-events: none;
-  font-size: clamp(2rem, 8vw, 5rem);
-  padding: clamp(15px, 4vw, 40px);
 }
 
 /* ==== Seção Contador ====*/

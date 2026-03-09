@@ -264,22 +264,19 @@
         </form>
 
         <script>
-          const URL = "https://script.google.com/macros/s/AKfycbwmDN-8gGRqZo0FUS-FV6_6Yr8vZNMKNIes3wWx4vRqLSXWjs5dHvhvk_amcvxbgfF_/exec";
+          const URL = "https://script.google.com/macros/s/AKfycbxc4AcvQ7mY3YTtrjjkb1SjejNqbJa_7GAM_g-V1JDas7YPejnfB31kcxztwuQgV1NJ/exec";
 
           const form = document.getElementById("formSite");
           const msg = document.getElementById("mensagem");
           const botao = document.querySelector("button");
 
-          // 1. Variável de controle global (A trava mestre)
           let enviando = false;
 
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            // 2. Se já estiver enviando, ignora qualquer novo clique imediatamente
             if (enviando) return;
 
-            // Validação básica
             if (
               !form.banda_nome.value.trim() ||
               !form.banda_cidade.value.trim() ||
@@ -292,15 +289,14 @@
               return;
             }
 
-            // 3. Ativa a trava e desabilita o visual ANTES de qualquer await
+          
             enviando = true;
             botao.disabled = true;
-            botao.textContent = "Aguarde, processando..."; // Feedback claro
+            botao.textContent = "Aguarde, processando..."; 
             msg.textContent = "Preparando arquivos...";
             msg.className = "";
 
             try {
-              // O processamento Base64 acontece com o botão já travado pela variável 'enviando'
               const releaseFile = await base64(document.getElementById("release").files[0]);
               const mapaFile = await base64(document.getElementById("mapa").files[0]);
 
@@ -330,13 +326,11 @@
                 msg.textContent = "Inscrição realizada com sucesso!";
                 msg.className = "sucesso";
                 form.reset();
-                // 4. IMPORTANTE: Não voltamos 'enviando' para false aqui 
-                // para evitar que ele envie de novo sem dar refresh.
+                
                 botao.textContent = "Enviado!";
               } else {
                 msg.textContent = json.mensagem;
                 msg.className = "erro";
-                // Se o servidor deu erro, permitimos tentar de novo
                 enviando = false;
                 botao.disabled = false;
                 botao.textContent = "Enviar Inscrição";
@@ -345,7 +339,6 @@
             } catch (err) {
               msg.textContent = "Erro de conexão. Verifique sua internet.";
               msg.className = "erro";
-              // Em caso de erro técnico, libera o botão para nova tentativa
               enviando = false;
               botao.disabled = false;
               botao.textContent = "Tentar Novamente";
