@@ -6,53 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-  <title>Sobre o Rock na Praça | Patrimônio Cultural do Rio Grande do Sul</title>
+  <title>Rock na Praça: História e Patrimônio Cultural de Esteio/RS</title>
+
   <meta name="description"
-    content="Conheça a trajetória do Rock na Praça, evento que há mais de 20 anos fortalece a cena autoral e a ocupação cultural em praças públicas do RS. Saiba mais!">
+    content="Descubra a trajetória do Rock na Praça, Patrimônio Cultural de Esteio (Lei nº 8147/2022). Há 24 anos fomentando o rock autoral e a cultura no Rio Grande do Sul.">
+
+  <link rel="stylesheet" href="/assets/CSS/estilo.css">
+  <link rel="preload" href="/assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
+
   <link rel="canonical" href="https://www.rocknapraca.com/sobre/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Balaiada">
   <meta name="theme-color" content="#000000">
 
-  <link rel="icon" type="image/png" href="/assets/geral/rock-na-praca_favicon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300..800&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="/assets/CSS/estilo.css">
-  <script src="/assets/JS/script.js" defer></script>
-  <link rel="manifest" href="/manifest.json">
- 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Rock na Praça">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Sobre o Rock na Praça | História e Cultura Underground">
-  <meta property="og:description"
-    content="Evento itinerante que valoriza bandas autorais e a ocupação de espaços públicos. Patrimônio Cultural de Esteio/RS.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Rock na Praça Oficial">
+  <meta property="og:title" content="A História do Rock na Praça | Patrimônio Cultural de Esteio">
   <meta property="og:url" content="https://www.rocknapraca.com/sobre/">
-   <meta property="og:image" content="https://www.rocknapraca.com/assets/geral/share-image.jpg">
-  <meta property="og:image:alt" content="Público e bandas celebrando o rock autoral no Rio Grande do Sul">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:description"
+    content="Conheça o festival que se tornou lei e patrimônio cultural. Mais de duas décadas de rock autoral e ocupação pública.">
 
-  <script>
-    function loadGTM() {
-      if (window.gtmLoaded) return;
-      window.gtmLoaded = true;
-      var script = document.createElement('script');
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z7RKDPPXTG";
-      script.async = true;
-      document.head.appendChild(script);
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-Z7RKDPPXTG');
-    }
-    window.addEventListener('scroll', loadGTM, { once: true });
-    window.addEventListener('mousemove', loadGTM, { once: true });
-    window.addEventListener('touchstart', loadGTM, { once: true });
-  </script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -62,42 +38,48 @@
         "@type": "AboutPage",
         "@id": "https://www.rocknapraca.com/sobre/#webpage",
         "url": "https://www.rocknapraca.com/sobre/",
-        "name": "Sobre o Rock na Praça",
-        "description": "História e missão do Rock na Praça, circuito itinerante de rock no Rio Grande do Sul.",
+        "name": "História do Rock na Praça",
+        "isPartOf": { "@id": "https://www.rocknapraca.com/#website" },
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rocknapraca.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Sobre" }
+            { "@type": "ListItem", "position": 1, "name": "Página Inicial", "item": "https://www.rocknapraca.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Sobre o Festival" }
           ]
-        },
-        "mainEntity": { "@id": "https://www.rocknapraca.com/#organization" }
+        }
       },
       {
         "@type": "Organization",
         "@id": "https://www.rocknapraca.com/#organization",
         "name": "Rock na Praça",
+        "alternateName": "Rock na Praça Esteio",
         "url": "https://www.rocknapraca.com",
-        "logo": "https://www.rocknapraca.com/assets/logos/Rocknapraca/rock-na-praca_logotipo_simbolo.webp",
-        "description": "Evento itinerante de rock gratuito no Rio Grande do Sul, Patrimônio Público e Cultural pela Lei Municipal nº 8147/2022.",
+        "logo": "https://www.rocknapraca.com/assets/geral/rock-na-praca_logotipo_simbolo.webp",
+        "description": "Patrimônio Público e Cultural de Esteio/RS pela Lei Municipal nº 8147/2022. Circuito itinerante de rock autoral fundado em 2002.",
         "foundingDate": "2002-05-29",
-        "areaServed": ["Esteio", "Canoas", "Sapucaia do Sul", "São Leopoldo", "Porto Alegre"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Esteio",
+          "addressRegion": "RS",
+          "addressCountry": "BR"
+        },
         "sameAs": [
+          "https://www.instagram.com/rocknapraca_",
           "https://www.facebook.com/rocknapracaesteio",
-          "https://www.instagram.com/rocknapraca_/",
           "https://www.youtube.com/@Rocknapraca_RS"
         ]
       }
     ]
   }
   </script>
+
 </head>
 
 <body>
   <!-- CABEÇALHO -->
   <header class="cabecalho">
     <div class="cabecalho-simbolo-logotipo">
-         <a href="/" style="display: inline-block;">
+      <a href="/" style="display: inline-block;">
         <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp"
           srcset="/assets/geral/rock-na-praca_logotipo_simbolo.webp 260w" sizes="130px"
           title="Ir para a página inicial do Rock na Praça" alt="Logotipo e simbolo do rock na praça" width="130"
@@ -107,96 +89,135 @@
 
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
-    <nav class="cabecalho-menu" id="menu">
-      <a class="active" href="/sobre/">Sobre</a>
+    <nav class="cabecalho-menu" id="menu" aria-label="Menu Principal" itemscope="itemscope"
+      itemtype="https://schema.org/SiteNavigationElement">
+
+      <a itemprop="url" href="/sobre/" title="Saiba mais sobre a história do Rock na Praça">
+        <span itemprop="name">Sobre o Festival</span>
+      </a>
+
       <div class="menu-item">
-        <button class="menu-toggle" aria-expanded="false">
+        <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
           Participe
         </button>
         <div class="submenu">
-          <a href="/inscricao-bandas/">Bandas</a>
-          <a href="/inscricao-feira/">Economia Criativa</a>
+          <a itemprop="url" href="/inscricao-bandas/" title="Inscrições para bandas de Rock">
+            <span itemprop="name">Inscrição de Bandas</span>
+          </a>
+          <a itemprop="url" href="/inscricao-feira/" title="Venda na nossa feira de economia criativa">
+            <span itemprop="name">Feira de Economia Criativa</span>
+          </a>
         </div>
       </div>
-      <a href="/loja/">Loja</a>
-      <a href="/duvidas-e-contato/">Dúvidas e contato</a>
+
+      <a itemprop="url" href="/loja/" title="Produtos oficiais Rock na Praça">
+        <span itemprop="name">Loja Oficial</span>
+      </a>
+
+      <a itemprop="url" href="/duvidas-e-contato/" title="Tire suas dúvidas ou entre em contato">
+        <span itemprop="name">Dúvidas e Contato</span>
+      </a>
+
     </nav>
 
   </header>
 
   <main>
-
-    <h1 class="visually-hidden">
-      Sobre o Rock na Praça
-    </h1>
-
     <div class="sobre-conteudo">
-
       <article class="sobre-texto">
-        <h2 id="titulo-sobre">Rock na Praça: Música, Cultura e História Urbana</h2>
+        <h1 id="titulo-sobre">Rock na Praça: Música, Cultura e História Urbana</h1>
 
-        <p>O Rock na Praça nasceu em 29 de maio de 2002, a partir de um convite do então Secretário de Cultura de Esteio
-          para integrar as atividades do Dia do Desafio, com o objetivo de mobilizar a comunidade e promover uma ação
-          cultural coletiva por meio da realização de uma “roda punk” com duração superior a quinze minutos. Na ocasião,
-          o
-          município de Esteio participou de uma disputa simbólica com uma cidade do México, obtendo resultado positivo.
-          Localizada na região metropolitana de Porto Alegre, Esteio é a cidade com o menor território do estado e da
-          Região Sul, sendo a 14ª menor do Brasil em área territorial, a aproximadamente 25 quilômetros da capital
-          gaúcha.</p>
-
-        <p>Consolidado como um evento urbano, público e gratuito, o Rock na Praça teve origem na Praça Coração de Maria,
-          espaço que abriga uma das primeiras pistas públicas de skate do Rio Grande do Sul, contribuindo para o
-          fortalecimento da cultura urbana e do skate no estado. Ao longo dos anos, o evento tornou-se itinerante,
-          ampliando sua atuação para outros municípios gaúchos, como Porto Alegre, São Leopoldo, Sapucaia do Sul e
-          Canoas,
-          cidades conectadas pelo sistema ferroviário, reforçando seu caráter acessível, coletivo e sustentável.</p>
-
-        <p>Em Esteio, o Rock na Praça é reconhecido como Patrimônio Cultural Imaterial, conforme a Lei Municipal nº
-          8.147.
-          Em âmbito estadual, tramita proposta legislativa para inclusão de festivais de música no calendário oficial do
-          Rio Grande do Sul, contemplando o evento, que também integra a Associação Brasileira de Festivais
-          Independentes
-          (ABRAFIN), consolidando seu reconhecimento institucional no cenário cultural.</p>
-
-        <p>
-          O evento caracteriza-se como um espaço democrático de difusão artística, reunindo artistas consagrados e
-          fomentando a formação de novos talentos. Ao longo de mais de duas décadas, tornou-se palco de estreias,
-          encontros e conexões que fortalecem a cena musical local e regional. Além disso, promove intercâmbio cultural
-          entre artistas, produtores e público, recebendo participantes de diferentes cidades, estados e países. Em
-          2019,
-          por exemplo, bandas de Esteio realizaram turnê no Uruguai, ampliando a projeção da produção cultural local.
+        <p>O <strong>Rock na Praça</strong> nasceu em 29 de maio de 2002,
+          a partir de um convite do então Secretário de Cultura de Esteio para integrar as atividades do Dia do Desafio,
+          com o objetivo de mobilizar a comunidade e promover uma ação cultural coletiva por meio da realização de uma
+          “roda punk” com duração superior a quinze minutos. Na ocasião, o município de Esteio participou de uma disputa
+          simbólica com uma cidade do México, obtendo resultado positivo. Localizada na região metropolitana de Porto
+          Alegre, Esteio é a cidade com o menor território do estado e da Região Sul, sendo a 14ª menor do Brasil em
+          área territorial, a aproximadamente 25 quilômetros da capital gaúcha.
         </p>
 
-        <p>
-          Ao longo de sua trajetória, o Rock na Praça já realizou mais de 150 edições e recebeu cerca de 700 bandas. Em
-          2015, foi registrado um DVD comemorativo, disponibilizado em plataformas digitais e no canal Music Box. Para
-          além da programação musical, o evento contempla feira de economia criativa, apresentações de dança, teatro e
-          poesia, roda de capoeira, espaços gastronômicos e área dedicada ao público infantil, promovendo convivência,
-          acesso à cultura e valorização da diversidade. O evento transforma os espaços públicos em ambientes de
-          encontro, expressão artística e cidadania, reafirmando seu papel como referência de cultura urbana no Rio
-          Grande
-          do Sul.
+        <h2>Origem e a Cultura do Skate</h2>
+        <p>Consolidado como um evento urbano, público e gratuito, o Rock na Praça teve origem na <strong>Praça Coração
+            de Maria</strong>, espaço que abriga uma das primeiras pistas públicas de skate do Rio Grande do Sul,
+          contribuindo para o fortalecimento da cultura urbana e do skate no estado. Ao longo dos anos, o evento
+          tornou-se itinerante, ampliando sua atuação para outros municípios gaúchos, como Porto Alegre, São Leopoldo,
+          Sapucaia do Sul e Canoas, cidades conectadas pelo sistema ferroviário, reforçando seu caráter acessível,
+          coletivo e sustentável.
         </p>
+
+        <h2>Reconhecimento como Patrimônio Cultural</h2>
+        <p>Em Esteio, o Rock na Praça é reconhecido como <strong>Patrimônio Cultural Imaterial</strong>, conforme a
+          <strong>Lei Municipal nº 8.147</strong>Em âmbito estadual, tramita proposta legislativa para inclusão de festivais de música no calendário oficial do Rio Grande do Sul, contemplando o evento, que também integra a Associação Brasileira de Festivais Independentes (ABRAFIN), consolidando seu reconhecimento institucional no cenário cultural.
+        </p>
+
+        <q>
+          O evento transforma os espaços públicos em ambientes de encontro, expressão artística e cidadania.
+        </q>
+
+        <section class="video-dvd">
+          <h2>DVD Rock na Praça: Edição Especial</h2>
+          <p>Assista ao registo oficial que celebra a trajetória e a energia das bandas no palco do festival:</p>
+
+          <lite-youtube videoid="HlRybDkrxck" playlabel="Assistir DVD Rock na Praça">
+          </lite-youtube>
+
+          <p class="video-caption">Registo gravado no aniversário de 15 anos do Rock na Praça.</p>
+        </section>
+
+        <h2>Mais de Duas Décadas de Rock Autoral</h2>
+        <p>Ao longo de sua trajetória, o Rock na Praça alcançou marcas expressivas:</p>
+        <ul>
+          <li>Mais de <strong>150 edições</strong> realizadas;</li>
+          <li>Cerca de <strong>700 bandas</strong> no palco;</li>
+          <li>Gravação de DVD comemorativo e exibição no canal Music Box;</li>
+          <li>Intercâmbio internacional com turnês no Uruguai.</li>
+        </ul>
+
+        <p>Além da música, o festival promove:</p>
+        <ul>
+          <li>Feira de Economia Criativa;</li>
+          <li>Rodas de Capoeira e Poesia;</li>
+          <li>Espaço Gastronômico e Área Kids.</li>
+        </ul>
       </article>
-
     </div>
   </main>
 
   <!-- RODAPÉ -->
- <footer class="rodape">
-      <div class="rodape-container">
-        <div class="redes-sociais">
-          <a href="https://instagram.com/rocknapraca_/" target="_blank"><img src="/assets/geral/instagram_logo.webp" alt="Instagram"></a>
-          <a href="https://facebook.com/rocknapracaesteio" target="_blank"><img src="/assets/geral/facebook_logo.webp" alt="Facebook"></a>
-          <a href="https://youtube.com/@Rocknapraca_RS" target="_blank"><img src="/assets/geral/youtube_logo.webp" alt="YouTube"></a>
-        </div>
+  <footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+    <div class="rodape-container">
 
-        <div class="creditos">
-          <p>© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-          <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank">Luana Santos</a></p>
-          <!--<p>Designer Gráfico: <a href="#" target="_blank">Guilherme Leal</a></p>-->
-        </div>
+      <div class="rodape-info">
+        <h3 itemprop="name">Rock na Praça</h3>
+        <p itemprop="description">Patrimônio Cultural e Imaterial de Esteio/RS</p>
+        <p>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Esteio</span>,
+            <span itemprop="addressRegion">RS</span> - Brasil
+          </span>
+        </p>
       </div>
+
+      <div class="redes-sociais">
+        <a href="https://instagram.com/rocknapraca_/" target="_blank" rel="me"
+          title="Siga o Rock na Praça no Instagram">
+          <img src="/assets/geral/instagram_logo.webp" alt="Instagram Oficial">
+        </a>
+        <a href="https://facebook.com/rocknapracaesteio" target="_blank" rel="me"
+          title="Curta nossa página no Facebook">
+          <img src="/assets/geral/facebook_logo.webp" alt="Facebook Oficial">
+        </a>
+        <a href="https://youtube.com/@Rocknapraca_RS" target="_blank" rel="me" title="Assista aos vídeos no YouTube">
+          <img src="/assets/geral/youtube_logo.webp" alt="YouTube Oficial">
+        </a>
+      </div>
+
+      <div class="creditos">
+        <p>© 2002–2026 <span itemprop="legalName">Rock na Praça</span>. Todos os direitos reservados.</p>
+        <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank" rel="nofollow">Luana
+            Santos</a></p>
+      </div>
+    </div>
   </footer>
 
 

@@ -136,20 +136,36 @@
 
     <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
-    <nav class="cabecalho-menu" id="menu">
-      <a href="/sobre/">Sobre</a>
-      <div class="menu-item">
-        <button class="menu-toggle" aria-expanded="false">
-          Participe
-        </button>
-        <div class="submenu">
-          <a href="/inscricao-bandas/">Bandas</a>
-          <a href="/inscricao-feira/">Economia Criativa</a>
-        </div>
-      </div>
-      <a href="/loja/">Loja</a>
-      <a class="active" href="/duvidas-e-contato/">Dúvidas e contato</a>
-    </nav>
+   <nav class="cabecalho-menu" id="menu" aria-label="Menu Principal" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+  
+  <a itemprop="url" href="/sobre/" title="Saiba mais sobre a história do Rock na Praça">
+    <span itemprop="name">Sobre o Festival</span>
+  </a>
+
+  <div class="menu-item">
+    <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
+      Participe
+    </button>
+    <div class="submenu">
+      <a itemprop="url" href="/inscricao-bandas/" title="Inscrições para bandas de Rock">
+        <span itemprop="name">Inscrição de Bandas</span>
+      </a>
+      <a itemprop="url" href="/inscricao-feira/" title="Venda na nossa feira de economia criativa">
+        <span itemprop="name">Feira de Economia Criativa</span>
+      </a>
+    </div>
+  </div>
+
+  <a itemprop="url" href="/loja/" title="Produtos oficiais Rock na Praça">
+    <span itemprop="name">Loja Oficial</span>
+  </a>
+
+  <a itemprop="url" href="/duvidas-e-contato/" title="Tire suas dúvidas ou entre em contato">
+    <span itemprop="name">Dúvidas e Contato</span>
+  </a>
+
+</nav>
+  
   </header>
   <main>
     <div class="faq-contato-conteudo">
@@ -223,24 +239,39 @@
     </div>
   </main>
   <!-- RODAPÉ -->
-  <footer class="rodape">
-    <div class="rodape-container">
-      <div class="redes-sociais">
-        <a href="https://instagram.com/rocknapraca_/" target="_blank"><img src="/assets/geral/instagram_logo.webp"
-            alt="Instagram"></a>
-        <a href="https://facebook.com/rocknapracaesteio" target="_blank"><img src="/assets/geral/facebook_logo.webp"
-            alt="Facebook"></a>
-        <a href="https://youtube.com/@Rocknapraca_RS" target="_blank"><img src="/assets/geral/youtube_logo.webp"
-            alt="YouTube"></a>
-      </div>
 
-      <div class="creditos">
-        <p>© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-        <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank">Luana Santos</a></p>
-        <!--<p>Designer Gráfico: <a href="#" target="_blank">Guilherme Leal</a></p>-->
-      </div>
+<footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+  <div class="rodape-container">
+    
+    <div class="rodape-info">
+      <h3 itemprop="name">Rock na Praça</h3>
+      <p itemprop="description">Patrimônio Cultural e Imaterial de Esteio/RS</p>
+      <p>
+        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="addressLocality">Esteio</span>, 
+          <span itemprop="addressRegion">RS</span> - Brasil
+        </span>
+      </p>
     </div>
-  </footer>
+
+    <div class="redes-sociais">
+      <a href="https://instagram.com/rocknapraca_/" target="_blank" rel="me" title="Siga o Rock na Praça no Instagram">
+        <img src="/assets/geral/instagram_logo.webp" alt="Instagram Oficial">
+      </a>
+      <a href="https://facebook.com/rocknapracaesteio" target="_blank" rel="me" title="Curta nossa página no Facebook">
+        <img src="/assets/geral/facebook_logo.webp" alt="Facebook Oficial">
+      </a>
+      <a href="https://youtube.com/@Rocknapraca_RS" target="_blank" rel="me" title="Assista aos vídeos no YouTube">
+        <img src="/assets/geral/youtube_logo.webp" alt="YouTube Oficial">
+      </a>
+    </div>
+
+    <div class="creditos">
+      <p>© 2002–2026 <span itemprop="legalName">Rock na Praça</span>. Todos os direitos reservados.</p>
+      <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank" rel="nofollow">Luana Santos</a></p>
+    </div>
+  </div>
+</footer>
 
 </body>
 

@@ -651,26 +651,37 @@ lite-youtube:hover {
 ======================= */
 
 /* ===== Seção Cabeçalho ===== */
+.programacao-conteudo{
+  margin-left: 180px;
+}
+
 .cabecalho-programacao {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--preto);
+  justify-content: flex-start;
+
+  background-color: transparent;
   color: var(--branco);
+
   position: fixed;
   top: 0;
   left: 0;
-  height: 400px;
-  width: 135px;
+
+  height: 70vh; 
+  width: 180px;
+
+  padding: 1rem 0;
   z-index: 1000;
 }
+
 
 .cabecalho-simbolo img {
   width: 120px;
   height: auto;
-  margin-bottom: 0.5rem;
-  margin-left: 0.8rem;
+  margin: 0 0 1rem 1rem;
 }
+
 
 .cabecalho-menu-programacao {
   display: flex;
@@ -679,23 +690,23 @@ lite-youtube:hover {
 }
 
 .cabecalho-menu-programacao a {
-  display: inline-block;
-  font-size: 1.5rem;
-  padding: 12px;
-  min-width: 44px;
-  min-height: 44px;
+  display: block;
+  font-size: 1.3rem;
+  padding: 12px 16px;
+
   font-family: var(--fonte-titulos);
   color: var(--branco);
   text-decoration: none;
-  transition: color 0.2s;
-  margin-left: 0.8rem;
+
+  transition: color 0.2s, background 0.2s;
 }
+
 
 .cabecalho-menu-programacao a:hover,
 .cabecalho-menu-programacao a:active {
   color: var(--rosa);
+  background: rgba(255,255,255,0.08);
 }
-
 /* ===== Seção conteudo ===== */
 
 .programacao-conteudo {
@@ -1219,7 +1230,7 @@ lite-youtube:hover {
   gap: 2rem;
 }
 
-.sobre-conteudo h2 {
+.sobre-conteudo h1 {
   font-size: clamp(1.8rem, 4vw, 2.3rem);
   margin: 0;
   text-transform: uppercase;
@@ -1230,6 +1241,16 @@ lite-youtube:hover {
   text-align: center;
 }
 
+.sobre-texto h2{
+   font-size: clamp(1.5rem, 4vw, 2rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--verde);
+  font-family: var(--fonte-titulos);
+  padding-left: 1rem;
+  text-align: center;
+}
 
 .sobre-texto {
   max-width: 75ch;
@@ -1241,6 +1262,28 @@ lite-youtube:hover {
   font-size: 1rem;
   color: var(--branco);
   font-family: var(--fonte-textos);
+}
+
+.sobre-texto q{
+  color:var(--branco);
+}
+
+.video-dvd {
+  margin: 40px 0;
+  text-align: center;
+}
+
+lite-youtube {
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.video-caption {
+  font-size: 0.9em;
+  color: var(--branco);
+  font-style: italic;
 }
 
 @media (max-width: 768px) {

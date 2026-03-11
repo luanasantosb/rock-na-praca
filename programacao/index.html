@@ -115,6 +115,7 @@
             <a href="#feira">Mercado Underground</a>
             <a href="#apoio">Apoio</a>
         </nav>
+
     </header>
 
     <main class="programacao-conteudo">
@@ -328,15 +329,17 @@
                     rel="noopener noreferrer">
                     <img src="/assets/pagina_programacao/lojas/Danieli_da_Rosa_logo.jpg" alt="Danieli da Rosa"
                         width="150" height="150"></a>
-            
-            </div>
-        </section>
 
-                <!-- <a href="https://www.instagram.com/horripilos" class="cartao-feira" target="_blank"
+                    <a href="https://www.instagram.com/horripilos" class="cartao-feira" target="_blank"
                     rel="noopener noreferrer">
                     <img src="/assets/pagina_programacao/lojas/Horripilos_logo.webp" alt="Horripilos" width="150"
                         height="150">
                 </a>
+
+            </div>
+        </section>
+
+        <!-- 
 
                 <a href="https://www.instagram.com/magiasdadeh/" class="cartao-feira" target="_blank"
                     rel="noopener noreferrer">
@@ -391,7 +394,7 @@
                     rel="noopener noreferrer">
                     <img src="/assets/pagina_programacao/lojas/Poucas-e-boas_logo.webp" alt="Poucas e Boas" width="150"
                         height="150"></a> -->
-            
+
 
         <!-- <section id="apoio"class="grupo-apoio">
                     <h2>Apoio</h2>
@@ -479,25 +482,42 @@
 
     </main>
     <!-- RODAPÉ -->
-    <footer class="rodape">
-        <div class="rodape-container">
-            <div class="redes-sociais">
-                <a href="https://instagram.com/rocknapraca_/" target="_blank"><img
-                        src="/assets/geral/instagram_logo.webp" alt="Instagram"></a>
-                <a href="https://facebook.com/rocknapracaesteio" target="_blank"><img
-                        src="/assets/geral/facebook_logo.webp" alt="Facebook"></a>
-                <a href="https://youtube.com/@Rocknapraca_RS" target="_blank"><img src="/assets/geral/youtube_logo.webp"
-                        alt="YouTube"></a>
-            </div>
+  <!-- RODAPÉ -->
+  <footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+    <div class="rodape-container">
 
-            <div class="creditos">
-                <p>© 2002–2026 Rock na Praça. Todos os direitos reservados.</p>
-                <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank">Luana Santos</a>
-                </p>
-                <!--<p>Designer Gráfico: <a href="#" target="_blank">Guilherme Leal</a></p>-->
-            </div>
-        </div>
-    </footer>
+      <div class="rodape-info">
+        <h3 itemprop="name">Rock na Praça</h3>
+        <p itemprop="description">Patrimônio Cultural e Imaterial de Esteio/RS</p>
+        <p>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Esteio</span>,
+            <span itemprop="addressRegion">RS</span> - Brasil
+          </span>
+        </p>
+      </div>
+
+      <div class="redes-sociais">
+        <a href="https://instagram.com/rocknapraca_/" target="_blank" rel="me"
+          title="Siga o Rock na Praça no Instagram">
+          <img src="/assets/geral/instagram_logo.webp" alt="Instagram Oficial">
+        </a>
+        <a href="https://facebook.com/rocknapracaesteio" target="_blank" rel="me"
+          title="Curta nossa página no Facebook">
+          <img src="/assets/geral/facebook_logo.webp" alt="Facebook Oficial">
+        </a>
+        <a href="https://youtube.com/@Rocknapraca_RS" target="_blank" rel="me" title="Assista aos vídeos no YouTube">
+          <img src="/assets/geral/youtube_logo.webp" alt="YouTube Oficial">
+        </a>
+      </div>
+
+      <div class="creditos">
+        <p>© 2002–2026 <span itemprop="legalName">Rock na Praça</span>. Todos os direitos reservados.</p>
+        <p>Desenvolvedora Front-end: <a href="https://github.com/luanasantosb" target="_blank" rel="nofollow">Luana
+            Santos</a></p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
