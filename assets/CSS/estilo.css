@@ -1217,7 +1217,16 @@ lite-youtube:hover {
 /* ========================= */
 /*                    SOBRE                      */
 /* ========================= */
-
+.sobre-titulo{
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--verde);
+  font-family: var(--fonte-titulos);
+  padding-left: 1rem;
+  text-align: center;
+}
 
 .sobre-conteudo {
   max-width: 1100px;
@@ -1230,16 +1239,6 @@ lite-youtube:hover {
   gap: 2rem;
 }
 
-.sobre-conteudo h1 {
-  font-size: clamp(1.8rem, 4vw, 2.3rem);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--verde);
-  font-family: var(--fonte-titulos);
-  padding-left: 1rem;
-  text-align: center;
-}
 
 .sobre-texto h2{
    font-size: clamp(1.5rem, 4vw, 2rem);
@@ -2063,6 +2062,7 @@ lite-youtube {
 
 .faq-item a:visited {
   color: var(--rosa);
+  text-decoration: none;
 }
 
 .contato-intro {
