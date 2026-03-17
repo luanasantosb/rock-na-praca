@@ -81,7 +81,7 @@ h3 {
 }
 
 /* ========================= */
-/*            CABECALHO                     */
+/*    CABECALHO              */
 /* ========================= */
 
 .cabecalho {
@@ -263,7 +263,7 @@ h3 {
 }
 
 /* ========================= */
-            /* PÁGINA INICIAL*/
+/*      PÁGINA INICIAL      */
 /* ========================= */
 
 /* ==== Seção Hero ====*/
@@ -366,7 +366,7 @@ h3 {
   margin-top: 20px;
   padding: 1.2rem 2rem;
   background-color: var(--rosa);
-  color: var(--preto);
+  color: var(--branco);
   text-decoration: none;
   font-weight: 900;
   text-transform: uppercase;
@@ -643,6 +643,9 @@ lite-youtube:hover {
 
   .marca-item img {
     max-width: 100px;
+  }
+  .hero-link {
+  padding: 0.8rem 1.5rem;
   }
 }
 
