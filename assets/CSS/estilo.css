@@ -28,9 +28,9 @@
   --rosa-soft: rgba(203, 93, 159, 0.15);
   --overlay-dark: rgba(33, 33, 33, 0.6);
 
-  --fonte-titulos: 'Bebas Neue', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fonte-titulos: 'Bebas Neue',Arial , sans-serif;
 
-  --fonte-textos: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fonte-textos: 'Open Sans',Arial , sans-serif;
 
   --transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-slow: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -809,114 +809,130 @@ lite-youtube:hover {
   margin: 0 auto;
 }
 
+/* Título */
 .grade-bandas h2 {
-  font-size: 2rem;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
   color: var(--rosa);
   text-transform: uppercase;
 }
 
+/* Grid principal */
 .grade-bandas-container {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 30px;
+  grid-template-columns: 100px 1fr;
+  gap: 25px 20px;
   max-width: 900px;
   margin: 0 auto;
+  align-items: center;
 }
 
+/* Faz cada item ocupar corretamente o grid */
 .grade-bandas-item {
   display: contents;
 }
 
+/* Hora */
 .hora {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--verde);
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  opacity: 0.9;
 }
 
-
+/* Banda */
 .banda {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.banda-inner {
-  display: flex;
-  align-items: center;
   gap: 20px;
-  padding: 12px;
+  padding: 14px 18px;
   border-left: 4px solid var(--verde);
-  transition: .25s;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.banda-inner img:first-child {
-  width: 220px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.4s ease;
-}
-
-.banda-inner img:first-child:hover {
-  transform: scale(1.05);
-}
-
-.banda-inner:hover {
-  border-left: 4px solid var(--rosa);
+/* Hover elegante */
+.banda:hover {
+  border-left-color: var(--rosa);
   transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.banda-nome {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.banda-inner img {
-  width: 180px;
-  border-radius: 6px;
-}
-
-
+/* Imagem da banda */
 .banda img {
-  width: 220px;
-  height: auto;
+  width: 180px;
+  height: 110px;
   object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.4s ease;
+  border-radius: 6px;
+  transition: transform 0.35s ease;
 }
 
 .banda img:hover {
   transform: scale(1.05);
 }
 
+/* Nome */
+.banda-nome {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Sociais */
 .banda-sociais {
-  display: inline-flex;
-  gap: 1rem;
-  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
 }
 
 .banda-sociais a {
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.banda-sociais a img {
-  width: 50px !important;
-  height: 50px !important;
-  max-width: 50px;
+.banda-sociais img {
+  width: 26px;
+  height: 26px;
   object-fit: contain;
-  display: block;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.banda-sociais a img:hover {
-  transform: scale(1.08);
+.banda-sociais img:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .grade-bandas-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hora {
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+
+  .banda {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banda img {
+    width: 100%;
+    height: auto;
+  }
+
+  .banda-sociais {
+    margin-left: 0;
+  }
 }
 
 /* ========= Seção feira ============ */
