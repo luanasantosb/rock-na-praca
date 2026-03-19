@@ -809,7 +809,7 @@ lite-youtube:hover {
   margin: 0 auto;
 }
 
-/* Título */
+
 .grade-bandas h2 {
   font-size: 2.2rem;
   letter-spacing: 1.5px;
@@ -818,7 +818,7 @@ lite-youtube:hover {
   text-transform: uppercase;
 }
 
-/* Grid principal */
+
 .grade-bandas-container {
   display: grid;
   grid-template-columns: 100px 1fr;
@@ -828,12 +828,11 @@ lite-youtube:hover {
   align-items: center;
 }
 
-/* Faz cada item ocupar corretamente o grid */
 .grade-bandas-item {
   display: contents;
 }
 
-/* Hora */
+
 .hora {
   font-size: 1.2rem;
   font-weight: 700;
@@ -844,26 +843,23 @@ lite-youtube:hover {
   opacity: 0.9;
 }
 
-/* Banda */
+
 .banda {
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 14px 18px;
   border-left: 4px solid var(--verde);
-  border-radius: 8px;
   transition: all 0.25s ease;
-  background: rgba(255, 255, 255, 0.02);
 }
 
-/* Hover elegante */
+
 .banda:hover {
   border-left-color: var(--rosa);
   transform: translateX(6px);
-  background: rgba(255, 255, 255, 0.05);
 }
 
-/* Imagem da banda */
+
 .banda img {
   width: 180px;
   height: 110px;
@@ -876,14 +872,14 @@ lite-youtube:hover {
   transform: scale(1.05);
 }
 
-/* Nome */
+
 .banda-nome {
   font-size: 1.3rem;
   font-weight: 700;
   text-align: left;
 }
 
-/* Sociais */
+
 .banda-sociais {
   display: flex;
   gap: 12px;
@@ -908,32 +904,6 @@ lite-youtube:hover {
   opacity: 0.8;
 }
 
-/* 📱 Responsivo */
-@media (max-width: 768px) {
-  .grade-bandas-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .hora {
-    justify-content: flex-start;
-    font-size: 1rem;
-  }
-
-  .banda {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .banda img {
-    width: 100%;
-    height: auto;
-  }
-
-  .banda-sociais {
-    margin-left: 0;
-  }
-}
 
 /* ========= Seção feira ============ */
 
@@ -1211,6 +1181,29 @@ lite-youtube:hover {
   }
   .mapa-container iframe {
     height: 300px;
+  }
+  .grade-bandas-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hora {
+    justify-content: flex-start;
+    font-size: 1rem;
+  }
+
+  .banda {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banda img {
+    width: 100%;
+    height: auto;
+  }
+
+  .banda-sociais {
+    margin-left: 0;
   }
 
 }
