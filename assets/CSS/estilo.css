@@ -2244,19 +2244,13 @@ lite-youtube {
 /*      login ADM  */
 /* ========================= */
 
-body {
+.login{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--fonte-titulos);
-}
-
-.login {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .box {
