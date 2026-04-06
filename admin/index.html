@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="/assets/CSS/estilo.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+
+</head>
+<body>
+   <header class="cabecalho">
+    <div class="cabecalho-simbolo-logotipo">
+
+      <a href="/" style="display: inline-block;">
+        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp"
+          alt="Rock na Praça Esteio - Site Oficial do Festival" title="Página Inicial - Rock na Praça Oficial"
+          width="130" height="82" loading="eager">
+      </a>
+
+    </div>
+
+    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+
+    <nav class="cabecalho-menu" id="menu" aria-label="Menu Principal" itemscope="itemscope"
+      itemtype="https://schema.org/SiteNavigationElement">
+
+      <a itemprop="url" href="/sobre/" title="Saiba mais sobre a história do Rock na Praça">
+        <span itemprop="name">Sobre o Festival</span>
+      </a>
+
+      <div class="menu-item">
+        <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
+          Inscrições
+        </button>
+        <div class="submenu">
+          <a itemprop="url" href="/inscricao-bandas/" title="Inscrições para bandas de Rock">
+            <span itemprop="name">Bandas</span>
+          </a>
+          <a itemprop="url" href="/inscricao-feira/" title="Venda na nossa feira de economia criativa">
+            <span itemprop="name">Economia Criativa</span>
+          </a>
+        </div>
+      </div>
+
+      <a itemprop="url" href="/loja/" title="Produtos oficiais Rock na Praça">
+        <span itemprop="name">Loja Oficial</span>
+      </a>
+
+      <a itemprop="url" href="/duvidas-e-contato/" title="Tire suas dúvidas ou entre em contato">
+        <span itemprop="name">Dúvidas e Contato</span>
+      </a>
+
+    </nav>
+
+  </header>
+<main class="login">
+<div class="box">
+  <h2>Login Admin</h2>
+
+  <input id="email" placeholder="Email">
+  <input id="senha" type="password" placeholder="Senha">
+
+  <button onclick="login()">Entrar</button>
+</div>
+</main>
+
+<script>
+const supabaseClient = supabase.createClient(
+  "https://qyeqoskwclrkdnqqdyau.supabase.co",
+  "sb_publishable_LfjaIA-PuCkFg1oJ4Qwjew_0JwJTwTb"
+);
+
+async function login() {
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password: senha
+  });
+
+  if (error) {
+    alert("Erro no login ❌");
+  } else {
+    alert("Login realizado ✅");
+
+    window.location.href = "dashboard.html";
+  }
+}
+</script>
+
+</body>
+</html>

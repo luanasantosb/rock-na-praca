@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard</title>
+  <link rel="stylesheet" href="/assets/CSS/estilo.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 
 <body>
 
+<main class="dashboard">
+  <button onclick="logout()">Sair</button>
 <h1>Área Administrativa</h1>
-<button onclick="logout()">Sair</button>
+</main>
 
 <script>
 const supabaseClient = supabase.createClient(
-  "SUA_URL",
-  "SUA_ANON_KEY"
+  "https://qyeqoskwclrkdnqqdyau.supabase.co",
+  "sb_publishable_LfjaIA-PuCkFg1oJ4Qwjew_0JwJTwTb"
 );
 
 async function verificarLogin() {
   const { data } = await supabaseClient.auth.getSession();
 
   if (!data.session) {
-    window.location.href = "admin.html";
+    window.location.href = "index.html";
   }
 }
 
 async function logout() {
   await supabaseClient.auth.signOut();
-  window.location.href = "admin.html";
+  window.location.href = "index.html";
 }
 
 verificarLogin();
