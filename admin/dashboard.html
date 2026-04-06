@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<h1>Área Administrativa</h1>
+<button onclick="logout()">Sair</button>
+
+<script>
+const supabaseClient = supabase.createClient(
+  "SUA_URL",
+  "SUA_ANON_KEY"
+);
+
+async function verificarLogin() {
+  const { data } = await supabaseClient.auth.getSession();
+
+  if (!data.session) {
+    window.location.href = "admin.html";
+  }
+}
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location.href = "admin.html";
+}
+
+verificarLogin();
+</script>
+
+</body>
+</html>

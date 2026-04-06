@@ -1,4 +1,18 @@
 backend:
   name: github
-  repo: luanasantosb./rocknapraca.com
-  branch: main
+  repo: SEU_USUARIO/SEU_REPO
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    folder: "content/produtos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome", name: "title", widget: "string" }
+      - { label: "Preço", name: "preco", widget: "string" }
+      - { label: "Imagem", name: "image", widget: "image" }
+      - { label: "Descrição", name: "body", widget: "markdown" }
