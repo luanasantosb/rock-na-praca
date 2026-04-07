@@ -10,48 +10,46 @@
 <body>
 <header class="topo">
   <div class="logo">
-    <img src="/assets/geral/rock-na-praca_logotipo.webp" width="80" height="80"><br><h1>Painel do administrador</h1></div>
+    <img src="/assets/geral/rock-na-praca_logotipo.webp" width="80" height="80">
+    <br><h1>Painel do Administrador</h1>
+  </div>
   <div class="user-area">
     <span id="user"></span>
     <button onclick="logout()">Sair</button>
   </div>
 </header>
+
 <section class="dashboard">
   <h2>Área Administrativa</h2>
 </section>
+
 <script>
 const supabaseClient = supabase.createClient(
-  "#",
-  "#"
+  "https://mjjazlsuutpugyggqmrb.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qamF6bHN1dXRwdWd5Z2dxbXJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1MjQyMDAsImV4cCI6MjA5MTEwMDIwMH0.nxlJJsMXxrgwXe4nFl-_YBv7kyKt3Qf39qCob-E6ovc"
 );
 
-async function verificarLogin() {
-  const { data } = await supabaseClient.auth.getSession();
 
-  if (!data.session) {
-    window.location.href = "index.html";
+async function checarLogin() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+
+  if (!session) {
+  
+    window.location.href = "login.html";
+  } else {
+    const email = session.user.email;
+    document.getElementById("user").innerHTML = "👤 <strong>" + email + "</strong>";
   }
 }
+
 
 async function logout() {
   await supabaseClient.auth.signOut();
-  window.location.href = "index.html";
+  window.location.href = "login.html";
 }
 
-verificarLogin();
 
-async function verificarLogin() {
-  const { data } = await supabaseClient.auth.getSession();
-
-  if (!data.session) {
-    window.location.href = "admin.html";
-  } else {
-    const email = data.session.user.email;
-
-    document.getElementById("user").innerHTML =
-      "👤 <strong>" + email + "</strong>";
-  }
-}
+checarLogin();
 </script>
 
 </body>

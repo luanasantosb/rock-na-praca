@@ -61,33 +61,48 @@
   <input id="email" placeholder="Email">
   <input id="senha" type="password" placeholder="Senha">
 
-  <button onclick="login()">Entrar</button>
+  <button id="btnLogin">Entrar</button>
+  <p id="mensagem" style="color: red; margin-top: 10px;"></p>
 </div>
 </main>
 
 <script>
 const supabaseClient = supabase.createClient(
-  "#",
-  "#"
-);
+  "https://mjjazlsuutpugyggqmrb.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qamF6bHN1dXRwdWd5Z2dxbXJiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1MjQyMDAsImV4cCI6MjA5MTEwMDIwMH0.nxlJJsMXxrgwXe4nFl-_YBv7kyKt3Qf39qCob-E6ovc"
+  );
 
-async function login() {
-  const email = document.getElementById("email").value;
-  const senha = document.getElementById("senha").value;
+  const btnLogin = document.getElementById("btnLogin");
+  const mensagem = document.getElementById("mensagem");
 
-  const { error } = await supabaseClient.auth.signInWithPassword({
-    email,
-    password: senha
+  btnLogin.addEventListener("click", async () => {
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+
+    if (!email || !senha) {
+      mensagem.textContent = "Por favor, preencha todos os campos.";
+      return;
+    }
+
+    mensagem.textContent = "Entrando... ⏳";
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password: senha
+    });
+
+    if (error) {
+      mensagem.style.color = "red";
+      mensagem.textContent = "Erro no login: " + error.message;
+    } else {
+      mensagem.style.color = "green";
+      mensagem.textContent = "Login realizado com sucesso! ✅";
+
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1000);
+    }
   });
-
-  if (error) {
-    alert("Erro no login ❌");
-  } else {
-    alert("Login realizado ✅");
-
-    window.location.href = "dashboard.html";
-  }
-}
 </script>
 
 </body>
