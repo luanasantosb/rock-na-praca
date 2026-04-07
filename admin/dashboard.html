@@ -8,12 +8,17 @@
 </head>
 
 <body>
-
-<main class="dashboard">
-  <button onclick="logout()">Sair</button>
-<h1>Área Administrativa</h1>
-</main>
-
+<header class="topo">
+  <div class="logo">
+    <img src="/assets/geral/rock-na-praca_logotipo.webp" width="80" height="80"><br><h1>Painel do administrador</h1></div>
+  <div class="user-area">
+    <span id="user"></span>
+    <button onclick="logout()">Sair</button>
+  </div>
+</header>
+<section class="dashboard">
+  <h2>Área Administrativa</h2>
+</section>
 <script>
 const supabaseClient = supabase.createClient(
   "https://qyeqoskwclrkdnqqdyau.supabase.co",
@@ -34,6 +39,19 @@ async function logout() {
 }
 
 verificarLogin();
+
+async function verificarLogin() {
+  const { data } = await supabaseClient.auth.getSession();
+
+  if (!data.session) {
+    window.location.href = "admin.html";
+  } else {
+    const email = data.session.user.email;
+
+    document.getElementById("user").innerHTML =
+      "👤 <strong>" + email + "</strong>";
+  }
+}
 </script>
 
 </body>
