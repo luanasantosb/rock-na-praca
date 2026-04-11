@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balaiada Combo Cultural</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Mono&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --preto: #0a0a0a;
+            --bege: #F3E3BE;
+            --cinza: #888;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--preto);
+            color: var(--bege);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 80px;
+            border-bottom: 1px dashed var(--cinza);
+            padding-bottom: 40px;
+        }
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .subtitulo {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--cinza);
+            margin: 20px 0 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--bege);
+            text-decoration: none;
+            color: var(--bege);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: var(--bege);
+            color: var(--preto);
+            transform: translateY(-2px);
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--cinza);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-weight: 300;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--cinza);
+        }
+
+        .contato a {
+            color: var(--bege);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.75rem;
+            color: var(--cinza);
+            border-top: 1px dashed var(--cinza);
+            padding-top: 20px;
+        }
+
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            .titulo {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <header>
+            <div class="titulo">
+                <img src="/assets/geral/Balaiada_logo.webp" width="70px" alt="Logo Balaiada">
+                <h1>Balaiada Combo Cultural</h1>
+            </div>
+
+            <div class="subtitulo">
+                produtora do <strong>Rock na Praça</strong> · produção cultural / selo / projetos incentivados
+            </div>
+
+            <a href="mailto:balaiadaprodutora@gmail.com" class="btn">
+                contato
+            </a>
+
+            <a href="/" class="btn">
+                ← início
+            </a>
+        </header>
+
+        <section>
+            <h2>SOBRE</h2>
+            <p>
+                A Balaiada Combo Cultural atua na criação, produção e viabilização
+                de projetos culturais.
+            </p>
+            <p>
+                Conectamos arte, mercado e políticas públicas para fortalecer
+                a música independente e a economia criativa.
+            </p>
+        </section>
+
+        <section>
+            <h2>SERVIÇOS</h2>
+            <ul>
+                <li>Produção de eventos</li>
+                <li>Selo fonográfico</li>
+                <li>Projetos incentivados</li>
+                <li>Merchandising</li>
+            </ul>
+        </section>
+
+        <section class="contato">
+            <h2>CONTATO</h2>
+            <p>Email: balaiadaprodutora@gmail.com</p>
+            <p>Instagram: <a href="https://instagram.com/balaiada" target="_blank">@balaiada</a></p>
+        </section>
+
+        <footer>
+            © 2026 Balaiada Combo Cultural
+        </footer>
+
+    </main>
+</body>
+
+</html>
