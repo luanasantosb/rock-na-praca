@@ -302,6 +302,61 @@ h3 {
   pointer-events: none;
 }
 
+.hero-transferencia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+
+  display: inline-block;
+  text-align: center;
+
+  font-family: var(--fonte-titulos);
+  font-size: clamp(2rem, 6vw, 8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  color: #ff2b2b;
+  border: 12px dashed #ff2b2b;
+  background: rgba(0, 0, 0, 0.75);
+
+  padding: 60px 120px; 
+  z-index: 10;
+  pointer-events: none;
+
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+
+  line-height: 1.1;
+}
+
+/* linha do local */
+.hero-transferencia span {
+  display: block;
+  font-size: 0.55em;
+  letter-spacing: 3px;
+}
+
+.hero-transferencia small {
+  display: block;
+  font-size: 0.4em;
+  letter-spacing: 2px;
+}
+
+
+.hero-transferencia a {
+  color: #ff2b2b;
+  text-decoration: none;
+  border-bottom: 2px solid #ff2b2b;
+  pointer-events: auto;
+}
+
+.hero-transferencia a:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
 .hero-esquerda {
   flex: 1 1 600px;
   max-width: 600px;

@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: luanasantosb/rocknapraca.com
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "home"
+    label: "Página Inicial"
+    files:
+      - label: "Hero"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+          - { label: "Data", name: "data", widget: "string" }
+          - { label: "Data ISO", name: "data_iso", widget: "string" }
+          - { label: "Local", name: "local", widget: "string" }
+          - { label: "Texto do Botão", name: "botao_texto", widget: "string" }
+          - { label: "Link do Botão", name: "botao_link", widget: "string" }
+          - { label: "Imagem", name: "imagem", widget: "image" }
