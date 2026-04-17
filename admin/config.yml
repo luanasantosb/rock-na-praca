@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://rocknapraca-oauth.vercel.app
   auth_endpoint: api/auth
+  site_domain: www.rocknapraca.com
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
