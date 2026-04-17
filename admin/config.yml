@@ -23,5 +23,4 @@ collections:
           - { label: "Data ISO", name: "data_iso", widget: "string" }
           - { label: "Local", name: "local", widget: "string" }
           - { label: "Texto do Botão", name: "botao_texto", widget: "string" }
-          - { label: "Link do Botão", name: "botao_link", widget: "string" }
           - { label: "Imagem", name: "imagem", widget: "image" }
