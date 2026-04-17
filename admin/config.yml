@@ -12,19 +12,15 @@ public_folder: "/images/uploads"
 collections:
   - name: "home"
     label: "Página Inicial"
-    label_singular: "Página Inicial"
-    folder: "content"
-    create: false
-    extension: "json"
-    format: "json"
-    slug: "{{slug}}"
-    identifier_field: "titulo"
-    summary: "{{titulo}}"
-    fields:
-      - { label: "Título", name: "titulo", widget: "string" }
-      - { label: "Subtítulo", name: "subtitulo", widget: "string" }
-      - { label: "Data", name: "data", widget: "string" }
-      - { label: "Data ISO", name: "data_iso", widget: "string" }
-      - { label: "Local", name: "local", widget: "string" }
-      - { label: "Texto do Botão", name: "botao_texto", widget: "string" }
-      - { label: "Imagem", name: "imagem", widget: "image", required: false }
+    files:
+      - label: "Hero"
+        name: "home"
+        file: "content/home.md"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Subtítulo", name: "subtitulo", widget: "string" }
+          - { label: "Data", name: "data", widget: "string" }
+          - { label: "Data ISO", name: "data_iso", widget: "string" }
+          - { label: "Local", name: "local", widget: "string" }
+          - { label: "Texto do Botão", name: "botao_texto", widget: "string" }
+          - { label: "Imagem", name: "imagem", widget: "image", required: false }
