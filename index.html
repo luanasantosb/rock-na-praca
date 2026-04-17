@@ -327,6 +327,7 @@
       </div>
     </div>
   </footer>
+
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -337,15 +338,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const titulo = document.getElementById("home-titulo");
     const subtitulo = document.getElementById("home-subtitulo");
-    const data = document.getElementById("home-data");
+    const data_evento = document.getElementById("home-data-evento");
     const local = document.getElementById("home-local");
     const imagem = document.getElementById("home-imagem");
 
     if (titulo) titulo.innerHTML = home.titulo || "";
     if (subtitulo) subtitulo.innerHTML = home.subtitulo || "";
-    if (data) {
-      data.textContent = home.data || "";
-      if (home.data_iso) data.setAttribute("datetime", home.data_iso);
+    if (data_evento) {
+      data_evento.textContent = home.data_evento || "";
+      if (home.data_iso) data_evento.setAttribute("datetime", home.data_iso);
     }
     if (local) local.textContent = home.local || "";
     if (imagem && home.imagem) imagem.src = home.imagem;
