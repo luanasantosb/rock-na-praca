@@ -193,8 +193,9 @@
           </div>
 
           <!-- ✅ EDITÁVEL -->
-          <h1 id="home-titulo" class="hero-titulo">
-            Rock na Praça Esteio <span class="sub-titulo-oficial">Edição de Abril 2026</span>
+          <h1 class="hero-titulo">
+            <span id="home-titulo"></span>
+            <span id="home-edicao" class="sub-titulo-oficial"></span>
           </h1>
 
           <!-- ✅ EDITÁVEL -->
@@ -338,20 +339,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const titulo = document.getElementById("home-titulo");
     const subtitulo = document.getElementById("home-subtitulo");
-    const data_evento = document.getElementById("home-data-evento");
+    const dataEvento = document.getElementById("home-data");
     const local = document.getElementById("home-local");
     const imagem = document.getElementById("home-imagem");
+    const botao = document.querySelector(".hero-link");
 
     if (titulo) titulo.innerHTML = home.titulo || "";
     if (subtitulo) subtitulo.innerHTML = home.subtitulo || "";
-    if (data_evento) {
-      data_evento.textContent = home.data_evento || "";
-      if (home.data_iso) data_evento.setAttribute("datetime", home.data_iso);
-    }
-    if (local) local.textContent = home.local || "";
-    if (imagem && home.imagem) imagem.src = home.imagem;
 
-    const botao = document.querySelector(".hero-link");
+    if (dataEvento) {
+      dataEvento.textContent = home.data_evento || "";
+      if (home.data_iso) {
+        dataEvento.setAttribute("datetime", home.data_iso);
+      }
+    }
+
+    if (local) local.textContent = home.local || "";
+
+    if (imagem && home.imagem) {
+      imagem.src = home.imagem;
+      imagem.setAttribute("srcset", home.imagem);
+    }
+
     if (botao && home.botao_texto) {
       botao.textContent = home.botao_texto;
     }
@@ -359,14 +368,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     const metaName = document.querySelector('meta[itemprop="name"]');
     const metaStartDate = document.querySelector('meta[itemprop="startDate"]');
 
-    if (metaName && home.titulo) metaName.setAttribute("content", home.titulo);
-    if (metaStartDate && home.data_iso) metaStartDate.setAttribute("content", home.data_iso);
+    if (metaName && home.titulo) {
+      metaName.setAttribute("content", home.titulo.replace(/<[^>]+>/g, ""));
+    }
+
+    if (metaStartDate && home.data_iso) {
+      metaStartDate.setAttribute("content", home.data_iso);
+    }
 
   } catch (erro) {
     console.error("Erro ao carregar conteúdo da home:", erro);
   }
 });
 </script>
+
 </body>
 
 </html>

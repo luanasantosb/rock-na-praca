@@ -15,7 +15,8 @@ collections:
     files:
       - label: "Hero"
         name: "home"
-        file: "content/home.md"
+        file: "content/home.json"
+        format: "json"
         fields:
           - { label: "Título", name: "titulo", widget: "string" }
           - { label: "Subtítulo", name: "subtitulo", widget: "string" }
