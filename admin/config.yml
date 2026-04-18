@@ -18,10 +18,10 @@ collections:
         file: "content/home.json"
         format: "json"
         fields:
-          - { label: "Título", name: "titulo", widget: "string" }
-          - { label: "Subtítulo", name: "subtitulo", widget: "string" }
-          - { label: "Data", name: "data_evento", widget: "string" }
-          - { label: "Data ISO", name: "data_iso", widget: "string" }
-          - { label: "Local", name: "local", widget: "string" }
-          - { label: "Texto do Botão", name: "botao_texto", widget: "string" }
+          - { label: "Título", name: "titulo", widget: "string", required: false }
+          - { label: "Subtítulo", name: "subtitulo", widget: "string", required: false }
+          - { label: "Data", name: "data_evento", widget: "string", required: false }
+          - { label: "Data ISO", name: "data_iso", widget: "string", required: false }
+          - { label: "Local", name: "local", widget: "string", required: false }
+          - { label: "Texto do Botão", name: "botao_texto", widget: "string", required: false }
           - { label: "Imagem", name: "imagem", widget: "image", required: false }
