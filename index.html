@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#000000">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <title>Rock na Praça Esteio| Site Oficial | Programação e Shows</title>
+  <title>Rock na Praça | Site Oficial | Programação e Shows</title>
   <meta name="description"
     content="Site Oficial do Rock na Praça em Esteio/RS. Confira a agenda de shows, bandas confirmadas e informações sobre o patrimônio cultural do rock gaúcho. Entrada gratuita!">
   <link rel="canonical" href="https://www.rocknapraca.com/">
@@ -172,7 +172,7 @@
       </div>-->
       <div class="hero-banner">
         <div class="hero-esquerda">
-          <meta itemprop="name" content="Rock na Praça Esteio - Edição de Abril 2026">
+          <meta itemprop="name" content="Rock na Praça">
           <meta itemprop="startDate" content="2026-04-12T15:00">
           <meta itemprop="description"
             content="O maior festival de rock gratuito de Esteio. Patrimônio Cultural com shows ao vivo na Praça Coração de Maria.">
@@ -188,38 +188,36 @@
 
           <div class="insigna-container">
             <span class="insignia-patrimonio">
-              <span class="insignia-icon">🏛️</span> Patrimônio Cultural de Esteio • Lei 8.147
+              <span id="insignia-icone" class="insignia-icon"><!--Via Json--></span>
+              <span id="insignia-texto"><!--Via Json--></span>
             </span>
           </div>
 
-          <!-- ✅ EDITÁVEL -->
+
           <h1 class="hero-titulo">
-            <span id="home-titulo"></span>
-            <span id="home-edicao" class="sub-titulo-oficial"></span>
+            <span id="home-titulo"><!--Via Json--></span>
+            <span id="home-edicao" class="sub-titulo-oficial"><!--Via Json--></span>
           </h1>
 
-          <!-- ✅ EDITÁVEL -->
-          <h2 id="home-subtitulo" class="hero-subtitulo">
-            Prepare-se: o <strong>Festival de Rock</strong> é no segundo domingo do mês!
+
+          <h2 id="home-subtitulo" class="hero-subtitulo"><!--Via Json-->
           </h2>
 
           <div class="hero-meta">
             <p>
               <span class="icon">📅</span>
-              <!-- ✅ EDITÁVEL -->
+              <!--Via Json-->
               <time id="home-data" itemprop="startDate" datetime="2026-04-12T15:00">
-                Domingo, <strong>12 de Abril de 2026</strong> • 15h
-              </time>
+                <!--Via Json--></time>
             </p>
 
             <address class="hero-localizacao" itemprop="location" itemscope itemtype="https://schema.org/Place">
               <span class="icon">📍</span>
-              <!-- ✅ EDITÁVEL -->
-              <span id="home-local" itemprop="name">Praça Coração de Maria</span> —
+              <span id="home-local" itemprop="name"><!--Via Json--></span>
               <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                 <strong>
-                  <span itemprop="addressLocality">Esteio</span>,
-                  <span itemprop="addressRegion">RS</span>
+                  <span itemprop="addressLocality"><!--Via Json--></span>,
+                  <span itemprop="addressRegion"><!--Via Json--></span>
                 </strong>
               </span>
             </address>
@@ -230,15 +228,13 @@
           </div>
 
           <div class="hero-actions">
-            <a href="/programacao" class="hero-link">
-              Ver Programação Completa Abril →
-            </a>
+            <a href="/programacao" class="hero-link"><!--Via Json--></a>
           </div>
         </div>
 
         <!-- LADO DIREITO (CARTAZ) -->
         <div class="hero-direita">
-          <!-- ✅ EDITÁVEL -->
+          
           <img id="home-imagem" src="/assets/pagina_index/flyer-abril-350.webp" srcset="/assets/pagina_index/flyer-abril-350.webp 350w, 
               /assets/pagina_index/flyer-abril-700.webp 700w" sizes="(max-width: 600px) 280px, 700px"
             class="hero-cartaz" alt="Cartaz oficial do Rock na Praça Esteio com o line-up das bandas" width="350"
@@ -329,58 +325,67 @@
     </div>
   </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    const resposta = await fetch("/content/home.json", { cache: "no-store" });
-    if (!resposta.ok) throw new Error("Não foi possível carregar home.json");
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const resposta = await fetch("/content/home.json", { cache: "no-store" });
+        if (!resposta.ok) throw new Error("Não foi possível carregar home.json");
 
-    const home = await resposta.json();
+        const home = await resposta.json();
+        const insigniaIcone = document.getElementById("insignia-icone");
+        const insigniaTexto = document.getElementById("insignia-texto");
+        const titulo = document.getElementById("home-titulo");
+        const edicao = document.getElementById("home-edicao");
+        const subtitulo = document.getElementById("home-subtitulo");
+        const dataEvento = document.getElementById("home-data");
+        const local = document.getElementById("home-local");
+        const cidade = document.querySelector('[itemprop="addressLocality"]');
+        const estado = document.querySelector('[itemprop="addressRegion"]');
+        const imagem = document.getElementById("home-imagem");
+        const botao = document.querySelector(".hero-link");
 
-    const titulo = document.getElementById("home-titulo");
-    const subtitulo = document.getElementById("home-subtitulo");
-    const dataEvento = document.getElementById("home-data");
-    const local = document.getElementById("home-local");
-    const imagem = document.getElementById("home-imagem");
-    const botao = document.querySelector(".hero-link");
+        if (insigniaIcone) insigniaIcone.textContent = home.insignia_icone || "";
+        if (insigniaTexto) insigniaTexto.textContent = home.insignia_texto || "";
+        if (titulo) titulo.innerHTML = home.titulo || "";
+        if (edicao) edicao.textContent = home.edicao || "";
+        if (subtitulo) subtitulo.innerHTML = home.subtitulo || "";
 
-    if (titulo) titulo.innerHTML = home.titulo || "";
-    if (subtitulo) subtitulo.innerHTML = home.subtitulo || "";
+        if (dataEvento) {
+          dataEvento.textContent = home.data_evento || "";
+          if (home.data_iso) {
+            dataEvento.setAttribute("datetime", home.data_iso);
+          }
+        }
 
-    if (dataEvento) {
-      dataEvento.textContent = home.data_evento || "";
-      if (home.data_iso) {
-        dataEvento.setAttribute("datetime", home.data_iso);
+        if (local) local.textContent = home.local || "";
+        if (cidade) cidade.textContent = home.cidade || "";
+        if (estado) estado.textContent = home.estado || "";
+
+        if (imagem && home.imagem) {
+          imagem.src = home.imagem;
+          imagem.setAttribute("srcset", home.imagem);
+        }
+
+        if (botao && home.botao_texto) {
+          botao.textContent = home.botao_texto;
+        }
+
+        const metaName = document.querySelector('meta[itemprop="name"]');
+        const metaStartDate = document.querySelector('meta[itemprop="startDate"]');
+
+        if (metaName && home.titulo) {
+          metaName.setAttribute("content", home.titulo.replace(/<[^>]+>/g, ""));
+        }
+
+        if (metaStartDate && home.data_iso) {
+          metaStartDate.setAttribute("content", home.data_iso);
+        }
+
+      } catch (erro) {
+        console.error("Erro ao carregar conteúdo da home:", erro);
       }
-    }
-
-    if (local) local.textContent = home.local || "";
-
-    if (imagem && home.imagem) {
-      imagem.src = home.imagem;
-      imagem.setAttribute("srcset", home.imagem);
-    }
-
-    if (botao && home.botao_texto) {
-      botao.textContent = home.botao_texto;
-    }
-
-    const metaName = document.querySelector('meta[itemprop="name"]');
-    const metaStartDate = document.querySelector('meta[itemprop="startDate"]');
-
-    if (metaName && home.titulo) {
-      metaName.setAttribute("content", home.titulo.replace(/<[^>]+>/g, ""));
-    }
-
-    if (metaStartDate && home.data_iso) {
-      metaStartDate.setAttribute("content", home.data_iso);
-    }
-
-  } catch (erro) {
-    console.error("Erro ao carregar conteúdo da home:", erro);
-  }
-});
-</script>
+    });
+  </script>
 
 </body>
 

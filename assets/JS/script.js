@@ -266,6 +266,8 @@ if (btnFinalizar) {
   });
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const produtos = document.querySelectorAll('.loja-cartao');
 
