@@ -1,0 +1,167 @@
+{
+  "produtos": [
+    {
+      "slug": "camiseta-rock-na-praca-1",
+      "nome": "CAMISETA MODELO #1",
+      "preco": 70.0,
+      "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
+      "imagens": [
+        "../assets/pagina_loja/Camiseta-1_Rock-na-Praca.webp",
+        "../assets/pagina_loja/Camiseta-cores-tabela.webp",
+        "../assets/pagina_loja/Camiseta-tamanhos-tabela.webp",
+        "../assets/pagina_loja/Camiseta-1-Preta_Rock-na-Praca.webp"
+      ],
+      "tamanhos": [
+        "Babylook M",
+        "Babylook G",
+        "Babylook GG",
+        "Babylook XG",
+        "Camiseta PP",
+        "Camiseta P",
+        "Camiseta M",
+        "Camiseta G",
+        "Camiseta GG",
+        "Camiseta XG",
+        "Camiseta XXG"
+      ],
+      "cores": [
+        "Preto",
+        "Cinza Chumbo",
+        "Cinza Mescla",
+        "Preto Mescla",
+        "Cinza Médio",
+        "Branco",
+        "Marrom",
+        "Amarelo Canário",
+        "Amarelo Ouro",
+        "Amarelo Mostarda",
+        "Laranja",
+        "Vermelho",
+        "Bordô",
+        "Rosa Goiaba",
+        "Rosa Bebê",
+        "Rosa Pink",
+        "Lilás",
+        "Roxo",
+        "Verde Fluor",
+        "Azul Marinho",
+        "Azul Royal",
+        "Azul Jade",
+        "Azul Turquesa",
+        "Verde Bandeira",
+        "Verde Folha",
+        "Verde Musgo",
+        "Crua (tom cru/bege claro)",
+        "Raglan Mescla/Preto",
+        "Raglan Mescla/Bordô",
+        "Raglan Branco/Preto"
+      ]
+    },
+    {
+      "slug": "camiseta-rock-na-praca-2",
+      "nome": "CAMISETA MODELO #2",
+      "preco": 70.0,
+      "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
+      "imagens": [
+        "../assets/pagina_loja/Camiseta-2_Rock-na-Praca.webp",
+        "../assets/pagina_loja/Camiseta-cores-tabela.webp",
+        "../assets/pagina_loja/Camiseta-tamanhos-tabela.webp",
+        "../assets/pagina_loja/Camiseta-2-Cinza_Rock-na-Praca.webp"
+      ],
+      "tamanhos": [
+        "Babylook M",
+        "Babylook G",
+        "Babylook GG",
+        "Babylook XG",
+        "Camiseta PP",
+        "Camiseta P",
+        "Camiseta M",
+        "Camiseta G",
+        "Camiseta GG",
+        "Camiseta XG",
+        "Camiseta XXG"
+      ],
+      "cores": [
+        "Preto",
+        "Cinza Chumbo",
+        "Cinza Mescla",
+        "Preto Mescla",
+        "Cinza Médio",
+        "Branco",
+        "Marrom",
+        "Amarelo Canário",
+        "Amarelo Ouro",
+        "Amarelo Mostarda",
+        "Laranja",
+        "Vermelho",
+        "Bordô",
+        "Rosa Goiaba",
+        "Rosa Bebê",
+        "Rosa Pink",
+        "Lilás",
+        "Roxo",
+        "Verde Fluor",
+        "Azul Marinho",
+        "Azul Royal",
+        "Azul Jade",
+        "Azul Turquesa",
+        "Verde Bandeira",
+        "Verde Folha",
+        "Verde Musgo",
+        "Crua (tom cru/bege claro)",
+        "Raglan Mescla/Preto",
+        "Raglan Mescla/Bordô",
+        "Raglan Branco/Preto"
+      ]
+    },
+    {
+      "slug": "mochila-rock-na-praca",
+      "nome": "Mochila Rock na Praça",
+      "preco": 100.0,
+      "descricao": "Produto oficial.",
+      "imagens": [
+        "../assets/pagina_loja/Mochila_Rock-na-praca.webp"
+      ]
+    },
+    {
+      "slug": "carteira-rock-na-praca",
+      "nome": "Carteira Rock na Praça",
+      "preco": 40.0,
+      "descricao": "Produto oficial.",
+      "imagens": [
+        "../assets/pagina_loja/Carteira_Rock-na-Praca.webp",
+        "../assets/pagina_loja/Carteira-aberta_Rock-na-Praca.webp",
+        "../assets/pagina_loja/Carteira-fechada_Rock-na-Praca.webp"
+      ]
+    },
+    {
+      "slug": "copo-rock-na-praca",
+      "nome": "Copo Rock na Praça",
+      "preco": 10.0,
+      "descricao": "Produto oficial.",
+      "imagens": [
+        "../assets/pagina_loja/Copo_Rock-na-Praca.webp",
+        "../assets/pagina_loja/Copo-costas_Rock-na-Praca.webp",
+        "../assets/pagina_loja/Copo-frente_Rock-na-Praca.webp"
+      ]
+    },
+    {
+      "slug": "bone-rock-na-praca-1",
+      "nome": "Boné Rock na Praça #1",
+      "preco": 70.0,
+      "descricao": "Produto oficial.",
+      "imagens": [
+        "../assets/pagina_loja/Bone-1_Rock-na-Praca.webp"
+      ]
+    },
+    {
+      "slug": "bone-rock-na-praca-2",
+      "nome": "Boné Rock na Praça #2",
+      "preco": 70.0,
+      "descricao": "Produto oficial.",
+      "imagens": [
+        "../assets/pagina_loja/Bone-2_Rock-na-Praca.webp"
+      ]
+    }
+  ]
+}

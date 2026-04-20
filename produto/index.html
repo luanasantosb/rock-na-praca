@@ -23,123 +23,40 @@
 
   <main class="produto-container">
 
-    <!-- ESQUERDA -->
     <div class="produto-galeria">
       <img id="fotoPrincipal" class="produto-foto-principal" alt="Produto Principal">
       <div id="miniaturas" class="produto-miniaturas"></div>
     </div>
 
-    <!-- DIREITA -->
     <div class="produto-info">
-
       <h1 id="nome"></h1>
       <p id="descricao"></p>
       <div id="preco" class="preco"></div>
 
       <div id="variacoes" class="variacoes hidden">
-
-        <div class="campo">
+        <div class="campo" id="campo-tamanho">
           <label for="tamanho">Tamanho</label>
           <select id="tamanho">
             <option value="">Selecione</option>
           </select>
         </div>
 
-        <div class="campo">
+        <div class="campo" id="campo-cor">
           <label for="cor">Cor</label>
           <select id="cor">
             <option value="">Selecione</option>
           </select>
         </div>
-
       </div>
 
       <button id="btnCarrinho" class="btn-adicionar">
         Adicionar ao carrinho
       </button>
-
     </div>
 
   </main>
 
   <script>
-
-    /* ==================== PRODUTOS ==================== */
-    const produtos = [
-      {
-        id: "camiseta-rock-na-praca-1",
-        nome: "CAMISETA MODELO #1",
-        preco: 70.00,
-        descricao: "Camiseta oficial Rock na Praça. 100% algodão.",
-        imagens: [
-          "../assets/pagina_loja/Camiseta-1_Rock-na-Praca.webp",
-          "../assets/pagina_loja/Camiseta-cores-tabela.webp",
-          "../assets/pagina_loja/Camiseta-tamanhos-tabela.webp",
-          "../assets/pagina_loja/Camiseta-1-Preta_Rock-na-Praca.webp"
-        ],
-        tamanhos: ["Babylook M", "Babylook G", "Babylook GG", "Babylook XG",
-          "Camiseta PP", "Camiseta P", "Camiseta M", "Camiseta G", "Camiseta GG", "Camiseta XG", "Camiseta XXG"],
-        cores: ["Preto", "Cinza Chumbo", "Cinza Mescla", "Preto Mescla", "Cinza Médio", "Branco", "Marrom", "Amarelo Canário", "Amarelo Ouro", "Amarelo Mostarda", "Laranja", "Vermelho", "Bordô", "Rosa Goiaba", "Rosa Bebê", "Rosa Pink", "Lilás", "Roxo", "Verde Fluor", "Azul Marinho", "Azul Royal", "Azul Jade", "Azul Turquesa", "Verde Bandeira", "Verde Folha", "Verde Musgo", "Crua (tom cru/bege claro)", "Raglan Mescla/Preto", "Raglan Mescla/Bordô", "Raglan Branco/Preto"]
-      },
-      {
-        id: "camiseta-rock-na-praca-2",
-        nome: "CAMISETA MODELO #2",
-        preco: 70.00,
-        descricao: "Camiseta oficial Rock na Praça. 100% algodão.",
-        imagens: [
-          "../assets/pagina_loja/Camiseta-2_Rock-na-Praca.webp",
-          "../assets/pagina_loja/Camiseta-cores-tabela.webp",
-          "../assets/pagina_loja/Camiseta-tamanhos-tabela.webp",
-          "../assets/pagina_loja/Camiseta-2-Cinza_Rock-na-Praca.webp"
-        ],
-        tamanhos: ["Babylook M", "Babylook G", "Babylook GG", "Babylook XG",
-          "Camiseta PP", "Camiseta P", "Camiseta M", "Camiseta G", "Camiseta GG", "Camiseta XG", "Camiseta XXG"],
-        cores: ["Preto", "Cinza Chumbo", "Cinza Mescla", "Preto Mescla", "Cinza Médio", "Branco", "Marrom", "Amarelo Canário", "Amarelo Ouro", "Amarelo Mostarda", "Laranja", "Vermelho", "Bordô", "Rosa Goiaba", "Rosa Bebê", "Rosa Pink", "Lilás", "Roxo", "Verde Fluor", "Azul Marinho", "Azul Royal", "Azul Jade", "Azul Turquesa", "Verde Bandeira", "Verde Folha", "Verde Musgo", "Crua (tom cru/bege claro)", "Raglan Mescla/Preto", "Raglan Mescla/Bordô", "Raglan Branco/Preto"]
-      },
-      {
-        id: "mochila-rock-na-praca",
-        nome: "Mochila Rock na Praça",
-        preco: 100.00,
-        descricao: "Produto oficial.",
-        imagens: ["../assets/pagina_loja/Mochila_Rock-na-praca.webp"]
-      },
-      {
-        id: "carteira-rock-na-praca",
-        nome: "Carteira Rock na Praça",
-        preco: 40.00,
-        descricao: "Produto oficial.",
-        imagens: ["../assets/pagina_loja/Carteira_Rock-na-Praca.webp",
-          "../assets/pagina_loja/Carteira-aberta_Rock-na-Praca.webp",
-          "../assets/pagina_loja/Carteira-fechada_Rock-na-Praca.webp"
-        ],
-      },
-      {
-        id: "copo-rock-na-praca",
-        nome: "Copo Rock na Praça",
-        preco: 10.00,
-        descricao: "Produto oficial.",
-        imagens: ["../assets/pagina_loja/Copo_Rock-na-Praca.webp",
-          "../assets/pagina_loja/Copo-costas_Rock-na-Praca.webp",
-          "../assets/pagina_loja/Copo-frente_Rock-na-Praca.webp"
-        ],
-      },
-      {
-        id: "bone-rock-na-praca-1",
-        nome: "Boné Rock na Praça #1",
-        preco: 70.00,
-        descricao: "Produto oficial.",
-        imagens: ["../assets/pagina_loja/Bone-1_Rock-na-Praca.webp"]
-      },
-      {
-        id: "bone-rock-na-praca-2",
-        nome: "Boné Rock na Praça #2",
-        preco: 70.00,
-        descricao: "Produto oficial.",
-        imagens: ["../assets/pagina_loja/Bone-2_Rock-na-Praca.webp"]
-      },
-    ];
-
-
     function getCarrinho() {
       return JSON.parse(localStorage.getItem("carrinhoRNP")) || [];
     }
@@ -153,20 +70,102 @@
 
       carrinho.push({
         id: Date.now(),
-        produtoId: produto.id,
-        nome: produto.nome,
-        preco: produto.preco,
-        tamanho,
-        cor
+        produtoId: produto.slug,
+        nome: produto.nome || "",
+        preco: produto.preco || 0,
+        tamanho: tamanho || null,
+        cor: cor || null,
+        imagem: Array.isArray(produto.imagens) && produto.imagens.length ? produto.imagens[0] : ""
       });
 
       salvarCarrinho(carrinho);
-      alert("Produto adicionado ao carrinho ");
+      alert("Produto adicionado ao carrinho");
     }
 
+    function formatarPreco(valor) {
+      return Number(valor).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+    }
 
-    document.addEventListener("DOMContentLoaded", () => {
+    function preencherSelect(select, valores, placeholder) {
+      if (!select) return;
 
+      select.innerHTML = `<option value="">${placeholder}</option>`;
+
+      valores.forEach(valor => {
+        const option = document.createElement("option");
+        option.value = valor;
+        option.textContent = valor;
+        select.appendChild(option);
+      });
+    }
+
+    function configurarVariacoes(produto) {
+      const variacoesDiv = document.getElementById("variacoes");
+      const campoTamanho = document.getElementById("campo-tamanho");
+      const campoCor = document.getElementById("campo-cor");
+      const selectTamanho = document.getElementById("tamanho");
+      const selectCor = document.getElementById("cor");
+
+      const temTamanhos = Array.isArray(produto.tamanhos) && produto.tamanhos.length > 0;
+      const temCores = Array.isArray(produto.cores) && produto.cores.length > 0;
+
+      if (!temTamanhos && !temCores) {
+        variacoesDiv.style.display = "none";
+        return;
+      }
+
+      variacoesDiv.style.display = "block";
+
+      if (temTamanhos) {
+        campoTamanho.style.display = "";
+        preencherSelect(selectTamanho, produto.tamanhos, "Selecione o tamanho");
+      } else {
+        campoTamanho.style.display = "none";
+      }
+
+      if (temCores) {
+        campoCor.style.display = "";
+        preencherSelect(selectCor, produto.cores, "Selecione a cor");
+      } else {
+        campoCor.style.display = "none";
+      }
+    }
+
+    function renderizarGaleria(produto) {
+      const fotoPrincipal = document.getElementById("fotoPrincipal");
+      const miniaturas = document.getElementById("miniaturas");
+
+      const imagens = Array.isArray(produto.imagens) ? produto.imagens.filter(Boolean) : [];
+
+      if (!imagens.length) {
+        fotoPrincipal.removeAttribute("src");
+        miniaturas.innerHTML = "";
+        return;
+      }
+
+      fotoPrincipal.src = imagens[0];
+      fotoPrincipal.alt = produto.nome || "Produto";
+
+      miniaturas.innerHTML = "";
+
+      imagens.forEach(imgSrc => {
+        const img = document.createElement("img");
+        img.src = imgSrc;
+        img.alt = produto.nome || "Miniatura do produto";
+        img.classList.add("miniatura");
+
+        img.addEventListener("click", () => {
+          fotoPrincipal.src = imgSrc;
+        });
+
+        miniaturas.appendChild(img);
+      });
+    }
+
+    async function carregarProdutoIndividual() {
       const params = new URLSearchParams(window.location.search);
       const produtoId = params.get("produto");
 
@@ -175,100 +174,62 @@
         return;
       }
 
+      try {
+        const response = await fetch("../content/produtos.json");
 
-      const produto = produtos.find(p => p.id === produtoId);
+        if (!response.ok) {
+          throw new Error("Não foi possível carregar o arquivo de produtos.");
+        }
 
-      if (!produto) {
-        alert("Produto não encontrado.");
-        return;
-      }
+        const data = await response.json();
+        const produtos = Array.isArray(data.produtos) ? data.produtos : [];
+        const produto = produtos.find(p => p.slug === produtoId);
 
-      const nomeEl = document.getElementById("nome");
-      const descEl = document.getElementById("descricao");
-      const precoEl = document.getElementById("preco");
-      const fotoPrincipal = document.getElementById("fotoPrincipal");
-      const miniaturas = document.getElementById("miniaturas");
-      const variacoesDiv = document.getElementById("variacoes");
-      const selectTamanho = document.getElementById("tamanho");
-      const selectCor = document.getElementById("cor");
-      const btnCarrinho = document.getElementById("btnCarrinho");
-
-      nomeEl.textContent = produto.nome;
-      descEl.textContent = produto.descricao;
-      precoEl.textContent = `R$ ${produto.preco.toFixed(2).replace(".", ",")}`;
-
-      fotoPrincipal.src = produto.imagens[0];
-
-
-      miniaturas.innerHTML = "";
-      produto.imagens.forEach(imgSrc => {
-        const img = document.createElement("img");
-        img.src = imgSrc;
-        img.classList.add("miniatura");
-        img.addEventListener("click", () => {
-          fotoPrincipal.src = imgSrc;
-        });
-        miniaturas.appendChild(img);
-      });
-
-      configurarVariacoes(produto, variacoesDiv, selectTamanho, selectCor);
-
-      btnCarrinho.addEventListener("click", () => {
-        const tamanho = selectTamanho?.value || null;
-        const cor = selectCor?.value || null;
-
-        if (produto.tamanhos && !tamanho) {
-          alert("Selecione um tamanho");
+        if (!produto) {
+          alert("Produto não encontrado.");
           return;
         }
 
-        if (produto.cores && !cor) {
-          alert("Selecione uma cor ");
-          return;
-        }
+        const nomeEl = document.getElementById("nome");
+        const descEl = document.getElementById("descricao");
+        const precoEl = document.getElementById("preco");
+        const btnCarrinho = document.getElementById("btnCarrinho");
+        const selectTamanho = document.getElementById("tamanho");
+        const selectCor = document.getElementById("cor");
 
-        adicionarProduto(produto, tamanho, cor);
-      });
+        nomeEl.textContent = produto.nome || "";
+        descEl.textContent = produto.descricao || "";
+        precoEl.textContent = produto.preco != null ? formatarPreco(produto.preco) : "";
 
-    });
+        renderizarGaleria(produto);
+        configurarVariacoes(produto);
 
+        btnCarrinho.addEventListener("click", () => {
+          const tamanho = selectTamanho?.value || "";
+          const cor = selectCor?.value || "";
 
-    function configurarVariacoes(produto, variacoesDiv, selectTamanho, selectCor) {
+          const precisaTamanho = Array.isArray(produto.tamanhos) && produto.tamanhos.length > 0;
+          const precisaCor = Array.isArray(produto.cores) && produto.cores.length > 0;
 
-      if (!produto.tamanhos && !produto.cores) {
-        variacoesDiv.style.display = "none";
-        return;
-      }
+          if (precisaTamanho && !tamanho) {
+            alert("Selecione um tamanho");
+            return;
+          }
 
-      variacoesDiv.style.display = "block";
+          if (precisaCor && !cor) {
+            alert("Selecione uma cor");
+            return;
+          }
 
-
-      if (produto.tamanhos) {
-        selectTamanho.innerHTML = `<option value="">Selecione o tamanho</option>`;
-        produto.tamanhos.forEach(t => {
-          const opt = document.createElement("option");
-          opt.value = t;
-          opt.textContent = t;
-          selectTamanho.appendChild(opt);
+          adicionarProduto(produto, tamanho, cor);
         });
-      } else {
-        selectTamanho.parentElement.style.display = "none";
-      }
-
-
-      if (produto.cores) {
-        selectCor.innerHTML = `<option value="">Selecione a cor</option>`;
-        produto.cores.forEach(c => {
-          const opt = document.createElement("option");
-          opt.value = c;
-          opt.textContent = c;
-          selectCor.appendChild(opt);
-        });
-      } else {
-        selectCor.parentElement.style.display = "none";
+      } catch (erro) {
+        console.error(erro);
+        alert("Erro ao carregar o produto.");
       }
     }
 
+    document.addEventListener("DOMContentLoaded", carregarProdutoIndividual);
   </script>
 </body>
 
