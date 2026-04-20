@@ -1,26 +1,4 @@
 {
-  "titulo": "",
-  "subtitulo": "",
-  "resumo": "",
-  "realizacao": {
-    "nome": "",
-    "logo": "",
-    "link": ""
-  },
-  "apoio_institucional": {
-    "texto": "",
-    "logo": "",
-    "link": ""
-  },
-  "grade_bandas": {
-    "titulo": "",
-    "lista": []
-  },
-  "feira": {
-    "titulo": "Mercado Underground",
-    "descricao": "",
-    "lojas": []
-  },
   "apoio": {
     "titulo": "Apoio",
     "descricao": "",
@@ -32,5 +10,27 @@
     "link_mapa": "",
     "iframe_mapa": "",
     "transporte": []
+  },
+  "grade_bandas": {
+    "titulo": "",
+    "lista": []
+  },
+  "resumo": "O Rock na Praça no dia 12 de Abril, conta shows gratuitos da Punho de Mahin e as bandas Visitas Póstumas, Projeto Hare, Hibizco, Fungo Preto e Lo Que Te Voy a Decir. Uma tarde de música na Praça Coração de Maria com mercado underground e gastronomia, celebrando a cultura do Rio Grande do Sul.",
+  "subtitulo": "O maior festival underground com entrada gratuita do RS",
+  "feira": {
+    "titulo": "Mercado Underground",
+    "descricao": "",
+    "lojas": []
+  },
+  "titulo": "Programação Rock na Praça Abril/2026",
+  "apoio_institucional": {
+    "texto": "Amparo Legal Lei nº 8.147/2022 – Patrimônio Imaterial",
+    "logo": "/images/uploads/prefa-esteio_logo.webp",
+    "link": "https://leismunicipais.com.br/a/rs/e/esteio/lei-ordinaria/2022/815/8147/lei-ordinaria-n-8147-2022-declara-patrimonio-cultural-imaterial-do-municipio-de-esteio-o-rock-na-praca-e-da-outras-providencias"
+  },
+  "realizacao": {
+    "nome": "Realização Balaiada Produtora",
+    "logo": "/images/uploads/balaiada_logo.webp",
+    "link": "https://www.instagram.com/balaiada/"
   }
 }
