@@ -30,3 +30,20 @@ collections:
           - { label: "Estado", name: "estado", widget: "string", required: false }
           - { label: "Texto do Botão", name: "botao_texto", widget: "string", required: false }
           - { label: "Imagem", name: "imagem", widget: "image", required: false }
+
+collections:
+  - name: "inscricao"
+    label: "Página de Inscrição - Feira"
+    files:
+      - file: "content/inscricao.json"
+        label: "Configuração de Inscrição Feira"
+        name: "inscricao"
+        fields:
+          - label: "Inscrição Feira Aviso"
+            name: "inscricaoFeiraAviso"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Local", name: "local", widget: "string" }
+              - { label: "Taxa", name: "taxa", widget: "string" }
+              - { label: "Pix", name: "pix", widget: "string" }

@@ -176,7 +176,6 @@
 
   <main>
 
-    <!-- H1 invisível para SEO e acessibilidade -->
     <h1 class="visually-hidden">
       Inscrição para a Feira de Economia Criativa do Rock na Praça
     </h1>
@@ -215,10 +214,10 @@
           <div id="status-vagas"></div>
 
           <div class="inscricao-aviso">
-            <p><strong>Inscrições abertas para a edição de 12/04</strong></p>
-            <p>📍 Praça Coração de Maria – Esteio</p>
-            <p>💰 Taxa de inscrição: R$ 50</p>
-            <p>💳 Pix: CPF 831.611.630-87 (PagBank)</p>
+            <p><strong id="inscricao-titulo"></strong></p>
+            <p id="inscricao-local"></p>
+            <p id="inscricao-taxa"></p>
+            <p id="inscricao-pix"></p>
           </div>
 
           <fieldset>
@@ -417,6 +416,18 @@
       </div>
     </div>
   </footer>
+  <script>
+    fetch("/content/inscricao-feira.json")
+  .then(res => res.json())
+  .then(dados => {
+    const aviso = dados.inscricaoFeiraAviso;
+
+    document.getElementById("inscricao-titulo").textContent = aviso.titulo;
+    document.getElementById("inscricao-local").textContent = aviso.local;
+    document.getElementById("inscricao-taxa").textContent = aviso.taxa;
+    document.getElementById("inscricao-pix").textContent = aviso.pix;
+  });
+  </script>
 
 </body>
 
