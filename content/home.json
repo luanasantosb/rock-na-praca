@@ -2,18 +2,11 @@
   "cidade": "Esteio",
   "estado": "RS",
   "insignia_icone": "🏛️",
-  "edicao": "Esteio • Abril 2026",
-  "data_evento": "Domingo, 12 de Abril de 2026 • 15h",
-  "local": "Praça Coração de Maria",
-  "data_iso": "2026-04-12T15:00",
-  "imagem": "/assets/pagina_index/flyer-abril-350.webp",
-  "botao_texto": "Ver Programação Completa Abril →",
-<<<<<<< HEAD
-  "imagem": "/assets/pagina_index/flyer-abril-350.webp"
-}
-=======
-  "subtitulo": "Prepare-se: o Festival de Rock é no segundo domingo do mês!",
-  "titulo": "Rock na Praça ",
+  "edicao": "Maio de 2026",
+  "data_evento": "Em breve",
+  "local": "Em breve",
+  "botao_texto": "Programação brevemente disponível",
+  "subtitulo": "Prepare-se para os 24 anos do Rock na Praça",
+  "titulo": "ROCK NA PRAÇA",
   "insignia_texto": "Patrimônio Cultural de Esteio • Lei 8.147"
 }
->>>>>>> 77f9ab8410609758452474b3565982ec45d55e72
