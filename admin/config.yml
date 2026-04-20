@@ -145,87 +145,88 @@ collections:
   - name: "loja_produtos"
     label: "Produtos da Loja"
     files:
-      - file: "content/produtos.json"
-        label: "Produtos"
-        name: "loja_produtos"
-        fields:
-          - label: "Produtos"
-            name: "produtos"
-            widget: "list"
-            required: false
-            fields:
-              - { label: "Slug", name: "slug", widget: "string", required: true, hint: "Usado no link do produto. Ex: camiseta-rock-na-praca-1" }
-              - { label: "Nome interno", name: "nome", widget: "string", required: false }
-              - { label: "Título exibido", name: "titulo", widget: "string", required: false }
-              - { label: "Preço", name: "preco", widget: "number", value_type: "float", min: 0, step: 0.01, required: false }
-              - { label: "Descrição", name: "descricao", widget: "text", required: false }
-              - { label: "Status", name: "status", widget: "string", required: false }
-              - { label: "Imagem", name: "imagem", widget: "image", required: false }
-              - { label: "Alt da imagem", name: "alt", widget: "string", required: false }
-              - { label: "Ativo", name: "ativo", widget: "boolean", required: false, default: true }
+     - file: "content/produtos.json"
+       label: "Produtos"
+       name: "loja_produtos"
+       fields:
+        - label: "Produtos"
+          name: "produtos"
+          widget: "list"
+          required: false
+          fields:
+            - label: "Slug"
+              name: "slug"
+              widget: "string"
+              required: true
+              hint: "Usado no link do produto. Ex: camiseta-rock-na-praca-1"
 
-  - name: "loja_produtos"
-    label: "Produtos da Loja"
-    files:
-      - file: "content/produtos.json"
-        label: "Produtos"
-        name: "loja_produtos"
-        fields:
-          - label: "Produtos"
-            name: "produtos"
-            widget: "list"
-            required: false
-            fields:
-              - { label: "Slug", name: "slug", widget: "string", required: true }
-              - { label: "Nome", name: "nome", widget: "string", required: false }
-              - { label: "Título exibido", name: "titulo", widget: "string", required: false }
-              - { label: "Preço", name: "preco", widget: "number", value_type: "float", min: 0, step: 0.01, required: false }
-              - { label: "Descrição", name: "descricao", widget: "text", required: false }
-              - { label: "Status", name: "status", widget: "string", required: false }
-              - { label: "Imagem principal", name: "imagem", widget: "image", required: false }
-              - { label: "Alt da imagem", name: "alt", widget: "string", required: false }
-              - { label: "Ativo", name: "ativo", widget: "boolean", required: false, default: true }
+            - label: "Nome"
+              name: "nome"
+              widget: "string"
+              required: false
 
-              - label: "Galeria de imagens"
-                name: "imagens"
-                widget: "list"
-                required: false
-                field: { label: "Imagem", name: "imagem", widget: "image", required: false }
+            - label: "Título exibido"
+              name: "titulo"
+              widget: "string"
+              required: false
 
-              - label: "Tamanhos"
-                name: "tamanhos"
-                widget: "list"
-                required: false
-                field: { label: "Tamanho", name: "tamanho", widget: "string", required: false }
+            - label: "Preço"
+              name: "preco"
+              widget: "number"
+              value_type: "float"
+              min: 0
+              step: 0.01
+              required: false
 
-              - label: "Cores"
-                name: "cores"
-                widget: "list"
-                required: false
-                field: { label: "Cor", name: "cor", widget: "string", required: false }
-                - label: "Galeria de imagens"
-                name: "imagens"
-                widget: "list"
-                required: false
-                field:
-                  label: "Imagem"
-                  name: "imagem"
-                  widget: "image"
+            - label: "Descrição"
+              name: "descricao"
+              widget: "text"
+              required: false
 
-              - label: "Tamanhos"
-                name: "tamanhos"
-                widget: "list"
-                required: false
-                field:
-                  label: "Tamanho"
-                  name: "tamanho"
-                  widget: "string"
+            - label: "Status"
+              name: "status"
+              widget: "string"
+              required: false
 
-              - label: "Cores"
-                name: "cores"
-                widget: "list"
-                required: false
-                field:
-                  label: "Cor"
-                  name: "cor"
-                  widget: "string"
+            - label: "Imagem principal"
+              name: "imagem"
+              widget: "image"
+              required: false
+
+            - label: "Alt da imagem"
+              name: "alt"
+              widget: "string"
+              required: false
+
+            - label: "Ativo"
+              name: "ativo"
+              widget: "boolean"
+              required: false
+              default: true
+
+            - label: "Galeria de imagens"
+              name: "imagens"
+              widget: "list"
+              required: false
+              field:
+                label: "Imagem"
+                name: "imagem"
+                widget: "image"
+
+            - label: "Tamanhos"
+              name: "tamanhos"
+              widget: "list"
+              required: false
+              field:
+                label: "Tamanho"
+                name: "tamanho"
+                widget: "string"
+
+            - label: "Cores"
+              name: "cores"
+              widget: "list"
+              required: false
+              field:
+                label: "Cor"
+                name: "cor"
+                widget: "string"
