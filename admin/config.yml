@@ -18,7 +18,7 @@ collections:
         file: "content/home.json"
         format: "json"
         fields:
-          - { label: "Ícone da Insígnia", name: "insignia_icone", widget: "string", default: "🏛️" ,required: false}
+          - { label: "Ícone da Insígnia", name: "insignia_icone", widget: "string", default: "🏛️", required: false }
           - { label: "Texto da Insígnia", name: "insignia_texto", widget: "string", required: false }
           - { label: "Título", name: "titulo", widget: "string", required: false }
           - { label: "Edição", name: "edicao", widget: "string", required: false }
@@ -34,7 +34,7 @@ collections:
   - name: "inscricao"
     label: "Página de Inscrição - Feira"
     files:
-      - file: "content/inscricao.json"
+      - file: "content/inscricao-feira.json"
         label: "Configuração de Inscrição Feira"
         name: "inscricao"
         fields:
