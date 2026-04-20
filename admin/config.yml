@@ -31,7 +31,6 @@ collections:
           - { label: "Texto do Botão", name: "botao_texto", widget: "string", required: false }
           - { label: "Imagem", name: "imagem", widget: "image", required: false }
 
-collections:
   - name: "inscricao"
     label: "Página de Inscrição - Feira"
     files:
