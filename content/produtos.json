@@ -151,6 +151,20 @@
       "imagens": [
         "../assets/pagina_loja/Bone-2_Rock-na-Praca.webp"
       ]
+    },
+    {
+      "imagens": [
+        "/images/uploads/copo-costas_rock-na-praca.webp"
+      ],
+      "alt": "Copo rock na praça",
+      "descricao": "Copo oficial, somente na cor rosa",
+      "slug": "copo-rock-na-praca",
+      "preco": 10,
+      "ativo": true,
+      "imagem": "/images/uploads/copo_rock-na-praca.webp",
+      "status": "PRONTA ENTREGA",
+      "nome": "Copo",
+      "titulo": "Copo Rock na Praça"
     }
   ]
 }
