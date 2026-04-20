@@ -460,82 +460,83 @@
       </div>
     </div>
   </footer>
-  <script>
-    async function carregarProdutos() {
-      try {
-        const response = await fetch("/content/produtos.json");
-        if (!response.ok) {
-          throw new Error("Não foi possível carregar os produtos.");
-        }
+  
+ <script>
+  async function carregarProdutos() {
+    try {
+      const response = await fetch("/content/produtos.json");
+      if (!response.ok) {
+        throw new Error("Não foi possível carregar os produtos.");
+      }
 
-        const data = await response.json();
-        const listaProdutos = document.getElementById("lista-produtos");
+      const data = await response.json();
+      const listaProdutos = document.getElementById("lista-produtos");
 
-        if (!listaProdutos) return;
+      if (!listaProdutos) return;
 
-        listaProdutos.innerHTML = "";
+      listaProdutos.innerHTML = "";
 
-        const produtos = Array.isArray(data.produtos) ? data.produtos : [];
+      const produtos = Array.isArray(data.produtos) ? data.produtos : [];
 
-        produtos.forEach(produto => {
-          if (!produto.id) return;
+      produtos.forEach(produto => {
+        if (!produto.slug) return;
 
-          const imagemPrincipal =
-            Array.isArray(produto.imagens) && produto.imagens.length
-              ? produto.imagens[0]
-              : "";
+        const imagemPrincipal =
+          Array.isArray(produto.imagens) && produto.imagens.length
+            ? produto.imagens[0]
+            : produto.imagem || "";
 
-          const tituloExibido = produto.nome || "";
-          const precoFormatado =
-            produto.preco != null
-              ? Number(produto.preco).toLocaleString("pt-BR", {
+        const tituloExibido = produto.titulo || produto.nome || "";
+        const precoFormatado =
+          produto.preco != null
+            ? Number(produto.preco).toLocaleString("pt-BR", {
                 style: "currency",
                 currency: "BRL"
               })
-              : "";
+            : "";
 
-          const status = produto.status || "";
+        const status = produto.status || "";
 
-          const card = document.createElement("div");
-          card.className = "loja-cartao";
-          card.dataset.id = produto.id;
-          card.dataset.nome = produto.nome || "";
-          card.dataset.preco = produto.preco != null ? produto.preco : "";
-          card.dataset.descricao = produto.descricao || "";
+        const card = document.createElement("div");
+        card.className = "loja-cartao";
+        card.dataset.slug = produto.slug;
+        card.dataset.nome = produto.nome || "";
+        card.dataset.preco = produto.preco != null ? produto.preco : "";
+        card.dataset.descricao = produto.descricao || "";
 
-          card.innerHTML = `
-        ${imagemPrincipal ? `
-          <img
-            class="cartao-produto-foto"
-            src="${imagemPrincipal}"
-            alt="${produto.nome || "Produto"}"
-            loading="lazy">
-        ` : ""}
+        card.innerHTML = `
+          ${imagemPrincipal ? `
+            <img
+              class="cartao-produto-foto"
+              src="${imagemPrincipal}"
+              alt="${produto.nome || "Produto"}"
+              loading="lazy">
+          ` : ""}
 
-        <div class="cartao-produto-infos">
-          <div class="contador-loja"></div>
+          <div class="cartao-produto-infos">
+            <div class="contador-loja"></div>
 
-          ${status ? `<span class="cartao-produto-status">${status}</span>` : ""}
+            ${status ? `<span class="cartao-produto-status">${status}</span>` : ""}
 
-          <h2 class="cartao-produto-titulo">${tituloExibido}</h2>
+            <h2 class="cartao-produto-titulo">${tituloExibido}</h2>
 
-          ${precoFormatado ? `<p class="cartao-produto-preco">${precoFormatado}</p>` : ""}
+            ${precoFormatado ? `<p class="cartao-produto-preco">${precoFormatado}</p>` : ""}
 
-          <a href="../produto/index.html?produto=${encodeURIComponent(produto.slug)}" class="cartao-produto-detalhes">
-            Ver detalhes
-          </a>
-        </div>
-      `;
+            <a href="../produto/index.html?produto=${encodeURIComponent(produto.slug)}" class="cartao-produto-detalhes">
+              Ver detalhes
+            </a>
+          </div>
+        `;
 
-          listaProdutos.appendChild(card);
-        });
-      } catch (error) {
-        console.error(error);
-      }
+        listaProdutos.appendChild(card);
+      });
+    } catch (error) {
+      console.error("Erro ao carregar produtos:", error);
     }
+  }
 
-    document.addEventListener("DOMContentLoaded", carregarProdutos);
-  </script>
+  document.addEventListener("DOMContentLoaded", carregarProdutos);
+</script>
 
 </body>
 

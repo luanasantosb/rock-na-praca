@@ -71,11 +71,11 @@
       carrinho.push({
         id: Date.now(),
         produtoId: produto.slug,
-        nome: produto.nome || "",
+        nome: produto.titulo || produto.nome || "",
         preco: produto.preco || 0,
         tamanho: tamanho || null,
         cor: cor || null,
-        imagem: Array.isArray(produto.imagens) && produto.imagens.length ? produto.imagens[0] : ""
+        imagem: obterImagemPrincipal(produto)
       });
 
       salvarCarrinho(carrinho);
@@ -95,11 +95,37 @@
       select.innerHTML = `<option value="">${placeholder}</option>`;
 
       valores.forEach(valor => {
+        if (!valor) return;
+
         const option = document.createElement("option");
         option.value = valor;
         option.textContent = valor;
         select.appendChild(option);
       });
+    }
+
+    function obterImagemPrincipal(produto) {
+      if (Array.isArray(produto.imagens) && produto.imagens.length > 0) {
+        return produto.imagens[0];
+      }
+
+      if (produto.imagem) {
+        return produto.imagem;
+      }
+
+      return "";
+    }
+
+    function obterGaleria(produto) {
+      if (Array.isArray(produto.imagens) && produto.imagens.length > 0) {
+        return produto.imagens.filter(Boolean);
+      }
+
+      if (produto.imagem) {
+        return [produto.imagem];
+      }
+
+      return [];
     }
 
     function configurarVariacoes(produto) {
@@ -111,6 +137,9 @@
 
       const temTamanhos = Array.isArray(produto.tamanhos) && produto.tamanhos.length > 0;
       const temCores = Array.isArray(produto.cores) && produto.cores.length > 0;
+
+      selectTamanho.innerHTML = `<option value="">Selecione</option>`;
+      selectCor.innerHTML = `<option value="">Selecione</option>`;
 
       if (!temTamanhos && !temCores) {
         variacoesDiv.style.display = "none";
@@ -137,24 +166,24 @@
     function renderizarGaleria(produto) {
       const fotoPrincipal = document.getElementById("fotoPrincipal");
       const miniaturas = document.getElementById("miniaturas");
+      const imagens = obterGaleria(produto);
+      const nomeProduto = produto.titulo || produto.nome || "Produto";
 
-      const imagens = Array.isArray(produto.imagens) ? produto.imagens.filter(Boolean) : [];
+      miniaturas.innerHTML = "";
 
       if (!imagens.length) {
         fotoPrincipal.removeAttribute("src");
-        miniaturas.innerHTML = "";
+        fotoPrincipal.alt = nomeProduto;
         return;
       }
 
       fotoPrincipal.src = imagens[0];
-      fotoPrincipal.alt = produto.nome || "Produto";
-
-      miniaturas.innerHTML = "";
+      fotoPrincipal.alt = nomeProduto;
 
       imagens.forEach(imgSrc => {
         const img = document.createElement("img");
         img.src = imgSrc;
-        img.alt = produto.nome || "Miniatura do produto";
+        img.alt = nomeProduto;
         img.classList.add("miniatura");
 
         img.addEventListener("click", () => {
@@ -167,9 +196,9 @@
 
     async function carregarProdutoIndividual() {
       const params = new URLSearchParams(window.location.search);
-      const produtoId = params.get("produto");
+      const produtoSlug = params.get("produto");
 
-      if (!produtoId) {
+      if (!produtoSlug) {
         alert("Produto não informado na URL.");
         return;
       }
@@ -183,7 +212,7 @@
 
         const data = await response.json();
         const produtos = Array.isArray(data.produtos) ? data.produtos : [];
-        const produto = produtos.find(p => p.slug === produtoId);
+        const produto = produtos.find(p => p.slug === produtoSlug);
 
         if (!produto) {
           alert("Produto não encontrado.");
@@ -197,7 +226,7 @@
         const selectTamanho = document.getElementById("tamanho");
         const selectCor = document.getElementById("cor");
 
-        nomeEl.textContent = produto.nome || "";
+        nomeEl.textContent = produto.titulo || produto.nome || "";
         descEl.textContent = produto.descricao || "";
         precoEl.textContent = produto.preco != null ? formatarPreco(produto.preco) : "";
 
@@ -224,7 +253,7 @@
           adicionarProduto(produto, tamanho, cor);
         });
       } catch (erro) {
-        console.error(erro);
+        console.error("Erro ao carregar produto:", erro);
         alert("Erro ao carregar o produto.");
       }
     }
