@@ -3,7 +3,7 @@
     {
       "slug": "camiseta-rock-na-praca-1",
       "nome": "CAMISETA MODELO #1",
-      "preco": 70.0,
+      "preco": 70,
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "imagens": [
         "../assets/pagina_loja/Camiseta-1_Rock-na-Praca.webp",
@@ -60,7 +60,7 @@
     {
       "slug": "camiseta-rock-na-praca-2",
       "nome": "CAMISETA MODELO #2",
-      "preco": 70.0,
+      "preco": 70,
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "imagens": [
         "../assets/pagina_loja/Camiseta-2_Rock-na-Praca.webp",
@@ -117,7 +117,7 @@
     {
       "slug": "mochila-rock-na-praca",
       "nome": "Mochila Rock na Praça",
-      "preco": 100.0,
+      "preco": 100,
       "descricao": "Produto oficial.",
       "imagens": [
         "../assets/pagina_loja/Mochila_Rock-na-praca.webp"
@@ -126,7 +126,7 @@
     {
       "slug": "carteira-rock-na-praca",
       "nome": "Carteira Rock na Praça",
-      "preco": 40.0,
+      "preco": 40,
       "descricao": "Produto oficial.",
       "imagens": [
         "../assets/pagina_loja/Carteira_Rock-na-Praca.webp",
@@ -135,20 +135,9 @@
       ]
     },
     {
-      "slug": "copo-rock-na-praca",
-      "nome": "Copo Rock na Praça",
-      "preco": 10.0,
-      "descricao": "Produto oficial.",
-      "imagens": [
-        "../assets/pagina_loja/Copo_Rock-na-Praca.webp",
-        "../assets/pagina_loja/Copo-costas_Rock-na-Praca.webp",
-        "../assets/pagina_loja/Copo-frente_Rock-na-Praca.webp"
-      ]
-    },
-    {
       "slug": "bone-rock-na-praca-1",
       "nome": "Boné Rock na Praça #1",
-      "preco": 70.0,
+      "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
         "../assets/pagina_loja/Bone-1_Rock-na-Praca.webp"
@@ -157,7 +146,7 @@
     {
       "slug": "bone-rock-na-praca-2",
       "nome": "Boné Rock na Praça #2",
-      "preco": 70.0,
+      "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
         "../assets/pagina_loja/Bone-2_Rock-na-Praca.webp"
