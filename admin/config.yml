@@ -3,7 +3,7 @@ backend:
   repo: luanasantosb/rocknapraca.com
   branch: main
   base_url: https://rocknapraca-oauth.vercel.app
-  auth_endpoint: /api/auth
+  auth_endpoint: auth
   site_domain: www.rocknapraca.com
 
 media_folder: "images/uploads"
