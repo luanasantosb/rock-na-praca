@@ -13,7 +13,7 @@ collections:
   - name: "home"
     label: "Página Inicial"
     files:
-      - label: "Página Inicial-Hero"
+      - label: "Hero"
         name: "home"
         file: "content/home.json"
         format: "json"
@@ -32,10 +32,10 @@ collections:
           - { label: "Imagem", name: "imagem", widget: "image", required: false }
 
   - name: "inscricao"
-    label: "Página de Inscrição - Feira"
+    label: "Inscrição Feira"
     files:
       - file: "content/inscricao-feira.json"
-        label: "Configuração de Inscrição Feira"
+        label: "Aviso"
         name: "inscricao"
         fields:
           - label: "Inscrição Feira Aviso"
@@ -48,7 +48,7 @@ collections:
               - { label: "Pix", name: "pix", widget: "string" }
 
   - name: "programacao_evento"
-    label: "Programação do Evento"
+    label: "Programação"
     files:
       - file: "content/programacao.json"
         label: "Página Programação"
@@ -143,7 +143,7 @@ collections:
                   required: false
 
   - name: "loja_produtos"
-    label: "Produtos da Loja"
+    label: "Loja"
     files:
      - file: "content/produtos.json"
        label: "Produtos"
