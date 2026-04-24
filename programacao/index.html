@@ -119,13 +119,15 @@
 
   </header>
 
-  <main class="programacao-conteudo">
-    <h1 id="titulo-programacao"><!-- Via JSON --></h1>
-    <h2 id="subtitulo-programacao"><!-- Via JSON --></h2>
+  <main class="main-programacao">
+    <section class="hero-programacao">
+      <h1 id="titulo-programacao"><!-- Via JSON --></h1>
+      <h2 id="subtitulo-programacao"><!-- Via JSON --></h2>
 
-    <p class="conteudo-descricao" id="resumo-programacao">
-      <!-- Via JSON -->
-    </p>
+      <p class="conteudo-descricao" id="resumo-programacao">
+        <!-- Via JSON -->
+      </p>
+    </section>
 
     <section class="grupo-realizacao">
       <div class="grid-realizacao">
@@ -236,157 +238,199 @@
       </div>
     </div>
   </footer>
-  <script>
-    async function carregarProgramacao() {
-      const res = await fetch('/content/programacao.json');
-      const data = await res.json();
 
-      // ===== TEXTOS PRINCIPAIS =====
-      setText('titulo-programacao', data.titulo);
-      setText('subtitulo-programacao', data.subtitulo);
-      setText('resumo-programacao', data.resumo);
+<script>
+  async function carregarJSON(caminho) {
+    try {
+      const res = await fetch(caminho);
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (error) {
+      console.warn(`Erro ao carregar ${caminho}`, error);
+      return null;
+    }
+  }
 
-      // ===== REALIZAÇÃO =====
-      if (data.realizacao) {
-        setText('nome-realizacao', data.realizacao.nome);
-        setImg('logo-realizacao', data.realizacao.logo);
-        setLink('link-realizacao', data.realizacao.link);
-      }
+  async function carregarProgramacao() {
+    const hero = await carregarJSON('/content/programacao/hero.json');
+    const realizacao = await carregarJSON('/content/programacao/realizacao.json');
+    const gradeBandas = await carregarJSON('/content/programacao/grade-bandas.json');
+    const feira = await carregarJSON('/content/programacao/feira.json');
+    const apoio = await carregarJSON('/content/programacao/apoio.json');
+    const local = await carregarJSON('/content/programacao/como-chegar.json');
 
-      // ===== APOIO INSTITUCIONAL =====
-      if (data.apoio_institucional) {
-        setText('texto-apoio-institucional', data.apoio_institucional.texto);
-        setImg('logo-apoio-institucional', data.apoio_institucional.logo);
-        setLink('link-apoio-institucional', data.apoio_institucional.link);
-      }
+    // ===== TOPO / HERO =====
+    if (hero) {
+      setText('titulo-programacao', hero.titulo);
+      setText('subtitulo-programacao', hero.subtitulo);
+      setText('resumo-programacao', hero.resumo);
+    }
 
-      // ===== BANDAS =====
-      setText('titulo-grade-bandas', data.grade_bandas?.titulo);
+    // ===== REALIZAÇÃO =====
+    const gridRealizacao = document.querySelector('.grid-realizacao');
+
+    if (realizacao?.itens?.length && gridRealizacao) {
+      gridRealizacao.innerHTML = '';
+
+      realizacao.itens.forEach(item => {
+        if (!item.nome && !item.logo) return;
+
+        const div = document.createElement('div');
+        div.className = 'item';
+
+        div.innerHTML = `
+          <a href="${item.link || '#'}" target="_blank" rel="noopener noreferrer">
+            ${item.logo ? `<img class="logo-balaiada" src="${item.logo}" alt="${item.nome || ''}">` : ''}
+          </a>
+          <span class="legenda">${item.nome || ''}</span>
+        `;
+
+        gridRealizacao.appendChild(div);
+      });
+    }
+
+    // ===== BANDAS =====
+    if (gradeBandas) {
+      setText('titulo-grade-bandas', gradeBandas.titulo);
 
       const listaBandas = document.getElementById('lista-bandas');
+      if (listaBandas) listaBandas.innerHTML = '';
 
-      if (data.grade_bandas?.lista?.length) {
-        data.grade_bandas.lista.forEach(banda => {
+      if (gradeBandas.lista?.length && listaBandas) {
+        gradeBandas.lista.forEach(banda => {
           if (!banda.nome && !banda.imagem) return;
 
           const li = document.createElement('li');
           li.className = 'grade-bandas-item';
 
           li.innerHTML = `
-        <time class="hora">${banda.hora || ''}</time>
+            <time class="hora">${banda.hora || ''}</time>
 
-        <article class="banda">
-          ${banda.imagem ? `<img src="${banda.imagem}" alt="${banda.nome || ''}">` : ''}
+            <article class="banda">
+              ${banda.imagem ? `<img src="${banda.imagem}" alt="${banda.nome || ''}">` : ''}
 
-          <h3 class="banda-nome">${banda.nome || ''}</h3>
+              <h3 class="banda-nome">${banda.nome || ''}</h3>
 
-          <div class="banda-sociais">
-            ${banda.instagram ? `
-              <a href="${banda.instagram}" target="_blank">
-                <img src="/assets/geral/instagram_logo.webp">
-              </a>` : ''}
+              <div class="banda-sociais">
+                ${banda.instagram ? `
+                  <a href="${banda.instagram}" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/geral/instagram_logo.webp" alt="Instagram">
+                  </a>` : ''}
 
-            ${banda.youtube ? `
-              <a href="${banda.youtube}" target="_blank">
-                <img src="/assets/geral/youtube_logo.webp">
-              </a>` : ''}
-          </div>
-        </article>
-      `;
+                ${banda.youtube ? `
+                  <a href="${banda.youtube}" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/geral/youtube_logo.webp" alt="YouTube">
+                  </a>` : ''}
+              </div>
+            </article>
+          `;
 
           listaBandas.appendChild(li);
         });
       }
+    }
 
-      // ===== FEIRA =====
-      setText('titulo-feira', data.feira?.titulo);
-      setText('descricao-feira', data.feira?.descricao);
+    // ===== FEIRA =====
+    if (feira) {
+      setText('titulo-feira', feira.titulo);
+      setText('descricao-feira', feira.descricao);
 
       const listaLojas = document.getElementById('lista-lojas');
+      if (listaLojas) listaLojas.innerHTML = '';
 
-      if (data.feira?.lojas?.length) {
-        data.feira.lojas.forEach(loja => {
+      if (feira.lojas?.length && listaLojas) {
+        feira.lojas.forEach(loja => {
           if (!loja.imagem) return;
 
           const a = document.createElement('a');
           a.className = 'cartao-feira';
           a.href = loja.link || '#';
           a.target = '_blank';
+          a.rel = 'noopener noreferrer';
 
           a.innerHTML = `
-        <img src="${loja.imagem}" alt="" width="150" height="150">
-      `;
+            <img src="${loja.imagem}" alt="" width="150" height="150">
+          `;
 
           listaLojas.appendChild(a);
         });
       }
+    }
 
-      // ===== APOIO =====
-      setText('titulo-apoio', data.apoio?.titulo);
-      setText('descricao-apoio', data.apoio?.descricao);
+    // ===== APOIO =====
+    if (apoio) {
+      setText('titulo-apoio', apoio.titulo);
+      setText('descricao-apoio', apoio.descricao);
 
       const listaApoio = document.getElementById('lista-apoio');
+      if (listaApoio) listaApoio.innerHTML = '';
 
-      if (data.apoio?.lista?.length) {
-        data.apoio.lista.forEach(item => {
+      if (apoio.lista?.length && listaApoio) {
+        apoio.lista.forEach(item => {
           if (!item.imagem) return;
 
           const a = document.createElement('a');
           a.className = 'cartao-apoio';
           a.href = item.link || '#';
           a.target = '_blank';
+          a.rel = 'noopener noreferrer';
 
           a.innerHTML = `<img src="${item.imagem}" alt="">`;
 
           listaApoio.appendChild(a);
         });
       }
+    }
 
-      // ===== LOCAL =====
-      setText('titulo-local', data.local?.titulo);
-      setText('endereco', data.local?.endereco);
-      setLink('link-endereco', data.local?.link_mapa);
+    // ===== LOCAL =====
+    if (local) {
+      setText('titulo-local', local.titulo);
+      setText('endereco', local.endereco);
+      setLink('link-endereco', local.link_mapa);
 
-      if (data.local?.iframe_mapa) {
-        document.getElementById('mapa').src = data.local.iframe_mapa;
+      if (local.iframe_mapa) {
+        const mapa = document.getElementById('mapa');
+        if (mapa) mapa.src = local.iframe_mapa;
       }
 
-      // Transporte
       const listaAcesso = document.getElementById('lista-acesso');
+      if (listaAcesso) listaAcesso.innerHTML = '';
 
-      if (data.local?.transporte?.length) {
-        data.local.transporte.forEach(item => {
-          if (!item) return;
+      if (local.transporte?.length && listaAcesso) {
+        local.transporte.forEach(item => {
+          const texto = typeof item === 'string' ? item : item.item;
+          if (!texto) return;
 
           const li = document.createElement('li');
-          li.textContent = item;
+          li.textContent = texto;
           listaAcesso.appendChild(li);
         });
       }
     }
+  }
 
-    // ===== FUNÇÕES AUXILIARES =====
-    function setText(id, value) {
-      if (!value) return;
-      const el = document.getElementById(id);
-      if (el) el.textContent = value;
-    }
+  // ===== FUNÇÕES AUXILIARES =====
+  function setText(id, value) {
+    if (!value) return;
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
 
-    function setImg(id, src) {
-      if (!src) return;
-      const el = document.getElementById(id);
-      if (el) el.src = src;
-    }
+  function setImg(id, src) {
+    if (!src) return;
+    const el = document.getElementById(id);
+    if (el) el.src = src;
+  }
 
-    function setLink(id, href) {
-      if (!href) return;
-      const el = document.getElementById(id);
-      if (el) el.href = href;
-    }
+  function setLink(id, href) {
+    if (!href) return;
+    const el = document.getElementById(id);
+    if (el) el.href = href;
+  }
 
-    // ===== INICIAR =====
-    carregarProgramacao();
-  </script>
+  // ===== INICIAR =====
+  carregarProgramacao();
+</script>
 
 </body>
 

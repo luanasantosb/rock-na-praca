@@ -47,100 +47,94 @@ collections:
               - { label: "Taxa", name: "taxa", widget: "string" }
               - { label: "Pix", name: "pix", widget: "string" }
 
-  - name: "programacao_evento"
-    label: "Programação"
-    files:
-      - file: "content/programacao.json"
-        label: "Página Programação"
-        name: "programacao_evento"
-        fields:
-          - { label: "Título", name: "titulo", widget: "string", required: false }
-          - { label: "Subtítulo", name: "subtitulo", widget: "string", required: false }
-          - { label: "Resumo", name: "resumo", widget: "text", required: false }
+- name: "programacao"
+  label: "Programação"
+  files:
+    - name: "hero-programacao"
+      label: "Topo"
+      file: "content/programacao/hero.json"
+      fields:
+        - { label: "Título", name: "titulo", widget: "string", required: false }
+        - { label: "Subtitulo", name: "subtitulo", widget: "string", required: false }
+        - { label: "Resumo", name: "resumo", widget: "text", required: false }
 
-          - label: "Realização"
-            name: "realizacao"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Nome", name: "nome", widget: "string", required: false }
-              - { label: "Logo", name: "logo", widget: "image", required: false }
-              - { label: "Link", name: "link", widget: "string", required: false }
+    - name: "realizacao"
+      label: "Realização"
+      file: "content/programacao/realizacao.json"
+      fields:
+        - label: "Itens de Realização"
+          name: "itens"
+          widget: "list"
+          fields:
+            - { label: "Nome", name: "nome", widget: "string", required: false }
+            - { label: "Logo", name: "logo", widget: "image", required: false }
+            - { label: "Link", name: "link", widget: "string", required: false }
 
-          - label: "Apoio Institucional"
-            name: "apoio_institucional"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Texto", name: "texto", widget: "string", required: false }
-              - { label: "Logo", name: "logo", widget: "image", required: false }
-              - { label: "Link", name: "link", widget: "string", required: false }
+    - name: "grade_bandas"
+      label: "Grade de Bandas"
+      file: "content/programacao/grade-bandas.json"
+      fields:
+        - label: "Título da seção"
+          name: "titulo"
+          widget: "string"
+          required: false
 
-          - label: "Grade de Bandas"
-            name: "grade_bandas"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Título da seção", name: "titulo", widget: "string", required: false }
-              - label: "Bandas"
-                name: "lista"
-                widget: "list"
-                required: false
-                fields:
-                  - { label: "Hora", name: "hora", widget: "string", required: false }
-                  - { label: "Nome", name: "nome", widget: "string", required: false }
-                  - { label: "Imagem", name: "imagem", widget: "image", required: false }
-                  - { label: "Instagram", name: "instagram", widget: "string", required: false }
-                  - { label: "YouTube", name: "youtube", widget: "string", required: false }
+        - label: "Bandas"
+          name: "lista"
+          widget: "list"
+          required: false
+          fields:
+            - { label: "Hora", name: "hora", widget: "string", required: false }
+            - { label: "Nome", name: "nome", widget: "string", required: false }
+            - { label: "Imagem", name: "imagem", widget: "image", required: false }
+            - { label: "Instagram", name: "instagram", widget: "string", required: false }
+            - { label: "YouTube", name: "youtube", widget: "string", required: false }
 
-          - label: "Feira"
-            name: "feira"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Mercado Underground" }
-              - { label: "Descrição", name: "descricao", widget: "text", required: false }
-              - label: "Lojas"
-                name: "lojas"
-                widget: "list"
-                required: false
-                fields:
-                  - { label: "Imagem", name: "imagem", widget: "image", required: false }
-                  - { label: "Link", name: "link", widget: "string", required: false }
+    - name: "feira"
+      label: "Feira"
+      file: "content/programacao/feira.json"
+      fields:
+        - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Mercado Underground" }
+        - { label: "Descrição", name: "descricao", widget: "text", required: false }
+        - label: "Lojas"
+          name: "lojas"
+          widget: "list"
+          required: false
+          fields:
+            - { label: "Imagem", name: "imagem", widget: "image", required: false }
+            - { label: "Link", name: "link", widget: "string", required: false }
 
-          - label: "Apoio"
-            name: "apoio"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Apoio" }
-              - { label: "Descrição", name: "descricao", widget: "text", required: false }
-              - label: "Lista de Apoiadores"
-                name: "lista"
-                widget: "list"
-                required: false
-                fields:
-                  - { label: "Imagem", name: "imagem", widget: "image", required: false }
-                  - { label: "Link", name: "link", widget: "string", required: false }
+    - name: "apoio"
+      label: "Apoio"
+      file: "content/programacao/apoio.json"
+      fields:
+        - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Apoio" }
+        - { label: "Descrição", name: "descricao", widget: "text", required: false }
+        - label: "Lista de Apoiadores"
+          name: "lista"
+          widget: "list"
+          required: false
+          fields:
+            - { label: "Imagem", name: "imagem", widget: "image", required: false }
+            - { label: "Link", name: "link", widget: "string", required: false }
 
-          - label: "Como Chegar"
-            name: "local"
-            widget: "object"
-            required: false
-            fields:
-              - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Como Chegar" }
-              - { label: "Endereço", name: "endereco", widget: "text", required: false }
-              - { label: "Link do mapa", name: "link_mapa", widget: "string", required: false }
-              - { label: "Iframe do mapa", name: "iframe_mapa", widget: "text", required: false }
-              - label: "Transporte"
-                name: "transporte"
-                widget: "list"
-                required: false
-                field:
-                  label: "Item"
-                  name: "item"
-                  widget: "string"
-                  required: false
+    - name: "local"
+      label: "Como Chegar"
+      file: "content/programacao/como-chegar.json"
+      fields:
+        - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Como Chegar" }
+        - { label: "Endereço", name: "endereco", widget: "text", required: false }
+        - { label: "Link do mapa", name: "link_mapa", widget: "string", required: false }
+        - { label: "Iframe do mapa", name: "iframe_mapa", widget: "text", required: false }
+        - label: "Transporte"
+          name: "transporte"
+          widget: "list"
+          required: false
+          fields:
+            - label: "Item"
+              name: "item"
+              widget: "string"
+              required: false
 
   - name: "loja_produtos"
     label: "Loja"

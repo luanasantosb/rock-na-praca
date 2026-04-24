@@ -28,9 +28,9 @@
   --rosa-soft: rgba(203, 93, 159, 0.15);
   --overlay-dark: rgba(33, 33, 33, 0.6);
 
-  --fonte-titulos: 'Bebas Neue',Arial , sans-serif;
+  --fonte-titulos: 'Bebas Neue', Arial, sans-serif;
 
-  --fonte-textos: 'Open Sans',Arial , sans-serif;
+  --fonte-textos: 'Open Sans', Arial, sans-serif;
 
   --transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-slow: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -625,8 +625,9 @@ lite-youtube:hover {
   .marca-item img {
     max-width: 100px;
   }
+
   .hero-link {
-  padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.5rem;
   }
 }
 
@@ -635,7 +636,7 @@ lite-youtube:hover {
 ======================= */
 
 /* ===== Seção Cabeçalho ===== */
-.programacao-conteudo{
+.main-programacao {
   margin-left: 180px;
 }
 
@@ -652,7 +653,7 @@ lite-youtube:hover {
   top: 0;
   left: 0;
 
-  height: 70vh; 
+  height: 70vh;
   width: 180px;
 
   padding: 1rem 0;
@@ -689,32 +690,28 @@ lite-youtube:hover {
 .cabecalho-menu-programacao a:hover,
 .cabecalho-menu-programacao a:active {
   color: var(--rosa);
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
+
 /* ===== Seção conteudo ===== */
 
-.programacao-conteudo {
-  margin-top: 0.5rem;
-  margin-left: 150px;
-  padding: 0.5rem;
-}
-
-.programacao-conteudo h1,
-.programacao-conteudo h2 {
+#titulo-programacao {
+  color: var(--verde);
+  font-size: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-.programacao-conteudo h1 {
-  color: var(--verde);
-  font-size: 3rem;
-}
-
-.programacao-conteudo h2 {
+#subtitulo-programacao {
   color: var(--rosa);
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
 }
 
 .conteudo-descricao {
@@ -1117,6 +1114,7 @@ lite-youtube:hover {
     font-size: 1.2rem;
     padding: 8px;
   }
+
   .programacao-conteudo {
     margin-left: 0;
     padding: 1rem;
@@ -1160,9 +1158,11 @@ lite-youtube:hover {
   .local-grid {
     grid-template-columns: 1fr;
   }
+
   .mapa-container iframe {
     height: 300px;
   }
+
   .grade-bandas-container {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1193,6 +1193,7 @@ lite-youtube:hover {
   .programacao-conteudo h1 {
     font-size: 1.6rem;
   }
+
   .programacao-conteudo h2 {
     font-size: 1.3rem;
   }
@@ -1210,7 +1211,7 @@ lite-youtube:hover {
 /* ========================= */
 /*       SOBRE          */
 /* ========================= */
-.sobre-titulo{
+.sobre-titulo {
   font-size: clamp(1.8rem, 4vw, 2.3rem);
   margin: 0;
   text-transform: uppercase;
@@ -1233,8 +1234,8 @@ lite-youtube:hover {
 }
 
 
-.sobre-texto h2{
-   font-size: clamp(1.5rem, 4vw, 2rem);
+.sobre-texto h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1256,8 +1257,8 @@ lite-youtube:hover {
   font-family: var(--fonte-textos);
 }
 
-.sobre-texto q{
-  color:var(--branco);
+.sobre-texto q {
+  color: var(--branco);
 }
 
 .video-dvd {
@@ -1269,7 +1270,7 @@ lite-youtube {
   margin: 20px auto;
   max-width: 800px;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .video-caption {
@@ -2225,7 +2226,7 @@ lite-youtube {
 /*      login ADM  */
 /* ========================= */
 
-.login{
+.login {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -2293,4 +2294,3 @@ lite-youtube {
 .box button:active {
   transform: scale(0.98);
 }
-

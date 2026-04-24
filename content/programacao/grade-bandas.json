@@ -1,0 +1,19 @@
+{
+  "titulo": "Grade de Bandas",
+  "lista": [
+    {
+      "hora": "18:00",
+      "nome": "Banda X",
+      "imagem": "/images/banda-x.jpg",
+      "instagram": "https://instagram.com/bandax",
+      "youtube": ""
+    },
+    {
+      "hora": "20:00",
+      "nome": "Banda Y",
+      "imagem": "/images/banda-y.jpg",
+      "instagram": "",
+      "youtube": "https://youtube.com/banday"
+    }
+  ]
+}

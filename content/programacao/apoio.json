@@ -1,0 +1,14 @@
+{
+  "titulo": "Apoio",
+  "descricao": "Parceiros que tornam isso possível.",
+  "lista": [
+    {
+      "imagem": "/images/apoio1.png",
+      "link": "https://site.com"
+    },
+    {
+      "imagem": "/images/apoio2.png",
+      "link": "https://site.com"
+    }
+  ]
+}
