@@ -1,9 +1,12 @@
 {
   "itens": [
     {
-      "nome": "Balaiada Produções",
-      "logo": "/images/balaiada.png",
-      "link": "https://site.com"
+      "nome": "Balaiada Produtora",
+      "logo": "/images/uploads/Balaiada_logo.webp",
+      "link": "https://www.instagram.com/balaiada"
+    },
+    {
+      "nome": ""
     }
   ]
 }
