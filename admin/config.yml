@@ -5,222 +5,317 @@ backend:
   base_url: https://rocknapraca-oauth.vercel.app
   auth_endpoint: /api/auth
   site_domain: www.rocknapraca.com
-
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
+media_folder: images/uploads
+public_folder: /images/uploads
 collections:
-  - name: "home"
-    label: "Página Inicial"
+  - name: home
+    label: Página Inicial
     files:
-      - label: "Hero"
-        name: "home"
-        file: "content/home.json"
-        format: "json"
+      - label: Hero
+        name: home
+        file: content/home.json
+        format: json
         fields:
-          - { label: "Ícone da Insígnia", name: "insignia_icone", widget: "string", default: "🏛️", required: false }
-          - { label: "Texto da Insígnia", name: "insignia_texto", widget: "string", required: false }
-          - { label: "Título", name: "titulo", widget: "string", required: false }
-          - { label: "Edição", name: "edicao", widget: "string", required: false }
-          - { label: "Subtítulo", name: "subtitulo", widget: "string", required: false }
-          - { label: "Data", name: "data_evento", widget: "string", required: false }
-          - { label: "Data ISO", name: "data_iso", widget: "string", required: false }
-          - { label: "Local", name: "local", widget: "string", required: false }
-          - { label: "Cidade", name: "cidade", widget: "string", required: false }
-          - { label: "Estado", name: "estado", widget: "string", required: false }
-          - { label: "Texto do Botão", name: "botao_texto", widget: "string", required: false }
-          - { label: "Imagem", name: "imagem", widget: "image", required: false }
-
-  - name: "inscricao"
-    label: "Inscrição Feira"
+          - label: Ícone da Insígnia
+            name: insignia_icone
+            widget: string
+            default: 🏛️
+            required: false
+          - label: Texto da Insígnia
+            name: insignia_texto
+            widget: string
+            required: false
+          - label: Título
+            name: titulo
+            widget: string
+            required: false
+          - label: Edição
+            name: edicao
+            widget: string
+            required: false
+          - label: Subtítulo
+            name: subtitulo
+            widget: string
+            required: false
+          - label: Data
+            name: data_evento
+            widget: string
+            required: false
+          - label: Data ISO
+            name: data_iso
+            widget: string
+            required: false
+          - label: Local
+            name: local
+            widget: string
+            required: false
+          - label: Cidade
+            name: cidade
+            widget: string
+            required: false
+          - label: Estado
+            name: estado
+            widget: string
+            required: false
+          - label: Texto do Botão
+            name: botao_texto
+            widget: string
+            required: false
+          - label: Imagem
+            name: imagem
+            widget: image
+            required: false
+  - name: inscricao
+    label: Inscrição Feira
     files:
-      - file: "content/inscricao-feira.json"
-        label: "Aviso"
-        name: "inscricao"
+      - file: content/inscricao-feira.json
+        label: Aviso
+        name: inscricao
         fields:
-          - label: "Inscrição Feira Aviso"
-            name: "inscricaoFeiraAviso"
-            widget: "object"
+          - label: Inscrição Feira Aviso
+            name: inscricaoFeiraAviso
+            widget: object
             fields:
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Local", name: "local", widget: "string" }
-              - { label: "Taxa", name: "taxa", widget: "string" }
-              - { label: "Pix", name: "pix", widget: "string" }
-
-  - name: "programacao"
-    label: "Programação"
+              - label: Título
+                name: titulo
+                widget: string
+              - label: Local
+                name: local
+                widget: string
+              - label: Taxa
+                name: taxa
+                widget: string
+              - label: Pix
+                name: pix
+                widget: string
+  - name: programacao
+    label: Programação
     files:
-    - name: "hero-programacao"
-      label: "Topo"
-      file: "content/programacao/hero.json"
-      fields:
-        - { label: "Título", name: "titulo", widget: "string", required: false }
-        - { label: "Subtitulo", name: "subtitulo", widget: "string", required: false }
-        - { label: "Resumo", name: "resumo", widget: "text", required: false }
-
-    - name: "realizacao"
-      label: "Realização"
-      file: "content/programacao/realizacao.json"
-      fields:
-        - label: "Itens de Realização"
-          name: "itens"
-          widget: "list"
-          fields:
-            - { label: "Nome", name: "nome", widget: "string", required: false }
-            - { label: "Logo", name: "logo", widget: "image", required: false }
-            - { label: "Link", name: "link", widget: "string", required: false }
-
-    - name: "grade_bandas"
-      label: "Grade de Bandas"
-      file: "content/programacao/grade-bandas.json"
-      fields:
-        - label: "Título da seção"
-          name: "titulo"
-          widget: "string"
-          required: false
-
-        - label: "Bandas"
-          name: "lista"
-          widget: "list"
-          required: false
-          fields:
-            - { label: "Hora", name: "hora", widget: "string", required: false }
-            - { label: "Nome", name: "nome", widget: "string", required: false }
-            - { label: "Imagem", name: "imagem", widget: "image", required: false }
-            - { label: "Instagram", name: "instagram", widget: "string", required: false }
-            - { label: "YouTube", name: "youtube", widget: "string", required: false }
-
-    - name: "feira"
-      label: "Feira"
-      file: "content/programacao/feira.json"
-      fields:
-        - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Mercado Underground" }
-        - { label: "Descrição", name: "descricao", widget: "text", required: false }
-        - label: "Lojas"
-          name: "lojas"
-          widget: "list"
-          required: false
-          fields:
-            - { label: "Imagem", name: "imagem", widget: "image", required: false }
-            - { label: "Link", name: "link", widget: "string", required: false }
-
-    - name: "apoio"
-      label: "Apoio"
-      file: "content/programacao/apoio.json"
-      fields:
-        - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Apoio" }
-        - { label: "Descrição", name: "descricao", widget: "text", required: false }
-        - label: "Lista de Apoiadores"
-          name: "lista"
-          widget: "list"
-          required: false
-          fields:
-            - { label: "Imagem", name: "imagem", widget: "image", required: false }
-            - { label: "Link", name: "link", widget: "string", required: false }
-
-    - name: "local"
-      label: "Como Chegar"
-      file: "content/programacao/como-chegar.json"
-      fields:
-        - { label: "Título da seção", name: "titulo", widget: "string", required: false, default: "Como Chegar" }
-        - { label: "Endereço", name: "endereco", widget: "text", required: false }
-        - { label: "Link do mapa", name: "link_mapa", widget: "string", required: false }
-        - { label: "Iframe do mapa", name: "iframe_mapa", widget: "text", required: false }
-        - label: "Transporte"
-          name: "transporte"
-          widget: "list"
-          required: false
-          fields:
-            - label: "Item"
-              name: "item"
-              widget: "string"
-              required: false
-
-  - name: "loja_produtos"
-    label: "Loja"
-    files:
-     - file: "content/produtos.json"
-       label: "Produtos"
-       name: "loja_produtos"
-       fields:
-        - label: "Produtos"
-          name: "produtos"
-          widget: "list"
-          required: false
-          fields:
-            - label: "Slug"
-              name: "slug"
-              widget: "string"
-              required: true
-              hint: "Usado no link do produto. Ex: camiseta-rock-na-praca-1"
-
-            - label: "Nome"
-              name: "nome"
-              widget: "string"
-              required: false
-
-            - label: "Título exibido"
-              name: "titulo"
-              widget: "string"
-              required: false
-
-            - label: "Preço"
-              name: "preco"
-              widget: "number"
-              value_type: "float"
-              min: 0
-              step: 0.01
-              required: false
-
-            - label: "Descrição"
-              name: "descricao"
-              widget: "text"
-              required: false
-
-            - label: "Status"
-              name: "status"
-              widget: "string"
-              required: false
-
-            - label: "Imagem principal"
-              name: "imagem"
-              widget: "image"
-              required: false
-
-            - label: "Alt da imagem"
-              name: "alt"
-              widget: "string"
-              required: false
-
-            - label: "Ativo"
-              name: "ativo"
-              widget: "boolean"
-              required: false
-              default: true
-
-            - label: "Galeria de imagens"
-              name: "imagens"
-              widget: "list"
-              required: false
-              field:
-                label: "Imagem"
-                name: "imagem"
-                widget: "image"
-
-            - label: "Tamanhos"
-              name: "tamanhos"
-              widget: "list"
-              required: false
-              field:
-                label: "Tamanho"
-                name: "tamanho"
-                widget: "string"
-
-            - label: "Cores"
-              name: "cores"
-              widget: "list"
-              required: false
-              field:
-                label: "Cor"
-                name: "cor"
-                widget: "string"
+      - name: hero-programacao
+        label: Topo
+        file: content/programacao/hero.json
+        fields:
+          - label: Título
+            name: titulo
+            widget: string
+            required: false
+          - label: Subtitulo
+            name: subtitulo
+            widget: string
+            required: false
+          - label: Resumo
+            name: resumo
+            widget: text
+            required: false
+      - name: realizacao
+        label: Realização
+        file: content/programacao/realizacao.json
+        fields:
+          - label: Itens de Realização
+            name: itens
+            widget: list
+            fields:
+              - label: Nome
+                name: nome
+                widget: string
+                required: false
+              - label: Logo
+                name: logo
+                widget: image
+                required: false
+              - label: Link
+                name: link
+                widget: string
+                required: false
+      - name: grade_bandas
+        label: Grade de Bandas
+        file: content/programacao/grade-bandas.json
+        fields:
+          - label: Título da seção
+            name: titulo
+            widget: string
+            required: false
+          - label: Bandas
+            name: lista
+            widget: list
+            required: false
+            fields:
+              - label: Hora
+                name: hora
+                widget: string
+                required: false
+              - label: Nome
+                name: nome
+                widget: string
+                required: false
+              - label: Imagem
+                name: imagem
+                widget: image
+                required: false
+              - label: Instagram
+                name: instagram
+                widget: string
+                required: false
+              - label: YouTube
+                name: youtube
+                widget: string
+                required: false
+      - name: feira
+        label: Feira
+        file: content/programacao/feira.json
+        fields:
+          - label: Título da seção
+            name: titulo
+            widget: string
+            required: false
+            default: Mercado Underground
+          - label: Descrição
+            name: descricao
+            widget: text
+            required: false
+          - label: Lojas
+            name: lojas
+            widget: list
+            required: false
+            fields:
+              - label: Imagem
+                name: imagem
+                widget: image
+                required: false
+              - label: Link
+                name: link
+                widget: string
+                required: false
+      - name: apoio
+        label: Apoio
+        file: content/programacao/apoio.json
+        fields:
+          - label: Título da seção
+            name: titulo
+            widget: string
+            required: false
+            default: Apoio
+          - label: Descrição
+            name: descricao
+            widget: text
+            required: false
+          - label: Lista de Apoiadores
+            name: lista
+            widget: list
+            required: false
+            fields:
+              - label: Imagem
+                name: imagem
+                widget: image
+                required: false
+              - label: Link
+                name: link
+                widget: string
+                required: false
+      - name: local
+        label: Como Chegar
+        file: content/programacao/como-chegar.json
+        fields:
+          - label: Título da seção
+            name: titulo
+            widget: string
+            required: false
+            default: Como Chegar
+          - label: Endereço
+            name: endereco
+            widget: text
+            required: false
+          - label: Link do mapa
+            name: link_mapa
+            widget: string
+            required: false
+          - label: Iframe do mapa
+            name: iframe_mapa
+            widget: text
+            required: false
+          - label: Transporte
+            name: transporte
+            widget: list
+            required: false
+            fields:
+              - label: Item
+                name: item
+                widget: string
+                required: false
+      - name: loja_produtos
+        label: Loja
+        files: null
+      - file: content/produtos.json
+        label: Produtos
+        name: loja_produtos
+        fields:
+          - label: Produtos
+            name: produtos
+            widget: list
+            required: false
+            fields:
+              - label: Slug
+                name: slug
+                widget: string
+                required: true
+                hint: "Usado no link do produto. Ex: camiseta-rock-na-praca-1"
+              - label: Nome
+                name: nome
+                widget: string
+                required: false
+              - label: Título exibido
+                name: titulo
+                widget: string
+                required: false
+              - label: Preço
+                name: preco
+                widget: number
+                value_type: float
+                min: 0
+                step: 0.01
+                required: false
+              - label: Descrição
+                name: descricao
+                widget: text
+                required: false
+              - label: Status
+                name: status
+                widget: string
+                required: false
+              - label: Imagem principal
+                name: imagem
+                widget: image
+                required: false
+              - label: Alt da imagem
+                name: alt
+                widget: string
+                required: false
+              - label: Ativo
+                name: ativo
+                widget: boolean
+                required: false
+                default: true
+              - label: Galeria de imagens
+                name: imagens
+                widget: list
+                required: false
+                field:
+                  label: Imagem
+                  name: imagem
+                  widget: image
+              - label: Tamanhos
+                name: tamanhos
+                widget: list
+                required: false
+                field:
+                  label: Tamanho
+                  name: tamanho
+                  widget: string
+              - label: Cores
+                name: cores
+                widget: list
+                required: false
+                field:
+                  label: Cor
+                  name: cor
+                  widget: string
