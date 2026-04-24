@@ -47,9 +47,9 @@ collections:
               - { label: "Taxa", name: "taxa", widget: "string" }
               - { label: "Pix", name: "pix", widget: "string" }
 
-- name: "programacao"
-  label: "Programação"
-  files:
+  - name: "programacao"
+    label: "Programação"
+    files:
     - name: "hero-programacao"
       label: "Topo"
       file: "content/programacao/hero.json"
