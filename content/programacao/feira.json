@@ -3,12 +3,8 @@
   "descricao": "Conheça as lojas e artistas independentes.",
   "lojas": [
     {
-      "imagem": "/images/loja1.png",
-      "link": "https://loja1.com"
-    },
-    {
-      "imagem": "/images/loja2.png",
-      "link": "https://loja2.com"
+      "imagem": "/images/uploads/The-Raven_logo.webp",
+      "link": "https://www.instagram.com/theravenbr"
     }
   ]
 }
