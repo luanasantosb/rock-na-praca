@@ -252,7 +252,7 @@
               placeholder="contato@loja.com">
 
             <label for="comprovante">Comprovante*(PDF ou imagem)</label>
-            <input type="file" id="comprovante" name="comprovante" required>
+            <input type="file" id="comprovante" class="inscricao-input"name="comprovante" required>
           </fieldset>
 
           <div id="mensagem" role="status" aria-live="polite"></div>
@@ -343,9 +343,6 @@
               try {
                 const r = await fetch(URL, {
                   method: "POST",
-                  headers: {
-                    "Content-Type": "application/json"
-                  },
                   body: JSON.stringify(dados)
                 });
 
