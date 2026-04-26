@@ -252,8 +252,7 @@
               placeholder="contato@loja.com">
 
             <label for="comprovante">Comprovante*(PDF ou imagem)</label>
-            <input type="file" id="comprovante" name="comprovante" class="inscricao-input" accept=".pdf,image/*"
-              required>
+            <input type="file" id="comprovante" name="comprovante" required>
           </fieldset>
 
           <div id="mensagem" role="status" aria-live="polite"></div>
@@ -265,7 +264,7 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-            const URL = "https://script.google.com/macros/s/AKfycbz9Fey4pP3ywwWkE2ysOT5ufh46oGJAl4hsS7KRRCxS9hIoK08SuKJRxAAIcl5GsKdx8w/exec";
+            const URL = "https://script.google.com/macros/s/AKfycbyzGz8x75STjvfiekL_FvOM2bdWjqh6O2YIRHiRqR1NlDhBS1UDjh5p9lkhsADnjHmcTw/exec";
 
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
@@ -277,21 +276,17 @@
             fetch(URL)
               .then(r => r.json())
               .then(data => {
-
                 if (data.total !== undefined && data.limite !== undefined) {
-
                   const vagasRestantes = data.limite - data.total;
-
                   msgTopo.textContent = `☠️ Restam apenas ${vagasRestantes} vagas`;
                   msgTopo.className = "aviso";
-
                 }
+
                 if (!data.abertas) {
                   form.style.display = "none";
                   msgTopo.textContent = data.mensagem || "❌ Inscrições encerradas.";
                   msgTopo.className = "erro";
                 }
-
               })
               .catch(() => {
                 msgTopo.textContent = "Erro ao verificar inscrições.";
@@ -306,7 +301,6 @@
               const logo = document.getElementById("logo")?.files[0];
               const comprovante = document.getElementById("comprovante")?.files[0];
 
-
               if (
                 !form.loja_nome.value.trim() ||
                 !form.loja_cidade.value.trim() ||
@@ -314,33 +308,32 @@
                 !form.loja_responsavel.value.trim() ||
                 !form.loja_whatsapp.value.trim()
               ) {
-                msg.textContent = "Preencha todos os campos obrigatórios.";
-                msg.className = "erro";
-                botao.disabled = false;
+                erro("Preencha todos os campos obrigatórios.");
                 return;
               }
 
+              if (!comprovante) {
+                erro("Envie o comprovante de pagamento.");
+                return;
+              }
 
               if (logo && logo.size > 5 * 1024 * 1024) {
-                msg.textContent = "Logo excede 5 MB.";
-                msg.className = "erro";
-                botao.disabled = false;
+                erro("Logo excede 5 MB.");
                 return;
               }
-              if (comprovante && comprovante.size > 5 * 1024 * 1024) {
-                msg.textContent = "Comprovante excede 5 MB.";
-                msg.className = "erro";
-                botao.disabled = false;
+
+              if (comprovante.size > 5 * 1024 * 1024) {
+                erro("Comprovante excede 5 MB.");
                 return;
               }
 
               const dados = {
-                loja_nome: form.loja_nome.value,
-                loja_cidade: form.loja_cidade.value,
-                loja_rede: form.loja_rede.value,
-                loja_responsavel: form.loja_responsavel.value,
-                loja_whatsapp: form.loja_whatsapp.value,
-                loja_email: form.loja_email.value,
+                loja_nome: form.loja_nome.value.trim(),
+                loja_cidade: form.loja_cidade.value.trim(),
+                loja_rede: form.loja_rede.value.trim(),
+                loja_responsavel: form.loja_responsavel.value.trim(),
+                loja_whatsapp: form.loja_whatsapp.value.trim(),
+                loja_email: form.loja_email.value.trim(),
                 loja_logo: await fileToBase64(logo),
                 loja_comprovante: await fileToBase64(comprovante)
               };
@@ -350,10 +343,14 @@
               try {
                 const r = await fetch(URL, {
                   method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
                   body: JSON.stringify(dados)
                 });
 
                 const json = await r.json();
+
                 msg.textContent = json.mensagem || "Resposta recebida.";
                 msg.className = json.sucesso ? "sucesso" : "erro";
 
@@ -361,12 +358,17 @@
 
               } catch (err) {
                 console.error(err);
-                msg.textContent = "Erro ao enviar. Tente novamente.";
-                msg.className = "erro";
+                erro("Erro ao enviar. Tente novamente.");
               } finally {
                 botao.disabled = false;
               }
             });
+
+            function erro(texto) {
+              msg.textContent = texto;
+              msg.className = "erro";
+              botao.disabled = false;
+            }
 
             function fileToBase64(file) {
               return new Promise(resolve => {
@@ -418,15 +420,15 @@
   </footer>
   <script>
     fetch("/content/inscricao-feira.json")
-  .then(res => res.json())
-  .then(dados => {
-    const aviso = dados.inscricaoFeiraAviso;
+      .then(res => res.json())
+      .then(dados => {
+        const aviso = dados.inscricaoFeiraAviso;
 
-    document.getElementById("inscricao-titulo").textContent = aviso.titulo;
-    document.getElementById("inscricao-local").textContent = aviso.local;
-    document.getElementById("inscricao-taxa").textContent = aviso.taxa;
-    document.getElementById("inscricao-pix").textContent = aviso.pix;
-  });
+        document.getElementById("inscricao-titulo").textContent = aviso.titulo;
+        document.getElementById("inscricao-local").textContent = aviso.local;
+        document.getElementById("inscricao-taxa").textContent = aviso.taxa;
+        document.getElementById("inscricao-pix").textContent = aviso.pix;
+      });
   </script>
 
 </body>
