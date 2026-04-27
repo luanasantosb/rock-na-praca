@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
 });
 
 
-/*===== CABECALHO =====*/
+/*===== CABECALHO mobile =====*/
 
 const btnMenu = document.getElementById("menu-hamburguer");
 const menu = document.getElementById("menu");
@@ -85,6 +85,65 @@ if (menu) {
     }
   });
 }
+
+/*====================Cabecalho===================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/cabecalho.json")
+    .then(res => res.json())
+    .then(data => {
+
+      const logoContainer = document.getElementById("logo");
+      logoContainer.innerHTML = `
+        <a href="${data.logo.link}" style="display:inline-block;">
+          <img src="${data.logo.imagem}"
+            alt="${data.logo.alt}"
+            title="${data.logo.title}"
+            width="${data.logo.width}"
+            height="${data.logo.height}"
+            loading="eager">
+        </a>
+      `;
+
+      const menu = document.getElementById("menu");
+
+      data.menu.forEach(item => {
+
+        if (item.submenu) {
+          const div = document.createElement("div");
+          div.classList.add("menu-item");
+
+          div.innerHTML = `
+            <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
+              ${item.nome}
+            </button>
+            <div class="submenu">
+              ${item.submenu.map(sub => `
+                <a href="${sub.url}" title="${sub.title}" itemprop="url">
+                  <span itemprop="name">${sub.nome}</span>
+                </a>
+              `).join("")}
+            </div>
+          `;
+
+          menu.appendChild(div);
+
+        } else {
+          const a = document.createElement("a");
+          a.href = item.url;
+          a.title = item.title;
+          a.setAttribute("itemprop", "url");
+
+          a.innerHTML = `<span itemprop="name">${item.nome}</span>`;
+
+          menu.appendChild(a);
+        }
+
+      });
+
+    })
+    .catch(err => console.error("Erro ao carregar cabeçalho:", err));
+});
 
 /*===== CONTADOR =====*/
 

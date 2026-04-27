@@ -1,0 +1,47 @@
+{
+  "logo": {
+    "link": "/",
+    "imagem": "/assets/geral/rock-na-praca_logotipo_simbolo.webp",
+    "alt": "Rock na Praça Esteio - Site Oficial do Festival",
+    "title": "Página Inicial - Rock na Praça Oficial",
+    "width": "130",
+    "height": "82"
+  },
+  "menu": [
+    {
+      "nome": "Sobre o Festival",
+      "url": "/sobre/",
+      "title": "Saiba mais sobre a história do Rock na Praça"
+    },
+    {
+      "nome": "Inscrições",
+      "submenu": [
+        {
+          "nome": "Bandas",
+          "url": "/inscricao-bandas/",
+          "title": "Inscrições para bandas de Rock"
+        },
+        {
+          "nome": "Economia Criativa",
+          "url": "/inscricao-feira/",
+          "title": "Venda na nossa feira de economia criativa"
+        }
+      ]
+    },
+    {
+      "nome": "Loja Oficial",
+      "url": "/loja/",
+      "title": "Produtos oficiais Rock na Praça"
+    },
+    {
+      "nome": "Dúvidas e Contato",
+      "url": "/duvidas-e-contato/",
+      "title": "Tire suas dúvidas ou entre em contato"
+    },
+    {
+      "nome": "Produtora",
+      "url": "/produtora/",
+      "title": "Conheça a produtora do evento"
+    }
+  ]
+}

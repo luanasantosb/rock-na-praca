@@ -10,6 +10,38 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  - name: "cabecalho"
+    label: "Cabeçalho"
+    files:
+      - file: "cabecalho.json"
+        label: "Configuração do Cabeçalho"
+        name: "cabecalho"
+        fields:
+          - label: "Logo"
+            name: "logo"
+            widget: "object"
+            fields:
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Menu"
+            name: "menu"
+            widget: "list"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "URL", name: "url", widget: "string", required: false }
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - label: "Submenu"
+                name: "submenu"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Nome", name: "nome", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+  
   - name: "home"
     label: "Página Inicial"
     files:
