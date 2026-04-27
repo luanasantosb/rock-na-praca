@@ -6,8 +6,8 @@ backend:
   auth_endpoint: /api/auth
   site_domain: www.rocknapraca.com
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "assets/images/uploads"
+public_folder: "assets/images/uploads"
 
 collections:
   - name: "cabecalho"
@@ -47,7 +47,7 @@ collections:
     files:
       - label: "Hero"
         name: "home"
-        file: "content/home.json"
+        file: "content/index/hero.json"
         format: "json"
         fields:
           - { label: "Ícone da Insígnia", name: "insignia_icone", widget: "string", default: "🏛️", required: false }
@@ -66,7 +66,7 @@ collections:
   - name: "inscricao"
     label: "Inscrição Feira"
     files:
-      - file: "content/inscricao-feira.json"
+      - file: "content/inscricao-feira/aviso.json"
         label: "Aviso"
         name: "inscricao"
         fields:
@@ -164,7 +164,7 @@ collections:
   - name: "loja_produtos"
     label: "Loja"
     files:
-      - file: "content/produtos.json"
+      - file: "content/loja/produtos.json"
         label: "Produtos"
         name: "produtos"
         fields:
