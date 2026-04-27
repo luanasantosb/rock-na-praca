@@ -254,7 +254,7 @@
     <div class="rodape-info">
       <h3 id="footer_nome" itemprop="name">...</h3>
       <p id="footer_descricao" itemprop="description">...</p>
-      <p id="footer_frase">...</p>
+      <p id="footer_frase"></p>
     </div>
 
     <div class="redes-sociais">
@@ -291,7 +291,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       try {
-        const resposta = await fetch("/content/home.json", { cache: "no-store" });
+        const resposta = await fetch("/content/index/hero.json", { cache: "no-store" });
         if (!resposta.ok) throw new Error("Não foi possível carregar home.json");
 
         const home = await resposta.json();

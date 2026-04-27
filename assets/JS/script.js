@@ -89,7 +89,7 @@ if (menu) {
 /*====================Cabecalho===================*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/cabecalho.json")
+  fetch("content/cabecalho.json")
     .then(res => res.json())
     .then(data => {
 
@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!footerNome) return;
 
-  fetch("/data/footer.json")
+  fetch("content/rodape.json")
     .then(response => {
       if (!response.ok) {
         throw new Error("Não foi possível carregar o footer.json");
