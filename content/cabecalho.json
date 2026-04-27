@@ -1,45 +1,36 @@
 {
   "logo": {
-    "imagem": "assets/images/uploads/rock-na-praca_logotipo_simbolo.webp",
-    "link": "/index",
-    "alt": "Página Inicial - Rock na Praça Oficial",
-    "title": "Rock na Praça Esteio - Site Oficial do Festival"
+    "link": "/",
+    "imagem": "/assets/images/uploads/logo.png",
+    "alt": "Minha logo",
+    "title": "Ir para a página inicial"
   },
   "menu": [
     {
-      "nome": "Sobre o Festival",
-      "url": "/sobre/",
-      "title": "Saiba mais sobre a história do Rock na Praça"
+      "nome": "Home",
+      "url": "/",
+      "title": "Página inicial"
     },
     {
-      "nome": "Inscrições",
+      "nome": "Sobre",
+      "url": "/sobre",
+      "title": "Sobre nós"
+    },
+    {
+      "nome": "Serviços",
+      "title": "Nossos serviços",
       "submenu": [
         {
-          "nome": "Bandas",
-          "title": "Inscrições para bandas de Rock",
-          "url": "/inscricao-bandas/"
+          "nome": "Web",
+          "url": "/servicos/web",
+          "title": "Desenvolvimento web"
         },
         {
-          "nome": "Economia Criativa",
-          "url": "/inscricao-feira/",
-          "title": "Venda na nossa feira de economia criativa"
+          "nome": "SEO",
+          "url": "/servicos/seo",
+          "title": "Otimização SEO"
         }
       ]
-    },
-    {
-      "nome": "Loja oficial",
-      "url": "/loja/",
-      "title": "Produtos oficiais Rock na Praça"
-    },
-    {
-      "nome": "Dúvidas e Contato",
-      "url": "/duvidas-e-contato/",
-      "title": "Tire suas dúvidas ou entre em contato"
-    },
-    {
-      "nome": "Produtora",
-      "url": "/produtora/",
-      "title": "Conheça a produtora do evento"
     }
   ]
 }
