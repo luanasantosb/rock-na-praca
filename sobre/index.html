@@ -76,56 +76,18 @@
 </head>
 
 <body>
-  <!-- CABEÇALHO -->
+<!--  CABEÇALHO  -->
   <header class="cabecalho">
-    <div class="cabecalho-simbolo-logotipo">
-      <a href="/" style="display: inline-block;">
-        <img src="/assets/geral/rock-na-praca_logotipo_simbolo.webp"
-          srcset="/assets/geral/rock-na-praca_logotipo_simbolo.webp 260w" sizes="130px"
-          title="Ir para a página inicial do Rock na Praça" alt="Logotipo e simbolo do rock na praça" width="130"
-          height="82" style="width: 130px; height: auto; display: block;" loading="eager">
-      </a>
-    </div>
+  <div class="cabecalho-simbolo-logotipo" id="logo"></div>
 
-    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+  <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
-    <nav class="cabecalho-menu" id="menu" aria-label="Menu Principal" itemscope="itemscope"
-      itemtype="https://schema.org/SiteNavigationElement">
-
-      <a itemprop="url" href="/sobre/" title="Saiba mais sobre a história do Rock na Praça">
-        <span itemprop="name">Sobre o Festival</span>
-      </a>
-
-      <div class="menu-item">
-        <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
-          Inscrições
-        </button>
-        <div class="submenu">
-          <a itemprop="url" href="/inscricao-bandas/" title="Inscrições para bandas de Rock">
-            <span itemprop="name">Bandas</span>
-          </a>
-          <a itemprop="url" href="/inscricao-feira/" title="Venda na nossa feira de economia criativa">
-            <span itemprop="name">Economia Criativa</span>
-          </a>
-        </div>
-      </div>
-
-      <a itemprop="url" href="/loja/" title="Produtos oficiais Rock na Praça">
-        <span itemprop="name">Loja Oficial</span>
-      </a>
-
-      <a itemprop="url" href="/duvidas-e-contato/" title="Tire suas dúvidas ou entre em contato">
-        <span itemprop="name">Dúvidas e Contato</span>
-      </a>
-
-      <a itemprop="url" href="/produtora/" title="Conheça a produtora do evento">
-        <span itemprop="name">Produtora</span>
-      </a>
-
-    </nav>
-
-  </header>
-
+  <nav class="cabecalho-menu" id="menu"
+    aria-label="Menu Principal"
+    itemscope
+    itemtype="https://schema.org/SiteNavigationElement">
+  </nav>
+</header>
   <main>
     <div class="sobre-conteudo">
       <article class="sobre-texto">
@@ -190,44 +152,49 @@
     </div>
   </main>
 
-  <!-- RODAPÉ -->
-  <footer class="rodape" itemscope itemtype="https://schema.org/Organization">
-    <div class="rodape-container">
+<!-- RODAPÉ -->
+<footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+  <div class="rodape-container">
 
-      <div class="rodape-info">
-        <h3 itemprop="name">Rock na Praça</h3>
-        <p itemprop="description">
-          Patrimônio Cultural de Esteio/RS • Membro da ABRAFIN
-        </p>
-        <p>© 2002–2026 <span itemprop="legalName">Mantendo o rock vivo.</p>
-        <p>
-      </div>
-
-      <div class="redes-sociais">
-        <a href="https://instagram.com/rocknapraca_/" target="_blank" rel="me"
-          title="Siga o Rock na Praça no Instagram">
-          <img src="/assets/geral/instagram_logo.webp" alt="Instagram Oficial">
-        </a>
-        <a href="https://facebook.com/rocknapracaesteio" target="_blank" rel="me"
-          title="Curta nossa página no Facebook">
-          <img src="/assets/geral/facebook_logo.webp" alt="Facebook Oficial">
-        </a>
-        <a href="https://youtube.com/@Rocknapraca_RS" target="_blank" rel="me" title="Assista aos vídeos no YouTube">
-          <img src="/assets/geral/youtube_logo.webp" alt="YouTube Oficial">
-        </a>
-      </div>
-
-      <div class="creditos">
-        
-          Produção por <a href="https://www.instagram.com/balaiada" target="_blank" rel="nofollow noopener">
-            Balaiada Combo Cultural</a>
-        </p>
-        <p>Site desenvolvido por <a href="https://github.com/luanasantosb" target="_blank" rel="nofollow">
-          Luana Santos</a>
-        </p>
-      </div>
+    <!-- INFO -->
+    <div class="rodape-info">
+      <h3 id="footer_nome" itemprop="name">...</h3>
+      <p id="footer_descricao" itemprop="description">...</p>
+      <p id="footer_frase">...</p>
     </div>
-  </footer>
+
+    <!-- REDES SOCIAIS -->
+    <div class="redes-sociais">
+
+      <a id="footer_instagram" target="_blank" rel="me noopener">
+        <img id="img_instagram" alt="">
+      </a>
+
+      <a id="footer_facebook" target="_blank" rel="me noopener">
+        <img id="img_facebook" alt="">
+      </a>
+
+      <a id="footer_youtube" target="_blank" rel="me noopener">
+        <img id="img_youtube" alt="">
+      </a>
+
+    </div>
+
+    <!-- CRÉDITOS -->
+    <div class="creditos">
+      <p>
+        Produção por 
+        <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
+      </p>
+
+      <p>
+        Site desenvolvido por 
+        <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
+      </p>
+    </div>
+
+  </div>
+</footer>
 
 
 </body>
