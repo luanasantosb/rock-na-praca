@@ -13,7 +13,7 @@ collections:
   - name: "cabecalho"
     label: "Cabeçalho"
     files:
-      - file: "cabecalho.json"
+      - file: "content/cabecalho.json"
         label: "Configuração do Cabeçalho"
         name: "cabecalho"
         fields:
@@ -209,7 +209,7 @@ collections:
   - name: "footer"
     label: "Rodapé"
     files:
-      - file: "data/footer.json"
+      - file: "content/rodape.json"
         label: "Configuração do Rodapé"
         name: "footer"
         fields:

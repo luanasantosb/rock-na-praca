@@ -1,11 +1,9 @@
 {
   "logo": {
-    "link": "/",
-    "imagem": "/assets/geral/rock-na-praca_logotipo_simbolo.webp",
-    "alt": "Rock na Praça Esteio - Site Oficial do Festival",
-    "title": "Página Inicial - Rock na Praça Oficial",
-    "width": "130",
-    "height": "82"
+    "imagem": "/images/uploads/rock-na-praca_logotipo_simbolo.webp",
+    "link": "/index",
+    "alt": "Página Inicial - Rock na Praça Oficial",
+    "title": "Rock na Praça Esteio - Site Oficial do Festival"
   },
   "menu": [
     {
@@ -18,8 +16,8 @@
       "submenu": [
         {
           "nome": "Bandas",
-          "url": "/inscricao-bandas/",
-          "title": "Inscrições para bandas de Rock"
+          "title": "Inscrições para bandas de Rock",
+          "url": "/inscricao-bandas/"
         },
         {
           "nome": "Economia Criativa",
@@ -29,7 +27,7 @@
       ]
     },
     {
-      "nome": "Loja Oficial",
+      "nome": "Loja oficial",
       "url": "/loja/",
       "title": "Produtos oficiais Rock na Praça"
     },
