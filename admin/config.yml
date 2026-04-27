@@ -174,3 +174,62 @@ collections:
                   label: "Cor"
                   name: "cor"
                   widget: "string"
+  - name: "footer"
+    label: "Rodapé"
+    files:
+      - file: "data/footer.json"
+        label: "Configuração do Rodapé"
+        name: "footer"
+        fields:
+
+          - { label: "Nome", name: "nome", widget: "string" }
+
+          - { label: "Descrição", name: "descricao", widget: "string" }
+
+          - { label: "Frase / Copyright", name: "frase", widget: "string" }
+
+          - label: "Redes Sociais"
+            name: "redes"
+            widget: "object"
+            fields:
+
+              - label: "Instagram"
+                name: "instagram"
+                widget: "object"
+                fields:
+                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Ícone", name: "icone", widget: "image" }
+                  - { label: "Alt", name: "alt", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+
+              - label: "Facebook"
+                name: "facebook"
+                widget: "object"
+                fields:
+                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Ícone", name: "icone", widget: "image" }
+                  - { label: "Alt", name: "alt", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+
+              - label: "YouTube"
+                name: "youtube"
+                widget: "object"
+                fields:
+                  - { label: "Link", name: "link", widget: "string" }
+                  - { label: "Ícone", name: "icone", widget: "image" }
+                  - { label: "Alt", name: "alt", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+
+          - label: "Produtora"
+            name: "produtora"
+            widget: "object"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
+
+          - label: "Desenvolvedor"
+            name: "dev"
+            widget: "object"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Link", name: "link", widget: "string" }
