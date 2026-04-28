@@ -6,19 +6,19 @@
     "instagram": {
       "link": "https://instagram.com/rocknapraca_/",
       "icone": "/assets/images/uploads/instagram_logo.webp",
-      "alt": "Instagram Oficial",
+      "alt": "Instagram",
       "title": "Siga no Instagram"
     },
     "facebook": {
       "link": "https://facebook.com/rocknapracaesteio",
       "icone": "/assets/images/uploads/facebook_logo.webp",
-      "alt": "Facebook Oficial",
+      "alt": "Facebook",
       "title": "Página no Facebook"
     },
     "youtube": {
       "link": "https://youtube.com/@Rocknapraca_RS",
       "icone": "/assets/images/uploads/youtube_logo.webp",
-      "alt": "YouTube Oficial",
+      "alt": "YouTube",
       "title": "Canal no YouTube"
     }
   },
