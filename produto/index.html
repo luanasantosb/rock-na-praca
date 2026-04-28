@@ -209,7 +209,7 @@
       }
 
       try {
-        const response = await fetch("../content/produtos.json");
+        const response = await fetch("../content/loja/produtos.json");
 
         if (!response.ok) {
           throw new Error("Não foi possível carregar o arquivo de produtos.");
