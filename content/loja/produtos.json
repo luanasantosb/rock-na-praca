@@ -161,8 +161,9 @@
       "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
-        "../assets/pagina_loja/Bone-1_Rock-na-Praca.webp"
-      ]
+        "/assets/images/uploads/bone-1_rock-na-praca.webp"
+      ],
+      "imagem": "/assets/images/uploads/bone-1_rock-na-praca.webp"
     },
     {
       "slug": "bone-rock-na-praca-2",
@@ -170,8 +171,9 @@
       "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
-        "../assets/pagina_loja/Bone-2_Rock-na-Praca.webp"
-      ]
+        "/assets/images/uploads/bone-2_rock-na-praca.webp"
+      ],
+      "imagem": "/assets/images/uploads/bone-2_rock-na-praca.webp"
     }
   ]
 }
