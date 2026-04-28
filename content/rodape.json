@@ -2,33 +2,30 @@
   "nome": "Rock na Praça",
   "descricao": "Patrimônio Cultural de Esteio/RS • Membro da ABRAFIN",
   "frase": "© 2002–2026 • Mantendo o rock vivo.",
-
   "redes": {
     "instagram": {
       "link": "https://instagram.com/rocknapraca_/",
-      "icone": "/assets/geral/instagram_logo.webp",
+      "icone": "/assets/images/uploads/instagram_logo.webp",
       "alt": "Instagram Oficial",
       "title": "Siga no Instagram"
     },
     "facebook": {
       "link": "https://facebook.com/rocknapracaesteio",
-      "icone": "/assets/geral/facebook_logo.webp",
+      "icone": "/assets/images/uploads/facebook_logo.webp",
       "alt": "Facebook Oficial",
       "title": "Página no Facebook"
     },
     "youtube": {
       "link": "https://youtube.com/@Rocknapraca_RS",
-      "icone": "/assets/geral/youtube_logo.webp",
+      "icone": "/assets/images/uploads/youtube_logo.webp",
       "alt": "YouTube Oficial",
       "title": "Canal no YouTube"
     }
   },
-
   "produtora": {
     "nome": "Balaiada Combo Cultural",
     "link": "https://www.instagram.com/balaiada"
   },
-
   "dev": {
     "nome": "Luana Santos",
     "link": "https://github.com/luanasantosb"
