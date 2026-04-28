@@ -20,17 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
   document.head.appendChild(scriptVlibras);
 });
 
-/*=====ENQUETE======*/
-
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const script = document.createElement('script');
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.head.appendChild(script);
-  }, 5000); 
-});
-
 
 /*===== CABECALHO mobile =====*/
 
@@ -86,64 +75,7 @@ if (menu) {
   });
 }
 
-/*====================Cabecalho===================*/
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/content/cabecalho.json")
-    .then(res => {
-      if (!res.ok) throw new Error(`JSON não encontrado: ${res.status}`);
-      return res.json();
-    })
-    .then(data => {
-      const logoContainer = document.getElementById("logo");
-      const menu = document.getElementById("menu");
-
-      if (!logoContainer || !menu) {
-        throw new Error("Elementos #logo ou #menu não encontrados no HTML");
-      }
-
-      logoContainer.innerHTML = `
-        <a href="${data.logo?.link || "/"}" style="display:inline-block;">
-          <img src="${data.logo?.imagem || ""}"
-            alt="${data.logo?.alt || ""}"
-            title="${data.logo?.title || ""}"
-            loading="eager">
-        </a>
-      `;
-
-      menu.innerHTML = "";
-
-      data.menu?.forEach(item => {
-        if (item.submenu && item.submenu.length > 0) {
-          const div = document.createElement("div");
-          div.classList.add("menu-item");
-
-          div.innerHTML = `
-            <button class="menu-toggle" aria-expanded="false" aria-haspopup="true">
-              ${item.nome}
-            </button>
-            <div class="submenu">
-              ${item.submenu.map(sub => `
-                <a href="${sub.url}" title="${sub.title || ""}" itemprop="url">
-                  <span itemprop="name">${sub.nome}</span>
-                </a>
-              `).join("")}
-            </div>
-          `;
-
-          menu.appendChild(div);
-        } else {
-          const a = document.createElement("a");
-          a.href = item.url || "#";
-          a.title = item.title || item.nome || "";
-          a.setAttribute("itemprop", "url");
-          a.innerHTML = `<span itemprop="name">${item.nome}</span>`;
-          menu.appendChild(a);
-        }
-      });
-    })
-    .catch(err => console.error("Erro ao carregar cabeçalho:", err));
-});
 
 /*===== CONTADOR =====*/
 
@@ -362,51 +294,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-/******RODAPÉ************/
-document.addEventListener("DOMContentLoaded", () => {
-  const footerNome = document.getElementById("footer_nome");
-
-  if (!footerNome) return;
-
-  fetch("content/rodape.json")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Não foi possível carregar o footer.json");
-      }
-
-      return response.json();
-    })
-    .then(data => {
-      document.getElementById("footer_nome").textContent = data.nome;
-      document.getElementById("footer_descricao").textContent = data.descricao;
-      document.getElementById("footer_frase").textContent = data.frase;
-
-      Object.keys(data.redes).forEach(rede => {
-        const item = data.redes[rede];
-
-        const link = document.getElementById(`footer_${rede}`);
-        const img = document.getElementById(`img_${rede}`);
-
-        if (!link || !img) return;
-
-        link.href = item.link;
-        link.title = item.title;
-        link.setAttribute("aria-label", item.alt);
-
-        img.src = item.icone;
-        img.alt = item.alt;
-      });
-
-      const produtora = document.getElementById("footer_produtora");
-      produtora.textContent = data.produtora.nome;
-      produtora.href = data.produtora.link;
-
-      const dev = document.getElementById("footer_dev");
-      dev.textContent = data.dev.nome;
-      dev.href = data.dev.link;
-    })
-    .catch(error => {
-      console.error("Erro ao carregar dados do rodapé:", error);
-    });
-});
 

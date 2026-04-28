@@ -19,8 +19,9 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/CSS/estilo.css">
+  <script src="/assets/JS/cabecalho.js" defer></script>
+  <script src="/assets/JS/rodape.js" defer></script>
   <script src="/assets/JS/script.js" defer></script>
-  <link rel="manifest" href="/manifest.json">
 
   <meta property="og:type" content="article">
   <meta property="og:title" content="Line-up Oficial: Rock na Praça Maio 2026">
@@ -202,113 +203,113 @@
     </section>
   </main>
 
-<!-- RODAPÉ -->
-<footer class="rodape" itemscope itemtype="https://schema.org/Organization">
-  <div class="rodape-container">
+  <!-- RODAPÉ -->
+  <footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+    <div class="rodape-container">
 
-    <div class="rodape-info">
-      <h3 id="footer_nome" itemprop="name"></h3>
-      <p id="footer_descricao" itemprop="description"></p>
-      <p id="footer_frase"></p>
+      <div class="rodape-info">
+        <h3 id="footer_nome" itemprop="name"></h3>
+        <p id="footer_descricao" itemprop="description"></p>
+        <p id="footer_frase"></p>
+      </div>
+
+
+      <div class="redes-sociais">
+
+        <a id="footer_instagram" target="_blank" rel="me noopener">
+          <img id="img_instagram" alt="">
+        </a>
+
+        <a id="footer_facebook" target="_blank" rel="me noopener">
+          <img id="img_facebook" alt="">
+        </a>
+
+        <a id="footer_youtube" target="_blank" rel="me noopener">
+          <img id="img_youtube" alt="">
+        </a>
+
+      </div>
+
+      <div class="creditos">
+        <p>
+          Produção por
+          <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
+        </p>
+
+        <p>
+          Site desenvolvido por
+          <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
+        </p>
+      </div>
+
     </div>
+  </footer>
 
-  
-    <div class="redes-sociais">
-
-      <a id="footer_instagram" target="_blank" rel="me noopener">
-        <img id="img_instagram" alt="">
-      </a>
-
-      <a id="footer_facebook" target="_blank" rel="me noopener">
-        <img id="img_facebook" alt="">
-      </a>
-
-      <a id="footer_youtube" target="_blank" rel="me noopener">
-        <img id="img_youtube" alt="">
-      </a>
-
-    </div>
-
-    <div class="creditos">
-      <p>
-        Produção por 
-        <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
-      </p>
-
-      <p>
-        Site desenvolvido por 
-        <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
-      </p>
-    </div>
-
-  </div>
-</footer>
-
-<script>
-  async function carregarJSON(caminho) {
-    try {
-      const res = await fetch(caminho);
-      if (!res.ok) return null;
-      return await res.json();
-    } catch (error) {
-      console.warn(`Erro ao carregar ${caminho}`, error);
-      return null;
-    }
-  }
-
-  async function carregarProgramacao() {
-    const hero = await carregarJSON('/content/programacao/hero.json');
-    const realizacao = await carregarJSON('/content/programacao/realizacao.json');
-    const gradeBandas = await carregarJSON('/content/programacao/grade-bandas.json');
-    const feira = await carregarJSON('/content/programacao/feira.json');
-    const apoio = await carregarJSON('/content/programacao/apoio.json');
-    const local = await carregarJSON('/content/programacao/como-chegar.json');
-
-    // ===== TOPO / HERO =====
-    if (hero) {
-      setText('titulo-programacao', hero.titulo);
-      setText('subtitulo-programacao', hero.subtitulo);
-      setText('resumo-programacao', hero.resumo);
+  <script>
+    async function carregarJSON(caminho) {
+      try {
+        const res = await fetch(caminho);
+        if (!res.ok) return null;
+        return await res.json();
+      } catch (error) {
+        console.warn(`Erro ao carregar ${caminho}`, error);
+        return null;
+      }
     }
 
-    // ===== REALIZAÇÃO =====
-    const gridRealizacao = document.querySelector('.grid-realizacao');
+    async function carregarProgramacao() {
+      const hero = await carregarJSON('/content/programacao/hero.json');
+      const realizacao = await carregarJSON('/content/programacao/realizacao.json');
+      const gradeBandas = await carregarJSON('/content/programacao/grade-bandas.json');
+      const feira = await carregarJSON('/content/programacao/feira.json');
+      const apoio = await carregarJSON('/content/programacao/apoio.json');
+      const local = await carregarJSON('/content/programacao/como-chegar.json');
 
-    if (realizacao?.itens?.length && gridRealizacao) {
-      gridRealizacao.innerHTML = '';
+      // ===== TOPO / HERO =====
+      if (hero) {
+        setText('titulo-programacao', hero.titulo);
+        setText('subtitulo-programacao', hero.subtitulo);
+        setText('resumo-programacao', hero.resumo);
+      }
 
-      realizacao.itens.forEach(item => {
-        if (!item.nome && !item.logo) return;
+      // ===== REALIZAÇÃO =====
+      const gridRealizacao = document.querySelector('.grid-realizacao');
 
-        const div = document.createElement('div');
-        div.className = 'item';
+      if (realizacao?.itens?.length && gridRealizacao) {
+        gridRealizacao.innerHTML = '';
 
-        div.innerHTML = `
+        realizacao.itens.forEach(item => {
+          if (!item.nome && !item.logo) return;
+
+          const div = document.createElement('div');
+          div.className = 'item';
+
+          div.innerHTML = `
           <a href="${item.link || '#'}" target="_blank" rel="noopener noreferrer">
             ${item.logo ? `<img class="logo-balaiada" src="${item.logo}" alt="${item.nome || ''}">` : ''}
           </a>
           <span class="legenda">${item.nome || ''}</span>
         `;
 
-        gridRealizacao.appendChild(div);
-      });
-    }
+          gridRealizacao.appendChild(div);
+        });
+      }
 
-    // ===== BANDAS =====
-    if (gradeBandas) {
-      setText('titulo-grade-bandas', gradeBandas.titulo);
+      // ===== BANDAS =====
+      if (gradeBandas) {
+        setText('titulo-grade-bandas', gradeBandas.titulo);
 
-      const listaBandas = document.getElementById('lista-bandas');
-      if (listaBandas) listaBandas.innerHTML = '';
+        const listaBandas = document.getElementById('lista-bandas');
+        if (listaBandas) listaBandas.innerHTML = '';
 
-      if (gradeBandas.lista?.length && listaBandas) {
-        gradeBandas.lista.forEach(banda => {
-          if (!banda.nome && !banda.imagem) return;
+        if (gradeBandas.lista?.length && listaBandas) {
+          gradeBandas.lista.forEach(banda => {
+            if (!banda.nome && !banda.imagem) return;
 
-          const li = document.createElement('li');
-          li.className = 'grade-bandas-item';
+            const li = document.createElement('li');
+            li.className = 'grade-bandas-item';
 
-          li.innerHTML = `
+            li.innerHTML = `
             <time class="hora">${banda.hora || ''}</time>
 
             <article class="banda">
@@ -330,112 +331,112 @@
             </article>
           `;
 
-          listaBandas.appendChild(li);
-        });
+            listaBandas.appendChild(li);
+          });
+        }
       }
-    }
 
-    // ===== FEIRA =====
-    if (feira) {
-      setText('titulo-feira', feira.titulo);
-      setText('descricao-feira', feira.descricao);
+      // ===== FEIRA =====
+      if (feira) {
+        setText('titulo-feira', feira.titulo);
+        setText('descricao-feira', feira.descricao);
 
-      const listaLojas = document.getElementById('lista-lojas');
-      if (listaLojas) listaLojas.innerHTML = '';
+        const listaLojas = document.getElementById('lista-lojas');
+        if (listaLojas) listaLojas.innerHTML = '';
 
-      if (feira.lojas?.length && listaLojas) {
-        feira.lojas.forEach(loja => {
-          if (!loja.imagem) return;
+        if (feira.lojas?.length && listaLojas) {
+          feira.lojas.forEach(loja => {
+            if (!loja.imagem) return;
 
-          const a = document.createElement('a');
-          a.className = 'cartao-feira';
-          a.href = loja.link || '#';
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
+            const a = document.createElement('a');
+            a.className = 'cartao-feira';
+            a.href = loja.link || '#';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
 
-          a.innerHTML = `
+            a.innerHTML = `
             <img src="${loja.imagem}" alt="" width="150" height="150">
           `;
 
-          listaLojas.appendChild(a);
-        });
+            listaLojas.appendChild(a);
+          });
+        }
+      }
+
+      // ===== APOIO =====
+      if (apoio) {
+        setText('titulo-apoio', apoio.titulo);
+        setText('descricao-apoio', apoio.descricao);
+
+        const listaApoio = document.getElementById('lista-apoio');
+        if (listaApoio) listaApoio.innerHTML = '';
+
+        if (apoio.lista?.length && listaApoio) {
+          apoio.lista.forEach(item => {
+            if (!item.imagem) return;
+
+            const a = document.createElement('a');
+            a.className = 'cartao-apoio';
+            a.href = item.link || '#';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+
+            a.innerHTML = `<img src="${item.imagem}" alt="">`;
+
+            listaApoio.appendChild(a);
+          });
+        }
+      }
+
+      // ===== LOCAL =====
+      if (local) {
+        setText('titulo-local', local.titulo);
+        setText('endereco', local.endereco);
+        setLink('link-endereco', local.link_mapa);
+
+        if (local.iframe_mapa) {
+          const mapa = document.getElementById('mapa');
+          if (mapa) mapa.src = local.iframe_mapa;
+        }
+
+        const listaAcesso = document.getElementById('lista-acesso');
+        if (listaAcesso) listaAcesso.innerHTML = '';
+
+        if (local.transporte?.length && listaAcesso) {
+          local.transporte.forEach(item => {
+            const texto = typeof item === 'string' ? item : item.item;
+            if (!texto) return;
+
+            const li = document.createElement('li');
+            li.textContent = texto;
+            listaAcesso.appendChild(li);
+          });
+        }
       }
     }
 
-    // ===== APOIO =====
-    if (apoio) {
-      setText('titulo-apoio', apoio.titulo);
-      setText('descricao-apoio', apoio.descricao);
-
-      const listaApoio = document.getElementById('lista-apoio');
-      if (listaApoio) listaApoio.innerHTML = '';
-
-      if (apoio.lista?.length && listaApoio) {
-        apoio.lista.forEach(item => {
-          if (!item.imagem) return;
-
-          const a = document.createElement('a');
-          a.className = 'cartao-apoio';
-          a.href = item.link || '#';
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-
-          a.innerHTML = `<img src="${item.imagem}" alt="">`;
-
-          listaApoio.appendChild(a);
-        });
-      }
+    // ===== FUNÇÕES AUXILIARES =====
+    function setText(id, value) {
+      if (!value) return;
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
     }
 
-    // ===== LOCAL =====
-    if (local) {
-      setText('titulo-local', local.titulo);
-      setText('endereco', local.endereco);
-      setLink('link-endereco', local.link_mapa);
-
-      if (local.iframe_mapa) {
-        const mapa = document.getElementById('mapa');
-        if (mapa) mapa.src = local.iframe_mapa;
-      }
-
-      const listaAcesso = document.getElementById('lista-acesso');
-      if (listaAcesso) listaAcesso.innerHTML = '';
-
-      if (local.transporte?.length && listaAcesso) {
-        local.transporte.forEach(item => {
-          const texto = typeof item === 'string' ? item : item.item;
-          if (!texto) return;
-
-          const li = document.createElement('li');
-          li.textContent = texto;
-          listaAcesso.appendChild(li);
-        });
-      }
+    function setImg(id, src) {
+      if (!src) return;
+      const el = document.getElementById(id);
+      if (el) el.src = src;
     }
-  }
 
-  // ===== FUNÇÕES AUXILIARES =====
-  function setText(id, value) {
-    if (!value) return;
-    const el = document.getElementById(id);
-    if (el) el.textContent = value;
-  }
+    function setLink(id, href) {
+      if (!href) return;
+      const el = document.getElementById(id);
+      if (el) el.href = href;
+    }
 
-  function setImg(id, src) {
-    if (!src) return;
-    const el = document.getElementById(id);
-    if (el) el.src = src;
-  }
-
-  function setLink(id, href) {
-    if (!href) return;
-    const el = document.getElementById(id);
-    if (el) el.href = href;
-  }
-
-  // ===== INICIAR =====
-  carregarProgramacao();
-</script>
+    // ===== INICIAR =====
+    carregarProgramacao();
+  </script>
 
 </body>
 

@@ -12,7 +12,9 @@
     content="Descubra a trajetória do Rock na Praça, Patrimônio Cultural de Esteio (Lei nº 8147/2022). Há 24 anos fomentando o rock autoral e a cultura no Rio Grande do Sul.">
 
   <link rel="stylesheet" href="/assets/CSS/estilo.css">
-   <script src="/assets/JS/script.js"></script>
+  <script src="/assets/JS/cabecalho.js" defer></script>
+  <script src="/assets/JS/rodape.js" defer></script>
+  <script src="/assets/JS/script.js" defer></script>
   <link rel="preload" href="/assets/fonts/BebasNeue.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/OpenSans.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -77,18 +79,16 @@
 </head>
 
 <body>
-<!--  CABEÇALHO  -->
+  <!--  CABEÇALHO  -->
   <header class="cabecalho">
-  <div class="cabecalho-simbolo-logotipo" id="logo"></div>
+    <div class="cabecalho-simbolo-logotipo" id="logo"></div>
 
-  <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
-  <nav class="cabecalho-menu" id="menu"
-    aria-label="Menu Principal"
-    itemscope
-    itemtype="https://schema.org/SiteNavigationElement">
-  </nav>
-</header>
+    <nav class="cabecalho-menu" id="menu" aria-label="Menu Principal" itemscope
+      itemtype="https://schema.org/SiteNavigationElement">
+    </nav>
+  </header>
   <main>
     <div class="sobre-conteudo">
       <article class="sobre-texto">
@@ -153,49 +153,49 @@
     </div>
   </main>
 
-<!-- RODAPÉ -->
-<footer class="rodape" itemscope itemtype="https://schema.org/Organization">
-  <div class="rodape-container">
+  <!-- RODAPÉ -->
+  <footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+    <div class="rodape-container">
 
-    <!-- INFO -->
-    <div class="rodape-info">
-      <h3 id="footer_nome" itemprop="name">...</h3>
-      <p id="footer_descricao" itemprop="description">...</p>
-      <p id="footer_frase">...</p>
+      <!-- INFO -->
+      <div class="rodape-info">
+        <h3 id="footer_nome" itemprop="name">...</h3>
+        <p id="footer_descricao" itemprop="description">...</p>
+        <p id="footer_frase">...</p>
+      </div>
+
+      <!-- REDES SOCIAIS -->
+      <div class="redes-sociais">
+
+        <a id="footer_instagram" target="_blank" rel="me noopener">
+          <img id="img_instagram" alt="">
+        </a>
+
+        <a id="footer_facebook" target="_blank" rel="me noopener">
+          <img id="img_facebook" alt="">
+        </a>
+
+        <a id="footer_youtube" target="_blank" rel="me noopener">
+          <img id="img_youtube" alt="">
+        </a>
+
+      </div>
+
+      <!-- CRÉDITOS -->
+      <div class="creditos">
+        <p>
+          Produção por
+          <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
+        </p>
+
+        <p>
+          Site desenvolvido por
+          <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
+        </p>
+      </div>
+
     </div>
-
-    <!-- REDES SOCIAIS -->
-    <div class="redes-sociais">
-
-      <a id="footer_instagram" target="_blank" rel="me noopener">
-        <img id="img_instagram" alt="">
-      </a>
-
-      <a id="footer_facebook" target="_blank" rel="me noopener">
-        <img id="img_facebook" alt="">
-      </a>
-
-      <a id="footer_youtube" target="_blank" rel="me noopener">
-        <img id="img_youtube" alt="">
-      </a>
-
-    </div>
-
-    <!-- CRÉDITOS -->
-    <div class="creditos">
-      <p>
-        Produção por 
-        <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
-      </p>
-
-      <p>
-        Site desenvolvido por 
-        <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
-      </p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
 
 </body>
