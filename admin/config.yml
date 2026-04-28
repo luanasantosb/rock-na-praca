@@ -6,8 +6,8 @@ backend:
   auth_endpoint: /api/auth
   site_domain: www.rocknapraca.com
 
-media_folder: "/assets/images/uploads"
-public_folder: "assets/images/uploads"
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
 collections:
   - name: "cabecalho"
