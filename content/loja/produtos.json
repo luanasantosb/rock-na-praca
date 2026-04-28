@@ -9,7 +9,7 @@
       "descricao": "Copo oficial, somente na cor rosa",
       "slug": "copo-rock-na-praca",
       "preco": 10,
-      "ativo": true,
+      "ativo": false,
       "imagem": "/assets/images/uploads/Copo_Rock-na-Praca.webp",
       "status": "PRONTA ENTREGA",
       "nome": "Copo",
