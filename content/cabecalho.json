@@ -1,36 +1,43 @@
 {
   "logo": {
-    "link": "/",
-    "imagem": "/assets/images/uploads/logo.png",
-    "alt": "Minha logo",
+    "link": "/index",
+    "imagem": "/assets/images/uploads/rock-na-praca_logotipo_simbolo.webp",
+    "alt": "Logo rock na praça",
     "title": "Ir para a página inicial"
   },
   "menu": [
     {
-      "nome": "Home",
-      "url": "/",
-      "title": "Página inicial"
-    },
-    {
-      "nome": "Sobre",
+      "nome": "Sobre o festival",
       "url": "/sobre",
-      "title": "Sobre nós"
+      "title": ""
     },
     {
-      "nome": "Serviços",
-      "title": "Nossos serviços",
+      "nome": "Inscreva-se",
+      "title": "",
       "submenu": [
         {
-          "nome": "Web",
-          "url": "/servicos/web",
-          "title": "Desenvolvimento web"
+          "nome": "Bandas",
+          "url": "/inscricao-bandas",
+          "title": "bandas"
         },
         {
-          "nome": "SEO",
-          "url": "/servicos/seo",
-          "title": "Otimização SEO"
+          "nome": "Economia Criativa",
+          "url": "/inscricao-feira",
+          "title": "Economia Criativa"
         }
       ]
+    },
+    {
+      "nome": "Loja Oficial",
+      "url": "/loja/"
+    },
+    {
+      "nome": "Dúvidas e Contato",
+      "url": "/duvidas-e-contato/"
+    },
+    {
+      "nome": "Produtora",
+      "url": "/produtora/"
     }
   ]
 }
