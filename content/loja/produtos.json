@@ -10,7 +10,7 @@
       "descricao": "Copo oficial, somente na cor rosa",
       "slug": "copo-rock-na-praca",
       "preco": 10,
-      "ativo": false,
+      "ativo": true,
       "imagem": "/assets/images/uploads/Copo_Rock-na-Praca.webp",
       "status": "PRONTA ENTREGA",
       "nome": "Copo",
@@ -18,10 +18,10 @@
     },
     {
       "imagens": [
-        "../assets/pagina_loja/Camiseta-1_Rock-na-Praca.webp",
-        "../assets/pagina_loja/Camiseta-cores-tabela.webp",
-        "../assets/pagina_loja/Camiseta-tamanhos-tabela.webp",
-        "../assets/pagina_loja/Camiseta-1-Preta_Rock-na-Praca.webp"
+        "/assets/images/uploads/camiseta-1_rock-na-praca.webp",
+        "/assets/images/uploads/camiseta-cores-tabela.webp",
+        "/assets/images/uploads/camiseta-tamanhos-tabela.webp",
+        "/assets/images/uploads/camiseta-1-preta_rock-na-praca.webp"
       ],
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "slug": "camiseta-rock-na-praca-1",
