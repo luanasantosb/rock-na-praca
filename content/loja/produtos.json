@@ -81,10 +81,10 @@
       "preco": 70,
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "imagens": [
-        "../assets/pagina_loja/Camiseta-2_Rock-na-Praca.webp",
-        "../assets/pagina_loja/Camiseta-cores-tabela.webp",
-        "../assets/pagina_loja/Camiseta-tamanhos-tabela.webp",
-        "../assets/pagina_loja/Camiseta-2-Cinza_Rock-na-Praca.webp"
+        "/assets/images/uploads/camiseta-2_rock-na-praca.webp",
+        "/assets/images/uploads/camiseta-tamanhos-tabela.webp",
+        "/assets/images/uploads/camiseta-cores-tabela.webp",
+        "/assets/images/uploads/camiseta-2-cinza_rock-na-praca.webp"
       ],
       "tamanhos": [
         "Babylook M",
@@ -130,7 +130,8 @@
         "Raglan Mescla/Preto",
         "Raglan Mescla/Bordô",
         "Raglan Branco/Preto"
-      ]
+      ],
+      "imagem": "/assets/images/uploads/camiseta-2_rock-na-praca.webp"
     },
     {
       "slug": "mochila-rock-na-praca",
@@ -138,8 +139,9 @@
       "preco": 100,
       "descricao": "Produto oficial.",
       "imagens": [
-        "/images/uploads/Mochila_Rock-na-Praca.webp"
-      ]
+        "/assets/images/uploads/mochila_rock-na-praca.webp"
+      ],
+      "imagem": "/assets/images/uploads/mochila_rock-na-praca.webp"
     },
     {
       "slug": "carteira-rock-na-praca",
@@ -147,10 +149,11 @@
       "preco": 40,
       "descricao": "Produto oficial.",
       "imagens": [
-        "../assets/pagina_loja/Carteira_Rock-na-Praca.webp",
-        "../assets/pagina_loja/Carteira-aberta_Rock-na-Praca.webp",
-        "../assets/pagina_loja/Carteira-fechada_Rock-na-Praca.webp"
-      ]
+        "/assets/images/uploads/carteira_rock-na-praca.webp",
+        "/assets/images/uploads/carteira-aberta_rock-na-praca.webp",
+        "/assets/images/uploads/carteira-fechada_rock-na-praca.webp"
+      ],
+      "imagem": "/assets/images/uploads/carteira_rock-na-praca.webp"
     },
     {
       "slug": "bone-rock-na-praca-1",
