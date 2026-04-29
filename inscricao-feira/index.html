@@ -224,27 +224,39 @@
             const msgTopo = document.getElementById("status-vagas");
             const botao = document.getElementById("botaoEnviar");
 
-            if (!form) return;
+            if (!form || !msg || !botao) return;
 
-            fetch(URL)
-              .then(r => r.json())
-              .then(data => {
-                if (data.total !== undefined && data.limite !== undefined) {
-                  const vagasRestantes = data.limite - data.total;
+            verificarInscricoes();
+
+            async function verificarInscricoes() {
+              try {
+                const r = await fetch(URL);
+                const data = await r.json();
+
+                if (msgTopo && data.total !== undefined && data.limite !== undefined) {
+                  const vagasRestantes = Math.max(data.limite - data.total, 0);
                   msgTopo.textContent = `☠️ Restam apenas ${vagasRestantes} vagas`;
                   msgTopo.className = "aviso";
                 }
 
                 if (!data.abertas) {
                   form.style.display = "none";
-                  msgTopo.textContent = data.mensagem || "❌ Inscrições encerradas.";
+
+                  if (msgTopo) {
+                    msgTopo.textContent = data.mensagem || "❌ Inscrições encerradas.";
+                    msgTopo.className = "erro";
+                  }
+                }
+
+              } catch (err) {
+                console.error("Erro ao verificar inscrições:", err);
+
+                if (msgTopo) {
+                  msgTopo.textContent = "Erro ao verificar inscrições.";
                   msgTopo.className = "erro";
                 }
-              })
-              .catch(() => {
-                msgTopo.textContent = "Erro ao verificar inscrições.";
-                msgTopo.className = "erro";
-              });
+              }
+            }
 
             form.addEventListener("submit", async (e) => {
               e.preventDefault();
@@ -253,8 +265,11 @@
               msg.className = "";
               botao.disabled = true;
 
-              const logo = document.getElementById("logo").files[0];
-              const comprovante = document.getElementById("comprovante").files[0];
+              const logoInput = document.getElementById("logo");
+              const comprovanteInput = document.getElementById("comprovante");
+
+              const logo = logoInput?.files?.[0] || null;
+              const comprovante = comprovanteInput?.files?.[0] || null;
 
               if (
                 !form.loja_nome.value.trim() ||
@@ -305,18 +320,26 @@
                 });
 
                 const texto = await r.text();
-                const json = JSON.parse(texto);
+
+                let json;
+                try {
+                  json = JSON.parse(texto);
+                } catch (e) {
+                  console.error("Resposta bruta do Apps Script:", texto);
+                  throw new Error("O servidor não retornou uma resposta válida.");
+                }
 
                 msg.textContent = json.mensagem || "Resposta recebida.";
                 msg.className = json.sucesso ? "sucesso" : "erro";
 
                 if (json.sucesso) {
                   form.reset();
+                  verificarInscricoes();
                 }
 
               } catch (err) {
-                console.error(err);
-                erro("Erro ao enviar. Tente novamente.");
+                console.error("Erro completo:", err);
+                erro("Erro ao enviar: " + err.message);
               } finally {
                 botao.disabled = false;
               }
@@ -342,7 +365,10 @@
                   }
                 };
 
-                reader.onerror = () => reject(new Error("Erro ao processar arquivo."));
+                reader.onerror = () => {
+                  reject(new Error("Erro ao processar arquivo."));
+                };
+
                 reader.readAsDataURL(file);
               });
             }
