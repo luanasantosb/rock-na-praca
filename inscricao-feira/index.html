@@ -172,15 +172,8 @@
       <details class="inscricao-detalhes">
         <summary>Realizar inscrição</summary>
 
-        <form id="formSite" novalidate aria-describedby="mensagem" enctype="multipart/form-data">
+        <form id="formSite" novalidate aria-describedby="mensagem">
           <div id="status-vagas"></div>
-
-          <div class="inscricao-aviso">
-            <p><strong id="inscricao-titulo"></strong></p>
-            <p id="inscricao-local"></p>
-            <p id="inscricao-taxa"></p>
-            <p id="inscricao-pix"></p>
-          </div>
 
           <fieldset>
             <legend>Dados da Loja</legend>
@@ -192,8 +185,7 @@
             <input id="loja_cidade" name="loja_cidade" class="inscricao-input" required>
 
             <label for="loja_rede">Rede social*</label>
-            <input id="loja_rede" name="loja_rede" class="inscricao-input" type="url"
-              placeholder="https://instagram.com/sualoja" required>
+            <input id="loja_rede" name="loja_rede" class="inscricao-input" type="url" required>
 
             <label for="logo">Logo (Imagem ou PDF)</label>
             <input type="file" id="logo" name="logo" class="inscricao-input" accept="image/*,.pdf">
@@ -206,15 +198,14 @@
             <input id="loja_responsavel" name="loja_responsavel" class="inscricao-input" required>
 
             <label for="loja_whatsapp">WhatsApp*</label>
-            <input id="loja_whatsapp" name="loja_whatsapp" class="inscricao-input" inputmode="tel"
-              placeholder="(51) 99999-9999" required>
+            <input id="loja_whatsapp" name="loja_whatsapp" class="inscricao-input" required>
 
             <label for="loja_email">Email</label>
-            <input id="loja_email" name="loja_email" type="email" class="inscricao-input"
-              placeholder="contato@loja.com">
+            <input id="loja_email" name="loja_email" type="email" class="inscricao-input">
 
-            <label for="comprovante">Comprovante*(PDF ou imagem)</label>
-            <input type="file" id="comprovante" class="inscricao-input" name="comprovante" required>
+            <label for="comprovante">Comprovante* (PDF ou imagem)</label>
+            <input type="file" id="comprovante" name="comprovante" class="inscricao-input"
+              accept="image/png,image/jpeg,image/webp,application/pdf" required>
           </fieldset>
 
           <div id="mensagem" role="status" aria-live="polite"></div>
@@ -226,11 +217,11 @@
 
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-            const URL = "https://script.google.com/macros/s/AKfycbyzGz8x75STjvfiekL_FvOM2bdWjqh6O2YIRHiRqR1NlDhBS1UDjh5p9lkhsADnjHmcTw/exec";
+            const URL = "https://script.google.com/macros/s/AKfycbwzrPRtaNmtiv_8Nv2Q-dU0cq7ebxthdU329pHmh5_AfQADi6XAidM4zeQNz5ELkTSM/exec";
 
             const form = document.getElementById("formSite");
             const msg = document.getElementById("mensagem");
-            const msgTopo = document.getElementById("mensagemTopo");
+            const msgTopo = document.getElementById("status-vagas");
             const botao = document.getElementById("botaoEnviar");
 
             if (!form) return;
@@ -257,11 +248,13 @@
 
             form.addEventListener("submit", async (e) => {
               e.preventDefault();
+
               msg.textContent = "";
+              msg.className = "";
               botao.disabled = true;
 
-              const logo = document.getElementById("logo")?.files[0];
-              const comprovante = document.getElementById("comprovante")?.files[0];
+              const logo = document.getElementById("logo").files[0];
+              const comprovante = document.getElementById("comprovante").files[0];
 
               if (
                 !form.loja_nome.value.trim() ||
@@ -289,31 +282,37 @@
                 return;
               }
 
-              const dados = {
-                loja_nome: form.loja_nome.value.trim(),
-                loja_cidade: form.loja_cidade.value.trim(),
-                loja_rede: form.loja_rede.value.trim(),
-                loja_responsavel: form.loja_responsavel.value.trim(),
-                loja_whatsapp: form.loja_whatsapp.value.trim(),
-                loja_email: form.loja_email.value.trim(),
-                loja_logo: await fileToBase64(logo),
-                loja_comprovante: await fileToBase64(comprovante)
-              };
-
-              msg.textContent = "Enviando...";
-
               try {
+                msg.textContent = "Enviando...";
+
+                const dados = {
+                  loja_nome: form.loja_nome.value.trim(),
+                  loja_cidade: form.loja_cidade.value.trim(),
+                  loja_rede: form.loja_rede.value.trim(),
+                  loja_responsavel: form.loja_responsavel.value.trim(),
+                  loja_whatsapp: form.loja_whatsapp.value.trim(),
+                  loja_email: form.loja_email.value.trim(),
+                  loja_logo: await fileToBase64(logo),
+                  loja_comprovante: await fileToBase64(comprovante)
+                };
+
                 const r = await fetch(URL, {
                   method: "POST",
-                  body: JSON.stringify(dados)
+                  body: JSON.stringify(dados),
+                  headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                  }
                 });
 
-                const json = await r.json();
+                const texto = await r.text();
+                const json = JSON.parse(texto);
 
                 msg.textContent = json.mensagem || "Resposta recebida.";
                 msg.className = json.sucesso ? "sucesso" : "erro";
 
-                if (json.sucesso) form.reset();
+                if (json.sucesso) {
+                  form.reset();
+                }
 
               } catch (err) {
                 console.error(err);
@@ -330,10 +329,20 @@
             }
 
             function fileToBase64(file) {
-              return new Promise(resolve => {
+              return new Promise((resolve, reject) => {
                 if (!file) return resolve("");
+
                 const reader = new FileReader();
-                reader.onload = () => resolve(reader.result);
+
+                reader.onload = () => {
+                  if (!reader.result) {
+                    reject(new Error("Erro ao ler arquivo."));
+                  } else {
+                    resolve(reader.result);
+                  }
+                };
+
+                reader.onerror = () => reject(new Error("Erro ao processar arquivo."));
                 reader.readAsDataURL(file);
               });
             }
