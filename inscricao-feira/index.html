@@ -162,18 +162,25 @@
           <li>Para garantir sua participação, preencha o formulário e realize o pagamento da taxa de inscrição.</li>
           <li>O número de vagas é limitado, de acordo com a estrutura e a capacidade de cada edição.</li>
           <li>Cada banca pode ocupar até 3x3 metros. Mesas e cadeiras não são fornecidas.</li>
-          <li><strong>Não é permitida</strong> a comercialização de bebidas nem de produtos alimentícios no espaço da
-            feira.</li>
+          <li><strong>Não é permitida</strong> a comercialização de bebidas nem de produtos alimentícios no espaço da feira.</li>
         </ul>
       </section>
 
-      <div id="mensagemTopo" role="status" aria-live="polite"></div>
+      
+
+      <div id="status-vagas"></div>
 
       <details class="inscricao-detalhes">
         <summary>Realizar inscrição</summary>
 
         <form id="formSite" novalidate aria-describedby="mensagem">
-          <div id="status-vagas"></div>
+          
+          <div class="inscricao-aviso">
+            <p><strong id="inscricao-titulo"></strong></p>
+            <p id="inscricao-local"></p>
+            <p id="inscricao-taxa"></p>
+            <p id="inscricao-pix"></p>
+          </div>
 
           <fieldset>
             <legend>Dados da Loja</legend>

@@ -1366,8 +1366,7 @@ lite-youtube {
   font-size: 1rem;
   line-height: 1.6;
 }
-
-#mensagemTopo {
+#status-vagas{
   color: var(--rosa);
   text-transform: uppercase;
   padding: 0.5rem;
@@ -1394,7 +1393,6 @@ lite-youtube {
   max-width: 750px;
   margin: 0 auto;
   padding: 0.5rem;
-  ;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -1431,7 +1429,6 @@ lite-youtube {
   text-transform: uppercase;
   font-family: var(--fonte-textos);
 }
-
 
 .inscricao-input {
   width: 50%;
@@ -1492,7 +1489,6 @@ lite-youtube {
   background-color: var(--verde);
   color: var(--preto);
 }
-
 
 #mensagem {
   min-height: 1.5rem;
