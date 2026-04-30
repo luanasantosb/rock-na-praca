@@ -1,9 +1,9 @@
 {
   "titulo": "Mercado Underground",
-  "descricao": "Descubra um universo alternativo onde a criatividade corre solta. Explore lojas autorais, mergulhe no trabalho de artistas independentes e encontre peças únicas que não existem no mainstream. Aqui, cada detalhe tem história — e atitude.",
+  "descricao": "Descubra um universo alternativo onde a criatividade corre solta. Explore lojas autorais, mergulhe no trabalho de artistas independentes e encontre peças únicas que não existem no mainstream. Aqui, cada detalhe tem história e atitude.",
   "lojas": [
     {
-      "imagem": "/images/uploads/The-Raven_logo.webp",
+      "imagem": "/assets/images/uploads/The-Raven_logo.webp",
       "link": "https://www.instagram.com/theravenbr"
     }
   ]
