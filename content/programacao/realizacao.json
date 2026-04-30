@@ -2,12 +2,12 @@
   "itens": [
     {
       "nome": "PRODUÇÃO",
-      "logo": "/images/uploads/Balaiada_logo.webp",
+      "logo": "/assets/images/uploads/Balaiada_logo.webp",
       "link": "https://www.instagram.com/balaiada"
     },
     {
       "nome": "Apoio institucional",
-      "logo": "/images/uploads/prefa-esteio_logo.webp",
+      "logo": "/assets/images/uploads/prefa-esteio_logo.webp",
       "link": "https://www.esteio.rs.gov.br/"
     }
   ]
