@@ -273,14 +273,14 @@
       const apoio = await carregarJSON('/content/programacao/apoio.json');
       const local = await carregarJSON('/content/programacao/como-chegar.json');
 
-      // ===== TOPO / HERO =====
+      // TOPO
       if (hero) {
         setText('titulo-programacao', hero.titulo);
         setText('subtitulo-programacao', hero.subtitulo);
         setText('resumo-programacao', hero.resumo);
       }
 
-      // ===== REALIZAÇÃO =====
+      // REALIZAÇÃO 
       const gridRealizacao = document.querySelector('.grid-realizacao');
 
       if (realizacao?.itens?.length && gridRealizacao) {
@@ -303,7 +303,7 @@
         });
       }
 
-      // ===== BANDAS =====
+      // BANDAS 
       if (gradeBandas) {
         setText('titulo-grade-bandas', gradeBandas.titulo);
 
@@ -344,7 +344,7 @@
         }
       }
 
-      // ===== FEIRA =====
+      //FEIRA
       if (feira) {
         setText('titulo-feira', feira.titulo);
         setText('descricao-feira', feira.descricao);
@@ -371,7 +371,7 @@
         }
       }
 
-      // ===== APOIO =====
+      // APOIO
       if (apoio) {
         setText('titulo-apoio', apoio.titulo);
         setText('descricao-apoio', apoio.descricao);
@@ -396,34 +396,51 @@
         }
       }
 
-      // ===== LOCAL =====
+      //LOCAL
       if (local) {
-        setText('titulo-local', local.titulo);
-        setText('endereco', local.endereco);
-        setLink('link-endereco', local.link_mapa);
+  setText('titulo-local', local.titulo);
+  setText('endereco', local.endereco);
+  setLink('link-endereco', local.link_mapa);
 
-        if (local.iframe_mapa) {
-          const mapa = document.getElementById('mapa');
-          if (mapa) mapa.src = local.iframe_mapa;
-        }
+  if (local.iframe_mapa) {
+    const mapa = document.getElementById('mapa');
+    if (mapa) mapa.src = local.iframe_mapa;
+  }
 
-        const listaAcesso = document.getElementById('lista-acesso');
-        if (listaAcesso) listaAcesso.innerHTML = '';
+  const tabelaAcesso = document.querySelector('.tabela-acesso tbody');
 
-        if (local.transporte?.length && listaAcesso) {
-          local.transporte.forEach(item => {
-            const texto = typeof item === 'string' ? item : item.item;
-            if (!texto) return;
+  if (tabelaAcesso) tabelaAcesso.innerHTML = '';
 
-            const li = document.createElement('li');
-            li.textContent = texto;
-            listaAcesso.appendChild(li);
-          });
-        }
+  if (local.transporte?.length && tabelaAcesso) {
+    local.transporte.forEach(item => {
+      let tipo = '-';
+      let descricao = '';
+
+      if (typeof item === 'string') {
+        descricao = item;
+      } else {
+        tipo = item.tipo || '-';
+        descricao = item.descricao || item.item || '';
       }
+
+      if (!descricao) return;
+
+      const tr = document.createElement('tr');
+
+      tr.innerHTML = `
+        <td>${tipo}</td>
+        <td>${descricao}</td>
+      `;
+
+      tabelaAcesso.appendChild(tr);
+    });
+  }
+}
+
+        
     }
 
-    // ===== FUNÇÕES AUXILIARES =====
+    //FUNÇÕES AUXILIARES
     function setText(id, value) {
       if (!value) return;
       const el = document.getElementById(id);
@@ -442,7 +459,7 @@
       if (el) el.href = href;
     }
 
-    // ===== INICIAR =====
+    // INICIAR
     carregarProgramacao();
   </script>
 
