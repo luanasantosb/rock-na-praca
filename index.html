@@ -35,9 +35,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
   <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
 
- <script src="/assets/JS/cabecalho.js" defer></script>
-<script src="/assets/JS/rodape.js" defer></script>
-<script src="/assets/JS/script.js" defer></script>
+  <script src="/assets/JS/cabecalho.js" defer></script>
+  <script src="/assets/JS/rodape.js" defer></script>
+  <script src="/assets/JS/script.js" defer></script>
 
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://elfsightcdn.com">
@@ -114,16 +114,14 @@
 <body>
   <!--  CABEÇALHO  -->
   <header class="cabecalho">
-  <div class="cabecalho-simbolo-logotipo" id="logo"></div>
+    <div class="cabecalho-simbolo-logotipo" id="logo"></div>
 
-  <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
+    <div class="menu-hamburguer" id="menu-hamburguer">☰</div>
 
-  <nav class="cabecalho-menu" id="menu"
-    aria-label="Menu Principal"
-    itemscope
-    itemtype="https://schema.org/SiteNavigationElement">
-  </nav>
-</header>
+    <nav class="cabecalho-menu" id="menu" aria-label="Menu Principal" itemscope
+      itemtype="https://schema.org/SiteNavigationElement">
+    </nav>
+  </header>
 
   <main>
 
@@ -131,7 +129,7 @@
       <div class="hero-banner">
         <div class="hero-esquerda">
           <meta itemprop="name" content="Rock na Praça">
-          <meta itemprop="startDate" content="2026-04-12T15:00">
+          <meta itemprop="startDate" content="2026-05-31T15:00">
           <meta itemprop="description"
             content="O maior festival de rock gratuito de Esteio. Patrimônio Cultural com shows ao vivo na Praça Coração de Maria.">
           <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
@@ -193,9 +191,9 @@
         <!-- LADO DIREITO (CARTAZ) -->
         <div class="hero-direita">
 
-          <img id="home-imagem" src=""
-            class="hero-cartaz" alt="Cartaz oficial do Rock na Praça com o line-up das bandas" width="350"
-            height="467" fetchpriority="high">
+          <img id="home-imagem" src="" class="hero-cartaz"
+            alt="Cartaz oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
+            fetchpriority="high">
         </div>
       </div>
     </section>
@@ -249,46 +247,46 @@
     </section>
   </main>
 
-<!-- RODAPÉ -->
-<footer class="rodape" itemscope itemtype="https://schema.org/Organization">
-  <div class="rodape-container">
+  <!-- RODAPÉ -->
+  <footer class="rodape" itemscope itemtype="https://schema.org/Organization">
+    <div class="rodape-container">
 
-    <div class="rodape-info">
-      <h3 id="footer_nome" itemprop="name">...</h3>
-      <p id="footer_descricao" itemprop="description">...</p>
-      <p id="footer_frase"></p>
+      <div class="rodape-info">
+        <h3 id="footer_nome" itemprop="name">...</h3>
+        <p id="footer_descricao" itemprop="description">...</p>
+        <p id="footer_frase"></p>
+      </div>
+
+      <div class="redes-sociais">
+
+        <a id="footer_instagram" target="_blank" rel="me noopener">
+          <img id="img_instagram" alt="">
+        </a>
+
+        <a id="footer_facebook" target="_blank" rel="me noopener">
+          <img id="img_facebook" alt="">
+        </a>
+
+        <a id="footer_youtube" target="_blank" rel="me noopener">
+          <img id="img_youtube" alt="">
+        </a>
+
+      </div>
+
+      <div class="creditos">
+        <p>
+          Produção por
+          <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
+        </p>
+
+        <p>
+          Site desenvolvido por
+          <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
+        </p>
+      </div>
+
     </div>
-
-    <div class="redes-sociais">
-
-      <a id="footer_instagram" target="_blank" rel="me noopener">
-        <img id="img_instagram" alt="">
-      </a>
-
-      <a id="footer_facebook" target="_blank" rel="me noopener">
-        <img id="img_facebook" alt="">
-      </a>
-
-      <a id="footer_youtube" target="_blank" rel="me noopener">
-        <img id="img_youtube" alt="">
-      </a>
-
-    </div>
-
-    <div class="creditos">
-      <p>
-        Produção por 
-        <a id="footer_produtora" target="_blank" rel="nofollow noopener"></a>
-      </p>
-
-      <p>
-        Site desenvolvido por 
-        <a id="footer_dev" target="_blank" rel="nofollow noopener"></a>
-      </p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", async () => {

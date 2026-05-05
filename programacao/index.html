@@ -190,17 +190,9 @@
 
         <div class="card-local">
           <h3>🚆 Transporte</h3>
-          <table class="tabela-acesso">
-            <thead>
-              <tr>
-                <th>Tipo</th>
-                <th>Descrição</th>
-              </tr>
-            </thead>
-            <tbody>
+          <ul class="lista-acesso">
             <!-- Itens renderizados via JavaScript -->
-             </tbody>
-          </table>
+          </ul>
         </div>
 
         <div class="mapa-container" id="bloco-mapa">
@@ -396,8 +388,8 @@
         }
       }
 
-      //LOCAL
-      if (local) {
+      // LOCAL
+if (local) {
   setText('titulo-local', local.titulo);
   setText('endereco', local.endereco);
   setLink('link-endereco', local.link_mapa);
@@ -407,11 +399,11 @@
     if (mapa) mapa.src = local.iframe_mapa;
   }
 
-  const tabelaAcesso = document.querySelector('.tabela-acesso tbody');
+  const listaAcesso = document.querySelector('.lista-acesso');
 
-  if (tabelaAcesso) tabelaAcesso.innerHTML = '';
+  if (listaAcesso) listaAcesso.innerHTML = '';
 
-  if (local.transporte?.length && tabelaAcesso) {
+  if (local.transporte?.length && listaAcesso) {
     local.transporte.forEach(item => {
       let tipo = '-';
       let descricao = '';
@@ -425,14 +417,14 @@
 
       if (!descricao) return;
 
-      const tr = document.createElement('tr');
+      const li = document.createElement('li');
 
-      tr.innerHTML = `
-        <td>${tipo}</td>
-        <td>${descricao}</td>
+      li.innerHTML = `
+        <span class="tipo">${tipo}</span>
+        <span class="descricao">${descricao}</span>
       `;
 
-      tabelaAcesso.appendChild(tr);
+      listaAcesso.appendChild(li);
     });
   }
 }

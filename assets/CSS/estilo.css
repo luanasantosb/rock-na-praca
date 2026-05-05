@@ -501,53 +501,6 @@ lite-youtube:hover {
   text-transform: uppercase;
 }
 
-/* ==== Seção Enquete ====*/
-
-#widget-inferior {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  max-width: 95vw;
-  height: 100vh;
-  max-height: 600px;
-  background: var(--azul);
-  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px 10px 0 0;
-  transition: transform 0.4s ease;
-  transform: translateY(100%);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-}
-
-#widget-inferior.aberto {
-  transform: translateY(0);
-}
-
-#widget-inferior .elfsight-app-c9481474-373e-4c18-ad66-29ee754fceb7 {
-  flex: 1;
-  overflow-y: auto;
-}
-
-#toggle-widget {
-  border: 3px solid var(--preto);
-  box-shadow: 6px 6px 0px #000;
-  font-weight: 900;
-  text-transform: uppercase;
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  background: var(--azul);
-  color: var(--branco);
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-/* RESPONSIVIDADE  PÁGINA INICIAL*/
-
 @media (max-width: 1024px) {
   .hero-banner {
     gap: 2rem;
@@ -1019,16 +972,35 @@ lite-youtube:hover {
   color: var(--branco);
 }
 
-.tabela-acesso{
-  width:80%;
-  border-collapse: collapse;
-  color:var(--branco);
+.lista-acesso {
+  width: 80%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--branco);
 }
-.tabela-acesso th,
-.tabela-acesso td{
-border:1px solid var(--branco);
-padding:0.5rem;
-text-align: center;
+
+.lista-acesso li {
+  display: flex;
+  border: 1px solid var(--branco);
+  padding: 0.5rem;
+}
+
+.lista-acesso li + li {
+  border-top: none;
+}
+
+.tipo {
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+  border-right: 1px solid var(--branco);
+  padding-right: 10px;
+}
+
+.descricao {
+  flex: 1;
+  text-align: center;
 }
 
 .botao-mapa {
