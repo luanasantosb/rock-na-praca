@@ -973,34 +973,12 @@ lite-youtube:hover {
 }
 
 .lista-acesso {
-  width: 80%;
-  padding: 0;
-  margin: 0;
   list-style: none;
   color: var(--branco);
 }
 
 .lista-acesso li {
-  display: flex;
-  border: 1px solid var(--branco);
   padding: 0.5rem;
-}
-
-.lista-acesso li + li {
-  border-top: none;
-}
-
-.tipo {
-  font-weight: bold;
-  width: 120px;
-  text-align: center;
-  border-right: 1px solid var(--branco);
-  padding-right: 10px;
-}
-
-.descricao {
-  flex: 1;
-  text-align: center;
 }
 
 .botao-mapa {

@@ -389,47 +389,47 @@
       }
 
       // LOCAL
-if (local) {
-  setText('titulo-local', local.titulo);
-  setText('endereco', local.endereco);
-  setLink('link-endereco', local.link_mapa);
+      if (local) {
+        setText('titulo-local', local.titulo);
+        setText('endereco', local.endereco);
+        setLink('link-endereco', local.link_mapa);
 
-  if (local.iframe_mapa) {
-    const mapa = document.getElementById('mapa');
-    if (mapa) mapa.src = local.iframe_mapa;
-  }
+        if (local.iframe_mapa) {
+          const mapa = document.getElementById('mapa');
+          if (mapa) mapa.src = local.iframe_mapa;
+        }
 
-  const listaAcesso = document.querySelector('.lista-acesso');
+        const listaAcesso = document.querySelector('.lista-acesso');
 
-  if (listaAcesso) listaAcesso.innerHTML = '';
+        if (listaAcesso) listaAcesso.innerHTML = '';
 
-  if (local.transporte?.length && listaAcesso) {
-    local.transporte.forEach(item => {
-      let tipo = '-';
-      let descricao = '';
+        if (local.transporte?.length && listaAcesso) {
+          local.transporte.forEach(item => {
+            let tipo = '';
+            let descricao = '';
 
-      if (typeof item === 'string') {
-        descricao = item;
-      } else {
-        tipo = item.tipo || '-';
-        descricao = item.descricao || item.item || '';
-      }
+            if (typeof item === 'string') {
+              descricao = item;
+            } else {
+              tipo = item.tipo || '';
+              descricao = item.descricao || item.item || '';
+            }
 
-      if (!descricao) return;
+            if (!descricao) return;
 
-      const li = document.createElement('li');
+            const li = document.createElement('li');
 
-      li.innerHTML = `
+            li.innerHTML = `
         <span class="tipo">${tipo}</span>
         <span class="descricao">${descricao}</span>
       `;
 
-      listaAcesso.appendChild(li);
-    });
-  }
-}
+            listaAcesso.appendChild(li);
+          });
+        }
+      }
 
-        
+
     }
 
     //FUNÇÕES AUXILIARES
