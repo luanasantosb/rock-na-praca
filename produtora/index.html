@@ -83,35 +83,23 @@
             margin-bottom: 70px;
         }
 
-        h2 {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: var(--cinza);
+        .tabela-servicos {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
         }
 
-        p {
-            margin-bottom: 15px;
-            font-weight: 300;
+        .tabela-servicos th,
+        .tabela-servicos td {
+            border: 1px solid var(--cinza);
+            padding: 10px;
+            text-align: left;
         }
 
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 10px;
-            font-weight: 300;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--cinza);
+        .tabela-servicos th {
+            background-color: var(--cinza);
+            color: var(--bege);
         }
 
         .contato a {
@@ -125,16 +113,6 @@
             color: var(--cinza);
             border-top: 1px dashed var(--cinza);
             padding-top: 20px;
-        }
-
-
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-            opacity: 0.15;
-            pointer-events: none;
         }
 
         @media (max-width: 600px) {
@@ -155,12 +133,13 @@
 
         <header>
             <div class="titulo">
-                <img src="/assets/geral/Balaiada_logo.webp" width="70px" alt="Logo Balaiada">
+                <img src="/assets/images/uploads/Balaiada_logo.webp" width="70px" alt="Logo Balaiada">
                 <h1>Balaiada Combo Cultural</h1>
             </div>
 
             <div class="subtitulo">
-                produtora do <strong>Rock na Praça</strong> · produção cultural / selo / projetos incentivados
+                Produtora do <strong>Rock na Praça</strong><br>
+                produção cultural · selo · projetos incentivados
             </div>
 
             <a href="mailto:balaiadaprodutora@gmail.com" class="btn">
@@ -186,12 +165,33 @@
 
         <section>
             <h2>SERVIÇOS</h2>
-            <ul>
-                <li>Produção de eventos</li>
-                <li>Selo fonográfico</li>
-                <li>Projetos incentivados</li>
-                <li>Merchandising</li>
-            </ul>
+
+            <table class="tabela-servicos">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Serviço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Produção de eventos</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Selo fonográfico</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Projetos incentivados</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Merchandising</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="contato">
