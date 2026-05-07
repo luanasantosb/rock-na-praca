@@ -359,7 +359,7 @@
         e já saia usando o manto oficial!
       </p>
 
-      <section class="secao-carrinho">
+      <section class="secao-carrinho" id="secaoCarrinho">
         <h2 class="titulo-carrinho">Meu Carrinho</h2>
 
         <div id="carrinho">
@@ -383,10 +383,44 @@
 
         </div>
       </section>
+
+      <nav class="menu-categorias" aria-label="Categorias de produtos">
+        <button class="categoria ativa" data-categoria="todos">Todos</button>
+        <button class="categoria" data-categoria="camisetas">Camisetas</button>
+        <button class="categoria" data-categoria="acessorios">Acessórios</button>
+      </nav>
+
+
+      <section class="produtos-destaque">
+        <h2 class="titulo-secao">Produtos em Destaque</h2>
+
+        <div class="carrossel-container">
+          <button class="carrossel-btn prev" aria-label="Produto anterior">
+            &#10094;
+          </button>
+
+          <div class="carrossel">
+            <article class="card-produto">
+              <img src="../assets/images/uploads/camiseta-1_rock-na-praca.webp" alt="Camiseta Rock na Praca modelo 1">
+              <h3>Camiseta Modelo #1</h3>
+              <p class="preco">R$ 70,00</p>
+            </article>
+
+            <article class="card-produto">
+              <img src="../assets/images/uploads/copo_rock-na-praca.webp" alt="Copo rock na praça">
+              <h3>Copo</h3>
+              <p class="preco">R$ 10,00</p>
+            </article>
+          </div>
+
+          <button class="carrossel-btn next" aria-label="Próximo produto">
+            &#10095;
+          </button>
+        </div>
+      </section>
       <section class="loja-cartoes" id="lista-produtos">
         <!-- Produtos renderizados via JavaScript -->
       </section>
-    </section>
   </main>
 
   <!-- RODAPÉ -->
@@ -431,11 +465,11 @@
     </div>
   </footer>
 
-
   <script>
     async function carregarProdutos() {
       try {
         const response = await fetch("/content/loja/produtos.json");
+
         if (!response.ok) {
           throw new Error("Não foi possível carregar os produtos.");
         }
@@ -458,6 +492,7 @@
               : produto.imagem || "";
 
           const tituloExibido = produto.titulo || produto.nome || "";
+
           const precoFormatado =
             produto.preco != null
               ? Number(produto.preco).toLocaleString("pt-BR", {
@@ -467,6 +502,7 @@
               : "";
 
           const status = produto.status || "";
+          const categoria = produto.categoria || "";
 
           const card = document.createElement("div");
           card.className = "loja-cartao";
@@ -474,18 +510,18 @@
           card.dataset.nome = produto.nome || "";
           card.dataset.preco = produto.preco != null ? produto.preco : "";
           card.dataset.descricao = produto.descricao || "";
+          card.dataset.categoria = categoria;
 
           card.innerHTML = `
           ${imagemPrincipal ? `
             <img
               class="cartao-produto-foto"
               src="${imagemPrincipal}"
-              alt="${produto.nome || "Produto"}"
+              alt="${produto.alt || produto.nome || "Produto"}"
               loading="lazy">
           ` : ""}
 
           <div class="cartao-produto-infos">
-
             ${status ? `<span class="cartao-produto-status">${status}</span>` : ""}
 
             <h2 class="cartao-produto-titulo">${tituloExibido}</h2>
@@ -500,12 +536,54 @@
 
           listaProdutos.appendChild(card);
         });
+
+        ativarFiltroCategorias();
+
       } catch (error) {
         console.error("Erro ao carregar produtos:", error);
       }
     }
 
+    function ativarFiltroCategorias() {
+      const botoes = document.querySelectorAll(".categoria");
+
+      botoes.forEach(botao => {
+        botao.addEventListener("click", () => {
+          const categoriaSelecionada = botao.dataset.categoria;
+          const produtos = document.querySelectorAll(".loja-cartao");
+
+          botoes.forEach(b => b.classList.remove("ativa"));
+          botao.classList.add("ativa");
+
+          produtos.forEach(produto => {
+            const categoriaProduto = produto.dataset.categoria;
+
+            if (
+              categoriaSelecionada === "todos" ||
+              categoriaProduto === categoriaSelecionada
+            ) {
+              produto.style.display = "";
+            } else {
+              produto.style.display = "none";
+            }
+          });
+        });
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", carregarProdutos);
+
+    const carrossel = document.querySelector(".carrossel");
+    const btnPrev = document.querySelector(".prev");
+    const btnNext = document.querySelector(".next");
+
+    btnNext.addEventListener("click", () => {
+      carrossel.scrollLeft += 300;
+    });
+
+    btnPrev.addEventListener("click", () => {
+      carrossel.scrollLeft -= 300;
+    });
   </script>
 
 </body>
