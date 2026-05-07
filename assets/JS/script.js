@@ -1,26 +1,3 @@
-/* ==== VLIBRAS=====*/
-
-document.addEventListener("DOMContentLoaded", function() {
-  const vlibrasDiv = document.createElement('div');
-  vlibrasDiv.innerHTML = `
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(vlibrasDiv);
-  const scriptVlibras = document.createElement('script');
-  scriptVlibras.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
-  scriptVlibras.async = true;
-  scriptVlibras.onload = () => {
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  };
-  document.head.appendChild(scriptVlibras);
-});
-
-
 /*===== CABECALHO mobile =====*/
 
 const btnMenu = document.getElementById("menu-hamburguer");
@@ -106,64 +83,6 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.6 });
 
 counters.forEach(counter => observer.observe(counter));
-
-/*====== YOUTUBE =======*/
-
-const container = document.getElementById("videos-lateral");
-const PROXY_URL = "https://script.google.com/macros/s/AKfycbxzFVPEnl9xdaj2uF89ZCSe8ONRF4vJjdaWfSWJSWst7bsnpGTooKGEs8HoPVRU9XQQ/exec";
-
-async function carregarVideos() {
-  if (!container) return;
-
-  try {
-    const response = await fetch(PROXY_URL);
-    const data = await response.json();
-
-    container.innerHTML = "";
-
-    if (data.error) {
-      container.innerHTML = `<p>Erro: ${data.error}</p>`;
-      return;
-    }
-
-    if (!data.items || data.items.length === 0) {
-      container.innerHTML = "<p>Não há vídeos disponíveis.</p>";
-      return;
-    }
-
-    const fragment = document.createDocumentFragment();
-
-    data.items.forEach(video => {
-      const videoId = video.snippet.resourceId.videoId;
-      const snippet = video.snippet;
-
-      const card = document.createElement("div");
-      card.className = "cartao-video";
-
-      card.innerHTML = `
-        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">
-          <img src="${snippet.thumbnails.medium.url}" 
-               alt="${snippet.title}" 
-               loading="lazy">
-          <h4>${snippet.title}</h4>
-        </a>
-      `;
-
-      fragment.appendChild(card);
-    });
-
-    container.appendChild(fragment);
-
-  } catch (error) {
-    console.error("Erro ao carregar vídeos:", error);
-    container.innerHTML = "<p>Não foi possível carregar os vídeos.</p>";
-  }
-}
-
-window.addEventListener('load', () => {
-  if (container) setTimeout(carregarVideos, 1000);
-});
-
 
 /*============== LOJA ================*/
 
