@@ -3,6 +3,7 @@
     {
       "slug": "bone-rock-na-praca-1",
       "nome": "Boné Rock na Praça #1",
+      "categoria":"acessorios",
       "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
@@ -13,6 +14,7 @@
     {
       "slug": "bone-rock-na-praca-2",
       "nome": "Boné Rock na Praça #2",
+      "categoria":"acessorios",
       "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
@@ -29,6 +31,7 @@
       ],
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "slug": "camiseta-rock-na-praca-1",
+      "categoria":"camisetas",
       "preco": 70,
       "ativo": true,
       "imagem": "/assets/images/uploads/camiseta-1_rock-na-praca.webp",
@@ -82,6 +85,7 @@
     {
       "slug": "camiseta-rock-na-praca-2",
       "nome": "CAMISETA MODELO #2",
+      "categoria":"camisetas",
       "preco": 70,
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "imagens": [
@@ -140,6 +144,7 @@
     {
       "slug": "carteira-rock-na-praca",
       "nome": "Carteira Rock na Praça",
+      "categoria":"acessorios",
       "preco": 40,
       "descricao": "Produto oficial.",
       "imagens": [
@@ -158,6 +163,7 @@
       "alt": "Copo rock na praça",
       "descricao": "Copo oficial, somente na cor rosa",
       "slug": "copo-rock-na-praca",
+      "categoria":"acessorios",
       "preco": 10,
       "ativo": true,
       "imagem": "/assets/images/uploads/Copo_Rock-na-Praca.webp",
@@ -168,6 +174,7 @@
     {
       "slug": "mochila-rock-na-praca",
       "nome": "Mochila Rock na Praça",
+      "categoria":"acessorios",
       "preco": 100,
       "descricao": "Produto oficial.",
       "imagens": [
