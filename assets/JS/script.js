@@ -169,6 +169,7 @@ window.addEventListener('load', () => {
 
 const STORAGE_KEY = "carrinhoRNP";
 
+const secaoCarrinho = document.getElementById("secaoCarrinho");
 const quantidadeSpan = document.getElementById("quantidadeTotal");
 const totalSpan = document.getElementById("total");
 const btnLimpar = document.getElementById("btnLimpar");
@@ -188,20 +189,17 @@ function renderizarItens(carrinho) {
 
   listaCarrinho.innerHTML = "";
 
-  if (carrinho.length === 0) {
-    listaCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
-    return;
-  }
-
   carrinho.forEach(item => {
     const div = document.createElement("div");
     div.classList.add("item-carrinho");
 
     div.innerHTML = `
-      <p><strong>${item.nome}</strong>
-      Quantidade: 1
-      Subtotal: R$ ${item.preco.toFixed(2)}
-      <hr>
+      <p>
+        <strong>${item.nome}</strong><br>
+        Quantidade: 1<br>
+        Valor unitário: R$ ${Number(item.preco).toFixed(2)}<br>
+        Subtotal: R$ ${Number(item.preco).toFixed(2)}
+      </p>
     `;
 
     listaCarrinho.appendChild(div);
@@ -211,11 +209,20 @@ function renderizarItens(carrinho) {
 function atualizarCarrinho() {
   const carrinho = carregarCarrinho();
 
-  if (quantidadeSpan)
+  if (secaoCarrinho) {
+    if (carrinho.length > 0) {
+      secaoCarrinho.classList.remove("oculto");
+    } else {
+      secaoCarrinho.classList.add("oculto");
+    }
+  }
+
+  if (quantidadeSpan) {
     quantidadeSpan.textContent = carrinho.length;
+  }
 
   if (totalSpan) {
-    const total = carrinho.reduce((soma, item) => soma + item.preco, 0);
+    const total = carrinho.reduce((soma, item) => soma + Number(item.preco), 0);
     totalSpan.textContent = total.toFixed(2);
   }
 
@@ -240,15 +247,15 @@ if (btnFinalizar) {
       return;
     }
 
-    let mensagem = "Meu pedido Rock na Praça:\n";
+    let mensagem = "Meu pedido Rock na Praça:\n\n";
 
     carrinho.forEach((item, index) => {
-      mensagem += `${index + 1}. ${item.nome} - R$ ${item.preco.toFixed(2)}\n`;
+      mensagem += `${index + 1}. ${item.nome} - R$ ${Number(item.preco).toFixed(2)}\n`;
     });
 
-    const total = carrinho.reduce((soma, i) => soma + i.preco, 0);
+    const total = carrinho.reduce((soma, item) => soma + Number(item.preco), 0);
 
-    mensagem += `Total: R$ ${total.toFixed(2)}`;
+    mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
 
     const telefone = "555192179735";
     const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
@@ -257,7 +264,7 @@ if (btnFinalizar) {
   });
 }
 
-
+//card com contador
 
 document.addEventListener('DOMContentLoaded', function() {
   const produtos = document.querySelectorAll('.loja-cartao');
