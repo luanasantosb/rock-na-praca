@@ -3,7 +3,7 @@
     {
       "slug": "bone-rock-na-praca-1",
       "nome": "Boné Rock na Praça #1",
-      "categoria":"acessorios",
+      "categoria": "acessorios",
       "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
@@ -14,7 +14,7 @@
     {
       "slug": "bone-rock-na-praca-2",
       "nome": "Boné Rock na Praça #2",
-      "categoria":"acessorios",
+      "categoria": "acessorios",
       "preco": 70,
       "descricao": "Produto oficial.",
       "imagens": [
@@ -31,10 +31,10 @@
       ],
       "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "slug": "camiseta-rock-na-praca-1",
-      "categoria":"camisetas",
       "preco": 70,
       "ativo": true,
       "imagem": "/assets/images/uploads/camiseta-1_rock-na-praca.webp",
+      "categoria": "camisetas",
       "cores": [
         "Preto",
         "Cinza Chumbo",
@@ -83,30 +83,17 @@
       ]
     },
     {
-      "slug": "camiseta-rock-na-praca-2",
-      "nome": "CAMISETA MODELO #2",
-      "categoria":"camisetas",
-      "preco": 70,
-      "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
       "imagens": [
         "/assets/images/uploads/camiseta-2_rock-na-praca.webp",
         "/assets/images/uploads/camiseta-tamanhos-tabela.webp",
         "/assets/images/uploads/camiseta-cores-tabela.webp",
         "/assets/images/uploads/camiseta-2-cinza_rock-na-praca.webp"
       ],
-      "tamanhos": [
-        "Babylook M",
-        "Babylook G",
-        "Babylook GG",
-        "Babylook XG",
-        "Camiseta PP",
-        "Camiseta P",
-        "Camiseta M",
-        "Camiseta G",
-        "Camiseta GG",
-        "Camiseta XG",
-        "Camiseta XXG"
-      ],
+      "descricao": "Camiseta oficial Rock na Praça. 100% algodão.",
+      "slug": "camiseta-rock-na-praca-2",
+      "preco": 70,
+      "imagem": "/assets/images/uploads/camiseta-2_rock-na-praca.webp",
+      "categoria": "camisetas",
       "cores": [
         "Preto",
         "Cinza Chumbo",
@@ -139,12 +126,25 @@
         "Raglan Mescla/Bordô",
         "Raglan Branco/Preto"
       ],
-      "imagem": "/assets/images/uploads/camiseta-2_rock-na-praca.webp"
+      "nome": "CAMISETA MODELO #2",
+      "tamanhos": [
+        "Babylook M",
+        "Babylook G",
+        "Babylook GG",
+        "Babylook XG",
+        "Camiseta PP",
+        "Camiseta P",
+        "Camiseta M",
+        "Camiseta G",
+        "Camiseta GG",
+        "Camiseta XG",
+        "Camiseta XXG"
+      ]
     },
     {
       "slug": "carteira-rock-na-praca",
       "nome": "Carteira Rock na Praça",
-      "categoria":"acessorios",
+      "categoria": "acessorios",
       "preco": 40,
       "descricao": "Produto oficial.",
       "imagens": [
@@ -157,24 +157,24 @@
     {
       "imagens": [
         "/assets/images/uploads/copo_rock-na-praca.webp",
-        "/assets/images/uploads/copo-frente_rock-na-praca.webp",
-        "/assets/images/uploads/Copo-costas_Rock-na-Praca.webp"
+        "/assets/images/uploads/Copo-costas_Rock-na-Praca.webp",
+        "/assets/images/uploads/copo-frente_rock-na-praca.webp"
       ],
       "alt": "Copo rock na praça",
       "descricao": "Copo oficial, somente na cor rosa",
       "slug": "copo-rock-na-praca",
-      "categoria":"acessorios",
       "preco": 10,
       "ativo": true,
       "imagem": "/assets/images/uploads/Copo_Rock-na-Praca.webp",
       "status": "PRONTA ENTREGA",
+      "categoria": "acessorios",
       "nome": "Copo",
       "titulo": "Copo Rock na Praça"
     },
     {
       "slug": "mochila-rock-na-praca",
       "nome": "Mochila Rock na Praça",
-      "categoria":"acessorios",
+      "categoria": "acessorios",
       "preco": 100,
       "descricao": "Produto oficial.",
       "imagens": [
