@@ -1,20 +1,24 @@
 {
   "produtos": [
     {
+      "slug": "bone-rock-na-praca-1",
+      "nome": "Boné Rock na Praça #1",
+      "preco": 70,
+      "descricao": "Produto oficial.",
       "imagens": [
-        "/assets/images/uploads/copo_rock-na-praca.webp",
-        "/assets/images/uploads/copo-frente_rock-na-praca.webp",
-        "/assets/images/uploads/Copo-costas_Rock-na-Praca.webp"
+        "/assets/images/uploads/bone-1_rock-na-praca.webp"
       ],
-      "alt": "Copo rock na praça",
-      "descricao": "Copo oficial, somente na cor rosa",
-      "slug": "copo-rock-na-praca",
-      "preco": 10,
-      "ativo": true,
-      "imagem": "/assets/images/uploads/Copo_Rock-na-Praca.webp",
-      "status": "PRONTA ENTREGA",
-      "nome": "Copo",
-      "titulo": "Copo Rock na Praça"
+      "imagem": "/assets/images/uploads/bone-1_rock-na-praca.webp"
+    },
+    {
+      "slug": "bone-rock-na-praca-2",
+      "nome": "Boné Rock na Praça #2",
+      "preco": 70,
+      "descricao": "Produto oficial.",
+      "imagens": [
+        "/assets/images/uploads/bone-2_rock-na-praca.webp"
+      ],
+      "imagem": "/assets/images/uploads/bone-2_rock-na-praca.webp"
     },
     {
       "imagens": [
@@ -134,16 +138,6 @@
       "imagem": "/assets/images/uploads/camiseta-2_rock-na-praca.webp"
     },
     {
-      "slug": "mochila-rock-na-praca",
-      "nome": "Mochila Rock na Praça",
-      "preco": 100,
-      "descricao": "Produto oficial.",
-      "imagens": [
-        "/assets/images/uploads/mochila_rock-na-praca.webp"
-      ],
-      "imagem": "/assets/images/uploads/mochila_rock-na-praca.webp"
-    },
-    {
       "slug": "carteira-rock-na-praca",
       "nome": "Carteira Rock na Praça",
       "preco": 40,
@@ -156,24 +150,30 @@
       "imagem": "/assets/images/uploads/carteira_rock-na-praca.webp"
     },
     {
-      "slug": "bone-rock-na-praca-1",
-      "nome": "Boné Rock na Praça #1",
-      "preco": 70,
-      "descricao": "Produto oficial.",
       "imagens": [
-        "/assets/images/uploads/bone-1_rock-na-praca.webp"
+        "/assets/images/uploads/copo_rock-na-praca.webp",
+        "/assets/images/uploads/copo-frente_rock-na-praca.webp",
+        "/assets/images/uploads/Copo-costas_Rock-na-Praca.webp"
       ],
-      "imagem": "/assets/images/uploads/bone-1_rock-na-praca.webp"
+      "alt": "Copo rock na praça",
+      "descricao": "Copo oficial, somente na cor rosa",
+      "slug": "copo-rock-na-praca",
+      "preco": 10,
+      "ativo": true,
+      "imagem": "/assets/images/uploads/Copo_Rock-na-Praca.webp",
+      "status": "PRONTA ENTREGA",
+      "nome": "Copo",
+      "titulo": "Copo Rock na Praça"
     },
     {
-      "slug": "bone-rock-na-praca-2",
-      "nome": "Boné Rock na Praça #2",
-      "preco": 70,
+      "slug": "mochila-rock-na-praca",
+      "nome": "Mochila Rock na Praça",
+      "preco": 100,
       "descricao": "Produto oficial.",
       "imagens": [
-        "/assets/images/uploads/bone-2_rock-na-praca.webp"
+        "/assets/images/uploads/mochila_rock-na-praca.webp"
       ],
-      "imagem": "/assets/images/uploads/bone-2_rock-na-praca.webp"
+      "imagem": "/assets/images/uploads/mochila_rock-na-praca.webp"
     }
   ]
 }
