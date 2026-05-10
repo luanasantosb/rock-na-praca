@@ -3,12 +3,24 @@
   "descricao": "Por trás de cada detalhe, existem parcerias que fazem acontecer. Marcas e pessoas que somam forças para transformar ideia em experiência.",
   "lista": [
     {
-      "imagem": "/images/apoio1.png",
-      "link": "https://site.com"
+      "imagem": "/assets/images/uploads/Hoffnung_logo.webp",
+      "link": "https://www.instagram.com/chopphoffnung_/"
     },
     {
-      "imagem": "/images/apoio2.png",
-      "link": "https://site.com"
+      "imagem": "/assets/images/uploads/unipeople_logo.webp",
+      "link": "https://www.instagram.com/unipeopleeducation/"
+    },
+    {
+      "imagem": "/assets/images/uploads/BIL_logo.webp",
+      "link": "https://www.instagram.com/bandasindependenteslocais/"
+    },
+    {
+      "imagem": "/assets/images/uploads/Black-in-Back_logo.webp",
+      "link": "www.instagram.com/lojabackinblack/"
+    },
+    {
+      "imagem": "/assets/images/uploads/skatchebar_logo.webp",
+      "link": "https://www.instagram.com/skatchebar/"
     }
   ]
 }
