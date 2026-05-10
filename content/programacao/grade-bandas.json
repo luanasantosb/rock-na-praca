@@ -2,18 +2,34 @@
   "titulo": "Grade de Bandas",
   "lista": [
     {
-      "hora": "18:00",
-      "nome": "Banda X",
-      "imagem": "/images/banda-x.jpg",
-      "instagram": "https://instagram.com/bandax",
-      "youtube": ""
+      "nome": "Ave fantasma",
+      "imagem": "/assets/images/uploads/pós-ensaio-no-trilhahubcultural-...alinhando-para-a-grande-noite-de-comemoração-dos-10-anos-da.webp",
+      "instagram": "https://www.instagram.com/avefantasmarock/"
     },
     {
-      "hora": "20:00",
-      "nome": "Banda Y",
-      "imagem": "/images/banda-y.jpg",
-      "instagram": "",
-      "youtube": "https://youtube.com/banday"
+      "instagram": "https://www.instagram.com/altarisrock_/",
+      "nome": "ALTARIS",
+      "imagem": "/assets/images/uploads/não-é-nada-demais-não…-só-um-tbt-da-banda-mais-des-preparada-das-passarelas-modelando-pra-ess.webp"
+    },
+    {
+      "instagram": "https://www.instagram.com/pilatusofficial/?hl=pt-br",
+      "nome": "Pilatus",
+      "imagem": "/assets/images/uploads/então-após-um-período-de-mudanças-pilatus-apresenta-sua-nova-formação-da-esquerda-para-direi.webp"
+    },
+    {
+      "instagram": "https://www.instagram.com/cxfxcx_crossover_thrash/?hl=pt-br",
+      "nome": "CxFxC",
+      "imagem": "/assets/images/uploads/35344541_457915861336349_1392715374193016832_n.jpg"
+    },
+    {
+      "instagram": "https://www.instagram.com/os_diletantes/?hl=pt-br",
+      "nome": "Os Diletantes",
+      "imagem": "/assets/images/uploads/377444795_1381728692407777_2976577122210230013_n.jpg"
+    },
+    {
+      "instagram": "https://www.instagram.com/rosatattooada/?hl=pt-br",
+      "nome": "Rosa Tattooada",
+      "imagem": "/assets/images/uploads/639559848_18402470110176030_3505357258388774975_n.jpg"
     }
   ]
 }
