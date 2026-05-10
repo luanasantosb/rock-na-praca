@@ -6,6 +6,12 @@
   "transporte": [
     {
       "item": "🚲 Bicicleta: bicicletário disponível na praça, não esqueça de trazer seu cadeado."
+    },
+    {
+      "item": "🚆 Trensurb: 20 minutos de caminhada da Estação Esteio."
+    },
+    {
+      "item": "🚗 Carro e moto: Estacionamento em ruas próximas a praça."
     }
   ]
 }
