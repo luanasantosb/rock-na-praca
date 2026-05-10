@@ -17,6 +17,14 @@
     {
       "imagem": "/assets/images/uploads/Horripilos_logo.webp",
       "link": "https://www.instagram.com/horripilos/"
+    },
+    {
+      "link": "https://www.instagram.com/labrujasilk/",
+      "imagem": "/assets/images/uploads/la-bruja_logo.webp"
+    },
+    {
+      "link": "https://www.instagram.com/itemsstoreoficial/",
+      "imagem": "/assets/images/uploads/Items-Store_logo.webp"
     }
   ]
 }
