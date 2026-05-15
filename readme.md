@@ -1,44 +1,83 @@
-#  💀 Rock na Praça
+# 💀 Rock na Praça
 
-> Um site estático desenvolvido com as tecnologias fundamentais da web.
+> Plataforma institucional e comercial desenvolvida para fortalecer a presença digital do evento Rock na Praça, centralizando inscrições, divulgação e vendas em um único ambiente.
 
 ---
 
-> **Status do Projeto:** 🚀 Em Desenvolvimento
+## 🚀 Status do Projeto
+🛠️ **Em Desenvolvimento**
 
+---
 
 ## 🔗 Demonstração
+
 O site está publicado e pode ser acessado pelo link abaixo:
-👉 **[CLIQUE AQUI PARA ACESSAR O SITE](https://www.rocknapraca.com/)**
+
+👉 **[Clique aqui para acessar o site](https://www.rocknapraca.com/)**
 
 ---
 
-## 💻 Sobre o Projeto
-Site Institucional & E-commerce para o evento.<br>
-**Objetivo:** Impulsionar a visibilidade do evento e automatizar a gestão de participantes, estabelecendo uma infraestrutura digital que suporte a captação de incentivos fiscais e o cumprimento de metas de fomento à cultura.<br>
-Funcionalidades: Cadastro de bandas e de expositores, loja virtual e formuário de contato.<br>
-**UX/UI:** Interface minimalista, totalmente responsiva e focada em usabilidade.
+## 📌 Sobre o Projeto
+
+O **Rock na Praça** é uma plataforma web criada para apoiar a divulgação e organização do evento, oferecendo uma estrutura digital moderna para gerenciamento de participantes, comunicação e comercialização de produtos.
+
+O projeto reúne funcionalidades institucionais, inscrições para participantes e recursos administrativos através de um painel CMS.
+
+### 🎯 Objetivo
+Impulsionar a visibilidade do evento, automatizar processos organizacionais e fornecer uma infraestrutura digital capaz de apoiar ações culturais, captação de incentivos fiscais e expansão da comunidade do evento.
+
+### 🎨 UX/UI
+- Interface moderna e intuitiva  
+- Layout responsivo  
+- Navegação simplificada  
+- Identidade visual alinhada à proposta do evento  
+- Experiência otimizada para diferentes dispositivos  
+
+---
 
 ## ✨ Funcionalidades
-- [X] **Responsividade:** O site se adapta a dispositivos móveis, tablets e desktops.
-- [X] **Interatividade:** Uso de JavaScript para cabecalho e validação de formulários
 
-## 🛠️ Tecnologias
-Para este projeto, utilizei as seguintes tecnologias:
+- ✅ Página institucional do evento
+- ✅ Cadastro de bandas
+- ✅ Cadastro de expositores
+- ✅ Loja virtual integrada
+- ✅ Formulário de contato
+- ✅ Painel CMS para gerenciamento de conteúdo
+- ✅ Validação de formulários com JavaScript
+- ✅ Interface responsiva (mobile, tablet e desktop)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+As seguintes tecnologias foram utilizadas no desenvolvimento do projeto:
 
 | Tecnologia | Descrição |
 | :--- | :--- |
-| <img align="center" alt="HTML5" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"> | **HTML5** - Estruturação semântica do conteúdo. |
-| <img align="center" alt="CSS3" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"> | **CSS3** - Estilização, layout e responsividade. |
-| <img align="center" alt="JS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> | **JavaScript** - Lógica, interatividade e dinamismo. |
+| HTML5 | Estruturação semântica do conteúdo |
+| CSS3 | Estilização, layout e responsividade |
+| JavaScript | Lógica, interatividade e dinamismo |
 
 ---
 
-## 📸 Visual do Projeto
-Aqui você pode ver uma prévia de como o site ficou:
+## 🖥️ Painel CMS
 
-![Preview do Site](/assets/screenshots/www.rocknapraca.com_Desktop.png)
+O projeto também conta com um painel administrativo (CMS) desenvolvido para facilitar o gerenciamento das informações do evento.
 
-![Preview do Site](/assets/screenshots/www.rocknapraca.com_mobile.png)
+### Recursos do CMS
+- 📰 Atualização de conteúdos do site
+---
+
+## 📱 Responsividade
+
+A aplicação foi desenvolvida com foco em responsividade, garantindo uma boa experiência em:
+
+- 📱 Dispositivos móveis  
+- 💻 Desktops  
+- 📲 Tablets  
 
 ---
+
+## 📄 Licença
+
+Este projeto está em desenvolvimento para fins culturais, institucionais e de portfólio.
