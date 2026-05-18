@@ -23,6 +23,14 @@
       "imagem": "/assets/images/uploads/la-bruja_logo.webp"
     },
     {
+      "link": "https://www.instagram.com/punk.cycling/",
+      "imagem": "/assets/images/uploads/punk-cycling.jpg"
+    },
+    {
+      "imagem": "/assets/images/uploads/cravo_cafeteria_movel-logo.webp",
+      "link": "https://www.instagram.com/cravocafeteriamovel/?hl=pt-br"
+    },
+    {
       "link": "https://www.instagram.com/itemsstoreoficial/",
       "imagem": "/assets/images/uploads/Items-Store_logo.webp"
     },
@@ -35,20 +43,12 @@
       "link": "https://www.instagram.com/catsrockersstore/"
     },
     {
-      "link": "https://www.instagram.com/punk.cycling/",
-      "imagem": "/assets/images/uploads/punk-cycling.jpg"
-    },
-    {
       "imagem": "/assets/images/uploads/Fuck-house_logo.webp",
       "link": "https://www.instagram.com/fuckhousesexshop/"
     },
     {
       "imagem": "/assets/images/uploads/laranja_ciclíca-logo.jpg",
       "link": "https://www.instagram.com/laranjaciclica/"
-    },
-    {
-      "imagem": "/assets/images/uploads/cravo_cafeteria_movel-logo.webp",
-      "link": "https://www.instagram.com/cravocafeteriamovel/?hl=pt-br"
     }
   ]
 }
