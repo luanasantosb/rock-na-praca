@@ -2,10 +2,10 @@
   "titulo": "Grade de Bandas",
   "lista": [
     {
-      "nome": "Ave fantasma",
-      "imagem": "/assets/images/uploads/pós-ensaio-no-trilhahubcultural-...alinhando-para-a-grande-noite-de-comemoração-dos-10-anos-da.webp",
-      "instagram": "https://www.instagram.com/avefantasmarock/",
-      "hora": "19:00"
+      "instagram": "https://www.instagram.com/bandairrotulaveis/?hl=pt-br",
+      "nome": "Irrotuláveis",
+      "imagem": "/assets/images/uploads/681801644_17912277231385874_929623650064508882_n.jpg",
+      "hora": "15:30"
     },
     {
       "instagram": "https://www.instagram.com/altarisrock_/",
@@ -32,16 +32,16 @@
       "hora": "18:15"
     },
     {
+      "nome": "Ave fantasma",
+      "imagem": "/assets/images/uploads/pós-ensaio-no-trilhahubcultural-...alinhando-para-a-grande-noite-de-comemoração-dos-10-anos-da.webp",
+      "instagram": "https://www.instagram.com/avefantasmarock/",
+      "hora": "19:00"
+    },
+    {
       "instagram": "https://www.instagram.com/rosatattooada/?hl=pt-br",
       "nome": "Rosa Tattooada",
       "imagem": "/assets/images/uploads/639559848_18402470110176030_3505357258388774975_n.jpg",
       "hora": "19:45"
-    },
-    {
-      "instagram": "https://www.instagram.com/bandairrotulaveis/?hl=pt-br",
-      "nome": "Irrotuláveis",
-      "imagem": "/assets/images/uploads/681801644_17912277231385874_929623650064508882_n.jpg",
-      "hora": "15:30"
     }
   ]
 }
