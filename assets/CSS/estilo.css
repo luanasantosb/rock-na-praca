@@ -730,7 +730,6 @@ lite-youtube:hover {
   margin: 0 auto;
 }
 
-
 .grade-bandas h2 {
   font-size: 2.2rem;
   letter-spacing: 1.5px;
@@ -738,7 +737,6 @@ lite-youtube:hover {
   color: var(--rosa);
   text-transform: uppercase;
 }
-
 
 .grade-bandas-container {
   display: grid;
@@ -752,7 +750,6 @@ lite-youtube:hover {
 .grade-bandas-item {
   display: contents;
 }
-
 
 .hora {
   font-size: 1.2rem;
@@ -1002,93 +999,98 @@ lite-youtube:hover {
   border: 2px solid var(--rosa);
 }
 
-@media (max-width:1024px) {
-  .programacao-conteudo {
-    margin-left: 120px;
+/* =======================
+   RESPONSIVIDADE
+======================= */
+
+/* ===== Tablets ===== */
+@media (max-width: 1024px) {
+
+  .main-programacao {
+    margin-left: 0;
   }
 
-  .cabecalho-programacao {
-    width: 110px;
-  }
-
-  .cabecalho-simbolo img {
-    width: 90px;
-  }
-
-  .grade-bandas-container {
-    grid-template-columns: 90px 1fr;
-  }
-
-  .banda-inner img {
-    width: 150px;
-  }
-
-}
-
-@media (max-width:768px) {
   .cabecalho-programacao {
     position: relative;
-    flex-direction: row;
+
     width: 100%;
     height: auto;
-    padding: 10px;
+
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    text-align: center;
   }
 
-  .cabecalho-simbolo img {
-    width: 70px;
-    margin: 0;
-  }
-
-  .cabecalho-menu-programacao {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .cabecalho-simbolo {
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
 
+  .cabecalho-simbolo img {
+    width: 100px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .cabecalho-menu-programacao {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+  }
+
   .cabecalho-menu-programacao a {
-    font-size: 1.2rem;
-    padding: 8px;
-  }
-
-  .programacao-conteudo {
-    margin-left: 0;
-    padding: 1rem;
-  }
-
-  .programacao-conteudo h1 {
-    font-size: 2rem;
-  }
-
-  .programacao-conteudo h2 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    padding: 10px 14px;
+    text-align: center;
   }
 
   .grade-bandas-container {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
   }
 
   .hora {
-    justify-content: flex-start;
+    justify-content: center;
+    font-size: 1.1rem;
   }
 
-  .banda-inner {
+  .banda {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+
+    border-left: none;
+    border-top: 4px solid var(--verde);
   }
 
-  .banda-inner img {
+  .banda:hover {
+    transform: translateY(-4px);
+  }
+
+  .banda img {
     width: 100%;
-    max-width: 320px;
+    max-width: 400px;
+    height: auto;
   }
 
-  .grid-feira {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  .banda-nome {
+    text-align: center;
   }
 
-  .grid-apoio {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  .banda-sociais {
+    margin-left: 0;
+    justify-content: center;
   }
 
   .local-grid {
@@ -1096,52 +1098,200 @@ lite-youtube:hover {
   }
 
   .mapa-container iframe {
-    height: 300px;
+    height: 350px;
+  }
+}
+
+
+/* ===== Celulares ===== */
+@media (max-width: 768px) {
+
+  * {
+    box-sizing: border-box;
   }
 
-  .grade-bandas-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  body {
+    overflow-x: hidden;
   }
 
-  .hora {
-    justify-content: flex-start;
+  .cabecalho-programacao {
+    padding: 1rem 0.5rem;
+  }
+
+  .cabecalho-simbolo img {
+    width: 80px;
+  }
+
+  .cabecalho-menu-programacao {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cabecalho-menu-programacao a {
+    width: 100%;
     font-size: 1rem;
+    padding: 10px;
   }
+
+  #titulo-programacao {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  #subtitulo-programacao {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .conteudo-descricao {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .grid-realizacao {
+    gap: 2rem;
+  }
+
+  .item img {
+    max-width: 140px;
+  }
+
+  .grade-bandas {
+    padding: 40px 15px;
+  }
+
+  .grade-bandas h2,
+  .grupo-feira h2,
+  .grupo-apoio h2,
+  .grupo-local h2 {
+    font-size: 1.6rem;
+  }
+
 
   .banda {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 1rem;
+    gap: 12px;
   }
 
   .banda img {
     width: 100%;
+    max-width: 200px;
     height: auto;
-  }
-
-  .banda-sociais {
-    margin-left: 0;
-  }
-
-}
-
-@media (max-width:480px) {
-  .programacao-conteudo h1 {
-    font-size: 1.6rem;
-  }
-
-  .programacao-conteudo h2 {
-    font-size: 1.3rem;
+    margin: 0 auto;
+    display: block;
   }
 
   .banda-nome {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .banda-sociais img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .grid-feira {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid-apoio {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .cartao-feira img {
-    max-width: 110px;
+    max-width: 120px;
   }
 
+  .cartao-apoio img {
+    max-width: 100px;
+  }
+
+  .grupo-local {
+    padding: 40px 15px;
+  }
+
+  .card-local {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card-local h3 {
+    font-size: 1.4rem;
+  }
+
+  .lista-acesso {
+    padding: 0;
+  }
+
+  .mapa-container iframe {
+    height: 300px;
+  }
+}
+
+
+/* ===== Celulares pequenos ===== */
+@media (max-width: 480px) {
+
+  #titulo-programacao {
+    font-size: 1.6rem;
+  }
+
+  #subtitulo-programacao {
+    font-size: 1.2rem;
+  }
+
+  .conteudo-descricao {
+    font-size: 0.95rem;
+  }
+
+  .cabecalho-menu-programacao a {
+    font-size: 0.95rem;
+  }
+
+  .grade-bandas h2,
+  .grupo-feira h2,
+  .grupo-apoio h2,
+  .grupo-local h2 {
+    font-size: 1.4rem;
+  }
+
+  .hora {
+    font-size: 0.95rem;
+  }
+
+  .banda img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+  }
+
+  .banda {
+    padding: 0.8rem;
+    gap: 10px;
+  }
+
+  .banda-nome {
+    font-size: 1rem;
+  }
+
+  .banda-sociais img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .botao-mapa {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mapa-container iframe {
+    height: 250px;
+  }
 }
 
 /* ========================= */
@@ -1308,7 +1458,8 @@ lite-youtube {
   font-size: 1rem;
   line-height: 1.6;
 }
-#status-vagas{
+
+#status-vagas {
   color: var(--rosa);
   text-transform: uppercase;
   padding: 0.5rem;
@@ -1588,8 +1739,8 @@ lite-youtube {
   transition: background-color 0.3s ease;
 }
 
-.oculto{
-  display:none;
+.oculto {
+  display: none;
 }
 
 /* === CATEGORIAS === */
@@ -1634,11 +1785,9 @@ lite-youtube {
 }
 
 .categoria.ativa {
-  background: linear-gradient(
-    135deg,
-    var(--rosa),
-    var(--rosa-soft)
-  );
+  background: linear-gradient(135deg,
+      var(--rosa),
+      var(--rosa-soft));
 
   border-color: var(--rosa);
 
@@ -1714,8 +1863,8 @@ lite-youtube {
   height: 45px;
   border: none;
   border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  color:var(--branco);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
   font-size: 2rem;
   cursor: pointer;
   backdrop-filter: blur(6px);
@@ -1724,7 +1873,7 @@ lite-youtube {
 
 .carrossel-btn:hover {
   background: var(--rosa);
-  color:var(--preto);
+  color: var(--preto);
 }
 
 .prev {
