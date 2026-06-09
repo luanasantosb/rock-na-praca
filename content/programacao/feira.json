@@ -23,6 +23,10 @@
       "link": "https://www.instagram.com/maldita3d/"
     },
     {
+      "imagem": "/assets/images/uploads/Riff-artefatos_logo.webp",
+      "link": "https://www.instagram.com/riffartefatos"
+    },
+    {
       "imagem": "/assets/images/uploads/Cats-Rocks-Store_logo.webp",
       "link": "https://www.instagram.com/catsrockersstore/"
     },
@@ -39,6 +43,10 @@
       "link": "https://www.instagram.com/loja_refugionerd/"
     },
     {
+      "imagem": "/assets/images/uploads/Pedra_Bruta_Acessorios_logo.webp",
+      "link": "https://www.instagram.com/acessoriospedrabruta"
+    },
+    {
       "imagem": "/assets/images/uploads/Fuck-house_logo.webp",
       "link": "https://www.instagram.com/fuckhousesexshop/"
     },
@@ -49,10 +57,6 @@
     {
       "link": "http://instagram.com/subversive.atelier",
       "imagem": "/assets/images/uploads/Subversive-Atelier.webp"
-    },
-    {
-      "imagem": "/assets/images/uploads/Riff-artefatos_logo.webp",
-      "link": "https://www.instagram.com/riffartefatos"
     }
   ]
 }
