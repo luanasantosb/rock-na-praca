@@ -21,17 +21,13 @@
   --rosa: #CB5D9F;
   --branco: #FFFEF6;
   --preto: #212121;
-
   --amarelo-soft: rgba(234, 192, 108, 0.18);
   --azul-soft: rgba(0, 107, 181, 0.12);
   --verde-soft: rgba(110, 212, 122, 0.15);
   --rosa-soft: rgba(203, 93, 159, 0.15);
   --overlay-dark: rgba(33, 33, 33, 0.6);
-
   --fonte-titulos: 'Bebas Neue', Arial, sans-serif;
-
   --fonte-textos: 'Open Sans', Arial, sans-serif;
-
   --transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-slow: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -1297,6 +1293,7 @@ lite-youtube:hover {
 /* ========================= */
 /*       SOBRE          */
 /* ========================= */
+
 .sobre-titulo {
   font-size: clamp(1.8rem, 4vw, 2.3rem);
   margin: 0;
@@ -2284,14 +2281,26 @@ lite-youtube {
   margin: 0;
 }
 
-.faq-item a {
-  color: var(verde);
+.faq-item a{
   text-decoration: none;
+  color:var(--verde);
+}
+
+.faq-item a:link {
+  color: var(verde);
 }
 
 .faq-item a:visited {
   color: var(--rosa);
-  text-decoration: none;
+  
+}
+
+.faq-item a:hover {
+  color: var(--amarelo);
+}
+
+a:active {
+  color: var(--verde);
 }
 
 .contato-intro {
