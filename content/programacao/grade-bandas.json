@@ -1,4 +1,11 @@
 {
   "titulo": "Grade de Bandas",
-  "lista": []
+  "lista": [
+    {
+      "instagram": "https://www.instagram.com/abandasintese/",
+      "youtube": "https://www.youtube.com/@oitavasintese",
+      "nome": "Oitava Síntese",
+      "imagem": "/assets/images/uploads/oitavasintese.webp"
+    }
+  ]
 }
