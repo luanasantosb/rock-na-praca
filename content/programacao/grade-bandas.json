@@ -6,6 +6,30 @@
       "youtube": "https://www.youtube.com/@oitavasintese",
       "nome": "Oitava Síntese",
       "imagem": "/assets/images/uploads/oitavasintese.webp"
+    },
+    {
+      "youtube": "youtube.com/@BetumeColdOi",
+      "instagram": "https://www.instagram.com/betumeoi/",
+      "nome": "Betume",
+      "imagem": "/assets/images/uploads/betume.webp"
+    },
+    {
+      "instagram": "https://www.instagram.com/norest.punk/",
+      "youtube": "https://www.youtube.com/channel/UCRakhBieZtKhvQ8ADpgep0g",
+      "nome": "No Rest",
+      "imagem": "/assets/images/uploads/norest.webp"
+    },
+    {
+      "nome": "VÄLIKA",
+      "instagram": "https://www.instagram.com/valika.band/",
+      "youtube": "https://www.youtube.com/channel/UCFpvxrGxXYNfQzxAO-4XM4w",
+      "imagem": "/assets/images/uploads/valika.webp"
+    },
+    {
+      "nome": "Black Pantera",
+      "instagram": "https://www.instagram.com/blackpanteraoficial/",
+      "youtube": "https://www.youtube.com/channel/UCJ8jINeY1FVKhUzltQ0-cUA",
+      "imagem": "/assets/images/uploads/blackpantera.webp"
     }
   ]
 }
