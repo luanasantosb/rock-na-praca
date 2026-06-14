@@ -623,17 +623,13 @@ lite-youtube:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-
   background-color: transparent;
   color: var(--branco);
-
   position: fixed;
   top: 0;
   left: 0;
-
   height: 70vh;
   width: 180px;
-
   padding: 1rem 0;
   z-index: 1000;
 }
@@ -810,7 +806,6 @@ lite-youtube:hover {
   transform: translateX(6px);
 }
 
-
 .banda img {
   width: 180px;
   height: 110px;
@@ -828,7 +823,6 @@ lite-youtube:hover {
   font-weight: 700;
   text-align: left;
 }
-
 
 .banda-sociais {
   display: flex;
@@ -1032,165 +1026,40 @@ lite-youtube:hover {
   border: 2px solid var(--rosa);
 }
 
+/*==================responsividade=================*/
 /* =======================
    RESPONSIVIDADE
 ======================= */
-@media (max-width: 575px) {
 
-  .main-programacao {
-    padding-top: 180px;
-  }
-
-  .cabecalho-programacao {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .cabecalho-menu-programacao {
-    justify-content: center;
-  }
-
-  .cabecalho-menu-programacao a {
-    font-size: 0.95rem;
-    padding: 6px 10px;
-  }
-
-  #titulo-programacao {
-    font-size: 1.8rem;
-  }
-
-  #subtitulo-programacao {
-    font-size: 1.2rem;
-  }
-
-  .conteudo-descricao {
-    font-size: 0.95rem;
-  }
-
-  .banda img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-  }
-
-  .banda-nome {
-    font-size: 1.1rem;
-  }
-
-  .grid-feira,
-  .grid-apoio {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .item img {
-    max-width: 140px;
-  }
-
-  .mapa-container iframe {
-    height: 300px;
-  }
-
-  .card-local h3 {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 767px) {
-
-  #titulo-programacao {
-    font-size: 2.2rem;
-  }
-
-  #subtitulo-programacao {
-    font-size: 1.5rem;
-  }
-
-  .conteudo-descricao {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-
-  .grupo-realizacao,
-  .grupo-feira,
-  .grupo-apoio,
-  .grupo-local {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .grade-bandas-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .hora {
-    justify-content: center;
-    font-size: 1.3rem;
-  }
-
-  .banda {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    border-left: none;
-    border-top: 4px solid var(--verde);
-    padding-top: 1rem;
-  }
-
-  .banda:hover {
-    transform: none;
-  }
-
-  .banda-nome {
-    width: 100%;
-    text-align: center;
-  }
-
-  .banda-sociais {
-    width: 100%;
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  .grid-realizacao {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 991px) {
+/* Tablets */
+@media (max-width: 992px) {
 
   .main-programacao {
     margin-left: 0;
-    padding-top: 140px;
   }
 
   .cabecalho-programacao {
-    position: fixed;
+    position: relative;
     width: 100%;
     height: auto;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     padding: 1rem;
-    background: var(--preto);
   }
 
   .cabecalho-simbolo img {
-    width: 80px;
-    margin: 0;
+    margin: 0 0 1rem 0;
   }
 
   .cabecalho-menu-programacao {
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     flex-wrap: wrap;
-    width: auto;
+    gap: 0.5rem;
   }
 
   .cabecalho-menu-programacao a {
-    padding: 8px 12px;
-    font-size: 1rem;
+    padding: 10px 14px;
+    font-size: 1.1rem;
   }
 
   .local-grid {
@@ -1201,44 +1070,130 @@ lite-youtube:hover {
     grid-template-columns: 80px 1fr;
   }
 
-  .banda {
-    gap: 15px;
-  }
-
   .banda img {
-    width: 130px;
-    height: 80px;
-  }
-}
-
-@media (max-width: 1199px) {
-
-  .main-programacao {
-    margin-left: 150px;
-  }
-
-  .cabecalho-programacao {
-    width: 150px;
-  }
-
-  .cabecalho-simbolo img {
-    width: 100px;
-  }
-
-  .cabecalho-menu-programacao a {
-    font-size: 1.1rem;
-  }
-
-  .grade-bandas {
-    max-width: 1000px;
-  }
-
-  .banda img {
-    width: 150px;
+    width: 140px;
     height: 90px;
   }
 }
 
+/* Celulares */
+@media (max-width: 768px) {
+
+  #titulo-programacao {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  #subtitulo-programacao {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .conteudo-descricao {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .grade-bandas {
+    padding: 40px 15px;
+  }
+
+  .grade-bandas-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .grade-bandas-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hora {
+    justify-content: center;
+  }
+
+  .banda {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .banda img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .banda-nome {
+    text-align: center;
+  }
+
+  .banda-sociais {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .grid-realizacao,
+  .grid-feira,
+  .grid-apoio {
+    gap: 1.5rem;
+  }
+
+  .mapa-container iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .cabecalho-menu-programacao {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cabecalho-menu-programacao a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cabecalho-simbolo img {
+    width: 80px;
+    height: auto;
+    margin: 0 0 1rem 1rem;
+  }
+
+  #titulo-programacao {
+    font-size: 1.8rem;
+  }
+
+  #subtitulo-programacao {
+    font-size: 1.3rem;
+  }
+
+  .grupo-local,
+  .grupo-feira,
+  .grupo-apoio,
+  .grade-bandas,
+  .grupo-realizacao {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card-local {
+    padding: 1rem;
+  }
+
+  .banda img {
+    max-width: 70%;
+  }
+
+  .mapa-container iframe {
+    height: 250px;
+    width: 90%;
+  }
+}
 
 /* ========================= */
 /*       SOBRE          */
@@ -1308,6 +1263,7 @@ lite-youtube {
   color: var(--branco);
   font-style: italic;
 }
+
 /* =======================
    RESPONSIVIDADE
 ======================= */
@@ -1696,6 +1652,7 @@ lite-youtube {
     max-width: 100%;
   }
 }
+
 @media (max-width: 1199px) {
 
   .inscricao-conteudo {
@@ -1762,7 +1719,7 @@ lite-youtube {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  border-bottom: 1px dashed rgba(255,255,255,.15);
+  border-bottom: 1px dashed rgba(255, 255, 255, .15);
 }
 
 #carrinho>li {
@@ -2489,9 +2446,9 @@ lite-youtube {
   margin: 0;
 }
 
-.faq-item a{
+.faq-item a {
   text-decoration: none;
-  color:var(--verde);
+  color: var(--verde);
 }
 
 .faq-item a:link {
@@ -2500,7 +2457,7 @@ lite-youtube {
 
 .faq-item a:visited {
   color: var(--rosa);
-  
+
 }
 
 .faq-item a:hover {
@@ -2832,7 +2789,3 @@ a:active {
     max-width: 1000px;
   }
 }
-
-
-
-
