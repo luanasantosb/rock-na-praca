@@ -38,6 +38,11 @@
     {
       "nome": "Produtora",
       "url": "/produtora/"
+    },
+    {
+      "nome": "PROGRAMAÇÃO",
+      "url": "/programacao",
+      "title": "PROGRAMAÇÃO"
     }
   ]
 }
