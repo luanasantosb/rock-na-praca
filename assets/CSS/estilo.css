@@ -762,13 +762,14 @@ lite-youtube:hover {
 }
 
 .grade-bandas-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .grade-bandas-item {
-  display: block;
+  width: 250px;
 }
 
 .hora {
