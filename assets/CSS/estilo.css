@@ -614,56 +614,49 @@ lite-youtube:hover {
 ======================= */
 
 /* ===== Seção Cabeçalho ===== */
-.main-programacao {
-  margin-left: 180px;
-}
-
-.cabecalho-programacao {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background-color: transparent;
-  color: var(--branco);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 70vh;
-  width: 180px;
-  padding: 1rem 0;
-  z-index: 1000;
-}
-
-
-.cabecalho-simbolo img {
-  width: 120px;
-  height: auto;
-  margin: 0 0 1rem 1rem;
-}
 
 .cabecalho-menu-programacao {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
   width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
 }
 
 .cabecalho-menu-programacao a {
-  display: block;
-  font-size: 1.3rem;
-  padding: 12px 16px;
-
+  position: relative;
+  font-size: 1.2rem;
   font-family: var(--fonte-titulos);
-  color: var(--branco);
+  color: var(--rosa);
   text-decoration: none;
+  transition: color .3s ease;
+  padding: 12px 24px;
+}
 
-  transition: color 0.2s, background 0.2s;
+.cabecalho-menu-programacao a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: var(--branco);
+  transition: width .3s ease;
+}
+
+
+.cabecalho-menu-programacao a:hover::after,
+.cabecalho-menu-programacao a.ativo::after {
+  width: 100%;
 }
 
 .cabecalho-menu-programacao a:hover,
-.cabecalho-menu-programacao a:active {
-  color: var(--rosa);
-  background: var(--azul-soft);
+.cabecalho-menu-programacao a.ativo {
+  background: rgba(255,255,255,0.08);
+  color: var(--branco);
 }
+
 
 /* ===== Seção conteudo ===== */
 
@@ -674,6 +667,7 @@ lite-youtube:hover {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  margin-top:1rem;
 }
 
 #subtitulo-programacao {
@@ -769,37 +763,25 @@ lite-youtube:hover {
 
 .grade-bandas-container {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 25px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .grade-bandas-item {
-  display: contents;
+  display: block;
 }
 
 .hora {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--verde);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  opacity: 0.9;
+  justify-content: center;
+  margin-bottom: 0.5rem;
 }
-
 
 .banda {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 14px 18px;
-  border-left: 4px solid var(--verde);
-  transition: all 0.25s ease;
+  flex-direction: column;
+  text-align: center;
+  border-left: none;
+  padding: 1rem;
 }
-
 
 .banda:hover {
   border-left-color: var(--rosa);
@@ -817,17 +799,17 @@ lite-youtube:hover {
   transform: scale(1.05);
 }
 
-
 .banda-nome {
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-align: left;
+  text-align: center;
 }
 
 .banda-sociais {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 12px;
-  margin-left: auto;
+  margin-left: 0;
 }
 
 .banda-sociais a {
@@ -1031,7 +1013,6 @@ lite-youtube:hover {
    RESPONSIVIDADE
 ======================= */
 
-/* Tablets */
 @media (max-width: 992px) {
 
   .main-programacao {
@@ -1076,7 +1057,6 @@ lite-youtube:hover {
   }
 }
 
-/* Celulares */
 @media (max-width: 768px) {
 
   #titulo-programacao {
