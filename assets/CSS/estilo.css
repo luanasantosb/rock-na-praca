@@ -767,9 +767,14 @@ lite-youtube:hover {
   justify-content: center;
   gap: 3rem;
 }
-
+.grade-bandas-container,
+.grade-bandas-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .grade-bandas-item {
-  width: 250px;
+  width: 300px;
 }
 
 .hora {
