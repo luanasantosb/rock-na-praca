@@ -12,6 +12,11 @@
       "title": ""
     },
     {
+      "nome": "PROGRAMAÇÃO",
+      "url": "/programacao/",
+      "title": "PROGRAMAÇÃO"
+    },
+    {
       "nome": "Inscreva-se",
       "title": "",
       "submenu": [
@@ -38,11 +43,6 @@
     {
       "nome": "Produtora",
       "url": "/produtora/"
-    },
-    {
-      "nome": "PROGRAMAÇÃO",
-      "url": "/programacao",
-      "title": "PROGRAMAÇÃO"
     }
   ]
 }
