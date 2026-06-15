@@ -634,26 +634,8 @@ lite-youtube:hover {
   padding: 12px 24px;
 }
 
-.cabecalho-menu-programacao a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 3px;
-  background: var(--branco);
-  transition: width .3s ease;
-}
-
-
-.cabecalho-menu-programacao a:hover::after,
-.cabecalho-menu-programacao a.ativo::after {
-  width: 100%;
-}
-
 .cabecalho-menu-programacao a:hover,
 .cabecalho-menu-programacao a.ativo {
-  background: rgba(255,255,255,0.08);
   color: var(--branco);
 }
 
