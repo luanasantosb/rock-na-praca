@@ -2,35 +2,40 @@
   "titulo": "Line up",
   "lista": [
     {
-      "instagram": "https://www.instagram.com/abandasintese/",
-      "youtube": "https://www.youtube.com/@oitavasintese",
-      "nome": "Oitava Síntese",
-      "imagem": "/assets/images/uploads/oitavasintese.webp",
+      "instagram": "https://www.instagram.com/banda.catamara/",
+      "youtube": "https://www.youtube.com/@PreferiaN%C3%A3o",
+      "nome": "Catamarã",
+      "imagem": "/assets/images/uploads/catamara.webp",
       "hora": ""
     },
     {
-      "youtube": "youtube.com/@BetumeColdOi",
-      "instagram": "https://www.instagram.com/betumeoi/",
-      "nome": "Betume",
-      "imagem": "/assets/images/uploads/betume.webp"
+      "youtube": "",
+      "instagram": "https://www.instagram.com/preferia_nao/",
+      "nome": "Preferia Não",
+      "imagem": "/assets/images/uploads/preferia_nao.webp"
     },
     {
-      "instagram": "https://www.instagram.com/norest.punk/",
-      "youtube": "https://www.youtube.com/channel/UCRakhBieZtKhvQ8ADpgep0g",
-      "nome": "No Rest",
-      "imagem": "/assets/images/uploads/norest.webp"
+      "instagram": "https://www.instagram.com/afrontacanis/",
+      "youtube": "",
+      "nome": "Afronta Canis",
+      "imagem": "/assets/images/uploads/afrontacanis.webp"
     },
     {
-      "nome": "VÄLIKA",
-      "instagram": "https://www.instagram.com/valika.band/",
-      "youtube": "https://www.youtube.com/channel/UCFpvxrGxXYNfQzxAO-4XM4w",
-      "imagem": "/assets/images/uploads/valika.webp"
+      "nome": "Fagulha",
+      "instagram": "https://www.instagram.com/fagulhahardcore/",
+      "youtube": "",
+      "imagem": "/assets/images/uploads/fagulha.webp"
     },
     {
-      "nome": "Black Pantera",
-      "instagram": "https://www.instagram.com/blackpanteraoficial/",
-      "youtube": "https://www.youtube.com/channel/UCJ8jINeY1FVKhUzltQ0-cUA",
-      "imagem": "/assets/images/uploads/blackpantera.webp"
+      "nome": "Zoiodetocha",
+      "instagram": "https://www.instagram.com/zoiodetocha/",
+      "youtube": "",
+      "imagem": "/assets/images/uploads/zoiodetocha.webp"
+    },
+    {
+      "nome": "Cutelo",
+      "instagram": "https://www.instagram.com/cutelo.banda/",
+      "imagem": "/assets/images/uploads/cutelo.webp"
     }
   ]
 }
