@@ -126,23 +126,75 @@
     </nav>
   </header>
   <main>
-    <div class="slide">
-  <a href="{{ banner1.link }}">
-    <img src="{{ banner1.imagem }}" alt="{{ banner1.alt }}">
-  </a>
-</div>
+   
+ <section class="hero-secao" aria-labelledby="main-event-title" itemscope itemtype="https://schema.org/Event">
+      <div class="hero-banner">
+        <div class="hero-esquerda">
+          <meta itemprop="name" content="Rock na Praça">
+          <meta itemprop="startDate" content="2026-08-09T15:00">
+          <meta itemprop="description"
+            content="O maior festival de rock gratuito de Esteio. Patrimônio Cultural com shows ao vivo na Praça Coração de Maria.">
+          <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
+          <meta itemprop="eventAttendanceMode" content="https://schema.org/OfflineEventAttendanceMode">
+          <link itemprop="url" href="https://www.rocknapraca.com/">
 
-<div class="slide">
-  <a href="{{ banner2.link }}">
-    <img src="{{ banner2.imagem }}" alt="{{ banner2.alt }}">
-  </a>
-</div>
+          <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="price" content="0">
+            <meta itemprop="priceCurrency" content="BRL">
+            <link itemprop="availability" href="https://schema.org/InStock">
+          </div>
 
-<div class="slide">
-  <a href="{{ banner3.link }}">
-    <img src="{{ banner3.imagem }}" alt="{{ banner3.alt }}">
-  </a>
-</div>
+          <div class="insigna-container">
+            <span class="insignia-patrimonio">
+              <span id="insignia-icone" class="insignia-icon"><!--Via Json--></span>
+              <span id="insignia-texto"><!--Via Json--></span>
+            </span>
+          </div>
+
+
+          <h1 class="hero-titulo">
+            <span id="home-titulo"><!--Via Json--></span>
+            <span id="home-edicao" class="sub-titulo-oficial"><!--Via Json--></span>
+          </h1>
+
+
+          <h2 id="home-subtitulo" class="hero-subtitulo"><!--Via Json-->
+          </h2>
+
+          <div class="hero-meta">
+            <p>
+              <span class="icon">📅</span>
+              <!--Via Json-->
+              <time id="home-data" itemprop="startDate" datetime="2026-04-12T15:00">
+                <!--Via Json--></time>
+            </p>
+
+            <address class="hero-localizacao" itemprop="location" itemscope itemtype="https://schema.org/Place">
+              <span class="icon">📍</span>
+              <span id="home-local" itemprop="name"><!--Via Json--></span>
+              <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <strong>
+                  <span itemprop="addressLocality"><!--Via Json--></span>,
+                  <span itemprop="addressRegion"><!--Via Json--></span>
+                </strong>
+              </span>
+            </address>
+
+            <p class="hero-destaque">
+              <span class="icon">🎉</span> <strong>Evento Gratuito</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- LADO DIREITO (CARTAZ) -->
+        <div class="hero-direita">
+
+          <img id="home-imagem" src="" class="hero-cartaz"
+            alt="Cartaz oficial do Rock na Praça com o line-up das bandas" width="350" height="467"
+            fetchpriority="high">
+        </div>
+      </div>
+    </section>
 
     <section class="contador-container" aria-label="Estatísticas do Festival">
       <div class="contador-item">
