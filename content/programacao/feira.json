@@ -3,65 +3,48 @@
   "descricao": "Descubra um universo alternativo onde a criatividade corre solta. Explore lojas autorais, mergulhe no trabalho de artistas independentes e encontre peças únicas que não existem no mainstream. Aqui, cada detalhe tem história e atitude.",
   "lojas": [
     {
-      "link": "https://www.instagram.com/labrujasilk/",
-      "imagem": "/assets/images/uploads/la-bruja_logo.webp"
-    },
-    {
-      "imagem": "/assets/images/uploads/Orbita-loja_logo.webp",
-      "link": "https://www.instagram.com/orbitaloja/"
-    },
-    {
-      "imagem": "/assets/images/uploads/The-Raven_logo.webp",
-      "link": "https://www.instagram.com/theravenbr"
-    },
-    {
-      "imagem": "/assets/images/uploads/forca_de_bruxa-logo.webp",
-      "link": "https://www.instagram.com/forcadebruxa01/"
-    },
-    {
-      "imagem": "/assets/images/uploads/Maldita_logo.webp",
-      "link": "https://www.instagram.com/maldita3d/"
-    },
-    {
-      "imagem": "/assets/images/uploads/Riff-artefatos_logo.webp",
-      "link": "https://www.instagram.com/riffartefatos"
+      "imagem": "/assets/images/uploads/Brecho-Vira-Lata_logo.webp",
+      "link": "https://www.instagram.com/brecho.viralata/"
     },
     {
       "imagem": "/assets/images/uploads/Cats-Rocks-Store_logo.webp",
       "link": "https://www.instagram.com/catsrockersstore/"
     },
     {
+      "imagem": "/assets/images/uploads/The-Raven_logo.webp",
+      "link": "https://www.instagram.com/theravenbr"
+    },
+    {
+      "imagem": "/assets/images/uploads/Orbita-loja_logo.webp",
+      "link": "https://www.instagram.com/orbitaloja/"
+    },
+    {
+      "imagem": "/assets/images/uploads/Riff-artefatos_logo.webp",
+      "link": "https://www.instagram.com/riffartefatos"
+    },
+    {
       "link": "https://www.instagram.com/itemsstoreoficial/",
       "imagem": "/assets/images/uploads/Items-Store_logo.webp"
+    },
+    {
+      "link": "https://www.instagram.com/labrujasilk/",
+      "imagem": "/assets/images/uploads/la-bruja_logo.webp"
+    },
+    {
+      "imagem": "/assets/images/uploads/forca_de_bruxa-logo.webp",
+      "link": "https://www.instagram.com/forcadebruxa01/"
     },
     {
       "imagem": "/assets/images/uploads/Horripilos_logo.webp",
       "link": "https://www.instagram.com/horripilos/"
     },
     {
-      "imagem": "/assets/images/uploads/Refugio-Nerd_logo.webp",
-      "link": "https://www.instagram.com/loja_refugionerd/"
+      "link": "https://www.instagram.com/jdstudio3d",
+      "imagem": "/assets/images/uploads/jdstudio3d.jpg"
     },
     {
-      "imagem": "/assets/images/uploads/Pedra_Bruta_Acessorios_logo.webp",
-      "link": "https://www.instagram.com/acessoriospedrabruta"
-    },
-    {
-      "imagem": "/assets/images/uploads/Fuck-house_logo.webp",
-      "link": "https://www.instagram.com/fuckhousesexshop/"
-    },
-    {
-      "imagem": "/assets/images/uploads/Brecho-Vira-Lata_logo.webp",
-      "link": "https://www.instagram.com/brecho.viralata/"
-    },
-    {
-      "link": "http://instagram.com/subversive.atelier",
-      "imagem": "/assets/images/uploads/Subversive-Atelier.webp"
-    },
-    {
-      "link": "https://www.instagram.com/cucarachaserigrafia/",
-      "imagem": "/assets/images/uploads/cucarachaserigrafia.webp"
-    },
-    {}
+      "link": "https://www.instagram.com/cravocafeteriamovel/",
+      "imagem": "/assets/images/uploads/cravo_cafeteria_movel-logo.webp"
+    }
   ]
 }
