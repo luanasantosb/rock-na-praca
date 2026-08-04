@@ -19,16 +19,12 @@
       "link": "https://www.instagram.com/orbitaloja/"
     },
     {
-      "imagem": "/assets/images/uploads/Riff-artefatos_logo.webp",
-      "link": "https://www.instagram.com/riffartefatos"
-    },
-    {
       "link": "https://www.instagram.com/itemsstoreoficial/",
       "imagem": "/assets/images/uploads/Items-Store_logo.webp"
     },
     {
-      "link": "https://www.instagram.com/labrujasilk/",
-      "imagem": "/assets/images/uploads/la-bruja_logo.webp"
+      "imagem": "/assets/images/uploads/Riff-artefatos_logo.webp",
+      "link": "https://www.instagram.com/riffartefatos"
     },
     {
       "imagem": "/assets/images/uploads/forca_de_bruxa-logo.webp",
@@ -57,6 +53,9 @@
     {
       "imagem": "/assets/images/uploads/dptresdimpressoes.webp",
       "link": "https://www.instagram.com/dp3dimpressoes/"
+    },
+    {
+      "link": "https://www.instagram.com/novo.dy.novo/"
     }
   ]
 }
