@@ -181,35 +181,25 @@
         </ul>
       </section>
 
-      <details class="inscricao-detalhes">
-        <summary>Realizar inscrição</summary>
         <form id="formSite" novalidate aria-describedby="mensagem" enctype="multipart/form-data">
-          <div class="inscricao-aviso">
-            <p>
-              Fique atento:<br>
-              o preenhimento correto<br>
-              de todos os campos obrigatórios<br>
-              é essencial para o sucesso da sua inscrição.
-            </p>
-          </div>
 
           <fieldset>
             <legend>Dados da Banda</legend>
 
             <label for="banda_nome">Nome da banda *</label>
-            <input type="text" id="banda_nome" name="banda_nome" class="inscricao-input" required>
+            <input type="text" id="banda_nome" name="banda_nome" class="inscricao-input" placeholder="Nome da banda"required>
 
-            <label for="banda_cidade">Cidade / Estado / País *</label>
-            <input type="text" id="banda_cidade" name="banda_cidade" class="inscricao-input" required>
+            <label for="banda_cidade">Cidade *</label>
+            <input type="text" id="banda_cidade" name="banda_cidade" class="inscricao-input" placeholder="Esteio/RS/Brasil"required>
 
             <label for="banda_redes">Rede social *</label>
-            <input type="text" id="banda_redes" name="banda_redes" class="inscricao-input" required>
+            <input type="text" id="banda_redes" name="banda_redes" class="inscricao-input" placeholder="Instragram, Facebook, etc"required>
 
             <label for="banda_streaming">Streaming*</label>
-            <input type="text" id="banda_streaming" name="banda_streaming" class="inscricao-input" required>
+            <input type="text" id="banda_streaming" name="banda_streaming" class="inscricao-input" placeholder="Spotify,Deezer,Amazon Musica etc"required>
 
             <label for="banda_youtube">YouTube*</label>
-            <input type="text" id="banda_youtube" name="banda_youtube" class="inscricao-input" required>
+            <input type="text" id="banda_youtube" name="banda_youtube" class="inscricao-input" placeholder="www.youtube.com/@Suabanda"required>
           </fieldset>
 
           <fieldset>
@@ -227,7 +217,7 @@
             <legend>Contato</legend>
 
             <label for="banda_responsavel">Responsável*</label>
-            <input type="text" id="banda_responsavel" name="banda_responsavel" class="inscricao-input" required>
+            <input type="text" id="banda_responsavel" name="banda_responsavel" class="inscricao-input" placeholder="Fulano de tal"required>
 
             <label for="banda_whatsapp">WhatsApp*</label>
             <input type="tel" id="banda_whatsapp" name="banda_whatsapp" class="inscricao-input" inputmode="tel"
